@@ -21,3 +21,16 @@ The user experienced this as a folder "disappearing". Do not repeat it.
    make structural changes).
 5. Treat `* (1).ext` files and ` copy` folder suffixes as Google Drive conflict
    artifacts, not authoritative versions.
+
+## Image-generation iteration: reset vs. patch
+
+When a result is imperfect or needs improving, do not assume the next step
+should be another edit or repair pass on that same result. Treat the latest
+output as evidence. Before continuing from it, consider whether the accumulated
+feedback and task learnings should instead be folded back into the source prompt
+and used for a fresh generation from the original references/templates.
+
+Decide case by case. If revising the prompt would make the next attempt clearer,
+cleaner, or less constrained by earlier mistakes, prefer restarting from that
+revised prompt over trying to rescue the most recent output. If continuing from
+the current result is still the better path, make that choice deliberately.
