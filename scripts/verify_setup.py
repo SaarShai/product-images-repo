@@ -30,6 +30,10 @@ REQUIRED_FILES = [
     "docs/local-tooling.md",
     "docs/setup-verification.md",
     "docs/workflow.md",
+    "docs/svg-template-illustration-workflow.md",
+    "docs/review-judge-checklist.md",
+    ".codex/skills/svg-template-illustration/SKILL.md",
+    ".codex/skills/svg-template-review-judge/SKILL.md",
     "scripts/asset_report.py",
     "scripts/build_prompt_pack.py",
     "scripts/crop_nonwhite.py",
@@ -37,6 +41,8 @@ REQUIRED_FILES = [
     "scripts/make_overlay_preview.py",
     "scripts/register_result.py",
     "scripts/score_template_fit.py",
+    "scripts/scaffold_template_task.py",
+    "scripts/validate_svg_template_workflow.py",
     "scripts/svg_geometry_report.py",
     "tasks/castle-panels/CURRENT.md",
     "tasks/castle-panels/final-handoff.md",
@@ -56,6 +62,10 @@ REQUIRED_FILES = [
     "tasks/castle-panels/prompts/prompt-v9a-empty-center-split-safe.md",
     "tasks/castle-panels/prompts/prompt-v9b-wall-background-split-safe.md",
     "tasks/castle-panels/outputs/reviews/2026-06-15-v6-v7-decision-packet.md",
+    "tasks/_template/session-brief.md",
+    "tasks/_template/review-judge.md",
+    "tasks/_template/template-manifest.json",
+    "tasks/_template/prompts/prompt-v1-contour-first.md",
     "wiki/index.md",
     "wiki/L0_rules.md",
     "wiki/L1_index.md",
@@ -116,6 +126,23 @@ def main() -> int:
     check(command_ok(["python3", "scripts/asset_report.py"]), "asset report runs", failures)
     check(command_ok(["python3", "scripts/svg_geometry_report.py"]), "SVG geometry report runs", failures)
     check(command_ok(["python3", "scripts/build_prompt_pack.py", "tasks/castle-panels"]), "prompt pack builder runs", failures)
+    check(command_ok(["python3", "scripts/validate_svg_template_workflow.py"]), "SVG-template workflow validator runs", failures)
+    check(
+        command_ok(
+            [
+                "python3",
+                "scripts/scaffold_template_task.py",
+                "verify-smoke",
+                "--svg",
+                "assets/templates/two-panel-template.svg",
+                "--refs",
+                "assets/reference-images/castle-style-reference.png",
+                "--dry-run",
+            ]
+        ),
+        "SVG-template task scaffold dry-run runs",
+        failures,
+    )
     check(command_ok(["python3", "scripts/export_composite.py", "--help"]), "composite exporter runs", failures)
     check(command_ok(["python3", "scripts/score_template_fit.py", "--help"]), "template-fit scorer runs", failures)
 

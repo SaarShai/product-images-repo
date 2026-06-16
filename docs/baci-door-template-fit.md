@@ -103,6 +103,34 @@ hex_clear_nonwhite_pixels: 0
 hex_clearance_px: 4
 ```
 
+## Fixture Gallery
+
+Use these files to calibrate future judges:
+
+Positive accepted repair:
+
+```text
+tasks/baci-door/outputs/reviews/20260616T071500Z-hole-section-final-crop-comparison.png
+tasks/baci-door/outputs/final/20260616T071500Z-baci-door-hole-sections-bounded-exact-hex-v1-svg-fit-artwork-only.png
+tasks/baci-door/outputs/final/20260616T071500Z-baci-door-hole-sections-bounded-exact-hex-v1-svg-fit-clean-black-lines.png
+tasks/baci-door/outputs/final/20260616T071500Z-baci-door-hole-sections-bounded-exact-hex-v1-svg-fit-metadata.json
+```
+
+Negative or cautionary `PASS` examples:
+
+```text
+tasks/baci-door/outputs/reviews/20260616T065000Z-latest-repair-final-crop-sheet.png
+tasks/baci-door/outputs/reviews/20260616T065000Z-latest-repair-source-crop-sheet.png
+tasks/baci-door/outputs/reviews/20260616T064500Z-hole-scar-crop-comparison.png
+tasks/baci-door/outputs/reviews/hex-clearance-sweep-sheet.png
+tasks/baci-door/outputs/reviews/old-hole-inpaint-variants.png
+```
+
+These negative fixtures can report clean outside/cutout metrics while still
+showing blue smears, sliced hardware, doubled outlines, donor seams, or
+full-frame tradeoffs. Use them to remember that `PASS` means the mask gate
+passed, not that the repair is visually acceptable.
+
 ## Future Prompt Rule
 
 For a fresh generation, do not ask the model to draw final holes. Ask it to keep

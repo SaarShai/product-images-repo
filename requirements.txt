@@ -1,3 +1,5 @@
 # Most helpers use only the Python standard library.
-# Image preview/export helpers require Pillow.
+# Image preview/export helpers require Pillow, numpy, and OpenCV.
 Pillow
+numpy
+opencv-python

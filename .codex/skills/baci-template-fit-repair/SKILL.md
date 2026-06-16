@@ -50,6 +50,15 @@ When the full panel is good:
 6. Inspect metadata, final crop comparison, artwork-only export, and clean-line
    export.
 
+Return a visual verdict for each of these fields:
+
+```text
+hole_crop: PASS | FAIL
+full_frame: PASS | FAIL
+clean_lines: PASS | FAIL
+patch_vs_restart: ACCEPT | LOCAL PATCH | PROMPT RESTART | BLOCKED
+```
+
 ## Done Means
 
 - Metadata verdict is `PASS`.

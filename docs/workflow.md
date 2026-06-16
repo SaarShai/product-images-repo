@@ -45,6 +45,42 @@ scored `PASS` is not production approval until a human/adversarial review clears
 recognizable motifs around the center rectangles, horizontal split, side
 gutters, and any custom contour.
 
+## Screenery contour-designed artwork
+
+For Screenery templates with yellow dashed safe areas and internal cutouts, do
+not generate or draw a generic rectangular illustration and crop it to the
+outline. The user rejected that approach because it makes the result look cut
+down to fit instead of designed for the part.
+
+Use a contour-first method instead:
+
+1. Parse the SVG contour and cutout geometry.
+2. Derive safe pockets where artwork can live.
+3. Place each decorative module, pipe, figure, or detail inside those pockets
+   before rendering.
+4. Use final clipping/masking only as an exact-edge export guard.
+5. Verify both final pixels and raw decorative-element masks avoid cutouts and
+   outside areas.
+
+Do not confuse geometry success with style success. If template metrics pass but
+the visual language misses the references, do not keep recoloring the same
+sketch. Restart the composition from the reference images because style depends
+on object vocabulary, shape simplicity, lighting, and rendering language, not
+only palette.
+
+For reusable SVG-template illustration tasks, use the canonical workflow in
+`docs/svg-template-illustration-workflow.md`, the judge checklist in
+`docs/review-judge-checklist.md`, and the skill entrypoints:
+
+```text
+.codex/skills/svg-template-illustration/SKILL.md
+.codex/skills/svg-template-review-judge/SKILL.md
+```
+
+Use `scripts/scaffold_template_task.py` to create task packets that preserve the
+SVG, references, prompts, generated outputs, reviews, final candidates, and
+judge notes in predictable locations.
+
 ## Baci-door hole-section repair
 
 The 2026-06-16 Baci-door sessions added a second fixed-template lesson:

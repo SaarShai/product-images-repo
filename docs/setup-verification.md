@@ -19,6 +19,9 @@ Expected checks:
 - Repo-local wiki files exist.
 - `gemini` and `agy` CLIs are present.
 - The template-fit scorer command is available.
+- SVG-template workflow docs, skills, and task templates exist.
+- The SVG-template workflow validator passes.
+- The task scaffold command can dry-run without writing files.
 
 Generated image PNGs under `tasks/*/outputs/generated/` are ignored by Git by
 default. Keep curated review notes and metadata in `tasks/*/outputs/reviews/`.

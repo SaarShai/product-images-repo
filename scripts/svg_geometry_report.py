@@ -13,6 +13,13 @@ ROOT = Path(__file__).resolve().parents[1]
 TOKEN_RE = re.compile(r"[AaCcHhLlMmQqSsTtVvZz]|-?\d+(?:\.\d+)?")
 
 
+def rel_or_abs(path: Path) -> str:
+    try:
+        return str(path.relative_to(ROOT))
+    except ValueError:
+        return str(path)
+
+
 def local_name(tag: str) -> str:
     return tag.rsplit("}", 1)[-1]
 
@@ -217,7 +224,7 @@ def main() -> int:
     lines = [
         "# SVG Geometry Report",
         "",
-        f"Source: `{svg.relative_to(ROOT)}`",
+        f"Source: `{rel_or_abs(svg)}`",
         f"ViewBox: `{root.attrib.get('viewBox', '')}`",
         "",
     ]

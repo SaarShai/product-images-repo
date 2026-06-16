@@ -19,6 +19,15 @@ docs/baci-door-template-fit.md
 .codex/skills/baci-template-fit-repair/SKILL.md
 ```
 
+For a new SVG-template illustration task, start with:
+
+```text
+docs/svg-template-illustration-workflow.md
+docs/review-judge-checklist.md
+.codex/skills/svg-template-illustration/SKILL.md
+.codex/skills/svg-template-review-judge/SKILL.md
+```
+
 The latest accepted Baci checkpoint is:
 
 ```text
@@ -53,6 +62,8 @@ review before production handoff.
 
 ```bash
 python3 scripts/verify_setup.py
+python3 scripts/validate_svg_template_workflow.py
+python3 scripts/scaffold_template_task.py demo-task --svg assets/templates/two-panel-template.svg --refs assets/reference-images/castle-style-reference.png --dry-run
 python3 scripts/asset_report.py
 python3 scripts/build_prompt_pack.py tasks/castle-panels
 python3 scripts/svg_geometry_report.py tasks/baci-door/source/baci-door-updated-20260616.svg --out tasks/baci-door/svg-geometry-report-updated-20260616.md

@@ -9,6 +9,10 @@ wiki/.brainer/
 .codex/skills/*
 !.codex/skills/baci-template-fit-repair/
 !.codex/skills/baci-template-fit-repair/SKILL.md
+!.codex/skills/svg-template-illustration/
+!.codex/skills/svg-template-illustration/SKILL.md
+!.codex/skills/svg-template-review-judge/
+!.codex/skills/svg-template-review-judge/SKILL.md
 .gemini/skills/
 
 # Keep generated outputs local unless explicitly curated.

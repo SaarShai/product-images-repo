@@ -535,6 +535,16 @@ def main() -> int:
     print(json.dumps(metadata, indent=2))
     metrics = metadata["metrics"]
     assert isinstance(metrics, dict)
+    print(
+        "MECHANICAL PASS ONLY: inspect artwork_only, clean_black_lines, debug_mask, "
+        "and any cutout crop sheet before approving production.",
+        file=sys.stderr,
+    )
+    print(
+        "Review artifacts: "
+        f"{metadata.get('artwork_only')} | {metadata.get('clean_black_lines')} | {metadata.get('debug_mask')}",
+        file=sys.stderr,
+    )
     if args.require_pass and metrics["verdict"] != "PASS":
         print(f"SVG template fit failed: {metrics['verdict']} {metrics.get('notes', [])}")
         return 2
