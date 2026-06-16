@@ -1,0 +1,2 @@
+ref-c: samples=1105 all_painted_centerline_hits=204 top_zone_painted_centerline_hits=124 top_zone_examples=[(103, 315), (103, 313), (103, 311), (103, 309), (104, 308), (104, 306), (105, 304), (105, 302), (105, 300), (106, 298), (106, 295), (107, 293)]
+ref-d: samples=921 all_painted_centerline_hits=116 top_zone_painted_centerline_hits=53 top_zone_examples=[(100, 361), (101, 352), (108, 315), (109, 310), (110, 306), (111, 301), (112, 296), (113, 292), (114, 287), (114, 283), (115, 279), (117, 270)]

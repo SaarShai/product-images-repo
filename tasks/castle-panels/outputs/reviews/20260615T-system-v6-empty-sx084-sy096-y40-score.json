@@ -1,0 +1,58 @@
+[
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T132212Z-prompt-v6-narrow-center-safe-gutters.png",
+    "recipe": "sx0.84-sy0.96-y+40",
+    "mode": "empty",
+    "score": 74.43,
+    "verdict": "WARN",
+    "left_safe_gap_px": 7,
+    "right_safe_gap_px": 11,
+    "bottom_safe_gap_px": 28,
+    "painted_bbox": [
+      93,
+      126,
+      757,
+      1786
+    ],
+    "feature_bbox": [
+      93,
+      127,
+      755,
+      1782
+    ],
+    "safe_bbox": [
+      86,
+      172,
+      766,
+      1810
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 13.2735,
+    "center_lane_feature_pct": 5.1156,
+    "red_zone_feature_pct": 12.5141,
+    "cutline_feature_pct": 6.2929,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.0,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 50.056,
+      "cutline_feature": 8.81,
+      "center_lane_painted": 5.892,
+      "center_lane_feature": 20.462
+    },
+    "notes": [
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "empty-center lane is too painted",
+      "empty-center lane has feature detail"
+    ]
+  }
+]

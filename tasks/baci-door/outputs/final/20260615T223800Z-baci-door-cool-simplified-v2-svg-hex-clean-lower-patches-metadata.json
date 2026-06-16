@@ -1,0 +1,68 @@
+{
+  "timestamp": "2026-06-16T05:36:58Z",
+  "command": "scripts/export_svg_template_fit.py tasks/baci-door/outputs/generated/20260615T223800Z-baci-door-cool-simplified-v2-svg-hex-clean-lower-patches.png --template-svg tasks/baci-door/source/baci-door.svg --out-dir tasks/baci-door/outputs/final --prefix 20260615T223800Z-baci-door-cool-simplified-v2-svg-hex-clean-lower-patches --hex-clearance-units 0 --require-pass",
+  "source_image": "tasks/baci-door/outputs/generated/20260615T223800Z-baci-door-cool-simplified-v2-svg-hex-clean-lower-patches.png",
+  "source_sha256": "7ec3102530b2770ac87be1edc26774f30f66dea30d512a8f84c77ce5774a0623",
+  "source_dimensions": "928x1695",
+  "template_svg": "tasks/baci-door/source/baci-door.svg",
+  "template_sha256": "a1e5bc1753fbd17f2e8053e8f0d076a007dde31c363c6862d101ddd2e39560f4",
+  "template_viewbox": [
+    0.0,
+    0.0,
+    414.61,
+    778.49
+  ],
+  "art_scale_x": 1.0,
+  "art_scale_y": 1.0,
+  "art_offset_x": 0,
+  "art_offset_y": 0,
+  "hex_clearance_units": 0.0,
+  "stroke_width_units": 2.0,
+  "artwork_only": "tasks/baci-door/outputs/final/20260615T223800Z-baci-door-cool-simplified-v2-svg-hex-clean-lower-patches-artwork-only.png",
+  "clean_black_lines": "tasks/baci-door/outputs/final/20260615T223800Z-baci-door-cool-simplified-v2-svg-hex-clean-lower-patches-clean-black-lines.png",
+  "debug_mask": "tasks/baci-door/outputs/final/20260615T223800Z-baci-door-cool-simplified-v2-svg-hex-clean-lower-patches-debug-mask.png",
+  "metrics": {
+    "verdict": "PASS",
+    "output_dimensions": "928x1695",
+    "panel_coverage_pct": 72.82,
+    "outside_nonwhite_pixels": 0,
+    "center_gap_nonwhite_pixels": 0,
+    "hex_clear_nonwhite_pixels": 0,
+    "hex_clearance_px": 0,
+    "center_gap_bbox": [
+      420,
+      2,
+      496,
+      1693
+    ],
+    "path_bboxes": [
+      [
+        0.9999999999999476,
+        1.0000000000000124,
+        187.59999999999997,
+        777.3800000000002
+      ],
+      [
+        221.76000000000002,
+        1.120000000000001,
+        413.62,
+        777.4900000000001
+      ]
+    ],
+    "polygon_bboxes": [
+      [
+        149.11,
+        302.98,
+        166.98,
+        318.46
+      ],
+      [
+        236.94,
+        304.09,
+        253.43,
+        320.58
+      ]
+    ],
+    "notes": []
+  }
+}

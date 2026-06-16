@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 414.61 778.49">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="door_panel_bottom_right_subpanel_door_panel_back_layer" data-name="door panel &amp;gt; bottom right subpanel &amp;gt; door panel &amp;gt; back layer">
+    <path id="bottom_right_panel" data-name="bottom right panel" class="cls-1" d="M1,142.61l21.39-56.4c4.05-10.69,10.51-20.29,18.88-28.08l27.62-25.69c8.74-8.13,19.31-14.03,30.81-17.2,17.54-4.84,41.94-11.57,41.94-11.57,6.43-1.77,13.08-2.67,19.76-2.67h23.19c1.66,0,3.01,1.35,3.01,3.01v770.35c0,1.67-1.35,3.02-3.02,3.02-80.92,0-159.43,0-178.96,0-2.55,0-4.62-2.07-4.62-4.62V142.61Z"/>
+    <polygon class="cls-1" points="153.57 302.98 162.51 302.98 166.98 310.72 162.51 318.46 153.57 318.46 149.11 310.72 153.57 302.98"/>
+  </g>
+  <g id="door_panel_bottom_left_subpanel_door_panel_back_layer" data-name="door panel &amp;gt; bottom left subpanel &amp;gt; door panel &amp;gt; back layer">
+    <path id="door_flap_bottom_left_panel" data-name="door flap &amp;gt; bottom left panel" class="cls-1" d="M413.61,106.28c0-7.6-3.77-14.71-10.06-18.99L296.12,14.32c-12.66-8.6-27.61-13.2-42.91-13.2h-28.38c-1.7,0-3.07,1.38-3.07,3.07v770.24c0,1.69,1.37,3.06,3.06,3.06,83.4,0,164.32,0,184.18,0,2.55,0,4.62-2.07,4.62-4.62V106.28Z"/>
+    <polygon class="cls-1" points="236.94 310.13 242.97 304.09 251.22 306.3 253.43 314.54 247.39 320.58 239.15 318.37 236.94 310.13"/>
+  </g>
+</svg>

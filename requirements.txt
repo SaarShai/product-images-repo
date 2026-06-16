@@ -1,0 +1,3 @@
+# Most helpers use only the Python standard library.
+# Image preview/export helpers require Pillow.
+Pillow

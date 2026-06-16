@@ -1,0 +1,57 @@
+[
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T174701Z-prompt-v9b-template-first-revised.png",
+    "recipe": "sx0.66-sy1.04-y+0",
+    "mode": "wall",
+    "score": 94.17,
+    "verdict": "PASS",
+    "left_safe_gap_px": 30,
+    "right_safe_gap_px": 29,
+    "bottom_safe_gap_px": 37,
+    "painted_bbox": [
+      161,
+      0,
+      744,
+      1711
+    ],
+    "feature_bbox": [
+      162,
+      0,
+      743,
+      1669
+    ],
+    "safe_bbox": [
+      132,
+      162,
+      772,
+      1706
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0838,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 88.8439,
+    "center_lane_feature_pct": 2.3651,
+    "red_zone_feature_pct": 3.1708,
+    "cutline_feature_pct": 4.8126,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.029,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 12.683,
+      "cutline_feature": 6.738,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 0.0
+    },
+    "notes": [
+      "painted pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines"
+    ]
+  }
+]

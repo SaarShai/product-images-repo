@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-06-15T21:04:38Z",
+  "command": "scripts/export_composite.py tasks/castle-panels/outputs/generated/20260615T132212Z-prompt-v6-narrow-center-safe-gutters.png --prefix 20260615T-system-v6-empty-sx084-sy096-y40 --art-scale 1 --art-scale-x 0.84 --art-scale-y 0.96 --art-offset-y 40 --score-json tasks/castle-panels/outputs/reviews/20260615T-system-v6-empty-sx084-sy096-y40-score.json",
+  "source_image": "tasks/castle-panels/outputs/generated/20260615T132212Z-prompt-v6-narrow-center-safe-gutters.png",
+  "source_sha256": "b880093af650d2040f8ea29b8e5e8e425edecb7af070a8cf74c1f0f28723de02",
+  "source_dimensions": "852x1846",
+  "template": "assets/templates/previews/two-panel-template-cropped.png",
+  "template_sha256": "ceaefcc491f5d3ded0bbbd74d3ec4b9419e1077b9b376d016f7541db33ae71a2",
+  "fit": "cover",
+  "art_scale": 1.0,
+  "art_scale_x": 0.84,
+  "art_scale_y": 0.96,
+  "art_offset_x": 0,
+  "art_offset_y": 40,
+  "output_dimensions": "852x1846",
+  "artwork_only": "tasks/castle-panels/outputs/final/20260615T-system-v6-empty-sx084-sy096-y40-artwork-only.png",
+  "clean_black_lines": "tasks/castle-panels/outputs/final/20260615T-system-v6-empty-sx084-sy096-y40-clean-black-lines.png",
+  "full_guides": "tasks/castle-panels/outputs/final/20260615T-system-v6-empty-sx084-sy096-y40-full-guides.png",
+  "score_json": "tasks/castle-panels/outputs/reviews/20260615T-system-v6-empty-sx084-sy096-y40-score.json"
+}

@@ -1,0 +1,6890 @@
+[
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.84-sy0.92-y+0",
+    "mode": "wall",
+    "score": 34.07,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 2,
+    "right_safe_gap_px": 12,
+    "bottom_safe_gap_px": 44,
+    "painted_bbox": [
+      92,
+      94,
+      755,
+      1755
+    ],
+    "feature_bbox": [
+      93,
+      94,
+      754,
+      1753
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 88.2724,
+    "center_lane_feature_pct": 22.8763,
+    "red_zone_feature_pct": 35.1527,
+    "cutline_feature_pct": 11.8542,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.0,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 140.611,
+      "cutline_feature": 16.596,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 62.567
+    },
+    "notes": [
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.84-sy0.92-y+40",
+    "mode": "wall",
+    "score": 33.49,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 2,
+    "right_safe_gap_px": 12,
+    "bottom_safe_gap_px": 4,
+    "painted_bbox": [
+      92,
+      134,
+      755,
+      1795
+    ],
+    "feature_bbox": [
+      93,
+      134,
+      754,
+      1793
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 91.0384,
+    "center_lane_feature_pct": 22.9474,
+    "red_zone_feature_pct": 35.8216,
+    "cutline_feature_pct": 11.1506,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.0,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 143.286,
+      "cutline_feature": 15.611,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 62.816
+    },
+    "notes": [
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.84-sy0.92-y+20",
+    "mode": "wall",
+    "score": 33.33,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 2,
+    "right_safe_gap_px": 12,
+    "bottom_safe_gap_px": 24,
+    "painted_bbox": [
+      92,
+      114,
+      755,
+      1775
+    ],
+    "feature_bbox": [
+      93,
+      114,
+      754,
+      1773
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 89.6593,
+    "center_lane_feature_pct": 22.9185,
+    "red_zone_feature_pct": 36.0109,
+    "cutline_feature_pct": 11.0554,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.0,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 144.044,
+      "cutline_feature": 15.478,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 62.715
+    },
+    "notes": [
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.82-sy0.92-y+0",
+    "mode": "wall",
+    "score": 32.56,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 10,
+    "right_safe_gap_px": 19,
+    "bottom_safe_gap_px": 44,
+    "painted_bbox": [
+      100,
+      94,
+      748,
+      1755
+    ],
+    "feature_bbox": [
+      101,
+      94,
+      747,
+      1753
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 88.3724,
+    "center_lane_feature_pct": 23.3297,
+    "red_zone_feature_pct": 35.9856,
+    "cutline_feature_pct": 11.9237,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.0,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 143.942,
+      "cutline_feature": 16.693,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 64.154
+    },
+    "notes": [
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.82-sy0.92-y+40",
+    "mode": "wall",
+    "score": 31.87,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 10,
+    "right_safe_gap_px": 19,
+    "bottom_safe_gap_px": 4,
+    "painted_bbox": [
+      100,
+      134,
+      748,
+      1795
+    ],
+    "feature_bbox": [
+      101,
+      134,
+      747,
+      1793
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 91.1362,
+    "center_lane_feature_pct": 23.4075,
+    "red_zone_feature_pct": 36.6923,
+    "cutline_feature_pct": 11.3564,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.0,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 146.769,
+      "cutline_feature": 15.899,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 64.426
+    },
+    "notes": [
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.82-sy0.92-y+20",
+    "mode": "wall",
+    "score": 31.69,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 10,
+    "right_safe_gap_px": 19,
+    "bottom_safe_gap_px": 24,
+    "painted_bbox": [
+      100,
+      114,
+      748,
+      1775
+    ],
+    "feature_bbox": [
+      101,
+      114,
+      747,
+      1773
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 89.7604,
+    "center_lane_feature_pct": 23.3742,
+    "red_zone_feature_pct": 36.8753,
+    "cutline_feature_pct": 11.3409,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.0,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 147.501,
+      "cutline_feature": 15.877,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 64.31
+    },
+    "notes": [
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.84-sy0.96-y+0",
+    "mode": "wall",
+    "score": 30.66,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 2,
+    "right_safe_gap_px": 12,
+    "bottom_safe_gap_px": 7,
+    "painted_bbox": [
+      92,
+      58,
+      755,
+      1792
+    ],
+    "feature_bbox": [
+      93,
+      58,
+      754,
+      1790
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 90.635,
+    "center_lane_feature_pct": 23.8309,
+    "red_zone_feature_pct": 37.1025,
+    "cutline_feature_pct": 12.0202,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.0,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 148.41,
+      "cutline_feature": 16.828,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 65.908
+    },
+    "notes": [
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.78-sy0.92-y+0",
+    "mode": "wall",
+    "score": 29.86,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 26,
+    "right_safe_gap_px": 35,
+    "bottom_safe_gap_px": 44,
+    "painted_bbox": [
+      116,
+      94,
+      731,
+      1755
+    ],
+    "feature_bbox": [
+      117,
+      94,
+      731,
+      1753
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 88.4546,
+    "center_lane_feature_pct": 24.3032,
+    "red_zone_feature_pct": 37.4054,
+    "cutline_feature_pct": 11.8697,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.0,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 149.622,
+      "cutline_feature": 16.618,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 67.561
+    },
+    "notes": [
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.82-sy0.96-y+0",
+    "mode": "wall",
+    "score": 29.21,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 10,
+    "right_safe_gap_px": 19,
+    "bottom_safe_gap_px": 7,
+    "painted_bbox": [
+      100,
+      58,
+      748,
+      1792
+    ],
+    "feature_bbox": [
+      101,
+      58,
+      747,
+      1790
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 90.7372,
+    "center_lane_feature_pct": 24.2932,
+    "red_zone_feature_pct": 37.9101,
+    "cutline_feature_pct": 12.006,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.0,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 151.64,
+      "cutline_feature": 16.808,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 67.526
+    },
+    "notes": [
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.78-sy0.92-y+20",
+    "mode": "wall",
+    "score": 29.1,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 26,
+    "right_safe_gap_px": 35,
+    "bottom_safe_gap_px": 24,
+    "painted_bbox": [
+      116,
+      114,
+      731,
+      1775
+    ],
+    "feature_bbox": [
+      117,
+      114,
+      731,
+      1773
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 89.8438,
+    "center_lane_feature_pct": 24.3532,
+    "red_zone_feature_pct": 38.0616,
+    "cutline_feature_pct": 11.6754,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.0,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 152.246,
+      "cutline_feature": 16.346,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 67.736
+    },
+    "notes": [
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.78-sy0.92-y+40",
+    "mode": "wall",
+    "score": 29.04,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 26,
+    "right_safe_gap_px": 35,
+    "bottom_safe_gap_px": 4,
+    "painted_bbox": [
+      116,
+      134,
+      731,
+      1795
+    ],
+    "feature_bbox": [
+      117,
+      134,
+      731,
+      1793
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 91.2184,
+    "center_lane_feature_pct": 24.3843,
+    "red_zone_feature_pct": 37.9796,
+    "cutline_feature_pct": 11.9816,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.0,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 151.918,
+      "cutline_feature": 16.774,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 67.845
+    },
+    "notes": [
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.74-sy0.92-y+0",
+    "mode": "wall",
+    "score": 26.52,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 42,
+    "right_safe_gap_px": 51,
+    "bottom_safe_gap_px": 44,
+    "painted_bbox": [
+      132,
+      94,
+      716,
+      1755
+    ],
+    "feature_bbox": [
+      133,
+      94,
+      715,
+      1753
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 88.5802,
+    "center_lane_feature_pct": 25.3612,
+    "red_zone_feature_pct": 39.311,
+    "cutline_feature_pct": 11.732,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.0,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 157.244,
+      "cutline_feature": 16.425,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 71.264
+    },
+    "notes": [
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.78-sy0.96-y+0",
+    "mode": "wall",
+    "score": 26.34,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 26,
+    "right_safe_gap_px": 35,
+    "bottom_safe_gap_px": 7,
+    "painted_bbox": [
+      116,
+      58,
+      731,
+      1792
+    ],
+    "feature_bbox": [
+      117,
+      58,
+      731,
+      1790
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 90.7973,
+    "center_lane_feature_pct": 25.3323,
+    "red_zone_feature_pct": 39.3173,
+    "cutline_feature_pct": 12.2144,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.0,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 157.269,
+      "cutline_feature": 17.1,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 71.163
+    },
+    "notes": [
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.74-sy0.92-y+20",
+    "mode": "wall",
+    "score": 25.68,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 42,
+    "right_safe_gap_px": 51,
+    "bottom_safe_gap_px": 24,
+    "painted_bbox": [
+      132,
+      114,
+      716,
+      1775
+    ],
+    "feature_bbox": [
+      133,
+      114,
+      715,
+      1773
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 89.966,
+    "center_lane_feature_pct": 25.4079,
+    "red_zone_feature_pct": 40.0303,
+    "cutline_feature_pct": 11.5686,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.0,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 160.121,
+      "cutline_feature": 16.196,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 71.428
+    },
+    "notes": [
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.74-sy0.92-y+40",
+    "mode": "wall",
+    "score": 25.54,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 42,
+    "right_safe_gap_px": 51,
+    "bottom_safe_gap_px": 4,
+    "painted_bbox": [
+      132,
+      134,
+      716,
+      1795
+    ],
+    "feature_bbox": [
+      133,
+      134,
+      715,
+      1793
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 91.3451,
+    "center_lane_feature_pct": 25.4379,
+    "red_zone_feature_pct": 39.9672,
+    "cutline_feature_pct": 11.9944,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.0,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 159.869,
+      "cutline_feature": 16.792,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 71.533
+    },
+    "notes": [
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.74-sy0.96-y+0",
+    "mode": "wall",
+    "score": 23.12,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 42,
+    "right_safe_gap_px": 51,
+    "bottom_safe_gap_px": 7,
+    "painted_bbox": [
+      132,
+      58,
+      716,
+      1792
+    ],
+    "feature_bbox": [
+      133,
+      58,
+      715,
+      1790
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 90.9384,
+    "center_lane_feature_pct": 26.2958,
+    "red_zone_feature_pct": 41.2544,
+    "cutline_feature_pct": 11.9275,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.0,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 165.018,
+      "cutline_feature": 16.698,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 74.535
+    },
+    "notes": [
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.70-sy0.92-y+0",
+    "mode": "wall",
+    "score": 22.92,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 58,
+    "right_safe_gap_px": 66,
+    "bottom_safe_gap_px": 44,
+    "painted_bbox": [
+      148,
+      94,
+      700,
+      1755
+    ],
+    "feature_bbox": [
+      149,
+      94,
+      700,
+      1753
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 88.6935,
+    "center_lane_feature_pct": 26.4314,
+    "red_zone_feature_pct": 41.3995,
+    "cutline_feature_pct": 11.6638,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.0,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 165.598,
+      "cutline_feature": 16.329,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 75.01
+    },
+    "notes": [
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.70-sy0.92-y+20",
+    "mode": "wall",
+    "score": 22.08,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 58,
+    "right_safe_gap_px": 66,
+    "bottom_safe_gap_px": 24,
+    "painted_bbox": [
+      148,
+      114,
+      700,
+      1775
+    ],
+    "feature_bbox": [
+      149,
+      114,
+      700,
+      1773
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 90.0816,
+    "center_lane_feature_pct": 26.4892,
+    "red_zone_feature_pct": 42.0621,
+    "cutline_feature_pct": 11.6342,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.0,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 168.248,
+      "cutline_feature": 16.288,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 75.212
+    },
+    "notes": [
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.70-sy0.92-y+40",
+    "mode": "wall",
+    "score": 21.98,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 58,
+    "right_safe_gap_px": 66,
+    "bottom_safe_gap_px": 4,
+    "painted_bbox": [
+      148,
+      134,
+      700,
+      1795
+    ],
+    "feature_bbox": [
+      149,
+      134,
+      700,
+      1793
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 91.4629,
+    "center_lane_feature_pct": 26.518,
+    "red_zone_feature_pct": 42.0432,
+    "cutline_feature_pct": 11.8439,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.0,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 168.173,
+      "cutline_feature": 16.581,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 75.313
+    },
+    "notes": [
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.66-sy0.92-y+0",
+    "mode": "wall",
+    "score": 20.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 74,
+    "right_safe_gap_px": 82,
+    "bottom_safe_gap_px": 44,
+    "painted_bbox": [
+      165,
+      94,
+      685,
+      1755
+    ],
+    "feature_bbox": [
+      165,
+      94,
+      684,
+      1753
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 88.8858,
+    "center_lane_feature_pct": 27.4204,
+    "red_zone_feature_pct": 42.9581,
+    "cutline_feature_pct": 11.687,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.0,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 171.832,
+      "cutline_feature": 16.362,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 78.471
+    },
+    "notes": [
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.70-sy0.96-y+0",
+    "mode": "wall",
+    "score": 19.57,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 58,
+    "right_safe_gap_px": 66,
+    "bottom_safe_gap_px": 7,
+    "painted_bbox": [
+      148,
+      58,
+      701,
+      1792
+    ],
+    "feature_bbox": [
+      149,
+      58,
+      700,
+      1790
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 91.0884,
+    "center_lane_feature_pct": 27.3871,
+    "red_zone_feature_pct": 43.2988,
+    "cutline_feature_pct": 11.8143,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.0,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 173.195,
+      "cutline_feature": 16.54,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 78.355
+    },
+    "notes": [
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.66-sy0.92-y+20",
+    "mode": "wall",
+    "score": 18.86,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 74,
+    "right_safe_gap_px": 82,
+    "bottom_safe_gap_px": 24,
+    "painted_bbox": [
+      165,
+      114,
+      685,
+      1775
+    ],
+    "feature_bbox": [
+      165,
+      114,
+      684,
+      1773
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 90.2738,
+    "center_lane_feature_pct": 27.4804,
+    "red_zone_feature_pct": 43.8541,
+    "cutline_feature_pct": 11.6934,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.0,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 175.416,
+      "cutline_feature": 16.371,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 78.681
+    },
+    "notes": [
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.66-sy0.92-y+40",
+    "mode": "wall",
+    "score": 18.73,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 74,
+    "right_safe_gap_px": 82,
+    "bottom_safe_gap_px": 4,
+    "painted_bbox": [
+      165,
+      134,
+      685,
+      1795
+    ],
+    "feature_bbox": [
+      165,
+      134,
+      684,
+      1793
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 91.6641,
+    "center_lane_feature_pct": 27.5116,
+    "red_zone_feature_pct": 43.8604,
+    "cutline_feature_pct": 11.9121,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.0,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 175.442,
+      "cutline_feature": 16.677,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 78.791
+    },
+    "notes": [
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.66-sy0.96-y+0",
+    "mode": "wall",
+    "score": 15.76,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 74,
+    "right_safe_gap_px": 82,
+    "bottom_safe_gap_px": 7,
+    "painted_bbox": [
+      165,
+      58,
+      685,
+      1792
+    ],
+    "feature_bbox": [
+      165,
+      58,
+      684,
+      1790
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 0.0,
+    "bottom_gutter_feature_pct": 0.0,
+    "center_lane_painted_pct": 91.2573,
+    "center_lane_feature_pct": 28.5395,
+    "red_zone_feature_pct": 45.4505,
+    "cutline_feature_pct": 11.8735,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 0.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 0.0,
+      "bottom_gutter_feature": 0.0,
+      "red_zone_feature": 181.802,
+      "cutline_feature": 16.623,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 82.388
+    },
+    "notes": [
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.84-sy0.96-y+20",
+    "mode": "wall",
+    "score": 14.17,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 2,
+    "right_safe_gap_px": 12,
+    "bottom_safe_gap_px": -13,
+    "painted_bbox": [
+      92,
+      78,
+      755,
+      1812
+    ],
+    "feature_bbox": [
+      93,
+      78,
+      754,
+      1810
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 14.4955,
+    "bottom_gutter_feature_pct": 8.9943,
+    "center_lane_painted_pct": 92.0353,
+    "center_lane_feature_pct": 23.9343,
+    "red_zone_feature_pct": 37.3927,
+    "cutline_feature_pct": 11.5776,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 13.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 5.073,
+      "bottom_gutter_feature": 35.977,
+      "red_zone_feature": 149.571,
+      "cutline_feature": 16.209,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 66.27
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.82-sy0.96-y+20",
+    "mode": "wall",
+    "score": 13.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 10,
+    "right_safe_gap_px": 19,
+    "bottom_safe_gap_px": -13,
+    "painted_bbox": [
+      100,
+      78,
+      748,
+      1812
+    ],
+    "feature_bbox": [
+      101,
+      78,
+      747,
+      1810
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 14.1858,
+    "bottom_gutter_feature_pct": 8.7179,
+    "center_lane_painted_pct": 92.1342,
+    "center_lane_feature_pct": 24.4021,
+    "red_zone_feature_pct": 38.2067,
+    "cutline_feature_pct": 11.741,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 13.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 4.965,
+      "bottom_gutter_feature": 34.872,
+      "red_zone_feature": 152.827,
+      "cutline_feature": 16.437,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 67.907
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.78-sy0.96-y+20",
+    "mode": "wall",
+    "score": 10.55,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 26,
+    "right_safe_gap_px": 35,
+    "bottom_safe_gap_px": -13,
+    "painted_bbox": [
+      116,
+      78,
+      731,
+      1812
+    ],
+    "feature_bbox": [
+      117,
+      78,
+      731,
+      1810
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 13.5165,
+    "bottom_gutter_feature_pct": 8.315,
+    "center_lane_painted_pct": 92.1975,
+    "center_lane_feature_pct": 25.4501,
+    "red_zone_feature_pct": 39.7905,
+    "cutline_feature_pct": 11.7475,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 13.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 4.731,
+      "bottom_gutter_feature": 33.26,
+      "red_zone_feature": 159.162,
+      "cutline_feature": 16.447,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 71.575
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.74-sy0.96-y+20",
+    "mode": "wall",
+    "score": 7.94,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 42,
+    "right_safe_gap_px": 51,
+    "bottom_safe_gap_px": -13,
+    "painted_bbox": [
+      132,
+      78,
+      716,
+      1812
+    ],
+    "feature_bbox": [
+      133,
+      78,
+      715,
+      1810
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 12.7972,
+    "bottom_gutter_feature_pct": 7.9121,
+    "center_lane_painted_pct": 92.3409,
+    "center_lane_feature_pct": 26.4303,
+    "red_zone_feature_pct": 41.6141,
+    "cutline_feature_pct": 11.6342,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 13.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 4.479,
+      "bottom_gutter_feature": 31.648,
+      "red_zone_feature": 166.456,
+      "cutline_feature": 16.288,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 75.006
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.84-sy0.92-y+60",
+    "mode": "wall",
+    "score": 7.71,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 2,
+    "right_safe_gap_px": 12,
+    "bottom_safe_gap_px": -16,
+    "painted_bbox": [
+      92,
+      154,
+      755,
+      1815
+    ],
+    "feature_bbox": [
+      93,
+      154,
+      754,
+      1813
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 21.0789,
+    "bottom_gutter_feature_pct": 14.1059,
+    "center_lane_painted_pct": 92.4009,
+    "center_lane_feature_pct": 22.983,
+    "red_zone_feature_pct": 37.134,
+    "cutline_feature_pct": 11.6883,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 16.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 7.378,
+      "bottom_gutter_feature": 56.424,
+      "red_zone_feature": 148.536,
+      "cutline_feature": 16.364,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 62.941
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.82-sy0.92-y+60",
+    "mode": "wall",
+    "score": 6.62,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 10,
+    "right_safe_gap_px": 19,
+    "bottom_safe_gap_px": -16,
+    "painted_bbox": [
+      100,
+      154,
+      748,
+      1815
+    ],
+    "feature_bbox": [
+      101,
+      154,
+      747,
+      1813
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 20.5561,
+    "bottom_gutter_feature_pct": 13.8462,
+    "center_lane_painted_pct": 92.5064,
+    "center_lane_feature_pct": 23.4508,
+    "red_zone_feature_pct": 37.9354,
+    "cutline_feature_pct": 11.6883,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 16.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 7.195,
+      "bottom_gutter_feature": 55.385,
+      "red_zone_feature": 151.742,
+      "cutline_feature": 16.364,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 64.578
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.70-sy0.96-y+20",
+    "mode": "wall",
+    "score": 4.79,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 58,
+    "right_safe_gap_px": 66,
+    "bottom_safe_gap_px": -13,
+    "painted_bbox": [
+      148,
+      78,
+      701,
+      1812
+    ],
+    "feature_bbox": [
+      149,
+      78,
+      700,
+      1810
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 12.1445,
+    "bottom_gutter_feature_pct": 7.5291,
+    "center_lane_painted_pct": 92.4931,
+    "center_lane_feature_pct": 27.5393,
+    "red_zone_feature_pct": 43.6837,
+    "cutline_feature_pct": 11.7024,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 13.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 4.251,
+      "bottom_gutter_feature": 30.116,
+      "red_zone_feature": 174.735,
+      "cutline_feature": 16.383,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 78.888
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.78-sy0.92-y+60",
+    "mode": "wall",
+    "score": 4.69,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 26,
+    "right_safe_gap_px": 35,
+    "bottom_safe_gap_px": -16,
+    "painted_bbox": [
+      116,
+      154,
+      731,
+      1815
+    ],
+    "feature_bbox": [
+      117,
+      154,
+      731,
+      1813
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 19.5704,
+    "bottom_gutter_feature_pct": 13.1702,
+    "center_lane_painted_pct": 92.5865,
+    "center_lane_feature_pct": 24.4288,
+    "red_zone_feature_pct": 39.3551,
+    "cutline_feature_pct": 11.9649,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 16.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 6.85,
+      "bottom_gutter_feature": 52.681,
+      "red_zone_feature": 157.42,
+      "cutline_feature": 16.751,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 68.001
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.74-sy0.92-y+60",
+    "mode": "wall",
+    "score": 2.41,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 42,
+    "right_safe_gap_px": 51,
+    "bottom_safe_gap_px": -16,
+    "painted_bbox": [
+      132,
+      154,
+      716,
+      1815
+    ],
+    "feature_bbox": [
+      133,
+      154,
+      715,
+      1813
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 18.5781,
+    "bottom_gutter_feature_pct": 12.4476,
+    "center_lane_painted_pct": 92.7209,
+    "center_lane_feature_pct": 25.4834,
+    "red_zone_feature_pct": 41.1408,
+    "cutline_feature_pct": 11.9687,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 16.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 6.502,
+      "bottom_gutter_feature": 49.79,
+      "red_zone_feature": 164.563,
+      "cutline_feature": 16.756,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 71.692
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.66-sy0.96-y+20",
+    "mode": "wall",
+    "score": 1.49,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 74,
+    "right_safe_gap_px": 82,
+    "bottom_safe_gap_px": -13,
+    "painted_bbox": [
+      165,
+      78,
+      685,
+      1812
+    ],
+    "feature_bbox": [
+      165,
+      78,
+      684,
+      1810
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 11.5018,
+    "bottom_gutter_feature_pct": 7.0829,
+    "center_lane_painted_pct": 92.6654,
+    "center_lane_feature_pct": 28.6973,
+    "red_zone_feature_pct": 45.8985,
+    "cutline_feature_pct": 11.7616,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 13.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 4.026,
+      "bottom_gutter_feature": 28.332,
+      "red_zone_feature": 183.594,
+      "cutline_feature": 16.466,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 82.941
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.66-sy0.92-y+60",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 74,
+    "right_safe_gap_px": 82,
+    "bottom_safe_gap_px": -16,
+    "painted_bbox": [
+      165,
+      154,
+      685,
+      1815
+    ],
+    "feature_bbox": [
+      165,
+      154,
+      684,
+      1813
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 16.5967,
+    "bottom_gutter_feature_pct": 11.1289,
+    "center_lane_painted_pct": 93.0421,
+    "center_lane_feature_pct": 27.5716,
+    "red_zone_feature_pct": 44.9899,
+    "cutline_feature_pct": 11.7346,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 16.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 5.809,
+      "bottom_gutter_feature": 44.516,
+      "red_zone_feature": 179.96,
+      "cutline_feature": 16.428,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 79.001
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.66-sy0.92-y+80",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 74,
+    "right_safe_gap_px": 82,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      165,
+      174,
+      685,
+      1832
+    ],
+    "feature_bbox": [
+      165,
+      174,
+      684,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 46.8365,
+    "bottom_gutter_feature_pct": 36.044,
+    "center_lane_painted_pct": 94.4379,
+    "center_lane_feature_pct": 27.8816,
+    "red_zone_feature_pct": 45.6777,
+    "cutline_feature_pct": 12.7959,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 16.393,
+      "bottom_gutter_feature": 144.176,
+      "red_zone_feature": 182.711,
+      "cutline_feature": 17.914,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 80.086
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.66-sy0.96-y+40",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 74,
+    "right_safe_gap_px": 82,
+    "bottom_safe_gap_px": -33,
+    "painted_bbox": [
+      165,
+      98,
+      685,
+      1832
+    ],
+    "feature_bbox": [
+      165,
+      98,
+      684,
+      1830
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 41.7349,
+    "bottom_gutter_feature_pct": 31.3886,
+    "center_lane_painted_pct": 94.0501,
+    "center_lane_feature_pct": 28.7596,
+    "red_zone_feature_pct": 47.1984,
+    "cutline_feature_pct": 12.7573,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 33.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 14.607,
+      "bottom_gutter_feature": 125.554,
+      "red_zone_feature": 188.794,
+      "cutline_feature": 17.86,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 83.159
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.66-sy0.96-y+60",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 74,
+    "right_safe_gap_px": 82,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      165,
+      118,
+      685,
+      1832
+    ],
+    "feature_bbox": [
+      165,
+      118,
+      684,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 54.632,
+    "bottom_gutter_feature_pct": 46.1006,
+    "center_lane_painted_pct": 94.9591,
+    "center_lane_feature_pct": 28.5406,
+    "red_zone_feature_pct": 47.9366,
+    "cutline_feature_pct": 16.1199,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 19.121,
+      "bottom_gutter_feature": 184.402,
+      "red_zone_feature": 191.746,
+      "cutline_feature": 22.568,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 82.392
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.66-sy0.96-y+80",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 74,
+    "right_safe_gap_px": 82,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      165,
+      138,
+      685,
+      1832
+    ],
+    "feature_bbox": [
+      165,
+      138,
+      684,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 56.1605,
+    "bottom_gutter_feature_pct": 48.6147,
+    "center_lane_painted_pct": 95.4414,
+    "center_lane_feature_pct": 28.0172,
+    "red_zone_feature_pct": 47.4508,
+    "cutline_feature_pct": 16.8403,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 19.656,
+      "bottom_gutter_feature": 194.459,
+      "red_zone_feature": 189.803,
+      "cutline_feature": 23.576,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 80.56
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.66-sy1.00-y+0",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 74,
+    "right_safe_gap_px": 82,
+    "bottom_safe_gap_px": -30,
+    "painted_bbox": [
+      165,
+      22,
+      685,
+      1828
+    ],
+    "feature_bbox": [
+      165,
+      23,
+      684,
+      1827
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 36.1772,
+    "bottom_gutter_feature_pct": 26.6767,
+    "center_lane_painted_pct": 93.6689,
+    "center_lane_feature_pct": 29.6175,
+    "red_zone_feature_pct": 48.574,
+    "cutline_feature_pct": 12.4846,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 30.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 12.662,
+      "bottom_gutter_feature": 106.707,
+      "red_zone_feature": 194.296,
+      "cutline_feature": 17.478,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 86.161
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.66-sy1.00-y+20",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 74,
+    "right_safe_gap_px": 82,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      165,
+      42,
+      685,
+      1832
+    ],
+    "feature_bbox": [
+      165,
+      43,
+      684,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 54.3656,
+    "bottom_gutter_feature_pct": 45.4945,
+    "center_lane_painted_pct": 94.7657,
+    "center_lane_feature_pct": 29.6142,
+    "red_zone_feature_pct": 49.2996,
+    "cutline_feature_pct": 16.1856,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 19.028,
+      "bottom_gutter_feature": 181.978,
+      "red_zone_feature": 197.198,
+      "cutline_feature": 22.66,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 86.15
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.66-sy1.00-y+40",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 74,
+    "right_safe_gap_px": 82,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      165,
+      62,
+      685,
+      1832
+    ],
+    "feature_bbox": [
+      165,
+      63,
+      684,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 55.8275,
+    "bottom_gutter_feature_pct": 48.618,
+    "center_lane_painted_pct": 95.2836,
+    "center_lane_feature_pct": 29.2085,
+    "red_zone_feature_pct": 50.1577,
+    "cutline_feature_pct": 16.8712,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 19.54,
+      "bottom_gutter_feature": 194.472,
+      "red_zone_feature": 200.631,
+      "cutline_feature": 23.62,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 84.73
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.66-sy1.00-y+60",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 74,
+    "right_safe_gap_px": 82,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      165,
+      82,
+      685,
+      1832
+    ],
+    "feature_bbox": [
+      165,
+      83,
+      684,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 55.954,
+    "bottom_gutter_feature_pct": 47.8655,
+    "center_lane_painted_pct": 95.5181,
+    "center_lane_feature_pct": 28.3373,
+    "red_zone_feature_pct": 48.29,
+    "cutline_feature_pct": 17.1208,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 19.584,
+      "bottom_gutter_feature": 191.462,
+      "red_zone_feature": 193.16,
+      "cutline_feature": 23.969,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 81.681
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.66-sy1.00-y+80",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 74,
+    "right_safe_gap_px": 82,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      165,
+      102,
+      685,
+      1832
+    ],
+    "feature_bbox": [
+      165,
+      103,
+      684,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 56.5201,
+    "bottom_gutter_feature_pct": 47.0763,
+    "center_lane_painted_pct": 95.8848,
+    "center_lane_feature_pct": 27.5616,
+    "red_zone_feature_pct": 47.6843,
+    "cutline_feature_pct": 16.7426,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 19.782,
+      "bottom_gutter_feature": 188.305,
+      "red_zone_feature": 190.737,
+      "cutline_feature": 23.44,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 78.966
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.66-sy1.04-y+0",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 74,
+    "right_safe_gap_px": 82,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      165,
+      0,
+      685,
+      1832
+    ],
+    "feature_bbox": [
+      165,
+      0,
+      684,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 55.5378,
+    "bottom_gutter_feature_pct": 48.3949,
+    "center_lane_painted_pct": 94.978,
+    "center_lane_feature_pct": 30.1298,
+    "red_zone_feature_pct": 49.8044,
+    "cutline_feature_pct": 17.3497,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 19.438,
+      "bottom_gutter_feature": 193.58,
+      "red_zone_feature": 199.218,
+      "cutline_feature": 24.29,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 87.954
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.66-sy1.04-y+20",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 74,
+    "right_safe_gap_px": 82,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      165,
+      6,
+      685,
+      1832
+    ],
+    "feature_bbox": [
+      165,
+      7,
+      684,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 55.8508,
+    "bottom_gutter_feature_pct": 47.8788,
+    "center_lane_painted_pct": 95.2614,
+    "center_lane_feature_pct": 29.3741,
+    "red_zone_feature_pct": 49.5962,
+    "cutline_feature_pct": 17.1246,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 19.548,
+      "bottom_gutter_feature": 191.515,
+      "red_zone_feature": 198.385,
+      "cutline_feature": 23.974,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 85.309
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.66-sy1.04-y+40",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 74,
+    "right_safe_gap_px": 82,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      165,
+      26,
+      685,
+      1832
+    ],
+    "feature_bbox": [
+      165,
+      27,
+      684,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 56.6866,
+    "bottom_gutter_feature_pct": 47.5724,
+    "center_lane_painted_pct": 95.6092,
+    "center_lane_feature_pct": 28.6362,
+    "red_zone_feature_pct": 49.1166,
+    "cutline_feature_pct": 16.5933,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 19.84,
+      "bottom_gutter_feature": 190.29,
+      "red_zone_feature": 196.466,
+      "cutline_feature": 23.231,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 82.727
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.66-sy1.04-y+60",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 74,
+    "right_safe_gap_px": 82,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      165,
+      46,
+      685,
+      1832
+    ],
+    "feature_bbox": [
+      165,
+      47,
+      684,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 56.2138,
+    "bottom_gutter_feature_pct": 45.3413,
+    "center_lane_painted_pct": 95.8915,
+    "center_lane_feature_pct": 28.035,
+    "red_zone_feature_pct": 48.1701,
+    "cutline_feature_pct": 16.8879,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 19.675,
+      "bottom_gutter_feature": 181.365,
+      "red_zone_feature": 192.68,
+      "cutline_feature": 23.643,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 80.623
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.66-sy1.04-y+80",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 74,
+    "right_safe_gap_px": 83,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      165,
+      66,
+      684,
+      1832
+    ],
+    "feature_bbox": [
+      165,
+      67,
+      683,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 55.6077,
+    "bottom_gutter_feature_pct": 43.007,
+    "center_lane_painted_pct": 96.1871,
+    "center_lane_feature_pct": 27.2793,
+    "red_zone_feature_pct": 47.0533,
+    "cutline_feature_pct": 16.1598,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 19.463,
+      "bottom_gutter_feature": 172.028,
+      "red_zone_feature": 188.213,
+      "cutline_feature": 22.624,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 77.978
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.70-sy0.92-y+60",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 58,
+    "right_safe_gap_px": 66,
+    "bottom_safe_gap_px": -16,
+    "painted_bbox": [
+      148,
+      154,
+      700,
+      1815
+    ],
+    "feature_bbox": [
+      149,
+      154,
+      700,
+      1813
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 17.6157,
+    "bottom_gutter_feature_pct": 11.7682,
+    "center_lane_painted_pct": 92.8398,
+    "center_lane_feature_pct": 26.5692,
+    "red_zone_feature_pct": 43.2736,
+    "cutline_feature_pct": 11.8272,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 16.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 6.165,
+      "bottom_gutter_feature": 47.073,
+      "red_zone_feature": 173.094,
+      "cutline_feature": 16.558,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 75.492
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.70-sy0.92-y+80",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 58,
+    "right_safe_gap_px": 66,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      148,
+      174,
+      700,
+      1832
+    ],
+    "feature_bbox": [
+      149,
+      174,
+      700,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 49.7169,
+    "bottom_gutter_feature_pct": 38.1019,
+    "center_lane_painted_pct": 94.2279,
+    "center_lane_feature_pct": 26.8748,
+    "red_zone_feature_pct": 43.7153,
+    "cutline_feature_pct": 13.1754,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 17.401,
+      "bottom_gutter_feature": 152.408,
+      "red_zone_feature": 174.861,
+      "cutline_feature": 18.446,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 76.562
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.70-sy0.96-y+40",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 58,
+    "right_safe_gap_px": 66,
+    "bottom_safe_gap_px": -33,
+    "painted_bbox": [
+      148,
+      98,
+      701,
+      1832
+    ],
+    "feature_bbox": [
+      149,
+      98,
+      700,
+      1830
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 44.2557,
+    "bottom_gutter_feature_pct": 33.36,
+    "center_lane_painted_pct": 93.8789,
+    "center_lane_feature_pct": 27.5905,
+    "red_zone_feature_pct": 44.8889,
+    "cutline_feature_pct": 12.6852,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 33.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 15.489,
+      "bottom_gutter_feature": 133.44,
+      "red_zone_feature": 179.556,
+      "cutline_feature": 17.759,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 79.067
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.70-sy0.96-y+60",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 58,
+    "right_safe_gap_px": 66,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      148,
+      118,
+      701,
+      1832
+    ],
+    "feature_bbox": [
+      149,
+      118,
+      700,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 58.0053,
+    "bottom_gutter_feature_pct": 48.8944,
+    "center_lane_painted_pct": 94.7991,
+    "center_lane_feature_pct": 27.3693,
+    "red_zone_feature_pct": 45.7913,
+    "cutline_feature_pct": 16.3232,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 20.302,
+      "bottom_gutter_feature": 195.578,
+      "red_zone_feature": 183.165,
+      "cutline_feature": 22.852,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 78.293
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.70-sy0.96-y+80",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 58,
+    "right_safe_gap_px": 66,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      148,
+      138,
+      701,
+      1832
+    ],
+    "feature_bbox": [
+      149,
+      138,
+      700,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 59.6903,
+    "bottom_gutter_feature_pct": 51.5751,
+    "center_lane_painted_pct": 95.268,
+    "center_lane_feature_pct": 26.8448,
+    "red_zone_feature_pct": 45.3306,
+    "cutline_feature_pct": 17.3536,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 20.892,
+      "bottom_gutter_feature": 206.3,
+      "red_zone_feature": 181.322,
+      "cutline_feature": 24.295,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 76.457
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.70-sy1.00-y+0",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 58,
+    "right_safe_gap_px": 66,
+    "bottom_safe_gap_px": -30,
+    "painted_bbox": [
+      148,
+      22,
+      701,
+      1828
+    ],
+    "feature_bbox": [
+      149,
+      23,
+      700,
+      1827
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 38.4182,
+    "bottom_gutter_feature_pct": 28.2085,
+    "center_lane_painted_pct": 93.4877,
+    "center_lane_feature_pct": 28.4473,
+    "red_zone_feature_pct": 46.2519,
+    "cutline_feature_pct": 12.3971,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 30.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 13.446,
+      "bottom_gutter_feature": 112.834,
+      "red_zone_feature": 185.008,
+      "cutline_feature": 17.356,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 82.066
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.70-sy1.00-y+20",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 58,
+    "right_safe_gap_px": 66,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      148,
+      42,
+      701,
+      1832
+    ],
+    "feature_bbox": [
+      149,
+      43,
+      700,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 57.699,
+    "bottom_gutter_feature_pct": 48.1485,
+    "center_lane_painted_pct": 94.5868,
+    "center_lane_feature_pct": 28.4173,
+    "red_zone_feature_pct": 47.2299,
+    "cutline_feature_pct": 16.3785,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 20.195,
+      "bottom_gutter_feature": 192.594,
+      "red_zone_feature": 188.92,
+      "cutline_feature": 22.93,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 81.961
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.70-sy1.00-y+40",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 58,
+    "right_safe_gap_px": 66,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      148,
+      62,
+      701,
+      1832
+    ],
+    "feature_bbox": [
+      149,
+      63,
+      700,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 59.2308,
+    "bottom_gutter_feature_pct": 51.5751,
+    "center_lane_painted_pct": 95.1158,
+    "center_lane_feature_pct": 28.0228,
+    "red_zone_feature_pct": 48.2521,
+    "cutline_feature_pct": 17.0963,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 20.731,
+      "bottom_gutter_feature": 206.3,
+      "red_zone_feature": 193.008,
+      "cutline_feature": 23.935,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 80.58
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.70-sy1.00-y+60",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 58,
+    "right_safe_gap_px": 66,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      148,
+      82,
+      701,
+      1832
+    ],
+    "feature_bbox": [
+      149,
+      83,
+      700,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 59.3973,
+    "bottom_gutter_feature_pct": 50.9191,
+    "center_lane_painted_pct": 95.3581,
+    "center_lane_feature_pct": 27.1571,
+    "red_zone_feature_pct": 46.214,
+    "cutline_feature_pct": 17.3639,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 20.789,
+      "bottom_gutter_feature": 203.676,
+      "red_zone_feature": 184.856,
+      "cutline_feature": 24.309,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 77.55
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.70-sy1.00-y+80",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 58,
+    "right_safe_gap_px": 66,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      148,
+      102,
+      701,
+      1832
+    ],
+    "feature_bbox": [
+      149,
+      103,
+      700,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 59.9734,
+    "bottom_gutter_feature_pct": 50.0599,
+    "center_lane_painted_pct": 95.7081,
+    "center_lane_feature_pct": 26.3758,
+    "red_zone_feature_pct": 45.4442,
+    "cutline_feature_pct": 17.1516,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 20.991,
+      "bottom_gutter_feature": 200.24,
+      "red_zone_feature": 181.777,
+      "cutline_feature": 24.012,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 74.815
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.70-sy1.04-y+0",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 58,
+    "right_safe_gap_px": 66,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      148,
+      0,
+      701,
+      1832
+    ],
+    "feature_bbox": [
+      149,
+      0,
+      700,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 58.9444,
+    "bottom_gutter_feature_pct": 51.2088,
+    "center_lane_painted_pct": 94.7846,
+    "center_lane_feature_pct": 28.8718,
+    "red_zone_feature_pct": 47.6401,
+    "cutline_feature_pct": 17.6238,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 20.631,
+      "bottom_gutter_feature": 204.835,
+      "red_zone_feature": 190.56,
+      "cutline_feature": 24.673,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 83.551
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.70-sy1.04-y+20",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 58,
+    "right_safe_gap_px": 66,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      148,
+      6,
+      701,
+      1832
+    ],
+    "feature_bbox": [
+      149,
+      7,
+      700,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 59.2874,
+    "bottom_gutter_feature_pct": 50.7659,
+    "center_lane_painted_pct": 95.0702,
+    "center_lane_feature_pct": 28.1261,
+    "red_zone_feature_pct": 47.6653,
+    "cutline_feature_pct": 17.3317,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 20.751,
+      "bottom_gutter_feature": 203.064,
+      "red_zone_feature": 190.661,
+      "cutline_feature": 24.264,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 80.941
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.70-sy1.04-y+40",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 58,
+    "right_safe_gap_px": 66,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      148,
+      26,
+      701,
+      1832
+    ],
+    "feature_bbox": [
+      149,
+      27,
+      700,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 60.1565,
+    "bottom_gutter_feature_pct": 50.5894,
+    "center_lane_painted_pct": 95.4147,
+    "center_lane_feature_pct": 27.3615,
+    "red_zone_feature_pct": 47.0533,
+    "cutline_feature_pct": 16.812,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 21.055,
+      "bottom_gutter_feature": 202.358,
+      "red_zone_feature": 188.213,
+      "cutline_feature": 23.537,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 78.265
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.70-sy1.04-y+60",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 58,
+    "right_safe_gap_px": 66,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      148,
+      46,
+      701,
+      1832
+    ],
+    "feature_bbox": [
+      149,
+      47,
+      700,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 59.6603,
+    "bottom_gutter_feature_pct": 48.1019,
+    "center_lane_painted_pct": 95.6937,
+    "center_lane_feature_pct": 26.7592,
+    "red_zone_feature_pct": 46.1257,
+    "cutline_feature_pct": 17.0783,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 20.881,
+      "bottom_gutter_feature": 192.408,
+      "red_zone_feature": 184.503,
+      "cutline_feature": 23.91,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 76.157
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.70-sy1.04-y+80",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 58,
+    "right_safe_gap_px": 67,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      148,
+      66,
+      699,
+      1832
+    ],
+    "feature_bbox": [
+      149,
+      67,
+      699,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 59.031,
+    "bottom_gutter_feature_pct": 45.5778,
+    "center_lane_painted_pct": 95.9882,
+    "center_lane_feature_pct": 26.0046,
+    "red_zone_feature_pct": 44.8574,
+    "cutline_feature_pct": 16.3618,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 20.661,
+      "bottom_gutter_feature": 182.311,
+      "red_zone_feature": 179.43,
+      "cutline_feature": 22.907,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 73.516
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.74-sy0.92-y+80",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 42,
+    "right_safe_gap_px": 51,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      132,
+      174,
+      716,
+      1832
+    ],
+    "feature_bbox": [
+      133,
+      174,
+      715,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 52.4975,
+    "bottom_gutter_feature_pct": 40.333,
+    "center_lane_painted_pct": 94.1067,
+    "center_lane_feature_pct": 25.7857,
+    "red_zone_feature_pct": 41.7024,
+    "cutline_feature_pct": 13.2667,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 18.374,
+      "bottom_gutter_feature": 161.332,
+      "red_zone_feature": 166.81,
+      "cutline_feature": 18.573,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 72.75
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.74-sy0.96-y+40",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 42,
+    "right_safe_gap_px": 51,
+    "bottom_safe_gap_px": -33,
+    "painted_bbox": [
+      132,
+      98,
+      716,
+      1832
+    ],
+    "feature_bbox": [
+      133,
+      98,
+      715,
+      1830
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 46.7199,
+    "bottom_gutter_feature_pct": 35.1815,
+    "center_lane_painted_pct": 93.7233,
+    "center_lane_feature_pct": 26.4825,
+    "red_zone_feature_pct": 42.7057,
+    "cutline_feature_pct": 12.8383,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 33.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 16.352,
+      "bottom_gutter_feature": 140.726,
+      "red_zone_feature": 170.823,
+      "cutline_feature": 17.974,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 75.189
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.74-sy0.96-y+60",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 42,
+    "right_safe_gap_px": 51,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      132,
+      118,
+      716,
+      1832
+    ],
+    "feature_bbox": [
+      133,
+      118,
+      715,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 61.2654,
+    "bottom_gutter_feature_pct": 51.6717,
+    "center_lane_painted_pct": 94.6379,
+    "center_lane_feature_pct": 26.2902,
+    "red_zone_feature_pct": 43.2799,
+    "cutline_feature_pct": 16.6474,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 21.443,
+      "bottom_gutter_feature": 206.687,
+      "red_zone_feature": 173.12,
+      "cutline_feature": 23.306,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 74.516
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.74-sy0.96-y+80",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 42,
+    "right_safe_gap_px": 51,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      132,
+      138,
+      716,
+      1832
+    ],
+    "feature_bbox": [
+      133,
+      138,
+      715,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 63.0236,
+    "bottom_gutter_feature_pct": 54.4888,
+    "center_lane_painted_pct": 95.1291,
+    "center_lane_feature_pct": 25.7757,
+    "red_zone_feature_pct": 42.8571,
+    "cutline_feature_pct": 17.7382,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 22.058,
+      "bottom_gutter_feature": 217.955,
+      "red_zone_feature": 171.428,
+      "cutline_feature": 24.833,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 72.715
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.74-sy1.00-y+0",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 42,
+    "right_safe_gap_px": 51,
+    "bottom_safe_gap_px": -30,
+    "painted_bbox": [
+      132,
+      22,
+      716,
+      1828
+    ],
+    "feature_bbox": [
+      133,
+      23,
+      715,
+      1827
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 40.4562,
+    "bottom_gutter_feature_pct": 29.7702,
+    "center_lane_painted_pct": 93.3488,
+    "center_lane_feature_pct": 27.2904,
+    "red_zone_feature_pct": 43.8415,
+    "cutline_feature_pct": 12.6775,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 30.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 14.16,
+      "bottom_gutter_feature": 119.081,
+      "red_zone_feature": 175.366,
+      "cutline_feature": 17.748,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 78.016
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.74-sy1.00-y+20",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 42,
+    "right_safe_gap_px": 51,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      132,
+      42,
+      716,
+      1832
+    ],
+    "feature_bbox": [
+      133,
+      43,
+      715,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 60.9457,
+    "bottom_gutter_feature_pct": 50.9324,
+    "center_lane_painted_pct": 94.4546,
+    "center_lane_feature_pct": 27.2415,
+    "red_zone_feature_pct": 44.706,
+    "cutline_feature_pct": 16.6602,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 21.331,
+      "bottom_gutter_feature": 203.73,
+      "red_zone_feature": 178.824,
+      "cutline_feature": 23.324,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 77.845
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.74-sy1.00-y+40",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 42,
+    "right_safe_gap_px": 51,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      132,
+      62,
+      716,
+      1832
+    ],
+    "feature_bbox": [
+      133,
+      63,
+      715,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 62.6007,
+    "bottom_gutter_feature_pct": 54.5788,
+    "center_lane_painted_pct": 95.0058,
+    "center_lane_feature_pct": 26.847,
+    "red_zone_feature_pct": 45.7029,
+    "cutline_feature_pct": 17.3176,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 21.91,
+      "bottom_gutter_feature": 218.315,
+      "red_zone_feature": 182.812,
+      "cutline_feature": 24.245,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 76.465
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.74-sy1.00-y+60",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 42,
+    "right_safe_gap_px": 51,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      132,
+      82,
+      716,
+      1832
+    ],
+    "feature_bbox": [
+      133,
+      83,
+      715,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 62.7706,
+    "bottom_gutter_feature_pct": 53.8595,
+    "center_lane_painted_pct": 95.2514,
+    "center_lane_feature_pct": 25.9891,
+    "red_zone_feature_pct": 43.6522,
+    "cutline_feature_pct": 17.7961,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 21.97,
+      "bottom_gutter_feature": 215.438,
+      "red_zone_feature": 174.609,
+      "cutline_feature": 24.915,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 73.462
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.74-sy1.00-y+80",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 42,
+    "right_safe_gap_px": 51,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      132,
+      102,
+      716,
+      1832
+    ],
+    "feature_bbox": [
+      133,
+      103,
+      715,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 63.3833,
+    "bottom_gutter_feature_pct": 52.8538,
+    "center_lane_painted_pct": 95.587,
+    "center_lane_feature_pct": 25.1934,
+    "red_zone_feature_pct": 42.9581,
+    "cutline_feature_pct": 17.6328,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 22.184,
+      "bottom_gutter_feature": 211.415,
+      "red_zone_feature": 171.832,
+      "cutline_feature": 24.686,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 70.677
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.74-sy1.04-y+0",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 42,
+    "right_safe_gap_px": 51,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      132,
+      0,
+      716,
+      1832
+    ],
+    "feature_bbox": [
+      133,
+      0,
+      715,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 62.2744,
+    "bottom_gutter_feature_pct": 54.1425,
+    "center_lane_painted_pct": 94.6757,
+    "center_lane_feature_pct": 27.7538,
+    "red_zone_feature_pct": 45.3306,
+    "cutline_feature_pct": 18.1743,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 21.796,
+      "bottom_gutter_feature": 216.57,
+      "red_zone_feature": 181.322,
+      "cutline_feature": 25.444,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 79.638
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.74-sy1.04-y+20",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 42,
+    "right_safe_gap_px": 51,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      132,
+      6,
+      716,
+      1832
+    ],
+    "feature_bbox": [
+      133,
+      7,
+      715,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 62.6107,
+    "bottom_gutter_feature_pct": 53.6031,
+    "center_lane_painted_pct": 94.9669,
+    "center_lane_feature_pct": 27.0148,
+    "red_zone_feature_pct": 45.2486,
+    "cutline_feature_pct": 17.782,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 21.914,
+      "bottom_gutter_feature": 214.412,
+      "red_zone_feature": 180.994,
+      "cutline_feature": 24.895,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 77.052
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.74-sy1.04-y+40",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 42,
+    "right_safe_gap_px": 51,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      132,
+      26,
+      716,
+      1832
+    ],
+    "feature_bbox": [
+      133,
+      27,
+      715,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 63.5631,
+    "bottom_gutter_feature_pct": 53.3833,
+    "center_lane_painted_pct": 95.3114,
+    "center_lane_feature_pct": 26.2158,
+    "red_zone_feature_pct": 44.7564,
+    "cutline_feature_pct": 17.0873,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 22.247,
+      "bottom_gutter_feature": 213.533,
+      "red_zone_feature": 179.026,
+      "cutline_feature": 23.922,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 74.255
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.74-sy1.04-y+60",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 42,
+    "right_safe_gap_px": 51,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      132,
+      46,
+      716,
+      1832
+    ],
+    "feature_bbox": [
+      133,
+      47,
+      715,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 63.0669,
+    "bottom_gutter_feature_pct": 50.7759,
+    "center_lane_painted_pct": 95.5748,
+    "center_lane_feature_pct": 25.5957,
+    "red_zone_feature_pct": 43.709,
+    "cutline_feature_pct": 17.5646,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 22.073,
+      "bottom_gutter_feature": 203.104,
+      "red_zone_feature": 174.836,
+      "cutline_feature": 24.59,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 72.085
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.74-sy1.04-y+80",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 42,
+    "right_safe_gap_px": 52,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      132,
+      66,
+      714,
+      1832
+    ],
+    "feature_bbox": [
+      133,
+      67,
+      714,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 62.3576,
+    "bottom_gutter_feature_pct": 48.0919,
+    "center_lane_painted_pct": 95.8604,
+    "center_lane_feature_pct": 24.8511,
+    "red_zone_feature_pct": 42.4028,
+    "cutline_feature_pct": 16.7902,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 21.825,
+      "bottom_gutter_feature": 192.368,
+      "red_zone_feature": 169.611,
+      "cutline_feature": 23.506,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 69.479
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.78-sy0.92-y+80",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 26,
+    "right_safe_gap_px": 35,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      116,
+      174,
+      731,
+      1832
+    ],
+    "feature_bbox": [
+      117,
+      174,
+      731,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 55.2514,
+    "bottom_gutter_feature_pct": 42.5941,
+    "center_lane_painted_pct": 93.9723,
+    "center_lane_feature_pct": 24.7166,
+    "red_zone_feature_pct": 39.8157,
+    "cutline_feature_pct": 13.2886,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 19.338,
+      "bottom_gutter_feature": 170.376,
+      "red_zone_feature": 159.263,
+      "cutline_feature": 18.604,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 69.008
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.78-sy0.96-y+40",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 26,
+    "right_safe_gap_px": 35,
+    "bottom_safe_gap_px": -33,
+    "painted_bbox": [
+      116,
+      98,
+      731,
+      1832
+    ],
+    "feature_bbox": [
+      117,
+      98,
+      731,
+      1830
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 49.2541,
+    "bottom_gutter_feature_pct": 37.1129,
+    "center_lane_painted_pct": 93.58,
+    "center_lane_feature_pct": 25.4934,
+    "red_zone_feature_pct": 40.7749,
+    "cutline_feature_pct": 13.0287,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 33.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 17.239,
+      "bottom_gutter_feature": 148.452,
+      "red_zone_feature": 163.1,
+      "cutline_feature": 18.24,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 71.727
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.78-sy0.96-y+60",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 26,
+    "right_safe_gap_px": 35,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      116,
+      118,
+      731,
+      1832
+    ],
+    "feature_bbox": [
+      117,
+      118,
+      731,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 64.5588,
+    "bottom_gutter_feature_pct": 54.5088,
+    "center_lane_painted_pct": 94.4979,
+    "center_lane_feature_pct": 25.2978,
+    "red_zone_feature_pct": 41.368,
+    "cutline_feature_pct": 17.0281,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 22.596,
+      "bottom_gutter_feature": 218.035,
+      "red_zone_feature": 165.472,
+      "cutline_feature": 23.839,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 71.042
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.78-sy0.96-y+80",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 26,
+    "right_safe_gap_px": 35,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      116,
+      138,
+      731,
+      1832
+    ],
+    "feature_bbox": [
+      117,
+      138,
+      731,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 66.3869,
+    "bottom_gutter_feature_pct": 57.4392,
+    "center_lane_painted_pct": 94.9847,
+    "center_lane_feature_pct": 24.7911,
+    "red_zone_feature_pct": 41.2544,
+    "cutline_feature_pct": 18.0303,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 23.235,
+      "bottom_gutter_feature": 229.757,
+      "red_zone_feature": 165.018,
+      "cutline_feature": 25.242,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 69.269
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.78-sy1.00-y+0",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 26,
+    "right_safe_gap_px": 35,
+    "bottom_safe_gap_px": -30,
+    "painted_bbox": [
+      116,
+      22,
+      731,
+      1828
+    ],
+    "feature_bbox": [
+      117,
+      23,
+      731,
+      1827
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 42.7339,
+    "bottom_gutter_feature_pct": 31.372,
+    "center_lane_painted_pct": 93.1999,
+    "center_lane_feature_pct": 26.3236,
+    "red_zone_feature_pct": 42.0999,
+    "cutline_feature_pct": 12.8808,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 30.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 14.957,
+      "bottom_gutter_feature": 125.488,
+      "red_zone_feature": 168.4,
+      "cutline_feature": 18.033,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 74.633
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.78-sy1.00-y+20",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 26,
+    "right_safe_gap_px": 35,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      116,
+      42,
+      731,
+      1832
+    ],
+    "feature_bbox": [
+      117,
+      43,
+      731,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 64.2258,
+    "bottom_gutter_feature_pct": 53.5298,
+    "center_lane_painted_pct": 94.3023,
+    "center_lane_feature_pct": 26.2569,
+    "red_zone_feature_pct": 42.6489,
+    "cutline_feature_pct": 17.0745,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 22.479,
+      "bottom_gutter_feature": 214.119,
+      "red_zone_feature": 170.596,
+      "cutline_feature": 23.904,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 74.399
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.78-sy1.00-y+40",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 26,
+    "right_safe_gap_px": 35,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      116,
+      62,
+      731,
+      1832
+    ],
+    "feature_bbox": [
+      117,
+      63,
+      731,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 65.9607,
+    "bottom_gutter_feature_pct": 57.3526,
+    "center_lane_painted_pct": 94.8524,
+    "center_lane_feature_pct": 25.8602,
+    "red_zone_feature_pct": 43.8289,
+    "cutline_feature_pct": 17.7472,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 23.086,
+      "bottom_gutter_feature": 229.41,
+      "red_zone_feature": 175.316,
+      "cutline_feature": 24.846,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 73.011
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.78-sy1.00-y+60",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 26,
+    "right_safe_gap_px": 35,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      116,
+      82,
+      731,
+      1832
+    ],
+    "feature_bbox": [
+      117,
+      83,
+      731,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 66.1139,
+    "bottom_gutter_feature_pct": 56.6067,
+    "center_lane_painted_pct": 95.0969,
+    "center_lane_feature_pct": 25.0022,
+    "red_zone_feature_pct": 42.0747,
+    "cutline_feature_pct": 18.0946,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 23.14,
+      "bottom_gutter_feature": 226.427,
+      "red_zone_feature": 168.299,
+      "cutline_feature": 25.332,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 70.008
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.78-sy1.00-y+80",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 26,
+    "right_safe_gap_px": 35,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      116,
+      102,
+      731,
+      1832
+    ],
+    "feature_bbox": [
+      117,
+      103,
+      731,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 66.7766,
+    "bottom_gutter_feature_pct": 55.5911,
+    "center_lane_painted_pct": 95.4225,
+    "center_lane_feature_pct": 24.2021,
+    "red_zone_feature_pct": 41.1976,
+    "cutline_feature_pct": 18.0444,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 23.372,
+      "bottom_gutter_feature": 222.364,
+      "red_zone_feature": 164.79,
+      "cutline_feature": 25.262,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 67.207
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.78-sy1.04-y+0",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 26,
+    "right_safe_gap_px": 35,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      116,
+      0,
+      731,
+      1832
+    ],
+    "feature_bbox": [
+      117,
+      0,
+      731,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 65.6477,
+    "bottom_gutter_feature_pct": 57.0529,
+    "center_lane_painted_pct": 94.5168,
+    "center_lane_feature_pct": 26.7092,
+    "red_zone_feature_pct": 42.9013,
+    "cutline_feature_pct": 18.6413,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 22.977,
+      "bottom_gutter_feature": 228.212,
+      "red_zone_feature": 171.605,
+      "cutline_feature": 26.098,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 75.982
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.78-sy1.04-y+20",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 26,
+    "right_safe_gap_px": 35,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      116,
+      6,
+      731,
+      1832
+    ],
+    "feature_bbox": [
+      117,
+      7,
+      731,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 65.984,
+    "bottom_gutter_feature_pct": 56.4535,
+    "center_lane_painted_pct": 94.8135,
+    "center_lane_feature_pct": 25.988,
+    "red_zone_feature_pct": 42.9266,
+    "cutline_feature_pct": 18.3017,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 23.094,
+      "bottom_gutter_feature": 225.814,
+      "red_zone_feature": 171.706,
+      "cutline_feature": 25.622,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 73.458
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.78-sy1.04-y+40",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 26,
+    "right_safe_gap_px": 35,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      116,
+      26,
+      731,
+      1832
+    ],
+    "feature_bbox": [
+      117,
+      27,
+      731,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 66.9297,
+    "bottom_gutter_feature_pct": 56.2238,
+    "center_lane_painted_pct": 95.1603,
+    "center_lane_feature_pct": 25.1723,
+    "red_zone_feature_pct": 42.7688,
+    "cutline_feature_pct": 17.5041,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 23.425,
+      "bottom_gutter_feature": 224.895,
+      "red_zone_feature": 171.075,
+      "cutline_feature": 24.506,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 70.603
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.78-sy1.04-y+60",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 26,
+    "right_safe_gap_px": 35,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      116,
+      46,
+      731,
+      1832
+    ],
+    "feature_bbox": [
+      117,
+      47,
+      731,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 66.4069,
+    "bottom_gutter_feature_pct": 53.5465,
+    "center_lane_painted_pct": 95.427,
+    "center_lane_feature_pct": 24.5444,
+    "red_zone_feature_pct": 41.5699,
+    "cutline_feature_pct": 18.0277,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 23.242,
+      "bottom_gutter_feature": 214.186,
+      "red_zone_feature": 166.28,
+      "cutline_feature": 25.239,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 68.405
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.78-sy1.04-y+80",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 26,
+    "right_safe_gap_px": 37,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      116,
+      66,
+      730,
+      1832
+    ],
+    "feature_bbox": [
+      117,
+      67,
+      729,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 65.6843,
+    "bottom_gutter_feature_pct": 50.7925,
+    "center_lane_painted_pct": 95.707,
+    "center_lane_feature_pct": 23.7887,
+    "red_zone_feature_pct": 40.1817,
+    "cutline_feature_pct": 17.1851,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 22.99,
+      "bottom_gutter_feature": 203.17,
+      "red_zone_feature": 160.727,
+      "cutline_feature": 24.059,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 65.76
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.82-sy0.92-y+80",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 10,
+    "right_safe_gap_px": 19,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      100,
+      174,
+      748,
+      1832
+    ],
+    "feature_bbox": [
+      101,
+      174,
+      747,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 58.1485,
+    "bottom_gutter_feature_pct": 44.7219,
+    "center_lane_painted_pct": 93.8878,
+    "center_lane_feature_pct": 23.7253,
+    "red_zone_feature_pct": 38.579,
+    "cutline_feature_pct": 13.322,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 20.352,
+      "bottom_gutter_feature": 178.888,
+      "red_zone_feature": 154.316,
+      "cutline_feature": 18.651,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 65.539
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.82-sy0.96-y+40",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 10,
+    "right_safe_gap_px": 19,
+    "bottom_safe_gap_px": -33,
+    "painted_bbox": [
+      100,
+      98,
+      748,
+      1832
+    ],
+    "feature_bbox": [
+      101,
+      98,
+      747,
+      1830
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 51.7949,
+    "bottom_gutter_feature_pct": 39.021,
+    "center_lane_painted_pct": 93.5122,
+    "center_lane_feature_pct": 24.4443,
+    "red_zone_feature_pct": 39.128,
+    "cutline_feature_pct": 12.41,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 33.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 18.128,
+      "bottom_gutter_feature": 156.084,
+      "red_zone_feature": 156.512,
+      "cutline_feature": 17.374,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 68.055
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.82-sy0.96-y+60",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 10,
+    "right_safe_gap_px": 19,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      100,
+      118,
+      748,
+      1832
+    ],
+    "feature_bbox": [
+      101,
+      118,
+      747,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 67.9287,
+    "bottom_gutter_feature_pct": 57.2194,
+    "center_lane_painted_pct": 94.429,
+    "center_lane_feature_pct": 24.2421,
+    "red_zone_feature_pct": 39.8284,
+    "cutline_feature_pct": 16.9458,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 23.775,
+      "bottom_gutter_feature": 228.878,
+      "red_zone_feature": 159.314,
+      "cutline_feature": 23.724,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 67.347
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.82-sy0.96-y+80",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 10,
+    "right_safe_gap_px": 19,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      100,
+      138,
+      748,
+      1832
+    ],
+    "feature_bbox": [
+      101,
+      138,
+      747,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 69.8901,
+    "bottom_gutter_feature_pct": 60.2897,
+    "center_lane_painted_pct": 94.908,
+    "center_lane_feature_pct": 23.7398,
+    "red_zone_feature_pct": 40.005,
+    "cutline_feature_pct": 18.1203,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 24.462,
+      "bottom_gutter_feature": 241.159,
+      "red_zone_feature": 160.02,
+      "cutline_feature": 25.368,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 65.589
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.82-sy1.00-y+0",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 10,
+    "right_safe_gap_px": 19,
+    "bottom_safe_gap_px": -30,
+    "painted_bbox": [
+      100,
+      22,
+      748,
+      1828
+    ],
+    "feature_bbox": [
+      101,
+      23,
+      747,
+      1827
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 44.8818,
+    "bottom_gutter_feature_pct": 33.1002,
+    "center_lane_painted_pct": 93.0966,
+    "center_lane_feature_pct": 25.2212,
+    "red_zone_feature_pct": 40.2953,
+    "cutline_feature_pct": 12.6968,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 30.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 15.709,
+      "bottom_gutter_feature": 132.401,
+      "red_zone_feature": 161.181,
+      "cutline_feature": 17.776,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 70.774
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.82-sy1.00-y+20",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 10,
+    "right_safe_gap_px": 19,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      100,
+      42,
+      748,
+      1832
+    ],
+    "feature_bbox": [
+      101,
+      43,
+      747,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 67.5458,
+    "bottom_gutter_feature_pct": 56.3903,
+    "center_lane_painted_pct": 94.2034,
+    "center_lane_feature_pct": 25.15,
+    "red_zone_feature_pct": 40.9642,
+    "cutline_feature_pct": 17.499,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 23.641,
+      "bottom_gutter_feature": 225.561,
+      "red_zone_feature": 163.857,
+      "cutline_feature": 24.499,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 70.525
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.82-sy1.00-y+40",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 10,
+    "right_safe_gap_px": 19,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      100,
+      62,
+      748,
+      1832
+    ],
+    "feature_bbox": [
+      101,
+      63,
+      747,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 69.3706,
+    "bottom_gutter_feature_pct": 60.2964,
+    "center_lane_painted_pct": 94.7435,
+    "center_lane_feature_pct": 24.7511,
+    "red_zone_feature_pct": 42.1504,
+    "cutline_feature_pct": 17.8013,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 24.28,
+      "bottom_gutter_feature": 241.186,
+      "red_zone_feature": 168.602,
+      "cutline_feature": 24.922,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 69.129
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.82-sy1.00-y+60",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 10,
+    "right_safe_gap_px": 19,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      100,
+      82,
+      748,
+      1832
+    ],
+    "feature_bbox": [
+      101,
+      83,
+      747,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 69.5738,
+    "bottom_gutter_feature_pct": 59.5571,
+    "center_lane_painted_pct": 94.9913,
+    "center_lane_feature_pct": 23.9076,
+    "red_zone_feature_pct": 40.3836,
+    "cutline_feature_pct": 17.8656,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 24.351,
+      "bottom_gutter_feature": 238.228,
+      "red_zone_feature": 161.534,
+      "cutline_feature": 25.012,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 66.177
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.82-sy1.00-y+80",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 10,
+    "right_safe_gap_px": 19,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      100,
+      102,
+      748,
+      1832
+    ],
+    "feature_bbox": [
+      101,
+      103,
+      747,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 70.2697,
+    "bottom_gutter_feature_pct": 58.5748,
+    "center_lane_painted_pct": 95.3325,
+    "center_lane_feature_pct": 23.1163,
+    "red_zone_feature_pct": 39.3614,
+    "cutline_feature_pct": 18.1267,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 24.594,
+      "bottom_gutter_feature": 234.299,
+      "red_zone_feature": 157.446,
+      "cutline_feature": 25.377,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 63.407
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.82-sy1.04-y+0",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 10,
+    "right_safe_gap_px": 19,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      100,
+      0,
+      748,
+      1832
+    ],
+    "feature_bbox": [
+      101,
+      0,
+      747,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 69.031,
+    "bottom_gutter_feature_pct": 60.0133,
+    "center_lane_painted_pct": 94.4057,
+    "center_lane_feature_pct": 25.6479,
+    "red_zone_feature_pct": 41.3301,
+    "cutline_feature_pct": 18.8343,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 24.161,
+      "bottom_gutter_feature": 240.053,
+      "red_zone_feature": 165.32,
+      "cutline_feature": 26.368,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 72.268
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.82-sy1.04-y+20",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 10,
+    "right_safe_gap_px": 19,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      100,
+      6,
+      748,
+      1832
+    ],
+    "feature_bbox": [
+      101,
+      7,
+      747,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 69.4272,
+    "bottom_gutter_feature_pct": 59.3606,
+    "center_lane_painted_pct": 94.7179,
+    "center_lane_feature_pct": 24.9455,
+    "red_zone_feature_pct": 41.6583,
+    "cutline_feature_pct": 18.5603,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 24.3,
+      "bottom_gutter_feature": 237.442,
+      "red_zone_feature": 166.633,
+      "cutline_feature": 25.984,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 69.809
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.82-sy1.04-y+40",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 10,
+    "right_safe_gap_px": 19,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      100,
+      26,
+      748,
+      1832
+    ],
+    "feature_bbox": [
+      101,
+      27,
+      747,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 70.4662,
+    "bottom_gutter_feature_pct": 59.1742,
+    "center_lane_painted_pct": 95.0858,
+    "center_lane_feature_pct": 24.1365,
+    "red_zone_feature_pct": 41.4374,
+    "cutline_feature_pct": 17.8566,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 24.663,
+      "bottom_gutter_feature": 236.697,
+      "red_zone_feature": 165.75,
+      "cutline_feature": 24.999,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 66.978
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.82-sy1.04-y+60",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 10,
+    "right_safe_gap_px": 19,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      100,
+      46,
+      748,
+      1832
+    ],
+    "feature_bbox": [
+      101,
+      47,
+      747,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 69.8868,
+    "bottom_gutter_feature_pct": 56.357,
+    "center_lane_painted_pct": 95.3414,
+    "center_lane_feature_pct": 23.5175,
+    "red_zone_feature_pct": 40.207,
+    "cutline_feature_pct": 17.7936,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 24.46,
+      "bottom_gutter_feature": 225.428,
+      "red_zone_feature": 160.828,
+      "cutline_feature": 24.911,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 64.811
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.82-sy1.04-y+80",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 10,
+    "right_safe_gap_px": 20,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      100,
+      66,
+      746,
+      1832
+    ],
+    "feature_bbox": [
+      101,
+      67,
+      746,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 69.1242,
+    "bottom_gutter_feature_pct": 53.4099,
+    "center_lane_painted_pct": 95.6226,
+    "center_lane_feature_pct": 22.7463,
+    "red_zone_feature_pct": 38.7809,
+    "cutline_feature_pct": 17.1799,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 24.193,
+      "bottom_gutter_feature": 213.64,
+      "red_zone_feature": 155.124,
+      "cutline_feature": 24.052,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 62.112
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.84-sy0.92-y+80",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 2,
+    "right_safe_gap_px": 12,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      92,
+      174,
+      755,
+      1832
+    ],
+    "feature_bbox": [
+      93,
+      174,
+      754,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 59.5171,
+    "bottom_gutter_feature_pct": 45.8308,
+    "center_lane_painted_pct": 93.7845,
+    "center_lane_feature_pct": 23.243,
+    "red_zone_feature_pct": 37.7398,
+    "cutline_feature_pct": 13.4056,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 20.831,
+      "bottom_gutter_feature": 183.323,
+      "red_zone_feature": 150.959,
+      "cutline_feature": 18.768,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 63.85
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.84-sy0.96-y+40",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 2,
+    "right_safe_gap_px": 12,
+    "bottom_safe_gap_px": -33,
+    "painted_bbox": [
+      92,
+      98,
+      755,
+      1832
+    ],
+    "feature_bbox": [
+      93,
+      98,
+      754,
+      1830
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 52.9837,
+    "bottom_gutter_feature_pct": 40.0266,
+    "center_lane_painted_pct": 93.4144,
+    "center_lane_feature_pct": 23.9687,
+    "red_zone_feature_pct": 38.2004,
+    "cutline_feature_pct": 12.1321,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 33.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 18.544,
+      "bottom_gutter_feature": 160.106,
+      "red_zone_feature": 152.802,
+      "cutline_feature": 16.985,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 66.39
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.84-sy0.96-y+60",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 2,
+    "right_safe_gap_px": 12,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      92,
+      118,
+      755,
+      1832
+    ],
+    "feature_bbox": [
+      93,
+      118,
+      754,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 69.5038,
+    "bottom_gutter_feature_pct": 58.6747,
+    "center_lane_painted_pct": 94.3312,
+    "center_lane_feature_pct": 23.7687,
+    "red_zone_feature_pct": 38.8125,
+    "cutline_feature_pct": 17.0011,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 24.326,
+      "bottom_gutter_feature": 234.699,
+      "red_zone_feature": 155.25,
+      "cutline_feature": 23.802,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 65.69
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.84-sy0.96-y+80",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 2,
+    "right_safe_gap_px": 12,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      92,
+      138,
+      755,
+      1832
+    ],
+    "feature_bbox": [
+      93,
+      138,
+      754,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 71.5251,
+    "bottom_gutter_feature_pct": 61.8382,
+    "center_lane_painted_pct": 94.8091,
+    "center_lane_feature_pct": 23.2775,
+    "red_zone_feature_pct": 39.2037,
+    "cutline_feature_pct": 18.3789,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 25.034,
+      "bottom_gutter_feature": 247.353,
+      "red_zone_feature": 156.815,
+      "cutline_feature": 25.73,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 63.971
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.84-sy1.00-y+0",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 2,
+    "right_safe_gap_px": 12,
+    "bottom_safe_gap_px": -30,
+    "painted_bbox": [
+      92,
+      22,
+      755,
+      1828
+    ],
+    "feature_bbox": [
+      93,
+      23,
+      754,
+      1827
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 45.9041,
+    "bottom_gutter_feature_pct": 33.9461,
+    "center_lane_painted_pct": 93.0132,
+    "center_lane_feature_pct": 24.75,
+    "red_zone_feature_pct": 39.4813,
+    "cutline_feature_pct": 12.6801,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 30.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 16.066,
+      "bottom_gutter_feature": 135.784,
+      "red_zone_feature": 157.925,
+      "cutline_feature": 17.752,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 69.125
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.84-sy1.00-y+20",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 2,
+    "right_safe_gap_px": 12,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      92,
+      42,
+      755,
+      1832
+    ],
+    "feature_bbox": [
+      93,
+      43,
+      754,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 69.1275,
+    "bottom_gutter_feature_pct": 57.8555,
+    "center_lane_painted_pct": 94.1134,
+    "center_lane_feature_pct": 24.6744,
+    "red_zone_feature_pct": 40.0745,
+    "cutline_feature_pct": 17.5543,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 24.195,
+      "bottom_gutter_feature": 231.422,
+      "red_zone_feature": 160.298,
+      "cutline_feature": 24.576,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 68.86
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.84-sy1.00-y+40",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 2,
+    "right_safe_gap_px": 12,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      92,
+      62,
+      755,
+      1832
+    ],
+    "feature_bbox": [
+      93,
+      63,
+      754,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 71.039,
+    "bottom_gutter_feature_pct": 61.8415,
+    "center_lane_painted_pct": 94.6679,
+    "center_lane_feature_pct": 24.2743,
+    "red_zone_feature_pct": 41.3364,
+    "cutline_feature_pct": 17.6495,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 24.864,
+      "bottom_gutter_feature": 247.366,
+      "red_zone_feature": 165.346,
+      "cutline_feature": 24.709,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 67.46
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.84-sy1.00-y+60",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 2,
+    "right_safe_gap_px": 12,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      92,
+      82,
+      755,
+      1832
+    ],
+    "feature_bbox": [
+      93,
+      83,
+      754,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 71.2254,
+    "bottom_gutter_feature_pct": 61.0057,
+    "center_lane_painted_pct": 94.928,
+    "center_lane_feature_pct": 23.4297,
+    "red_zone_feature_pct": 39.5444,
+    "cutline_feature_pct": 17.7974,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 24.929,
+      "bottom_gutter_feature": 244.023,
+      "red_zone_feature": 158.178,
+      "cutline_feature": 24.916,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 64.504
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.84-sy1.00-y+80",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 2,
+    "right_safe_gap_px": 12,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      92,
+      102,
+      755,
+      1832
+    ],
+    "feature_bbox": [
+      93,
+      103,
+      754,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 71.9347,
+    "bottom_gutter_feature_pct": 59.8834,
+    "center_lane_painted_pct": 95.2692,
+    "center_lane_feature_pct": 22.6362,
+    "red_zone_feature_pct": 38.6547,
+    "cutline_feature_pct": 18.1833,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 25.177,
+      "bottom_gutter_feature": 239.534,
+      "red_zone_feature": 154.619,
+      "cutline_feature": 25.457,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 61.727
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.84-sy1.04-y+0",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 2,
+    "right_safe_gap_px": 12,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      92,
+      0,
+      755,
+      1832
+    ],
+    "feature_bbox": [
+      93,
+      0,
+      754,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 70.716,
+    "bottom_gutter_feature_pct": 61.4918,
+    "center_lane_painted_pct": 94.3434,
+    "center_lane_feature_pct": 25.19,
+    "red_zone_feature_pct": 40.4846,
+    "cutline_feature_pct": 18.9873,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 24.751,
+      "bottom_gutter_feature": 245.967,
+      "red_zone_feature": 161.938,
+      "cutline_feature": 26.582,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 70.665
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.84-sy1.04-y+20",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 2,
+    "right_safe_gap_px": 12,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      92,
+      6,
+      755,
+      1832
+    ],
+    "feature_bbox": [
+      93,
+      7,
+      754,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 71.0623,
+    "bottom_gutter_feature_pct": 60.8924,
+    "center_lane_painted_pct": 94.6535,
+    "center_lane_feature_pct": 24.4988,
+    "red_zone_feature_pct": 40.737,
+    "cutline_feature_pct": 18.6336,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 24.872,
+      "bottom_gutter_feature": 243.57,
+      "red_zone_feature": 162.948,
+      "cutline_feature": 26.087,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 68.246
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.84-sy1.04-y+40",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 2,
+    "right_safe_gap_px": 12,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      92,
+      26,
+      755,
+      1832
+    ],
+    "feature_bbox": [
+      93,
+      27,
+      754,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 72.1012,
+    "bottom_gutter_feature_pct": 60.6194,
+    "center_lane_painted_pct": 95.0169,
+    "center_lane_feature_pct": 23.6842,
+    "red_zone_feature_pct": 40.5477,
+    "cutline_feature_pct": 17.8257,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 25.235,
+      "bottom_gutter_feature": 242.478,
+      "red_zone_feature": 162.191,
+      "cutline_feature": 24.956,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 65.395
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.84-sy1.04-y+60",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 2,
+    "right_safe_gap_px": 12,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      92,
+      46,
+      755,
+      1832
+    ],
+    "feature_bbox": [
+      93,
+      47,
+      754,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 71.5451,
+    "bottom_gutter_feature_pct": 57.6757,
+    "center_lane_painted_pct": 95.2769,
+    "center_lane_feature_pct": 23.0574,
+    "red_zone_feature_pct": 39.311,
+    "cutline_feature_pct": 17.6405,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 25.041,
+      "bottom_gutter_feature": 230.703,
+      "red_zone_feature": 157.244,
+      "cutline_feature": 24.697,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 63.201
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  },
+  {
+    "image": "tasks/castle-panels/outputs/generated/20260615T164700Z-prompt-v7-tall-with-background-wall.png",
+    "recipe": "sx0.84-sy1.04-y+80",
+    "mode": "wall",
+    "score": 0.0,
+    "verdict": "FAIL",
+    "left_safe_gap_px": 2,
+    "right_safe_gap_px": 13,
+    "bottom_safe_gap_px": -35,
+    "painted_bbox": [
+      92,
+      66,
+      753,
+      1832
+    ],
+    "feature_bbox": [
+      93,
+      67,
+      753,
+      1832
+    ],
+    "safe_bbox": [
+      91,
+      171,
+      766,
+      1797
+    ],
+    "side_gutter_painted_pct": 0.0,
+    "side_gutter_feature_pct": 0.0,
+    "bottom_gutter_painted_pct": 70.7959,
+    "bottom_gutter_feature_pct": 54.6087,
+    "center_lane_painted_pct": 95.5514,
+    "center_lane_feature_pct": 22.2728,
+    "red_zone_feature_pct": 37.8407,
+    "cutline_feature_pct": 17.1233,
+    "penalties": {
+      "left_safe_violation": 0.0,
+      "right_safe_violation": 0.0,
+      "bottom_safe_violation": 35.0,
+      "large_bottom_gap": 0.0,
+      "side_gutter_painted": 0.0,
+      "side_gutter_feature": 0.0,
+      "bottom_gutter_painted": 24.779,
+      "bottom_gutter_feature": 218.435,
+      "red_zone_feature": 151.363,
+      "cutline_feature": 23.973,
+      "center_lane_underfilled": 0.0,
+      "center_lane_feature": 60.455
+    },
+    "notes": [
+      "paint crosses bottom safe guide",
+      "painted pixels in bottom gutter",
+      "high-detail/color pixels in bottom gutter",
+      "feature detail in red keep-clear zones",
+      "feature detail close to black cut lines",
+      "wall-center lane has too much feature detail"
+    ]
+  }
+]

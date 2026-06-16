@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-06-15T14:40:41Z",
+  "source_image": "tasks/castle-panels/outputs/generated/20260615T132212Z-prompt-v6-narrow-center-safe-gutters.png",
+  "template": "assets/templates/previews/two-panel-template-cropped.png",
+  "fit": "cover",
+  "art_scale": 0.9,
+  "art_offset_x": 0,
+  "art_offset_y": 50,
+  "artwork_only": "tasks/castle-panels/outputs/final/20260615T132212Z-v6-scale090-y50-artwork-only.png",
+  "clean_black_lines": "tasks/castle-panels/outputs/final/20260615T132212Z-v6-scale090-y50-clean-black-lines.png",
+  "full_guides": "tasks/castle-panels/outputs/final/20260615T132212Z-v6-scale090-y50-full-guides.png"
+}

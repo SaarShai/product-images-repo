@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="cut" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11563.28 13779.88">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #39b54a;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        fill: none;
+        stroke-width: 10px;
+      }
+
+      .cls-1, .cls-2, .cls-4, .cls-5 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-2, .cls-5 {
+        stroke-dasharray: 24;
+      }
+
+      .cls-2 {
+        stroke: #ffdb55;
+      }
+
+      .cls-3, .cls-4 {
+        stroke: #231f20;
+      }
+
+      .cls-5 {
+        stroke: #ed1c24;
+      }
+    </style>
+  </defs>
+  <g id="narrow_panel_01_bottom_subpanel_front_layer" data-name="narrow panel 01 &amp;gt; bottom subpanel &amp;gt; front layer">
+    <path id="narrow_panel_01_bottom_subpanel_front_layer_top_stabilizer_slot" data-name="narrow panel 01 &amp;gt; bottom subpanel &amp;gt; front layer &amp;gt; top stabilizer slot" class="cls-4" d="M5039.85,11149.85c6.31,0,11.42,5.11,11.42,11.42v1299.69h95.24s0-1299.69,0-1299.69c0-6.31,5.11-11.42,11.42-11.42"/>
+    <path id="narrow_panel_01_top_subpanel_front_layer_outer_contour" data-name="narrow panel 01 &amp;gt; top subpanel &amp;gt; front layer &amp;gt; outer contour" class="cls-3" d="M4502.84,11149.85h-197.49c-15.74,0-28.51,12.76-28.51,28.51v2568.05c0,14.21,11.52,25.74,25.74,25.74h1590.05c15.64,0,28.31-12.68,28.31-28.31v-2565.52c0-15.71-12.74-28.45-28.45-28.45h-197.54"/>
+    <line id="narrow_panel_01_top_subpanel_front_layer_outer_contour-2" data-name="narrow panel 01 &amp;gt; top subpanel &amp;gt; front layer &amp;gt; outer contour" class="cls-4" x1="5157.94" y1="11149.85" x2="5502.35" y2="11149.85"/>
+    <line id="narrow_panel_01_top_subpanel_front_layer_outer_contour-3" data-name="narrow panel 01 &amp;gt; top subpanel &amp;gt; front layer &amp;gt; outer contour" class="cls-4" x1="4695.44" y1="11149.85" x2="5039.85" y2="11149.85"/>
+    <path class="cls-4" d="M5502.35,11149.85l60.77,90.65c16.94,25.27,54.11,25.27,71.05,0l60.77-90.65"/>
+    <path class="cls-4" d="M4502.84,11149.85l60.77,90.65c16.94,25.27,54.11,25.27,71.05,0l60.77-90.65"/>
+  </g>
+  <g id="narrow_panel_01_top_subpanel_front_layer" data-name="narrow panel 01 &amp;gt; top subpanel &amp;gt; front layer">
+    <path id="narrow_panel_01_top_subpanel_front_layer_bottom_stabilizer_slot" data-name="narrow panel 01 &amp;gt; top subpanel &amp;gt; front layer &amp;gt; bottom stabilizer slot" class="cls-4" d="M5157.94,11149.84c-6.31,0-11.42-5.11-11.42-11.42v-229.52s-95.24,0-95.24,0v229.52c0,6.31-5.11,11.42-11.42,11.42"/>
+    <path class="cls-4" d="M4276.85,10600.65v253.74s0,266.98,0,266.98c0,15.72,12.75,28.47,28.47,28.47"/>
+    <path class="cls-4" d="M5892.48,11149.84c15.72,0,28.47-12.75,28.47-28.47v-520.72"/>
+  </g>
+  <rect class="cls-5" x="5043.69" y="12478.87" width="108.51" height="1282.27"/>
+  <rect class="cls-5" x="5043.69" y="10659.77" width="108.51" height="240.12"/>
+  <path class="cls-1" d="M5920.94,10600.65c0-361.21-368.04-654.02-822.05-654.02s-822.05,292.82-822.05,654.02"/>
+  <path class="cls-2" d="M4336.78,10616.8c0-334.87,341.21-606.34,762.11-606.34s762.11,271.47,762.11,606.34v3077.29h-1524.22v-3077.29Z"/>
+</svg>

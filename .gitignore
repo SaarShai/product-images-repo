@@ -1,0 +1,14 @@
+.DS_Store
+*.tmp
+*.log
+__pycache__/
+.pytest_cache/
+.venv/
+node_modules/
+wiki/.brainer/
+.codex/skills/
+.gemini/skills/
+
+# Keep generated outputs local unless explicitly curated.
+tasks/*/outputs/generated/*
+!tasks/*/outputs/generated/.gitkeep

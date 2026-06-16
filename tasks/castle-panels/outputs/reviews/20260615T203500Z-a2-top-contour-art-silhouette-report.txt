@@ -1,0 +1,20 @@
+source=tasks/castle-panels/outputs/generated/20260615T175712Z-prompt-v7v8-original-a2-character-preserving.png
+template=assets/templates/previews/two-panel-template-cropped.png
+span=(62,792) handoff_y=433 scan_y_limit=700
+top_profile_y_range=(10,661)
+
+tight: clearance=16 min_radius=4 avg_radius=5 avg_passes=1
+tight: points=184 candidate_y_range=(5.00,502.77)
+tight: source_limit_violations=0 painted_centerline_hits=0
+tight: svg=tasks/castle-panels/outputs/final/20260615T203500Z-a2-top-contour-art-silhouette-tight.svg
+tight: preview=tasks/castle-panels/outputs/reviews/20260615T203500Z-a2-top-contour-art-silhouette-tight-preview.png
+tight: debug=tasks/castle-panels/outputs/reviews/20260615T203500Z-a2-top-contour-art-silhouette-tight-debug.png
+
+production: clearance=26 min_radius=14 avg_radius=12 avg_passes=2
+production: points=184 candidate_y_range=(5.00,459.09)
+production: source_limit_violations=0 painted_centerline_hits=0
+production: svg=tasks/castle-panels/outputs/final/20260615T203500Z-a2-top-contour-art-silhouette-production.svg
+production: preview=tasks/castle-panels/outputs/reviews/20260615T203500Z-a2-top-contour-art-silhouette-production-preview.png
+production: debug=tasks/castle-panels/outputs/reviews/20260615T203500Z-a2-top-contour-art-silhouette-production-debug.png
+
+sheet=tasks/castle-panels/outputs/reviews/20260615T203500Z-a2-top-contour-art-silhouette-review-sheet.png
