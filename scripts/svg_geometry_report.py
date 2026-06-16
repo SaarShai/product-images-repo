@@ -162,6 +162,22 @@ def element_coords(node: ET.Element) -> list[tuple[float, float]]:
         ]
     if tag == "path":
         return path_coords(node.attrib.get("d"))
+    if tag in {"polygon", "polyline"}:
+        values = parse_numbers(node.attrib.get("points"))
+        if len(values) < 4:
+            return []
+        return list(zip(values[0::2], values[1::2]))
+    if tag == "circle":
+        cx = float(node.attrib.get("cx", 0))
+        cy = float(node.attrib.get("cy", 0))
+        r = float(node.attrib.get("r", 0))
+        return [(cx - r, cy - r), (cx + r, cy + r)]
+    if tag == "ellipse":
+        cx = float(node.attrib.get("cx", 0))
+        cy = float(node.attrib.get("cy", 0))
+        rx = float(node.attrib.get("rx", 0))
+        ry = float(node.attrib.get("ry", 0))
+        return [(cx - rx, cy - ry), (cx + rx, cy + ry)]
     return []
 
 

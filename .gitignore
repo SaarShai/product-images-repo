@@ -6,7 +6,9 @@ __pycache__/
 .venv/
 node_modules/
 wiki/.brainer/
-.codex/skills/
+.codex/skills/*
+!.codex/skills/baci-template-fit-repair/
+!.codex/skills/baci-template-fit-repair/SKILL.md
 .gemini/skills/
 
 # Keep generated outputs local unless explicitly curated.

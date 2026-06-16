@@ -3,10 +3,28 @@
 Workspace for image-generation prompt packs, reference assets, template checks,
 and result reviews.
 
-## Current Task
+## Current Tasks
 
-The active task is `tasks/castle-panels`: refining a two-panel children's
-watercolor castle illustration constrained by a die-line template.
+The active/recent tasks are:
+
+- `tasks/baci-door`: repairing a Baci door template-fit image where the full
+  panel is close but the two SVG hex cutout areas need exact, clean handling.
+- `tasks/castle-panels`: refining a two-panel children's watercolor castle
+  illustration constrained by a die-line template.
+
+For Baci-door repair learning, start with:
+
+```text
+docs/baci-door-template-fit.md
+.codex/skills/baci-template-fit-repair/SKILL.md
+```
+
+The latest accepted Baci checkpoint is:
+
+```text
+tasks/baci-door/outputs/final/20260616T071500Z-baci-door-hole-sections-bounded-exact-hex-v1-svg-fit-artwork-only.png
+tasks/baci-door/outputs/final/20260616T071500Z-baci-door-hole-sections-bounded-exact-hex-v1-svg-fit-clean-black-lines.png
+```
 
 Canonical task status lives at:
 
@@ -37,6 +55,8 @@ review before production handoff.
 python3 scripts/verify_setup.py
 python3 scripts/asset_report.py
 python3 scripts/build_prompt_pack.py tasks/castle-panels
+python3 scripts/svg_geometry_report.py tasks/baci-door/source/baci-door-updated-20260616.svg --out tasks/baci-door/svg-geometry-report-updated-20260616.md
+python3 scripts/export_svg_template_fit.py tasks/baci-door/outputs/generated/20260616T071500Z-baci-door-hole-sections-bounded-exact-hex-v1.png --template-svg tasks/baci-door/source/baci-door-updated-20260616.svg --out-dir tasks/baci-door/outputs/final --prefix 20260616T071500Z-baci-door-hole-sections-bounded-exact-hex-v1-svg-fit --require-pass
 python3 scripts/score_template_fit.py --batch-generated --sweep --mode wall --md-out tasks/castle-panels/outputs/reviews/20260615T-system-wall-score-sweep.md --json-out tasks/castle-panels/outputs/reviews/20260615T-system-wall-score-sweep.json
 python3 scripts/export_composite.py tasks/castle-panels/outputs/generated/20260615T132212Z-prompt-v6-narrow-center-safe-gutters.png --prefix 20260615T132212Z-v6-scale090-y50 --art-scale 0.90 --art-offset-y 50
 ```

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1306.39 2418.61">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+        stroke-width: 10px;
+      }
+    </style>
+  </defs>
+  <g id="door_panel_bottom_right_subpanel_door_panel_back_layer" data-name="door panel &amp;gt; bottom right subpanel &amp;gt; door panel &amp;gt; back layer">
+    <polygon class="cls-1" points="494.66 941.48 522.39 941.48 536.26 965.49 522.39 989.51 494.66 989.51 480.8 965.49 494.66 941.48"/>
+    <g id="door_panel_bottom_left_subpanel_door_panel_back_layer" data-name="door panel &amp;gt; bottom left subpanel &amp;gt; door panel &amp;gt; back layer">
+      <path id="door_flap_bottom_left_panel" data-name="door flap &amp;gt; bottom left panel" class="cls-1" d="M5,331.25c0-23.59,11.68-45.65,31.19-58.9L369.5,45.94c39.27-26.68,85.66-40.94,133.14-40.94h88.03c5.27,0,9.54,4.27,9.54,9.54v2389.58c0,5.24-4.25,9.49-9.49,9.49-258.73,0-509.79,0-571.39,0-7.91,0-14.32-6.41-14.32-14.33V331.25Z"/>
+    </g>
+  </g>
+  <g id="door_panel_bottom_left_subpanel_door_panel_back_layer-2" data-name="door panel &amp;gt; bottom left subpanel &amp;gt; door panel &amp;gt; back layer">
+    <path id="door_flap_bottom_left_panel-2" data-name="door flap &amp;gt; bottom left panel" class="cls-1" d="M1301.39,331.25c0-23.59-11.68-45.65-31.19-58.9L936.9,45.94c-39.27-26.68-85.66-40.94-133.14-40.94h-88.03c-5.27,0-9.54,4.27-9.54,9.54v2389.58c0,5.24,4.25,9.49,9.49,9.49,258.73,0,509.79,0,571.39,0,7.91,0,14.32-6.41,14.32-14.33V331.25Z"/>
+    <polygon class="cls-1" points="753.29 963.66 772.01 944.93 797.59 951.79 804.44 977.36 785.72 996.08 760.14 989.23 753.29 963.66"/>
+  </g>
+</svg>

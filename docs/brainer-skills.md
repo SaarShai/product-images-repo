@@ -47,6 +47,17 @@ gemini skills list --all
 - `index-first`: useful once this repo has indexed docs or repeated lookups.
 - `output-filter`: useful if batch generation or CLI logs become noisy.
 
+## Project-Local Skills
+
+- `.codex/skills/baci-template-fit-repair/SKILL.md`: a tracked custom skill
+  created from the 2026-06-16 Baci-door sessions. Use it for `tasks/baci-door`
+  template-fit repairs where exact SVG polygon cutouts and visual hole-section
+  cleanup both matter.
+
+External Brainer skill links under `.codex/skills/` remain ignored. The custom
+Baci skill is intentionally unignored in `.gitignore` because it is repo-specific
+project knowledge, not a symlink to the user's local Brainer checkout.
+
 ## Skills Not Installed
 
 - `prompt-triage`, `skill-pulse`, `compliance-canary`, and `context-keeper`

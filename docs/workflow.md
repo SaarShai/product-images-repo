@@ -44,3 +44,24 @@ use scoring/export tooling for placement, and finish with semantic review. A
 scored `PASS` is not production approval until a human/adversarial review clears
 recognizable motifs around the center rectangles, horizontal split, side
 gutters, and any custom contour.
+
+## Baci-door hole-section repair
+
+The 2026-06-16 Baci-door sessions added a second fixed-template lesson:
+template metrics and visual quality can diverge around tiny cutouts. Use
+`docs/baci-door-template-fit.md` and
+`.codex/skills/baci-template-fit-repair/SKILL.md` when working in
+`tasks/baci-door`.
+
+Core rule: SVG polygon cutouts own the final hole geometry. Prompting can
+reserve quiet mechanical material around those coordinates, but the model should
+not be trusted to draw final holes. If the full panel is already good, repair
+only bounded hole neighborhoods, normalize donor image size, run
+`scripts/fix_baci_hex_holes.py`, export with
+`scripts/export_svg_template_fit.py --require-pass`, then inspect both the crop
+and full-frame outputs.
+
+For Baci-door, a `PASS` means no painted pixels outside the template, center
+gap, or hex-clearance masks. It does not mean the hole sections look good.
+Promote a candidate only after both the metadata and the visual crop/full-frame
+review are clean.

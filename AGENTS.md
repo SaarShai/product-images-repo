@@ -34,3 +34,17 @@ Decide case by case. If revising the prompt would make the next attempt clearer,
 cleaner, or less constrained by earlier mistakes, prefer restarting from that
 revised prompt over trying to rescue the most recent output. If continuing from
 the current result is still the better path, make that choice deliberately.
+
+## Template-fit repair learning
+
+For Baci-door or similar SVG-constrained image-generation work, recover from the
+actual task folder and latest artifacts before generating again. Treat SVG
+geometry as authoritative, including polygon cutouts, and verify with the local
+parser/export tooling rather than screenshots or filenames alone.
+
+For Baci-style hole-section repairs, use the repo-local skill at
+`.codex/skills/baci-template-fit-repair/SKILL.md`. A template-fit `PASS` is only
+the mechanical gate: still review the hole crop and full-frame export. When the
+main artwork is good but the cutouts are scarred, prefer bounded local donor
+repair plus exact SVG cutout cleanup over broad inpaint or repeated prompt-only
+nudges.
