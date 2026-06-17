@@ -171,6 +171,16 @@ on a white/paper-white background:
 - no orange arch guide;
 - no door split, knobs, or production strokes.
 
+Hard boundary: never ask the image model to think about, preserve, adapt, trace,
+honor, fix, or improve the SVG contour, panel proportions, guide positions, red
+zones, top-contour line, saloon arch, or production geometry during an artwork
+patch. Those constraints belong to deterministic overlay/export and review
+notes, not the creative prompt. The prompt may say `artwork-only on white
+background` and may name the local visual defects to change, but it must not
+include contour/panel/guide instructions that invite the model to redraw or
+reinterpret the template. If exact geometry context is needed, provide it as a
+mask, crop, or external overlay artifact and verify the result afterward.
+
 Overlay the real SVG after generation and measure against it. If a generated
 candidate includes a good adapted top contour but changes the template
 dimensions, keep the candidate as visual evidence only. Use deterministic

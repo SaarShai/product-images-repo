@@ -17,6 +17,7 @@ handoff standard.
 - Overlay/debug image path when available.
 - Metadata/score JSON when available.
 - Style reference paths.
+- Style packet paths when available.
 - Task brief or prompt path.
 
 If any of these are missing, say what is missing and judge only the evidence you
@@ -51,8 +52,13 @@ Cutouts and Scars:
 Style:
 
 - Object vocabulary matches the references, not only the palette.
+- Style-sensitive candidates used visual style-packet images rather than prose
+  descriptions alone.
 - Shape simplicity, line weight, lighting, density, and material language match
   the references.
+- For watercolor control-panel work, edge treatment matches the references:
+  dark blue rim lines, slight bevel, soft inner shadow, pale highlights, and
+  optional subtle rim/lip around outer contours and cutout rims.
 - Important motifs are not cropped by product cuts. Quiet background may cross a
   seam only when the task brief allows it.
 
@@ -60,6 +66,8 @@ Method Evidence:
 
 - The task records a geometry report or explicit SVG interpretation.
 - The composition was planned in safe pockets before final masking.
+- If rough B/C-style candidates were the best available evidence, the task tried
+  a whole-image redraw/restyle prompt before more procedural placement work.
 - Patch vs restart was decided from evidence, not momentum.
 
 ## Verdict Format
@@ -90,5 +98,5 @@ Next move:
   butterflies, fairies, flower heads, windows, roof tips, and other recognizable
   motifs around cut bands.
 - Space/control panels: reject clipped rectangular compositions even when masks
-  pass. Prefer reference-first restarts when dark procedural machinery survives
-  restyling.
+  pass. Prefer reference-style-packet restarts when procedural machinery
+  survives palette or local restyling.

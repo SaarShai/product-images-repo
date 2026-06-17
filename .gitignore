@@ -13,6 +13,12 @@ wiki/.brainer/
 !.codex/skills/svg-template-illustration/SKILL.md
 !.codex/skills/svg-template-review-judge/
 !.codex/skills/svg-template-review-judge/SKILL.md
+!.codex/skills/reference-style-packet/
+!.codex/skills/reference-style-packet/SKILL.md
+!.codex/skills/svg-template-style-agent/
+!.codex/skills/svg-template-style-agent/SKILL.md
+!.codex/skills/skyline-template-illustration/
+!.codex/skills/skyline-template-illustration/SKILL.md
 .gemini/skills/
 
 # Keep generated outputs local unless explicitly curated.

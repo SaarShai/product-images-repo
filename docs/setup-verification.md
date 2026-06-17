@@ -22,6 +22,7 @@ Expected checks:
 - SVG-template workflow docs, skills, and task templates exist.
 - The SVG-template workflow validator passes.
 - The task scaffold command can dry-run without writing files.
+- The reference style-packet builder CLI is available.
 
 Generated image PNGs under `tasks/*/outputs/generated/` are ignored by Git by
 default. Keep curated review notes and metadata in `tasks/*/outputs/reviews/`.

@@ -104,6 +104,17 @@ background. Do not ask the image model to draw black panel borders, yellow safe
 margins, red danger zones, green top-contour guides, orange arch guides, door
 split lines, knobs, or production strokes. Overlay the real SVG afterward.
 
+Hard boundary: never ask the image model to think about, preserve, adapt, trace,
+honor, fix, or improve the SVG contour, panel proportions, guide positions, red
+zones, top-contour line, saloon arch, or production geometry during an artwork
+patch. Those constraints belong to the deterministic overlay/export step and to
+human-readable patch notes only. Image-generation prompts may say
+`artwork-only on white background` and may name the local visual defects to
+change, but they must not include contour/panel/guide instructions that invite
+the model to redraw or reinterpret the template. If a patch needs exact
+geometry context, create a mask, crop, or external overlay artifact outside the
+model and verify afterward.
+
 If a generated candidate includes nice adapted top contour or good composition
 but redraws the template wider, shorter, lower, or otherwise off-SVG, keep it
 only as visual evidence. Registering or panel-warping it may be useful for a

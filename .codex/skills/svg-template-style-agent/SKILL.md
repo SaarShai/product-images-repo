@@ -41,6 +41,9 @@ Style agents do not:
 
 ## Geometry-Approved Style Adaptation Rule
 
+ALWAYS use this rule for geometry-to-style adaptation after the user approves
+geometry/dimensions/location and asks for style changes.
+
 When the user approves a candidate's geometry, dimensions, location, contour, or
 cutout placement but says the style is wrong, do not make a local
 `locked-geometry` restyle, packet-crop collage, palette shift, or component
@@ -48,6 +51,8 @@ compositing pass.
 
 Treat the approved geometry image as a composition map only. The style agent must
 run Whole-Panel Redraw Mode:
+
+Use the approved geometry image only as a composition/negative-space map.
 
 1. Attach the approved geometry candidate as the layout/negative-space map.
 2. Attach the original style references plus the style packet/contact sheets.
@@ -68,6 +73,17 @@ the reference method before generating:
 - `tasks/top-temp-workflow-test/agents/imagegen-redraw-whole-panel/prompt-method-a-whole-panel.md`
 - `tasks/top-temp-workflow-test/agents/imagegen-restyle-edit/prompt-package.md`
 - `wiki/concepts/svg-template-whole-redraw-from-roughs.md`
+
+If an agent is spawned specifically to adapt approved geometry to the reference
+style, assign it this goal shape:
+
+```text
+/goal Produce an attachment-aware whole-panel redraw candidate. Use the approved
+geometry image only as a composition/negative-space map, attach the actual style
+references and style-packet sheets, redraw the whole object as one coherent
+watercolor illustration, save the raw redraw and exact prompt, and do not run a
+locked-geometry/local restyle or component collage.
+```
 
 ## Style Gate
 

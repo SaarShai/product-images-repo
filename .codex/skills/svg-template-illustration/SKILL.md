@@ -61,6 +61,9 @@ the SVG geometry is part of the product spec, not a later crop mask.
   `.codex/skills/svg-template-style-agent/SKILL.md`; do not run local
   locked-geometry restyle scripts or packet-crop compositing as the creative
   pass.
+- Any subagent assigned to adapt approved geometry to style must receive the
+  style-agent goal from `.codex/skills/svg-template-style-agent/SKILL.md`, not a
+  geometry-locking or local repaint goal.
 
 ## Standard Workflow
 

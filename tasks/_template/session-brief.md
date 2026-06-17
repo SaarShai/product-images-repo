@@ -5,6 +5,8 @@
 - Template SVG: `{{SVG_PATH}}`
 - Style references:
 {{REF_LIST}}
+- Style packet: `style-packet/` after running
+  `python3 scripts/build_reference_style_packet.py tasks/{{TASK_SLUG}}`
 - Asset manifest: `asset-manifest.json`
 - Template manifest: `template-manifest.json`
 - Geometry report: `svg-geometry-report.md`
@@ -28,6 +30,17 @@ internal cutouts or keep-clear zones.
 
 ## Style Rules
 
+- Build and inspect a visual style packet before style-sensitive generation.
+- Style/image-gen agents should use packet images directly and generate element
+  sheets before geometry placement.
+- If a candidate's geometry/dimensions/location are approved but style is wrong,
+  always switch to attachment-aware whole-panel redraw: use the approved geometry
+  image only as a composition/negative-space map, attach the real references and
+  style-packet sheets, generate a raw coherent redraw, then run SVG checks
+  downstream.
+- Use the approved geometry image only as a composition/negative-space map.
+- Do not use locked-geometry local restyle, palette shifts, packet-crop collage,
+  or component compositing as the creative style-adaptation method.
 - Match reference object vocabulary, not only palette.
 - Match line weight, density, lighting, material language, and shape simplicity.
 - Keep recognizable motifs away from production cut lines unless explicitly
@@ -37,6 +50,7 @@ internal cutouts or keep-clear zones.
 
 ```bash
 python3 scripts/svg_geometry_report.py {{SVG_PATH}} --out tasks/{{TASK_SLUG}}/svg-geometry-report.md
+python3 scripts/build_reference_style_packet.py tasks/{{TASK_SLUG}}
 python3 scripts/build_prompt_pack.py tasks/{{TASK_SLUG}}
 ```
 

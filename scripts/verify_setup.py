@@ -31,11 +31,16 @@ REQUIRED_FILES = [
     "docs/setup-verification.md",
     "docs/workflow.md",
     "docs/svg-template-illustration-workflow.md",
+    "docs/skyline-template-illustration-workflow.md",
     "docs/review-judge-checklist.md",
+    ".codex/skills/reference-style-packet/SKILL.md",
+    ".codex/skills/skyline-template-illustration/SKILL.md",
+    ".codex/skills/svg-template-style-agent/SKILL.md",
     ".codex/skills/svg-template-illustration/SKILL.md",
     ".codex/skills/svg-template-review-judge/SKILL.md",
     "scripts/asset_report.py",
     "scripts/build_prompt_pack.py",
+    "scripts/build_reference_style_packet.py",
     "scripts/crop_nonwhite.py",
     "scripts/export_composite.py",
     "scripts/make_overlay_preview.py",
@@ -63,6 +68,7 @@ REQUIRED_FILES = [
     "tasks/castle-panels/prompts/prompt-v9b-wall-background-split-safe.md",
     "tasks/castle-panels/outputs/reviews/2026-06-15-v6-v7-decision-packet.md",
     "tasks/_template/session-brief.md",
+    "tasks/_template/skyline-example-feedback.md",
     "tasks/_template/review-judge.md",
     "tasks/_template/template-manifest.json",
     "tasks/_template/prompts/prompt-v1-contour-first.md",
@@ -78,6 +84,12 @@ REQUIRED_ASSETS = [
     "assets/templates/two-panel-template-raster.png",
     "assets/templates/two-panel-template.svg",
     "assets/templates/previews/two-panel-template-cropped.png",
+    "assets/skyline/city-skyline template.svg",
+    "assets/skyline/README.md",
+    "assets/skyline/door panel example - bridge inside door flaps area.png",
+    "assets/skyline/example - bridge runs through panels + top contour tracing buildings shape.png",
+    "assets/skyline/example of DO - specific elements (fairies, birds) not cropped.png",
+    "assets/skyline/example of DON'T - specific elements (fairies, birds) cropped.png",
 ]
 
 
@@ -126,6 +138,7 @@ def main() -> int:
     check(command_ok(["python3", "scripts/asset_report.py"]), "asset report runs", failures)
     check(command_ok(["python3", "scripts/svg_geometry_report.py"]), "SVG geometry report runs", failures)
     check(command_ok(["python3", "scripts/build_prompt_pack.py", "tasks/castle-panels"]), "prompt pack builder runs", failures)
+    check(command_ok(["python3", "scripts/build_reference_style_packet.py", "--help"]), "reference style packet builder CLI runs", failures)
     check(command_ok(["python3", "scripts/validate_svg_template_workflow.py"]), "SVG-template workflow validator runs", failures)
     check(
         command_ok(

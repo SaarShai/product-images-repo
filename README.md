@@ -24,8 +24,11 @@ For a new SVG-template illustration task, start with:
 ```text
 docs/svg-template-illustration-workflow.md
 docs/review-judge-checklist.md
+.codex/skills/reference-style-packet/SKILL.md
+.codex/skills/svg-template-style-agent/SKILL.md
 .codex/skills/svg-template-illustration/SKILL.md
 .codex/skills/svg-template-review-judge/SKILL.md
+.codex/skills/task-retrospective/SKILL.md
 ```
 
 The latest accepted Baci checkpoint is:
@@ -65,7 +68,9 @@ python3 scripts/verify_setup.py
 python3 scripts/validate_svg_template_workflow.py
 python3 scripts/scaffold_template_task.py demo-task --svg assets/templates/two-panel-template.svg --refs assets/reference-images/castle-style-reference.png --dry-run
 python3 scripts/asset_report.py
+python3 scripts/build_reference_style_packet.py tasks/<task>
 python3 scripts/build_prompt_pack.py tasks/castle-panels
+python3 tasks/space-narrow-1-2/scripts/create_area01_reference_watercolor_v2.py
 python3 scripts/svg_geometry_report.py tasks/baci-door/source/baci-door-updated-20260616.svg --out tasks/baci-door/svg-geometry-report-updated-20260616.md
 python3 scripts/export_svg_template_fit.py tasks/baci-door/outputs/generated/20260616T071500Z-baci-door-hole-sections-bounded-exact-hex-v1.png --template-svg tasks/baci-door/source/baci-door-updated-20260616.svg --out-dir tasks/baci-door/outputs/final --prefix 20260616T071500Z-baci-door-hole-sections-bounded-exact-hex-v1-svg-fit --require-pass
 python3 scripts/score_template_fit.py --batch-generated --sweep --mode wall --md-out tasks/castle-panels/outputs/reviews/20260615T-system-wall-score-sweep.md --json-out tasks/castle-panels/outputs/reviews/20260615T-system-wall-score-sweep.json
