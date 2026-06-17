@@ -1,0 +1,28 @@
+{
+  "candidate_id": "method-a-prompt-only-smoke-01",
+  "created_at": "2026-06-16T13:21:10Z",
+  "generator": "Codex image_gen tool",
+  "tool_capability": "prompt-only; no file attachment, mask, image-to-image, or requested local output path parameters exposed",
+  "prompt_file": "tasks/top-temp-workflow-test/agents/imagegen-redraw-whole-panel/prompt-only-smoke-prompt.txt",
+  "full_attachment_prompt_file": "tasks/top-temp-workflow-test/agents/imagegen-redraw-whole-panel/prompt-method-a-whole-panel.md",
+  "generated_cache_file": "/Users/za/.codex/generated_images/019ed085-ffd7-7823-b206-748ceb2dc6bb/ig_083bcdd8efaacd4e016a314b5e170081919b2a1230c323ff17.png",
+  "local_candidate_file": "tasks/top-temp-workflow-test/agents/imagegen-redraw-whole-panel/generated/method-a-prompt-only-smoke-01.png",
+  "source_sha256": "4c92c08d6ce2e5bca8f0c17bdfa60bf307b1fd2d47f279afa3d400047890a54d",
+  "source_dimensions": "1263x1245",
+  "input_images_copied": [
+    "tasks/top-temp-workflow-test/agents/imagegen-redraw-whole-panel/inputs/template.svg",
+    "tasks/top-temp-workflow-test/agents/imagegen-redraw-whole-panel/inputs/input-contact-sheet.png",
+    "tasks/top-temp-workflow-test/agents/imagegen-redraw-whole-panel/inputs/composition-b-style-imagegen-fit-preview-white.png",
+    "tasks/top-temp-workflow-test/agents/imagegen-redraw-whole-panel/inputs/composition-c-style-matte-elements-preview-white.png",
+    "tasks/top-temp-workflow-test/agents/imagegen-redraw-whole-panel/inputs/style-ref-01-slider-panel.png",
+    "tasks/top-temp-workflow-test/agents/imagegen-redraw-whole-panel/inputs/style-ref-02-knob-panel.png",
+    "tasks/top-temp-workflow-test/agents/imagegen-redraw-whole-panel/inputs/style-exemplar-sheet.png",
+    "tasks/top-temp-workflow-test/agents/imagegen-redraw-whole-panel/inputs/reference-contact-sheet.png"
+  ],
+  "review_artifacts": {
+    "artwork_only": "tasks/top-temp-workflow-test/agents/imagegen-redraw-whole-panel/review-artifacts/method-a-prompt-only-smoke-01-fit-check-artwork-only.png",
+    "clean_black_lines": "tasks/top-temp-workflow-test/agents/imagegen-redraw-whole-panel/review-artifacts/method-a-prompt-only-smoke-01-fit-check-clean-black-lines.png",
+    "debug_mask": "tasks/top-temp-workflow-test/agents/imagegen-redraw-whole-panel/review-artifacts/method-a-prompt-only-smoke-01-fit-check-debug-mask.png",
+    "metadata": "tasks/top-temp-workflow-test/agents/imagegen-redraw-whole-panel/review-artifacts/method-a-prompt-only-smoke-01-fit-check-metadata.json"
+  }
+}

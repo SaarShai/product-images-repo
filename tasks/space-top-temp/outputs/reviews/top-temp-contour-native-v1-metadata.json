@@ -1,0 +1,107 @@
+{
+  "timestamp": "2026-06-16T08:18:39Z",
+  "method": "contour-native-pocket-planned",
+  "source_svg": "tasks/space-top-temp/source/top-temp.svg",
+  "source_attachment": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/space/top-temp.svg",
+  "viewbox_crop": [
+    0,
+    0,
+    1593,
+    1571
+  ],
+  "outer_path_index": 4,
+  "cutout_path_indices": [
+    5,
+    6
+  ],
+  "not_crop_method": true,
+  "boundary_mask_role": "substrate fill and final SVG-edge guard only",
+  "decorative_components_checked_before_render": true,
+  "safe_outer_margin_pixels": 6,
+  "safe_cutout_margin_pixels": 12,
+  "component_placements": [
+    {
+      "name": "left contour machinery well",
+      "outside_safe_pocket_pixels": 0
+    },
+    {
+      "name": "lower right service bay",
+      "outside_safe_pocket_pixels": 0
+    },
+    {
+      "name": "top left canister",
+      "outside_safe_pocket_pixels": 0
+    },
+    {
+      "name": "canister cap",
+      "outside_safe_pocket_pixels": 0
+    },
+    {
+      "name": "left switch cluster",
+      "outside_safe_pocket_pixels": 0
+    },
+    {
+      "name": "left vent module",
+      "outside_safe_pocket_pixels": 0
+    },
+    {
+      "name": "lower left button module",
+      "outside_safe_pocket_pixels": 0
+    },
+    {
+      "name": "right command module",
+      "outside_safe_pocket_pixels": 0
+    },
+    {
+      "name": "left cluster buttons",
+      "outside_safe_pocket_pixels": 0
+    },
+    {
+      "name": "lower left button stack",
+      "outside_safe_pocket_pixels": 0
+    },
+    {
+      "name": "right command lights",
+      "outside_safe_pocket_pixels": 0
+    },
+    {
+      "name": "red left routed pipe",
+      "outside_safe_pocket_pixels": 0
+    },
+    {
+      "name": "yellow left routed pipe",
+      "outside_safe_pocket_pixels": 0
+    },
+    {
+      "name": "cyan trunk pipe",
+      "outside_safe_pocket_pixels": 0
+    },
+    {
+      "name": "lower cyan return",
+      "outside_safe_pocket_pixels": 0
+    },
+    {
+      "name": "right cyan feed",
+      "outside_safe_pocket_pixels": 0
+    },
+    {
+      "name": "right red return",
+      "outside_safe_pocket_pixels": 0
+    },
+    {
+      "name": "interior rim bolts",
+      "outside_safe_pocket_pixels": 0
+    },
+    {
+      "name": "candidate-checked sparkle details",
+      "outside_safe_pocket_pixels": 0
+    }
+  ],
+  "nonwhite_pixels_outside_outer_mask": 0,
+  "nonwhite_pixels_in_cutout_mask": 0,
+  "decorative_element_pixels_outside_paintable_mask": 0,
+  "decorative_element_pixels_outside_safe_pocket_mask": 0,
+  "artwork": "outputs/generated/top-temp-contour-native-v1-artwork.png",
+  "overlay": "outputs/reviews/top-temp-contour-native-v1-template-overlay.png",
+  "mask_debug": "outputs/reviews/top-temp-contour-native-v1-mask-debug.png"
+}

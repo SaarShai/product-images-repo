@@ -1,0 +1,198 @@
+{
+  "workflow": "style-packet-crops-fit-into-svg",
+  "method": "real reference/style-packet crops composited into named safe pockets, then SVG mask verified",
+  "source_svg": "tasks/top-temp-workflow-test/source/template.svg",
+  "style_packet": "tasks/top-temp-workflow-test/style-packet/style-packet.json",
+  "style_refs": [
+    "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png",
+    "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+  ],
+  "summary": {
+    "planned_placements": 11,
+    "accepted_placements": 11,
+    "rejected_placements": 0,
+    "accepted_escape_pixels": 0,
+    "accepted_cutout_pixels": 0,
+    "final_outside_paintable_alpha_pixels": 0,
+    "final_cutout_alpha_pixels": 0
+  },
+  "placements": [
+    {
+      "name": "upper-left yellow pin crop",
+      "packet_source": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-accent-component-01.png",
+      "bbox": [
+        410,
+        125,
+        500,
+        260
+      ],
+      "accepted": true,
+      "mask_pixels": 11738,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    },
+    {
+      "name": "upper-left red pin crop",
+      "packet_source": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-accent-component-02.png",
+      "bbox": [
+        515,
+        135,
+        605,
+        270
+      ],
+      "accepted": true,
+      "mask_pixels": 11738,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    },
+    {
+      "name": "upper-left mint pin crop",
+      "packet_source": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-accent-component-03.png",
+      "bbox": [
+        462,
+        310,
+        552,
+        445
+      ],
+      "accepted": true,
+      "mask_pixels": 11738,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    },
+    {
+      "name": "middle-left real slider bank crop",
+      "packet_source": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-left-region.png",
+      "bbox": [
+        245,
+        690,
+        720,
+        920
+      ],
+      "accepted": true,
+      "mask_pixels": 108554,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    },
+    {
+      "name": "lower-left real gauge crop",
+      "packet_source": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-right-region.png",
+      "bbox": [
+        330,
+        1125,
+        620,
+        1415
+      ],
+      "accepted": true,
+      "mask_pixels": 83404,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    },
+    {
+      "name": "lower-left red pill crop",
+      "packet_source": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-01.png",
+      "bbox": [
+        92,
+        1168,
+        330,
+        1236
+      ],
+      "accepted": true,
+      "mask_pixels": 15860,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    },
+    {
+      "name": "lower-left mint pill crop",
+      "packet_source": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-03.png",
+      "bbox": [
+        100,
+        1282,
+        340,
+        1350
+      ],
+      "accepted": true,
+      "mask_pixels": 15996,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    },
+    {
+      "name": "lower-middle red pill crop",
+      "packet_source": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-01.png",
+      "bbox": [
+        925,
+        1118,
+        1210,
+        1198
+      ],
+      "accepted": true,
+      "mask_pixels": 22324,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    },
+    {
+      "name": "lower-middle yellow pill crop",
+      "packet_source": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-02.png",
+      "bbox": [
+        942,
+        1300,
+        1218,
+        1380
+      ],
+      "accepted": true,
+      "mask_pixels": 21604,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    },
+    {
+      "name": "right-strip upper bolt crop",
+      "packet_source": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-edge-treatment.png",
+      "bbox": [
+        1512,
+        1082,
+        1570,
+        1140
+      ],
+      "accepted": true,
+      "mask_pixels": 3172,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    },
+    {
+      "name": "right-strip lower bolt crop",
+      "packet_source": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-edge-treatment.png",
+      "bbox": [
+        1512,
+        1390,
+        1570,
+        1448
+      ],
+      "accepted": true,
+      "mask_pixels": 3172,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    }
+  ],
+  "outputs": {
+    "artwork": "tasks/top-temp-workflow-test/agents/style-packet-fit/style-packet-fit-artwork.png",
+    "preview_white": "tasks/top-temp-workflow-test/agents/style-packet-fit/style-packet-fit-preview-white.png",
+    "overlay": "tasks/top-temp-workflow-test/agents/style-packet-fit/style-packet-fit-overlay.png",
+    "mask_debug": "tasks/top-temp-workflow-test/agents/style-packet-fit/style-packet-fit-mask-debug.png",
+    "metadata": "tasks/top-temp-workflow-test/agents/style-packet-fit/style-packet-fit-metadata.json"
+  },
+  "limitations": [
+    "This is a packet-to-geometry fit proof, not a fresh image-generation result.",
+    "Some source crops include original blue background, so feathered patch edges can still show.",
+    "The next proper test should ask a style agent to generate isolated elements from these packet crops, then pass those elements to this geometry gate."
+  ]
+}

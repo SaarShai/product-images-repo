@@ -1,0 +1,49 @@
+{
+  "timestamp": "2026-06-16T09:41:20Z",
+  "area": "01 top-left",
+  "method": "svg-native-reference-watercolor-v2",
+  "source_svg": "tasks/space-narrow-1-2/source/narrow-1-plus-2.svg",
+  "not_crop_method": true,
+  "fix_reason": "Previous restart still substituted palette and motif matching for the references' watercolor rendering language.",
+  "style_reference_images": [
+    "/Users/za/Downloads/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png",
+    "/Users/za/Downloads/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+  ],
+  "style_corrections": [
+    "soft blue wash constructed as layered pigment rather than flat fill",
+    "blurred texture sampled from the actual watercolor control-panel references",
+    "blurred organic navy edge pooling instead of clean vector outlines",
+    "larger simpler rounded controls with painted highlights",
+    "sparser control vocabulary based on the reference panels",
+    "explicit style failure note so palette match is not treated as style match"
+  ],
+  "component_placements": [
+    {
+      "name": "soft watercolor gauge",
+      "outside_paintable_pixels": 0
+    },
+    {
+      "name": "soft watercolor slider bank",
+      "outside_paintable_pixels": 0
+    },
+    {
+      "name": "large soft pill buttons",
+      "outside_paintable_pixels": 0
+    },
+    {
+      "name": "small rounded button panel",
+      "outside_paintable_pixels": 0
+    },
+    {
+      "name": "reference screws dashes and speckles",
+      "outside_paintable_pixels": 0
+    }
+  ],
+  "nonwhite_pixels_in_cutout_mask": 0,
+  "nonwhite_pixels_outside_outer_mask": 0,
+  "decorative_element_pixels_in_cutout_mask": 0,
+  "decorative_element_pixels_outside_paintable_mask": 0,
+  "artwork": "outputs/generated/area-01-top-left-reference-watercolor-v2-artwork.png",
+  "overlay": "outputs/reviews/area-01-top-left-reference-watercolor-v2-template-overlay.png",
+  "mask_debug": "outputs/reviews/area-01-top-left-reference-watercolor-v2-mask-debug.png"
+}

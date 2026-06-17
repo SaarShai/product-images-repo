@@ -1,0 +1,70 @@
+{
+  "workflow": "main-fallback-main-simple-full-panel",
+  "title": "sparse full-panel composition",
+  "source_svg": "tasks/top-temp-workflow-test/source/template.svg",
+  "template_manifest": "tasks/top-temp-workflow-test/template-manifest.json",
+  "style_refs": [
+    "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png",
+    "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+  ],
+  "method_note": "Keep the full template but lower motif density so geometry is less overloaded.",
+  "summary": {
+    "planned_controls": 3,
+    "accepted_controls": 3,
+    "rejected_controls": 0,
+    "accepted_control_escape_pixels": 0,
+    "accepted_control_cutout_pixels": 0,
+    "final_outside_paintable_alpha_pixels": 0,
+    "final_cutout_alpha_pixels": 0
+  },
+  "decorative_controls": [
+    {
+      "name": "large lower-left gauge",
+      "pocket": "lower-left base bay",
+      "role": "dominant gauge motif",
+      "accepted": true,
+      "mask_pixels": 55101,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        340,
+        1152,
+        601,
+        1421
+      ]
+    },
+    {
+      "name": "short slider bank",
+      "pocket": "middle-left field",
+      "role": "three sparse sliders",
+      "accepted": true,
+      "mask_pixels": 36045,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        250,
+        711,
+        701,
+        960
+      ]
+    },
+    {
+      "name": "two capsule buttons",
+      "pocket": "lower-left base bay",
+      "role": "minimal colored controls",
+      "accepted": true,
+      "mask_pixels": 20454,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        105,
+        1190,
+        341,
+        1351
+      ]
+    }
+  ]
+}

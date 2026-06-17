@@ -1,0 +1,30 @@
+{
+  "candidate_id": "method-c-candidate-01",
+  "generated": true,
+  "generated_at": "2026-06-16",
+  "generator": "Codex image_gen tool",
+  "candidate_artifact": "tasks/top-temp-workflow-test/agents/imagegen-artdirector/method-c-candidate-01.png",
+  "source_cache_file": "/Users/za/.codex/generated_images/019ed086-0150-7cd2-9b18-52f6e6fc7d86/ig_03beb6220436a231016a314a497838819188ba0207e0cce8f3.png",
+  "prompt_file": "tasks/top-temp-workflow-test/agents/imagegen-artdirector/final-prompt.md",
+  "meta_prompt_file": "tasks/top-temp-workflow-test/agents/imagegen-artdirector/method-c-meta-prompt.md",
+  "rough_control_maps": [
+    "tasks/top-temp-workflow-test/agents/style-imagegen-fit/style-imagegen-fit-preview-white.png",
+    "tasks/top-temp-workflow-test/agents/style-matte-elements/style-matte-elements-preview-white.png"
+  ],
+  "style_references": [
+    "tasks/top-temp-workflow-test/style-packet/reference-contact-sheet.png",
+    "tasks/top-temp-workflow-test/style-packet/style-exemplar-sheet.png"
+  ],
+  "actual_attachment_method": "Images were supplied in the chat context; the tool accepted a prompt-only call and did not expose explicit local crop attachment parameters.",
+  "candidate_size": [
+    1263,
+    1245
+  ],
+  "method_notes": [
+    "B/C were used as rough composition and negative-space maps, not as source pixels.",
+    "The generated result is a single model-painted watercolor panel.",
+    "Post-generation SVG safety checking was analysis-only and did not modify the candidate."
+  ],
+  "review_file": "tasks/top-temp-workflow-test/agents/imagegen-artdirector/review.md",
+  "safety_metadata": "tasks/top-temp-workflow-test/agents/imagegen-artdirector/method-c-candidate-01-safety.json"
+}

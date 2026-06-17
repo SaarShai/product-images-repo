@@ -1,0 +1,56 @@
+{
+  "timestamp": "2026-06-16T13:21:10Z",
+  "command": "scripts/export_svg_template_fit.py tasks/top-temp-workflow-test/agents/imagegen-redraw-whole-panel/generated/method-a-prompt-only-smoke-01.png --template-svg tasks/top-temp-workflow-test/agents/imagegen-redraw-whole-panel/inputs/template.svg --out-dir tasks/top-temp-workflow-test/agents/imagegen-redraw-whole-panel/review-artifacts --prefix method-a-prompt-only-smoke-01-fit-check",
+  "source_image": "tasks/top-temp-workflow-test/agents/imagegen-redraw-whole-panel/generated/method-a-prompt-only-smoke-01.png",
+  "source_sha256": "4c92c08d6ce2e5bca8f0c17bdfa60bf307b1fd2d47f279afa3d400047890a54d",
+  "source_dimensions": "1263x1245",
+  "template_svg": "tasks/top-temp-workflow-test/agents/imagegen-redraw-whole-panel/inputs/template.svg",
+  "template_sha256": "385bcec1fca66e3d21504c9673cc9aa5a9d2e05372d1bf92b1aaa205d69faa8f",
+  "template_viewbox": [
+    0.0,
+    0.0,
+    1592.1,
+    1570.39
+  ],
+  "art_scale_x": 1.0,
+  "art_scale_y": 1.0,
+  "art_offset_x": 0,
+  "art_offset_y": 0,
+  "hex_clearance_units": 5.0,
+  "stroke_width_units": 2.0,
+  "artwork_only": "tasks/top-temp-workflow-test/agents/imagegen-redraw-whole-panel/review-artifacts/method-a-prompt-only-smoke-01-fit-check-artwork-only.png",
+  "clean_black_lines": "tasks/top-temp-workflow-test/agents/imagegen-redraw-whole-panel/review-artifacts/method-a-prompt-only-smoke-01-fit-check-clean-black-lines.png",
+  "debug_mask": "tasks/top-temp-workflow-test/agents/imagegen-redraw-whole-panel/review-artifacts/method-a-prompt-only-smoke-01-fit-check-debug-mask.png",
+  "metrics": {
+    "verdict": "PASS",
+    "output_dimensions": "1263x1245",
+    "panel_coverage_pct": 78.52,
+    "outside_nonwhite_pixels": 0,
+    "center_gap_nonwhite_pixels": 0,
+    "hex_clear_nonwhite_pixels": 0,
+    "hex_clearance_px": 4,
+    "center_gap_bbox": null,
+    "path_bboxes": [
+      [
+        4.010000000000001,
+        4.0,
+        1588.1,
+        2022.4499999999996
+      ],
+      [
+        792.58883518586,
+        401.15999999999997,
+        1506.6000491982509,
+        1027.56
+      ],
+      [
+        1385.6899999999998,
+        1188.6549858782798,
+        1480.94796875,
+        1341.12
+      ]
+    ],
+    "polygon_bboxes": [],
+    "notes": []
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "timestamp": "2026-06-17T07:29:49Z",
+  "svg": "tasks/space-svg-exports-batch/source/np01-back-bottom.svg",
+  "svg_sha256": "b3d2169ec8ce8a9ad49f932b7aa64e94fbcdbb942afbf86ee38efbb1d0b26d92",
+  "variant": 2,
+  "candidate": "tasks/space-svg-exports-batch/outputs/generated/np01-back-bottom-checkpoint-bottom-v2.png",
+  "artwork_only": "tasks/space-svg-exports-batch/outputs/final/np01-back-bottom-checkpoint-bottom-v2-artwork-only.png",
+  "clean_black_lines": "tasks/space-svg-exports-batch/outputs/final/np01-back-bottom-checkpoint-bottom-v2-clean-black-lines.png",
+  "debug_mask": "tasks/space-svg-exports-batch/outputs/reviews/np01-back-bottom-checkpoint-bottom-v2-debug-mask.png",
+  "style_packet": "tasks/space-svg-exports-batch/style-packet/style-packet.json",
+  "source_style_refs": [
+    "tasks/space-svg-exports-batch/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png",
+    "tasks/space-svg-exports-batch/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+  ],
+  "viewbox": [
+    0.0,
+    0.0,
+    1654.7094,
+    2602.2896
+  ],
+  "output_dimensions": "900x1415",
+  "contours": [
+    {
+      "source_type": "path",
+      "index": 0,
+      "role": "paintable",
+      "area": 333692.69,
+      "bounds": [
+        1362.73,
+        422.28,
+        1634.71,
+        2180.0
+      ]
+    },
+    {
+      "source_type": "path",
+      "index": 1,
+      "role": "cutout",
+      "area": 141539.64,
+      "bounds": [
+        186.97,
+        1376.14,
+        332.06,
+        2428.05
+      ]
+    },
+    {
+      "source_type": "path",
+      "index": 2,
+      "role": "cutout",
+      "area": 15788.14,
+      "bounds": [
+        188.6,
+        1131.98,
+        330.43,
+        1273.81
+      ]
+    },
+    {
+      "source_type": "path",
+      "index": 3,
+      "role": "paintable",
+      "area": 1058712.6,
+      "bounds": [
+        889.67,
+        20.0,
+        1604.1,
+        2582.12
+      ]
+    },
+    {
+      "source_type": "path",
+      "index": 4,
+      "role": "paintable",
+      "area": 1814467.46,
+      "bounds": [
+        20.0,
+        20.0,
+        734.81,
+        2582.29
+      ]
+    }
+  ],
+  "metrics": {
+    "verdict": "PASS",
+    "outside_nonwhite_pixels": 0,
+    "cutout_nonwhite_pixels": 0,
+    "paintable_coverage_pct": 99.5
+  },
+  "method_note": "Bottom-panel checkpoint. Elements are drawn only in eroded safe pockets, then exact SVG masks clear the outer contour and cutouts."
+}

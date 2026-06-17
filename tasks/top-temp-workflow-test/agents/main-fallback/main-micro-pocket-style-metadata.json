@@ -1,0 +1,54 @@
+{
+  "workflow": "main-fallback-main-micro-pocket-style",
+  "title": "single-pocket style proof",
+  "source_svg": "tasks/top-temp-workflow-test/source/template.svg",
+  "template_manifest": "tasks/top-temp-workflow-test/template-manifest.json",
+  "style_refs": [
+    "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png",
+    "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+  ],
+  "method_note": "Reduce the task to one safe pocket to separate style learning from full-template geometry.",
+  "summary": {
+    "planned_controls": 2,
+    "accepted_controls": 2,
+    "rejected_controls": 0,
+    "accepted_control_escape_pixels": 0,
+    "accepted_control_cutout_pixels": 0,
+    "final_outside_paintable_alpha_pixels": 0,
+    "final_cutout_alpha_pixels": 0
+  },
+  "decorative_controls": [
+    {
+      "name": "upper-left large gauge",
+      "pocket": "upper-left tall bay",
+      "role": "single-pocket watercolor gauge",
+      "accepted": true,
+      "mask_pixels": 29225,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        411,
+        120,
+        600,
+        317
+      ]
+    },
+    {
+      "name": "upper-left lamps",
+      "pocket": "upper-left tall bay",
+      "role": "small colored bulbs only in one pocket",
+      "accepted": true,
+      "mask_pixels": 12857,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        414,
+        306,
+        632,
+        401
+      ]
+    }
+  ]
+}

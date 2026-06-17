@@ -1,0 +1,66 @@
+{
+  "timestamp": "2026-06-17T06:39:57Z",
+  "svg": "tasks/space-svg-exports-batch/source/np01-back-top.svg",
+  "svg_sha256": "1c760b94bbd550f963e9f88b65418fae541e9011dc676b7f08cb8b22586bc04c",
+  "candidate": "tasks/space-svg-exports-batch/outputs/generated/np01-back-top-checkpoint-v1.png",
+  "artwork_only": "tasks/space-svg-exports-batch/outputs/final/np01-back-top-checkpoint-v1-artwork-only.png",
+  "clean_black_lines": "tasks/space-svg-exports-batch/outputs/final/np01-back-top-checkpoint-v1-clean-black-lines.png",
+  "debug_mask": "tasks/space-svg-exports-batch/outputs/reviews/np01-back-top-checkpoint-v1-debug-mask.png",
+  "style_packet": "tasks/space-svg-exports-batch/style-packet/style-packet.json",
+  "source_style_refs": [
+    "tasks/space-svg-exports-batch/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png",
+    "tasks/space-svg-exports-batch/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+  ],
+  "viewbox": [
+    0.0,
+    0.0,
+    1644.0996,
+    1643.0616
+  ],
+  "output_dimensions": "1120x1119",
+  "contours": [
+    {
+      "source_type": "path",
+      "index": 0,
+      "role": "paintable",
+      "area": 1949716.9,
+      "bounds": [
+        20.0,
+        20.0,
+        1624.1,
+        1608.58
+      ]
+    },
+    {
+      "source_type": "path",
+      "index": 1,
+      "role": "cutout",
+      "area": 15788.14,
+      "bounds": [
+        327.81,
+        170.79,
+        469.64,
+        312.62
+      ]
+    },
+    {
+      "source_type": "path",
+      "index": 2,
+      "role": "cutout",
+      "area": 89231.16,
+      "bounds": [
+        979.55,
+        154.66,
+        1509.02,
+        676.75
+      ]
+    }
+  ],
+  "metrics": {
+    "verdict": "PASS",
+    "outside_nonwhite_pixels": 0,
+    "cutout_nonwhite_pixels": 0,
+    "paintable_coverage_pct": 99.53
+  },
+  "method_note": "Checkpoint-only geometry-native watercolor rendering; image-generation model pass should follow after approval if user wants richer synthesis."
+}

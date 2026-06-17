@@ -1,0 +1,479 @@
+{
+  "candidate": "reference-first",
+  "method": "procedural Pillow proof; reference vocabulary first, SVG geometry hard",
+  "source_svg": "tasks/top-temp-workflow-test/source/template.svg",
+  "template_manifest": "tasks/top-temp-workflow-test/template-manifest.json",
+  "geometry_report": "tasks/top-temp-workflow-test/svg-geometry-report.md",
+  "style_reference_extraction": {
+    "reference_files": [
+      "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png",
+      "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    ],
+    "observed_vocabulary": [
+      "blue watercolor material body",
+      "dark navy hand-inked outlines and rims",
+      "rounded controls with glossy white highlights",
+      "coral, yellow, and mint accent controls",
+      "sparse sliders, dials, buttons, screws, and tick marks",
+      "simple rounded shapes with soft shadow pooling"
+    ],
+    "sampled_palette_hex": [
+      "#6d98dc",
+      "#80ace2",
+      "#5684cf",
+      "#376bb3",
+      "#9abfe9",
+      "#d1e0f0",
+      "#1a498e",
+      "#ef9768"
+    ]
+  },
+  "manifest_geometry_roles_used": {
+    "outer_contours": [
+      {
+        "element": "path[0]",
+        "id_or_class": "cls-1",
+        "bounds": [
+          4.01,
+          4.0,
+          1588.11,
+          1566.39
+        ],
+        "role": "outer material contour"
+      }
+    ],
+    "paintable_regions": [
+      "outer contour minus internal cutouts with a small edge margin"
+    ],
+    "internal_cutouts": [
+      {
+        "element": "path[1]",
+        "id_or_class": "cls-1",
+        "bounds": [
+          788.38,
+          401.16,
+          1508.1,
+          1029.35
+        ],
+        "role": "large diagonal rounded slot keep-clear"
+      },
+      {
+        "element": "path[2]",
+        "id_or_class": "cls-1",
+        "bounds": [
+          1385.69,
+          1167.47,
+          1527.53,
+          1309.31
+        ],
+        "role": "lower-right round/bolt-like keep-clear"
+      }
+    ],
+    "keep_clear_zones": [
+      "path[1] large diagonal slot",
+      "path[2] lower-right round cutout"
+    ],
+    "visual_guides": []
+  },
+  "safe_pocket_plan": [
+    {
+      "name": "upper-left tall bay above the left shoulder of the slot",
+      "bbox": [
+        405,
+        102,
+        712,
+        372
+      ],
+      "motifs": [
+        "coral/yellow/mint upright controls",
+        "mint rounded status capsule"
+      ]
+    },
+    {
+      "name": "middle-left field below/left of the diagonal slot",
+      "bbox": [
+        226,
+        680,
+        742,
+        948
+      ],
+      "motifs": [
+        "four sparse rounded sliders with small colored knobs"
+      ]
+    },
+    {
+      "name": "lower-left base bay above the bottom notch",
+      "bbox": [
+        72,
+        1160,
+        610,
+        1462
+      ],
+      "motifs": [
+        "glossy screw heads only"
+      ]
+    },
+    {
+      "name": "lower-middle bay between the bottom notch and the right cutouts",
+      "bbox": [
+        820,
+        1090,
+        1350,
+        1388
+      ],
+      "motifs": [
+        "large dial",
+        "three rounded pill buttons"
+      ]
+    },
+    {
+      "name": "right vertical strip between the diagonal slot and outer edge",
+      "bbox": [
+        1478,
+        1050,
+        1570,
+        1452
+      ],
+      "motifs": [
+        "short accent bars only, held away from the round cutout"
+      ]
+    }
+  ],
+  "motifs": [
+    {
+      "name": "rounded slider track 1",
+      "pocket": "middle-left field below/left of the diagonal slot",
+      "bbox": [
+        238,
+        703,
+        720,
+        728
+      ]
+    },
+    {
+      "name": "small glossy slider knob 1",
+      "pocket": "middle-left field below/left of the diagonal slot",
+      "bbox": [
+        287,
+        695,
+        323,
+        735
+      ]
+    },
+    {
+      "name": "small glossy slider knob 1",
+      "pocket": "middle-left field below/left of the diagonal slot",
+      "bbox": [
+        487,
+        695,
+        523,
+        735
+      ]
+    },
+    {
+      "name": "rounded slider track 2",
+      "pocket": "middle-left field below/left of the diagonal slot",
+      "bbox": [
+        238,
+        770,
+        720,
+        795
+      ]
+    },
+    {
+      "name": "small glossy slider knob 2",
+      "pocket": "middle-left field below/left of the diagonal slot",
+      "bbox": [
+        387,
+        762,
+        423,
+        802
+      ]
+    },
+    {
+      "name": "small glossy slider knob 2",
+      "pocket": "middle-left field below/left of the diagonal slot",
+      "bbox": [
+        597,
+        762,
+        633,
+        802
+      ]
+    },
+    {
+      "name": "rounded slider track 3",
+      "pocket": "middle-left field below/left of the diagonal slot",
+      "bbox": [
+        238,
+        838,
+        720,
+        863
+      ]
+    },
+    {
+      "name": "small glossy slider knob 3",
+      "pocket": "middle-left field below/left of the diagonal slot",
+      "bbox": [
+        252,
+        830,
+        288,
+        870
+      ]
+    },
+    {
+      "name": "small glossy slider knob 3",
+      "pocket": "middle-left field below/left of the diagonal slot",
+      "bbox": [
+        462,
+        830,
+        498,
+        870
+      ]
+    },
+    {
+      "name": "small glossy slider knob 3",
+      "pocket": "middle-left field below/left of the diagonal slot",
+      "bbox": [
+        667,
+        830,
+        703,
+        870
+      ]
+    },
+    {
+      "name": "rounded slider track 4",
+      "pocket": "middle-left field below/left of the diagonal slot",
+      "bbox": [
+        238,
+        906,
+        720,
+        931
+      ]
+    },
+    {
+      "name": "small glossy slider knob 4",
+      "pocket": "middle-left field below/left of the diagonal slot",
+      "bbox": [
+        364,
+        898,
+        400,
+        938
+      ]
+    },
+    {
+      "name": "small glossy slider knob 4",
+      "pocket": "middle-left field below/left of the diagonal slot",
+      "bbox": [
+        594,
+        898,
+        630,
+        938
+      ]
+    },
+    {
+      "name": "coral upright rounded control",
+      "pocket": "upper-left tall bay above the left shoulder of the slot",
+      "bbox": [
+        442,
+        105,
+        498,
+        279
+      ]
+    },
+    {
+      "name": "yellow upright rounded control",
+      "pocket": "upper-left tall bay above the left shoulder of the slot",
+      "bbox": [
+        547,
+        142,
+        603,
+        304
+      ]
+    },
+    {
+      "name": "mint upright rounded control",
+      "pocket": "upper-left tall bay above the left shoulder of the slot",
+      "bbox": [
+        632,
+        131,
+        688,
+        291
+      ]
+    },
+    {
+      "name": "mint rounded status capsule",
+      "pocket": "upper-left tall bay above the left shoulder of the slot",
+      "bbox": [
+        415,
+        285,
+        650,
+        356
+      ]
+    },
+    {
+      "name": "large pale-blue dial",
+      "pocket": "lower-middle bay between the bottom notch and the right cutouts",
+      "bbox": [
+        820,
+        1137,
+        1030,
+        1347
+      ]
+    },
+    {
+      "name": "coral horizontal pill button",
+      "pocket": "lower-middle bay between the bottom notch and the right cutouts",
+      "bbox": [
+        1078,
+        1120,
+        1325,
+        1192
+      ]
+    },
+    {
+      "name": "yellow horizontal pill button",
+      "pocket": "lower-middle bay between the bottom notch and the right cutouts",
+      "bbox": [
+        1088,
+        1288,
+        1322,
+        1360
+      ]
+    },
+    {
+      "name": "mint short middle pill button",
+      "pocket": "lower-middle bay between the bottom notch and the right cutouts",
+      "bbox": [
+        1118,
+        1210,
+        1280,
+        1274
+      ]
+    },
+    {
+      "name": "lower-left glossy screw",
+      "pocket": "lower-left base bay above the bottom notch",
+      "bbox": [
+        89,
+        1219,
+        161,
+        1291
+      ]
+    },
+    {
+      "name": "bottom-center small screw",
+      "pocket": "lower-left base bay above the bottom notch",
+      "bbox": [
+        530,
+        1402,
+        590,
+        1462
+      ]
+    },
+    {
+      "name": "right-edge short accent bar 1",
+      "pocket": "right vertical strip between the diagonal slot and outer edge",
+      "bbox": [
+        1496,
+        1082,
+        1562,
+        1110
+      ]
+    },
+    {
+      "name": "right-edge short accent bar 2",
+      "pocket": "right vertical strip between the diagonal slot and outer edge",
+      "bbox": [
+        1496,
+        1134,
+        1562,
+        1162
+      ]
+    },
+    {
+      "name": "right-edge short accent bar 3",
+      "pocket": "right vertical strip between the diagonal slot and outer edge",
+      "bbox": [
+        1496,
+        1354,
+        1562,
+        1382
+      ]
+    },
+    {
+      "name": "right-edge short accent bar 4",
+      "pocket": "right vertical strip between the diagonal slot and outer edge",
+      "bbox": [
+        1496,
+        1410,
+        1562,
+        1438
+      ]
+    }
+  ],
+  "geometry_metrics": {
+    "canvas_size": [
+      1592,
+      1570
+    ],
+    "svg_path_bounds": [
+      {
+        "path_index": 0,
+        "role": "outer material contour",
+        "bounds": [
+          4.01,
+          4.0,
+          1588.11,
+          1566.39
+        ]
+      },
+      {
+        "path_index": 1,
+        "role": "large diagonal rounded slot keep-clear",
+        "bounds": [
+          792.58,
+          401.16,
+          1506.6,
+          1027.56
+        ]
+      },
+      {
+        "path_index": 2,
+        "role": "lower-right round/bolt-like keep-clear",
+        "bounds": [
+          1385.69,
+          1167.47,
+          1527.53,
+          1309.31
+        ]
+      }
+    ],
+    "painted_pixel_metrics": {
+      "outside_allowed_alpha_pixels": 0,
+      "inside_internal_cutout_alpha_pixels": 0,
+      "focal_motif_pixels_inside_cutouts": 0,
+      "focal_motif_pixels_outside_outer": 17195,
+      "focal_motif_pixels_in_cutout_or_edge_margin": 5374
+    },
+    "mechanical_gate": {
+      "zero_alpha_outside_allowed": true,
+      "zero_alpha_inside_cutouts": true,
+      "zero_focal_motifs_inside_cutouts": true,
+      "zero_focal_motifs_outside_outer": false,
+      "zero_focal_motifs_in_reserved_margins": false,
+      "pass": false
+    }
+  },
+  "workflow_notes": [
+    "Quiet blue watercolor material is allowed across the whole paintable body.",
+    "Readable controls were placed only in safe pockets before applying the SVG export guardrail.",
+    "The large diagonal slot and lower-right circular cutout were reserved as cutouts from the mask stage onward.",
+    "The proof prioritizes reference object vocabulary over dense mechanical fill."
+  ],
+  "outputs": {
+    "artwork": "tasks/top-temp-workflow-test/agents/reference-first/reference-first-artwork.png",
+    "overlay": "tasks/top-temp-workflow-test/agents/reference-first/reference-first-overlay.png",
+    "mask_debug": "tasks/top-temp-workflow-test/agents/reference-first/reference-first-mask-debug.png",
+    "metadata": "tasks/top-temp-workflow-test/agents/reference-first/reference-first-metadata.json"
+  }
+}

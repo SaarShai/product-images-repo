@@ -1,0 +1,678 @@
+{
+  "created_at": "2026-06-16T14:01:45Z",
+  "task": "berlin-skyline-live-example",
+  "purpose": "visual style packet for image-generation/style agents",
+  "source_refs": [
+    "tasks/berlin-skyline-live-example/refs/Beisheim-Center_und_Potsdamer_Platz_in_Berlin_(2013)_(cropped).jpg",
+    "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+  ],
+  "contact_sheets": {
+    "reference_contact_sheet": "tasks/berlin-skyline-live-example/style-packet/reference-contact-sheet.png",
+    "style_exemplar_sheet": "tasks/berlin-skyline-live-example/style-packet/style-exemplar-sheet.png"
+  },
+  "palette_hex": [
+    "#ecedf0",
+    "#dbe0e4",
+    "#afac9e",
+    "#9e998a",
+    "#898479",
+    "#c3bfae",
+    "#6e6d66",
+    "#d8d2bf",
+    "#53504a",
+    "#2f2f29",
+    "#d9be6d",
+    "#a06b17"
+  ],
+  "crops": [
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref01-beisheim-center-und-potsdamer-platz-in-ber-full-panel.png",
+      "bbox": [
+        0,
+        0,
+        250,
+        395
+      ],
+      "size": [
+        250,
+        395
+      ],
+      "label": "ref 1 full panel",
+      "type": "full-panel",
+      "source": "tasks/berlin-skyline-live-example/refs/Beisheim-Center_und_Potsdamer_Platz_in_Berlin_(2013)_(cropped).jpg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref01-beisheim-center-und-potsdamer-platz-in-ber-left-region.png",
+      "bbox": [
+        0,
+        0,
+        103,
+        395
+      ],
+      "size": [
+        103,
+        395
+      ],
+      "label": "ref 1 left-region",
+      "type": "left-region",
+      "source": "tasks/berlin-skyline-live-example/refs/Beisheim-Center_und_Potsdamer_Platz_in_Berlin_(2013)_(cropped).jpg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref01-beisheim-center-und-potsdamer-platz-in-ber-center-region.png",
+      "bbox": [
+        69,
+        0,
+        183,
+        395
+      ],
+      "size": [
+        114,
+        395
+      ],
+      "label": "ref 1 center-region",
+      "type": "center-region",
+      "source": "tasks/berlin-skyline-live-example/refs/Beisheim-Center_und_Potsdamer_Platz_in_Berlin_(2013)_(cropped).jpg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref01-beisheim-center-und-potsdamer-platz-in-ber-right-region.png",
+      "bbox": [
+        147,
+        0,
+        250,
+        395
+      ],
+      "size": [
+        103,
+        395
+      ],
+      "label": "ref 1 right-region",
+      "type": "right-region",
+      "source": "tasks/berlin-skyline-live-example/refs/Beisheim-Center_und_Potsdamer_Platz_in_Berlin_(2013)_(cropped).jpg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref01-beisheim-center-und-potsdamer-platz-in-ber-body-texture.png",
+      "bbox": [
+        92,
+        102,
+        163,
+        292
+      ],
+      "size": [
+        71,
+        190
+      ],
+      "label": "ref 1 body-texture",
+      "type": "body-texture",
+      "source": "tasks/berlin-skyline-live-example/refs/Beisheim-Center_und_Potsdamer_Platz_in_Berlin_(2013)_(cropped).jpg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref01-beisheim-center-und-potsdamer-platz-in-ber-edge-treatment.png",
+      "bbox": [
+        0,
+        0,
+        68,
+        173
+      ],
+      "size": [
+        68,
+        173
+      ],
+      "label": "ref 1 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/berlin-skyline-live-example/refs/Beisheim-Center_und_Potsdamer_Platz_in_Berlin_(2013)_(cropped).jpg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-full-panel.png",
+      "bbox": [
+        0,
+        0,
+        1078,
+        592
+      ],
+      "size": [
+        1078,
+        592
+      ],
+      "label": "ref 2 full panel",
+      "type": "full-panel",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-left-region.png",
+      "bbox": [
+        0,
+        0,
+        417,
+        592
+      ],
+      "size": [
+        417,
+        592
+      ],
+      "label": "ref 2 left-region",
+      "type": "left-region",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-center-region.png",
+      "bbox": [
+        326,
+        0,
+        762,
+        592
+      ],
+      "size": [
+        436,
+        592
+      ],
+      "label": "ref 2 center-region",
+      "type": "center-region",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-right-region.png",
+      "bbox": [
+        660,
+        0,
+        1078,
+        592
+      ],
+      "size": [
+        418,
+        592
+      ],
+      "label": "ref 2 right-region",
+      "type": "right-region",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-body-texture.png",
+      "bbox": [
+        423,
+        157,
+        676,
+        434
+      ],
+      "size": [
+        253,
+        277
+      ],
+      "label": "ref 2 body-texture",
+      "type": "body-texture",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-edge-treatment.png",
+      "bbox": [
+        0,
+        0,
+        266,
+        256
+      ],
+      "size": [
+        266,
+        256
+      ],
+      "label": "ref 2 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-accent-component-01.png",
+      "bbox": [
+        798,
+        58,
+        1045,
+        260
+      ],
+      "size": [
+        247,
+        202
+      ],
+      "label": "ref 2 accent component 01",
+      "type": "accent-component",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-accent-component-02.png",
+      "bbox": [
+        814,
+        158,
+        1011,
+        487
+      ],
+      "size": [
+        197,
+        329
+      ],
+      "label": "ref 2 accent component 02",
+      "type": "accent-component",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-accent-component-03.png",
+      "bbox": [
+        36,
+        32,
+        191,
+        283
+      ],
+      "size": [
+        155,
+        251
+      ],
+      "label": "ref 2 accent component 03",
+      "type": "accent-component",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-accent-component-04.png",
+      "bbox": [
+        38,
+        205,
+        181,
+        400
+      ],
+      "size": [
+        143,
+        195
+      ],
+      "label": "ref 2 accent component 04",
+      "type": "accent-component",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-accent-component-05.png",
+      "bbox": [
+        851,
+        389,
+        989,
+        554
+      ],
+      "size": [
+        138,
+        165
+      ],
+      "label": "ref 2 accent component 05",
+      "type": "accent-component",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-accent-component-06.png",
+      "bbox": [
+        755,
+        426,
+        908,
+        571
+      ],
+      "size": [
+        153,
+        145
+      ],
+      "label": "ref 2 accent component 06",
+      "type": "accent-component",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-accent-component-07.png",
+      "bbox": [
+        940,
+        269,
+        1078,
+        406
+      ],
+      "size": [
+        138,
+        137
+      ],
+      "label": "ref 2 accent component 07",
+      "type": "accent-component",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-accent-component-08.png",
+      "bbox": [
+        967,
+        86,
+        1078,
+        229
+      ],
+      "size": [
+        111,
+        143
+      ],
+      "label": "ref 2 accent component 08",
+      "type": "accent-component",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    }
+  ],
+  "agent_attachments": [
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref01-beisheim-center-und-potsdamer-platz-in-ber-full-panel.png",
+      "bbox": [
+        0,
+        0,
+        250,
+        395
+      ],
+      "size": [
+        250,
+        395
+      ],
+      "label": "ref 1 full panel",
+      "type": "full-panel",
+      "source": "tasks/berlin-skyline-live-example/refs/Beisheim-Center_und_Potsdamer_Platz_in_Berlin_(2013)_(cropped).jpg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-full-panel.png",
+      "bbox": [
+        0,
+        0,
+        1078,
+        592
+      ],
+      "size": [
+        1078,
+        592
+      ],
+      "label": "ref 2 full panel",
+      "type": "full-panel",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref01-beisheim-center-und-potsdamer-platz-in-ber-center-region.png",
+      "bbox": [
+        69,
+        0,
+        183,
+        395
+      ],
+      "size": [
+        114,
+        395
+      ],
+      "label": "ref 1 center-region",
+      "type": "center-region",
+      "source": "tasks/berlin-skyline-live-example/refs/Beisheim-Center_und_Potsdamer_Platz_in_Berlin_(2013)_(cropped).jpg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref01-beisheim-center-und-potsdamer-platz-in-ber-left-region.png",
+      "bbox": [
+        0,
+        0,
+        103,
+        395
+      ],
+      "size": [
+        103,
+        395
+      ],
+      "label": "ref 1 left-region",
+      "type": "left-region",
+      "source": "tasks/berlin-skyline-live-example/refs/Beisheim-Center_und_Potsdamer_Platz_in_Berlin_(2013)_(cropped).jpg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref01-beisheim-center-und-potsdamer-platz-in-ber-right-region.png",
+      "bbox": [
+        147,
+        0,
+        250,
+        395
+      ],
+      "size": [
+        103,
+        395
+      ],
+      "label": "ref 1 right-region",
+      "type": "right-region",
+      "source": "tasks/berlin-skyline-live-example/refs/Beisheim-Center_und_Potsdamer_Platz_in_Berlin_(2013)_(cropped).jpg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-center-region.png",
+      "bbox": [
+        326,
+        0,
+        762,
+        592
+      ],
+      "size": [
+        436,
+        592
+      ],
+      "label": "ref 2 center-region",
+      "type": "center-region",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-left-region.png",
+      "bbox": [
+        0,
+        0,
+        417,
+        592
+      ],
+      "size": [
+        417,
+        592
+      ],
+      "label": "ref 2 left-region",
+      "type": "left-region",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-right-region.png",
+      "bbox": [
+        660,
+        0,
+        1078,
+        592
+      ],
+      "size": [
+        418,
+        592
+      ],
+      "label": "ref 2 right-region",
+      "type": "right-region",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref01-beisheim-center-und-potsdamer-platz-in-ber-body-texture.png",
+      "bbox": [
+        92,
+        102,
+        163,
+        292
+      ],
+      "size": [
+        71,
+        190
+      ],
+      "label": "ref 1 body-texture",
+      "type": "body-texture",
+      "source": "tasks/berlin-skyline-live-example/refs/Beisheim-Center_und_Potsdamer_Platz_in_Berlin_(2013)_(cropped).jpg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref01-beisheim-center-und-potsdamer-platz-in-ber-edge-treatment.png",
+      "bbox": [
+        0,
+        0,
+        68,
+        173
+      ],
+      "size": [
+        68,
+        173
+      ],
+      "label": "ref 1 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/berlin-skyline-live-example/refs/Beisheim-Center_und_Potsdamer_Platz_in_Berlin_(2013)_(cropped).jpg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-body-texture.png",
+      "bbox": [
+        423,
+        157,
+        676,
+        434
+      ],
+      "size": [
+        253,
+        277
+      ],
+      "label": "ref 2 body-texture",
+      "type": "body-texture",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-edge-treatment.png",
+      "bbox": [
+        0,
+        0,
+        266,
+        256
+      ],
+      "size": [
+        266,
+        256
+      ],
+      "label": "ref 2 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-accent-component-01.png",
+      "bbox": [
+        798,
+        58,
+        1045,
+        260
+      ],
+      "size": [
+        247,
+        202
+      ],
+      "label": "ref 2 accent component 01",
+      "type": "accent-component",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-accent-component-02.png",
+      "bbox": [
+        814,
+        158,
+        1011,
+        487
+      ],
+      "size": [
+        197,
+        329
+      ],
+      "label": "ref 2 accent component 02",
+      "type": "accent-component",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-accent-component-03.png",
+      "bbox": [
+        36,
+        32,
+        191,
+        283
+      ],
+      "size": [
+        155,
+        251
+      ],
+      "label": "ref 2 accent component 03",
+      "type": "accent-component",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-accent-component-04.png",
+      "bbox": [
+        38,
+        205,
+        181,
+        400
+      ],
+      "size": [
+        143,
+        195
+      ],
+      "label": "ref 2 accent component 04",
+      "type": "accent-component",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-accent-component-05.png",
+      "bbox": [
+        851,
+        389,
+        989,
+        554
+      ],
+      "size": [
+        138,
+        165
+      ],
+      "label": "ref 2 accent component 05",
+      "type": "accent-component",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-accent-component-06.png",
+      "bbox": [
+        755,
+        426,
+        908,
+        571
+      ],
+      "size": [
+        153,
+        145
+      ],
+      "label": "ref 2 accent component 06",
+      "type": "accent-component",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-accent-component-07.png",
+      "bbox": [
+        940,
+        269,
+        1078,
+        406
+      ],
+      "size": [
+        138,
+        137
+      ],
+      "label": "ref 2 accent component 07",
+      "type": "accent-component",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    },
+    {
+      "path": "tasks/berlin-skyline-live-example/style-packet/crops/ref02-whatsapp-image-2026-06-16-at-01-31-54-accent-component-08.png",
+      "bbox": [
+        967,
+        86,
+        1078,
+        229
+      ],
+      "size": [
+        111,
+        143
+      ],
+      "label": "ref 2 accent component 08",
+      "type": "accent-component",
+      "source": "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg"
+    }
+  ],
+  "agent_contract": [
+    "Attach packet images when asking a style agent to generate elements.",
+    "Generate style-matched element sheets before geometry placement.",
+    "Reject outputs that only match palette while missing watercolor edge, line, lighting, and object vocabulary.",
+    "Geometry agents place accepted elements into SVG safe pockets after style generation."
+  ],
+  "prompt": "tasks/berlin-skyline-live-example/prompts/prompt-v2-style-packet-elements-first.md"
+}

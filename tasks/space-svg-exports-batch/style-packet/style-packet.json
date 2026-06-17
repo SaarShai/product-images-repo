@@ -1,0 +1,838 @@
+{
+  "created_at": "2026-06-16T11:45:23Z",
+  "task": "top-temp-workflow-test",
+  "purpose": "visual style packet for image-generation/style agents",
+  "source_refs": [
+    "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png",
+    "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+  ],
+  "contact_sheets": {
+    "reference_contact_sheet": "tasks/top-temp-workflow-test/style-packet/reference-contact-sheet.png",
+    "style_exemplar_sheet": "tasks/top-temp-workflow-test/style-packet/style-exemplar-sheet.png"
+  },
+  "palette_hex": [
+    "#79a4de",
+    "#6a93d9",
+    "#8ab3e2",
+    "#5784cd",
+    "#3f71b6",
+    "#295a9c",
+    "#aec7e9",
+    "#d3e2f2",
+    "#ee847f",
+    "#f2b956",
+    "#ab636e",
+    "#f1c097"
+  ],
+  "crops": [
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-full-panel.png",
+      "bbox": [
+        63,
+        65,
+        2110,
+        649
+      ],
+      "size": [
+        2047,
+        584
+      ],
+      "label": "ref 1 full panel",
+      "type": "full-panel",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-left-region.png",
+      "bbox": [
+        55,
+        57,
+        848,
+        657
+      ],
+      "size": [
+        793,
+        600
+      ],
+      "label": "ref 1 left-region",
+      "type": "left-region",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-center-region.png",
+      "bbox": [
+        689,
+        57,
+        1503,
+        657
+      ],
+      "size": [
+        814,
+        600
+      ],
+      "label": "ref 1 center-region",
+      "type": "center-region",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-right-region.png",
+      "bbox": [
+        1324,
+        57,
+        2118,
+        657
+      ],
+      "size": [
+        794,
+        600
+      ],
+      "label": "ref 1 right-region",
+      "type": "right-region",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-body-texture.png",
+      "bbox": [
+        873,
+        220,
+        1340,
+        493
+      ],
+      "size": [
+        467,
+        273
+      ],
+      "label": "ref 1 body-texture",
+      "type": "body-texture",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-edge-treatment.png",
+      "bbox": [
+        55,
+        57,
+        562,
+        318
+      ],
+      "size": [
+        507,
+        261
+      ],
+      "label": "ref 1 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-01.png",
+      "bbox": [
+        908,
+        107,
+        1304,
+        341
+      ],
+      "size": [
+        396,
+        234
+      ],
+      "label": "ref 1 accent component 01",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-02.png",
+      "bbox": [
+        908,
+        373,
+        1304,
+        606
+      ],
+      "size": [
+        396,
+        233
+      ],
+      "label": "ref 1 accent component 02",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-03.png",
+      "bbox": [
+        908,
+        241,
+        1303,
+        473
+      ],
+      "size": [
+        395,
+        232
+      ],
+      "label": "ref 1 accent component 03",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-04.png",
+      "bbox": [
+        1710,
+        117,
+        1997,
+        278
+      ],
+      "size": [
+        287,
+        161
+      ],
+      "label": "ref 1 accent component 04",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-05.png",
+      "bbox": [
+        1710,
+        211,
+        1998,
+        371
+      ],
+      "size": [
+        288,
+        160
+      ],
+      "label": "ref 1 accent component 05",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-06.png",
+      "bbox": [
+        1710,
+        258,
+        1997,
+        418
+      ],
+      "size": [
+        287,
+        160
+      ],
+      "label": "ref 1 accent component 06",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-07.png",
+      "bbox": [
+        1710,
+        349,
+        1997,
+        508
+      ],
+      "size": [
+        287,
+        159
+      ],
+      "label": "ref 1 accent component 07",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-08.png",
+      "bbox": [
+        1710,
+        439,
+        1997,
+        598
+      ],
+      "size": [
+        287,
+        159
+      ],
+      "label": "ref 1 accent component 08",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-full-panel.png",
+      "bbox": [
+        82,
+        64,
+        2075,
+        666
+      ],
+      "size": [
+        1993,
+        602
+      ],
+      "label": "ref 2 full panel",
+      "type": "full-panel",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-left-region.png",
+      "bbox": [
+        74,
+        56,
+        847,
+        674
+      ],
+      "size": [
+        773,
+        618
+      ],
+      "label": "ref 2 left-region",
+      "type": "left-region",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-center-region.png",
+      "bbox": [
+        691,
+        56,
+        1485,
+        674
+      ],
+      "size": [
+        794,
+        618
+      ],
+      "label": "ref 2 center-region",
+      "type": "center-region",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-right-region.png",
+      "bbox": [
+        1309,
+        56,
+        2083,
+        674
+      ],
+      "size": [
+        774,
+        618
+      ],
+      "label": "ref 2 right-region",
+      "type": "right-region",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-body-texture.png",
+      "bbox": [
+        871,
+        224,
+        1325,
+        505
+      ],
+      "size": [
+        454,
+        281
+      ],
+      "label": "ref 2 body-texture",
+      "type": "body-texture",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-edge-treatment.png",
+      "bbox": [
+        74,
+        56,
+        568,
+        324
+      ],
+      "size": [
+        494,
+        268
+      ],
+      "label": "ref 2 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-accent-component-01.png",
+      "bbox": [
+        967,
+        103,
+        1178,
+        369
+      ],
+      "size": [
+        211,
+        266
+      ],
+      "label": "ref 2 accent component 01",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-accent-component-02.png",
+      "bbox": [
+        800,
+        104,
+        1003,
+        369
+      ],
+      "size": [
+        203,
+        265
+      ],
+      "label": "ref 2 accent component 02",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-accent-component-03.png",
+      "bbox": [
+        1172,
+        323,
+        1391,
+        584
+      ],
+      "size": [
+        219,
+        261
+      ],
+      "label": "ref 2 accent component 03",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-accent-component-04.png",
+      "bbox": [
+        1170,
+        103,
+        1372,
+        369
+      ],
+      "size": [
+        202,
+        266
+      ],
+      "label": "ref 2 accent component 04",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-accent-component-05.png",
+      "bbox": [
+        982,
+        321,
+        1184,
+        584
+      ],
+      "size": [
+        202,
+        263
+      ],
+      "label": "ref 2 accent component 05",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-accent-component-06.png",
+      "bbox": [
+        801,
+        321,
+        1004,
+        584
+      ],
+      "size": [
+        203,
+        263
+      ],
+      "label": "ref 2 accent component 06",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+    }
+  ],
+  "agent_attachments": [
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-full-panel.png",
+      "bbox": [
+        63,
+        65,
+        2110,
+        649
+      ],
+      "size": [
+        2047,
+        584
+      ],
+      "label": "ref 1 full panel",
+      "type": "full-panel",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-full-panel.png",
+      "bbox": [
+        82,
+        64,
+        2075,
+        666
+      ],
+      "size": [
+        1993,
+        602
+      ],
+      "label": "ref 2 full panel",
+      "type": "full-panel",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-center-region.png",
+      "bbox": [
+        689,
+        57,
+        1503,
+        657
+      ],
+      "size": [
+        814,
+        600
+      ],
+      "label": "ref 1 center-region",
+      "type": "center-region",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-left-region.png",
+      "bbox": [
+        55,
+        57,
+        848,
+        657
+      ],
+      "size": [
+        793,
+        600
+      ],
+      "label": "ref 1 left-region",
+      "type": "left-region",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-right-region.png",
+      "bbox": [
+        1324,
+        57,
+        2118,
+        657
+      ],
+      "size": [
+        794,
+        600
+      ],
+      "label": "ref 1 right-region",
+      "type": "right-region",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-center-region.png",
+      "bbox": [
+        691,
+        56,
+        1485,
+        674
+      ],
+      "size": [
+        794,
+        618
+      ],
+      "label": "ref 2 center-region",
+      "type": "center-region",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-left-region.png",
+      "bbox": [
+        74,
+        56,
+        847,
+        674
+      ],
+      "size": [
+        773,
+        618
+      ],
+      "label": "ref 2 left-region",
+      "type": "left-region",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-right-region.png",
+      "bbox": [
+        1309,
+        56,
+        2083,
+        674
+      ],
+      "size": [
+        774,
+        618
+      ],
+      "label": "ref 2 right-region",
+      "type": "right-region",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-body-texture.png",
+      "bbox": [
+        873,
+        220,
+        1340,
+        493
+      ],
+      "size": [
+        467,
+        273
+      ],
+      "label": "ref 1 body-texture",
+      "type": "body-texture",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-edge-treatment.png",
+      "bbox": [
+        55,
+        57,
+        562,
+        318
+      ],
+      "size": [
+        507,
+        261
+      ],
+      "label": "ref 1 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-body-texture.png",
+      "bbox": [
+        871,
+        224,
+        1325,
+        505
+      ],
+      "size": [
+        454,
+        281
+      ],
+      "label": "ref 2 body-texture",
+      "type": "body-texture",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-edge-treatment.png",
+      "bbox": [
+        74,
+        56,
+        568,
+        324
+      ],
+      "size": [
+        494,
+        268
+      ],
+      "label": "ref 2 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-01.png",
+      "bbox": [
+        908,
+        107,
+        1304,
+        341
+      ],
+      "size": [
+        396,
+        234
+      ],
+      "label": "ref 1 accent component 01",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-02.png",
+      "bbox": [
+        908,
+        373,
+        1304,
+        606
+      ],
+      "size": [
+        396,
+        233
+      ],
+      "label": "ref 1 accent component 02",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-03.png",
+      "bbox": [
+        908,
+        241,
+        1303,
+        473
+      ],
+      "size": [
+        395,
+        232
+      ],
+      "label": "ref 1 accent component 03",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-04.png",
+      "bbox": [
+        1710,
+        117,
+        1997,
+        278
+      ],
+      "size": [
+        287,
+        161
+      ],
+      "label": "ref 1 accent component 04",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-05.png",
+      "bbox": [
+        1710,
+        211,
+        1998,
+        371
+      ],
+      "size": [
+        288,
+        160
+      ],
+      "label": "ref 1 accent component 05",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-06.png",
+      "bbox": [
+        1710,
+        258,
+        1997,
+        418
+      ],
+      "size": [
+        287,
+        160
+      ],
+      "label": "ref 1 accent component 06",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-07.png",
+      "bbox": [
+        1710,
+        349,
+        1997,
+        508
+      ],
+      "size": [
+        287,
+        159
+      ],
+      "label": "ref 1 accent component 07",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-08.png",
+      "bbox": [
+        1710,
+        439,
+        1997,
+        598
+      ],
+      "size": [
+        287,
+        159
+      ],
+      "label": "ref 1 accent component 08",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-accent-component-01.png",
+      "bbox": [
+        967,
+        103,
+        1178,
+        369
+      ],
+      "size": [
+        211,
+        266
+      ],
+      "label": "ref 2 accent component 01",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-accent-component-02.png",
+      "bbox": [
+        800,
+        104,
+        1003,
+        369
+      ],
+      "size": [
+        203,
+        265
+      ],
+      "label": "ref 2 accent component 02",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-accent-component-03.png",
+      "bbox": [
+        1172,
+        323,
+        1391,
+        584
+      ],
+      "size": [
+        219,
+        261
+      ],
+      "label": "ref 2 accent component 03",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-accent-component-04.png",
+      "bbox": [
+        1170,
+        103,
+        1372,
+        369
+      ],
+      "size": [
+        202,
+        266
+      ],
+      "label": "ref 2 accent component 04",
+      "type": "accent-component",
+      "source": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+    }
+  ],
+  "agent_contract": [
+    "Attach packet images when asking a style agent to generate elements.",
+    "Generate style-matched element sheets before geometry placement.",
+    "Reject outputs that only match palette while missing watercolor edge, line, lighting, and object vocabulary.",
+    "Geometry agents place accepted elements into SVG safe pockets after style generation."
+  ],
+  "prompt": "tasks/top-temp-workflow-test/prompts/prompt-v2-style-packet-elements-first.md"
+}

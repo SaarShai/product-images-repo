@@ -1,0 +1,264 @@
+{
+  "workflow": "style-element-placer",
+  "purpose": "geometry-only placement harness for future style-agent isolated PNG elements",
+  "source_svg": "tasks/top-temp-workflow-test/source/template.svg",
+  "template_manifest": "tasks/top-temp-workflow-test/template-manifest.json",
+  "style_packet_manifest": "tasks/top-temp-workflow-test/style-packet/style-packet.json",
+  "style_packet_contact_sheets": {
+    "reference_contact_sheet": "tasks/top-temp-workflow-test/style-packet/reference-contact-sheet.png",
+    "style_exemplar_sheet": "tasks/top-temp-workflow-test/style-packet/style-exemplar-sheet.png"
+  },
+  "manifest_status": "filled-from-svg-geometry-report-before-agent-test",
+  "viewbox": [
+    0.0,
+    0.0,
+    1592.1,
+    1570.39
+  ],
+  "canvas_size_px": [
+    1593,
+    1571
+  ],
+  "control_margin_px": 18,
+  "paintable_mask": {
+    "outer_pixels": 1483585,
+    "cutout_pixels": 126836,
+    "paintable_pixels": 1356749,
+    "eroded_paintable_pixels": 1163019
+  },
+  "path_roles": {
+    "path[0]": "outer material contour",
+    "path[1]": "large diagonal rounded slot keep-clear",
+    "path[2]": "lower-right round/bolt-like keep-clear"
+  },
+  "safe_pocket_plan": [
+    "upper-left tall bay above the left shoulder of the slot",
+    "middle-left field below/left of the diagonal slot",
+    "lower-left base bay above the bottom notch",
+    "lower-middle bay between the bottom notch and the right cutouts",
+    "right vertical strip between the diagonal slot and outer edge"
+  ],
+  "no_focal_motif_zones": [
+    "path[1] diagonal slot and its immediate margin",
+    "path[2] lower-right round cutout and its immediate margin",
+    "outer contour edge margin"
+  ],
+  "placements": [
+    {
+      "id": "upper_left_yellow_pin",
+      "label": "upper-left yellow pin crop",
+      "role": "small vertical indicator in the upper-left tall safe bay",
+      "source_image": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-accent-component-05.png",
+      "requested_box": [
+        438,
+        104,
+        575,
+        286
+      ],
+      "actual_box": [
+        438,
+        106,
+        575,
+        284
+      ],
+      "fit": "contain",
+      "alpha_mode": "existing",
+      "accepted": true,
+      "rejection_reason": null,
+      "alpha_pixels": 24386,
+      "outside_outer_alpha_pixels": 0,
+      "inside_cutout_alpha_pixels": 0,
+      "outside_eroded_paintable_alpha_pixels": 0,
+      "alpha_bbox": [
+        438,
+        106,
+        575,
+        284
+      ]
+    },
+    {
+      "id": "middle_left_slider_triplet",
+      "label": "middle-left slider triplet crop",
+      "role": "horizontal reference slider detail in middle-left field",
+      "source_image": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-06.png",
+      "requested_box": [
+        252,
+        724,
+        668,
+        838
+      ],
+      "actual_box": [
+        358,
+        724,
+        562,
+        838
+      ],
+      "fit": "contain",
+      "alpha_mode": "existing",
+      "accepted": true,
+      "rejection_reason": null,
+      "alpha_pixels": 23256,
+      "outside_outer_alpha_pixels": 0,
+      "inside_cutout_alpha_pixels": 0,
+      "outside_eroded_paintable_alpha_pixels": 0,
+      "alpha_bbox": [
+        358,
+        724,
+        562,
+        838
+      ]
+    },
+    {
+      "id": "lower_left_red_pin",
+      "label": "lower-left red pin crop",
+      "role": "vertical indicator in lower-left base bay",
+      "source_image": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-accent-component-02.png",
+      "requested_box": [
+        390,
+        1136,
+        560,
+        1398
+      ],
+      "actual_box": [
+        390,
+        1156,
+        560,
+        1378
+      ],
+      "fit": "contain",
+      "alpha_mode": "existing",
+      "accepted": true,
+      "rejection_reason": null,
+      "alpha_pixels": 37740,
+      "outside_outer_alpha_pixels": 0,
+      "inside_cutout_alpha_pixels": 0,
+      "outside_eroded_paintable_alpha_pixels": 0,
+      "alpha_bbox": [
+        390,
+        1156,
+        560,
+        1378
+      ]
+    },
+    {
+      "id": "lower_middle_pill_stack",
+      "label": "lower-middle pill stack crop",
+      "role": "rounded button module between bottom notch and right cutouts",
+      "source_image": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-03.png",
+      "requested_box": [
+        912,
+        1126,
+        1258,
+        1320
+      ],
+      "actual_box": [
+        920,
+        1126,
+        1250,
+        1320
+      ],
+      "fit": "contain",
+      "alpha_mode": "existing",
+      "accepted": true,
+      "rejection_reason": null,
+      "alpha_pixels": 64020,
+      "outside_outer_alpha_pixels": 0,
+      "inside_cutout_alpha_pixels": 0,
+      "outside_eroded_paintable_alpha_pixels": 0,
+      "alpha_bbox": [
+        920,
+        1126,
+        1250,
+        1320
+      ]
+    },
+    {
+      "id": "unsafe_over_diagonal_slot",
+      "label": "intentional unsafe slot overlap",
+      "role": "negative test: should be rejected before drawing because it crosses path[1]",
+      "source_image": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-01.png",
+      "requested_box": [
+        1010,
+        612,
+        1372,
+        818
+      ],
+      "actual_box": [
+        1016,
+        612,
+        1365,
+        818
+      ],
+      "fit": "contain",
+      "alpha_mode": "existing",
+      "accepted": false,
+      "rejection_reason": "outside outer contour; inside internal cutout; outside eroded paintable mask",
+      "alpha_pixels": 71894,
+      "outside_outer_alpha_pixels": 3778,
+      "inside_cutout_alpha_pixels": 37698,
+      "outside_eroded_paintable_alpha_pixels": 57019,
+      "alpha_bbox": [
+        1016,
+        612,
+        1365,
+        818
+      ]
+    },
+    {
+      "id": "unsafe_round_cutout_edge",
+      "label": "intentional unsafe round-cutout overlap",
+      "role": "negative test: should be rejected before drawing because it crosses path[2] and the edge margin",
+      "source_image": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-accent-component-03.png",
+      "requested_box": [
+        1406,
+        1188,
+        1550,
+        1396
+      ],
+      "actual_box": [
+        1406,
+        1206,
+        1550,
+        1378
+      ],
+      "fit": "contain",
+      "alpha_mode": "existing",
+      "accepted": false,
+      "rejection_reason": "inside internal cutout; outside eroded paintable mask",
+      "alpha_pixels": 24768,
+      "outside_outer_alpha_pixels": 0,
+      "inside_cutout_alpha_pixels": 11204,
+      "outside_eroded_paintable_alpha_pixels": 15957,
+      "alpha_bbox": [
+        1406,
+        1206,
+        1550,
+        1378
+      ]
+    }
+  ],
+  "summary": {
+    "planned_placements": 6,
+    "accepted_placements": 4,
+    "rejected_placements": 2,
+    "accepted_outside_eroded_paintable_alpha_pixels": 0,
+    "accepted_inside_cutout_alpha_pixels": 0,
+    "final_outside_outer_alpha_pixels": 0,
+    "final_outside_paintable_alpha_pixels": 0,
+    "final_cutout_alpha_pixels": 0
+  },
+  "method_notes": [
+    "Style agents supply isolated PNG element candidates and style provenance.",
+    "This geometry placer never asks a style agent to understand SVG paths or cutout roles.",
+    "Each transformed element alpha is evaluated against the eroded paintable mask before drawing.",
+    "Rejected placements are kept out of the artwork and shown only in overlay/debug artifacts.",
+    "The final alpha mask is an export guardrail after pre-draw placement checks."
+  ],
+  "outputs": {
+    "artwork": "style-element-placer-artwork.png",
+    "preview_white": "style-element-placer-preview-white.png",
+    "overlay": "style-element-placer-overlay.png",
+    "mask_debug": "style-element-placer-mask-debug.png",
+    "metadata": "style-element-placer-metadata.json"
+  }
+}

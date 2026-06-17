@@ -1,0 +1,68 @@
+{
+  "timestamp": "2026-06-16T06:04:31Z",
+  "command": "scripts/export_svg_template_fit.py tasks/baci-door/outputs/generated/20260616T060000Z-baci-door-updated-svg-scratch-v2-no-model-hex.png --template-svg tasks/baci-door/source/baci-door-updated-20260616.svg --out-dir tasks/baci-door/outputs/final --prefix 20260616T060000Z-baci-door-updated-svg-scratch-v2-no-model-hex --hex-clearance-units 0 --stroke-width-units 10 --require-pass",
+  "source_image": "tasks/baci-door/outputs/generated/20260616T060000Z-baci-door-updated-svg-scratch-v2-no-model-hex.png",
+  "source_sha256": "50b3877ff5f4c8f842c70e95c0bceaa08537e53f5216eb0cd687ade69994c960",
+  "source_dimensions": "923x1704",
+  "template_svg": "tasks/baci-door/source/baci-door-updated-20260616.svg",
+  "template_sha256": "09d5aef35dfd868ec2298ef335e6654809aad043ad64df0ab8467e68cdfa627e",
+  "template_viewbox": [
+    0.0,
+    0.0,
+    1306.39,
+    2418.61
+  ],
+  "art_scale_x": 1.0,
+  "art_scale_y": 1.0,
+  "art_offset_x": 0,
+  "art_offset_y": 0,
+  "hex_clearance_units": 0.0,
+  "stroke_width_units": 10.0,
+  "artwork_only": "tasks/baci-door/outputs/final/20260616T060000Z-baci-door-updated-svg-scratch-v2-no-model-hex-artwork-only.png",
+  "clean_black_lines": "tasks/baci-door/outputs/final/20260616T060000Z-baci-door-updated-svg-scratch-v2-no-model-hex-clean-black-lines.png",
+  "debug_mask": "tasks/baci-door/outputs/final/20260616T060000Z-baci-door-updated-svg-scratch-v2-no-model-hex-debug-mask.png",
+  "metrics": {
+    "verdict": "PASS",
+    "output_dimensions": "923x1704",
+    "panel_coverage_pct": 79.5,
+    "outside_nonwhite_pixels": 0,
+    "center_gap_nonwhite_pixels": 0,
+    "hex_clear_nonwhite_pixels": 0,
+    "hex_clearance_px": 0,
+    "center_gap_bbox": [
+      424,
+      4,
+      499,
+      1700
+    ],
+    "path_bboxes": [
+      [
+        5.0,
+        5.0,
+        600.2099999999999,
+        2413.61
+      ],
+      [
+        706.19,
+        5.0,
+        1301.39,
+        2413.61
+      ]
+    ],
+    "polygon_bboxes": [
+      [
+        480.8,
+        941.48,
+        536.26,
+        989.51
+      ],
+      [
+        753.29,
+        944.93,
+        804.44,
+        996.08
+      ]
+    ],
+    "notes": []
+  }
+}

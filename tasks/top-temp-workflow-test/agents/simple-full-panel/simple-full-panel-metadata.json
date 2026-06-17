@@ -1,0 +1,256 @@
+{
+  "candidate": "simple-full-panel",
+  "hypothesis": "A full-panel attempt may work better with a quiet watercolor body and only 2-4 large friendly control motifs.",
+  "method": "procedural contour-first proof; full paintable body watercolor, four motif groups checked against SVG-derived safe masks before final alpha guardrail",
+  "source_svg": "tasks/top-temp-workflow-test/source/template.svg",
+  "template_manifest": "tasks/top-temp-workflow-test/template-manifest.json",
+  "geometry_report": "tasks/top-temp-workflow-test/svg-geometry-report.md",
+  "style_reference_extraction": {
+    "reference_files": [
+      "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png",
+      "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+    ],
+    "observed_vocabulary": [
+      "pale and medium blue watercolor panel body",
+      "uneven dark navy hand-inked outline",
+      "large rounded controls rather than dense tiny machinery",
+      "coral, yellow, and mint accent controls",
+      "glossy highlights and soft shadow pooling"
+    ],
+    "sampled_palette_hex": [
+      "#6b96db",
+      "#86b0e4",
+      "#497ac3",
+      "#23569d",
+      "#c9dbf1",
+      "#fab377",
+      "#d96457"
+    ]
+  },
+  "manifest_geometry_roles_used": {
+    "outer_contours": [
+      {
+        "element": "path[0]",
+        "id_or_class": "cls-1",
+        "bounds": [
+          4.01,
+          4.0,
+          1588.11,
+          1566.39
+        ],
+        "role": "outer material contour"
+      }
+    ],
+    "paintable_regions": [
+      "outer contour minus internal cutouts with a small edge margin"
+    ],
+    "internal_cutouts": [
+      {
+        "element": "path[1]",
+        "id_or_class": "cls-1",
+        "bounds": [
+          788.38,
+          401.16,
+          1508.1,
+          1029.35
+        ],
+        "role": "large diagonal rounded slot keep-clear"
+      },
+      {
+        "element": "path[2]",
+        "id_or_class": "cls-1",
+        "bounds": [
+          1385.69,
+          1167.47,
+          1527.53,
+          1309.31
+        ],
+        "role": "lower-right round/bolt-like keep-clear"
+      }
+    ],
+    "keep_clear_zones": [
+      "path[1] large diagonal slot",
+      "path[2] lower-right round cutout"
+    ],
+    "visual_guides": []
+  },
+  "safe_pocket_plan": [
+    {
+      "name": "upper-left tall bay above the left shoulder of the slot",
+      "used_for": "large three-post control cluster"
+    },
+    {
+      "name": "middle-left field below/left of the diagonal slot",
+      "used_for": "oversized two-row slider bank"
+    },
+    {
+      "name": "lower-left base bay above the bottom notch",
+      "used_for": "large friendly gauge"
+    },
+    {
+      "name": "lower-middle bay between the bottom notch and the right cutouts",
+      "used_for": "two-capsule status module with generous cutout clearance"
+    },
+    {
+      "name": "right vertical strip between the diagonal slot and outer edge",
+      "used_for": "not used; left quiet to avoid crowding the lower-right round cutout"
+    }
+  ],
+  "no_focal_motif_zones": [
+    "path[1] diagonal slot and its immediate margin",
+    "path[2] lower-right round cutout and its immediate margin",
+    "outer contour edge margin"
+  ],
+  "motif_margin_policy": {
+    "outer_edge_margin_px": 16,
+    "internal_cutout_margin_px": 48,
+    "path_1_path_2_paintable": false
+  },
+  "motif_groups": [
+    {
+      "name": "upper-left three-post control cluster",
+      "pocket": "upper-left tall bay above the left shoulder of the slot",
+      "bbox": [
+        418,
+        126,
+        610,
+        336
+      ],
+      "metrics": {
+        "mask_pixels": 31611,
+        "outside_outer_pixels": 0,
+        "inside_cutout_pixels": 0,
+        "inside_cutout_margin_pixels": 0,
+        "outside_motif_safe_pixels": 0
+      }
+    },
+    {
+      "name": "middle-left oversized two-row slider bank",
+      "pocket": "middle-left field below/left of the diagonal slot",
+      "bbox": [
+        236,
+        666,
+        752,
+        895
+      ],
+      "metrics": {
+        "mask_pixels": 49954,
+        "outside_outer_pixels": 0,
+        "inside_cutout_pixels": 0,
+        "inside_cutout_margin_pixels": 0,
+        "outside_motif_safe_pixels": 0
+      }
+    },
+    {
+      "name": "lower-left large friendly gauge",
+      "pocket": "lower-left base bay above the bottom notch",
+      "bbox": [
+        336,
+        1148,
+        592,
+        1403
+      ],
+      "metrics": {
+        "mask_pixels": 45216,
+        "outside_outer_pixels": 0,
+        "inside_cutout_pixels": 0,
+        "inside_cutout_margin_pixels": 0,
+        "outside_motif_safe_pixels": 0
+      }
+    },
+    {
+      "name": "lower-middle two-capsule status module",
+      "pocket": "lower-middle bay between the bottom notch and the right cutouts",
+      "bbox": [
+        1005,
+        1138,
+        1305,
+        1380
+      ],
+      "metrics": {
+        "mask_pixels": 52936,
+        "outside_outer_pixels": 0,
+        "inside_cutout_pixels": 0,
+        "inside_cutout_margin_pixels": 0,
+        "outside_motif_safe_pixels": 0
+      }
+    }
+  ],
+  "geometry_metrics": {
+    "canvas_size": [
+      1592,
+      1570
+    ],
+    "viewbox": [
+      0.0,
+      0.0,
+      1592.1,
+      1570.39
+    ],
+    "svg_path_bounds": [
+      {
+        "path_index": 0,
+        "role": "outer material contour",
+        "bounds": [
+          4.01,
+          4.0,
+          1588.11,
+          1566.39
+        ]
+      },
+      {
+        "path_index": 1,
+        "role": "large diagonal rounded slot keep-clear",
+        "bounds": [
+          792.59,
+          401.16,
+          1506.6,
+          1027.56
+        ]
+      },
+      {
+        "path_index": 2,
+        "role": "lower-right round/bolt-like keep-clear",
+        "bounds": [
+          1385.69,
+          1167.47,
+          1527.53,
+          1309.31
+        ]
+      }
+    ],
+    "paintable_mask": {
+      "outer_pixels": 1483787,
+      "cutout_pixels": 126292,
+      "paintable_pixels": 1357495,
+      "motif_safe_pixels": 1065241
+    },
+    "painted_pixel_metrics": {
+      "outside_allowed_alpha_pixels": 0,
+      "inside_internal_cutout_alpha_pixels": 0,
+      "focal_motif_pixels_inside_cutouts": 0,
+      "focal_motif_pixels_in_cutout_margin": 0,
+      "focal_motif_pixels_outside_motif_safe": 0
+    },
+    "mechanical_gate": {
+      "zero_alpha_outside_allowed": true,
+      "zero_alpha_inside_cutouts": true,
+      "zero_focal_motifs_inside_cutouts": true,
+      "zero_focal_motifs_in_cutout_margin": true,
+      "zero_focal_motifs_outside_motif_safe": true,
+      "pass": true
+    }
+  },
+  "outputs": {
+    "artwork": "tasks/top-temp-workflow-test/agents/simple-full-panel/simple-full-panel-artwork.png",
+    "overlay": "tasks/top-temp-workflow-test/agents/simple-full-panel/simple-full-panel-overlay.png",
+    "mask_debug": "tasks/top-temp-workflow-test/agents/simple-full-panel/simple-full-panel-mask-debug.png",
+    "metadata": "tasks/top-temp-workflow-test/agents/simple-full-panel/simple-full-panel-metadata.json"
+  },
+  "workflow_notes": [
+    "The base watercolor spans the full paintable material body only.",
+    "Four large motif groups were composed inside named manifest pockets before final masking.",
+    "The diagonal slot and lower-right round cutout were never treated as paintable regions.",
+    "The right vertical strip was intentionally left quiet because the simplified test values clearance over coverage."
+  ]
+}

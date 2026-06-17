@@ -290,3 +290,31 @@ failure: The patch prompt named panel proportions, contour behavior, saloon-door
 rule learned: For skyline artwork patches, never ask the image model to think about, preserve, adapt, trace, honor, fix, or improve SVG contour/panel/guide geometry. Keep geometry constraints in deterministic overlay/export artifacts and human notes; keep the generation prompt artwork-only and local-defect-focused.
 next action: Update the skyline skill, workflow doc, and validation gate before continuing with any patch generation.
 ```
+
+## Image-Gen Tooling Decision (no-API, subscription)
+
+Confirmed working subscription image-gen paths in this environment (see global
+memory `image-gen-no-api-paths`):
+
+- OpenAI image gen via the Codex CLI (`codex exec`, `auth_mode=chatgpt`). Supports
+  img2img by attaching the base with `-i <file>` (pass the prompt via stdin; `-i`
+  is variadic and eats trailing args). Output lands in
+  `~/.codex/generated_images/<session>/ig_*.png`.
+- Nano Banana via the Antigravity CLI `agy` (`~/.local/bin/agy`, Google login).
+  Headless: `agy --dangerously-skip-permissions --add-dir <dir> --print "<prompt> … save to <abs path>"`.
+- The plain `gemini` CLI (oauth-personal) CANNOT generate images (image models 404).
+- render-studio (`~/Documents/screenery-lean/render-studio`) is the API-key path
+  (metered): pin `gemini-3-pro-image`/`gemini-3.1-flash-image-preview`/`gpt-image-2`,
+  supports masked inpaint.
+
+User direction (2026-06-17): OpenAI (Codex) is priority; Nano Banana (agy) for
+testing and certain render types.
+
+```text
+date: 2026-06-17
+artifact inspected: refs/user-feedback/20260617-image-a-train-tunnel-edit.png; outputs/reviews/train-exit-repair/openai-edit-vs-original-side-by-side.png; openai-edit-tunnel-zoom-side-by-side.png; openai-edit-correct-svg-overlay-{clean,diagnostic}.png
+method: Codex img2img edit of approved Image A (OpenAI image gen, ChatGPT subscription, no API). Artwork-only safe-lane prompt; no SVG/contour/panel/red-zone/guide language. Strong "preserve entire composition, change only the tunnel" instruction.
+result: The train now enters an integrated masonry arched tunnel/viaduct portal under the bridge tower (cream/tan stone, watercolor texture, yellow train visible continuing into the opening). NOT a dark pasted blob — fixes the A2/A3 "guide sketch" rejection. Composition preserved: overlay box (0,116,1048,832) ≈ Image A (0,122,1048,838); top-band drift 3.9, mid/lower ~22 (local edit + watercolor re-render). SVG guides land identically; tunnel near left red-center lane is acceptable quiet infrastructure.
+not addressed this pass (still pending from earlier feedback): TV tower height reduction; hotel lower/base left crop; Brandenburg horse statue red-center overlap; right bridge-span symmetry to saloon-door middle.
+next action: ASK USER — accept tunnel and move to remaining corrections, iterate the tunnel, or also render a Nano Banana (agy) comparison.
+```

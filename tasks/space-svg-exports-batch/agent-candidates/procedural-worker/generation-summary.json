@@ -1,0 +1,150 @@
+[
+  {
+    "timestamp": "2026-06-17T06:12:21Z",
+    "method": "procedural_pil_svg_native_watercolor_control_panel",
+    "seed": 2026061607,
+    "source_svg": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/space/svg-exports/np01-back-top.svg",
+    "source_svg_sha256": "c28e125f9479c68f3952f4b7eeb4cabc6a88800ff0436288ca8167abc98f64cb",
+    "svg_role_map": {
+      "outer_contour": "path[0]",
+      "cutouts_or_keep_clear": [
+        "path[1]",
+        "path[2]"
+      ]
+    },
+    "output_size": "1644x1538",
+    "candidate_png": "/Users/za/Documents/product images repo/tasks/space-svg-exports-batch/agent-candidates/procedural-worker/np01-back-top-watercolor-control-panel-candidate.png",
+    "template_overlay_png": "/Users/za/Documents/product images repo/tasks/space-svg-exports-batch/agent-candidates/procedural-worker/np01-back-top-template-overlay.png",
+    "mask_debug_png": "/Users/za/Documents/product images repo/tasks/space-svg-exports-batch/agent-candidates/procedural-worker/np01-back-top-mask-debug.png",
+    "geometry_report": "/Users/za/Documents/product images repo/tasks/space-svg-exports-batch/agent-candidates/procedural-worker/np01-back-top-geometry-report.md",
+    "metrics": {
+      "verdict": "PASS",
+      "outside_nonwhite_pixels": 0,
+      "cutout_nonwhite_pixels": 0,
+      "decorative_element_pixels_outside_safe_pocket": 0,
+      "painted_panel_coverage_pct": 100.0
+    },
+    "placements": [
+      {
+        "name": "left lower moon dial",
+        "status": "drawn",
+        "outside_safe_pocket_pixels": 0
+      },
+      {
+        "name": "left slider bank",
+        "status": "drawn",
+        "outside_safe_pocket_pixels": 0
+      },
+      {
+        "name": "upper center levers",
+        "status": "drawn",
+        "outside_safe_pocket_pixels": 0
+      },
+      {
+        "name": "right lower button grid backing plate",
+        "status": "drawn",
+        "outside_safe_pocket_pixels": 0
+      },
+      {
+        "name": "right lower button grid checked buttons",
+        "status": "drawn",
+        "outside_safe_pocket_pixels": 0
+      },
+      {
+        "name": "bottom color rail coral",
+        "status": "drawn",
+        "outside_safe_pocket_pixels": 0
+      },
+      {
+        "name": "bottom color rail teal",
+        "status": "drawn",
+        "outside_safe_pocket_pixels": 0
+      },
+      {
+        "name": "candidate-checked soft star speckles",
+        "outside_safe_pocket_pixels": 0,
+        "count": 85
+      }
+    ],
+    "limitations": [
+      "Procedural/PIL fallback, not image-generation API output.",
+      "Style is an approximation of the blue watercolor control-panel references.",
+      "Path curves are polygon-flattened before raster masking."
+    ],
+    "metadata_json": "/Users/za/Documents/product images repo/tasks/space-svg-exports-batch/agent-candidates/procedural-worker/np01-back-top-metadata.json"
+  },
+  {
+    "timestamp": "2026-06-17T06:12:35Z",
+    "method": "procedural_pil_svg_native_watercolor_control_panel",
+    "seed": 2026061608,
+    "source_svg": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/space/svg-exports/np02-front-top.svg",
+    "source_svg_sha256": "18048d602b5c54a8291046819c27e27ee8088376efb1f3e7cced0f6218087d78",
+    "svg_role_map": {
+      "outer_contour": "path[0]",
+      "cutouts_or_keep_clear": [
+        "path[1]",
+        "path[2]"
+      ]
+    },
+    "output_size": "1644x1628",
+    "candidate_png": "/Users/za/Documents/product images repo/tasks/space-svg-exports-batch/agent-candidates/procedural-worker/np02-front-top-watercolor-control-panel-candidate.png",
+    "template_overlay_png": "/Users/za/Documents/product images repo/tasks/space-svg-exports-batch/agent-candidates/procedural-worker/np02-front-top-template-overlay.png",
+    "mask_debug_png": "/Users/za/Documents/product images repo/tasks/space-svg-exports-batch/agent-candidates/procedural-worker/np02-front-top-mask-debug.png",
+    "geometry_report": "/Users/za/Documents/product images repo/tasks/space-svg-exports-batch/agent-candidates/procedural-worker/np02-front-top-geometry-report.md",
+    "metrics": {
+      "verdict": "PASS",
+      "outside_nonwhite_pixels": 0,
+      "cutout_nonwhite_pixels": 0,
+      "decorative_element_pixels_outside_safe_pocket": 0,
+      "painted_panel_coverage_pct": 100.0
+    },
+    "placements": [
+      {
+        "name": "center teal radar screen",
+        "status": "drawn",
+        "outside_safe_pocket_pixels": 0
+      },
+      {
+        "name": "right lower dial",
+        "status": "drawn",
+        "outside_safe_pocket_pixels": 0
+      },
+      {
+        "name": "left lower slider stack",
+        "status": "drawn",
+        "outside_safe_pocket_pixels": 0
+      },
+      {
+        "name": "mid lower levers",
+        "status": "drawn",
+        "outside_safe_pocket_pixels": 0
+      },
+      {
+        "name": "right bottom amber rail",
+        "status": "drawn",
+        "outside_safe_pocket_pixels": 0
+      },
+      {
+        "name": "left bottom small button grid backing plate",
+        "status": "drawn",
+        "outside_safe_pocket_pixels": 0
+      },
+      {
+        "name": "left bottom small button grid checked buttons",
+        "status": "drawn",
+        "outside_safe_pocket_pixels": 0
+      },
+      {
+        "name": "candidate-checked soft star speckles",
+        "outside_safe_pocket_pixels": 0,
+        "count": 85
+      }
+    ],
+    "limitations": [
+      "Procedural/PIL fallback, not image-generation API output.",
+      "Style is an approximation of the blue watercolor control-panel references.",
+      "Path curves are polygon-flattened before raster masking."
+    ],
+    "metadata_json": "/Users/za/Documents/product images repo/tasks/space-svg-exports-batch/agent-candidates/procedural-worker/np02-front-top-metadata.json"
+  }
+]

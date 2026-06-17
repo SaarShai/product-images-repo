@@ -1,0 +1,451 @@
+{
+  "workflow": "style-crop-collage-direct-packet-crops",
+  "source_svg": "tasks/top-temp-workflow-test/source/template.svg",
+  "template_manifest": "tasks/top-temp-workflow-test/template-manifest.json",
+  "style_packet": "tasks/top-temp-workflow-test/style-packet/style-packet.json",
+  "style_exemplar_sheet": "tasks/top-temp-workflow-test/style-packet/style-exemplar-sheet.png",
+  "baseline_for_comparison": "tasks/top-temp-workflow-test/agents/strict-style-polish/strict-style-polish-metadata.json",
+  "manifest_status": "filled-from-svg-geometry-report-before-agent-test",
+  "viewbox": [
+    0.0,
+    0.0,
+    1592.1,
+    1570.39
+  ],
+  "canvas_size_px": [
+    1593,
+    1571
+  ],
+  "path_roles": {
+    "path[0]": "outer material contour",
+    "path[1]": "large diagonal rounded slot keep-clear",
+    "path[2]": "lower-right round/bolt-like keep-clear"
+  },
+  "mask_pixels": {
+    "outer_pixels": 1483581,
+    "path1_cutout_pixels": 110946,
+    "path2_cutout_pixels": 15892,
+    "combined_cutout_pixels": 126838,
+    "paintable_pixels": 1356743,
+    "eroded_safe_pixels": 1141441
+  },
+  "safe_pocket_plan": [
+    "upper-left tall bay above the left shoulder of the slot",
+    "middle-left field below/left of the diagonal slot",
+    "lower-left base bay above the bottom notch",
+    "lower-middle bay between the bottom notch and the right cutouts",
+    "right vertical strip between the diagonal slot and outer edge"
+  ],
+  "no_focal_motif_zones": [
+    "path[1] diagonal slot and its immediate margin",
+    "path[2] lower-right round cutout and its immediate margin",
+    "outer contour edge margin"
+  ],
+  "crop_source_operations": [
+    {
+      "crop_label": "ref 1 body-texture",
+      "crop_type": "body-texture",
+      "crop_path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-body-texture.png",
+      "mask_kind": "body",
+      "opacity": 0.92,
+      "alpha_pixels": 1356743,
+      "name": "base crop wash from ref 1 body texture"
+    },
+    {
+      "crop_label": "ref 2 body-texture",
+      "crop_type": "body-texture",
+      "crop_path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-body-texture.png",
+      "mask_kind": "body",
+      "opacity": 0.42,
+      "alpha_pixels": 1350062,
+      "name": "secondary crop wash from ref 2 body texture"
+    },
+    {
+      "crop_label": "ref 1 full panel",
+      "crop_type": "full-panel",
+      "crop_path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-full-panel.png",
+      "mask_kind": "region",
+      "opacity": 0.05,
+      "alpha_pixels": 1394287,
+      "name": "blurred full-panel color inheritance wash"
+    },
+    {
+      "crop_label": "ref 2 edge-treatment",
+      "crop_type": "edge-treatment",
+      "crop_path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-edge-treatment.png",
+      "mask_kind": "edge",
+      "opacity": 0.62,
+      "alpha_pixels": 375677,
+      "name": "edge-treatment crop ring for outer and cutout ink bloom"
+    }
+  ],
+  "placements": [
+    {
+      "name": "upper-left ref2 region wash with knob vocabulary",
+      "pocket": "upper-left tall bay above the left shoulder of the slot",
+      "crop_label": "ref 2 left-region",
+      "crop_type": "left-region",
+      "crop_path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-left-region.png",
+      "box": [
+        65,
+        74,
+        758,
+        575
+      ],
+      "opacity": 0.14,
+      "mask_kind": "region",
+      "feather_px": 5.0,
+      "source_alpha_pixels": 338265,
+      "retained_alpha_pixels": 208039,
+      "retained_alpha_ratio": 0.615,
+      "outside_safe_pixels_after_pocket_mask": 31596,
+      "outside_paintable_pixels_after_pocket_mask": 10659,
+      "rectangular_artifact_risk": true
+    },
+    {
+      "name": "middle-left ref1 slider region",
+      "pocket": "middle-left field below/left of the diagonal slot",
+      "crop_label": "ref 1 left-region",
+      "crop_type": "left-region",
+      "crop_path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-left-region.png",
+      "box": [
+        92,
+        588,
+        764,
+        1056
+      ],
+      "opacity": 0.24,
+      "mask_kind": "region",
+      "feather_px": 6.0,
+      "source_alpha_pixels": 301957,
+      "retained_alpha_pixels": 268157,
+      "retained_alpha_ratio": 0.8881,
+      "outside_safe_pixels_after_pocket_mask": 22819,
+      "outside_paintable_pixels_after_pocket_mask": 10449,
+      "rectangular_artifact_risk": true
+    },
+    {
+      "name": "lower-left cropped gauge region",
+      "pocket": "lower-left gauge oval",
+      "crop_label": "ref 2 left-region",
+      "crop_type": "left-region",
+      "crop_path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-left-region.png",
+      "box": [
+        130,
+        1058,
+        690,
+        1492
+      ],
+      "opacity": 0.24,
+      "mask_kind": "region",
+      "feather_px": 5.5,
+      "source_alpha_pixels": 234311,
+      "retained_alpha_pixels": 169468,
+      "retained_alpha_ratio": 0.7233,
+      "outside_safe_pixels_after_pocket_mask": 6876,
+      "outside_paintable_pixels_after_pocket_mask": 0,
+      "rectangular_artifact_risk": true
+    },
+    {
+      "name": "lower-middle ref1 large button region",
+      "pocket": "lower-middle bay between the bottom notch and the right cutouts",
+      "crop_label": "ref 1 center-region",
+      "crop_type": "center-region",
+      "crop_path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-center-region.png",
+      "box": [
+        780,
+        1038,
+        1282,
+        1488
+      ],
+      "opacity": 0.28,
+      "mask_kind": "region",
+      "feather_px": 5.0,
+      "source_alpha_pixels": 216120,
+      "retained_alpha_pixels": 172016,
+      "retained_alpha_ratio": 0.7959,
+      "outside_safe_pixels_after_pocket_mask": 23341,
+      "outside_paintable_pixels_after_pocket_mask": 9041,
+      "rectangular_artifact_risk": true
+    },
+    {
+      "name": "right strip ref1 line and gauge texture",
+      "pocket": "right vertical strip between the diagonal slot and outer edge",
+      "crop_label": "ref 1 right-region",
+      "crop_type": "right-region",
+      "crop_path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-right-region.png",
+      "box": [
+        1356,
+        1020,
+        1582,
+        1480
+      ],
+      "opacity": 0.16,
+      "mask_kind": "region",
+      "feather_px": 7.0,
+      "source_alpha_pixels": 99150,
+      "retained_alpha_pixels": 79501,
+      "retained_alpha_ratio": 0.8018,
+      "outside_safe_pixels_after_pocket_mask": 22798,
+      "outside_paintable_pixels_after_pocket_mask": 4804,
+      "rectangular_artifact_risk": true
+    },
+    {
+      "name": "upper-left yellow standing pin",
+      "pocket": "upper-left tall bay above the left shoulder of the slot",
+      "crop_label": "ref 2 accent component 01",
+      "crop_type": "accent-component",
+      "crop_path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-accent-component-01.png",
+      "box": [
+        470,
+        135,
+        568,
+        330
+      ],
+      "opacity": 0.96,
+      "mask_kind": "accent",
+      "feather_px": 0.8,
+      "source_alpha_pixels": 8884,
+      "retained_alpha_pixels": 8678,
+      "retained_alpha_ratio": 0.9768,
+      "outside_safe_pixels_after_pocket_mask": 0,
+      "outside_paintable_pixels_after_pocket_mask": 0,
+      "rectangular_artifact_risk": false
+    },
+    {
+      "name": "upper-left red standing pin",
+      "pocket": "upper-left tall bay above the left shoulder of the slot",
+      "crop_label": "ref 2 accent component 02",
+      "crop_type": "accent-component",
+      "crop_path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-accent-component-02.png",
+      "box": [
+        365,
+        160,
+        465,
+        350
+      ],
+      "opacity": 0.92,
+      "mask_kind": "accent",
+      "feather_px": 0.8,
+      "source_alpha_pixels": 8470,
+      "retained_alpha_pixels": 8160,
+      "retained_alpha_ratio": 0.9634,
+      "outside_safe_pixels_after_pocket_mask": 0,
+      "outside_paintable_pixels_after_pocket_mask": 0,
+      "rectangular_artifact_risk": false
+    },
+    {
+      "name": "upper-left teal standing pin",
+      "pocket": "upper-left tall bay above the left shoulder of the slot",
+      "crop_label": "ref 2 accent component 04",
+      "crop_type": "accent-component",
+      "crop_path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-accent-component-04.png",
+      "box": [
+        582,
+        155,
+        682,
+        350
+      ],
+      "opacity": 0.9,
+      "mask_kind": "accent",
+      "feather_px": 0.8,
+      "source_alpha_pixels": 9183,
+      "retained_alpha_pixels": 8677,
+      "retained_alpha_ratio": 0.9449,
+      "outside_safe_pixels_after_pocket_mask": 2799,
+      "outside_paintable_pixels_after_pocket_mask": 507,
+      "rectangular_artifact_risk": false
+    },
+    {
+      "name": "middle-left yellow pill crop",
+      "pocket": "middle-left field below/left of the diagonal slot",
+      "crop_label": "ref 1 accent component 04",
+      "crop_type": "accent-component",
+      "crop_path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-04.png",
+      "box": [
+        176,
+        700,
+        454,
+        775
+      ],
+      "opacity": 0.95,
+      "mask_kind": "accent",
+      "feather_px": 0.8,
+      "source_alpha_pixels": 11305,
+      "retained_alpha_pixels": 11035,
+      "retained_alpha_ratio": 0.9761,
+      "outside_safe_pixels_after_pocket_mask": 0,
+      "outside_paintable_pixels_after_pocket_mask": 0,
+      "rectangular_artifact_risk": false
+    },
+    {
+      "name": "middle-left orange pill crop",
+      "pocket": "middle-left field below/left of the diagonal slot",
+      "crop_label": "ref 1 accent component 05",
+      "crop_type": "accent-component",
+      "crop_path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-05.png",
+      "box": [
+        205,
+        802,
+        510,
+        880
+      ],
+      "opacity": 0.95,
+      "mask_kind": "accent",
+      "feather_px": 0.8,
+      "source_alpha_pixels": 14548,
+      "retained_alpha_pixels": 14399,
+      "retained_alpha_ratio": 0.9898,
+      "outside_safe_pixels_after_pocket_mask": 0,
+      "outside_paintable_pixels_after_pocket_mask": 0,
+      "rectangular_artifact_risk": false
+    },
+    {
+      "name": "middle-left coral pill crop",
+      "pocket": "middle-left field below/left of the diagonal slot",
+      "crop_label": "ref 1 accent component 07",
+      "crop_type": "accent-component",
+      "crop_path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-07.png",
+      "box": [
+        154,
+        905,
+        468,
+        984
+      ],
+      "opacity": 0.95,
+      "mask_kind": "accent",
+      "feather_px": 0.8,
+      "source_alpha_pixels": 15207,
+      "retained_alpha_pixels": 15033,
+      "retained_alpha_ratio": 0.9886,
+      "outside_safe_pixels_after_pocket_mask": 117,
+      "outside_paintable_pixels_after_pocket_mask": 0,
+      "rectangular_artifact_risk": false
+    },
+    {
+      "name": "lower-middle red large button crop",
+      "pocket": "lower-middle bay between the bottom notch and the right cutouts",
+      "crop_label": "ref 1 accent component 01",
+      "crop_type": "accent-component",
+      "crop_path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-01.png",
+      "box": [
+        930,
+        1095,
+        1234,
+        1188
+      ],
+      "opacity": 0.95,
+      "mask_kind": "accent",
+      "feather_px": 0.9,
+      "source_alpha_pixels": 20623,
+      "retained_alpha_pixels": 20449,
+      "retained_alpha_ratio": 0.9916,
+      "outside_safe_pixels_after_pocket_mask": 0,
+      "outside_paintable_pixels_after_pocket_mask": 0,
+      "rectangular_artifact_risk": false
+    },
+    {
+      "name": "lower-middle mint large button crop",
+      "pocket": "lower-middle bay between the bottom notch and the right cutouts",
+      "crop_label": "ref 1 accent component 03",
+      "crop_type": "accent-component",
+      "crop_path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-03.png",
+      "box": [
+        904,
+        1212,
+        1270,
+        1318
+      ],
+      "opacity": 0.95,
+      "mask_kind": "accent",
+      "feather_px": 0.9,
+      "source_alpha_pixels": 27391,
+      "retained_alpha_pixels": 27181,
+      "retained_alpha_ratio": 0.9923,
+      "outside_safe_pixels_after_pocket_mask": 0,
+      "outside_paintable_pixels_after_pocket_mask": 0,
+      "rectangular_artifact_risk": false
+    },
+    {
+      "name": "lower-middle yellow large button crop",
+      "pocket": "lower-middle bay between the bottom notch and the right cutouts",
+      "crop_label": "ref 1 accent component 02",
+      "crop_type": "accent-component",
+      "crop_path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-02.png",
+      "box": [
+        910,
+        1350,
+        1248,
+        1450
+      ],
+      "opacity": 0.95,
+      "mask_kind": "accent",
+      "feather_px": 0.9,
+      "source_alpha_pixels": 24238,
+      "retained_alpha_pixels": 24006,
+      "retained_alpha_ratio": 0.9904,
+      "outside_safe_pixels_after_pocket_mask": 0,
+      "outside_paintable_pixels_after_pocket_mask": 0,
+      "rectangular_artifact_risk": false
+    },
+    {
+      "name": "right-strip screw corner crop",
+      "pocket": "right vertical strip between the diagonal slot and outer edge",
+      "crop_label": "ref 2 edge-treatment",
+      "crop_type": "edge-treatment",
+      "crop_path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-edge-treatment.png",
+      "box": [
+        1422,
+        1082,
+        1578,
+        1250
+      ],
+      "opacity": 0.34,
+      "mask_kind": "edge",
+      "feather_px": 1.5,
+      "source_alpha_pixels": 24273,
+      "retained_alpha_pixels": 18945,
+      "retained_alpha_ratio": 0.7805,
+      "outside_safe_pixels_after_pocket_mask": 8097,
+      "outside_paintable_pixels_after_pocket_mask": 2594,
+      "rectangular_artifact_risk": false
+    }
+  ],
+  "summary": {
+    "body_crop_layers": 3,
+    "edge_crop_layers": 1,
+    "pocket_placements": 15,
+    "placements_with_rectangular_artifact_risk": 5,
+    "final_outside_outer_alpha_pixels": 0,
+    "final_path1_cutout_alpha_pixels": 0,
+    "final_path2_cutout_alpha_pixels": 0,
+    "final_cutout_alpha_pixels": 0,
+    "final_outside_paintable_alpha_pixels": 0,
+    "strict_style_polish_final_cutout_alpha_pixels": 0,
+    "strict_style_polish_final_outside_paintable_alpha_pixels": 0
+  },
+  "comparison_to_strict_style_polish": [
+    "This method inherits real packet crop texture and hardware shapes more directly than strict-style-polish.",
+    "Strict-style-polish is visually cleaner and more internally coherent because every component was redrawn for the geometry.",
+    "The crop collage has stronger reference DNA but more visible scale/perspective mismatch and potential soft rectangular seams."
+  ],
+  "visual_risks": [
+    "Feathered region crops can leave subtle rectangular value shifts, especially in the middle-left and lower-middle pockets.",
+    "Some component crops retain source lighting and scale that do not fully agree with adjacent pocket texture.",
+    "The exact SVG guardrail clears alpha perfectly, but crop-derived motifs close to pocket masks can still look locally clipped."
+  ],
+  "outputs": {
+    "artwork": "style-crop-collage-artwork.png",
+    "preview_white": "style-crop-collage-preview-white.png",
+    "overlay": "style-crop-collage-overlay.png",
+    "mask_debug": "style-crop-collage-mask-debug.png",
+    "metadata": "style-crop-collage-metadata.json",
+    "review": "review.md"
+  },
+  "method_notes": [
+    "All source imagery comes from style-packet crops: full/body/edge/region/accent crop types are used.",
+    "White crop margins are removed from region and edge crops before feathered pocket placement.",
+    "Accent crops use a foreground mask against their border color so colored controls transfer without most blue source rectangles.",
+    "The final SVG paintable mask is used only as an exact alpha export guardrail after crop-aware pocket composition."
+  ]
+}

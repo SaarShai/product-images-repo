@@ -1,0 +1,21 @@
+{
+  "created_at": "2026-06-16T14:01:23Z",
+  "task": "berlin-skyline-live-example",
+  "title": "Berlin Skyline Live Example",
+  "copy_assets": true,
+  "source_svg_original": "/Users/za/Documents/product images repo/assets/skyline/city-skyline template.svg",
+  "task_svg": "tasks/berlin-skyline-live-example/source/template.svg",
+  "style_references_original": [
+    "/Users/za/Downloads/WhatsApp Image 2026-06-16 at 01.31.54.jpeg",
+    "/Users/za/Downloads/Beisheim-Center_und_Potsdamer_Platz_in_Berlin_(2013)_(cropped).jpg"
+  ],
+  "task_style_references": [
+    "tasks/berlin-skyline-live-example/refs/WhatsApp Image 2026-06-16 at 01.31.54.jpeg",
+    "tasks/berlin-skyline-live-example/refs/Beisheim-Center_und_Potsdamer_Platz_in_Berlin_(2013)_(cropped).jpg"
+  ],
+  "workflow": "docs/skyline-template-illustration-workflow.md",
+  "base_workflow": "docs/svg-template-illustration-workflow.md",
+  "skill": ".codex/skills/skyline-template-illustration/SKILL.md",
+  "asset_map": "assets/skyline/README.md",
+  "review_checklist": "docs/review-judge-checklist.md"
+}

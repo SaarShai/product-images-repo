@@ -1,0 +1,69 @@
+{
+  "template_svg": "source/template.svg",
+  "template_manifest": "template-manifest.json",
+  "style_packet_manifest": "style-packet/style-packet.json",
+  "control_margin_px": 18,
+  "alpha_mode": "existing",
+  "alpha_threshold": 8,
+  "draw_template_edge_lines": true,
+  "background": {
+    "kind": "palette-watercolor",
+    "role": "quiet paintable watercolor base from style-packet palette"
+  },
+  "placements": [
+    {
+      "id": "upper_left_yellow_pin",
+      "label": "upper-left yellow pin crop",
+      "role": "small vertical indicator in the upper-left tall safe bay",
+      "image": "style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-accent-component-05.png",
+      "box": [438, 104, 575, 286],
+      "fit": "contain",
+      "opacity": 0.98
+    },
+    {
+      "id": "middle_left_slider_triplet",
+      "label": "middle-left slider triplet crop",
+      "role": "horizontal reference slider detail in middle-left field",
+      "image": "style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-06.png",
+      "box": [252, 724, 668, 838],
+      "fit": "contain",
+      "opacity": 0.96
+    },
+    {
+      "id": "lower_left_red_pin",
+      "label": "lower-left red pin crop",
+      "role": "vertical indicator in lower-left base bay",
+      "image": "style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-accent-component-02.png",
+      "box": [390, 1136, 560, 1398],
+      "fit": "contain",
+      "opacity": 0.98
+    },
+    {
+      "id": "lower_middle_pill_stack",
+      "label": "lower-middle pill stack crop",
+      "role": "rounded button module between bottom notch and right cutouts",
+      "image": "style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-03.png",
+      "box": [912, 1126, 1258, 1320],
+      "fit": "contain",
+      "opacity": 0.97
+    },
+    {
+      "id": "unsafe_over_diagonal_slot",
+      "label": "intentional unsafe slot overlap",
+      "role": "negative test: should be rejected before drawing because it crosses path[1]",
+      "image": "style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-01.png",
+      "box": [1010, 612, 1372, 818],
+      "fit": "contain",
+      "opacity": 0.96
+    },
+    {
+      "id": "unsafe_round_cutout_edge",
+      "label": "intentional unsafe round-cutout overlap",
+      "role": "negative test: should be rejected before drawing because it crosses path[2] and the edge margin",
+      "image": "style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-accent-component-03.png",
+      "box": [1406, 1188, 1550, 1396],
+      "fit": "contain",
+      "opacity": 0.98
+    }
+  ]
+}

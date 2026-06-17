@@ -1,0 +1,861 @@
+{
+  "checkpoint": "tasks/space-svg-exports-batch/checkpoints/batch-bottom-all-versions.png",
+  "candidates": [
+    {
+      "timestamp": "2026-06-17T07:46:48Z",
+      "svg": "tasks/space-svg-exports-batch/source/np01-back-bottom.svg",
+      "svg_sha256": "b3d2169ec8ce8a9ad49f932b7aa64e94fbcdbb942afbf86ee38efbb1d0b26d92",
+      "variant": 1,
+      "candidate": "tasks/space-svg-exports-batch/outputs/generated/np01-back-bottom-batch-bottom-v1.png",
+      "artwork_only": "tasks/space-svg-exports-batch/outputs/final/np01-back-bottom-batch-bottom-v1-artwork-only.png",
+      "clean_black_lines": "tasks/space-svg-exports-batch/outputs/final/np01-back-bottom-batch-bottom-v1-clean-black-lines.png",
+      "debug_mask": "tasks/space-svg-exports-batch/outputs/reviews/np01-back-bottom-batch-bottom-v1-debug-mask.png",
+      "style_packet": "tasks/space-svg-exports-batch/style-packet/style-packet.json",
+      "source_style_refs": [
+        "tasks/space-svg-exports-batch/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png",
+        "tasks/space-svg-exports-batch/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+      ],
+      "viewbox": [
+        0.0,
+        0.0,
+        1654.7094,
+        2602.2896
+      ],
+      "output_dimensions": "900x1415",
+      "contours": [
+        {
+          "source_type": "path",
+          "index": 0,
+          "role": "cutout",
+          "area": 333692.69,
+          "bounds": [
+            1362.73,
+            422.28,
+            1634.71,
+            2180.0
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 1,
+          "role": "cutout",
+          "area": 141539.64,
+          "bounds": [
+            186.97,
+            1376.14,
+            332.06,
+            2428.05
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 2,
+          "role": "cutout",
+          "area": 15788.14,
+          "bounds": [
+            188.6,
+            1131.98,
+            330.43,
+            1273.81
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 3,
+          "role": "paintable",
+          "area": 1814467.66,
+          "bounds": [
+            888.62,
+            20.0,
+            1604.1,
+            2582.29
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 4,
+          "role": "paintable",
+          "area": 1814467.46,
+          "bounds": [
+            20.0,
+            20.0,
+            734.81,
+            2582.29
+          ]
+        }
+      ],
+      "metrics": {
+        "verdict": "PASS",
+        "outside_nonwhite_pixels": 0,
+        "cutout_nonwhite_pixels": 0,
+        "paintable_coverage_pct": 98.94
+      },
+      "method_note": "Bottom-panel batch candidate. Elements are drawn only in eroded safe pockets, then exact SVG masks clear the outer contour and cutouts.",
+      "metadata": "tasks/space-svg-exports-batch/outputs/reviews/np01-back-bottom-batch-bottom-v1-metadata.json"
+    },
+    {
+      "timestamp": "2026-06-17T07:46:52Z",
+      "svg": "tasks/space-svg-exports-batch/source/np01-back-bottom.svg",
+      "svg_sha256": "b3d2169ec8ce8a9ad49f932b7aa64e94fbcdbb942afbf86ee38efbb1d0b26d92",
+      "variant": 2,
+      "candidate": "tasks/space-svg-exports-batch/outputs/generated/np01-back-bottom-batch-bottom-v2.png",
+      "artwork_only": "tasks/space-svg-exports-batch/outputs/final/np01-back-bottom-batch-bottom-v2-artwork-only.png",
+      "clean_black_lines": "tasks/space-svg-exports-batch/outputs/final/np01-back-bottom-batch-bottom-v2-clean-black-lines.png",
+      "debug_mask": "tasks/space-svg-exports-batch/outputs/reviews/np01-back-bottom-batch-bottom-v2-debug-mask.png",
+      "style_packet": "tasks/space-svg-exports-batch/style-packet/style-packet.json",
+      "source_style_refs": [
+        "tasks/space-svg-exports-batch/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png",
+        "tasks/space-svg-exports-batch/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+      ],
+      "viewbox": [
+        0.0,
+        0.0,
+        1654.7094,
+        2602.2896
+      ],
+      "output_dimensions": "900x1415",
+      "contours": [
+        {
+          "source_type": "path",
+          "index": 0,
+          "role": "cutout",
+          "area": 333692.69,
+          "bounds": [
+            1362.73,
+            422.28,
+            1634.71,
+            2180.0
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 1,
+          "role": "cutout",
+          "area": 141539.64,
+          "bounds": [
+            186.97,
+            1376.14,
+            332.06,
+            2428.05
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 2,
+          "role": "cutout",
+          "area": 15788.14,
+          "bounds": [
+            188.6,
+            1131.98,
+            330.43,
+            1273.81
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 3,
+          "role": "paintable",
+          "area": 1814467.66,
+          "bounds": [
+            888.62,
+            20.0,
+            1604.1,
+            2582.29
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 4,
+          "role": "paintable",
+          "area": 1814467.46,
+          "bounds": [
+            20.0,
+            20.0,
+            734.81,
+            2582.29
+          ]
+        }
+      ],
+      "metrics": {
+        "verdict": "PASS",
+        "outside_nonwhite_pixels": 0,
+        "cutout_nonwhite_pixels": 0,
+        "paintable_coverage_pct": 98.94
+      },
+      "method_note": "Bottom-panel batch candidate. Elements are drawn only in eroded safe pockets, then exact SVG masks clear the outer contour and cutouts.",
+      "metadata": "tasks/space-svg-exports-batch/outputs/reviews/np01-back-bottom-batch-bottom-v2-metadata.json"
+    },
+    {
+      "timestamp": "2026-06-17T07:46:57Z",
+      "svg": "tasks/space-svg-exports-batch/source/np01-front-bottom.svg",
+      "svg_sha256": "c2217320de1cbcb63484cf8937224fbf3a7e6fe4698c1facfe8fd29bab0e701c",
+      "variant": 1,
+      "candidate": "tasks/space-svg-exports-batch/outputs/generated/np01-front-bottom-batch-bottom-v1.png",
+      "artwork_only": "tasks/space-svg-exports-batch/outputs/final/np01-front-bottom-batch-bottom-v1-artwork-only.png",
+      "clean_black_lines": "tasks/space-svg-exports-batch/outputs/final/np01-front-bottom-batch-bottom-v1-clean-black-lines.png",
+      "debug_mask": "tasks/space-svg-exports-batch/outputs/reviews/np01-front-bottom-batch-bottom-v1-debug-mask.png",
+      "style_packet": "tasks/space-svg-exports-batch/style-packet/style-packet.json",
+      "source_style_refs": [
+        "tasks/space-svg-exports-batch/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png",
+        "tasks/space-svg-exports-batch/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+      ],
+      "viewbox": [
+        0.0,
+        0.0,
+        1624.1006,
+        2602.2896
+      ],
+      "output_dimensions": "900x1442",
+      "contours": [
+        {
+          "source_type": "path",
+          "index": 0,
+          "role": "cutout",
+          "area": 15788.17,
+          "bounds": [
+            241.38,
+            1483.33,
+            383.21,
+            1625.17
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 1,
+          "role": "cutout",
+          "area": 141540.15,
+          "bounds": [
+            239.75,
+            329.1,
+            384.84,
+            1381.01
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 2,
+          "role": "cutout",
+          "area": 129499.07,
+          "bounds": [
+            1242.04,
+            1469.9,
+            1381.57,
+            2428.0
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 3,
+          "role": "paintable",
+          "area": 1814467.66,
+          "bounds": [
+            888.62,
+            20.0,
+            1604.1,
+            2582.29
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 4,
+          "role": "paintable",
+          "area": 1814467.46,
+          "bounds": [
+            20.0,
+            20.0,
+            734.81,
+            2582.29
+          ]
+        },
+        {
+          "source_type": "polygon",
+          "index": 0,
+          "role": "cutout",
+          "area": 23497.8,
+          "bounds": [
+            1216.7,
+            1073.07,
+            1406.91,
+            1237.79
+          ]
+        },
+        {
+          "source_type": "polygon",
+          "index": 1,
+          "role": "cutout",
+          "area": 23497.77,
+          "bounds": [
+            1219.94,
+            710.98,
+            1403.66,
+            894.7
+          ]
+        },
+        {
+          "source_type": "polygon",
+          "index": 2,
+          "role": "cutout",
+          "area": 23497.8,
+          "bounds": [
+            1216.7,
+            367.88,
+            1406.91,
+            532.61
+          ]
+        }
+      ],
+      "metrics": {
+        "verdict": "PASS",
+        "outside_nonwhite_pixels": 0,
+        "cutout_nonwhite_pixels": 0,
+        "paintable_coverage_pct": 98.9
+      },
+      "method_note": "Bottom-panel batch candidate. Elements are drawn only in eroded safe pockets, then exact SVG masks clear the outer contour and cutouts.",
+      "metadata": "tasks/space-svg-exports-batch/outputs/reviews/np01-front-bottom-batch-bottom-v1-metadata.json"
+    },
+    {
+      "timestamp": "2026-06-17T07:47:02Z",
+      "svg": "tasks/space-svg-exports-batch/source/np01-front-bottom.svg",
+      "svg_sha256": "c2217320de1cbcb63484cf8937224fbf3a7e6fe4698c1facfe8fd29bab0e701c",
+      "variant": 2,
+      "candidate": "tasks/space-svg-exports-batch/outputs/generated/np01-front-bottom-batch-bottom-v2.png",
+      "artwork_only": "tasks/space-svg-exports-batch/outputs/final/np01-front-bottom-batch-bottom-v2-artwork-only.png",
+      "clean_black_lines": "tasks/space-svg-exports-batch/outputs/final/np01-front-bottom-batch-bottom-v2-clean-black-lines.png",
+      "debug_mask": "tasks/space-svg-exports-batch/outputs/reviews/np01-front-bottom-batch-bottom-v2-debug-mask.png",
+      "style_packet": "tasks/space-svg-exports-batch/style-packet/style-packet.json",
+      "source_style_refs": [
+        "tasks/space-svg-exports-batch/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png",
+        "tasks/space-svg-exports-batch/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+      ],
+      "viewbox": [
+        0.0,
+        0.0,
+        1624.1006,
+        2602.2896
+      ],
+      "output_dimensions": "900x1442",
+      "contours": [
+        {
+          "source_type": "path",
+          "index": 0,
+          "role": "cutout",
+          "area": 15788.17,
+          "bounds": [
+            241.38,
+            1483.33,
+            383.21,
+            1625.17
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 1,
+          "role": "cutout",
+          "area": 141540.15,
+          "bounds": [
+            239.75,
+            329.1,
+            384.84,
+            1381.01
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 2,
+          "role": "cutout",
+          "area": 129499.07,
+          "bounds": [
+            1242.04,
+            1469.9,
+            1381.57,
+            2428.0
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 3,
+          "role": "paintable",
+          "area": 1814467.66,
+          "bounds": [
+            888.62,
+            20.0,
+            1604.1,
+            2582.29
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 4,
+          "role": "paintable",
+          "area": 1814467.46,
+          "bounds": [
+            20.0,
+            20.0,
+            734.81,
+            2582.29
+          ]
+        },
+        {
+          "source_type": "polygon",
+          "index": 0,
+          "role": "cutout",
+          "area": 23497.8,
+          "bounds": [
+            1216.7,
+            1073.07,
+            1406.91,
+            1237.79
+          ]
+        },
+        {
+          "source_type": "polygon",
+          "index": 1,
+          "role": "cutout",
+          "area": 23497.77,
+          "bounds": [
+            1219.94,
+            710.98,
+            1403.66,
+            894.7
+          ]
+        },
+        {
+          "source_type": "polygon",
+          "index": 2,
+          "role": "cutout",
+          "area": 23497.8,
+          "bounds": [
+            1216.7,
+            367.88,
+            1406.91,
+            532.61
+          ]
+        }
+      ],
+      "metrics": {
+        "verdict": "PASS",
+        "outside_nonwhite_pixels": 0,
+        "cutout_nonwhite_pixels": 0,
+        "paintable_coverage_pct": 98.9
+      },
+      "method_note": "Bottom-panel batch candidate. Elements are drawn only in eroded safe pockets, then exact SVG masks clear the outer contour and cutouts.",
+      "metadata": "tasks/space-svg-exports-batch/outputs/reviews/np01-front-bottom-batch-bottom-v2-metadata.json"
+    },
+    {
+      "timestamp": "2026-06-17T07:47:07Z",
+      "svg": "tasks/space-svg-exports-batch/source/np02-back-bottom.svg",
+      "svg_sha256": "a4abfac5bcff35767290d0f0c3904dd17058f7014d535bfb09016f06fa398b88",
+      "variant": 1,
+      "candidate": "tasks/space-svg-exports-batch/outputs/generated/np02-back-bottom-batch-bottom-v1.png",
+      "artwork_only": "tasks/space-svg-exports-batch/outputs/final/np02-back-bottom-batch-bottom-v1-artwork-only.png",
+      "clean_black_lines": "tasks/space-svg-exports-batch/outputs/final/np02-back-bottom-batch-bottom-v1-clean-black-lines.png",
+      "debug_mask": "tasks/space-svg-exports-batch/outputs/reviews/np02-back-bottom-batch-bottom-v1-debug-mask.png",
+      "style_packet": "tasks/space-svg-exports-batch/style-packet/style-packet.json",
+      "source_style_refs": [
+        "tasks/space-svg-exports-batch/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png",
+        "tasks/space-svg-exports-batch/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+      ],
+      "viewbox": [
+        0.0,
+        0.0,
+        1624.1006,
+        2602.2896
+      ],
+      "output_dimensions": "900x1442",
+      "contours": [
+        {
+          "source_type": "path",
+          "index": 0,
+          "role": "cutout",
+          "area": 129498.16,
+          "bounds": [
+            242.53,
+            1469.9,
+            382.06,
+            2428.0
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 1,
+          "role": "cutout",
+          "area": 141538.47,
+          "bounds": [
+            1239.26,
+            329.1,
+            1384.35,
+            1381.01
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 2,
+          "role": "cutout",
+          "area": 15788.14,
+          "bounds": [
+            1240.89,
+            1483.33,
+            1382.72,
+            1625.17
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 3,
+          "role": "paintable",
+          "area": 1814467.66,
+          "bounds": [
+            888.62,
+            20.0,
+            1604.1,
+            2582.29
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 4,
+          "role": "paintable",
+          "area": 1814467.46,
+          "bounds": [
+            20.0,
+            20.0,
+            734.81,
+            2582.29
+          ]
+        },
+        {
+          "source_type": "polygon",
+          "index": 0,
+          "role": "cutout",
+          "area": 23151.31,
+          "bounds": [
+            222.97,
+            367.88,
+            401.62,
+            532.61
+          ]
+        },
+        {
+          "source_type": "polygon",
+          "index": 1,
+          "role": "cutout",
+          "area": 23151.62,
+          "bounds": [
+            223.42,
+            713.97,
+            401.17,
+            891.71
+          ]
+        },
+        {
+          "source_type": "polygon",
+          "index": 2,
+          "role": "cutout",
+          "area": 23151.31,
+          "bounds": [
+            222.97,
+            1073.07,
+            401.62,
+            1237.79
+          ]
+        }
+      ],
+      "metrics": {
+        "verdict": "PASS",
+        "outside_nonwhite_pixels": 0,
+        "cutout_nonwhite_pixels": 0,
+        "paintable_coverage_pct": 98.87
+      },
+      "method_note": "Bottom-panel batch candidate. Elements are drawn only in eroded safe pockets, then exact SVG masks clear the outer contour and cutouts.",
+      "metadata": "tasks/space-svg-exports-batch/outputs/reviews/np02-back-bottom-batch-bottom-v1-metadata.json"
+    },
+    {
+      "timestamp": "2026-06-17T07:47:12Z",
+      "svg": "tasks/space-svg-exports-batch/source/np02-back-bottom.svg",
+      "svg_sha256": "a4abfac5bcff35767290d0f0c3904dd17058f7014d535bfb09016f06fa398b88",
+      "variant": 2,
+      "candidate": "tasks/space-svg-exports-batch/outputs/generated/np02-back-bottom-batch-bottom-v2.png",
+      "artwork_only": "tasks/space-svg-exports-batch/outputs/final/np02-back-bottom-batch-bottom-v2-artwork-only.png",
+      "clean_black_lines": "tasks/space-svg-exports-batch/outputs/final/np02-back-bottom-batch-bottom-v2-clean-black-lines.png",
+      "debug_mask": "tasks/space-svg-exports-batch/outputs/reviews/np02-back-bottom-batch-bottom-v2-debug-mask.png",
+      "style_packet": "tasks/space-svg-exports-batch/style-packet/style-packet.json",
+      "source_style_refs": [
+        "tasks/space-svg-exports-batch/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png",
+        "tasks/space-svg-exports-batch/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+      ],
+      "viewbox": [
+        0.0,
+        0.0,
+        1624.1006,
+        2602.2896
+      ],
+      "output_dimensions": "900x1442",
+      "contours": [
+        {
+          "source_type": "path",
+          "index": 0,
+          "role": "cutout",
+          "area": 129498.16,
+          "bounds": [
+            242.53,
+            1469.9,
+            382.06,
+            2428.0
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 1,
+          "role": "cutout",
+          "area": 141538.47,
+          "bounds": [
+            1239.26,
+            329.1,
+            1384.35,
+            1381.01
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 2,
+          "role": "cutout",
+          "area": 15788.14,
+          "bounds": [
+            1240.89,
+            1483.33,
+            1382.72,
+            1625.17
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 3,
+          "role": "paintable",
+          "area": 1814467.66,
+          "bounds": [
+            888.62,
+            20.0,
+            1604.1,
+            2582.29
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 4,
+          "role": "paintable",
+          "area": 1814467.46,
+          "bounds": [
+            20.0,
+            20.0,
+            734.81,
+            2582.29
+          ]
+        },
+        {
+          "source_type": "polygon",
+          "index": 0,
+          "role": "cutout",
+          "area": 23151.31,
+          "bounds": [
+            222.97,
+            367.88,
+            401.62,
+            532.61
+          ]
+        },
+        {
+          "source_type": "polygon",
+          "index": 1,
+          "role": "cutout",
+          "area": 23151.62,
+          "bounds": [
+            223.42,
+            713.97,
+            401.17,
+            891.71
+          ]
+        },
+        {
+          "source_type": "polygon",
+          "index": 2,
+          "role": "cutout",
+          "area": 23151.31,
+          "bounds": [
+            222.97,
+            1073.07,
+            401.62,
+            1237.79
+          ]
+        }
+      ],
+      "metrics": {
+        "verdict": "PASS",
+        "outside_nonwhite_pixels": 0,
+        "cutout_nonwhite_pixels": 0,
+        "paintable_coverage_pct": 98.87
+      },
+      "method_note": "Bottom-panel batch candidate. Elements are drawn only in eroded safe pockets, then exact SVG masks clear the outer contour and cutouts.",
+      "metadata": "tasks/space-svg-exports-batch/outputs/reviews/np02-back-bottom-batch-bottom-v2-metadata.json"
+    },
+    {
+      "timestamp": "2026-06-17T07:47:16Z",
+      "svg": "tasks/space-svg-exports-batch/source/np02-front-bottom.svg",
+      "svg_sha256": "2dd7796da47c3e50e9cc4d3f04cffeed41339fdca918ea9033a8bba7aaa13137",
+      "variant": 1,
+      "candidate": "tasks/space-svg-exports-batch/outputs/generated/np02-front-bottom-batch-bottom-v1.png",
+      "artwork_only": "tasks/space-svg-exports-batch/outputs/final/np02-front-bottom-batch-bottom-v1-artwork-only.png",
+      "clean_black_lines": "tasks/space-svg-exports-batch/outputs/final/np02-front-bottom-batch-bottom-v1-clean-black-lines.png",
+      "debug_mask": "tasks/space-svg-exports-batch/outputs/reviews/np02-front-bottom-batch-bottom-v1-debug-mask.png",
+      "style_packet": "tasks/space-svg-exports-batch/style-packet/style-packet.json",
+      "source_style_refs": [
+        "tasks/space-svg-exports-batch/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png",
+        "tasks/space-svg-exports-batch/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+      ],
+      "viewbox": [
+        0.0,
+        0.0,
+        1644.0996,
+        2622.3853
+      ],
+      "output_dimensions": "900x1436",
+      "contours": [
+        {
+          "source_type": "path",
+          "index": 0,
+          "role": "paintable",
+          "area": 1881461.0,
+          "bounds": [
+            885.3,
+            20.0,
+            1624.1,
+            2602.39
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 1,
+          "role": "paintable",
+          "area": 1881498.78,
+          "bounds": [
+            20.0,
+            20.0,
+            758.81,
+            2602.39
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 2,
+          "role": "cutout",
+          "area": 141539.62,
+          "bounds": [
+            1302.04,
+            1386.14,
+            1447.13,
+            2438.04
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 3,
+          "role": "cutout",
+          "area": 15788.14,
+          "bounds": [
+            1303.67,
+            1141.98,
+            1445.5,
+            1283.81
+          ]
+        }
+      ],
+      "metrics": {
+        "verdict": "PASS",
+        "outside_nonwhite_pixels": 0,
+        "cutout_nonwhite_pixels": 0,
+        "paintable_coverage_pct": 99.58
+      },
+      "method_note": "Bottom-panel batch candidate. Elements are drawn only in eroded safe pockets, then exact SVG masks clear the outer contour and cutouts.",
+      "metadata": "tasks/space-svg-exports-batch/outputs/reviews/np02-front-bottom-batch-bottom-v1-metadata.json"
+    },
+    {
+      "timestamp": "2026-06-17T07:47:21Z",
+      "svg": "tasks/space-svg-exports-batch/source/np02-front-bottom.svg",
+      "svg_sha256": "2dd7796da47c3e50e9cc4d3f04cffeed41339fdca918ea9033a8bba7aaa13137",
+      "variant": 2,
+      "candidate": "tasks/space-svg-exports-batch/outputs/generated/np02-front-bottom-batch-bottom-v2.png",
+      "artwork_only": "tasks/space-svg-exports-batch/outputs/final/np02-front-bottom-batch-bottom-v2-artwork-only.png",
+      "clean_black_lines": "tasks/space-svg-exports-batch/outputs/final/np02-front-bottom-batch-bottom-v2-clean-black-lines.png",
+      "debug_mask": "tasks/space-svg-exports-batch/outputs/reviews/np02-front-bottom-batch-bottom-v2-debug-mask.png",
+      "style_packet": "tasks/space-svg-exports-batch/style-packet/style-packet.json",
+      "source_style_refs": [
+        "tasks/space-svg-exports-batch/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png",
+        "tasks/space-svg-exports-batch/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+      ],
+      "viewbox": [
+        0.0,
+        0.0,
+        1644.0996,
+        2622.3853
+      ],
+      "output_dimensions": "900x1436",
+      "contours": [
+        {
+          "source_type": "path",
+          "index": 0,
+          "role": "paintable",
+          "area": 1881461.0,
+          "bounds": [
+            885.3,
+            20.0,
+            1624.1,
+            2602.39
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 1,
+          "role": "paintable",
+          "area": 1881498.78,
+          "bounds": [
+            20.0,
+            20.0,
+            758.81,
+            2602.39
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 2,
+          "role": "cutout",
+          "area": 141539.62,
+          "bounds": [
+            1302.04,
+            1386.14,
+            1447.13,
+            2438.04
+          ]
+        },
+        {
+          "source_type": "path",
+          "index": 3,
+          "role": "cutout",
+          "area": 15788.14,
+          "bounds": [
+            1303.67,
+            1141.98,
+            1445.5,
+            1283.81
+          ]
+        }
+      ],
+      "metrics": {
+        "verdict": "PASS",
+        "outside_nonwhite_pixels": 0,
+        "cutout_nonwhite_pixels": 0,
+        "paintable_coverage_pct": 99.58
+      },
+      "method_note": "Bottom-panel batch candidate. Elements are drawn only in eroded safe pockets, then exact SVG masks clear the outer contour and cutouts.",
+      "metadata": "tasks/space-svg-exports-batch/outputs/reviews/np02-front-bottom-batch-bottom-v2-metadata.json"
+    }
+  ]
+}

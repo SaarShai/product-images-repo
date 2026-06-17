@@ -1,0 +1,33 @@
+{
+  "method": "local-baseline-manifest-aware-pocket-plan",
+  "dimensions": "1592x1570",
+  "component_placements": [
+    {
+      "name": "left slider stack",
+      "outside_safe_pocket_pixels": 19540
+    },
+    {
+      "name": "lower left long buttons",
+      "outside_safe_pocket_pixels": 0
+    },
+    {
+      "name": "lower middle dial panel",
+      "outside_safe_pocket_pixels": 0
+    },
+    {
+      "name": "right vertical indicators",
+      "outside_safe_pocket_pixels": 30258
+    },
+    {
+      "name": "safe bolts",
+      "outside_safe_pocket_pixels": 1947
+    }
+  ],
+  "component_outside_pixels_total": 51745,
+  "outside_paintable_nonwhite_pixels": 0,
+  "cutout_clear_nonwhite_pixels": 6574,
+  "notes": [
+    "rough checkpoint artifact",
+    "style reference influence is approximate; geometry evidence is the focus"
+  ]
+}

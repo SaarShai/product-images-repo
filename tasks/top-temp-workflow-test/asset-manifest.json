@@ -1,0 +1,18 @@
+{
+  "created_at": "2026-06-16T09:41:43Z",
+  "task": "top-temp-workflow-test",
+  "title": "Top Temp Workflow Test",
+  "copy_assets": true,
+  "source_svg_original": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/space/top-temp.svg",
+  "task_svg": "tasks/top-temp-workflow-test/source/template.svg",
+  "style_references_original": [
+    "/Users/za/Downloads/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png",
+    "/Users/za/Downloads/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+  ],
+  "task_style_references": [
+    "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png",
+    "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+  ],
+  "workflow": "docs/svg-template-illustration-workflow.md",
+  "review_checklist": "docs/review-judge-checklist.md"
+}

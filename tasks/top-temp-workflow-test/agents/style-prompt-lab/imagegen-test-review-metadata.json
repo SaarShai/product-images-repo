@@ -1,0 +1,32 @@
+{
+  "candidate_id": "imagegen-smoke-test-01",
+  "generated": true,
+  "generated_at": "2026-06-16",
+  "candidate_artifact": "tasks/top-temp-workflow-test/agents/style-prompt-lab/imagegen-smoke-test-01.png",
+  "local_candidate_file": "tasks/top-temp-workflow-test/agents/style-prompt-lab/imagegen-smoke-test-01.png",
+  "source_cache_file": "/Users/za/.codex/generated_images/019ed059-0ca6-7a32-8c19-c87a2e980e35/ig_0e44d654000f7613016a313e783a2881918d647bb91e4dfda4.png",
+  "prompt_file": "tasks/top-temp-workflow-test/agents/style-prompt-lab/imagegen-test-prompt.md",
+  "prompt_variant_basis": "Prompt A crop-faithful element sheet, adapted to available chat-attached images",
+  "intended_attachment_method": "6 to 10 selected packet crops",
+  "actual_attachment_method": "style exemplar sheet and two reference panel images attached in chat; exact crop file attachments were not exposed by the tool interface",
+  "rubric_scores": {
+    "direct_packet_use": 16,
+    "watercolor_rendering": 18,
+    "object_vocabulary": 15,
+    "line_and_edge_behavior": 14,
+    "isolation_for_handoff": 14,
+    "efficient_crop_set": 0,
+    "negative_constraints": 10,
+    "total": 87
+  },
+  "rubric_verdict": "PARTIAL",
+  "visual_style_verdict": "REFERENCE-MATCH",
+  "method_verdict": "PARTIAL",
+  "review_notes": [
+    "The generated sheet contains isolated capsule buttons, slider rails, a dial, colored pins, screw heads, and a blue edge patch.",
+    "The visual style matches the packet well: blue hand-painted outlines, watercolor texture, rounded controls, soft highlights, and shadow pooling are present.",
+    "It correctly avoids final SVG contour composition, cutouts, labels, and flat vector UI.",
+    "The local candidate is file-backed, but the method score remains partial because the available tool used chat-attached reference images rather than the exact 6 to 10 crop files required by the proposed workflow."
+  ],
+  "recommended_next_test": "Run Prompt C or Prompt A in an image-generation interface that can attach the selected crop PNG files directly, then rescore with style-agent-evaluation-rubric.md."
+}

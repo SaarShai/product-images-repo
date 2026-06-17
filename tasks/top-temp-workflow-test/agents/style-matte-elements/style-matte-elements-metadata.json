@@ -1,0 +1,624 @@
+{
+  "workflow": "style-matte-elements-packet-pixel-method-test",
+  "source_svg": "tasks/top-temp-workflow-test/source/template.svg",
+  "template_manifest": "tasks/top-temp-workflow-test/template-manifest.json",
+  "style_packet_manifest": "tasks/top-temp-workflow-test/style-packet/style-packet.json",
+  "style_exemplar_sheet": "tasks/top-temp-workflow-test/style-packet/style-exemplar-sheet.png",
+  "strict_style_polish_baseline": "tasks/top-temp-workflow-test/agents/strict-style-polish/strict-style-polish-artwork.png",
+  "strict_pocket_helper": "tasks/top-temp-workflow-test/agents/strict-pocket/generate_strict_pocket.py",
+  "manifest_status": "filled-from-svg-geometry-report-before-agent-test",
+  "viewbox": [
+    0.0,
+    0.0,
+    1592.1,
+    1570.39
+  ],
+  "canvas_size_px": [
+    1593,
+    1571
+  ],
+  "path_roles": {
+    "path[0]": "outer material contour",
+    "path[1]": "large diagonal rounded slot keep-clear",
+    "path[2]": "lower-right round/bolt-like keep-clear"
+  },
+  "paintable_mask": {
+    "outer_pixels": 1483585,
+    "cutout_pixels": 126836,
+    "paintable_pixels": 1356749,
+    "control_margin_px": 18,
+    "eroded_control_safe_pixels": 1163019
+  },
+  "safe_pocket_plan": [
+    "upper-left tall bay above the left shoulder of the slot",
+    "middle-left field below/left of the diagonal slot",
+    "lower-left base bay above the bottom notch",
+    "lower-middle bay between the bottom notch and the right cutouts",
+    "right vertical strip between the diagonal slot and outer edge"
+  ],
+  "no_focal_motif_zones": [
+    "path[1] diagonal slot and its immediate margin",
+    "path[2] lower-right round cutout and its immediate margin",
+    "outer contour edge margin"
+  ],
+  "sprites": [
+    {
+      "name": "dial_ref1_gauge",
+      "kind": "dial",
+      "label": "ref 1 right-region",
+      "source_path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-right-region.png",
+      "crop_box": [
+        20,
+        105,
+        358,
+        470
+      ],
+      "output": "tasks/top-temp-workflow-test/agents/style-matte-elements/sprites/dial_ref1_gauge.png",
+      "size": [
+        338,
+        365
+      ],
+      "alpha_pixels": 88969
+    },
+    {
+      "name": "slider_bank_ref1",
+      "kind": "slider bank",
+      "label": "ref 1 left-region",
+      "source_path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-left-region.png",
+      "crop_box": [
+        120,
+        160,
+        793,
+        444
+      ],
+      "output": "tasks/top-temp-workflow-test/agents/style-matte-elements/sprites/slider_bank_ref1.png",
+      "size": [
+        673,
+        284
+      ],
+      "alpha_pixels": 114312
+    },
+    {
+      "name": "pill_red_ref1",
+      "kind": "pill button",
+      "label": "ref 1 accent component 01",
+      "source_path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-01.png",
+      "crop_box": [
+        22,
+        40,
+        378,
+        184
+      ],
+      "output": "tasks/top-temp-workflow-test/agents/style-matte-elements/sprites/pill_red_ref1.png",
+      "size": [
+        356,
+        144
+      ],
+      "alpha_pixels": 44822
+    },
+    {
+      "name": "pill_teal_ref1",
+      "kind": "pill button",
+      "label": "ref 1 accent component 03",
+      "source_path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-03.png",
+      "crop_box": [
+        14,
+        48,
+        383,
+        190
+      ],
+      "output": "tasks/top-temp-workflow-test/agents/style-matte-elements/sprites/pill_teal_ref1.png",
+      "size": [
+        369,
+        142
+      ],
+      "alpha_pixels": 44860
+    },
+    {
+      "name": "pill_yellow_ref1",
+      "kind": "pill button",
+      "label": "ref 1 accent component 02",
+      "source_path": "tasks/top-temp-workflow-test/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-accent-component-02.png",
+      "crop_box": [
+        20,
+        68,
+        380,
+        220
+      ],
+      "output": "tasks/top-temp-workflow-test/agents/style-matte-elements/sprites/pill_yellow_ref1.png",
+      "size": [
+        360,
+        152
+      ],
+      "alpha_pixels": 43304
+    },
+    {
+      "name": "pin_yellow_ref2",
+      "kind": "pin/knob",
+      "label": "ref 2 accent component 01",
+      "source_path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-accent-component-01.png",
+      "crop_box": [
+        0,
+        0,
+        211,
+        266
+      ],
+      "output": "tasks/top-temp-workflow-test/agents/style-matte-elements/sprites/pin_yellow_ref2.png",
+      "size": [
+        211,
+        266
+      ],
+      "alpha_pixels": 28415
+    },
+    {
+      "name": "pin_red_ref2",
+      "kind": "pin/knob",
+      "label": "ref 2 accent component 02",
+      "source_path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-accent-component-02.png",
+      "crop_box": [
+        0,
+        0,
+        203,
+        265
+      ],
+      "output": "tasks/top-temp-workflow-test/agents/style-matte-elements/sprites/pin_red_ref2.png",
+      "size": [
+        203,
+        265
+      ],
+      "alpha_pixels": 27923
+    },
+    {
+      "name": "pin_teal_ref2",
+      "kind": "pin/knob",
+      "label": "ref 2 accent component 04",
+      "source_path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-accent-component-04.png",
+      "crop_box": [
+        0,
+        0,
+        202,
+        266
+      ],
+      "output": "tasks/top-temp-workflow-test/agents/style-matte-elements/sprites/pin_teal_ref2.png",
+      "size": [
+        202,
+        266
+      ],
+      "alpha_pixels": 28520
+    },
+    {
+      "name": "bolt_ref2_right",
+      "kind": "bolt",
+      "label": "ref 2 edge-treatment",
+      "source_path": "tasks/top-temp-workflow-test/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-edge-treatment.png",
+      "crop_box": [
+        50,
+        64,
+        160,
+        174
+      ],
+      "output": "tasks/top-temp-workflow-test/agents/style-matte-elements/sprites/bolt_ref2_right.png",
+      "size": [
+        110,
+        110
+      ],
+      "alpha_pixels": 10177
+    }
+  ],
+  "placements": [
+    {
+      "name": "upper-left red pin",
+      "sprite": "pin_red_ref2",
+      "sprite_kind": "pin/knob",
+      "pocket": "upper-left tall bay above the left shoulder of the slot",
+      "xy": [
+        376,
+        332
+      ],
+      "scale": 0.54,
+      "intent": "vertical red packet pin in the tall upper pocket",
+      "expected": "accepted",
+      "accepted": true,
+      "mask_pixels": 8140,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        388,
+        340,
+        475,
+        475
+      ]
+    },
+    {
+      "name": "upper-left yellow pin",
+      "sprite": "pin_yellow_ref2",
+      "sprite_kind": "pin/knob",
+      "pocket": "upper-left tall bay above the left shoulder of the slot",
+      "xy": [
+        486,
+        328
+      ],
+      "scale": 0.54,
+      "intent": "vertical yellow packet pin in the tall upper pocket",
+      "expected": "accepted",
+      "accepted": true,
+      "mask_pixels": 8283,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        500,
+        336,
+        587,
+        472
+      ]
+    },
+    {
+      "name": "upper-left teal pin",
+      "sprite": "pin_teal_ref2",
+      "sprite_kind": "pin/knob",
+      "pocket": "upper-left tall bay above the left shoulder of the slot",
+      "xy": [
+        596,
+        334
+      ],
+      "scale": 0.54,
+      "intent": "vertical teal packet pin in the tall upper pocket",
+      "expected": "accepted",
+      "accepted": true,
+      "mask_pixels": 8307,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        608,
+        342,
+        696,
+        478
+      ]
+    },
+    {
+      "name": "middle-left slider bank",
+      "sprite": "slider_bank_ref1",
+      "sprite_kind": "slider bank",
+      "pocket": "middle-left field below/left of the diagonal slot",
+      "xy": [
+        238,
+        648
+      ],
+      "scale": 0.7,
+      "intent": "actual reference slider rails and colored knobs scaled into the middle-left field",
+      "expected": "accepted",
+      "accepted": true,
+      "mask_pixels": 56350,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        250,
+        681,
+        709,
+        842
+      ]
+    },
+    {
+      "name": "lower-left gauge",
+      "sprite": "dial_ref1_gauge",
+      "sprite_kind": "dial",
+      "pocket": "lower-left base bay above the bottom notch",
+      "xy": [
+        344,
+        1125
+      ],
+      "scale": 0.72,
+      "intent": "packet gauge kept clear of the bottom notch and slot",
+      "expected": "accepted",
+      "accepted": true,
+      "mask_pixels": 46074,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        344,
+        1134,
+        585,
+        1375
+      ]
+    },
+    {
+      "name": "lower-left red pill",
+      "sprite": "pill_red_ref1",
+      "sprite_kind": "pill button",
+      "pocket": "lower-left base bay above the bottom notch",
+      "xy": [
+        94,
+        1126
+      ],
+      "scale": 0.56,
+      "intent": "red pill from packet component crop",
+      "expected": "accepted",
+      "accepted": true,
+      "mask_pixels": 14106,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        94,
+        1129,
+        293,
+        1205
+      ]
+    },
+    {
+      "name": "lower-left yellow pill",
+      "sprite": "pill_yellow_ref1",
+      "sprite_kind": "pill button",
+      "pocket": "lower-left base bay above the bottom notch",
+      "xy": [
+        102,
+        1236
+      ],
+      "scale": 0.56,
+      "intent": "yellow pill from packet component crop",
+      "expected": "accepted",
+      "accepted": true,
+      "mask_pixels": 13711,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        102,
+        1244,
+        304,
+        1317
+      ]
+    },
+    {
+      "name": "lower-left teal pill",
+      "sprite": "pill_teal_ref1",
+      "sprite_kind": "pill button",
+      "pocket": "lower-left base bay above the bottom notch",
+      "xy": [
+        110,
+        1344
+      ],
+      "scale": 0.54,
+      "intent": "teal pill from packet component crop",
+      "expected": "accepted",
+      "accepted": true,
+      "mask_pixels": 13112,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        110,
+        1347,
+        309,
+        1418
+      ]
+    },
+    {
+      "name": "lower-middle red pill",
+      "sprite": "pill_red_ref1",
+      "sprite_kind": "pill button",
+      "pocket": "lower-middle bay between the bottom notch and the right cutouts",
+      "xy": [
+        922,
+        1122
+      ],
+      "scale": 0.72,
+      "intent": "larger packet pill shifted into the right lower paintable bay",
+      "expected": "accepted",
+      "accepted": true,
+      "mask_pixels": 23189,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        922,
+        1125,
+        1178,
+        1223
+      ]
+    },
+    {
+      "name": "lower-middle teal pill",
+      "sprite": "pill_teal_ref1",
+      "sprite_kind": "pill button",
+      "pocket": "lower-middle bay between the bottom notch and the right cutouts",
+      "xy": [
+        930,
+        1252
+      ],
+      "scale": 0.7,
+      "intent": "teal packet pill clear of path[2]",
+      "expected": "accepted",
+      "accepted": true,
+      "mask_pixels": 21982,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        930,
+        1255,
+        1187,
+        1347
+      ]
+    },
+    {
+      "name": "lower-middle yellow pill",
+      "sprite": "pill_yellow_ref1",
+      "sprite_kind": "pill button",
+      "pocket": "lower-middle bay between the bottom notch and the right cutouts",
+      "xy": [
+        918,
+        1340
+      ],
+      "scale": 0.65,
+      "intent": "yellow packet pill clear of the bottom edge notch",
+      "expected": "accepted",
+      "accepted": true,
+      "mask_pixels": 18326,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        918,
+        1350,
+        1152,
+        1434
+      ]
+    },
+    {
+      "name": "right-strip upper bolt",
+      "sprite": "bolt_ref2_right",
+      "sprite_kind": "bolt",
+      "pocket": "right vertical strip between the diagonal slot and outer edge",
+      "xy": [
+        1492,
+        1064
+      ],
+      "scale": 0.44,
+      "intent": "packet screw head in the right strip above the round cutout",
+      "expected": "accepted",
+      "accepted": true,
+      "mask_pixels": 1933,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        1492,
+        1064,
+        1540,
+        1112
+      ]
+    },
+    {
+      "name": "right-strip lower bolt",
+      "sprite": "bolt_ref2_right",
+      "sprite_kind": "bolt",
+      "pocket": "right vertical strip between the diagonal slot and outer edge",
+      "xy": [
+        1492,
+        1370
+      ],
+      "scale": 0.44,
+      "intent": "packet screw head in the right strip below the round cutout",
+      "expected": "accepted",
+      "accepted": true,
+      "mask_pixels": 1933,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        1492,
+        1370,
+        1540,
+        1418
+      ]
+    },
+    {
+      "name": "reject dial crossing diagonal slot",
+      "sprite": "dial_ref1_gauge",
+      "sprite_kind": "dial",
+      "pocket": "path[1] diagonal slot keep-clear",
+      "xy": [
+        790,
+        575
+      ],
+      "scale": 0.88,
+      "intent": "deliberate negative placement that overlaps the large diagonal cutout",
+      "expected": "rejected",
+      "accepted": false,
+      "mask_pixels": 68747,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 9434,
+      "outside_eroded_paintable_pixels": 15817,
+      "bbox": [
+        790,
+        585,
+        1085,
+        880
+      ]
+    },
+    {
+      "name": "reject lower-middle pill across bottom void",
+      "sprite": "pill_red_ref1",
+      "sprite_kind": "pill button",
+      "pocket": "bottom center void / outer contour exclusion",
+      "xy": [
+        712,
+        1290
+      ],
+      "scale": 0.88,
+      "intent": "deliberate negative placement that crosses the lower center opening",
+      "expected": "rejected",
+      "accepted": false,
+      "mask_pixels": 34957,
+      "outside_outer_pixels": 20223,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 22383,
+      "bbox": [
+        712,
+        1294,
+        1025,
+        1414
+      ]
+    },
+    {
+      "name": "reject bolt on round cutout",
+      "sprite": "bolt_ref2_right",
+      "sprite_kind": "bolt",
+      "pocket": "path[2] lower-right round cutout keep-clear",
+      "xy": [
+        1428,
+        1210
+      ],
+      "scale": 0.7,
+      "intent": "deliberate negative placement on the lower-right circular cutout",
+      "expected": "rejected",
+      "accepted": false,
+      "mask_pixels": 4986,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 4986,
+      "outside_eroded_paintable_pixels": 4986,
+      "bbox": [
+        1428,
+        1210,
+        1505,
+        1287
+      ]
+    }
+  ],
+  "summary": {
+    "planned_placements": 16,
+    "accepted_placements": 13,
+    "rejected_placements": 3,
+    "accepted_placement_escape_pixels": 0,
+    "accepted_placement_cutout_pixels": 0,
+    "final_outside_outer_alpha_pixels": 0,
+    "final_path1_cutout_alpha_pixels": 0,
+    "final_path2_cutout_alpha_pixels": 0,
+    "final_cutout_alpha_pixels": 0,
+    "final_outside_paintable_alpha_pixels": 0,
+    "final_alpha_gate_pass": true
+  },
+  "style_comparison_to_strict_style_polish": {
+    "closer_to_references": true,
+    "because": [
+      "Visible controls are source pixels from packet crops rather than redrawn procedural controls.",
+      "The sprites preserve watercolor texture, uneven ink edges, soft highlights, and organic component shadows.",
+      "Remaining procedural pieces are the SVG-edge drawing and texture fit, so this is a method test rather than a final production claim."
+    ]
+  },
+  "outputs": {
+    "element_sheet": "tasks/top-temp-workflow-test/agents/style-matte-elements/element-sheet.png",
+    "artwork": "tasks/top-temp-workflow-test/agents/style-matte-elements/style-matte-elements-artwork.png",
+    "preview_white": "tasks/top-temp-workflow-test/agents/style-matte-elements/style-matte-elements-preview-white.png",
+    "overlay": "tasks/top-temp-workflow-test/agents/style-matte-elements/style-matte-elements-overlay.png",
+    "mask_debug": "tasks/top-temp-workflow-test/agents/style-matte-elements/style-matte-elements-mask-debug.png",
+    "metadata": "tasks/top-temp-workflow-test/agents/style-matte-elements/style-matte-elements-metadata.json",
+    "review": "tasks/top-temp-workflow-test/agents/style-matte-elements/review.md"
+  }
+}

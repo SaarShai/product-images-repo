@@ -1,0 +1,415 @@
+{
+  "workflow": "component-library-pocket-fit-test",
+  "source_svg": "tasks/top-temp-workflow-test/source/template.svg",
+  "template_manifest": "tasks/top-temp-workflow-test/template-manifest.json",
+  "geometry_report": "tasks/top-temp-workflow-test/svg-geometry-report.md",
+  "style_refs": [
+    "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png",
+    "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+  ],
+  "manifest_status": "filled-from-svg-geometry-report-before-agent-test",
+  "canvas_size_px": [
+    1593,
+    1571
+  ],
+  "path_roles": {
+    "path[0]": "outer material contour",
+    "path[1]": "large diagonal rounded slot keep-clear",
+    "path[2]": "lower-right round/bolt-like keep-clear"
+  },
+  "svg_path_bounds": [
+    {
+      "path_index": 0,
+      "role": "outer material contour",
+      "bounds": [
+        4.01,
+        4.0,
+        1588.11,
+        1566.39
+      ]
+    },
+    {
+      "path_index": 1,
+      "role": "large diagonal rounded slot keep-clear",
+      "bounds": [
+        792.58,
+        401.16,
+        1506.6,
+        1027.56
+      ]
+    },
+    {
+      "path_index": 2,
+      "role": "lower-right round/bolt-like keep-clear",
+      "bounds": [
+        1385.69,
+        1167.47,
+        1527.53,
+        1309.31
+      ]
+    }
+  ],
+  "component_library": [
+    {
+      "key": "dial",
+      "family": "dial",
+      "display_name": "pale-blue dial",
+      "size": [
+        206,
+        206
+      ],
+      "style_notes": [
+        "round gauge face",
+        "navy irregular ring",
+        "white watercolor highlight",
+        "simple needle/ticks"
+      ]
+    },
+    {
+      "key": "slider",
+      "family": "slider",
+      "display_name": "two-knob slider",
+      "size": [
+        360,
+        84
+      ],
+      "style_notes": [
+        "long soft rail",
+        "tiny rounded knobs",
+        "mint/coral accent colors",
+        "pooled navy shadows"
+      ]
+    },
+    {
+      "key": "capsule_coral",
+      "family": "capsule button",
+      "display_name": "coral capsule button",
+      "size": [
+        260,
+        92
+      ],
+      "style_notes": [
+        "rounded pill button",
+        "glossy top wash",
+        "thick hand-inked navy rim"
+      ]
+    },
+    {
+      "key": "capsule_mint",
+      "family": "capsule button",
+      "display_name": "mint capsule button",
+      "size": [
+        260,
+        92
+      ],
+      "style_notes": [
+        "rounded pill button",
+        "glossy top wash",
+        "thick hand-inked navy rim"
+      ]
+    },
+    {
+      "key": "bolt",
+      "family": "bolt",
+      "display_name": "slotted bolt",
+      "size": [
+        72,
+        72
+      ],
+      "style_notes": [
+        "small screw head",
+        "navy slotted mark",
+        "pale glossy metal fill"
+      ]
+    },
+    {
+      "key": "pin_coral",
+      "family": "colored pin",
+      "display_name": "coral colored pin",
+      "size": [
+        92,
+        150
+      ],
+      "style_notes": [
+        "upright rounded control pin",
+        "navy base shadow",
+        "candy-color watercolor body"
+      ]
+    },
+    {
+      "key": "pin_yellow",
+      "family": "colored pin",
+      "display_name": "yellow colored pin",
+      "size": [
+        92,
+        150
+      ],
+      "style_notes": [
+        "upright rounded control pin",
+        "navy base shadow",
+        "candy-color watercolor body"
+      ]
+    },
+    {
+      "key": "pin_mint",
+      "family": "colored pin",
+      "display_name": "mint colored pin",
+      "size": [
+        92,
+        150
+      ],
+      "style_notes": [
+        "upright rounded control pin",
+        "navy base shadow",
+        "candy-color watercolor body"
+      ]
+    }
+  ],
+  "safe_pockets_from_manifest": [
+    "upper-left tall bay above the left shoulder of the slot",
+    "middle-left field below/left of the diagonal slot",
+    "lower-left base bay above the bottom notch",
+    "lower-middle bay between the bottom notch and the right cutouts",
+    "right vertical strip between the diagonal slot and outer edge"
+  ],
+  "pocket_bboxes_used_for_bbox_fit": {
+    "upper-left tall bay above the left shoulder of the slot": [
+      398,
+      118,
+      650,
+      314
+    ],
+    "middle-left field below/left of the diagonal slot": [
+      226,
+      696,
+      742,
+      960
+    ],
+    "lower-left base bay above the bottom notch": [
+      74,
+      1138,
+      632,
+      1452
+    ],
+    "lower-middle bay between the bottom notch and the right cutouts": [
+      890,
+      1092,
+      1328,
+      1396
+    ],
+    "right vertical strip between the diagonal slot and outer edge": [
+      1490,
+      1068,
+      1576,
+      1450
+    ]
+  },
+  "placement_records": [
+    {
+      "name": "upper coral pin",
+      "component_key": "pin_coral",
+      "component_family": "colored pin",
+      "pocket": "upper-left tall bay above the left shoulder of the slot",
+      "bbox": [
+        420,
+        145,
+        512,
+        295
+      ],
+      "pocket_bbox": [
+        398,
+        118,
+        650,
+        314
+      ],
+      "bbox_fits_named_pocket": true,
+      "mask_pixels": 7620,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "accepted": true
+    },
+    {
+      "name": "upper yellow pin",
+      "component_key": "pin_yellow",
+      "component_family": "colored pin",
+      "pocket": "upper-left tall bay above the left shoulder of the slot",
+      "bbox": [
+        542,
+        160,
+        634,
+        310
+      ],
+      "pocket_bbox": [
+        398,
+        118,
+        650,
+        314
+      ],
+      "bbox_fits_named_pocket": true,
+      "mask_pixels": 7620,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "accepted": true
+    },
+    {
+      "name": "middle-left slider",
+      "component_key": "slider",
+      "component_family": "slider",
+      "pocket": "middle-left field below/left of the diagonal slot",
+      "bbox": [
+        255,
+        745,
+        615,
+        829
+      ],
+      "pocket_bbox": [
+        226,
+        696,
+        742,
+        960
+      ],
+      "bbox_fits_named_pocket": true,
+      "mask_pixels": 16721,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "accepted": true
+    },
+    {
+      "name": "lower-left dial",
+      "component_key": "dial",
+      "component_family": "dial",
+      "pocket": "lower-left base bay above the bottom notch",
+      "bbox": [
+        365,
+        1170,
+        571,
+        1376
+      ],
+      "pocket_bbox": [
+        74,
+        1138,
+        632,
+        1452
+      ],
+      "bbox_fits_named_pocket": true,
+      "mask_pixels": 26853,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "accepted": true
+    },
+    {
+      "name": "lower-middle mint capsule",
+      "component_key": "capsule_mint",
+      "component_family": "capsule button",
+      "pocket": "lower-middle bay between the bottom notch and the right cutouts",
+      "bbox": [
+        1015,
+        1138,
+        1275,
+        1230
+      ],
+      "pocket_bbox": [
+        890,
+        1092,
+        1328,
+        1396
+      ],
+      "bbox_fits_named_pocket": true,
+      "mask_pixels": 15073,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "accepted": true
+    },
+    {
+      "name": "lower-middle coral capsule",
+      "component_key": "capsule_coral",
+      "component_family": "capsule button",
+      "pocket": "lower-middle bay between the bottom notch and the right cutouts",
+      "bbox": [
+        1000,
+        1290,
+        1260,
+        1382
+      ],
+      "pocket_bbox": [
+        890,
+        1092,
+        1328,
+        1396
+      ],
+      "bbox_fits_named_pocket": true,
+      "mask_pixels": 15073,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "accepted": true
+    },
+    {
+      "name": "lower-left bolt",
+      "component_key": "bolt",
+      "component_family": "bolt",
+      "pocket": "lower-left base bay above the bottom notch",
+      "bbox": [
+        112,
+        1234,
+        184,
+        1306
+      ],
+      "pocket_bbox": [
+        74,
+        1138,
+        632,
+        1452
+      ],
+      "bbox_fits_named_pocket": true,
+      "mask_pixels": 3117,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "accepted": true
+    }
+  ],
+  "summary": {
+    "planned_instances": 7,
+    "accepted_instances": 7,
+    "rejected_instances": 0,
+    "accepted_families": [
+      "bolt",
+      "capsule button",
+      "colored pin",
+      "dial",
+      "slider"
+    ],
+    "missing_required_families": [],
+    "outer_pixels": 1483581,
+    "cutout_pixels": 126838,
+    "paintable_pixels": 1356743,
+    "component_margin_px": 24,
+    "eroded_safe_pixels": 1098269,
+    "accepted_component_outside_eroded_paintable_pixels": 0,
+    "accepted_component_cutout_pixels": 0,
+    "focal_motif_pixels_outside_eroded_paintable": 0,
+    "focal_motif_pixels_inside_cutouts": 0,
+    "final_outside_paintable_alpha_pixels": 0,
+    "final_cutout_alpha_pixels": 0,
+    "mechanical_gate_pass": true
+  },
+  "outputs": {
+    "component_sheet": "component-library-sheet.png",
+    "artwork": "component-library-artwork.png",
+    "overlay": "component-library-overlay.png",
+    "mask_debug": "component-library-mask-debug.png",
+    "metadata": "component-library-metadata.json"
+  },
+  "method_notes": [
+    "The contact sheet is rendered before any template composition.",
+    "Each planned instance is checked for bbox containment inside a named pocket.",
+    "Accepted sprite masks must have zero pixels outside the eroded paintable mask.",
+    "The blue watercolor body is quiet background clipped to paintable material; focal controls are sprite instances only."
+  ]
+}

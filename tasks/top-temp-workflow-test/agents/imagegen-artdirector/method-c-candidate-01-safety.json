@@ -1,0 +1,32 @@
+{
+  "candidate": "tasks/top-temp-workflow-test/agents/imagegen-artdirector/method-c-candidate-01.png",
+  "source_svg": "tasks/top-temp-workflow-test/source/template.svg",
+  "analysis_only": true,
+  "candidate_original_size": [
+    1263,
+    1245
+  ],
+  "analysis_size": [
+    1593,
+    1571
+  ],
+  "paint_threshold_distance_from_white": 24,
+  "metrics": {
+    "painted_pixels": 1292033,
+    "outside_outer_pixels": 5884,
+    "outside_paintable_pixels": 15046,
+    "inside_diagonal_slot_pixels": 5022,
+    "inside_round_cutout_pixels": 4140
+  },
+  "outputs": {
+    "template_overlay": "tasks/top-temp-workflow-test/agents/imagegen-artdirector/method-c-candidate-01-template-overlay.png",
+    "safety_mask": "tasks/top-temp-workflow-test/agents/imagegen-artdirector/method-c-candidate-01-safety-mask.png",
+    "cutout_crops": "tasks/top-temp-workflow-test/agents/imagegen-artdirector/method-c-candidate-01-cutout-crops.png",
+    "metadata": "tasks/top-temp-workflow-test/agents/imagegen-artdirector/method-c-candidate-01-safety.json"
+  },
+  "notes": [
+    "This pass does not alter or mask the candidate.",
+    "Counts are approximate because the model-painted candidate is not an SVG-registered export.",
+    "Red pixels in the overlay/debug image indicate non-white generated paint inside SVG cutout masks after full-canvas resize."
+  ]
+}

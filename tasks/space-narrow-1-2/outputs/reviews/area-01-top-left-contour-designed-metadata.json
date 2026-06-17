@@ -1,0 +1,46 @@
+{
+  "timestamp": "2026-06-16T07:52:22Z",
+  "area": "01 top-left",
+  "source_svg": "tasks/space-narrow-1-2/source/narrow-1-plus-2.svg",
+  "style_refs": [
+    "refs/control-panel-sliders.png",
+    "refs/space-planets.png",
+    "refs/lever-module.png",
+    "refs/dial-toggle-panel.png",
+    "refs/radar-screen.png"
+  ],
+  "crop_svg_units": [
+    0,
+    0,
+    1668,
+    1668
+  ],
+  "cutout_zones": {
+    "diagonal_yellow_path": "source SVG line 57",
+    "circle_yellow_path": {
+      "center": [
+        1486.61,
+        1268.34
+      ],
+      "radius_used": 76.0
+    },
+    "red_slot": [
+      770.16,
+      1054.46,
+      108.51,
+      240.12
+    ],
+    "stabilizer_slot_conservative": [
+      752.0,
+      1050.0,
+      146.0,
+      502.0
+    ]
+  },
+  "nonwhite_pixels_in_cutout_mask": 0,
+  "nonwhite_pixels_outside_outer_mask": 0,
+  "decorative_element_pixels_in_cutout_mask": 0,
+  "artwork": "outputs/generated/area-01-top-left-contour-designed-artwork.png",
+  "overlay": "outputs/reviews/area-01-top-left-contour-designed-template-overlay.png",
+  "mask_debug": "outputs/reviews/area-01-top-left-contour-designed-mask-debug.png"
+}

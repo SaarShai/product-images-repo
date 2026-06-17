@@ -1,0 +1,222 @@
+{
+  "workflow": "style-imagegen-elements-fit",
+  "method": "generated style-packet element sheet extracted into sprites, then SVG-safe geometry placement",
+  "source_svg": "tasks/top-temp-workflow-test/source/template.svg",
+  "style_packet": "tasks/top-temp-workflow-test/style-packet/style-packet.json",
+  "element_sheet": "tasks/top-temp-workflow-test/agents/style-prompt-lab/imagegen-smoke-test-01.png",
+  "extracted_element_sheet": "tasks/top-temp-workflow-test/agents/style-imagegen-fit/extracted-element-sheet.png",
+  "summary": {
+    "planned_placements": 13,
+    "accepted_placements": 12,
+    "rejected_placements": 1,
+    "accepted_escape_pixels": 0,
+    "accepted_cutout_pixels": 0,
+    "final_outside_paintable_alpha_pixels": 0,
+    "final_cutout_alpha_pixels": 0
+  },
+  "placements": [
+    {
+      "name": "upper-left red generated pin",
+      "sprite": "tasks/top-temp-workflow-test/agents/style-imagegen-fit/sprites/red_pin.png",
+      "bbox": [
+        390,
+        144,
+        490,
+        291
+      ],
+      "accepted": true,
+      "mask_pixels": 10132,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    },
+    {
+      "name": "upper-left yellow generated pin",
+      "sprite": "tasks/top-temp-workflow-test/agents/style-imagegen-fit/sprites/yellow_pin.png",
+      "bbox": [
+        505,
+        148,
+        605,
+        307
+      ],
+      "accepted": true,
+      "mask_pixels": 11254,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    },
+    {
+      "name": "upper-left teal generated pin",
+      "sprite": "tasks/top-temp-workflow-test/agents/style-imagegen-fit/sprites/teal_pin.png",
+      "bbox": [
+        445,
+        335,
+        545,
+        490
+      ],
+      "accepted": true,
+      "mask_pixels": 10699,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    },
+    {
+      "name": "middle-left generated slider top",
+      "sprite": "tasks/top-temp-workflow-test/agents/style-imagegen-fit/sprites/slider_top.png",
+      "bbox": [
+        230,
+        708,
+        735,
+        747
+      ],
+      "accepted": true,
+      "mask_pixels": 16199,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    },
+    {
+      "name": "middle-left generated slider bottom",
+      "sprite": "tasks/top-temp-workflow-test/agents/style-imagegen-fit/sprites/slider_bottom.png",
+      "bbox": [
+        230,
+        848,
+        735,
+        887
+      ],
+      "accepted": true,
+      "mask_pixels": 16147,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    },
+    {
+      "name": "lower-left generated gauge",
+      "sprite": "tasks/top-temp-workflow-test/agents/style-imagegen-fit/sprites/gauge.png",
+      "bbox": [
+        315,
+        1123,
+        625,
+        1416
+      ],
+      "accepted": true,
+      "mask_pixels": 75965,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    },
+    {
+      "name": "lower-left generated red pill",
+      "sprite": "tasks/top-temp-workflow-test/agents/style-imagegen-fit/sprites/red_pill.png",
+      "bbox": [
+        97,
+        1160,
+        332,
+        1248
+      ],
+      "accepted": true,
+      "mask_pixels": 19554,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    },
+    {
+      "name": "lower-left generated teal pill",
+      "sprite": "tasks/top-temp-workflow-test/agents/style-imagegen-fit/sprites/teal_pill.png",
+      "bbox": [
+        111,
+        1315,
+        348,
+        1403
+      ],
+      "accepted": true,
+      "mask_pixels": 19611,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    },
+    {
+      "name": "lower-middle generated red pill",
+      "sprite": "tasks/top-temp-workflow-test/agents/style-imagegen-fit/sprites/red_pill.png",
+      "bbox": [
+        924,
+        1110,
+        1196,
+        1212
+      ],
+      "accepted": true,
+      "mask_pixels": 26139,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    },
+    {
+      "name": "lower-middle generated teal pill",
+      "sprite": "tasks/top-temp-workflow-test/agents/style-imagegen-fit/sprites/teal_pill.png",
+      "bbox": [
+        933,
+        1305,
+        1207,
+        1407
+      ],
+      "accepted": true,
+      "mask_pixels": 26121,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    },
+    {
+      "name": "right-strip generated bolt upper",
+      "sprite": "tasks/top-temp-workflow-test/agents/style-imagegen-fit/sprites/bolt_left.png",
+      "bbox": [
+        1512,
+        1080,
+        1567,
+        1144
+      ],
+      "accepted": true,
+      "mask_pixels": 3194,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    },
+    {
+      "name": "right-strip generated bolt lower",
+      "sprite": "tasks/top-temp-workflow-test/agents/style-imagegen-fit/sprites/bolt_right.png",
+      "bbox": [
+        1515,
+        1392,
+        1565,
+        1456
+      ],
+      "accepted": true,
+      "mask_pixels": 2860,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    },
+    {
+      "name": "reject generated gauge over slot",
+      "sprite": "tasks/top-temp-workflow-test/agents/style-imagegen-fit/sprites/gauge.png",
+      "bbox": [
+        960,
+        549,
+        1300,
+        870
+      ],
+      "accepted": false,
+      "mask_pixels": 91210,
+      "outside_outer_pixels": 4,
+      "inside_cutout_pixels": 44271,
+      "outside_eroded_paintable_pixels": 62550
+    }
+  ],
+  "outputs": {
+    "artwork": "tasks/top-temp-workflow-test/agents/style-imagegen-fit/style-imagegen-fit-artwork.png",
+    "preview_white": "tasks/top-temp-workflow-test/agents/style-imagegen-fit/style-imagegen-fit-preview-white.png",
+    "overlay": "tasks/top-temp-workflow-test/agents/style-imagegen-fit/style-imagegen-fit-overlay.png",
+    "mask_debug": "tasks/top-temp-workflow-test/agents/style-imagegen-fit/style-imagegen-fit-mask-debug.png",
+    "metadata": "tasks/top-temp-workflow-test/agents/style-imagegen-fit/style-imagegen-fit-metadata.json"
+  },
+  "verdict": "ACCEPT as best pipeline proof; still needs final art-direction feedback"
+}

@@ -1,0 +1,192 @@
+{
+  "workflow": "strict-style-polish-reference-watercolor",
+  "source_svg": "tasks/top-temp-workflow-test/source/template.svg",
+  "template_manifest": "tasks/top-temp-workflow-test/template-manifest.json",
+  "geometry_report": "tasks/top-temp-workflow-test/svg-geometry-report.md",
+  "previous_geometry_candidate": "tasks/top-temp-workflow-test/agents/strict-pocket/strict-pocket-artwork.png",
+  "previous_geometry_overlay": "tasks/top-temp-workflow-test/agents/strict-pocket/strict-pocket-overlay.png",
+  "style_refs": [
+    "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png",
+    "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+  ],
+  "manifest_status": "filled-from-svg-geometry-report-before-agent-test",
+  "viewbox": [
+    0.0,
+    0.0,
+    1592.1,
+    1570.39
+  ],
+  "canvas_size_px": [
+    1593,
+    1571
+  ],
+  "path_roles": {
+    "path[0]": "outer material contour",
+    "path[1]": "large diagonal rounded slot keep-clear",
+    "path[2]": "lower-right round/bolt-like keep-clear"
+  },
+  "rendering_strategy": [
+    "Fresh reference-style redraw rather than palette shifting the strict-pocket output.",
+    "Watercolor paper grain, translucent blue washes, dark uneven contour ink, and inner edge bloom.",
+    "Rounded raised hardware with dark bases, soft shadows, white highlights, and red/yellow/teal accents.",
+    "Lower-middle large buttons are shifted right into the paintable bay that the previous proof avoided."
+  ],
+  "paintable_mask": {
+    "outer_pixels": 1483580,
+    "path1_cutout_pixels": 110964,
+    "path2_cutout_pixels": 15960,
+    "combined_cutout_pixels": 126924,
+    "paintable_pixels": 1356656,
+    "control_margin_px": 18,
+    "eroded_control_safe_pixels": 1162926
+  },
+  "safe_pocket_plan": [
+    "upper-left tall bay above the left shoulder of the slot",
+    "middle-left field below/left of the diagonal slot",
+    "lower-left base bay above the bottom notch",
+    "lower-middle bay between the bottom notch and the right cutouts",
+    "right vertical strip between the diagonal slot and outer edge"
+  ],
+  "no_focal_motif_zones": [
+    "path[1] diagonal slot and its immediate margin",
+    "path[2] lower-right round cutout and its immediate margin",
+    "outer contour edge margin"
+  ],
+  "decorative_controls": [
+    {
+      "name": "upper-left watercolor indicator lamps",
+      "pocket": "upper-left tall bay above the left shoulder of the slot",
+      "role": "domed red/yellow/teal lamps with dark raised bases",
+      "accepted": true,
+      "mask_pixels": 20785,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        416,
+        117,
+        633,
+        322
+      ]
+    },
+    {
+      "name": "upper-left raised pin cluster",
+      "pocket": "upper-left tall bay above the left shoulder of the slot",
+      "role": "small vertical control pins copied from the reference vocabulary",
+      "accepted": true,
+      "mask_pixels": 23838,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        402,
+        356,
+        623,
+        528
+      ]
+    },
+    {
+      "name": "middle-left multi-knob slider bank",
+      "pocket": "middle-left field below/left of the diagonal slot",
+      "role": "watery rails with several rounded colored knobs",
+      "accepted": true,
+      "mask_pixels": 69922,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        225,
+        681,
+        739,
+        953
+      ]
+    },
+    {
+      "name": "lower-left watercolor gauge",
+      "pocket": "lower-left base bay above the bottom notch",
+      "role": "raised blue ring, pale face, ticks, needle, and soft highlights",
+      "accepted": true,
+      "mask_pixels": 59757,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        335,
+        1139,
+        613,
+        1424
+      ]
+    },
+    {
+      "name": "lower-left stacked pill buttons",
+      "pocket": "lower-left base bay above the bottom notch",
+      "role": "rounded red/yellow/teal pill bars with glossy watercolor highlights",
+      "accepted": true,
+      "mask_pixels": 40113,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        103,
+        1174,
+        346,
+        1403
+      ]
+    },
+    {
+      "name": "lower-middle shifted pill buttons",
+      "pocket": "lower-middle bay between the bottom notch and the right cutouts",
+      "role": "reference-like large rounded controls shifted clear of the bottom void",
+      "accepted": true,
+      "mask_pixels": 73961,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        917,
+        1086,
+        1207,
+        1429
+      ]
+    },
+    {
+      "name": "right-strip screw heads",
+      "pocket": "right vertical strip between the diagonal slot and outer edge",
+      "role": "small friendly screw details kept away from the lower-right cutout",
+      "accepted": true,
+      "mask_pixels": 5450,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        1507,
+        1081,
+        1568,
+        1436
+      ]
+    }
+  ],
+  "summary": {
+    "planned_controls": 7,
+    "accepted_controls": 7,
+    "rejected_controls": 0,
+    "accepted_control_escape_pixels": 0,
+    "accepted_control_cutout_pixels": 0,
+    "final_outside_outer_alpha_pixels": 0,
+    "final_path1_cutout_alpha_pixels": 0,
+    "final_path2_cutout_alpha_pixels": 0,
+    "final_cutout_alpha_pixels": 0,
+    "final_outside_paintable_alpha_pixels": 0
+  },
+  "outputs": {
+    "artwork": "strict-style-polish-artwork.png",
+    "overlay": "strict-style-polish-overlay.png",
+    "mask_debug": "strict-style-polish-mask-debug.png",
+    "metadata": "strict-style-polish-metadata.json"
+  },
+  "method_notes": [
+    "Decorative controls are mask-tested against the eroded paintable mask before painting.",
+    "The panel wash is quiet background texture and is clipped only as an export guardrail.",
+    "Visible motifs and hardware are placed in named manifest pockets, away from path[1] and path[2]."
+  ]
+}

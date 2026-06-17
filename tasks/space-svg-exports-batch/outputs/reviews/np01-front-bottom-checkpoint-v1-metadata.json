@@ -1,0 +1,126 @@
+{
+  "timestamp": "2026-06-17T06:40:00Z",
+  "svg": "tasks/space-svg-exports-batch/source/np01-front-bottom.svg",
+  "svg_sha256": "c2217320de1cbcb63484cf8937224fbf3a7e6fe4698c1facfe8fd29bab0e701c",
+  "candidate": "tasks/space-svg-exports-batch/outputs/generated/np01-front-bottom-checkpoint-v1.png",
+  "artwork_only": "tasks/space-svg-exports-batch/outputs/final/np01-front-bottom-checkpoint-v1-artwork-only.png",
+  "clean_black_lines": "tasks/space-svg-exports-batch/outputs/final/np01-front-bottom-checkpoint-v1-clean-black-lines.png",
+  "debug_mask": "tasks/space-svg-exports-batch/outputs/reviews/np01-front-bottom-checkpoint-v1-debug-mask.png",
+  "style_packet": "tasks/space-svg-exports-batch/style-packet/style-packet.json",
+  "source_style_refs": [
+    "tasks/space-svg-exports-batch/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png",
+    "tasks/space-svg-exports-batch/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+  ],
+  "viewbox": [
+    0.0,
+    0.0,
+    1624.1006,
+    2602.2896
+  ],
+  "output_dimensions": "920x1474",
+  "contours": [
+    {
+      "source_type": "path",
+      "index": 0,
+      "role": "cutout",
+      "area": 15788.17,
+      "bounds": [
+        241.38,
+        1483.33,
+        383.21,
+        1625.17
+      ]
+    },
+    {
+      "source_type": "path",
+      "index": 1,
+      "role": "cutout",
+      "area": 141540.15,
+      "bounds": [
+        239.75,
+        329.1,
+        384.84,
+        1381.01
+      ]
+    },
+    {
+      "source_type": "path",
+      "index": 2,
+      "role": "cutout",
+      "area": 129499.07,
+      "bounds": [
+        1242.04,
+        1469.9,
+        1381.57,
+        2428.0
+      ]
+    },
+    {
+      "source_type": "path",
+      "index": 3,
+      "role": "paintable",
+      "area": 1814467.66,
+      "bounds": [
+        888.62,
+        20.0,
+        1604.1,
+        2582.29
+      ]
+    },
+    {
+      "source_type": "path",
+      "index": 4,
+      "role": "paintable",
+      "area": 1814467.46,
+      "bounds": [
+        20.0,
+        20.0,
+        734.81,
+        2582.29
+      ]
+    },
+    {
+      "source_type": "polygon",
+      "index": 0,
+      "role": "cutout",
+      "area": 23497.8,
+      "bounds": [
+        1216.7,
+        1073.07,
+        1406.91,
+        1237.79
+      ]
+    },
+    {
+      "source_type": "polygon",
+      "index": 1,
+      "role": "cutout",
+      "area": 23497.77,
+      "bounds": [
+        1219.94,
+        710.98,
+        1403.66,
+        894.7
+      ]
+    },
+    {
+      "source_type": "polygon",
+      "index": 2,
+      "role": "cutout",
+      "area": 23497.8,
+      "bounds": [
+        1216.7,
+        367.88,
+        1406.91,
+        532.61
+      ]
+    }
+  ],
+  "metrics": {
+    "verdict": "PASS",
+    "outside_nonwhite_pixels": 0,
+    "cutout_nonwhite_pixels": 0,
+    "paintable_coverage_pct": 98.92
+  },
+  "method_note": "Checkpoint-only geometry-native watercolor rendering; image-generation model pass should follow after approval if user wants richer synthesis."
+}

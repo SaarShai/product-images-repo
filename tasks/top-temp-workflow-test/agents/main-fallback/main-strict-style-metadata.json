@@ -1,0 +1,102 @@
+{
+  "workflow": "main-fallback-main-strict-style",
+  "title": "strict geometry, richer watercolor hardware",
+  "source_svg": "tasks/top-temp-workflow-test/source/template.svg",
+  "template_manifest": "tasks/top-temp-workflow-test/template-manifest.json",
+  "style_refs": [
+    "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png",
+    "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+  ],
+  "method_note": "Rescue the accepted strict-pocket geometry with richer watercolor rendering.",
+  "summary": {
+    "planned_controls": 5,
+    "accepted_controls": 3,
+    "rejected_controls": 2,
+    "accepted_control_escape_pixels": 0,
+    "accepted_control_cutout_pixels": 0,
+    "final_outside_paintable_alpha_pixels": 0,
+    "final_cutout_alpha_pixels": 0
+  },
+  "decorative_controls": [
+    {
+      "name": "upper-left lamp cluster",
+      "pocket": "upper-left tall bay",
+      "role": "reference-style colored lamps",
+      "accepted": true,
+      "mask_pixels": 12873,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        426,
+        126,
+        619,
+        311
+      ]
+    },
+    {
+      "name": "middle-left slider bank",
+      "pocket": "middle-left field",
+      "role": "watercolor slider rails",
+      "accepted": false,
+      "mask_pixels": 50460,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 217,
+      "bbox": [
+        250,
+        692,
+        726,
+        963
+      ]
+    },
+    {
+      "name": "lower-left gauge",
+      "pocket": "lower-left base bay",
+      "role": "large blue-white gauge",
+      "accepted": true,
+      "mask_pixels": 55101,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        340,
+        1152,
+        601,
+        1421
+      ]
+    },
+    {
+      "name": "lower-left pill bars",
+      "pocket": "lower-left base bay",
+      "role": "colored capsule buttons",
+      "accepted": true,
+      "mask_pixels": 26521,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        108,
+        1180,
+        337,
+        1389
+      ]
+    },
+    {
+      "name": "right-strip bolts",
+      "pocket": "right vertical strip",
+      "role": "small screw heads",
+      "accepted": false,
+      "mask_pixels": 4738,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 62,
+      "bbox": [
+        1517,
+        1078,
+        1574,
+        1430
+      ]
+    }
+  ]
+}

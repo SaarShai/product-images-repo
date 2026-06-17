@@ -1,0 +1,79 @@
+{
+  "timestamp": "2026-06-17T07:47:16Z",
+  "svg": "tasks/space-svg-exports-batch/source/np02-front-bottom.svg",
+  "svg_sha256": "2dd7796da47c3e50e9cc4d3f04cffeed41339fdca918ea9033a8bba7aaa13137",
+  "variant": 1,
+  "candidate": "tasks/space-svg-exports-batch/outputs/generated/np02-front-bottom-batch-bottom-v1.png",
+  "artwork_only": "tasks/space-svg-exports-batch/outputs/final/np02-front-bottom-batch-bottom-v1-artwork-only.png",
+  "clean_black_lines": "tasks/space-svg-exports-batch/outputs/final/np02-front-bottom-batch-bottom-v1-clean-black-lines.png",
+  "debug_mask": "tasks/space-svg-exports-batch/outputs/reviews/np02-front-bottom-batch-bottom-v1-debug-mask.png",
+  "style_packet": "tasks/space-svg-exports-batch/style-packet/style-packet.json",
+  "source_style_refs": [
+    "tasks/space-svg-exports-batch/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png",
+    "tasks/space-svg-exports-batch/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+  ],
+  "viewbox": [
+    0.0,
+    0.0,
+    1644.0996,
+    2622.3853
+  ],
+  "output_dimensions": "900x1436",
+  "contours": [
+    {
+      "source_type": "path",
+      "index": 0,
+      "role": "paintable",
+      "area": 1881461.0,
+      "bounds": [
+        885.3,
+        20.0,
+        1624.1,
+        2602.39
+      ]
+    },
+    {
+      "source_type": "path",
+      "index": 1,
+      "role": "paintable",
+      "area": 1881498.78,
+      "bounds": [
+        20.0,
+        20.0,
+        758.81,
+        2602.39
+      ]
+    },
+    {
+      "source_type": "path",
+      "index": 2,
+      "role": "cutout",
+      "area": 141539.62,
+      "bounds": [
+        1302.04,
+        1386.14,
+        1447.13,
+        2438.04
+      ]
+    },
+    {
+      "source_type": "path",
+      "index": 3,
+      "role": "cutout",
+      "area": 15788.14,
+      "bounds": [
+        1303.67,
+        1141.98,
+        1445.5,
+        1283.81
+      ]
+    }
+  ],
+  "metrics": {
+    "verdict": "PASS",
+    "outside_nonwhite_pixels": 0,
+    "cutout_nonwhite_pixels": 0,
+    "paintable_coverage_pct": 99.58
+  },
+  "method_note": "Bottom-panel batch candidate. Elements are drawn only in eroded safe pockets, then exact SVG masks clear the outer contour and cutouts."
+}

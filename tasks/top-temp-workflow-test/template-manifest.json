@@ -1,0 +1,56 @@
+{
+  "template_svg": "tasks/top-temp-workflow-test/source/template.svg",
+  "geometry_report": "svg-geometry-report.md",
+  "status": "filled-from-svg-geometry-report-before-agent-test",
+  "geometry_roles": {
+    "outer_contours": [
+      {
+        "element": "path[0]",
+        "id_or_class": "cls-1",
+        "bounds": [4.01, 4.0, 1588.11, 1566.39],
+        "role": "outer material contour"
+      }
+    ],
+    "paintable_regions": [
+      "outer contour minus internal cutouts with a small edge margin"
+    ],
+    "internal_cutouts": [
+      {
+        "element": "path[1]",
+        "id_or_class": "cls-1",
+        "bounds": [788.38, 401.16, 1508.1, 1029.35],
+        "role": "large diagonal rounded slot keep-clear"
+      },
+      {
+        "element": "path[2]",
+        "id_or_class": "cls-1",
+        "bounds": [1385.69, 1167.47, 1527.53, 1309.31],
+        "role": "lower-right round/bolt-like keep-clear"
+      }
+    ],
+    "keep_clear_zones": [
+      "path[1] large diagonal slot",
+      "path[2] lower-right round cutout"
+    ],
+    "visual_guides": []
+  },
+  "safe_pockets": [
+    "upper-left tall bay above the left shoulder of the slot",
+    "middle-left field below/left of the diagonal slot",
+    "lower-left base bay above the bottom notch",
+    "lower-middle bay between the bottom notch and the right cutouts",
+    "right vertical strip between the diagonal slot and outer edge"
+  ],
+  "quiet_background_zones": [
+    "paintable base panel may use blue watercolor texture across the whole body"
+  ],
+  "no_focal_motif_zones": [
+    "path[1] diagonal slot and its immediate margin",
+    "path[2] lower-right round cutout and its immediate margin",
+    "outer contour edge margin"
+  ],
+  "notes": [
+    "Element roles were inferred from the top-temp SVG geometry report and the prior space-top-temp task brief.",
+    "Agents must not treat all paths as paintable contours; path[1] and path[2] are keep-clear cutouts."
+  ]
+}

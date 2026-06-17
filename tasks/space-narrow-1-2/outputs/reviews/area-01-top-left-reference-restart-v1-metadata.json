@@ -1,0 +1,43 @@
+{
+  "timestamp": "2026-06-16T08:51:00Z",
+  "area": "01 top-left",
+  "method": "svg-native-reference-first-restart",
+  "source_svg": "tasks/space-narrow-1-2/source/narrow-1-plus-2.svg",
+  "not_crop_method": true,
+  "restart_reason": "Geometry succeeded, but prior style failed because palette passes preserved the wrong dark machinery vocabulary.",
+  "style_reference_images": [
+    "/Users/za/Downloads/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png",
+    "/Users/za/Downloads/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png",
+    "/Users/za/Downloads/ChatGPT Image Jun 9, 2026, 11_11_51 PM.png"
+  ],
+  "style_vocabulary": "simple rounded watercolor control-panel objects, glossy rim highlights, sparse sliders, a planet/dial, coral/yellow/teal accents",
+  "component_placements": [
+    {
+      "name": "large soft planet dial",
+      "outside_paintable_pixels": 0
+    },
+    {
+      "name": "reference slider bank",
+      "outside_paintable_pixels": 0
+    },
+    {
+      "name": "large reference pill buttons",
+      "outside_paintable_pixels": 0
+    },
+    {
+      "name": "right reference control tile",
+      "outside_paintable_pixels": 0
+    },
+    {
+      "name": "reference screws and watercolor speckles",
+      "outside_paintable_pixels": 0
+    }
+  ],
+  "nonwhite_pixels_in_cutout_mask": 0,
+  "nonwhite_pixels_outside_outer_mask": 0,
+  "decorative_element_pixels_in_cutout_mask": 0,
+  "decorative_element_pixels_outside_paintable_mask": 0,
+  "artwork": "outputs/generated/area-01-top-left-reference-restart-v1-artwork.png",
+  "overlay": "outputs/reviews/area-01-top-left-reference-restart-v1-template-overlay.png",
+  "mask_debug": "outputs/reviews/area-01-top-left-reference-restart-v1-mask-debug.png"
+}

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11563.28 13779.88">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-dasharray: 24 24;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-15, .cls-16 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16 {
+        stroke-width: 10px;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-6, .cls-8, .cls-11, .cls-12, .cls-13 {
+        stroke: #ffdb55;
+      }
+
+      .cls-2 {
+        stroke-dasharray: 22.43 22.43;
+      }
+
+      .cls-3 {
+        stroke-dasharray: 24.02 24.02;
+      }
+
+      .cls-4 {
+        stroke-dasharray: 25.75 25.75;
+      }
+
+      .cls-5 {
+        stroke-dasharray: 23.97 23.97;
+      }
+
+      .cls-5, .cls-9, .cls-10 {
+        stroke: #39b54a;
+      }
+
+      .cls-7 {
+        stroke: #f7941d;
+        stroke-width: 5px;
+      }
+
+      .cls-7, .cls-9, .cls-13, .cls-16 {
+        stroke-dasharray: 24;
+      }
+
+      .cls-8 {
+        stroke-dasharray: 22.25 22.25;
+      }
+
+      .cls-11 {
+        stroke-dasharray: 23.86 23.86;
+      }
+
+      .cls-12 {
+        stroke-dasharray: 23.92 23.92;
+      }
+
+      .cls-14, .cls-15 {
+        stroke: #231f20;
+      }
+
+      .cls-16 {
+        stroke: #ed1c24;
+      }
+    </style>
+  </defs>
+  <g id="cut">
+    <g id="door_panel_bottom_right_subpanel_front_layer" data-name="door panel &amp;gt; bottom right subpanel &amp;gt; front layer">
+      <path id="outer_contour" data-name="outer contour" class="cls-15" d="M5062.87,6700.28v16.8h769.36c7.72,0,14.01-6.13,14.28-13.79v-.5s-.05-2521.08-.05-2522.02c0-43.4-32.5-79.21-74.49-84.43"/>
+      <path id="outer_contour-2" data-name="outer contour" class="cls-15" d="M4787.67,4097.03c-46.29,10.04-61.56,73.53-19.19,102.43l.49.33c188.6,126.17,312.83,341.05,313,584.95v.51s0,4.11,0,4.85v.12s-19.1.08-19.1.07"/>
+      <path id="door_flap" data-name="door flap" class="cls-15" d="M5062.87,4790.29c0-383.38-310.65-680.22-693.97-680.49h-.52c-3.06,0-6.11.02-18.46.06h-.92v2590.41c360.34,0,713.87,0,713.87,0"/>
+      <circle class="cls-15" cx="4471.05" cy="5316.27" r="42.06"/>
+    </g>
+    <g id="door_panel_bottom_left_subpanel_front_layer" data-name="door panel &amp;gt; bottom left subpanel &amp;gt; front layer">
+      <path id="outer_contour-3" data-name="outer contour" class="cls-15" d="M3609.4,6700.28v16.8h-769.36c-7.72,0-14.01-6.13-14.28-13.79v-.5s.05-2521.08.05-2522.02c0-43.4,32.5-79.21,74.49-84.43"/>
+      <path id="outer_contour-4" data-name="outer contour" class="cls-15" d="M3884.59,4097.03c46.29,10.04,61.56,73.53,19.19,102.43l-.49.33c-188.6,126.17-312.83,341.05-313,584.95v.51s0,4.11,0,4.85v.12s19.1.08,19.1.07"/>
+      <path id="door_flap-2" data-name="door flap" class="cls-15" d="M3609.4,4790.29c0-383.38,310.65-680.22,693.97-680.49h.52c3.06,0,6.11.02,18.46.06h.92v2590.41c-360.34,0-713.87,0-713.87,0"/>
+      <circle class="cls-15" cx="4201.21" cy="5316.27" r="42.06"/>
+    </g>
+    <g id="door_panel_top_subpanel_front_layer" data-name="door panel &amp;gt; top subpanel &amp;gt; front layer">
+      <path class="cls-15" d="M5761.37,4095.68c46.99,0,85.08-38.09,85.08-85.08v-562.28"/>
+      <path class="cls-16" d="M3926.31,4095.68c25.1,0,49.96-5.01,73.06-14.84,112.85-48.03,205.43-74.49,336.76-74.49s223.91,26.46,336.76,74.49c23.1,9.83,73.06,14.84,73.06,14.84"/>
+      <path class="cls-15" d="M2825.86,3448.32l-.05,562.28c0,46.99,38.09,85.08,85.08,85.08"/>
+    </g>
+    <g id="narrow_panel_01_bottom_subpanel_front_layer" data-name="narrow panel 01 &amp;gt; bottom subpanel &amp;gt; front layer">
+      <path id="narrow_panel_01_top_subpanel_front_layer_outer_contour" data-name="narrow panel 01 &amp;gt; top subpanel &amp;gt; front layer &amp;gt; outer contour" class="cls-14" d="M5911.72,4094.78c-15.74,0-28.51,12.76-28.51,28.51v2568.05c0,14.21,11.52,25.74,25.74,25.74h1590.05c15.64,0,28.31-12.68,28.31-28.31v-2565.52c0-15.71-12.74-28.45-28.45-28.45"/>
+    </g>
+    <g id="narrow_panel_01_top_subpanel_front_layer" data-name="narrow panel 01 &amp;gt; top subpanel &amp;gt; front layer">
+      <path class="cls-15" d="M5883.22,3325.59v473.74s0,266.98,0,266.98c0,15.72,12.75,28.47,28.47,28.47"/>
+      <path class="cls-15" d="M7498.85,4094.78c15.72,0,28.47-12.75,28.47-28.47v-740.72"/>
+    </g>
+    <g>
+      <path class="cls-10" d="M5846.47,3448.32c0-4-.03-8-.09-12"/>
+      <path class="cls-5" d="M5845.67,3412.36c-26.1-589.86-691.94-1062.21-1509.51-1062.21s-1492.41,478.76-1509.95,1074.19"/>
+      <path class="cls-10" d="M2825.94,3436.32c-.06,3.99-.09,7.99-.09,12"/>
+    </g>
+    <path class="cls-9" d="M7527.32,3325.59c0-361.21-368.04-654.02-822.05-654.02s-822.05,292.82-822.05,654.02"/>
+    <path class="cls-13" d="M6637.65,3586.96v3062.07h-694.49v-3307.29c0-334.87,341.21-606.34,762.11-606.34s762.11,271.47,762.11,606.34v3307.29h-694.49v-3062.07h-135.24Z"/>
+    <path class="cls-16" d="M6646.22,4094.79c-183.42,0-183.64-85.81-366.63-86.02h-.65c-183.64,0-183.64,86-367.28,86"/>
+    <path class="cls-16" d="M6764.31,4094.78c183.42,0,183.64,85.8,366.63,86h.65c183.64,0,183.64-86,367.28-86"/>
+    <g>
+      <polyline class="cls-6" points="5788.36 6637.03 5788.36 6649.03 5776.36 6649.03"/>
+      <line class="cls-2" x1="5753.93" y1="6649.03" x2="5540.86" y2="6649.03"/>
+      <polyline class="cls-6" points="5529.64 6649.03 5517.64 6649.03 5517.64 6637.03"/>
+      <line class="cls-12" x1="5517.64" y1="6613.11" x2="5517.64" y2="3610.92"/>
+      <polyline class="cls-6" points="5517.64 3598.96 5517.64 3586.96 5505.64 3586.96"/>
+      <line class="cls-8" x1="5483.39" y1="3586.96" x2="5405.52" y2="3586.96"/>
+      <polyline class="cls-6" points="5394.4 3586.96 5382.4 3586.96 5382.4 3598.96"/>
+      <line class="cls-1" x1="5382.4" y1="3622.96" x2="5382.4" y2="6635.03"/>
+      <polyline class="cls-6" points="5382.4 6647.03 5382.4 6659.03 5370.4 6659.03"/>
+      <line class="cls-11" x1="5346.54" y1="6659.03" x2="3401.84" y2="6659.03"/>
+      <polyline class="cls-6" points="3389.91 6659.03 3377.91 6659.03 3377.91 6647.03"/>
+      <line class="cls-1" x1="3377.91" y1="6623.03" x2="3377.91" y2="3610.96"/>
+      <polyline class="cls-6" points="3377.91 3598.96 3377.91 3586.96 3365.91 3586.96"/>
+      <line class="cls-8" x1="3343.66" y1="3586.96" x2="3265.79" y2="3586.96"/>
+      <polyline class="cls-6" points="3254.66 3586.96 3242.66 3586.96 3242.66 3598.96"/>
+      <line class="cls-12" x1="3242.66" y1="3622.88" x2="3242.66" y2="6625.07"/>
+      <polyline class="cls-6" points="3242.66 6637.03 3242.66 6649.03 3230.66 6649.03"/>
+      <line class="cls-4" x1="3204.92" y1="6649.03" x2="2908.84" y2="6649.03"/>
+      <polyline class="cls-6" points="2895.96 6649.03 2883.96 6649.03 2883.96 6637.03"/>
+      <path class="cls-3" d="M2883.96,6613.01v-3145.82c0-583.17,650.17-1055.92,1452.2-1055.92s1452.2,472.75,1452.2,1055.92v3157.83"/>
+    </g>
+    <path class="cls-16" d="M5500.48,4094.77c-25.1,0,260.89.91,260.89.91"/>
+    <path class="cls-16" d="M3357.31,4095.68h569"/>
+    <g id="narrow_panel_01_bottom_subpanel_front_layer-2" data-name="narrow panel 01 &amp;gt; bottom subpanel &amp;gt; front layer">
+      <path id="narrow_panel_01_top_subpanel_front_layer_outer_contour-2" data-name="narrow panel 01 &amp;gt; top subpanel &amp;gt; front layer &amp;gt; outer contour" class="cls-14" d="M1166.18,4094.78c-15.74,0-28.51,12.76-28.51,28.51v2568.05c0,14.21,11.52,25.74,25.74,25.74h1590.05c15.64,0,28.31-12.68,28.31-28.31v-2565.52c0-15.71-12.74-28.45-28.45-28.45"/>
+    </g>
+    <g id="narrow_panel_01_top_subpanel_front_layer-2" data-name="narrow panel 01 &amp;gt; top subpanel &amp;gt; front layer">
+      <path class="cls-15" d="M1137.68,3325.59v473.74s0,266.98,0,266.98c0,15.72,12.75,28.47,28.47,28.47"/>
+      <path class="cls-15" d="M2753.31,4094.78c15.72,0,28.47-12.75,28.47-28.47v-740.72"/>
+    </g>
+    <path class="cls-9" d="M2781.78,3325.59c0-361.21-368.04-654.02-822.05-654.02s-822.05,292.82-822.05,654.02"/>
+    <path class="cls-13" d="M1892.11,3586.96v3062.07h-694.49v-3307.29c0-334.87,341.21-606.34,762.11-606.34s762.11,271.47,762.11,606.34v3307.29h-694.49v-3062.07h-135.24Z"/>
+    <path class="cls-16" d="M1900.68,4094.79c-183.42,0-183.64-85.81-366.63-86.02h-.65c-183.64,0-183.64,86-367.28,86"/>
+    <path class="cls-16" d="M2018.77,4094.78c183.42,0,183.64,85.8,366.63,86h.65c183.64,0,183.64-86,367.28-86"/>
+    <rect class="cls-16" x="6655.22" y="3608.7" width="97.58" height="3040.33"/>
+    <rect class="cls-16" x="1910.94" y="3608.7" width="97.58" height="3040.33"/>
+    <rect class="cls-16" x="3259.72" y="3608.7" width="97.58" height="3040.33"/>
+    <rect class="cls-16" x="5402.9" y="3608.7" width="97.58" height="3040.33"/>
+    <path class="cls-16" d="M5402.9,4094.77c-25.1,0-656.94.91-656.94.91"/>
+    <path class="cls-16" d="M3259.72,4095.68h-348.83"/>
+  </g>
+  <g id="hinge">
+    <path class="cls-7" d="M5017.98,4831.44c0-376.56-305.26-681.82-681.82-681.82s-681.82,305.26-681.82,681.82v1807.04h1363.64v-1807.04Z"/>
+  </g>
+</svg>

@@ -1,0 +1,139 @@
+{
+  "timestamp_utc": "2026-06-16T09:55:03Z",
+  "purpose": "adversarial naive-vs-corrected comparison for top-temp SVG-template workflow",
+  "source_svg": "tasks/top-temp-workflow-test/source/template.svg",
+  "source_svg_sha256": "385bcec1fca66e3d21504c9673cc9aa5a9d2e05372d1bf92b1aaa205d69faa8f",
+  "template_manifest": "tasks/top-temp-workflow-test/template-manifest.json",
+  "geometry_report": "tasks/top-temp-workflow-test/svg-geometry-report.md",
+  "style_refs": [
+    {
+      "path": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png",
+      "sha256": "4efd0e60d707c22f4cdf44871e0a8d3bffec13cc0b5eaf17108b496aa8715402"
+    },
+    {
+      "path": "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png",
+      "sha256": "f48bca72a29fc0cdb182f46afcc464ff7754c71b72b19e99c997d8596c8453c2"
+    }
+  ],
+  "output_dimensions": [
+    1200,
+    1184
+  ],
+  "path_bboxes_from_parser": {
+    "path[0]": [
+      4.01,
+      4.0,
+      1588.11,
+      1566.39
+    ],
+    "path[1]": [
+      792.58,
+      401.16,
+      1506.6,
+      1027.56
+    ],
+    "path[2]": [
+      1385.69,
+      1167.47,
+      1527.53,
+      1309.31
+    ]
+  },
+  "manifest_roles_used": {
+    "outer_indices": [
+      0
+    ],
+    "cutout_indices": [
+      1,
+      2
+    ],
+    "safe_pockets": [
+      "upper-left tall bay above the left shoulder of the slot",
+      "middle-left field below/left of the diagonal slot",
+      "lower-left base bay above the bottom notch",
+      "lower-middle bay between the bottom notch and the right cutouts",
+      "right vertical strip between the diagonal slot and outer edge"
+    ],
+    "no_focal_motif_zones": [
+      "path[1] diagonal slot and its immediate margin",
+      "path[2] lower-right round cutout and its immediate margin",
+      "outer contour edge margin"
+    ]
+  },
+  "naive_method": {
+    "description": "full rectangular control-panel art clipped to all SVG paths/outer body without subtracting manifest internal_cutouts",
+    "failure": "path[1] diagonal slot and path[2] round cutout retain painted background/motifs",
+    "cutout_nonwhite_pixels": 59618,
+    "outside_nonwhite_pixels": 0,
+    "panel_coverage_pct": 83.18
+  },
+  "corrected_method": {
+    "description": "manifest-aware outer contour minus path[1]/path[2], with focal motifs placed only after mask-intersection checks",
+    "cutout_nonwhite_pixels": 0,
+    "outside_nonwhite_pixels": 0,
+    "panel_coverage_pct": 81.78,
+    "placements": [
+      {
+        "label": "large dial in middle-left safe pocket",
+        "status": "drawn"
+      },
+      {
+        "label": "lower-left slider A",
+        "status": "skipped-overlaps-cutout-or-edge"
+      },
+      {
+        "label": "lower-left slider B",
+        "status": "drawn"
+      },
+      {
+        "label": "lower-left slider C",
+        "status": "drawn"
+      },
+      {
+        "label": "lower-middle red post",
+        "status": "skipped-overlaps-cutout-or-edge"
+      },
+      {
+        "label": "lower-middle amber post",
+        "status": "skipped-overlaps-cutout-or-edge"
+      },
+      {
+        "label": "lower-middle teal post",
+        "status": "drawn"
+      },
+      {
+        "label": "upper-left pill red-line",
+        "status": "skipped-overlaps-cutout-or-edge"
+      },
+      {
+        "label": "upper-left pill teal-line",
+        "status": "skipped-overlaps-cutout-or-edge"
+      },
+      {
+        "label": "upper-left pill amber-line",
+        "status": "skipped-overlaps-cutout-or-edge"
+      },
+      {
+        "label": "right-strip short indicator A",
+        "status": "skipped-overlaps-cutout-or-edge"
+      },
+      {
+        "label": "right-strip short indicator B",
+        "status": "drawn"
+      }
+    ],
+    "verdict": "PASS"
+  },
+  "artifacts": {
+    "naive_failure_overlay": "tasks/top-temp-workflow-test/agents/adversarial-comparison/naive-failure-overlay.png",
+    "corrected_artwork": "tasks/top-temp-workflow-test/agents/adversarial-comparison/corrected-artwork.png",
+    "corrected_overlay": "tasks/top-temp-workflow-test/agents/adversarial-comparison/corrected-overlay.png",
+    "corrected_mask_debug": "tasks/top-temp-workflow-test/agents/adversarial-comparison/corrected-mask-debug.png",
+    "metadata": "tasks/top-temp-workflow-test/agents/adversarial-comparison/comparison-metadata.json"
+  },
+  "workflow_signal": [
+    "A role-blind parser can draw or permit paint through path[1] and path[2].",
+    "The manifest is the missing semantic layer: path order alone is insufficient.",
+    "Correctness requires checking internal_cutouts before drawing focal motifs, not only after clipping."
+  ]
+}

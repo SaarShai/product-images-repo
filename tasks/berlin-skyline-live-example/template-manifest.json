@@ -1,0 +1,109 @@
+{
+  "template_svg": "tasks/berlin-skyline-live-example/source/template.svg",
+  "geometry_report": "svg-geometry-report.md",
+  "status": "checkpoint-1-filled-from-svg-and-skyline-workflow",
+  "geometry_roles": {
+    "outer_contours": [
+      {
+        "name": "left narrow panel",
+        "description": "left physical narrow panel with top and bottom sub-panels"
+      },
+      {
+        "name": "central door panel",
+        "description": "large center panel with one top sub-panel and two bottom saloon-style door flaps"
+      },
+      {
+        "name": "right narrow panel",
+        "description": "right physical narrow panel with top and bottom sub-panels"
+      }
+    ],
+    "paintable_regions": [
+      "left narrow panel safe interior",
+      "central top sub-panel safe interior",
+      "central left door flap safe interior",
+      "central right door flap safe interior",
+      "right narrow panel safe interior"
+    ],
+    "internal_cutouts": [
+      "central saloon-door split and door-flap boundaries",
+      "door hardware circle guides",
+      "panel seams and stepped cut edges"
+    ],
+    "keep_clear_zones": [
+      "red dashed horizontal/wavy top-bottom separators",
+      "red dashed vertical rectangles",
+      "red dashed seam-adjacent strips",
+      "central saloon-door seam",
+      "door hardware circles"
+    ],
+    "visual_guides": [
+      {
+        "color": "black",
+        "role": "production borders, outer contours, door flaps, cut and hinge references"
+      },
+      {
+        "color": "yellow dashed",
+        "role": "safe/margin guides"
+      },
+      {
+        "color": "red dashed",
+        "role": "no-crop and no-focal-feature zones"
+      },
+      {
+        "color": "green dashed",
+        "role": "temporary top-contour guide to adapt to building silhouettes"
+      },
+      {
+        "color": "orange dashed",
+        "role": "central saloon-door arch guide"
+      }
+    ]
+  },
+  "safe_pockets": [
+    {
+      "name": "left narrow upper skyline",
+      "use": "Fernsehturm silhouette and white sky"
+    },
+    {
+      "name": "left narrow lower landmark",
+      "use": "Brandenburg Gate and low U-Bahn run-through"
+    },
+    {
+      "name": "central top skyline",
+      "use": "Berliner Dom, church tower/spire, and high-level silhouette"
+    },
+    {
+      "name": "central lower saloon arch",
+      "use": "simplified Berlin bridge/viaduct arch over quiet water or ground"
+    },
+    {
+      "name": "right narrow high-rise",
+      "use": "Ritz-Carlton / Beisheim / Potsdamer Platz tower family"
+    },
+    {
+      "name": "right narrow foreground accent",
+      "use": "optional simplified traffic-light/clock tower if approved"
+    }
+  ],
+  "quiet_background_zones": [
+    "white removable sky",
+    "generic cloud texture if approved",
+    "plain train body crossing seams",
+    "rail, water, stone, and embankment bands crossing seams",
+    "non-specific facade texture in red-risk lanes"
+  ],
+  "no_focal_motif_zones": [
+    "TV tower sphere and antenna must not cross seams or red zones",
+    "Brandenburg Quadriga must not cross seams or red zones",
+    "cathedral dome cross must not cross seams or red zones",
+    "church spire tips must not cross seams or red zones",
+    "Beisheim roof crown must not cross seams or red zones",
+    "clock faces and traffic lights must not cross seams or red zones",
+    "U-Bahn doors, windows, readable signs, birds, people, and text must not cross seams or red zones"
+  ],
+  "notes": [
+    "Filled for Checkpoint 1 from the actual skyline SVG roles, skyline workflow, and Berlin reference packet.",
+    "The generic svg_geometry_report.py has previously stalled on this SVG family; direct SVG inspection and task-specific role recording are used for this checkpoint.",
+    "Run-through elements are allowed only as planned infrastructure, not as cropped focal landmarks."
+  ]
+}

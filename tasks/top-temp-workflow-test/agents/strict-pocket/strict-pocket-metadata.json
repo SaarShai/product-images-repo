@@ -1,0 +1,162 @@
+{
+  "workflow": "strict-pocket-procedural-proof",
+  "source_svg": "tasks/top-temp-workflow-test/source/template.svg",
+  "template_manifest": "tasks/top-temp-workflow-test/template-manifest.json",
+  "style_refs": [
+    "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png",
+    "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+  ],
+  "manifest_status": "filled-from-svg-geometry-report-before-agent-test",
+  "viewbox": [
+    0.0,
+    0.0,
+    1592.1,
+    1570.39
+  ],
+  "canvas_size_px": [
+    1593,
+    1571
+  ],
+  "path_roles": {
+    "path[0]": "outer material contour",
+    "path[1]": "large diagonal rounded slot keep-clear",
+    "path[2]": "lower-right round/bolt-like keep-clear"
+  },
+  "paintable_mask": {
+    "outer_pixels": 1483585,
+    "cutout_pixels": 126836,
+    "paintable_pixels": 1356749,
+    "control_margin_px": 16,
+    "eroded_control_safe_pixels": 1184589
+  },
+  "safe_pocket_plan": [
+    "upper-left tall bay above the left shoulder of the slot",
+    "middle-left field below/left of the diagonal slot",
+    "lower-left base bay above the bottom notch",
+    "lower-middle bay between the bottom notch and the right cutouts",
+    "right vertical strip between the diagonal slot and outer edge"
+  ],
+  "no_focal_motif_zones": [
+    "path[1] diagonal slot and its immediate margin",
+    "path[2] lower-right round cutout and its immediate margin",
+    "outer contour edge margin"
+  ],
+  "decorative_controls": [
+    {
+      "name": "upper-left lamp cluster",
+      "pocket": "upper-left tall bay above the left shoulder of the slot",
+      "role": "small colored indicator bulbs from reference control panels",
+      "accepted": true,
+      "mask_pixels": 9351,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        431,
+        129,
+        617,
+        302
+      ]
+    },
+    {
+      "name": "middle-left slider bank",
+      "pocket": "middle-left field below/left of the diagonal slot",
+      "role": "horizontal sliders and square knobs from style reference 11_17_34",
+      "accepted": true,
+      "mask_pixels": 37772,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        250,
+        700,
+        726,
+        957
+      ]
+    },
+    {
+      "name": "lower-left gauge",
+      "pocket": "lower-left base bay above the bottom notch",
+      "role": "round blue-white gauge from both references",
+      "accepted": true,
+      "mask_pixels": 45497,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        354,
+        1113,
+        637,
+        1443
+      ]
+    },
+    {
+      "name": "lower-left pill bars",
+      "pocket": "lower-left base bay above the bottom notch",
+      "role": "stacked colored pill bars echoing the reference panels",
+      "accepted": true,
+      "mask_pixels": 26617,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        108,
+        1180,
+        337,
+        1389
+      ]
+    },
+    {
+      "name": "lower-middle pill buttons",
+      "pocket": "lower-middle bay between the bottom notch and the right cutouts",
+      "role": "large rounded buttons from reference 11_17_34",
+      "accepted": false,
+      "mask_pixels": 72689,
+      "outside_outer_pixels": 26788,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 30244,
+      "bbox": [
+        740,
+        1120,
+        1146,
+        1435
+      ]
+    },
+    {
+      "name": "right-strip bolts",
+      "pocket": "right vertical strip between the diagonal slot and outer edge",
+      "role": "small screw-head details kept away from the lower-right round cutout",
+      "accepted": true,
+      "mask_pixels": 3754,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0,
+      "bbox": [
+        1520,
+        1081,
+        1571,
+        1427
+      ]
+    }
+  ],
+  "summary": {
+    "planned_controls": 6,
+    "accepted_controls": 5,
+    "rejected_controls": 1,
+    "accepted_control_escape_pixels": 0,
+    "accepted_control_cutout_pixels": 0,
+    "final_outside_paintable_alpha_pixels": 0,
+    "final_cutout_alpha_pixels": 0
+  },
+  "outputs": {
+    "artwork": "strict-pocket-artwork.png",
+    "overlay": "strict-pocket-overlay.png",
+    "mask_debug": "strict-pocket-mask-debug.png",
+    "metadata": "strict-pocket-metadata.json"
+  },
+  "method_notes": [
+    "All decorative controls were first drawn to a local mask and checked against an eroded paintable mask.",
+    "The broad blue watercolor background is the only quiet fill allowed to cover the whole paintable body.",
+    "The final alpha clip is applied after drawing only as an exact-edge export guardrail."
+  ]
+}

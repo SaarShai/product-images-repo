@@ -1,0 +1,155 @@
+{
+  "workflow": "micro-pocket-style-proof",
+  "hypothesis": "Reference style may be easier to learn when only one simple SVG-safe pocket carries focal motifs.",
+  "source_svg": "tasks/top-temp-workflow-test/source/template.svg",
+  "template_manifest": "tasks/top-temp-workflow-test/template-manifest.json",
+  "geometry_report": "tasks/top-temp-workflow-test/svg-geometry-report.md",
+  "style_refs": [
+    "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png",
+    "tasks/top-temp-workflow-test/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"
+  ],
+  "manifest_status": "filled-from-svg-geometry-report-before-agent-test",
+  "canvas_size_px": [
+    1593,
+    1571
+  ],
+  "viewbox": [
+    0.0,
+    0.0,
+    1592.1,
+    1570.39
+  ],
+  "path_roles": {
+    "path[0]": "outer material contour",
+    "path[1]": "large diagonal rounded slot keep-clear",
+    "path[2]": "lower-right round/bolt-like keep-clear"
+  },
+  "path_bounds": {
+    "path[0]": [
+      4.01,
+      4.0,
+      1588.11,
+      1566.39
+    ],
+    "path[1]": [
+      792.59,
+      401.16,
+      1506.6,
+      1027.56
+    ],
+    "path[2]": [
+      1385.69,
+      1167.47,
+      1527.53,
+      1309.31
+    ]
+  },
+  "selected_pocket": {
+    "name": "upper-left tall bay above the left shoulder of the slot",
+    "pocket_mask_bbox": [
+      386,
+      92,
+      645,
+      381
+    ],
+    "reason": "It is a tall, relatively simple pocket far from path[1] diagonal slot and path[2] round cutout.",
+    "full_panel_treatment": "quiet pale blue watercolor wash outside the selected pocket"
+  },
+  "style_vocabulary_tested": [
+    "round blue-white gauge with navy rim, ticks, needle, and white highlight",
+    "small screw/bolt heads with diagonal slot highlights",
+    "rounded coral and mint capsule buttons with navy edging and glossy highlight",
+    "pale blue watercolor paper texture with soft navy edge pooling"
+  ],
+  "sampled_reference_palette_hex": [
+    "#6c97db",
+    "#87b2e4",
+    "#4b7cc5",
+    "#24579e",
+    "#c9dcf2",
+    "#f9b179",
+    "#d26050"
+  ],
+  "motif_margin_px": 28,
+  "mask_pixels": {
+    "outer": 1483580,
+    "cutouts": 126924,
+    "paintable": 1356656,
+    "motif_safe": 1054984,
+    "selected_pocket": 72819,
+    "selected_pocket_inside_motif_safe": 67268,
+    "combined_motifs": 40475
+  },
+  "decorative_motifs": [
+    {
+      "name": "small bolt pair",
+      "pocket": "upper-left tall bay above the left shoulder of the slot",
+      "role": "corner screw heads",
+      "bbox": [
+        419,
+        126,
+        612,
+        176
+      ],
+      "accepted": true,
+      "mask_pixels": 3528,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    },
+    {
+      "name": "single rounded gauge",
+      "pocket": "upper-left tall bay above the left shoulder of the slot",
+      "role": "round gauge/dial",
+      "bbox": [
+        424,
+        118,
+        593,
+        291
+      ],
+      "accepted": true,
+      "mask_pixels": 22945,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    },
+    {
+      "name": "two capsule buttons",
+      "pocket": "upper-left tall bay above the left shoulder of the slot",
+      "role": "stacked capsule buttons",
+      "bbox": [
+        420,
+        284,
+        615,
+        371
+      ],
+      "accepted": true,
+      "mask_pixels": 15487,
+      "outside_outer_pixels": 0,
+      "inside_cutout_pixels": 0,
+      "outside_eroded_paintable_pixels": 0
+    }
+  ],
+  "summary": {
+    "planned_motifs": 3,
+    "accepted_motifs": 3,
+    "rejected_motifs": 0,
+    "final_outside_paintable_alpha_pixels": 0,
+    "final_cutout_alpha_pixels": 0,
+    "decorative_motif_pixels_outside_outer": 0,
+    "decorative_motif_pixels_inside_cutouts": 0,
+    "decorative_motif_pixels_outside_selected_pocket_mask": 0,
+    "mechanical_gate_pass": true
+  },
+  "outputs": {
+    "artwork": "micro-pocket-style-artwork.png",
+    "overlay": "micro-pocket-style-overlay.png",
+    "mask_debug": "micro-pocket-style-mask-debug.png",
+    "metadata": "micro-pocket-style-metadata.json"
+  },
+  "method_notes": [
+    "Only the selected pocket receives focal control motifs.",
+    "All motifs were checked against the SVG-derived outer contour, cutout mask, and eroded paintable mask before drawing.",
+    "The final alpha mask is used only as the export guardrail after pre-checked motif placement."
+  ]
+}

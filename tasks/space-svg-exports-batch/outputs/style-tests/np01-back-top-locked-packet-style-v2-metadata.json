@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-06-17T07:27:00Z",
+  "method": "approved geometry locked; body and controls styled from actual style-packet crops; SVG mask/rim restored last",
+  "svg": "tasks/space-svg-exports-batch/source/np01-back-top.svg",
+  "approved_geometry_base": "tasks/space-svg-exports-batch/outputs/final/np01-back-top-checkpoint-v1-artwork-only.png",
+  "artwork": "tasks/space-svg-exports-batch/outputs/style-tests/np01-back-top-locked-packet-style-v2.png",
+  "debug": "tasks/space-svg-exports-batch/outputs/style-tests/np01-back-top-locked-packet-style-v2-debug.png",
+  "metrics": {
+    "outside_nonwhite_pixels": 0,
+    "cutout_nonwhite_pixels": 0,
+    "coverage_pct": 99.51,
+    "verdict": "PASS"
+  }
+}

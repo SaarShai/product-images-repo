@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-06-16T05:52:52Z",
+  "command": "scripts/export_svg_template_fit.py tasks/baci-door/source/style-reference.png --template-svg tasks/baci-door/source/baci-door-updated-20260616.svg --out-dir tasks/baci-door/outputs/reviews --prefix 20260616T-template-preview-from-style-ref --output-width 1306 --output-height 2419 --hex-clearance-units 0",
+  "source_image": "tasks/baci-door/source/style-reference.png",
+  "source_sha256": "ec4864e6f1d636bd1ac3b46234e045db526aa3000deb15838da29fdbe76f18d8",
+  "source_dimensions": "1118x1758",
+  "template_svg": "tasks/baci-door/source/baci-door-updated-20260616.svg",
+  "template_sha256": "09d5aef35dfd868ec2298ef335e6654809aad043ad64df0ab8467e68cdfa627e",
+  "template_viewbox": [
+    0.0,
+    0.0,
+    1306.39,
+    2418.61
+  ],
+  "art_scale_x": 1.0,
+  "art_scale_y": 1.0,
+  "art_offset_x": 0,
+  "art_offset_y": 0,
+  "hex_clearance_units": 0.0,
+  "stroke_width_units": 2.0,
+  "artwork_only": "tasks/baci-door/outputs/reviews/20260616T-template-preview-from-style-ref-artwork-only.png",
+  "clean_black_lines": "tasks/baci-door/outputs/reviews/20260616T-template-preview-from-style-ref-clean-black-lines.png",
+  "debug_mask": "tasks/baci-door/outputs/reviews/20260616T-template-preview-from-style-ref-debug-mask.png",
+  "metrics": {
+    "verdict": "FAIL",
+    "output_dimensions": "1306x2419",
+    "panel_coverage_pct": 32.57,
+    "outside_nonwhite_pixels": 0,
+    "center_gap_nonwhite_pixels": 0,
+    "hex_clear_nonwhite_pixels": 0,
+    "hex_clearance_px": 0,
+    "center_gap_bbox": [
+      600,
+      5,
+      706,
+      2414
+    ],
+    "path_bboxes": [
+      [
+        5.0,
+        5.0,
+        600.2099999999999,
+        2413.61
+      ],
+      [
+        706.19,
+        5.0,
+        1301.39,
+        2413.61
+      ]
+    ],
+    "polygon_bboxes": [
+      [
+        480.8,
+        941.48,
+        536.26,
+        989.51
+      ],
+      [
+        753.29,
+        944.93,
+        804.44,
+        996.08
+      ]
+    ],
+    "notes": [
+      "panel interiors look underfilled"
+    ]
+  }
+}

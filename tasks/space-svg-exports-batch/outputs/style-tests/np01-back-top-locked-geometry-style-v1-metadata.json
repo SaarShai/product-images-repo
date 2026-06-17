@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-06-17T07:03:25Z",
+  "method": "locked SVG geometry: style rebuilt under exact mask, then exact rim/cutout geometry restored",
+  "svg": "tasks/space-svg-exports-batch/source/np01-back-top.svg",
+  "base_composition": "tasks/space-svg-exports-batch/outputs/final/np01-back-top-checkpoint-v1-artwork-only.png",
+  "artwork": "tasks/space-svg-exports-batch/outputs/style-tests/np01-back-top-locked-geometry-style-v1.png",
+  "debug": "tasks/space-svg-exports-batch/outputs/style-tests/np01-back-top-locked-geometry-style-v1-debug.png",
+  "viewbox": [
+    0.0,
+    0.0,
+    1644.0996,
+    1643.0616
+  ],
+  "output_dimensions": "1120x1119",
+  "style_sources": [
+    "tasks/space-svg-exports-batch/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-body-texture.png",
+    "tasks/space-svg-exports-batch/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-body-texture.png",
+    "tasks/space-svg-exports-batch/style-packet/crops/ref01-chatgpt-image-jun-9-2026-11-17-34-pm-left-region.png",
+    "tasks/space-svg-exports-batch/style-packet/crops/ref02-chatgpt-image-jun-9-2026-11-19-45-pm-center-region.png"
+  ],
+  "metrics": {
+    "outside_nonwhite_pixels": 0,
+    "cutout_nonwhite_pixels": 0,
+    "coverage_pct": 99.53,
+    "verdict": "PASS"
+  }
+}
