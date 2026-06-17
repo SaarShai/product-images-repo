@@ -17,6 +17,8 @@ Generate artwork that is composed inside the SVG contour and matches the style
 references. The final result must avoid all areas outside the contour and all
 internal cutouts or keep-clear zones.
 
+Primary skill: `.codex/skills/svg-geometry-style-illustration/SKILL.md`
+
 ## Geometry Rules
 
 - Treat the SVG as authoritative.

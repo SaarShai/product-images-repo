@@ -5,6 +5,11 @@ template from the start. The goal is not "make a nice picture and clip it." The
 goal is "compose the picture inside the product geometry, then use masks only to
 verify and export exact edges."
 
+For end-to-end tasks that must both fit SVG geometry and adapt to actual
+reference-image style, start with
+`.codex/skills/svg-geometry-style-illustration/SKILL.md`. It orchestrates the
+geometry, style-packet, image-generation, export, and judge skills below.
+
 ## Source Contract
 
 Each reusable task should have this structure:

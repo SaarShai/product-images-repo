@@ -23,6 +23,7 @@ For a new SVG-template illustration task, start with:
 
 ```text
 docs/svg-template-illustration-workflow.md
+.codex/skills/svg-geometry-style-illustration/SKILL.md
 docs/review-judge-checklist.md
 .codex/skills/reference-style-packet/SKILL.md
 .codex/skills/svg-template-style-agent/SKILL.md

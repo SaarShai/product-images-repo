@@ -58,3 +58,13 @@ Pattern: pattern:svg-template-geometry-approved-style-redraw. Lesson: when the
 user approves geometry/dimensions/location but rejects style, use the approved
 geometry only as a composition map for attachment-aware whole-panel redraw, then
 run exact SVG export/checks downstream.
+
+## [2026-06-17] retro | SVG Geometry Style Orchestration Skill
+
+Added `.codex/skills/svg-geometry-style-illustration/SKILL.md` and drift probes
+to make the full SVG geometry -> style-packet -> attachment-aware redraw ->
+exact SVG check -> visual judge route explicit. Pattern:
+pattern:svg-geometry-style-orchestration. Lesson: future agents should start
+with the orchestration skill for end-to-end SVG template plus reference-style
+tasks, then delegate geometry, style packet, image generation, and review to
+separate skill roles.

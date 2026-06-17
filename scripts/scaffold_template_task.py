@@ -134,7 +134,7 @@ def main() -> int:
     skill = (
         ".codex/skills/skyline-template-illustration/SKILL.md"
         if is_skyline
-        else ".codex/skills/svg-template-illustration/SKILL.md"
+        else ".codex/skills/svg-geometry-style-illustration/SKILL.md"
     )
     manifest = {
         "created_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),

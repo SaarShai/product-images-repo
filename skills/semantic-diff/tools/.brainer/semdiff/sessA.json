@@ -1,0 +1,16 @@
+{
+  "/private/var/folders/0j/0fv2szdj15xg_wbgl96cbf_r0000gn/T/tmpn_fumvb_/w.py": {
+    "beta": {
+      "hash": "1235a43cde34",
+      "body": "ZGVmIGJldGEoaXRlbXMpOgogICAgdG90YWwgPSAwCiAgICBmb3IgdmFsdWUgaW4gaXRlbXM6CiAgICAgICAgdG90YWwgPSB0b3RhbCArIHZhbHVlCiAgICByZXR1cm4gdG90YWw="
+    },
+    "epsilon": {
+      "hash": "bc2af8224679",
+      "body": "ZGVmIGVwc2lsb24oaXRlbXMpOgogICAgdG90YWwgPSAwCiAgICBmb3IgdmFsdWUgaW4gaXRlbXM6CiAgICAgICAgdG90YWwgPSB0b3RhbCArIHZhbHVlCiAgICByZXR1cm4gdG90YWwgKyAx"
+    },
+    "zeta": {
+      "hash": "b9d53c4fb227",
+      "body": "ZGVmIHpldGEoaXRlbXMpOgogICAgdG90YWwgPSAwCiAgICBmb3IgdmFsdWUgaW4gaXRlbXM6CiAgICAgICAgdG90YWwgPSB0b3RhbCArIHZhbHVlCiAgICByZXR1cm4gdG90YWwgKyAy"
+    }
+  }
+}

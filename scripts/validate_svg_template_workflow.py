@@ -13,6 +13,8 @@ ROOT = Path(__file__).resolve().parents[1]
 REQUIRED_FILES = [
     ".codex/skills/reference-style-packet/SKILL.md",
     ".codex/skills/skyline-template-illustration/SKILL.md",
+    ".codex/skills/svg-geometry-style-illustration/SKILL.md",
+    ".codex/skills/svg-geometry-style-illustration/drift_probes.json",
     ".codex/skills/svg-template-style-agent/SKILL.md",
     ".codex/skills/svg-template-style-agent/drift_probes.json",
     ".codex/skills/svg-template-illustration/SKILL.md",
@@ -38,11 +40,27 @@ REQUIRED_FILES = [
 REQUIRED_SNIPPETS = {
     ".codex/skills/svg-template-illustration/SKILL.md": [
         "Do not make a generic rectangular illustration",
+        "svg-geometry-style-illustration",
         "visual style packet",
         "Any subagent assigned to adapt approved geometry to style",
         "Reset Vs Patch",
         "visual judge",
         "Done Means",
+    ],
+    ".codex/skills/svg-geometry-style-illustration/SKILL.md": [
+        "SVG geometry -> safe composition map -> visual style packet",
+        "ELEMENTS-FIRST",
+        "WHOLE-PANEL-REDRAW",
+        "Use the approved geometry image only as a composition/negative-space map",
+        "Prompt-only substitute",
+        "A mechanical pass is not approval",
+        "visual judge",
+    ],
+    ".codex/skills/svg-geometry-style-illustration/drift_probes.json": [
+        "svg-geometry-style-requires-visual-style-packet",
+        "svg-geometry-style-no-prompt-only-substitute",
+        "svg-geometry-style-pass-is-not-approval",
+        "svg-geometry-style-geometry-approved-route",
     ],
     ".codex/skills/reference-style-packet/SKILL.md": [
         "build_reference_style_packet.py",
@@ -88,6 +106,7 @@ REQUIRED_SNIPPETS = {
         "cutout",
     ],
     "docs/svg-template-illustration-workflow.md": [
+        "svg-geometry-style-illustration",
         "Source Contract",
         "Parse The SVG Before Prompting",
         "Plan Safe Pockets",
@@ -140,6 +159,7 @@ REQUIRED_SNIPPETS = {
         "safe_pockets",
     ],
     "tasks/_template/session-brief.md": [
+        "svg-geometry-style-illustration",
         "attachment-aware whole-panel redraw",
         "approved geometry image only as a composition/negative-space map",
         "Do not use locked-geometry local restyle",
@@ -158,6 +178,7 @@ REQUIRED_SNIPPETS = {
         "Verdicts",
     ],
     "AGENTS.md": [
+        ".codex/skills/svg-geometry-style-illustration/SKILL.md",
         ".codex/skills/svg-template-illustration/SKILL.md",
         ".codex/skills/skyline-template-illustration/SKILL.md",
         ".codex/skills/svg-template-review-judge/SKILL.md",

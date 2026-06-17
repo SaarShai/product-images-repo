@@ -73,6 +73,7 @@ For reusable SVG-template illustration tasks, use the canonical workflow in
 `docs/review-judge-checklist.md`, and the skill entrypoints:
 
 ```text
+.codex/skills/svg-geometry-style-illustration/SKILL.md
 .codex/skills/svg-template-illustration/SKILL.md
 .codex/skills/svg-template-review-judge/SKILL.md
 ```

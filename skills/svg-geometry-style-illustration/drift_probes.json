@@ -1,0 +1,34 @@
+[
+  {
+    "id": "svg-geometry-style-requires-visual-style-packet",
+    "kind": "forbidden_regex",
+    "forbidden_pattern": "(?i)(describe(d)? the style|from memory|style adjectives|palette words|match the style in prose)",
+    "unless_pattern": "(?i)(style[- ]packet|reference-contact-sheet|style-exemplar-sheet|actual reference images|attach(ed)? (images|references|crops))",
+    "message": "SVG geometry-to-style work is drifting toward prose-only style transfer. Build/attach the visual style packet and actual references.",
+    "severity": "warn"
+  },
+  {
+    "id": "svg-geometry-style-no-prompt-only-substitute",
+    "kind": "forbidden_regex",
+    "forbidden_pattern": "(?i)(prompt-only|text-only) (attempt|substitute|version|generation)",
+    "unless_pattern": "(?i)(test artifact|smoke test|not the successful method|attachment-aware prompt package|blocked)",
+    "message": "Prompt-only output is not the successful geometry-to-style adaptation method when the workflow requires image attachments.",
+    "severity": "warn"
+  },
+  {
+    "id": "svg-geometry-style-pass-is-not-approval",
+    "kind": "forbidden_regex",
+    "forbidden_pattern": "(?i)(metric|metadata|mask|export) (pass|PASS).{0,80}(done|accepted|approved|production-ready)",
+    "unless_pattern": "(?i)(visual judge|actual images|rejection gate|not approval|judge inspected)",
+    "message": "A geometry metric PASS is only a rejection gate. Require visual judge review for style, cutouts, and full-frame artifacts.",
+    "severity": "warn"
+  },
+  {
+    "id": "svg-geometry-style-geometry-approved-route",
+    "kind": "forbidden_regex",
+    "forbidden_pattern": "(?i)(geometry|dimensions|location).{0,60}(approved|good|accepted).{0,120}(style|restyle)",
+    "unless_pattern": "(?i)(whole[- ]panel redraw|composition map|actual reference|style[- ]packet|attachment-aware)",
+    "message": "When geometry is approved but style is wrong, route to attachment-aware whole-panel redraw using the geometry image as a composition map.",
+    "severity": "warn"
+  }
+]

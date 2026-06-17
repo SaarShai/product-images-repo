@@ -49,6 +49,10 @@ gemini skills list --all
 
 ## Project-Local Skills
 
+- `.codex/skills/svg-geometry-style-illustration/SKILL.md`: orchestration skill
+  for SVG template to geometry to reference-style-adapted illustration. Use it
+  first when both exact contour/cutout fit and actual reference-image style
+  adaptation matter.
 - `.codex/skills/baci-template-fit-repair/SKILL.md`: a tracked custom skill
   created from the 2026-06-16 Baci-door sessions. Use it for `tasks/baci-door`
   template-fit repairs where exact SVG polygon cutouts and visual hole-section
@@ -75,6 +79,10 @@ mkdir -p .codex/skills .gemini/skills
 for skill in plan-first-execute lean-execution verify-before-completion wiki-memory write-gate think index-first output-filter; do
   ln -sfn "/Users/za/Documents/Brainer/skills/$skill" ".codex/skills/$skill"
   gemini skills link --scope workspace --consent "/Users/za/Documents/Brainer/skills/$skill"
+done
+for skill in svg-geometry-style-illustration baci-template-fit-repair reference-style-packet svg-template-style-agent svg-template-illustration svg-template-review-judge skyline-template-illustration; do
+  ln -sfn "../../skills/$skill" ".codex/skills/$skill"
+  ln -sfn "../../skills/$skill" ".gemini/skills/$skill"
 done
 python3 .codex/skills/wiki-memory/tools/wiki.py init
 ```
