@@ -12,12 +12,5 @@
     "regex": "ran past budget|ran past its budget|no[- ]gate run|loop_lint (R1|R2|R3)|generator ?== ?verifier|loop-done-without-gate",
     "promoted": "2026-06-16",
     "fix": "Tighten loop-engineering's existing 'loop-done-without-gate' probe (skills/loop-engineering/drift_probes.json); for the pure budget-overrun slice that never surfaces as a done-claim, add a new probe there (loop-engineering owns the failure). See loop-engineering SKILL.md and its inner/outer handoff."
-  },
-  {
-    "id": "svg-template-geometry-approved-style-redraw",
-    "description": "Geometry-approved SVG-template style adaptation drifted into locked-geometry local restyle instead of attachment-aware whole-panel redraw",
-    "regex": "svg-template-geometry-approved-style-redraw|geometry-approved style adaptation|locked-geometry local restyle",
-    "promoted": "2026-06-17",
-    "fix": "forbidden_regex probe declared in skills/svg-template-style-agent/drift_probes.json (and the orchestration probe in skills/svg-geometry-style-illustration/drift_probes.json); SKILL.md now requires Whole-Panel Redraw Mode when geometry is approved but style is wrong. See wiki/log.md [2026-06-17]."
   }
 ]
