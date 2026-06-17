@@ -1,0 +1,14 @@
+{
+  "geometry_score": 4,
+  "geometry_notes": "Best restyle geometry of the round. Overlay: all 3 hexagons + slot hug the green SVG targets closely; openings drift only slightly right. region-IoU 0.782 (per [0.796,0.777,0.725,0.829]) — every opening 0.72-0.83, tight and consistent; slot is excellent (0.829). Middle hexagon rotation correct. Silhouette + V-notch + tall-narrow proportions correct. Only ~0.04 below the 0.824 RIP baseline.",
+  "cutout_cleanliness": 5,
+  "style_score": 5,
+  "style_notes": "Gorgeous rich granulated cobalt-indigo wash. Richest+cleanest control vocabulary in the batch: 4 capsule buttons (red/green/yellow), a detailed knob with tick-mark dial + pointer, THREE slider faders with colored caps, an indicator-dot row. Bold hand-painted dark-blue rim lines on every opening; pale empty port centers (true cut-throughs). Very low outside paint (0.08%).",
+  "overall_score": 4,
+  "region_iou_agreement": "agrees — 0.782 matches the close-but-slightly-right hug I see; the eye and the metric both say best-in-round.",
+  "verdict": "ACCEPT",
+  "passes": ["best restyle geometry (0.782, all openings 0.72-0.83)", "richest+cleanest controls (faders + ticked knob + pills + dots)", "bold painted bevel rims + empty port centers", "correct rotation/V-notch/proportions", "lowest outside paint"],
+  "failures": ["~0.04 below 0.824 RIP baseline (slight rightward opening drift)"],
+  "next_move": "ACCEPT as best restyle-in-place candidate; optionally re-seat for pixel-exact openings. Also the strongest SOURCE panel for re-seating.",
+  "one_line": "Best of the round: gorgeous + richest controls + tightest geometry (0.782, ~0.04 under baseline) — the strongest restyle AND best source panel simultaneously."
+}

@@ -1,0 +1,39 @@
+{
+  "candidate": "tasks/space-np01-front-bottom-02/experiments/SRC-nb-s8/raw.png",
+  "overall": "FAIL",
+  "outside_painted": 132,
+  "outside_frac": 0.0003,
+  "mean_iou": 0.0011,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 0.999,
+      "iou": 0.001,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 2,
+      "painted_frac": 0.997,
+      "iou": 0.003,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 3,
+      "painted_frac": 0.999,
+      "iou": 0.001,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 4,
+      "painted_frac": 1.0,
+      "iou": 0.0,
+      "verdict": "FAIL"
+    }
+  ],
+  "id": "SRC-nb-s8",
+  "model": "nanobanana",
+  "bbox": "190,0,578,1376",
+  "secs": 71.3,
+  "map": "tasks/space-np01-front-bottom-02/outputs/generated/np01-fb-02-base-trueaspect-1440x2560.png",
+  "prompt": "tasks/space-np01-front-bottom-02/prompts/BoN2-nano-letterbox.md"
+}

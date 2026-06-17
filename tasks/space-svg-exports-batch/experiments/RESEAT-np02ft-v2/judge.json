@@ -1,0 +1,22 @@
+{
+  "geometry_score": 4,
+  "geometry_notes": "SECOND SVG \u2014 proves the route generalizes. Both cutouts (diagonal rounded slot top-left + circle top-right) re-seated at exact SVG coords; red cutout outlines in overlay.png sit on the apertures, green outlines in region_overlay.png hug both. The house-shaped silhouette incl. both bottom V-notches is exact (233 stray px outside contour = 0.0%). region-IoU 0.745.",
+  "cutout_cleanliness": 3,
+  "style_score": 5,
+  "style_notes": "Full control vocabulary PRESERVED on a different panel: radar/grid screen, round gauge dial with needle, slider banks with colored cubes, three toggle switches, 2x3 button grid, yellow pill button, granulated blue wash with star speckle. Matches the references' object language richly. Bevel rim present but reads subtler on this lighter-blue body than on the dark-cobalt np01 sources.",
+  "overall_score": 4,
+  "region_iou_agreement": "agrees (region-IoU 0.745 corroborated by green overlay hugging both openings). white-IoU is low (0.327) and UNDERSTATES placement quality: the model's source slot was painted slightly oversized + offset and is pale-white, so its leftover white reads just outside the narrower exact aperture \u2014 a source-fidelity artifact, not a placement error. The exact opening is correctly placed.",
+  "verdict": "ACCEPT",
+  "passes": [
+    "route generalizes to a 2nd, differently-shaped SVG (house panel, 2 cutouts) \u2014 NOT overfit to the np01 strip",
+    "both openings re-seated at exact SVG coords (overlay + region overlay corroborate)",
+    "full control hardware preserved (dial, radar, sliders, toggles, button grid, pills)",
+    "house silhouette incl. bottom V-notches exact"
+  ],
+  "failures": [
+    "white-IoU 0.33: source slot was pale-white + oversized so leftover white leaks just outside the exact aperture (local cover can't tell white-fill from white-aperture)",
+    "bevel rim reads subtler on this lighter-blue body"
+  ],
+  "next_move": "For pale-white source openings, also cover near-white pixels in the window that fall outside the exact aperture (extend cover_local_drift to treat oversized white fill as drift), or raise rim_scale on light bodies.",
+  "one_line": "Generalization PROVED: a 2nd house-shaped SVG re-seats correctly with all controls preserved; only blemish is leftover source-white just outside the exact slot (white-IoU understates it)."
+}

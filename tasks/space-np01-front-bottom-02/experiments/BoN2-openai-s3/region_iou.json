@@ -1,0 +1,32 @@
+{
+  "image": "tasks/space-np01-front-bottom-02/experiments/BoN2-openai-s3/raw.png",
+  "bbox": [
+    279,
+    14,
+    662,
+    1659
+  ],
+  "mean_region_iou": 0.1911,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "polygon",
+      "region_iou": 0.066
+    },
+    {
+      "i": 2,
+      "kind": "polygon",
+      "region_iou": 0.0
+    },
+    {
+      "i": 3,
+      "kind": "polygon",
+      "region_iou": 0.345
+    },
+    {
+      "i": 4,
+      "kind": "path",
+      "region_iou": 0.354
+    }
+  ]
+}

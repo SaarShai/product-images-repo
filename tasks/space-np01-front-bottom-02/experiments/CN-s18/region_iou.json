@@ -1,0 +1,32 @@
+{
+  "image": "tasks/space-np01-front-bottom-02/experiments/CN-s18/raw.png",
+  "bbox": [
+    0,
+    0,
+    384,
+    1296
+  ],
+  "mean_region_iou": 0.678,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "polygon",
+      "region_iou": 0.659
+    },
+    {
+      "i": 2,
+      "kind": "polygon",
+      "region_iou": 0.663
+    },
+    {
+      "i": 3,
+      "kind": "polygon",
+      "region_iou": 0.654
+    },
+    {
+      "i": 4,
+      "kind": "path",
+      "region_iou": 0.736
+    }
+  ]
+}

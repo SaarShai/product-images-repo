@@ -1,0 +1,32 @@
+{
+  "image": "tasks/space-np01-front-bottom-02/experiments/RESEAT-rip-v1/exact.png",
+  "bbox": [
+    41,
+    0,
+    683,
+    2172
+  ],
+  "mean_region_iou": 0.8181,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "polygon",
+      "region_iou": 0.829
+    },
+    {
+      "i": 2,
+      "kind": "polygon",
+      "region_iou": 0.808
+    },
+    {
+      "i": 3,
+      "kind": "polygon",
+      "region_iou": 0.78
+    },
+    {
+      "i": 4,
+      "kind": "path",
+      "region_iou": 0.856
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "geometry_score": 0,
+  "geometry_notes": "mean region-IoU 0.164; panel silhouette absent. Overlay shows openings land on empty pale wash; no rounded-rect panel body rendered. holes 1/2/3 IoU 0.11-0.17 all FAIL.",
+  "cutout_cleanliness": 2,
+  "style_notes": "Pale washed-out cyan with random multicolor confetti speckles. No cobalt panel body, no capsule buttons (red/green/gold), no cream knob, no radial ticks, no sliders, no tick column. IP-Adapter at 0.85 on dreamshaper-8 did NOT transfer the reference palette/vocabulary; it produced noise. trait1=0 (not bright cobalt, just faint cyan), trait2=0, trait3=0, trait4=0, trait5=0.5 (white-ish bg only).",
+  "style_score": 0,
+  "overall_score": 0,
+  "region_iou_agreement": "agrees - calc 0.16 matches the eye; there is essentially no panel to land openings on",
+  "verdict": "PROMPT RESTART",
+  "passes": ["background is roughly light"],
+  "failures": ["no panel rendered at all", "IP-Adapter did not transfer cobalt+capsule style", "geometry IoU 0.16"],
+  "next_move": "Raise cond-scale to lock contour AND add an explicit colorful prompt (cobalt panel, red/green/gold capsule buttons, cream knob with tick marks) since IP-Adapter alone is not pulling color; keep style-refs.",
+  "one_line": "Total failure both axes: faint cyan noise, no panel, IoU 0.16 - IP-Adapter at 0.85 on dreamshaper produced nothing like the bright cobalt reference."
+}

@@ -1,0 +1,22 @@
+{
+  "geometry_score": 4,
+  "geometry_notes": "All 4 openings (3 hex + slot) hug the SVG green outline (region_overlay.png); mean region-IoU 0.876. blue-locked bbox fixed the earlier over-wide squish. Silhouette exact, 1 px outside contour. Slight residual: source hexes sit a hair left of the SVG centerline, but well within the painted hex.",
+  "cutout_cleanliness": 2,
+  "style_score": 4.5,
+  "style_notes": "Strongest style yet: BRIGHT luminous mid-cobalt, cream knobs with WHITE RADIAL TICK MARKS (the trait the prior best lacked), colorful capsule toggles (red/orange/green/teal) + sliders + indicator dots, clean white granulated bg, soft top-left light. Very close to reference vocabulary.",
+  "overall_score": 4,
+  "region_iou_agreement": "agrees - 0.876 reflects exact placement; openings hug hexes in the overlay",
+  "verdict": "LOCAL PATCH",
+  "passes": [
+    "bright cobalt body matches reference luminosity",
+    "cream knobs WITH white radial tick marks present",
+    "colorful controls (red/orange/green/teal capsules + sliders + dots)",
+    "openings hug the SVG geometry (region-IoU 0.876)",
+    "clean white granulated background"
+  ],
+  "failures": [
+    "cutout interiors filled pale-BLUE (tone_center b=232<240) -> white-IoU 0, painted_frac 1.0; cutouts do not read as clean openings"
+  ],
+  "next_move": "Round 2: push tone_center toward near-white so the cutout cores read clean (white-IoU passes) while keeping the navy bevel rim.",
+  "one_line": "Best style yet (bright + tick-marked knobs + colorful) with exact openings, but cutout cores are pale-blue not clean white -> fix the interior fill tone next."
+}

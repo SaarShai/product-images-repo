@@ -1,0 +1,32 @@
+{
+  "image": "tasks/space-np01-front-bottom-02/experiments/FINAL-exact-frame/raw.png",
+  "bbox": [
+    363,
+    0,
+    1078,
+    2560
+  ],
+  "mean_region_iou": 0.9798,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "polygon",
+      "region_iou": 0.978
+    },
+    {
+      "i": 2,
+      "kind": "polygon",
+      "region_iou": 0.979
+    },
+    {
+      "i": 3,
+      "kind": "polygon",
+      "region_iou": 0.978
+    },
+    {
+      "i": 4,
+      "kind": "path",
+      "region_iou": 0.984
+    }
+  ]
+}

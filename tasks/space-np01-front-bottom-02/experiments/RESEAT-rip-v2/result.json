@@ -1,0 +1,20 @@
+{
+  "id": "RESEAT-rip-v2",
+  "method": "reseat-composite",
+  "source_art": "tasks/space-np01-front-bottom-02/experiments/RIP-openai-v1/raw.png",
+  "svg": "tasks/space-np01-front-bottom-02/source/template.svg",
+  "script": "scripts/exact_bevel_composite.py",
+  "params": {
+    "rim_scale": 1.4,
+    "local_erase": true
+  },
+  "region_iou": 0.829,
+  "white_iou": 0.703,
+  "outputs": {
+    "exact": "RESEAT-rip-v2/exact.png",
+    "overlay": "RESEAT-rip-v2/overlay.png",
+    "region_overlay": "RESEAT-rip-v2/region_overlay.png",
+    "region_iou": "RESEAT-rip-v2/region_iou.json",
+    "whitecheck": "RESEAT-rip-v2/whitecheck.json"
+  }
+}

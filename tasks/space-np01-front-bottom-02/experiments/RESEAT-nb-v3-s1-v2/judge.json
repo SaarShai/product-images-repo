@@ -1,0 +1,22 @@
+{
+  "geometry_score": 4,
+  "geometry_notes": "All 4 openings hug the SVG green outline exactly. region-IoU 0.791, white-IoU 0.712; gap is the painted bevel band. Silhouette exact, 0 px outside contour.",
+  "cutout_cleanliness": 5,
+  "style_score": 4,
+  "style_notes": "Lush dark granulated cobalt/indigo wash (most painterly body of the set): yellow + green pill buttons, a round knob, indicator dots PRESERVED. Bevel rim bold, clean cores, near-zero halo. Fewer control elements than the BoN2 sources (sparser panel) but the richest watercolor texture.",
+  "overall_score": 4,
+  "region_iou_agreement": "agrees \u2014 region-IoU 0.791 reflects exact opening placement (openings rasterized at SVG coords); the gap from 1.0 is the painted bevel rim band, confirmed by the green overlay hugging each opening",
+  "verdict": "ACCEPT",
+  "passes": [
+    "openings exact (green outline hugs each)",
+    "controls preserved: pills, knob, dots",
+    "richest granulated watercolor body",
+    "bold rim, clean cores, no halo"
+  ],
+  "failures": [
+    "sparser control set than BoN2 sources",
+    "white-IoU 0.71 (bold rim by design)"
+  ],
+  "next_move": "Accept; strongest BODY texture \u2014 good if the painterly wash is the priority.",
+  "one_line": "Exact openings + lushest watercolor body + preserved (sparser) controls + bold rim, no halo (~90% there)."
+}

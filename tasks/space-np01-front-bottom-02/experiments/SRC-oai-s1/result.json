@@ -1,0 +1,39 @@
+{
+  "candidate": "tasks/space-np01-front-bottom-02/experiments/SRC-oai-s1/raw.png",
+  "overall": "FAIL",
+  "outside_painted": 1136,
+  "outside_frac": 0.0019,
+  "mean_iou": 0.1916,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 1.0,
+      "iou": 0.0,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 2,
+      "painted_frac": 0.821,
+      "iou": 0.092,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 3,
+      "painted_frac": 0.367,
+      "iou": 0.358,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 4,
+      "painted_frac": 0.452,
+      "iou": 0.316,
+      "verdict": "FAIL"
+    }
+  ],
+  "id": "SRC-oai-s1",
+  "model": "openai",
+  "bbox": "264,16,684,1652",
+  "secs": 79.7,
+  "map": "tasks/space-np01-front-bottom-02/outputs/generated/np01-fb-02-base-trueaspect-1440x2560.png",
+  "prompt": "tasks/space-np01-front-bottom-02/prompts/BoN2-openai-letterbox.md"
+}

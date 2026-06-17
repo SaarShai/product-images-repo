@@ -1,0 +1,22 @@
+{
+  "geometry_score": 4,
+  "geometry_notes": "Overlay: all 4 openings (3 hexagons + slot) hug the SVG target; openings are slightly OVERSIZED vs the green outline (why 0.935 not ~1.0), placement correct, no spurious extra openings (clean RIP source), contour + V-notch correct.",
+  "cutout_cleanliness": 4,
+  "style_score": 2,
+  "style_notes": "DARK muddy monochrome navy vs the reference's bright colorful look \u2014 no colorful controls, no tick marks. Geometry good but style ~2/5. Came from a description-anchored ('cobalt/indigo') restyle prompt \u2014 the wrong path.",
+  "overall_score": 3,
+  "verdict": "LOCAL PATCH",
+  "passes": [
+    "near-exact openings that hug the SVG outline (0.935)",
+    "no spurious openings",
+    "gorgeous cobalt watercolor + controls preserved",
+    "painted bevel rims (not flat punch)"
+  ],
+  "failures": [
+    "openings slightly oversized vs exact outline",
+    "body darker/sparser than references"
+  ],
+  "next_move": "Tighten the re-seat aperture to exact size (remove the oversize), and prefer clean RIP-style sources; optionally lighten the body.",
+  "region_iou_agreement": "agrees \u2014 0.935 reflects near-exact placement with a slight opening oversize + rim band, confirmed on the overlay",
+  "one_line": "Geometry near-exact (0.935) but style far off: dark monochrome, not the bright colorful reference."
+}

@@ -1,0 +1,33 @@
+{
+  "candidate": "tasks/space-np01-front-bottom-02/experiments/SRC-nb-s7/raw.png",
+  "overall": "FAIL",
+  "outside_painted": 185,
+  "outside_frac": 0.0004,
+  "mean_iou": 0.594,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 0.404,
+      "iou": 0.594,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 2,
+      "painted_frac": 0.385,
+      "iou": 0.615,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 3,
+      "painted_frac": 0.404,
+      "iou": 0.596,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 4,
+      "painted_frac": 0.367,
+      "iou": 0.57,
+      "verdict": "FAIL"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "candidate": "tasks/space-np01-front-bottom-02/experiments/E3-lineart-contract/raw.png",
+  "overall": "FAIL",
+  "outside_painted": 55300,
+  "outside_frac": 0.088,
+  "mean_iou": 0.2028,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 0.94,
+      "iou": 0.039,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 2,
+      "painted_frac": 0.796,
+      "iou": 0.132,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 3,
+      "painted_frac": 0.564,
+      "iou": 0.323,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 4,
+      "painted_frac": 0.518,
+      "iou": 0.318,
+      "verdict": "FAIL"
+    }
+  ]
+}

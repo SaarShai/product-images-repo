@@ -1,0 +1,33 @@
+{
+  "candidate": "tasks/space-np01-front-bottom-02/experiments/BoN2-openai-s1/raw.png",
+  "overall": "FAIL",
+  "outside_painted": 1219,
+  "outside_frac": 0.002,
+  "mean_iou": 0.3724,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 0.681,
+      "iou": 0.195,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 2,
+      "painted_frac": 0.523,
+      "iou": 0.315,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 3,
+      "painted_frac": 0.308,
+      "iou": 0.528,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 4,
+      "painted_frac": 0.335,
+      "iou": 0.452,
+      "verdict": "FAIL"
+    }
+  ]
+}

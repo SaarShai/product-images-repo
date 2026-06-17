@@ -1,0 +1,39 @@
+{
+  "candidate": "tasks/space-np01-front-bottom-02/experiments/E4-lineart-nano/raw.png",
+  "overall": "FAIL",
+  "outside_painted": 29661,
+  "outside_frac": 0.0715,
+  "mean_iou": 0.0362,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 0.959,
+      "iou": 0.041,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 2,
+      "painted_frac": 0.956,
+      "iou": 0.044,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 3,
+      "painted_frac": 0.968,
+      "iou": 0.032,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 4,
+      "painted_frac": 0.97,
+      "iou": 0.027,
+      "verdict": "FAIL"
+    }
+  ],
+  "id": "E4-lineart-nano",
+  "model": "nanobanana",
+  "bbox": "254,18,600,1245",
+  "secs": 57.2,
+  "map": "tasks/space-np01-front-bottom-02/outputs/generated/np01-fb-02-genmap-lineart.png",
+  "prompt": "tasks/space-np01-front-bottom-02/prompts/E3-lineart-contract.md"
+}

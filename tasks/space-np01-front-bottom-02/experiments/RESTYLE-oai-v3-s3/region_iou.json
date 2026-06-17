@@ -1,0 +1,32 @@
+{
+  "image": "tasks/space-np01-front-bottom-02/experiments/RESTYLE-oai-v3-s3/raw.png",
+  "bbox": [
+    67,
+    18,
+    651,
+    2153
+  ],
+  "mean_region_iou": 0.3421,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "polygon",
+      "region_iou": 0.0
+    },
+    {
+      "i": 2,
+      "kind": "polygon",
+      "region_iou": 0.262
+    },
+    {
+      "i": 3,
+      "kind": "polygon",
+      "region_iou": 0.556
+    },
+    {
+      "i": 4,
+      "kind": "path",
+      "region_iou": 0.55
+    }
+  ]
+}

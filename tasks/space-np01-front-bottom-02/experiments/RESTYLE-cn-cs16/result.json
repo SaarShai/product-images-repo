@@ -1,0 +1,30 @@
+{
+  "id": "RESTYLE-cn-cs16",
+  "method": "restyle-locked",
+  "model": "Lykon/dreamshaper-8",
+  "platform": "local-diffusers",
+  "controlnet": "lllyasviel/control_v11p_sd15_lineart",
+  "ip_adapter": "h94/IP-Adapter ip-adapter_sd15.bin (scale 0.6)",
+  "prompt": "watercolor painting of a space control panel, soft blue watercolor wash, painterly hand-painted edges, gouache, muted palette, knobs and switches, white background, illustration",
+  "negative_prompt": "blurry, low quality, text, watermark, signature, frame, border, extra openings, deformed holes, photo, 3d render, photorealistic",
+  "control_map": "tasks/space-np01-front-bottom-02/outputs/generated/cn-lineart-480.png",
+  "svg": "tasks/space-np01-front-bottom-02/source/template.svg",
+  "style_refs": [
+    "tasks/space-np01-front-bottom-02/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png",
+    "tasks/space-np01-front-bottom-02/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png"
+  ],
+  "params": {
+    "cond_scale": 1.6,
+    "ip_scale": 0.6,
+    "guidance": 7.0,
+    "steps": 20,
+    "seed": 12345,
+    "canvas": "480x1624",
+    "device": "mps",
+    "dtype": "float32"
+  },
+  "outputs": {
+    "raw": "raw.png",
+    "exact": "exact.png"
+  }
+}

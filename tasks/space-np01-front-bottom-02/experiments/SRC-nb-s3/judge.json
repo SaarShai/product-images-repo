@@ -1,0 +1,23 @@
+{
+  "id": "SRC-nb-s3",
+  "model": "nanobanana",
+  "role": "SOURCE panel (style donor for re-seat route)",
+  "geometry_score": 2,
+  "geometry_notes": "Free letterbox layout (source panel): 3 hex ports + long slot present, bevelled, with empty pale centers; slot rendered as a clean open port. Placement not coordinate-locked to the SVG (region-IoU low) — geometry handled by re-seat downstream.",
+  "cutout_cleanliness": 5,
+  "style_score": 5,
+  "style_notes": "Reference-perfect. Trait1 brightness PRESENT (bright luminous cobalt, white paper showing). Trait2 colorful controls PRESENT (red/yellow/green/teal capsules + colored slider caps). Trait3 knobs+radial ticks PRESENT (four cream knobs with white radial tick marks). Trait4 crisp hardware PRESENT (sliders with colored indicator caps, dots, crisp dark-blue outlines, bevelled rims). Trait5 white bg + granulated wash PRESENT. V-notch rendered. Cleanest open slot of the set.",
+  "overall_score": 4,
+  "region_iou_agreement": "understates style — low region-IoU is free-layout placement drift; STYLE is a full 5/5 reference match and cutouts are the cleanest of the set.",
+  "verdict": "ACCEPT",
+  "passes": [
+    "all 5 rubric style traits present incl. cream tick-marked knobs",
+    "clean open slot + bevelled hex ports with empty pale centers (cleanest cutouts)",
+    "bright luminous body, dense colorful controls"
+  ],
+  "failures": [
+    "free-layout opening placement (region-IoU low) — by design; re-seat handles geometry"
+  ],
+  "next_move": "Top-tier style donor — co-best with SRC-nb-s1/s2; cleanest cutouts so far.",
+  "one_line": "Reference-perfect STYLE (5/5) with tick-marked knobs and the cleanest open ports; prime re-seat style donor."
+}

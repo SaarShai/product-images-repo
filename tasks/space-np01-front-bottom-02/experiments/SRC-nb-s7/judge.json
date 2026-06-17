@@ -1,0 +1,24 @@
+{
+  "id": "SRC-nb-s7",
+  "model": "nanobanana",
+  "role": "SOURCE panel (style donor for re-seat route)",
+  "geometry_score": 2,
+  "geometry_notes": "Free letterbox layout (source panel): 3 hex ports + long open slot present, bevelled, empty pale centers, V-notch + corner screws rendered. Placement free (region-IoU low) — re-seat handles geometry.",
+  "cutout_cleanliness": 5,
+  "style_score": 5,
+  "style_notes": "Reference match, densest/busiest panel. Trait1 brightness PRESENT (bright cobalt). Trait2 colorful controls PRESENT (full red/yellow/green/teal capsule + toggle set). Trait3 knobs+radial ticks PRESENT (three cream knobs with white radial ticks). Trait4 crisp hardware PRESENT (sliders with colored caps, gauge dials, dots, corner screws, crisp outlines, bevelled rims). Trait5 white bg + granulated wash PRESENT.",
+  "overall_score": 4,
+  "region_iou_agreement": "understates style — low region-IoU is free-layout placement; STYLE is a full 5/5 match.",
+  "verdict": "ACCEPT",
+  "passes": [
+    "all 5 rubric style traits present incl. cream tick-marked knobs",
+    "richest variety: capsules, toggles, gauges, sliders, dots",
+    "clean open slot + bevelled hex ports, V-notch, corner screws"
+  ],
+  "failures": [
+    "a few tiny schematic icon marks near controls (busier than refs; not full text)",
+    "free-layout opening placement (region-IoU low) — by design; re-seat handles geometry"
+  ],
+  "next_move": "Strong style donor if maximal variety is wanted; s1/s3/s4 are cleaner/simpler matches to the refs.",
+  "one_line": "Reference-perfect STYLE (5/5) with tick-marked knobs + dense colorful controls; slightly busier than the refs, otherwise a prime donor."
+}

@@ -1,0 +1,32 @@
+{
+  "image": "tasks/space-np01-front-bottom-02/experiments/E2-filled-nano-s2/raw.png",
+  "bbox": [
+    172,
+    26,
+    594,
+    1357
+  ],
+  "mean_region_iou": 0.5102,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "polygon",
+      "region_iou": 0.542
+    },
+    {
+      "i": 2,
+      "kind": "polygon",
+      "region_iou": 0.473
+    },
+    {
+      "i": 3,
+      "kind": "polygon",
+      "region_iou": 0.531
+    },
+    {
+      "i": 4,
+      "kind": "path",
+      "region_iou": 0.495
+    }
+  ]
+}

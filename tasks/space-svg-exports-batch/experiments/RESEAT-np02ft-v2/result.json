@@ -1,0 +1,27 @@
+{
+  "id": "RESEAT-np02ft-v2",
+  "method": "reseat-composite",
+  "source_art": "tasks/space-svg-exports-batch/agent-candidates/procedural-worker/np02-front-top-watercolor-control-panel-candidate.png",
+  "svg": "tasks/space-svg-exports-batch/source/np02-front-top.svg",
+  "script": "scripts/exact_bevel_composite.py",
+  "params": {
+    "rim_scale": 1.4,
+    "local_erase": true,
+    "bbox": [
+      17,
+      17,
+      1627,
+      1611
+    ]
+  },
+  "region_iou": 0.745,
+  "white_iou": 0.327,
+  "note": "SECOND SVG (generalization test). House-shaped panel, 2 cutouts (diagonal slot + circle) \u2014 geometry completely different from np01-front-bottom-02's tall 4-cutout strip.",
+  "outputs": {
+    "exact": "exact.png",
+    "overlay": "overlay.png",
+    "region_overlay": "region_overlay.png",
+    "region_iou": "region_iou.json",
+    "whitecheck": "whitecheck.json"
+  }
+}

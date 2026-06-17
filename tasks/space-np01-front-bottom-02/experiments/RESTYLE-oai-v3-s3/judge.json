@@ -1,0 +1,14 @@
+{
+  "geometry_score": 1,
+  "geometry_notes": "Overlay (red = SVG targets): worst geometry of the round. Top SVG hexagon target sits over solid paint (painted_frac 0.96, region-IoU 0.026 — opening effectively closed/missing at that position); openings shifted left, slot target's lower tail uncovered. region-IoU 0.342 (per [0.0,0.262,0.556,0.55]). Silhouette/V-notch present, internal layout misregistered.",
+  "cutout_cleanliness": 2,
+  "style_score": 4,
+  "style_notes": "Rich deep-blue granulated wash with several knobs/toggles/indicator-dot clusters and screws — decent control vocabulary. Painted rims, but the top opening reads filled rather than as a clean port. Saturated, slightly muddy vs the reference.",
+  "overall_score": 2,
+  "region_iou_agreement": "agrees — 0.342 matches the near-closed top opening (0.026) and leftward shift I see.",
+  "verdict": "PROMPT RESTART",
+  "passes": ["rich controls (knobs/toggles/dots/screws)", "deep granulated wash"],
+  "failures": ["top opening nearly filled (0.026)", "openings shifted left, slot tail uncovered", "0.342 — lowest geometry this round"],
+  "next_move": "Abandon for restyle; codex over the CN-style base misregisters worst. Use the nano restyle path instead.",
+  "one_line": "Codex restyle over CN base: rich controls but geometry collapses (0.342, top opening 0.026 near-filled) — weakest of the round."
+}

@@ -1,0 +1,33 @@
+{
+  "candidate": "tasks/space-np01-front-bottom-02/experiments/RESEAT-sparse-openai-s3/exact.png",
+  "overall": "FAIL",
+  "outside_painted": 1123,
+  "outside_frac": 0.0022,
+  "mean_iou": 0.1508,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 0.616,
+      "iou": 0.152,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 2,
+      "painted_frac": 0.655,
+      "iou": 0.129,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 3,
+      "painted_frac": 0.693,
+      "iou": 0.118,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 4,
+      "painted_frac": 0.604,
+      "iou": 0.204,
+      "verdict": "FAIL"
+    }
+  ]
+}

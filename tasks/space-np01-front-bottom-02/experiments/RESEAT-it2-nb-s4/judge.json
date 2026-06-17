@@ -1,0 +1,24 @@
+{
+  "geometry_score": 3,
+  "geometry_notes": "Overlay (viewed full-res): 3 hexagons hug their SVG targets well, but the long vertical SLOT is OFFSET right of its green outline \u2014 visible miss. region-IoU 0.87 / white-IoU 0.72 overstate it. Re-seat must fully override the source slot to exact coords.",
+  "cutout_cleanliness": 4,
+  "style_score": 4,
+  "style_notes": "BREAKTHROUGH style: bright blue matching reference, colorful capsule controls (red/orange/green/teal), AND cream knobs with white radial tick marks (the piece every prior best lacked). ~4.5/5 vs reference.",
+  "overall_score": 4,
+  "region_iou_agreement": "agrees - region-IoU 0.874 matches the overlay (openings hug hexes); white-IoU 0.72 matches the visible thin bevel ring + clean cores",
+  "verdict": "ACCEPT",
+  "passes": [
+    "bright cobalt body at reference luminosity",
+    "cream knobs WITH white radial tick marks (prior best lacked these)",
+    "colorful controls (red/orange/green/teal) preserved",
+    "openings hug SVG geometry (region-IoU 0.874)",
+    "cutout cores clean white + crisp navy bevel (white-IoU 0.72, painted 0.28)",
+    "clean white granulated background"
+  ],
+  "failures": [
+    "white-IoU 0.72 below the 0.85 mechanical gate (bevel rim ~28% by design)",
+    "SVG hexes land a hair left of the painted hex centers (minor)"
+  ],
+  "next_move": "Optionally thin the bevel rim (lower rim-scale) to push white-IoU higher, or test a source whose painted hexes are more centered.",
+  "one_line": "First result that's genuinely reference-style (bright+colorful+tick-marked knobs) AND mostly-correct geometry \u2014 but the slot is offset; not a full solution yet."
+}

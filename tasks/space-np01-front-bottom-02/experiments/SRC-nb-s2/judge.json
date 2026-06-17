@@ -1,0 +1,24 @@
+{
+  "id": "SRC-nb-s2",
+  "model": "nanobanana",
+  "role": "SOURCE panel (style donor for re-seat route)",
+  "geometry_score": 1,
+  "geometry_notes": "Panel fills the frame edge-to-edge (no white letterbox margins), so openings do not align to the SVG letterboxed coords: region-IoU 0.0 on all 4. Openings ARE present (3 hexes + long slot, bevelled, empty pale centers) but positioned per the model's own layout. Source panel — geometry fixed later by re-seat.",
+  "cutout_cleanliness": 4,
+  "style_score": 5,
+  "style_notes": "Reference-perfect style. Trait1 brightness PRESENT (bright cobalt, white paper showing). Trait2 colorful controls PRESENT (red/yellow/green/teal capsules + colored slider caps + indicator dots). Trait3 knobs+radial ticks PRESENT (three cream knobs with white radial tick marks). Trait4 crisp hardware PRESENT (sliders, dots, corner screws, crisp dark-blue outlines, bevelled rims). Trait5 white bg + granulated wash PRESENT. V-notch rendered.",
+  "overall_score": 4,
+  "region_iou_agreement": "understates style — region-IoU 0.0 is a frame/letterbox mismatch (panel fills the canvas), not a style defect; STYLE is a full 5/5 reference match.",
+  "verdict": "ACCEPT",
+  "passes": [
+    "all 5 rubric style traits present incl. cream tick-marked knobs",
+    "richest colorful control density of the set (capsules + slider caps + dots)",
+    "corner screws + top V-notch + bevelled ports with pale centers",
+    "bright luminous body, not a dark slab"
+  ],
+  "failures": [
+    "no white letterbox margins (panel fills frame) -> openings off SVG coords; re-seat route handles geometry"
+  ],
+  "next_move": "Top-tier style donor for the re-seat route — co-best with SRC-nb-s1.",
+  "one_line": "Reference-perfect STYLE (5/5) with the densest colorful controls + tick-marked knobs; ideal re-seat style donor, geometry handled downstream."
+}

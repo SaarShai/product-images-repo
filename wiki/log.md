@@ -68,3 +68,20 @@ pattern:svg-geometry-style-orchestration. Lesson: future agents should start
 with the orchestration skill for end-to-end SVG template plus reference-style
 tasks, then delegate geometry, style packet, image generation, and review to
 separate skill roles.
+
+## [2026-06-17] update | Space NP01 Front-Bottom-02 Watercolor Panel Generation
+
+Synthesized a high-resolution watercolor space control-panel illustration using generate_image matching layout contract np01-fb-02-base-trueaspect-1440x2560.png and style references, saving the raw output to tasks/space-np01-front-bottom-02/experiments/BoN2-nano-s1/raw.png.
+
+## [2026-06-17] update | Space NP01 Front-Bottom-02 Watercolor Panel Generation (BoN2-nano-s2)
+
+Synthesized a high-resolution watercolor space control-panel illustration using generate_image matching layout contract np01-fb-02-base-trueaspect-1440x2560.png and style references, saving the raw output to tasks/space-np01-front-bottom-02/experiments/BoN2-nano-s2/raw.png.
+
+## [2026-06-17] update | Space NP01 Front-Bottom-02 Watercolor Panel Generation (RESTYLE-nb-v1-s3)
+
+Synthesized a high-resolution watercolor space control-panel illustration using generate_image matching layout contract exact.png and style references, saving the raw output to tasks/space-np01-front-bottom-02/experiments/RESTYLE-nb-v1-s3/raw.png.
+
+## [2026-06-17] update | Space NP01 Front-Bottom-02 Watercolor Panel Generation (SRC-nb-s8)
+
+Synthesized a high-resolution watercolor space control-panel illustration using generate_image matching layout contract np01-fb-02-base-trueaspect-1440x2560.png and style references, saving the raw output to tasks/space-np01-front-bottom-02/experiments/SRC-nb-s8/raw.png.
+

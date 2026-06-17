@@ -1,0 +1,32 @@
+{
+  "image": "tasks/space-np01-front-bottom-02/experiments/BoN-nano/s6/raw.png",
+  "bbox": [
+    164,
+    22,
+    605,
+    1358
+  ],
+  "mean_region_iou": 0.4768,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "polygon",
+      "region_iou": 0.466
+    },
+    {
+      "i": 2,
+      "kind": "polygon",
+      "region_iou": 0.466
+    },
+    {
+      "i": 3,
+      "kind": "polygon",
+      "region_iou": 0.43
+    },
+    {
+      "i": 4,
+      "kind": "path",
+      "region_iou": 0.545
+    }
+  ]
+}

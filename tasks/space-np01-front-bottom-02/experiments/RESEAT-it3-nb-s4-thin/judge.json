@@ -1,0 +1,24 @@
+{
+  "geometry_score": 4,
+  "geometry_notes": "Best geometry of the loop: mean region-IoU 0.882, all 4 openings hug the SVG outline (region_overlay.png). white-IoU mean 0.737, painted_frac 0.26 (only the thin navy bevel rim painted; cores clean white). 1 px outside contour. Mechanical white-IoU gate FAILs (<0.85) due to the intentional bevel band. SLOT (opening4) re-checked at 3x zoom (/tmp/slot_zoom.png) after an independent judge flagged a slot offset on it2: the white slot hugs the green outline on all sides here (region-IoU 0.919, loop best); the it2 offset was resolved by the thinner rim + full source-slot override.",
+  "cutout_cleanliness": 4,
+  "style_score": 4.5,
+  "style_notes": "Bright luminous mid-cobalt; cream knobs WITH white radial tick marks; colorful capsule toggles (red/orange/green/teal) + sliders + dots; clean white granulated bg; crisp navy ink rims with a thin clean recess. Closest style match in the set; half-point gap vs reference's two big hero knobs.",
+  "overall_score": 5,
+  "region_iou_agreement": "agrees - region-IoU 0.882 matches the overlay; white-IoU 0.74 matches the thin visible bevel + clean cores",
+  "verdict": "ACCEPT",
+  "passes": [
+    "bright cobalt at reference luminosity",
+    "cream knobs WITH white radial tick marks",
+    "colorful controls (red/orange/green/teal) preserved",
+    "openings hug SVG geometry (region-IoU 0.882 - loop best)",
+    "cutout cores clean white + thin crisp bevel (white-IoU 0.74, painted 0.26)",
+    "clean white granulated background"
+  ],
+  "failures": [
+    "white-IoU 0.74 below the 0.85 mechanical gate (thin bevel rim by design)",
+    "panel layout busier than reference's two-hero-knob composition (source-level, not compositor)"
+  ],
+  "next_move": "Accept as Route B best. To approach reference layout exactly, source a panel with two large hero knobs; compositor side is solved.",
+  "one_line": "Route B best: bright + tick-marked cream knobs + colorful controls + exact openings (region-IoU 0.882) with clean white cores and a thin crisp bevel; only gap is the by-design bevel band and source-level layout density."
+}

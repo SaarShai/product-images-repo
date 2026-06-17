@@ -1,0 +1,32 @@
+{
+  "image": "tasks/space-np01-front-bottom-02/experiments/RESEAT-reflayout-nano-s3/exact.png",
+  "bbox": [
+    165,
+    1,
+    572,
+    1376
+  ],
+  "mean_region_iou": 0.8827,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "polygon",
+      "region_iou": 0.878
+    },
+    {
+      "i": 2,
+      "kind": "polygon",
+      "region_iou": 0.868
+    },
+    {
+      "i": 3,
+      "kind": "polygon",
+      "region_iou": 0.871
+    },
+    {
+      "i": 4,
+      "kind": "path",
+      "region_iou": 0.914
+    }
+  ]
+}

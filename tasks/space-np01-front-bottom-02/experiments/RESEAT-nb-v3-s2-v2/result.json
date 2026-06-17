@@ -1,0 +1,26 @@
+{
+  "id": "RESEAT-nb-v3-s2-v2",
+  "method": "reseat-composite",
+  "source_art": "tasks/space-np01-front-bottom-02/experiments/RESTYLE-nb-v3-s2/raw.png",
+  "svg": "tasks/space-np01-front-bottom-02/source/template.svg",
+  "script": "scripts/exact_bevel_composite.py",
+  "params": {
+    "rim_scale": 1.4,
+    "local_erase": true,
+    "bbox": [
+      192,
+      46,
+      577,
+      1335
+    ]
+  },
+  "region_iou": 0.777,
+  "white_iou": 0.688,
+  "outputs": {
+    "exact": "exact.png",
+    "overlay": "overlay.png",
+    "region_overlay": "region_overlay.png",
+    "region_iou": "region_iou.json",
+    "whitecheck": "whitecheck.json"
+  }
+}

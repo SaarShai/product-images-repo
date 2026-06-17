@@ -1,0 +1,33 @@
+{
+  "candidate": "tasks/space-np01-front-bottom-02/experiments/RESTYLE-nb-v1-s3/raw.png",
+  "overall": "FAIL",
+  "outside_painted": 1800,
+  "outside_frac": 0.0034,
+  "mean_iou": 0.2578,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 0.593,
+      "iou": 0.227,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 2,
+      "painted_frac": 0.605,
+      "iou": 0.218,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 3,
+      "painted_frac": 0.662,
+      "iou": 0.182,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 4,
+      "painted_frac": 0.519,
+      "iou": 0.404,
+      "verdict": "FAIL"
+    }
+  ]
+}

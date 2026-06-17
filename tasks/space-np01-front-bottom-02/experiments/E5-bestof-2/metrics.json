@@ -1,0 +1,33 @@
+{
+  "candidate": "tasks/space-np01-front-bottom-02/experiments/E5-bestof-2/raw.png",
+  "overall": "FAIL",
+  "outside_painted": 49429,
+  "outside_frac": 0.0855,
+  "mean_iou": 0.474,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 0.455,
+      "iou": 0.408,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 2,
+      "painted_frac": 0.356,
+      "iou": 0.525,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 3,
+      "painted_frac": 0.351,
+      "iou": 0.54,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 4,
+      "painted_frac": 0.392,
+      "iou": 0.422,
+      "verdict": "FAIL"
+    }
+  ]
+}

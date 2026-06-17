@@ -1,0 +1,82 @@
+{
+  "template_svg": "tasks/space-np01-front-bottom-02/source/template.svg",
+  "geometry_report": "svg-geometry-report.md",
+  "status": "auto-classified-confirm-before-generation",
+  "geometry_roles": {
+    "outer_contours": [
+      {
+        "ref": "path#4",
+        "kind": "path",
+        "bbox": [
+          31.75,
+          20.0,
+          747.23,
+          2582.29
+        ],
+        "area": 1814467.66,
+        "reason": "largest contour"
+      }
+    ],
+    "paintable_regions": [],
+    "internal_cutouts": [
+      {
+        "ref": "polygon#0",
+        "kind": "polygon",
+        "bbox": [
+          359.83,
+          1073.07,
+          550.04,
+          1237.79
+        ],
+        "area": 23497.79,
+        "reason": "contained by a larger contour"
+      },
+      {
+        "ref": "polygon#1",
+        "kind": "polygon",
+        "bbox": [
+          363.08,
+          710.98,
+          546.8,
+          894.7
+        ],
+        "area": 23497.77,
+        "reason": "contained by a larger contour"
+      },
+      {
+        "ref": "polygon#2",
+        "kind": "polygon",
+        "bbox": [
+          359.83,
+          367.88,
+          550.04,
+          532.61
+        ],
+        "area": 23497.79,
+        "reason": "contained by a larger contour"
+      },
+      {
+        "ref": "path#3",
+        "kind": "path",
+        "bbox": [
+          385.17,
+          1469.9,
+          524.7,
+          2428.0
+        ],
+        "area": 129499.07,
+        "reason": "contained by a larger contour"
+      }
+    ],
+    "keep_clear_zones": [],
+    "visual_guides": []
+  },
+  "safe_pockets": [],
+  "quiet_background_zones": [],
+  "no_focal_motif_zones": [],
+  "notes": [
+    "Auto-classified by scripts/svg_classify.py. Eyeball the geometry report and",
+    "confirm cutouts vs paintable and keep-clear roles before generating.",
+    "Set status to 'approved' once a human has confirmed roles."
+  ]
+}

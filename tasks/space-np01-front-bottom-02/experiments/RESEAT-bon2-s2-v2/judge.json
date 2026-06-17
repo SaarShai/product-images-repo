@@ -1,0 +1,21 @@
+{
+  "geometry_score": 4,
+  "geometry_notes": "All 4 openings hug the SVG green outline exactly (region_overlay.png). region-IoU 0.788, white-IoU 0.707; gap is the painted bevel band. Silhouette exact, 0 px outside contour; V-notch correct.",
+  "cutout_cleanliness": 5,
+  "style_score": 4,
+  "style_notes": "Brighter mid-blue (closer to reference luminosity) + COLORFUL controls preserved (red/green/yellow capsules, toggles, dots) \u2014 best style match yet. Still missing the cream knobs with white radial tick marks; some controls small/simple. ~4/5 vs reference, not 5.",
+  "overall_score": 4,
+  "region_iou_agreement": "agrees \u2014 region-IoU 0.788 reflects exact opening placement (openings rasterized at SVG coords); the gap from 1.0 is the painted bevel rim band, confirmed by the green overlay hugging each opening",
+  "verdict": "ACCEPT",
+  "passes": [
+    "openings exact (green outline hugs each)",
+    "FULL control vocabulary preserved: pills, dots, knobs, sliders, screws",
+    "bold navy bevel rim, clean white cores",
+    "essentially no halo \u2014 cleanest composite of the set"
+  ],
+  "failures": [
+    "white-IoU 0.71 (bold painted rim ~28% of each opening, by design)"
+  ],
+  "next_move": "Accept \u2014 strongest overall candidate (richest controls + cleanest re-seat).",
+  "one_line": "Best yet on BOTH axes: exact openings + bright-ish body + colorful reference controls; gap = no tick-marked knobs."
+}

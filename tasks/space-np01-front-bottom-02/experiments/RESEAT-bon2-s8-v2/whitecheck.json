@@ -1,0 +1,33 @@
+{
+  "candidate": "tasks/space-np01-front-bottom-02/experiments/RESEAT-bon2-s8-v2/exact.png",
+  "overall": "FAIL",
+  "outside_painted": 0,
+  "outside_frac": 0.0,
+  "mean_iou": 0.7056,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 0.273,
+      "iou": 0.727,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 2,
+      "painted_frac": 0.269,
+      "iou": 0.731,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 3,
+      "painted_frac": 0.3,
+      "iou": 0.693,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 4,
+      "painted_frac": 0.214,
+      "iou": 0.671,
+      "verdict": "FAIL"
+    }
+  ]
+}

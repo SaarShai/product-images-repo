@@ -1,0 +1,32 @@
+{
+  "image": "tasks/space-np01-front-bottom-02/experiments/RESTYLE-nb-v3-s3/raw.png",
+  "bbox": [
+    187,
+    33,
+    581,
+    1350
+  ],
+  "mean_region_iou": 0.7817,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "polygon",
+      "region_iou": 0.796
+    },
+    {
+      "i": 2,
+      "kind": "polygon",
+      "region_iou": 0.777
+    },
+    {
+      "i": 3,
+      "kind": "polygon",
+      "region_iou": 0.725
+    },
+    {
+      "i": 4,
+      "kind": "path",
+      "region_iou": 0.829
+    }
+  ]
+}

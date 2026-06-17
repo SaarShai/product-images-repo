@@ -1,0 +1,32 @@
+{
+  "image": "tasks/space-np01-front-bottom-02/experiments/RESEAT-sparse-openai-s1/exact.png",
+  "bbox": [
+    281,
+    21,
+    663,
+    1652
+  ],
+  "mean_region_iou": 0.7612,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "polygon",
+      "region_iou": 0.759
+    },
+    {
+      "i": 2,
+      "kind": "polygon",
+      "region_iou": 0.761
+    },
+    {
+      "i": 3,
+      "kind": "polygon",
+      "region_iou": 0.737
+    },
+    {
+      "i": 4,
+      "kind": "path",
+      "region_iou": 0.788
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "image": "tasks/space-np01-front-bottom-02/experiments/CN1-controlnet/raw.png",
+  "bbox": [
+    0,
+    0,
+    384,
+    1296
+  ],
+  "mean_region_iou": 0.7015,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "polygon",
+      "region_iou": 0.698
+    },
+    {
+      "i": 2,
+      "kind": "polygon",
+      "region_iou": 0.685
+    },
+    {
+      "i": 3,
+      "kind": "polygon",
+      "region_iou": 0.674
+    },
+    {
+      "i": 4,
+      "kind": "path",
+      "region_iou": 0.749
+    }
+  ]
+}

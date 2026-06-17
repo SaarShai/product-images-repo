@@ -1,0 +1,32 @@
+{
+  "image": "tasks/space-np01-front-bottom-02/experiments/RESEAT-bon2-s8/exact.png",
+  "bbox": [
+    206,
+    10,
+    568,
+    1366
+  ],
+  "mean_region_iou": 0.8756,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "polygon",
+      "region_iou": 0.868
+    },
+    {
+      "i": 2,
+      "kind": "polygon",
+      "region_iou": 0.871
+    },
+    {
+      "i": 3,
+      "kind": "polygon",
+      "region_iou": 0.864
+    },
+    {
+      "i": 4,
+      "kind": "path",
+      "region_iou": 0.9
+    }
+  ]
+}

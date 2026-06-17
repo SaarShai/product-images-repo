@@ -1,0 +1,32 @@
+{
+  "image": "tasks/space-np01-front-bottom-02/experiments/SRC-oai-s1/raw.png",
+  "bbox": [
+    264,
+    16,
+    684,
+    1652
+  ],
+  "mean_region_iou": 0.1891,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "polygon",
+      "region_iou": 0.0
+    },
+    {
+      "i": 2,
+      "kind": "polygon",
+      "region_iou": 0.0
+    },
+    {
+      "i": 3,
+      "kind": "polygon",
+      "region_iou": 0.365
+    },
+    {
+      "i": 4,
+      "kind": "path",
+      "region_iou": 0.392
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "geometry_score": 4,
+  "geometry_notes": "All 4 openings hug the SVG green outline exactly. region-IoU 0.784, white-IoU 0.706; gap is the painted bevel band. Silhouette exact, 0 px outside contour.",
+  "cutout_cleanliness": 5,
+  "style_score": 4,
+  "style_notes": "Monochrome deep-blue watercolor: blue pill buttons, sliders, two recessed round knobs, indicator dots, corner screws ALL PRESERVED. Cohesive tonal style. Bevel rim bold navy, clean cores, near-zero halo. Less color variety than s2 (intentional monochrome source) so slightly less rich vs the multicolor references.",
+  "overall_score": 4,
+  "region_iou_agreement": "agrees \u2014 region-IoU 0.784 reflects exact opening placement (openings rasterized at SVG coords); the gap from 1.0 is the painted bevel rim band, confirmed by the green overlay hugging each opening",
+  "verdict": "ACCEPT",
+  "passes": [
+    "openings exact (green outline hugs each)",
+    "controls preserved: pills, knobs, sliders, dots, screws",
+    "bold rim, clean cores, no halo"
+  ],
+  "failures": [
+    "monochrome \u2014 fewer accent colors than the multicolor references",
+    "white-IoU 0.71 (bold rim by design)"
+  ],
+  "next_move": "Accept; pick s2 over s8 if multicolor accents are wanted.",
+  "one_line": "Exact openings + preserved monochrome control panel + bold rim, no halo; less colorful than refs (~90% there)."
+}

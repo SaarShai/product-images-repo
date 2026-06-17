@@ -1,0 +1,32 @@
+{
+  "image": "tasks/space-np01-front-bottom-02/experiments/E4-lineart-nano/raw.png",
+  "bbox": [
+    254,
+    18,
+    600,
+    1245
+  ],
+  "mean_region_iou": 0.5734,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "polygon",
+      "region_iou": 0.574
+    },
+    {
+      "i": 2,
+      "kind": "polygon",
+      "region_iou": 0.573
+    },
+    {
+      "i": 3,
+      "kind": "polygon",
+      "region_iou": 0.572
+    },
+    {
+      "i": 4,
+      "kind": "path",
+      "region_iou": 0.574
+    }
+  ]
+}

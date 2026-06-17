@@ -1,0 +1,32 @@
+{
+  "image": "tasks/space-np01-front-bottom-02/experiments/FIX-nano-v1/raw.png",
+  "bbox": [
+    189,
+    0,
+    578,
+    1376
+  ],
+  "mean_region_iou": 0.734,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "polygon",
+      "region_iou": 0.811
+    },
+    {
+      "i": 2,
+      "kind": "polygon",
+      "region_iou": 0.799
+    },
+    {
+      "i": 3,
+      "kind": "polygon",
+      "region_iou": 0.693
+    },
+    {
+      "i": 4,
+      "kind": "path",
+      "region_iou": 0.632
+    }
+  ]
+}
