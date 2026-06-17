@@ -158,6 +158,15 @@ applies to: berlin-skyline-live-example scout phase; future skyline/city-scape t
 next action: PROMPT RESTART
 ```
 
+```text
+date: 2026-06-17
+artifact inspected: refs/user-feedback/20260616-image-a-artwork-only.png; outputs/reviews/train-exit-repair/train-exit-repair-options-correct-svg-overlay-side-by-side.png
+user feedback: The train and tracks seem to stop at the left door flap and reach a barrier; add a tunnel there or a bridge arch that the train goes through.
+rule learned: A run-through element must not merely touch a boundary or masonry mass. If a train/track reaches a door flap, bridge tower, seam, or panel transition, the composition should visibly show continuation through a tunnel, viaduct opening, bridge arch, or other plausible infrastructure.
+applies to: berlin-skyline-live-example local repair; future skyline/city-scape tasks with trains, roads, bridges, or rails
+next action: LOCAL PATCH
+```
+
 ## Proof-Before-Spend Scout Notes
 
 - Local scripted scout artifacts:
