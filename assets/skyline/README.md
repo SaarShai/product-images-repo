@@ -13,7 +13,10 @@ Default guide roles in the SVG:
 - black strokes: production panel borders, outer contours, door flaps, cut and
   hinge references;
 - yellow dashed strokes: safe/margin guides;
-- red dashed strokes and rectangles: no-crop or no-focal-feature zones;
+- blue dashed strokes (`#1c75bc`): the dividing lines between the top and bottom
+  sub-panels (top/bottom separators); features must read whole within a
+  sub-panel and not be cropped by them;
+- red dashed rectangles (`#ed1c24`): no-crop / no-focal-feature keep-clear zones;
 - green dashed strokes: temporary top-contour guides to adapt to building tops;
 - orange dashed stroke: central saloon-door arch guide.
 

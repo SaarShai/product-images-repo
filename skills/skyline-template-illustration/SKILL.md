@@ -46,7 +46,7 @@ the user explicitly overrides them.
   composite of up to three buildings/landmarks.
 - Buildings, landmarks, and recognizable features must not be cropped or split
   between panels.
-- Specific features must not be cropped by red dashed top/bottom separators,
+- Specific features must not be cropped by blue dashed top/bottom separators,
   red dashed rectangles, panel seams, or cut lines.
 - Bridges, trains, roads, rivers, rails, cables, and similar run-through
   structures may cross panels when they read as continuous infrastructure, not
@@ -79,8 +79,12 @@ In the default skyline SVG:
   physical cut/hinge references.
 - Yellow dashed strokes are margin/safe-area guides. Primary illustrations
   should fit inside them.
-- Red dashed strokes and rectangles are no-crop/no-focal-feature zones, unless
-  the user explicitly asks to place a specific simple feature there.
+- Blue dashed strokes (`#1c75bc`) are the dividing lines between the top and
+  bottom sub-panels (top/bottom separators). Features must read whole within a
+  sub-panel and must not be cropped by these dividers.
+- Red dashed rectangles (`#ed1c24`) are no-crop/no-focal-feature keep-clear
+  zones, unless the user explicitly asks to place a specific simple feature
+  there.
 - Red-center lanes may contain quiet, non-iconic filler such as plain facade,
   wall, rail, water, or train body. They should not contain recognizable
   features such as statues, signs, faces, text, distinctive roof tips, or named
@@ -118,9 +122,9 @@ model and verify afterward.
 Prompt boundary preflight: before sending any skyline prompt to image
 generation, read the exact prompt text and remove template-geometry language.
 Forbidden prompt concepts include `SVG`, `contour`, `panel proportions`,
-`red zone`, `green line`, `orange arch`, `saloon-door guide`, `template guide`,
-`safe margin`, and `production stroke`, unless the prompt is explicitly for a
-non-production diagnostic guide image. Put those requirements in the task brief
+`red zone`, `blue separator`, `green line`, `orange arch`, `saloon-door guide`,
+`template guide`, `safe margin`, and `production stroke`, unless the prompt is
+explicitly for a non-production diagnostic guide image. Put those requirements in the task brief
 or verifier checklist instead, then overlay the real SVG after generation.
 
 If a generated candidate includes nice adapted top contour or good composition
@@ -234,7 +238,7 @@ Verification agents must inspect actual images, not only prompts or metrics.
 - The task records the exact template SVG and reference images used.
 - A skyline composition plan exists before generation.
 - The plan allocates landmark/composite content to all three physical panels.
-- Red/yellow/green/orange guide roles were recorded from the actual SVG.
+- Blue/red/yellow/green/orange guide roles were recorded from the actual SVG.
 - A visual style packet was built and inspected when references define style.
 - A proof-before-spend scout gate was run, or the task records why it was not
   needed.
