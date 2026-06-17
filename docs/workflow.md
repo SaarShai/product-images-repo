@@ -1,5 +1,8 @@
 # Image Generation Workflow
 
+> **Tooling:** how to invoke generation (Codex / Antigravity `agy` — subscription,
+> no API keys) is in [`image-generation.md`](image-generation.md).
+
 1. Add source references under `assets/`.
 2. Write one task brief under `tasks/<task>/session-brief.md`.
 3. Keep prompt variants under `tasks/<task>/prompts/`.

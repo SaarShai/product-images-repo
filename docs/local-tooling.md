@@ -50,8 +50,12 @@ agy -p "Say hello in one short sentence and report the active model label if ava
 ```
 
 The verified text-model list included Gemini 3.5 Flash, Gemini 3.1 Pro, Claude
-Sonnet 4.6, Claude Opus 4.6, and GPT-OSS 120B variants. No direct Nano Banana
-image model was exposed by `agy models` at setup time.
+Sonnet 4.6, Claude Opus 4.6, and GPT-OSS 120B variants. Nano Banana is **not** a
+top-level model in `agy models`; image generation is a built-in agent **tool** —
+drive it headlessly with `agy --print`. See
+[`image-generation.md`](image-generation.md) for the exact image-generation
+commands (Codex for OpenAI "image 2"; `agy` for Nano Banana), both
+subscription-only / no API keys.
 
 ## SVG Preview
 

@@ -4,6 +4,13 @@ Skills catalog: see [`skills/SKILLS_INDEX.md`](skills/SKILLS_INDEX.md).
 
 Each skill loads on its own trigger; full bodies are not in the boot context. Run `./install.sh` to wire skills into the current host.
 
+## Image generation
+
+Image generation uses subscription CLIs (no API keys): OpenAI "image 2" via the
+Codex CLI (priority) and Nano Banana via the Antigravity `agy` CLI. The plain
+`gemini` CLI cannot generate images. Commands + caveats:
+[`docs/image-generation.md`](docs/image-generation.md).
+
 <!-- brainer:skills-catalog:start -->
 ## Repo-local trigger skills (resident at boot)
 
