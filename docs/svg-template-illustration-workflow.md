@@ -13,6 +13,7 @@ Each reusable task should have this structure:
 tasks/<task>/
   source/                 authoritative SVG template(s)
   refs/                   style and color references
+  style-packet/           visual reference crops/sheets for style agents
   prompts/                prompt variants
   outputs/generated/      raw generated or procedural artwork
   outputs/reviews/        overlays, crops, score reports, judge notes
@@ -74,6 +75,20 @@ Identify:
 If the report misses polygons or relevant SVG elements, inspect the SVG directly
 or improve the task-specific parser before generating.
 
+Screenery export caution: some contours are not one closed `<path>`. A panel
+edge may be split into an open path plus a sibling `<polyline>` or similar
+segment. Do not let geometry tooling close such paths diagonally until you have
+checked whether a nearby line/polyline supplies the real bottom or side edge.
+The `np01-back-bottom.svg` lesson is the concrete failure mode: ignoring the
+bottom/right polyline removed the legitimate lower-right panel area.
+
+Socket/notch caution: edge sockets, bite notches, tabs, and interlocking shapes
+are carved-out negative space in the contour. Their SVG paths may extend outside
+the larger paintable body bounds, but the production meaning is cutout, not
+protrusion. Do not rely only on representative-point containment. Check overlap
+with the larger paintable contour, raw SVG order, and the visual debug mask
+before classifying these shapes as paintable.
+
 Fill `template-manifest.json` before prompting. The manifest should name outer
 contours, paintable regions, internal cutouts, keep-clear zones, visual guides,
 safe pockets, quiet background zones, and no-focal-motif zones. If you cannot
@@ -93,21 +108,85 @@ For example, a control-panel task should place dials, sliders, bolts, pipes,
 and highlights in named safe pockets. It should not draw a full rectangular
 control panel and erase a diagonal slot later.
 
-## Step 4: Prompt From Geometry Plus References
+## Step 4: Build The Reference Style Packet
+
+When style matters, build a visual packet from the actual reference images
+before asking any agent to generate artwork:
+
+```bash
+python3 scripts/build_reference_style_packet.py tasks/<task>
+```
+
+Inspect:
+
+- `tasks/<task>/style-packet/reference-contact-sheet.png`
+- `tasks/<task>/style-packet/style-exemplar-sheet.png`
+- `tasks/<task>/style-packet/style-packet.json`
+
+The style packet is the source of style truth. It should contain full-reference
+crops, region crops, texture and edge-treatment crops, accent/component crops,
+palette swatches, and a style-agent prompt that lists the images to attach.
+
+## Step 5: Split Style Agents From Geometry Agents
+
+For difficult template work, do not ask one agent to solve style and geometry in
+one pass.
+
+- Style/image-gen agents use `.codex/skills/svg-template-style-agent/SKILL.md`
+  and `prompts/prompt-v2-style-packet-elements-first.md`. They generate
+  style-matched element sheets from the packet images.
+- Geometry agents use `.codex/skills/svg-template-illustration/SKILL.md`. They
+  place accepted elements into safe pockets and verify outer/cutout masks.
+
+This separation makes failures easier to diagnose: a style miss is not hidden
+behind a geometry pass, and a geometry miss is not excused by a beautiful style.
+
+## Step 6: Choose Element Placement Or Whole Redraw
+
+Choose the smallest route that attacks the current bottleneck:
+
+- Use element-sheet generation plus geometry placement when the missing piece is
+  individual reference-style controls or material fragments.
+- Use whole-panel redraw/restyle when the best candidates already prove the
+  rough layout/geometry but look procedural, collaged, or sprite-assembled.
+  Attach the rough candidates as composition maps, attach the style references
+  and style packet, and ask the image model to repaint one coherent watercolor
+  object. Then run the SVG exporter/checker only after the redraw is visually
+  promising.
+
+The 2026-06-16 top-temp lesson is the model: B/C roughs were poor final art but
+excellent image-generation inputs. Three redraw prompts produced much better
+watercolor panels because the model solved cohesive style synthesis directly.
+
+Hard routing rule for geometry-approved style fixes: if the user says the
+dimensions/location/geometry are good and only the style needs adaptation, do
+not style the approved raster by local filters, crop compositing, or
+`locked-geometry` scripts. Use the approved raster only as a composition map,
+attach the real style references/style packet, produce a raw whole-panel redraw,
+and only then run SVG export/checks as the downstream geometry gate. If the image
+tool cannot attach those images, prepare the attachment-aware prompt package
+instead of doing a prompt-only substitute.
+
+## Step 7: Prompt From Geometry Plus References
 
 A useful prompt has both halves:
 
 - geometry constraints from the SVG;
-- visual vocabulary from the references.
+- visual vocabulary from the packet images made from the references.
 
-Do not rely on palette words alone. Include object vocabulary, edge treatment,
-line weight, density, shape simplicity, material language, and lighting from the
-references.
+Do not rely on palette words alone. Attach style-packet images. Include object
+vocabulary, edge treatment, line weight, density, shape simplicity, material
+language, and lighting from the packet crops.
+
+For Screenery watercolor control panels, include edge treatment explicitly:
+dark blue rim lines, slight raised bevel, soft inner shadow, pale highlights,
+and optional subtle rim/lip around the contour and cutout rims. Keep rims
+watercolor-native so they do not read as extra cutouts.
 
 Generate one or a small batch of variants. Save every candidate under
 `outputs/generated/` with enough timestamp or variant information to trace it.
 
-## Step 5: Export, Score, And Make Review Artifacts
+## Step 8: Export, Score, And Make Review Artifacts
 
 Use task-specific exporters and scorers when available:
 
@@ -130,7 +209,7 @@ Minimum review artifacts:
 - cutout crop/contact sheet for small holes or scar-prone areas;
 - judge note using `docs/review-judge-checklist.md`.
 
-## Step 6: Judge By Looking
+## Step 9: Judge By Looking
 
 A mechanical pass is a rejection gate, not final approval. Use a judge pass that
 actually opens the images.
@@ -139,16 +218,26 @@ The judge must answer:
 
 - Does the artwork fit the contour without visible rescue cropping?
 - Are cutouts and keep-clear zones clean?
+- Are side sockets/notches blank where the SVG intends carved-out cutout space,
+  including paths whose coordinates extend past the paintable body edge?
+- Are bottom/right panel areas complete, or did an open path get closed with a
+  diagonal because a sibling polyline was ignored?
 - Does the style match the references beyond color?
+- Does the contour/cutout edge treatment have the reference bevel/rim quality,
+  without looking like a hard crop mask?
 - Are important motifs safely away from seams and production cuts?
 - Is the right next move accept, local patch, prompt restart, or blocked?
 
-## Step 7: Reset Or Patch Deliberately
+## Step 10: Reset Or Patch Deliberately
 
 Restart from the prompt/source when:
 
 - the result is a clipped rectangle;
 - the style misses the reference vocabulary;
+- style agents described the references from memory instead of using a visual
+  style packet;
+- geometry-safe candidates still look like procedural placement or crop
+  collage; use whole-redraw from roughs instead of more placement polishing;
 - several repairs have accumulated artifacts;
 - feedback changes the task rule;
 - a patch would require broad inpaint over core composition.
@@ -167,7 +256,7 @@ The space narrow 1+2 reference-first restart is the model for abandoning a
 geometry-valid but style-wrong procedural sketch:
 `tasks/space-narrow-1-2/session-brief.md`.
 
-## Step 8: Record The Decision
+## Step 11: Record The Decision
 
 Every handoff or review note should include:
 

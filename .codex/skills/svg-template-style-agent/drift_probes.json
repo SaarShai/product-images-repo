@@ -1,0 +1,10 @@
+[
+  {
+    "id": "geometry-approved-style-adaptation-requires-whole-panel-redraw",
+    "kind": "forbidden_regex",
+    "forbidden_pattern": "(?i)(locked[-_ ]geometry|approved geometry locked|svg mask/rim (is )?restored last|style-adapt the approved geometry|style adaptation with svg geometry locked)",
+    "unless_pattern": "(?i)(whole[-_ ]panel redraw|whole[-_ ]image redraw|composition map|raw redraw|not (a )?pixel source|attachment-aware)",
+    "message": "Geometry-approved style adaptation is drifting into locked-geometry/local restyle. Use the approved geometry only as a composition map, attach style references/style packet, generate a whole-panel redraw, then run SVG checks downstream.",
+    "severity": "warn"
+  }
+]

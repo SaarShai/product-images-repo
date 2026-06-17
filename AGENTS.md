@@ -33,11 +33,38 @@ palette-shifting or restyling the same procedural sketch. Restart from a
 reference-first composition because style lives in object vocabulary, simplicity,
 lighting, and shape language, not just sampled colors.
 
+When style has failed, do not ask the next image-generation agent to infer the
+look from prose. Build a visual style packet from the actual reference images
+with `python3 scripts/build_reference_style_packet.py tasks/<task>`, attach the
+packet crops/contact sheets to the style agent, and have that agent generate
+style-matched elements before any geometry agent places them.
+
+If the best rough candidates already preserve the layout/geometry but still look
+assembled, procedural, or collaged, stop polishing the placement pipeline. Feed
+those roughs plus the style references/style packet into image generation as
+composition inputs and ask for a whole-panel redraw/restyle. Then use the exact
+SVG exporter/checker as the downstream geometry gate. For watercolor control
+panels, explicitly request the successful edge language: dark blue rim, slight
+bevel, soft inner shadow, pale edge highlight, and occasional subtle rim/lip.
+
+If the user approves geometry/dimensions/location and asks only for style
+adaptation, this is the same routing case: the approved geometry image is a
+composition map and downstream gate, not a raster to locally repaint or texture.
+Do not substitute locked-geometry scripts, packet-crop compositing, palette
+shifts, or prompt-only attempts for the attachment-aware whole-panel redraw
+method.
+
 For any new SVG-template illustration task, use the repo-local skill at
 `.codex/skills/svg-template-illustration/SKILL.md`. For acceptance, repair, or
 restart decisions, use `.codex/skills/svg-template-review-judge/SKILL.md` and
 actually inspect the artwork/overlay/debug images. A JSON or metric `PASS` is a
 rejection gate only; it is not production approval.
+
+For skyline or city-scape three-panel collections, use the repo-local skill at
+`.codex/skills/skyline-template-illustration/SKILL.md` and the source-of-truth
+workflow at `docs/skyline-template-illustration-workflow.md`. The default
+template is `assets/skyline/city-skyline template.svg` unless the user uploads
+a replacement.
 
 ## Template-fit repair learning
 
@@ -52,3 +79,12 @@ the mechanical gate: still review the hole crop and full-frame export. When the
 main artwork is good but the cutouts are scarred, prefer bounded local donor
 repair plus exact SVG cutout cleanup over broad inpaint or repeated prompt-only
 nudges.
+
+## Retrospective learning
+
+When user feedback corrects the workflow, when an experiment finally works after
+multiple failed approaches, or at the end of a non-trivial image-generation
+task, use the repo-local skill at `.codex/skills/task-retrospective/SKILL.md`.
+Run its evidence-first retrospective before the final report so durable lessons
+are written to the narrowest skill, workflow doc, or wiki page instead of being
+left only in chat.

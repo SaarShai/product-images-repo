@@ -52,6 +52,11 @@ def copy_unique(source: Path, destination_dir: Path, preferred_name: str) -> Pat
     return candidate
 
 
+def is_skyline_task(task_slug: str, source_svg: Path, title: str = "") -> bool:
+    haystack = f"{task_slug} {title} {source_svg}".lower()
+    return any(term in haystack for term in ["skyline", "cityscape", "city-scape", "city-skyline"])
+
+
 def write(path: Path, content: str, dry_run: bool) -> None:
     if dry_run:
         print(f"would write {rel_or_abs(path)}")
@@ -85,6 +90,7 @@ def main() -> int:
     planned_dirs = [
         task_dir / "source",
         task_dir / "refs",
+        task_dir / "style-packet",
         task_dir / "prompts",
         task_dir / "outputs" / "generated",
         task_dir / "outputs" / "reviews",
@@ -123,6 +129,13 @@ def main() -> int:
         "REF_LIST": ref_list,
     }
 
+    is_skyline = is_skyline_task(task_slug, source_svg, title)
+    workflow = "docs/skyline-template-illustration-workflow.md" if is_skyline else "docs/svg-template-illustration-workflow.md"
+    skill = (
+        ".codex/skills/skyline-template-illustration/SKILL.md"
+        if is_skyline
+        else ".codex/skills/svg-template-illustration/SKILL.md"
+    )
     manifest = {
         "created_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "task": task_slug,
@@ -132,14 +145,24 @@ def main() -> int:
         "task_svg": rel_or_abs(task_svg),
         "style_references_original": [str(path) for path in refs],
         "task_style_references": [rel_or_abs(path) for path in task_refs],
-        "workflow": "docs/svg-template-illustration-workflow.md",
+        "workflow": workflow,
+        "base_workflow": "docs/svg-template-illustration-workflow.md",
+        "skill": skill,
         "review_checklist": "docs/review-judge-checklist.md",
     }
+    if is_skyline:
+        manifest["asset_map"] = "assets/skyline/README.md"
 
     write(task_dir / "asset-manifest.json", json.dumps(manifest, indent=2) + "\n", args.dry_run)
     write(task_dir / "template-manifest.json", render_template(TEMPLATE_DIR / "template-manifest.json", values), args.dry_run)
     write(task_dir / "session-brief.md", render_template(TEMPLATE_DIR / "session-brief.md", values), args.dry_run)
     write(task_dir / "review-judge.md", render_template(TEMPLATE_DIR / "review-judge.md", values), args.dry_run)
+    if is_skyline:
+        write(
+            task_dir / "skyline-example-feedback.md",
+            render_template(TEMPLATE_DIR / "skyline-example-feedback.md", values),
+            args.dry_run,
+        )
     write(
         task_dir / "prompts" / "prompt-v1-contour-first.md",
         (TEMPLATE_DIR / "prompts" / "prompt-v1-contour-first.md").read_text(encoding="utf-8"),
@@ -150,6 +173,7 @@ def main() -> int:
         task_dir / "outputs" / "generated" / ".gitkeep",
         task_dir / "outputs" / "reviews" / ".gitkeep",
         task_dir / "outputs" / "final" / ".gitkeep",
+        task_dir / "style-packet" / ".gitkeep",
     ]:
         write(keep, "", args.dry_run)
 
