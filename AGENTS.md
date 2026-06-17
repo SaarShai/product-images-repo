@@ -2,6 +2,12 @@
 
 ## Image-generation iteration: reset vs. patch
 
+**How to invoke image generation** (which CLI / command) is documented in
+[`docs/image-generation.md`](docs/image-generation.md): subscription-only routes,
+no API keys — OpenAI "image 2" via the Codex CLI (`codex exec`, priority) and
+Nano Banana via the Antigravity `agy` CLI. The plain `gemini` CLI cannot generate
+images.
+
 When a result is imperfect or needs improving, do not assume the next step
 should be another edit or repair pass on that same result. Treat the latest
 output as evidence. Before continuing from it, consider whether the accumulated
