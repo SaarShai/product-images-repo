@@ -115,6 +115,14 @@ the model to redraw or reinterpret the template. If a patch needs exact
 geometry context, create a mask, crop, or external overlay artifact outside the
 model and verify afterward.
 
+Prompt boundary preflight: before sending any skyline prompt to image
+generation, read the exact prompt text and remove template-geometry language.
+Forbidden prompt concepts include `SVG`, `contour`, `panel proportions`,
+`red zone`, `green line`, `orange arch`, `saloon-door guide`, `template guide`,
+`safe margin`, and `production stroke`, unless the prompt is explicitly for a
+non-production diagnostic guide image. Put those requirements in the task brief
+or verifier checklist instead, then overlay the real SVG after generation.
+
 If a generated candidate includes nice adapted top contour or good composition
 but redraws the template wider, shorter, lower, or otherwise off-SVG, keep it
 only as visual evidence. Registering or panel-warping it may be useful for a

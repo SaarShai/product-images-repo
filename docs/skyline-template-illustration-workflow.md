@@ -181,6 +181,14 @@ include contour/panel/guide instructions that invite the model to redraw or
 reinterpret the template. If exact geometry context is needed, provide it as a
 mask, crop, or external overlay artifact and verify the result afterward.
 
+Prompt boundary preflight: before sending any skyline prompt to image
+generation, read the exact prompt text and remove template-geometry language.
+Forbidden prompt concepts include `SVG`, `contour`, `panel proportions`,
+`red zone`, `green line`, `orange arch`, `saloon-door guide`, `template guide`,
+`safe margin`, and `production stroke`, unless the prompt is explicitly for a
+non-production diagnostic guide image. Put those requirements in the task brief
+or verifier checklist instead, then overlay the real SVG after generation.
+
 Overlay the real SVG after generation and measure against it. If a generated
 candidate includes a good adapted top contour but changes the template
 dimensions, keep the candidate as visual evidence only. Use deterministic
