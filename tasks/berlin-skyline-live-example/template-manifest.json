@@ -30,7 +30,7 @@
       "panel seams and stepped cut edges"
     ],
     "keep_clear_zones": [
-      "red dashed horizontal/wavy top-bottom separators",
+      "blue dashed horizontal/wavy top-bottom separators",
       "red dashed vertical rectangles",
       "red dashed seam-adjacent strips",
       "central saloon-door seam",
@@ -46,8 +46,12 @@
         "role": "safe/margin guides"
       },
       {
-        "color": "red dashed",
-        "role": "no-crop and no-focal-feature zones"
+        "color": "blue dashed (#1c75bc)",
+        "role": "dividing lines between the top and bottom sub-panels (top/bottom separators); features must not be cropped by them"
+      },
+      {
+        "color": "red dashed rectangles (#ed1c24)",
+        "role": "no-crop / no-focal-feature keep-clear zones"
       },
       {
         "color": "green dashed",

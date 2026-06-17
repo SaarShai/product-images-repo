@@ -31,8 +31,11 @@ In `assets/skyline/city-skyline template.svg`:
 - Black strokes (`#231f20`) are production panel borders, outer contours, door
   flaps, and cut/hinge references.
 - Yellow dashed strokes (`#ffdb55`) are margin and safe-area guides.
-- Red dashed strokes (`#ed1c24`) are no-crop and no-focal-feature zones, unless
-  explicitly repurposed by the user.
+- Blue dashed strokes (`#1c75bc`) are the dividing lines between the top and
+  bottom sub-panels (top/bottom separators); features must not be cropped by
+  them.
+- Red dashed rectangles (`#ed1c24`) are no-crop and no-focal-feature keep-clear
+  zones, unless explicitly repurposed by the user.
 - Green dashed strokes (`#39b54a`) are temporary top-contour guides that should
   be adapted to the actual tops of buildings and landmarks.
 - Orange dashed strokes (`#f7941d`) mark the central saloon-door arch guide.
@@ -83,9 +86,11 @@ choice changes the visual premise.
 
 ## Red Zone Rules
 
-Red dashed separators and rectangles are safety zones. Avoid putting specific
-recognizable features there. They can contain white sky, simple wall/facade
-texture, generic cloudless background, or other non-specific filler when needed.
+Red dashed rectangles are keep-clear safety zones, and blue dashed strokes are
+the top/bottom sub-panel separators (features must not be cropped by them). Avoid
+putting specific recognizable features inside a red rectangle or across a blue
+separator. The red lanes can contain white sky, simple wall/facade texture,
+generic cloudless background, or other non-specific filler when needed.
 
 The good fairy/castle example shows the desired behavior: characters and birds
 are moved away from cut lines, while a plain wall lane can occupy the middle.
@@ -166,7 +171,7 @@ on a white/paper-white background:
 
 - no black panel borders;
 - no yellow dashed margins;
-- no red dashed rectangles or separators;
+- no red dashed rectangles or blue dashed separators;
 - no green top-contour guide line;
 - no orange arch guide;
 - no door split, knobs, or production strokes.
@@ -184,9 +189,9 @@ mask, crop, or external overlay artifact and verify the result afterward.
 Prompt boundary preflight: before sending any skyline prompt to image
 generation, read the exact prompt text and remove template-geometry language.
 Forbidden prompt concepts include `SVG`, `contour`, `panel proportions`,
-`red zone`, `green line`, `orange arch`, `saloon-door guide`, `template guide`,
-`safe margin`, and `production stroke`, unless the prompt is explicitly for a
-non-production diagnostic guide image. Put those requirements in the task brief
+`red zone`, `blue separator`, `green line`, `orange arch`, `saloon-door guide`,
+`template guide`, `safe margin`, and `production stroke`, unless the prompt is
+explicitly for a non-production diagnostic guide image. Put those requirements in the task brief
 or verifier checklist instead, then overlay the real SVG after generation.
 
 Overlay the real SVG after generation and measure against it. If a generated
@@ -374,7 +379,7 @@ Checkpoint 3: First candidate
   checked against the SVG when the candidate contains any visible guide
   structure.
 - Landmarks are whole within panels.
-- Red/yellow/orange/green guide intent is respected.
+- Blue/red/yellow/orange/green guide intent is respected.
 - Sky is white unless overridden.
 - Vision judge inspects the candidate and overlay.
 
