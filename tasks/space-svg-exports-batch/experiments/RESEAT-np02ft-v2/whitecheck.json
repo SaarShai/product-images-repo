@@ -1,0 +1,21 @@
+{
+  "candidate": "tasks/space-svg-exports-batch/experiments/RESEAT-np02ft-v2/exact.png",
+  "overall": "FAIL",
+  "outside_painted": 233,
+  "outside_frac": 0.0001,
+  "mean_iou": 0.3267,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 0.259,
+      "iou": 0.437,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 2,
+      "painted_frac": 0.184,
+      "iou": 0.216,
+      "verdict": "FAIL"
+    }
+  ]
+}

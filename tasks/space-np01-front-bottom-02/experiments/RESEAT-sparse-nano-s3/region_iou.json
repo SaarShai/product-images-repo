@@ -1,0 +1,32 @@
+{
+  "image": "tasks/space-np01-front-bottom-02/experiments/RESEAT-sparse-nano-s3/exact.png",
+  "bbox": [
+    189,
+    54,
+    580,
+    1334
+  ],
+  "mean_region_iou": 0.5208,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "polygon",
+      "region_iou": 0.706
+    },
+    {
+      "i": 2,
+      "kind": "polygon",
+      "region_iou": 0.483
+    },
+    {
+      "i": 3,
+      "kind": "polygon",
+      "region_iou": 0.0
+    },
+    {
+      "i": 4,
+      "kind": "path",
+      "region_iou": 0.894
+    }
+  ]
+}

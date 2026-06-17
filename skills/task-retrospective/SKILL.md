@@ -1,6 +1,6 @@
 ---
 name: task-retrospective
-description: Use at the end of any non-trivial task (after the work is verified, before the final report), when the user gives a corrective message mid-task, or when the user types /retro. Runs a fixed agent self-audit (incl. 5-whys root-cause), shows the user the evidence, asks at most 3 closed feedback questions, then routes each banked lesson through write-gate to the NARROWEST home — escalating a REPEATED failure to a mechanical gate (a compliance-canary drift probe) instead of more prose. For high-stakes or contested results it dispatches a separate, preferably cross-vendor, verifier agent (Claude ↔ GPT-via-Codex ↔ Gemini) for independent review + root-cause.
+description: Use at the end of any non-trivial task (after the work is verified, before the final report); ALSO fire mid-task the moment the user corrects you — says you were wrong, that you skipped a step or claimed something without actually running it, calls out a mistake you have made before ("again", "second time", "you keep", "I told you", "stop doing that"), or pushes back on your approach; or when the user types /retro. Runs a fixed agent self-audit (incl. 5-whys root-cause), shows the user the evidence, asks at most 3 closed feedback questions, then routes each banked lesson through write-gate to the NARROWEST home — escalating a REPEATED failure to a mechanical gate (a compliance-canary drift probe) instead of more prose. For high-stakes or contested results it dispatches a separate, preferably cross-vendor, verifier agent (Claude ↔ GPT-via-Codex ↔ Gemini) for independent review + root-cause.
 effort: medium
 tools: [Bash, Read, Write]
 pulse_reminder: at task end run task-retrospective — self-audit (5-whys to root cause), show evidence + ask the user, harvest lessons; a REPEATED failure earns a mechanical gate (drift probe), not another paragraph; a high-stakes/contested result earns a separate cross-vendor verifier agent, not self-grading.
@@ -104,7 +104,9 @@ the valid "no durable lesson" result.
    surface it, not preloaded into CLAUDE.md unless it's a broad operating rule:
    `python3 skills/wiki-memory/tools/wiki.py new --template page --title "<title>" --domain "<domain>"`.
    Ladder (narrowest first): `wiki/L2_facts` · `wiki/concepts|patterns|projects` → `wiki/L3_sops` → a
-   specific `skills/<name>/SKILL.md` body → `CLAUDE.md` (broad rule only).
+   specific `skills/<name>/SKILL.md` body → a **NEW `skills/<name>/SKILL.md`** when the lesson is a
+   *proven, repeatable PROCEDURE* (a workflow/method that worked and will recur ≥2×, not already
+   covered) — so the next agent loads it and skips the discovery phase → `CLAUDE.md` (broad rule only).
    Tag the page **`pattern: <named-signature>`** — the recurring class this lesson belongs to (e.g.
    `pattern: edit-without-read`). The why-clause says *why it's true*; the pattern tag says *when to
    re-fire it*, and it is the key the Measure phase counts against. Tell the user which future work

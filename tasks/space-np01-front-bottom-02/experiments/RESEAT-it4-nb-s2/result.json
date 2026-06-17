@@ -1,0 +1,26 @@
+{
+  "id": "RESEAT-it4-nb-s2",
+  "method": "reseat-composite",
+  "source_art": "tasks/space-np01-front-bottom-02/experiments/SRC-nb-s2/raw.png",
+  "svg": "tasks/space-np01-front-bottom-02/source/template.svg",
+  "script": "scripts/exact_bevel_composite.py",
+  "params": {
+    "bbox_mode": "blue-locked",
+    "bbox": "181,1,587,1375",
+    "rim_scale": 1.2,
+    "core_white": true,
+    "local_erase": true
+  },
+  "mean_region_iou": 0.6544,
+  "white_iou_mean": 0.795,
+  "white_iou_hexes": 0.805,
+  "white_iou_slot": 0.765,
+  "note": "geom_iou reads opening4(slot)=0.0 because the source's painted slot is offset-left+short vs the SVG slot; svg_geometry_check gives the slot white-IoU 0.765 (grader disagreement recorded).",
+  "outputs": {
+    "exact": "RESEAT-it4-nb-s2/exact.png",
+    "overlay": "RESEAT-it4-nb-s2/overlay.png",
+    "region_overlay": "RESEAT-it4-nb-s2/region_overlay.png",
+    "region_iou": "RESEAT-it4-nb-s2/region_iou.json",
+    "whitecheck": "RESEAT-it4-nb-s2/whitecheck.json"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "geometry_score": 2,
+  "geometry_notes": "Overlay: all 3 hexagons + slot present, V-notch present, but the painted hexagons are clearly LARGER than the SVG targets and pushed down/right; the slot is fatter and a bit low. Green SVG outlines sit inset/offset inside the painted openings. region-IoU 0.677 (per [0.63,0.585,0.649,0.845]) — a visible miss; middle hexagon rotation is correct. Silhouette + proportions kept.",
+  "cutout_cleanliness": 4,
+  "style_score": 5,
+  "style_notes": "Richest control vocabulary of the batch: multiple capsule-button clusters (red/green/yellow pills), two indicator-dot rows, a knob with a pointer line, bold hand-painted dark-blue rim lines on every opening with empty pale port centers. Granulated cobalt wash with strong blooms. Dense and gorgeous — closest to the reference's control-panel feel.",
+  "overall_score": 3,
+  "region_iou_agreement": "agrees — 0.677 matches the oversized/offset hexagons I see; the eye sees more drift than nb-v3-s1, and the number is lower, consistent.",
+  "verdict": "LOCAL PATCH",
+  "passes": ["richest control hardware (pill clusters + dot rows + pointer knob)", "bold painted bevel rims + empty port centers", "correct V-notch, middle-hex rotation, proportions", "very low outside-paint (0.1%)"],
+  "failures": ["hexagons oversized and shifted down/right (region-IoU 0.585-0.65)", "slot fatter/lower than target", "drift well below 0.824 RIP baseline"],
+  "next_move": "Use as a PRIMARY rich SOURCE panel for the re-seat route — its control hardware is the best for re-seating; re-seat openings to SVG-exact positions.",
+  "one_line": "Style 5/5 (best controls in the batch) but geometry 2/5 (oversized, shifted hexagons, 0.677) — an ideal SOURCE panel to feed re-seating, not an accept-as-is restyle."
+}

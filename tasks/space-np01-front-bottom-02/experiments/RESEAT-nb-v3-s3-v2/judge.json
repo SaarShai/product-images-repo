@@ -1,0 +1,20 @@
+{
+  "geometry_score": 4,
+  "geometry_notes": "4 openings re-seated at exact SVG coords; green overlay in region_overlay.png hugs each. region-IoU 0.779, white-IoU 0.692. Silhouette exact (0% paint outside contour).",
+  "cutout_cleanliness": 4,
+  "style_score": 5,
+  "style_notes": "Cobalt wash; 4 colored top pills, ticked knob, vertical slider bank with colored cubes, dot row PRESERVED \u2014 very rich control vocabulary. Bold rim, clean cores.",
+  "overall_score": 5,
+  "region_iou_agreement": "agrees \u2014 region-IoU 0.779 reflects exact placement (openings rasterized at SVG coords); the gap from 1.0 is the painted bevel rim, corroborated by the green overlay hugging each opening.",
+  "verdict": "ACCEPT",
+  "passes": [
+    "openings exact (green overlay hugs each)",
+    "control hardware preserved (v1 erase bug fixed)",
+    "bold navy bevel rim, clean white cores"
+  ],
+  "failures": [
+    "white-IoU ~0.68 because bold painted rim covers ~30% of each opening (by design \u2014 painted recess)"
+  ],
+  "next_move": "Accept; for the rare flood-metric 0.0, trust the overlay+white-IoU (placement is exact).",
+  "one_line": "Exact openings + richest control set of the RESTYLE batch + bold rim (~92%)."
+}

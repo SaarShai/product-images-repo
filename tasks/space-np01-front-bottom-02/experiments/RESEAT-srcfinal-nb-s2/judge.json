@@ -1,0 +1,14 @@
+{
+  "geometry_score": 5,
+  "geometry_notes": "Overlay full-res: all 4 openings (3 hexagons + slot) hug the SVG target. region-IoU 0.922 — best geometry among style-matching candidates. Slot correct. 0 px outside contour.",
+  "cutout_cleanliness": 4,
+  "style_score": 4,
+  "style_notes": "Has EVERY reference trait: bright luminous cobalt, colorful capsule controls (red/yellow/green/teal), cream knobs with white radial tick marks, sliders, dots, corner screws. Deviation: denser/cluttered and fills the frame vs the reference's airy SPARSE 2-hero-knob layout.",
+  "overall_score": 4,
+  "verdict": "ACCEPT",
+  "passes": ["openings hug exact SVG outline (0.922)", "bright reference palette", "colorful controls", "cream knobs with radial tick marks", "painted bevel rims"],
+  "failures": ["busier/denser than reference", "fills frame (less white margin)"],
+  "next_move": "Optional polish: regenerate source with a sparser layout + more white margin (declutter), keeping brightness+color; re-seat.",
+  "region_iou_agreement": "agrees — 0.922 matches the overlay (openings hug)",
+  "one_line": "Goal essentially met: bright reference-style watercolor + colorful tick-marked-knob controls AT near-exact geometry (0.922); only polish left is decluttering to the reference's airier layout."
+}

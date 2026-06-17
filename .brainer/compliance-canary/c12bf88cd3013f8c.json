@@ -1,0 +1,12 @@
+{
+  "turn_count": 1,
+  "last_seen_iso": "2026-06-17T18:23:37Z",
+  "session_started_iso": "2026-06-17T18:23:37Z",
+  "request_ledger": [
+    {
+      "id": "r1-d21fda",
+      "turn": 1,
+      "text": "In /Users/za/Documents/product images repo, scripts/exact_bevel_composite.py (the Route B re-seat compositor) has a residual artifact: when "
+    }
+  ]
+}

@@ -5,8 +5,8 @@ agents before any geometry placement.
 
 ## Main Files
 
-- `tasks/top-temp-workflow-test/style-packet/reference-contact-sheet.png`
-- `tasks/top-temp-workflow-test/style-packet/style-exemplar-sheet.png`
+- `tasks/space-svg-exports-batch/style-packet/reference-contact-sheet.png`
+- `tasks/space-svg-exports-batch/style-packet/style-exemplar-sheet.png`
 - `style-packet/style-packet.json`
 - `prompts/prompt-v2-style-packet-elements-first.md`
 

@@ -1,0 +1,5 @@
+{
+  "id": "FIX-openai-v1",
+  "model": "openai",
+  "error": "no image produced"
+}

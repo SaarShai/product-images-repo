@@ -1,0 +1,10 @@
+{
+  "id": "RESTYLE-nb-v1-s1",
+  "method": "restyle-locked",
+  "model": "nanobanana",
+  "platform": "agy",
+  "prompt": "tasks/space-np01-front-bottom-02/prompts/RIP-v1.md",
+  "base": "tasks/space-np01-front-bottom-02/experiments/DREAM1/exact.png",
+  "svg": "tasks/space-np01-front-bottom-02/source/template.svg",
+  "refs": ["tasks/space-np01-front-bottom-02/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png"]
+}

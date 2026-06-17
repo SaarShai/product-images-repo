@@ -1,0 +1,14 @@
+{
+  "geometry_score": 4,
+  "geometry_notes": "All 4 openings (3 hexagons + slot) hug the SVG target outline in region_overlay.png — exact by re-seating from RIP-openai-v1's offset source. region-IoU 0.910; the ~0.09 gap is the bevel rim band, not a placement error. Silhouette + V-notch correct.",
+  "cutout_cleanliness": 4,
+  "style_score": 3,
+  "style_notes": "Gorgeous cobalt granulated watercolor BODY preserved from the RIP source; openings carry a subtle bevel rim (not a flat punch). BUT the control hardware (knobs top-left, slider, indicator dots, dashed traces) from the RIP source is largely erased — lost the control-panel vocabulary. Less rich than the references.",
+  "overall_score": 3,
+  "verdict": "LOCAL PATCH",
+  "passes": ["openings exact (hug SVG outline, ~0.91)", "watercolor body preserved + rich", "subtle painted bevel on openings (not flat)"],
+  "failures": ["control hardware (knobs/sliders/dots) erased by the composite", "bevel is subtle/code-like vs the references' bold hand-painted rims"],
+  "next_move": "Refine the re-seat compositor to PRESERVE the model's painted controls + bolder rim (composite only the opening aperture+rim, leave the rest of the RIP art untouched).",
+  "region_iou_agreement": "agrees — 0.91 reflects near-exact opening placement; the rim band explains the gap from 1.0, confirmed by the overlay hugging each opening",
+  "one_line": "Best result yet: exact openings + gorgeous watercolor body + subtle bevel, BUT it erased the control hardware — geometry solved, style ~70% there."
+}

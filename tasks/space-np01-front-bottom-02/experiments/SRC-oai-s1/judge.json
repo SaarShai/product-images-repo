@@ -1,0 +1,24 @@
+{
+  "id": "SRC-oai-s1",
+  "model": "openai",
+  "role": "SOURCE panel (style donor for re-seat route)",
+  "geometry_score": 3,
+  "geometry_notes": "Letterboxed tall-narrow panel closer to the SVG framing than the nano fills; 3 hex ports + long slot present and bevelled, V-notch + corner screws rendered. Placement still free (source panel), so not coordinate-locked.",
+  "cutout_cleanliness": 3,
+  "style_score": 4,
+  "style_notes": "Strong reference match. Trait1 brightness PARTIAL->PRESENT (bright cobalt but a touch darker/more saturated than the nano panels and the refs). Trait2 colorful controls PRESENT (red/yellow/green/teal capsules + dots). Trait3 knobs+radial ticks PRESENT (cream knobs with white radial ticks). Trait4 crisp hardware PRESENT (toggles, dots, corner screws). Trait5 white bg + granulated wash PRESENT. Long slot rendered a bit closed/pale-filled rather than fully open.",
+  "overall_score": 4,
+  "region_iou_agreement": "agrees roughly — letterbox framing closer to SVG than nano fills; style read corroborated by the candidate.",
+  "verdict": "ACCEPT",
+  "passes": [
+    "bright colorful reference-style body with cream tick-marked knobs",
+    "full colorful capsule vocabulary + indicator dots + corner screws",
+    "tall-narrow letterboxed framing closer to the SVG contract"
+  ],
+  "failures": [
+    "blue slightly darker/more saturated than the nano panels and refs (trait1 ~partial)",
+    "long slot rendered semi-closed rather than a clean open port"
+  ],
+  "next_move": "Usable style donor; nano SRC panels (s1/s2) are brighter and a cleaner reference match.",
+  "one_line": "Good colorful reference match with tick-marked knobs (~4/5); slightly darker than the nano panels which lead on brightness."
+}

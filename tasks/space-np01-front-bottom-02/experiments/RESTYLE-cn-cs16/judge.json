@@ -1,0 +1,20 @@
+{
+  "geometry_score": 0,
+  "geometry_notes": "Looked at region_overlay_exact.png + raw.png. No coherent panel body was generated. Output is two vertical cyan watercolor streaks on white that loosely follow the lineart control map's central column, but there is NO panel silhouette, NO formed openings, NO bevel rims. The cleared exact.png shows the 4 SVG openings (3 hexagons + 1 long slot) sitting on white because clear_to_svg stamped them, not because the model rendered them. region-IoU = 0.0 on all 4 openings because geom_iou's flood finds no bounded region (the image has no drawn panel edges). silhouette: 6760 px (0.9%) painted outside the contour.",
+  "cutout_cleanliness": 1,
+  "style_score": 0,
+  "style_notes": "Nothing like the references. Refs are a solid cobalt granulated-watercolor panel with painted bevel rim, colored toggle pills, a clock/gauge, slider tracks with knobs. Output has none of that vocabulary: no panel field, no hardware, no rim, just noise streaks. IP-Adapter at scale 0.6 + cond 1.6 collapsed to texture, not structure.",
+  "overall_score": 0,
+  "region_iou_agreement": "agrees — region-IoU 0.0 matches the eye: there is no formed geometry at all, so the metric correctly reads zero (not understating).",
+  "verdict": "PROMPT RESTART",
+  "passes": [],
+  "failures": [
+    "No panel body generated; output is cyan watercolor noise, not a control panel.",
+    "Openings not rendered by the model (only present in exact.png via post-hoc clear).",
+    "Style completely misses the reference vocabulary (no rim/bevel/knobs/gauge).",
+    "region-IoU 0.0 across all 4 openings."
+  ],
+  "next_move": "This recipe (SD-CN-lineart + IP-Adapter@0.6, cond 1.6, 20 steps, dreamshaper-8) does not produce a coherent panel at 480x1624 on MPS. Lower IP scale and/or raise steps did not help in prior CN runs either; the working geometry recipe is CN-style-exact (region-IoU 0.969). Sweeping higher cond-scale (1.8/2.0) will only lock harder onto an already-broken generation — try lower ip_scale (~0.3) or no-ip with a watercolor base before more cond-scale.",
+  "one_line": "Total failure: no panel at all, just cyan noise; geometry 0/5, style 0/5, region-IoU 0.0 — the eye and the metric agree completely.",
+  "crosscheck_gpt": { "gpt_verdict": "", "gpt_geometry": "", "gpt_style": "", "gpt_note": "" }
+}

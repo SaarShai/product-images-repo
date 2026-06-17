@@ -1,0 +1,25 @@
+{
+  "id": "RESEAT-it2-nb-s4",
+  "method": "reseat-composite",
+  "source_art": "tasks/space-np01-front-bottom-02/experiments/SRC-nb-s4/raw.png",
+  "svg": "tasks/space-np01-front-bottom-02/source/template.svg",
+  "script": "scripts/exact_bevel_composite.py",
+  "params": {
+    "bbox_mode": "blue-locked",
+    "bbox": "181,1,587,1375",
+    "rim_scale": 1.4,
+    "core_white": true,
+    "local_erase": true
+  },
+  "mean_region_iou": 0.8743,
+  "white_iou_mean": 0.718,
+  "painted_frac_mean": 0.279,
+  "outside_frac": 0.0,
+  "outputs": {
+    "exact": "RESEAT-it2-nb-s4/exact.png",
+    "overlay": "RESEAT-it2-nb-s4/overlay.png",
+    "region_overlay": "RESEAT-it2-nb-s4/region_overlay.png",
+    "region_iou": "RESEAT-it2-nb-s4/region_iou.json",
+    "whitecheck": "RESEAT-it2-nb-s4/whitecheck.json"
+  }
+}

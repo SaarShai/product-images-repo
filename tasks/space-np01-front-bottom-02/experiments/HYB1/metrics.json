@@ -1,0 +1,41 @@
+{
+  "candidate": "tasks/space-np01-front-bottom-02/experiments/HYB1/exact-bevel.png",
+  "overall": "FAIL",
+  "outside_painted": 0,
+  "outside_frac": 0.0,
+  "mean_iou": 0.7949,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 0.167,
+      "iou": 0.833,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 2,
+      "painted_frac": 0.173,
+      "iou": 0.827,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 3,
+      "painted_frac": 0.167,
+      "iou": 0.833,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 4,
+      "painted_frac": 0.124,
+      "iou": 0.687,
+      "verdict": "FAIL"
+    }
+  ],
+  "measured_with_bbox": "205,26,661,1794 (the bbox the script placed geometry at; same bbox the input E1 was measured at)",
+  "vs_input_E1": {
+    "input_mean_iou": 0.371,
+    "input_silhouette_outside_frac": 0.0836,
+    "output_mean_iou": 0.7949,
+    "output_outside_frac": 0.0
+  },
+  "note": "OVERALL=FAIL is only the painted-frac>0.03 gate firing on the INTENTIONAL illustrated bevel rim at each opening edge. Centers are clean: core painted-frac excluding the rim = 0.0000. Silhouette PASS (0 px outside contour)."
+}

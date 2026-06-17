@@ -1,0 +1,14 @@
+{
+  "geometry_score": 4,
+  "geometry_notes": "Overlay: all 3 hexagons + slot present and close; painted hexagons drift slightly right and read a touch large vs the green SVG targets; slot is good. region-IoU 0.77 (per [0.744,0.749,0.761,0.743]) — very consistent across openings, just behind nb-v3-s3's 0.782. Correct silhouette, V-notch, proportions, middle-hex rotation.",
+  "cutout_cleanliness": 5,
+  "style_score": 5,
+  "style_notes": "RICHEST control vocabulary of the entire batch and closest to the style reference: TWO ticked knobs, a clock dial, red/green/yellow capsule pills, and multiple dense indicator-dot grids. Beautiful granulated cobalt wash, bold hand-painted rim lines, pale empty port centers. Outside paint 0.08%.",
+  "overall_score": 4,
+  "region_iou_agreement": "agrees — 0.77 matches the slight rightward/larger hexagon drift I see; tight and uniform.",
+  "verdict": "ACCEPT",
+  "passes": ["richest controls in batch (2 knobs + clock dial + pills + dot grids) — true control-panel vocabulary", "tight uniform geometry (0.77, all openings ~0.74-0.76)", "bold painted rims + empty port centers", "correct silhouette/V-notch/rotation/proportions"],
+  "failures": ["~0.05 below 0.824 RIP baseline (slight rightward/larger hexagons)"],
+  "next_move": "ACCEPT; the single BEST SOURCE panel for the re-seat route (has the clock dial + dual knobs the reference shows). Re-seat openings for pixel-exact placement.",
+  "one_line": "Co-best of the round: the richest controls anywhere (dual knobs + clock dial) with tight geometry (0.77) — the premier SOURCE panel for re-seating."
+}

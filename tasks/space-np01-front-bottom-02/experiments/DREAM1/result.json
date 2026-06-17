@@ -1,0 +1,20 @@
+{
+  "id": "DREAM1",
+  "method": "controlnet-lineart-clear",
+  "model": "dreamshaper-8",
+  "platform": "local-diffusers",
+  "reference_images": [],
+  "svg": "tasks/space-np01-front-bottom-02/source/template.svg",
+  "control_map": "tasks/space-np01-front-bottom-02/outputs/generated/cn-lineart-480.png",
+  "prompt": "watercolor illustration of a vintage space control panel, deep cobalt and navy blue washes, granulated paper texture, rounded knobs buttons sliders toggles, recessed openings with hand-painted bevelled rims, soft luminous lighting, ink outlines, white background",
+  "negative_prompt": "default (controlnet_style_gen.py --no-ip)",
+  "params": {"cond_scale": 1.4, "guidance": 7.5, "steps": 30, "seed": 7},
+  "image_raw": "tasks/space-np01-front-bottom-02/experiments/DREAM1/raw.png",
+  "image_exact": "tasks/space-np01-front-bottom-02/experiments/DREAM1/exact.png",
+  "region_iou_exact": 0.969,
+  "region_iou_raw": 0.524,
+  "white_iou": "unknown",
+  "outside_frac": "unknown",
+  "style_note": "geometry exact via SVG clear; STYLE flat navy wash, NO painted rims/controls/granulation — far from gorgeous target. Local SD1.5 watercolor checkpoint insufficient for target style bar.",
+  "verdict": "geometry PASS (0.969), style FAIL"
+}

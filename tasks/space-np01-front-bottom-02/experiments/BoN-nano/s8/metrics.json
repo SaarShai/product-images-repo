@@ -1,0 +1,33 @@
+{
+  "candidate": "tasks/space-np01-front-bottom-02/experiments/BoN-nano/s8/raw.png",
+  "overall": "FAIL",
+  "outside_painted": 973,
+  "outside_frac": 0.0019,
+  "mean_iou": 0.3684,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 0.645,
+      "iou": 0.338,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 2,
+      "painted_frac": 0.617,
+      "iou": 0.363,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 3,
+      "painted_frac": 0.584,
+      "iou": 0.392,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 4,
+      "painted_frac": 0.56,
+      "iou": 0.381,
+      "verdict": "FAIL"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "geometry_score": 2,
+  "geometry_notes": "Overlay (red = SVG targets): painted hexagons sit RIGHT of the SVG targets and the TOP opening is badly off — SVG opening #1 outline is high near the V-notch while the painted top hexagon is lower/right, giving region-IoU 0.039 for opening 1. The other openings 0.59-0.69, slot landed left of target. mean region-IoU 0.479 — codex in-place restyle drifts more than nano here; effectively a vertical-offset misregistration on the top opening. Silhouette + V-notch + proportions correct.",
+  "cutout_cleanliness": 4,
+  "style_score": 4,
+  "style_notes": "Bright clean cobalt watercolor with hand-painted rim lines and empty pale port centers; a round knob + indicator dots + a small toggle present. On-style but sparser control hardware than nb-v3-s2 (no pill clusters/dot rows). Slightly more saturated/less granulated than the reference.",
+  "overall_score": 2,
+  "region_iou_agreement": "agrees — 0.479 reflects the top-opening misregistration (0.039) I see in the overlay plus the rightward hexagon shift; metric and eye both say a clear miss.",
+  "verdict": "PROMPT RESTART",
+  "passes": ["clean bright cobalt watercolor", "painted rims + empty port centers", "correct silhouette/V-notch/proportions", "codex DID emit an image (358s)"],
+  "failures": ["top opening misregistered (region-IoU 0.039)", "hexagons shifted right, slot shifted left", "mean 0.479 — far below 0.824 RIP baseline", "sparser controls than the nano source panels"],
+  "next_move": "Codex free-restyle does not hold geometry here — prefer the nano restyle + re-seat path; if pursuing codex, re-seat openings from this body.",
+  "one_line": "Pretty codex restyle but geometry fails (0.479, top opening 0.039 misregistered) — well below baseline; codex in-place restyle is the weakest geometry route this round."
+}

@@ -1,0 +1,14 @@
+{
+  "geometry_score": 0,
+  "geometry_notes": "mean region-IoU 0.178; no panel body. Overlay openings sit on empty pale wash. Raising cond-scale 1.25->1.5 did NOT lock the contour.",
+  "cutout_cleanliness": 2,
+  "style_notes": "Even fainter cyan wash than R1 with faint yellow speckle columns. No cobalt panel, no capsule buttons, no knob, no ticks. trait1=0 trait2=0 trait3=0 trait4=0 trait5=0.5. IP-Adapter @0.85 still overwhelms the lineart into a pale averaged field.",
+  "style_score": 0,
+  "overall_score": 0,
+  "region_iou_agreement": "agrees - 0.178 matches: no panel to land on",
+  "verdict": "PROMPT RESTART",
+  "passes": ["bg light"],
+  "failures": ["cond-scale 1.5 did not lock geometry", "IP-Adapter wash still kills all structure/color"],
+  "next_move": "Lower ip-scale to ~0.6 AND add explicit colorful prompt so lineart+prompt can render structure while IP only tints.",
+  "one_line": "Same failure as R1 (IoU 0.18, faint cyan, no panel). Higher cond-scale did nothing; IP-Adapter @0.85 is the problem, not geometry lock."
+}

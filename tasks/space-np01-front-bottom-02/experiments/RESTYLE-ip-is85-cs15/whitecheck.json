@@ -1,0 +1,33 @@
+{
+  "candidate": "tasks/space-np01-front-bottom-02/experiments/RESTYLE-ip-is85-cs15/raw.png",
+  "overall": "FAIL",
+  "outside_painted": 1803,
+  "outside_frac": 0.0066,
+  "mean_iou": 0.1782,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 0.07,
+      "iou": 0.219,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 2,
+      "painted_frac": 0.191,
+      "iou": 0.171,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 3,
+      "painted_frac": 0.325,
+      "iou": 0.148,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 4,
+      "painted_frac": 0.556,
+      "iou": 0.175,
+      "verdict": "FAIL"
+    }
+  ]
+}

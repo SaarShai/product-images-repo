@@ -1,0 +1,32 @@
+{
+  "image": "tasks/space-np01-front-bottom-02/experiments/E3-lineart-contract/raw.png",
+  "bbox": [
+    280,
+    21,
+    744,
+    1514
+  ],
+  "mean_region_iou": 0.1687,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "polygon",
+      "region_iou": 0.0
+    },
+    {
+      "i": 2,
+      "kind": "polygon",
+      "region_iou": 0.0
+    },
+    {
+      "i": 3,
+      "kind": "polygon",
+      "region_iou": 0.29
+    },
+    {
+      "i": 4,
+      "kind": "path",
+      "region_iou": 0.385
+    }
+  ]
+}

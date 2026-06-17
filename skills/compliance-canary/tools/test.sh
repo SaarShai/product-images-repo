@@ -3,7 +3,7 @@
 set -uo pipefail
 
 TOOLS_DIR="$(cd "$(dirname "$0")" && pwd)"
-HOOK="bash $TOOLS_DIR/hook.sh"
+HOOK=(bash "$TOOLS_DIR/hook.sh")
 STATE_ROOT="$(mktemp -d -t cc-test-XXXX)"
 SKILLS_ROOT="$(mktemp -d -t cc-skills-XXXX)"
 TRANSCRIPT_DIR="$(mktemp -d -t cc-tx-XXXX)"
@@ -65,9 +65,9 @@ print(json.dumps({'session_id':sys.argv[1],'transcript_path':sys.argv[2],'hook_e
   local env_args=(COMPLIANCE_CANARY_STATE_DIR="$STATE_ROOT/$state_sub"
                   COMPLIANCE_CANARY_SKILLS_ROOT="$SKILLS_ROOT/$skills_sub")
   if [ "$#" -gt 0 ]; then
-    printf '%s' "$payload" | env "${env_args[@]}" "$@" $HOOK
+    printf '%s' "$payload" | env "${env_args[@]}" "$@" "${HOOK[@]}"
   else
-    printf '%s' "$payload" | env "${env_args[@]}" $HOOK
+    printf '%s' "$payload" | env "${env_args[@]}" "${HOOK[@]}"
   fi
 }
 
@@ -188,9 +188,9 @@ out=$(call cc14 sk1 "$TRANSCRIPT_DIR/does-not-exist.jsonl" s14)
 if [ -z "$out" ]; then ok "missing transcript → silent"; else no "missing transcript → silent"; fi
 
 echo "[15] Empty / malformed stdin → exit 0"
-out=$(printf '' | $HOOK); ec=$?
+out=$(printf '' | "${HOOK[@]}"); ec=$?
 if [ $ec -eq 0 ]; then ok "empty stdin exit 0"; else no "empty stdin exit 0"; fi
-out=$(printf 'garbage' | $HOOK 2>/dev/null); ec=$?
+out=$(printf 'garbage' | "${HOOK[@]}" 2>/dev/null); ec=$?
 if [ $ec -eq 0 ]; then ok "malformed stdin exit 0"; else no "malformed stdin exit 0"; fi
 
 echo "[16] Two sessions: independent probe_history"
@@ -219,7 +219,7 @@ import json,sys
 print(json.dumps({'session_id':'cc-concur','transcript_path':sys.argv[1],'hook_event_name':'UserPromptSubmit','prompt':'x'}))
 " "$TX")
 for _ in 1 2 3 4 5 6 7 8 9 10; do
-  printf '%s' "$PAYLOAD" | env COMPLIANCE_CANARY_STATE_DIR="$STATE_ROOT/cc17" COMPLIANCE_CANARY_SKILLS_ROOT="$SKILLS_ROOT/sk17" $HOOK > /dev/null &
+  printf '%s' "$PAYLOAD" | env COMPLIANCE_CANARY_STATE_DIR="$STATE_ROOT/cc17" COMPLIANCE_CANARY_SKILLS_ROOT="$SKILLS_ROOT/sk17" "${HOOK[@]}" > /dev/null &
 done
 wait
 # hook.py names state files by SHA-256(session_id)[:16].json, not the raw id
@@ -364,7 +364,7 @@ payload=$(python3 -c "
 import json,sys
 print(json.dumps({'session_id':'s27','transcript_path':sys.argv[1],'hook_event_name':'UserPromptSubmit','prompt':'no, I said use spaces not tabs'}))
 " "$TX")
-out=$(printf '%s' "$payload" | env COMPLIANCE_CANARY_STATE_DIR="$STATE_ROOT/cc27" COMPLIANCE_CANARY_SKILLS_ROOT="$SKILLS_ROOT/sk27" $HOOK)
+out=$(printf '%s' "$payload" | env COMPLIANCE_CANARY_STATE_DIR="$STATE_ROOT/cc27" COMPLIANCE_CANARY_SKILLS_ROOT="$SKILLS_ROOT/sk27" "${HOOK[@]}")
 if emitted "$out" && echo "$out" | grep -q 'user_correction'; then ok "correction prompt fires"; else no "correction prompt fires" "got: $(echo "$out" | head -c120)"; fi
 
 echo "[28] user_correction: ordinary prompt stays silent"
@@ -372,7 +372,7 @@ payload=$(python3 -c "
 import json,sys
 print(json.dumps({'session_id':'s28','transcript_path':sys.argv[1],'hook_event_name':'UserPromptSubmit','prompt':'now add a unit test for the parser'}))
 " "$TX")
-out=$(printf '%s' "$payload" | env COMPLIANCE_CANARY_STATE_DIR="$STATE_ROOT/cc28" COMPLIANCE_CANARY_SKILLS_ROOT="$SKILLS_ROOT/sk27" $HOOK)
+out=$(printf '%s' "$payload" | env COMPLIANCE_CANARY_STATE_DIR="$STATE_ROOT/cc28" COMPLIANCE_CANARY_SKILLS_ROOT="$SKILLS_ROOT/sk27" "${HOOK[@]}")
 if [ -z "$out" ]; then ok "ordinary prompt silent"; else no "ordinary prompt silent" "got: $(echo "$out" | head -c100)"; fi
 
 echo "[29] malformed transcript events: detection still WORKS with garbage lines present"
@@ -456,7 +456,7 @@ payload=$(python3 -c "
 import json,sys
 print(json.dumps({'session_id':'s34','transcript_path':sys.argv[1],'hook_event_name':'UserPromptSubmit','prompt':'no, I said use spaces'}))
 " "$TX")
-out=$(printf '%s' "$payload" | env COMPLIANCE_CANARY_STATE_DIR="$STATE_ROOT/cc34" COMPLIANCE_CANARY_SKILLS_ROOT="$SKILLS_ROOT/sk34" $HOOK)
+out=$(printf '%s' "$payload" | env COMPLIANCE_CANARY_STATE_DIR="$STATE_ROOT/cc34" COMPLIANCE_CANARY_SKILLS_ROOT="$SKILLS_ROOT/sk34" "${HOOK[@]}")
 if emitted "$out" && echo "$out" | grep -q 'user_correction'; then ok "user_correction fires with no assistant prose"; else no "user_correction fires with no assistant prose" "got: $(echo "$out" | head -c150)"; fi
 
 echo "[35] claim_without_evidence: incidental substring ('cat' inside 'category') does NOT count as verification"
@@ -546,7 +546,7 @@ pay39=$(python3 -c "
 import json,sys
 print(json.dumps({'session_id':'s39','transcript_path':sys.argv[1],'hook_event_name':'UserPromptSubmit','prompt':'explain how this works in depth'}))
 " "$TXW")
-out=$(printf '%s' "$pay39" | env COMPLIANCE_CANARY_STATE_DIR="$STATE_ROOT/cc39" COMPLIANCE_CANARY_SKILLS_ROOT="$SKILLS_ROOT/sk39" $HOOK)
+out=$(printf '%s' "$pay39" | env COMPLIANCE_CANARY_STATE_DIR="$STATE_ROOT/cc39" COMPLIANCE_CANARY_SKILLS_ROOT="$SKILLS_ROOT/sk39" "${HOOK[@]}")
 if [ -z "$out" ]; then ok "warranted (detail) prompt → creep suppressed"; else no "warranted prompt → suppressed" "got: $(echo "$out" | head -c150)"; fi
 
 echo "[40] word_count warrant: trivial prompt still fires"
@@ -554,7 +554,7 @@ pay40=$(python3 -c "
 import json,sys
 print(json.dumps({'session_id':'s40','transcript_path':sys.argv[1],'hook_event_name':'UserPromptSubmit','prompt':'fix the typo'}))
 " "$TXW")
-out=$(printf '%s' "$pay40" | env COMPLIANCE_CANARY_STATE_DIR="$STATE_ROOT/cc40" COMPLIANCE_CANARY_SKILLS_ROOT="$SKILLS_ROOT/sk39" $HOOK)
+out=$(printf '%s' "$pay40" | env COMPLIANCE_CANARY_STATE_DIR="$STATE_ROOT/cc40" COMPLIANCE_CANARY_SKILLS_ROOT="$SKILLS_ROOT/sk39" "${HOOK[@]}")
 if emitted "$out" && echo "$out" | grep -q 'word_count_per_message'; then ok "unwarranted (trivial) prompt → creep fires"; else no "trivial prompt → fires" "got: $(echo "$out" | head -c150)"; fi
 
 # ======================================================================
@@ -653,7 +653,7 @@ if echo "$o" | grep -q 'no-pr: Test skill no-pr'; then ok "allowlist + descripti
 echo "[51] non-object JSON payload (42 / \"x\" / [..] / null / true) → exit 0, silent"
 bad51=0
 for p in '42' '"x"' '[1,2,3]' 'null' 'true'; do
-  out=$(printf '%s' "$p" | env COMPLIANCE_CANARY_STATE_DIR="$STATE_ROOT/cc51" $HOOK 2>/dev/null); ec=$?
+  out=$(printf '%s' "$p" | env COMPLIANCE_CANARY_STATE_DIR="$STATE_ROOT/cc51" "${HOOK[@]}" 2>/dev/null); ec=$?
   { [ "$ec" -ne 0 ] || [ -n "$out" ]; } && { bad51=1; break; }
 done
 if [ "$bad51" -eq 0 ]; then ok "non-object payloads handled (exit 0, silent)"; else no "non-object payload" "payload=$p exit=$ec out=[$out]"; fi
@@ -661,7 +661,7 @@ if [ "$bad51" -eq 0 ]; then ok "non-object payloads handled (exit 0, silent)"; e
 echo "[52] non-string session_id (7 / 9.9 / [1,2]) → exit 0 (no .encode crash)"
 bad52=0
 for sid in '7' '9.9' '[1,2]'; do
-  out=$(printf '{"session_id":%s,"transcript_path":"x","prompt":"hi"}' "$sid" | env COMPLIANCE_CANARY_STATE_DIR="$STATE_ROOT/cc52" $HOOK 2>/dev/null); ec=$?
+  out=$(printf '{"session_id":%s,"transcript_path":"x","prompt":"hi"}' "$sid" | env COMPLIANCE_CANARY_STATE_DIR="$STATE_ROOT/cc52" "${HOOK[@]}" 2>/dev/null); ec=$?
   [ "$ec" -ne 0 ] && { bad52=1; break; }
 done
 if [ "$bad52" -eq 0 ]; then ok "non-string session_id coerced (exit 0)"; else no "non-string session_id" "sid=$sid exit=$ec"; fi
@@ -673,7 +673,7 @@ TXR="$TRANSCRIPT_DIR/t53.jsonl"
 write_transcript "$TXR" "$(assistant_text 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!' u1)"
 pay53='{"session_id":"s53","transcript_path":"'"$TXR"'","prompt":"next"}'
 t0=$(python3 -c 'import time;print(time.time())')
-out=$(printf '%s' "$pay53" | timeout 6 env COMPLIANCE_CANARY_STATE_DIR="$STATE_ROOT/cc53" COMPLIANCE_CANARY_SKILLS_ROOT="$SKILLS_ROOT/sk53" $HOOK 2>/dev/null); ec=$?
+out=$(printf '%s' "$pay53" | timeout 6 env COMPLIANCE_CANARY_STATE_DIR="$STATE_ROOT/cc53" COMPLIANCE_CANARY_SKILLS_ROOT="$SKILLS_ROOT/sk53" "${HOOK[@]}" 2>/dev/null); ec=$?
 t1=$(python3 -c 'import time;print(time.time())')
 elapsed=$(python3 -c "print($t1-$t0)")
 # exit 0, no output, and well under the 6s timeout wall (budget is 1.5s)
@@ -688,6 +688,107 @@ o=$(call cc54 sk54 "$EMPTYTX" s54 COMPLIANCE_CANARY_PULSE_EVERY=2)
 line=$(echo "$o" | grep 'big-skill:')
 linelen=${#line}
 if echo "$line" | grep -q '…' && [ "$linelen" -lt 320 ]; then ok "pulse_reminder capped (line=$linelen chars, ellipsized)"; else no "pulse_reminder cap" "len=$linelen line=$(echo "$line"|head -c80)"; fi
+
+# ======================================================================
+# early_stop detector (v1.11): fires when the closing turn is a forward
+# PROMISE with no completion, no question, and no tool call. Anti-early-stop.
+# ======================================================================
+
+echo "[55] early_stop: final turn is a forward PROMISE (no tool, no done, no question) → fires"
+ESPROBES='[{"id":"es","kind":"early_stop","message":"do the work now"}]'
+make_skill_with_probes sk55 vbc "$ESPROBES"
+TX="$TRANSCRIPT_DIR/t55.jsonl"
+write_transcript "$TX" "$(assistant_text 'Here is the plan. Next I will implement the parser and wire it up.' u55)"
+out=$(call cc55 sk55 "$TX" s55)
+if emitted "$out" && echo "$out" | grep -q 'early_stop'; then ok "forward-promise ending fires"; else no "early_stop fires" "got: $(echo "$out" | head -c160)"; fi
+
+echo "[56] early_stop: closing turn CALLED a tool → silent (work happened)"
+TX="$TRANSCRIPT_DIR/t56.jsonl"
+write_transcript "$TX" \
+  "$(assistant_text 'Let me run the tests now.' u56)" \
+  "$(assistant_tool_use Bash '{"command":"pytest"}')"
+out=$(call cc56 sk55 "$TX" s56)
+if [ -z "$out" ]; then ok "tool-called closing → silent"; else no "early_stop tool silence" "got: $(echo "$out" | head -c160)"; fi
+
+echo "[57] early_stop: message reports completion ('Done … pass') → silent despite a 'next' promise"
+TX="$TRANSCRIPT_DIR/t57.jsonl"
+write_transcript "$TX" "$(assistant_text 'Done — all tests pass. Next I will refactor the helper.' u57)"
+out=$(call cc57 sk55 "$TX" s57)
+if [ -z "$out" ]; then ok "completion report → silent"; else no "early_stop done silence" "got: $(echo "$out" | head -c160)"; fi
+
+echo "[58] early_stop: closing QUESTION → silent despite a promise match (legit pause)"
+TX="$TRANSCRIPT_DIR/t58.jsonl"
+write_transcript "$TX" "$(assistant_text 'Let me know which parser to implement — should I start now?' u58)"
+out=$(call cc58 sk55 "$TX" s58)
+if [ -z "$out" ]; then ok "closing question → silent"; else no "early_stop question silence" "got: $(echo "$out" | head -c160)"; fi
+
+# ======================================================================
+# completion_without_closure (the closure gate): a TERMINAL done-claim with
+# no closure-ask fires; a done-claim that asks to close, or a mid-task line,
+# stays silent. Mirror of early_stop.
+# ======================================================================
+
+echo "[59] completion_without_closure: terminal done-claim without a closure ask → fires"
+CWPROBES='[{"id":"cwc","kind":"completion_without_closure","message":"confirm closure please"}]'
+make_skill_with_probes sk59 vbc "$CWPROBES"
+TX="$TRANSCRIPT_DIR/t59.jsonl"
+write_transcript "$TX" "$(assistant_text 'All done. The task is complete and everything works.' u59)"
+out=$(call cc59 sk59 "$TX" s59)
+if emitted "$out" && echo "$out" | grep -q 'completion_without_closure'; then ok "self-close fires"; else no "cwc fires" "got: $(echo "$out"|head -c160)"; fi
+
+echo "[60] completion_without_closure: done-claim that ASKS to close → silent"
+TX="$TRANSCRIPT_DIR/t60.jsonl"
+write_transcript "$TX" "$(assistant_text 'All done. The task is complete. Shall I close this out?' u60)"
+out=$(call cc60 sk59 "$TX" s60)
+if [ -z "$out" ]; then ok "ask-to-close → silent"; else no "cwc ask silence" "got: $(echo "$out"|head -c160)"; fi
+
+echo "[61] completion_without_closure: mid-task (no terminal claim) → silent"
+TX="$TRANSCRIPT_DIR/t61.jsonl"
+write_transcript "$TX" "$(assistant_text 'Updated the parser; running the next step.' u61)"
+out=$(call cc61 sk59 "$TX" s61)
+if [ -z "$out" ]; then ok "mid-task → silent"; else no "cwc midtask silence" "got: $(echo "$out"|head -c160)"; fi
+
+# ======================================================================
+# Mechanism 3 — request ledger: a user request stays OPEN until the USER
+# closes it; surfaces at wrap-up turns; closure is confirmed; trivial acks
+# are not tracked; honors the disable switch.
+# ======================================================================
+
+# call_p <state_sub> <skills_sub> <transcript_file> <session_id> <prompt> [env...]
+call_p() {
+  local state_sub="$1" skills_sub="$2" tx="$3" sid="$4" prompt="$5"; shift 5
+  local payload
+  payload=$(python3 -c "
+import json,sys
+print(json.dumps({'session_id':sys.argv[1],'transcript_path':sys.argv[2],'hook_event_name':'UserPromptSubmit','prompt':sys.argv[3]}))
+" "$sid" "$tx" "$prompt")
+  printf '%s' "$payload" | env COMPLIANCE_CANARY_STATE_DIR="$STATE_ROOT/$state_sub" \
+    COMPLIANCE_CANARY_SKILLS_ROOT="$SKILLS_ROOT/$skills_sub" "$@" "${HOOK[@]}"
+}
+
+echo "[62] ledger: a user request is tracked and surfaced at a wrap-up turn"
+# sk62 never created → no probes; the ledger runs regardless of probes.
+TX="$TRANSCRIPT_DIR/t62.jsonl"
+write_transcript "$TX" "$(assistant_text 'All done.' u62)"
+out=$(call_p cc62 sk62 "$TX" s62 'add a retry cap to the loop and a test')
+if echo "$out" | grep -q 'still OPEN' && echo "$out" | grep -q 'retry cap'; then ok "request tracked + surfaced at wrap-up"; else no "ledger surfaces request" "got: $(echo "$out"|head -c200)"; fi
+
+echo "[63] ledger: user closure prunes the item and is confirmed"
+# Reuse cc62 state (1 open item). 'close it' prunes it.
+out=$(call_p cc62 sk62 "$TX" s62 'looks good, close it')
+if echo "$out" | grep -q 'closed 1 request' && echo "$out" | grep -q 'ledger now empty'; then ok "user-closure confirmed + emptied"; else no "ledger closure confirmed" "got: $(echo "$out"|head -c200)"; fi
+
+echo "[64] ledger: a trivial acknowledgement is not tracked (silent)"
+TX="$TRANSCRIPT_DIR/t64.jsonl"
+write_transcript "$TX" "$(assistant_text 'All done.' u64)"
+out=$(call_p cc64 sk64 "$TX" s64 'ok')
+if [ -z "$out" ]; then ok "trivial ack → not tracked"; else no "trivial not tracked" "got: $(echo "$out"|head -c160)"; fi
+
+echo "[65] ledger: COMPLIANCE_CANARY_LEDGER_DISABLED=1 → no ledger output"
+TX="$TRANSCRIPT_DIR/t65.jsonl"
+write_transcript "$TX" "$(assistant_text 'All done.' u65)"
+out=$(call_p cc65 sk65 "$TX" s65 'add a new feature' COMPLIANCE_CANARY_LEDGER_DISABLED=1)
+if [ -z "$out" ]; then ok "ledger disabled → silent"; else no "ledger disable honored" "got: $(echo "$out"|head -c160)"; fi
 
 # ----------------------------------------------------------------------
 echo

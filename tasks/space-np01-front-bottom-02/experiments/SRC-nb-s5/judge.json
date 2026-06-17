@@ -1,0 +1,24 @@
+{
+  "id": "SRC-nb-s5",
+  "model": "nanobanana",
+  "role": "SOURCE panel (style donor for re-seat route)",
+  "geometry_score": 1,
+  "geometry_notes": "Panel fills the frame (no white letterbox margins): 3 hex ports + long open slot present, bevelled, empty pale centers, V-notch + corner screws rendered. Free placement (source panel) — region-IoU low; re-seat handles geometry.",
+  "cutout_cleanliness": 5,
+  "style_score": 5,
+  "style_notes": "Reference match with the RICHEST control density of the set. Trait1 brightness PRESENT (bright cobalt, slightly more mottled/saturated than s1-s4 but white paper still breathes). Trait2 colorful controls PRESENT (red/yellow/green/teal capsules + LED dot grids). Trait3 knobs+radial ticks PRESENT (three cream knobs with white radial ticks). Trait4 crisp hardware PRESENT (sliders with colored caps, LED dot grids, corner screws, crisp outlines, bevelled rims). Trait5 white bg + granulated wash PRESENT.",
+  "overall_score": 4,
+  "region_iou_agreement": "understates style — region-IoU low from frame-fill + free placement; STYLE is a full 5/5 match.",
+  "verdict": "ACCEPT",
+  "passes": [
+    "all 5 rubric style traits present incl. cream tick-marked knobs",
+    "richest control density: capsules + LED dot grids + sliders + screws",
+    "clean open slot + bevelled hex ports"
+  ],
+  "failures": [
+    "blue marginally more saturated/mottled than s1-s4 (still bright)",
+    "frame-fill + free placement -> region-IoU low; re-seat handles geometry"
+  ],
+  "next_move": "Strong style donor if maximal control density is wanted; s1/s3/s4 slightly more luminous.",
+  "one_line": "Reference-perfect STYLE (5/5) with the densest colorful controls + tick-marked knobs; great re-seat donor, body a touch more saturated."
+}

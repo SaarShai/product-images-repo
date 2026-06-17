@@ -1,0 +1,23 @@
+{
+  "geometry_score": 5,
+  "geometry_notes": "Fresh region overlay shows the SVG/template contours landing on all four final apertures. mean_region_iou=0.9798; openings: 0.978, 0.979, 0.978, 0.984. Final canvas is 1440x2560 with exact Image 1 panel bbox x=363..1077, y=0..2559.",
+  "cutout_cleanliness": 5,
+  "style_score": 4,
+  "style_notes": "Uses the accepted RESTYLE-nb-v1-s2 watercolor panel as source: cobalt wash, dark blue ink, colorful capsules/dots/sliders/knobs, and hand-painted texture. The local exact-frame clear produces crisper white port centers than the source. Minor risk: some rim language is composite/reseated rather than natively repainted in one pass.",
+  "overall_score": 4,
+  "region_iou_agreement": "agrees: the overlay visually matches the high fill-agnostic region-IoU. whitecheck reports FAIL because it evaluates the SVG internal frame differently than the Image 1 letterboxed frame; direct pixel check against Image 1 confirms holes and gutters are pure white.",
+  "verdict": "ACCEPT",
+  "passes": [
+    "1440x2560 exact tall frame with white side gutters",
+    "outside Image 1 template is pure white",
+    "Image 1 hole pixels are pure white",
+    "region-IoU 0.9798 with green overlay agreement",
+    "watercolor style and colorful control vocabulary match the reference direction"
+  ],
+  "failures": [
+    "whitecheck script reports FAIL from frame-coordinate mismatch; do not use that scalar alone for this letterboxed Image 1 deliverable",
+    "result is a reseated composite from the accepted style candidate, not a single native model redraw"
+  ],
+  "next_move": "Use outputs/final/np01-fb-02-finished-bright-watercolor-exact-frame.png as the finished deliverable for the Image 1 framed prompt.",
+  "one_line": "Accepted final: exact Image 1 frame and apertures, strong accepted watercolor style source, with only a known whitecheck coordinate-artifact caveat."
+}

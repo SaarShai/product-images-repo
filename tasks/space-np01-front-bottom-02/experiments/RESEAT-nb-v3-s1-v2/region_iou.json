@@ -1,0 +1,32 @@
+{
+  "image": "tasks/space-np01-front-bottom-02/experiments/RESEAT-nb-v3-s1-v2/exact.png",
+  "bbox": [
+    192,
+    10,
+    584,
+    1366
+  ],
+  "mean_region_iou": 0.8736,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "polygon",
+      "region_iou": 0.865
+    },
+    {
+      "i": 2,
+      "kind": "polygon",
+      "region_iou": 0.87
+    },
+    {
+      "i": 3,
+      "kind": "polygon",
+      "region_iou": 0.865
+    },
+    {
+      "i": 4,
+      "kind": "path",
+      "region_iou": 0.894
+    }
+  ]
+}

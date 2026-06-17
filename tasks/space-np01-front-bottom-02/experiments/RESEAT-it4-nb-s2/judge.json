@@ -1,0 +1,20 @@
+{
+  "geometry_score": 3,
+  "geometry_notes": "Hexes excellent (white-IoU 0.80-0.81, painted 0.19 - cleanest hexes of the loop, pure-white cores 252). BUT the source's painted slot is offset-left and shorter than the SVG slot, so geom_iou reads opening4=0.0 (mean region-IoU drops to 0.654); svg_geometry_check still gives the slot white-IoU 0.765. The calc/eye disagreement on the slot is the finding: placement of the lower slot is weaker on this source.",
+  "cutout_cleanliness": 4,
+  "style_score": 4,
+  "style_notes": "Bright cobalt, cream knobs w/ radial ticks, colorful capsules + sliders + dots. Good, but the layout is busier and the body slightly darker/more saturated than SRC-nb-s4; controls more crowded.",
+  "overall_score": 3,
+  "region_iou_agreement": "overstates cleanliness on hexes / understates slot placement - region-IoU 0.0 on the slot vs white-IoU 0.77 is a grader disagreement caused by the source's offset slot",
+  "verdict": "LOCAL PATCH",
+  "passes": [
+    "cleanest hex cutouts of the loop (white-IoU 0.80, pure-white cores)",
+    "cream knobs w/ radial ticks + colorful controls"
+  ],
+  "failures": [
+    "source slot offset-left + short vs SVG slot -> region-IoU 0.0 on opening 4",
+    "busier/darker layout than SRC-nb-s4"
+  ],
+  "next_move": "Prefer SRC-nb-s4 (RESEAT-it3) - cleaner all-4-opening placement and brighter layout. Use s2 only if a hex-only crop were wanted.",
+  "one_line": "Best hexes but the source's offset slot tanks overall placement; loses to SRC-nb-s4 on the slot and on layout cleanliness."
+}

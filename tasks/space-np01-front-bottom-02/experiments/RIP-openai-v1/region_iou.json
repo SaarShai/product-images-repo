@@ -1,0 +1,32 @@
+{
+  "image": "tasks/space-np01-front-bottom-02/experiments/RIP-openai-v1/raw.png",
+  "bbox": [
+    41,
+    0,
+    683,
+    2172
+  ],
+  "mean_region_iou": 0.8244,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "polygon",
+      "region_iou": 0.781
+    },
+    {
+      "i": 2,
+      "kind": "polygon",
+      "region_iou": 0.769
+    },
+    {
+      "i": 3,
+      "kind": "polygon",
+      "region_iou": 0.916
+    },
+    {
+      "i": 4,
+      "kind": "path",
+      "region_iou": 0.832
+    }
+  ]
+}

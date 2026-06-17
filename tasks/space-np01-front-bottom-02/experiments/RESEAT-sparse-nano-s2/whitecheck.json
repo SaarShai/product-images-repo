@@ -1,0 +1,33 @@
+{
+  "candidate": "tasks/space-np01-front-bottom-02/experiments/RESEAT-sparse-nano-s2/exact.png",
+  "overall": "FAIL",
+  "outside_painted": 5939,
+  "outside_frac": 0.0173,
+  "mean_iou": 0.0989,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 0.725,
+      "iou": 0.082,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 2,
+      "painted_frac": 0.731,
+      "iou": 0.075,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 3,
+      "painted_frac": 0.681,
+      "iou": 0.098,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 4,
+      "painted_frac": 0.647,
+      "iou": 0.141,
+      "verdict": "FAIL"
+    }
+  ]
+}

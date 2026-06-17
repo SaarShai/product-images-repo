@@ -1,0 +1,24 @@
+{
+  "id": "SRC-nb-s1",
+  "model": "nanobanana",
+  "role": "SOURCE panel (style donor for re-seat route)",
+  "geometry_score": 2,
+  "geometry_notes": "Fresh letterbox layout, not coordinate-locked: region-IoU 0.261, opening4 (long slot) IoU 0.0 because the model placed the slot lower/narrower than the SVG path. 3 hex openings present and bevelled but offset from SVG coords. Expected for a SOURCE panel — geometry is fixed later by the re-seat route; this panel is judged for STYLE.",
+  "cutout_cleanliness": 4,
+  "style_score": 5,
+  "style_notes": "BEST style match yet vs the references. Trait1 brightness: PRESENT — bright luminous mid-cobalt with white paper breathing through. Trait2 colorful controls: PRESENT — red/golden-yellow/green/teal capsule buttons. Trait3 knobs+radial ticks: PRESENT — six cream knobs each with short white radial tick marks (the trait the prior best RESEAT-bon2-s2-v2 was MISSING). Trait4 crisp hardware: PRESENT — sliders, indicator dots, crisp dark-blue ink outlines, bevelled hex/slot rims. Trait5 white bg + granulated wash: PRESENT.",
+  "overall_score": 4,
+  "region_iou_agreement": "understates style — region-IoU 0.26 only reflects opening placement drift (this is a free-layout source render); the overlay confirms openings are offset, but STYLE (the reason this panel exists) is a full 5/5 reference match.",
+  "verdict": "ACCEPT",
+  "passes": [
+    "all 5 rubric style traits present incl. cream knobs with white radial tick marks",
+    "bright luminous body, white paper breathing through (not a dark navy slab)",
+    "full colorful control vocabulary: red/yellow/green/teal capsules, dots, sliders",
+    "bevelled recessed ports with empty pale centers"
+  ],
+  "failures": [
+    "opening placement does not match SVG coords (region-IoU 0.26) — by design for a source panel; re-seat route transplants the style onto exact geometry"
+  ],
+  "next_move": "Feed this panel into the re-seat route as a style donor — strongest tick-marked-knob source so far.",
+  "one_line": "Reference-perfect STYLE (5/5: bright + colorful + tick-marked knobs) on a free letterbox layout; exactly the colorful source the re-seat route needs."
+}

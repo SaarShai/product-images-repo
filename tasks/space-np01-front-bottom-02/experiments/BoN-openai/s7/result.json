@@ -1,0 +1,39 @@
+{
+  "candidate": "tasks/space-np01-front-bottom-02/experiments/BoN-openai/s7/raw.png",
+  "overall": "FAIL",
+  "outside_painted": 2742,
+  "outside_frac": 0.0039,
+  "mean_iou": 0.3482,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 0.564,
+      "iou": 0.323,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 2,
+      "painted_frac": 0.515,
+      "iou": 0.372,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 3,
+      "painted_frac": 0.491,
+      "iou": 0.398,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 4,
+      "painted_frac": 0.533,
+      "iou": 0.3,
+      "verdict": "FAIL"
+    }
+  ],
+  "id": "s7",
+  "model": "openai",
+  "bbox": "231,23,712,1637",
+  "secs": 144.4,
+  "map": "tasks/space-np01-front-bottom-02/outputs/generated/np01-fb-02-genmap-filled.png",
+  "prompt": "tasks/space-np01-front-bottom-02/prompts/E1-filled-contract.md"
+}

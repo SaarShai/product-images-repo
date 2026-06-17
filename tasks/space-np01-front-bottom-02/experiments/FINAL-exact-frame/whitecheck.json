@@ -1,0 +1,33 @@
+{
+  "candidate": "tasks/space-np01-front-bottom-02/experiments/FINAL-exact-frame/raw.png",
+  "overall": "FAIL",
+  "outside_painted": 15065,
+  "outside_frac": 0.0096,
+  "mean_iou": 0.2508,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 0.515,
+      "iou": 0.227,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 2,
+      "painted_frac": 0.53,
+      "iou": 0.216,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 3,
+      "painted_frac": 0.515,
+      "iou": 0.228,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 4,
+      "painted_frac": 0.509,
+      "iou": 0.332,
+      "verdict": "FAIL"
+    }
+  ]
+}

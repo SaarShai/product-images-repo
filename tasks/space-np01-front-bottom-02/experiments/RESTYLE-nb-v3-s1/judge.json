@@ -1,0 +1,14 @@
+{
+  "geometry_score": 3,
+  "geometry_notes": "Overlay: 3 hexagons + slot all present and close, but the green SVG hexagons sit slightly up/left of the painted hexagons and the painted hexagons read a touch large/low; slot lands well. region-IoU 0.728 (per [0.723,0.753,0.687,0.751]) — a visible-but-moderate miss, openings hug loosely not tightly. Silhouette + V-notch correct, tall-narrow proportions kept.",
+  "cutout_cleanliness": 4,
+  "style_score": 4,
+  "style_notes": "Rich cobalt-indigo granulated wash with real pigment blooms; hand-painted dark-blue rim lines; painted bevel rims around each opening with pale empty centers (true ports, not flat punches). Control vocabulary present: yellow/green capsule pills + a round knob + indicator pills. Slightly less dense than the reference (no dial/trace clusters) but clearly on-style.",
+  "overall_score": 3,
+  "region_iou_agreement": "agrees — 0.728 reflects the loose hug I see in the overlay; openings are close but offset, not exact.",
+  "verdict": "LOCAL PATCH",
+  "passes": ["gorgeous rich granulated cobalt body", "painted bevel rims + empty port centers", "good control hardware (pills + knob)", "correct silhouette/V-notch/proportions"],
+  "failures": ["hexagons offset up/left vs SVG targets (region-IoU 0.69-0.75)", "drift above the 0.824 RIP baseline"],
+  "next_move": "Re-seat the openings from this gorgeous body (composite aperture+rim onto SVG-exact positions), or feed as a rich SOURCE panel to the re-seat route.",
+  "one_line": "Beautiful low-density-but-rich watercolor restyle; openings land close (0.728) but drift ~0.10 below the 0.824 RIP baseline — needs a re-seat to be exact."
+}

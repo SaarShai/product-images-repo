@@ -1,0 +1,14 @@
+{
+  "geometry_score": 5,
+  "geometry_notes": "TIGHTEST geometry of the round. Overlay: green SVG outlines hug the painted hexagons + slot almost exactly; hexagons well-sized and well-placed, middle one rotated correctly, slot excellent. region-IoU 0.856 (per [0.877,0.841,0.803,0.903]) — every opening 0.80-0.90, ABOVE the 0.824 RIP baseline. Correct silhouette, V-notch, tall-narrow proportions. Outside paint 0.08%.",
+  "cutout_cleanliness": 5,
+  "style_score": 5,
+  "style_notes": "Richest, most reference-faithful control panel of the entire batch: 4+ knobs, a clock/gauge dial, slider faders, dense red/green/yellow capsule-button stacks, indicator-dot rows, and an LED-bar stack on the right. Granulated cobalt wash, bold hand-painted rim lines, clean pale-white empty port centers (true cut-throughs).",
+  "overall_score": 5,
+  "region_iou_agreement": "DISAGREEMENT recorded: region-IoU (placement, fill-agnostic)=0.856 AGREES with my eye (openings exact + empty). BUT the white-IoU metric.json reads painted_frac~0.997 / mean_iou 0.0024 — claiming every opening is FILLED. That is a metric artifact: the openings render pale-blue-white (not pure white), so the white-threshold miscounts them as painted. Vision + region-IoU both confirm the centers are empty ports. Trust region-IoU + the eye; the white-IoU is lying here.",
+  "verdict": "ACCEPT",
+  "passes": ["best restyle geometry in round (0.856, above 0.824 baseline, all openings 0.80-0.90)", "richest+most reference-faithful controls (knobs + dial + faders + pill stacks + LED bars)", "bold painted rims + clean empty port centers", "correct rotation/V-notch/proportions"],
+  "failures": ["white-IoU metric falsely flags openings as filled (artifact — openings are pale not pure white); confirm before any automated gate trusts metrics.json over region_iou.json"],
+  "next_move": "ACCEPT as the BEST restyle-in-place candidate (lowest drift, above baseline) AND the richest source panel. Note the white-IoU artifact so the reconcile hook does not auto-FAIL it.",
+  "one_line": "Round winner: above-baseline geometry (0.856) + the richest reference-faithful controls anywhere; the only caveat is a white-IoU metric artifact (openings ARE empty — region-IoU + eye agree)."
+}

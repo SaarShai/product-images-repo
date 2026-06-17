@@ -1,0 +1,32 @@
+{
+  "image": "tasks/space-np01-front-bottom-02/experiments/E5-bestof-4/raw.png",
+  "bbox": [
+    221,
+    38,
+    637,
+    1789
+  ],
+  "mean_region_iou": 0.4339,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "polygon",
+      "region_iou": 0.421
+    },
+    {
+      "i": 2,
+      "kind": "polygon",
+      "region_iou": 0.447
+    },
+    {
+      "i": 3,
+      "kind": "polygon",
+      "region_iou": 0.423
+    },
+    {
+      "i": 4,
+      "kind": "path",
+      "region_iou": 0.444
+    }
+  ]
+}

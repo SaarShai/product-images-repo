@@ -1,0 +1,32 @@
+{
+  "image": "tasks/space-np01-front-bottom-02/experiments/E1-filled-contract/raw.png",
+  "bbox": [
+    205,
+    26,
+    661,
+    1794
+  ],
+  "mean_region_iou": 0.4087,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "polygon",
+      "region_iou": 0.417
+    },
+    {
+      "i": 2,
+      "kind": "polygon",
+      "region_iou": 0.429
+    },
+    {
+      "i": 3,
+      "kind": "polygon",
+      "region_iou": 0.428
+    },
+    {
+      "i": 4,
+      "kind": "path",
+      "region_iou": 0.361
+    }
+  ]
+}

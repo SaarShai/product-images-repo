@@ -1,0 +1,33 @@
+{
+  "candidate": "tasks/space-np01-front-bottom-02/experiments/RESEAT-rip-v1/exact.png",
+  "overall": "FAIL",
+  "outside_painted": 546,
+  "outside_frac": 0.0005,
+  "mean_iou": 0.6592,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 0.31,
+      "iou": 0.69,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 2,
+      "painted_frac": 0.322,
+      "iou": 0.672,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 3,
+      "painted_frac": 0.337,
+      "iou": 0.648,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 4,
+      "painted_frac": 0.268,
+      "iou": 0.628,
+      "verdict": "FAIL"
+    }
+  ]
+}

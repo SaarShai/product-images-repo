@@ -1,0 +1,14 @@
+{
+  "geometry_score": 1,
+  "geometry_notes": "Overlay (red = SVG targets): painted openings shifted LEFT of targets; the SVG slot extends well below the painted slot (uncovered red tail), and the top SVG hexagon barely overlaps any painted hexagon (region-IoU 0.0 for opening 1). region-IoU 0.381 (per [0.0,0.444,0.56,0.52]). Codex compressed/offset the layout. Silhouette/V-notch present but the internal openings do not register to the contract.",
+  "cutout_cleanliness": 3,
+  "style_score": 4,
+  "style_notes": "Deep granulated cobalt wash, painted rims, empty port centers. Moderate control vocabulary: a couple knobs/toggles + indicator-dot clusters — richer than oai-v3-s1 but not as dense or as crisp as the nano source panels. Slightly muddier than the reference.",
+  "overall_score": 2,
+  "region_iou_agreement": "agrees — 0.381 matches the leftward shift + uncovered slot tail + 0.0 top opening I see.",
+  "verdict": "PROMPT RESTART",
+  "passes": ["rich-ish controls (knobs/toggles/dots)", "deep granulated wash", "painted rims + empty centers"],
+  "failures": ["openings misregistered (top opening 0.0)", "slot too short / shifted vs SVG", "0.381 — far below 0.824 baseline"],
+  "next_move": "Codex free-restyle misregisters geometry; treat only as a fallback source panel and re-seat openings, or abandon for the nano restyle path.",
+  "one_line": "Codex restyle: decent controls but geometry fails (0.381, top opening 0.0, slot short) — not viable as a restyle, weak as a source vs the nano panels."
+}

@@ -1,0 +1,33 @@
+{
+  "candidate": "tasks/space-np01-front-bottom-02/experiments/RESEAT-srcfinal-nb-s3/exact.png",
+  "overall": "FAIL",
+  "outside_painted": 2102,
+  "outside_frac": 0.0065,
+  "mean_iou": 0.1752,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 0.474,
+      "iou": 0.162,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 2,
+      "painted_frac": 0.472,
+      "iou": 0.154,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 3,
+      "painted_frac": 0.479,
+      "iou": 0.16,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 4,
+      "painted_frac": 0.436,
+      "iou": 0.224,
+      "verdict": "FAIL"
+    }
+  ]
+}

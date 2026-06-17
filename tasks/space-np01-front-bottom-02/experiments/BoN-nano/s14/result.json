@@ -1,0 +1,39 @@
+{
+  "candidate": "tasks/space-np01-front-bottom-02/experiments/BoN-nano/s14/raw.png",
+  "overall": "FAIL",
+  "outside_painted": 8203,
+  "outside_frac": 0.0086,
+  "mean_iou": 0.1842,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 0.762,
+      "iou": 0.225,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 2,
+      "painted_frac": 0.767,
+      "iou": 0.218,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 3,
+      "painted_frac": 0.772,
+      "iou": 0.209,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 4,
+      "painted_frac": 0.902,
+      "iou": 0.085,
+      "verdict": "FAIL"
+    }
+  ],
+  "id": "s14",
+  "model": "nanobanana",
+  "bbox": "16,18,753,1358",
+  "secs": 34.4,
+  "map": "tasks/space-np01-front-bottom-02/outputs/generated/np01-fb-02-genmap-filled.png",
+  "prompt": "tasks/space-np01-front-bottom-02/prompts/E1-filled-contract.md"
+}
