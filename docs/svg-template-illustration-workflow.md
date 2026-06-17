@@ -209,6 +209,12 @@ Minimum review artifacts:
 - cutout crop/contact sheet for small holes or scar-prone areas;
 - judge note using `docs/review-judge-checklist.md`.
 
+Package review artifacts so each image tests one candidate against one SVG
+geometry. Do not group two versions of the same panel in a single review image
+or overlay. Side-by-side sheets are useful for summaries after individual
+checks exist, but acceptance review needs one geometry, one overlay, and one
+verdict per artifact.
+
 ## Step 9: Judge By Looking
 
 A mechanical pass is a rejection gate, not final approval. Use a judge pass that
@@ -277,6 +283,8 @@ Every handoff or review note should include:
 - I planned safe pockets before generating.
 - I used references for visual vocabulary, not only palette.
 - I saved raw candidates and review artifacts in the task folder.
+- I packaged each acceptance overlay/review image as one candidate against one
+  SVG geometry, not multiple same-panel versions in one image.
 - I ran available geometry/export/scoring commands.
 - I inspected actual images or had a judge inspect them.
 - I chose accept, local patch, or prompt restart from evidence.

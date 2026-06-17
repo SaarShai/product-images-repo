@@ -151,6 +151,8 @@ Patch locally when:
 
 - The task folder records the exact SVG, references, generated candidate, export
   command, metadata, and review artifacts.
+- Acceptance review artifacts show one candidate against one SVG geometry. Do
+  not group two versions of the same panel in one review image or overlay.
 - Geometry checks report no painted pixels outside the allowed contour or inside
   cutouts/keep-clear masks.
 - A visual judge has inspected the actual images, not only JSON metrics.
@@ -177,5 +179,7 @@ Patch locally when:
   composition but rejected the assembled look.
 - Treating an approved geometry image as pixels to repaint, texture, or collage
   locally after the user asks for style adaptation.
+- Grouping two versions of the same panel in one acceptance review image, which
+  makes contour drift and scale errors harder to diagnose.
 - Asking the model to draw final holes or production cutouts.
 - Continuing a repair loop without explicitly deciding why patch beats restart.

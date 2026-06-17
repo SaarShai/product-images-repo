@@ -18,6 +18,11 @@ It is meant for a human or agent judge who opens the actual output images.
 - Style packet: `tasks/<task>/style-packet/style-packet.json`
 - Style packet sheets: `tasks/<task>/style-packet/*sheet.png`
 
+For acceptance review, inspect one candidate per overlay/review image. Reject
+or request repackaging if multiple versions of the same panel are grouped in one
+image and the grouping makes geometry drift, scale, or contour alignment harder
+to judge.
+
 ## Geometry Gate
 
 Reject or patch if:
