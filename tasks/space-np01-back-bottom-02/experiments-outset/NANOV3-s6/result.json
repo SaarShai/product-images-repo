@@ -1,0 +1,14 @@
+{
+  "candidate": "tasks/space-np01-back-bottom-02/experiments-outset/NANOV3-s6/raw.png",
+  "overall": "FAIL",
+  "outside_painted": 99997,
+  "outside_frac": 0.2389,
+  "mean_iou": 0.0,
+  "holes": [],
+  "id": "NANOV3-s6",
+  "model": "nanobanana",
+  "bbox": "189,0,580,1376",
+  "secs": 44.0,
+  "map": "tasks/space-np01-back-bottom-02/outputs/generated/base-silhouette-v3-1440x2560.png",
+  "prompt": "tasks/_shared/prompts/BoN-nano-back-socket-panel.md"
+}

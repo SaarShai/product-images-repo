@@ -1,0 +1,14 @@
+{
+  "candidate": "tasks/space-np02-front-bottom-01/experiments-outset/FB01-NANO-s5/raw.png",
+  "overall": "PASS",
+  "outside_painted": 3484,
+  "outside_frac": 0.0063,
+  "mean_iou": 0.0,
+  "holes": [],
+  "id": "FB01-NANO-s5",
+  "model": "nanobanana",
+  "bbox": "0,0,768,1376",
+  "secs": 53.1,
+  "map": "tasks/space-np02-front-bottom-01/outputs/generated/base-silhouette-v2-1440x2560.png",
+  "prompt": "tasks/_shared/prompts/BoN-nano-plain-panel.md"
+}

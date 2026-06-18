@@ -1,21 +1,21 @@
 {
   "hooks": {
-    "PreToolUse": [
+    "PreCompact": [
       {
         "hooks": [
           {
-            "command": "python3 ./.claude/hooks/artifact_guard.py",
+            "command": "bash ./.claude/skills/context-keeper/tools/hook.sh",
             "type": "command"
           }
         ],
         "matcher": "*"
       }
     ],
-    "PreCompact": [
+    "PreToolUse": [
       {
         "hooks": [
           {
-            "command": "bash ./.claude/skills/context-keeper/tools/hook.sh",
+            "command": "python3 ./.claude/hooks/artifact_guard.py",
             "type": "command"
           }
         ],

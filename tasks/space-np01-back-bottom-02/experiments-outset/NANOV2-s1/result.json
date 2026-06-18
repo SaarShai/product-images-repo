@@ -1,0 +1,14 @@
+{
+  "candidate": "tasks/space-np01-back-bottom-02/experiments-outset/NANOV2-s1/raw.png",
+  "overall": "PASS",
+  "outside_painted": 2644,
+  "outside_frac": 0.0059,
+  "mean_iou": 0.0,
+  "holes": [],
+  "id": "NANOV2-s1",
+  "model": "nanobanana",
+  "bbox": "189,0,580,1376",
+  "secs": 34.8,
+  "map": "tasks/space-np01-back-bottom-02/outputs/generated/base-silhouette-v2-1440x2560.png",
+  "prompt": "tasks/_shared/prompts/BoN-nano-back-socket-panel.md"
+}

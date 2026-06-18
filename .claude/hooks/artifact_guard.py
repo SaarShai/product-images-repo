@@ -75,14 +75,23 @@ def main() -> int:
             save_state(s)
         return 0
 
-    # --- gate 1: ad-hoc cp/mv into the central Images library ---
+    # --- gate 1: ad-hoc cp/mv INTO the central Images library ---
     if tool == "Bash":
         cmd = ti.get("command", "") or ""
-        touches_images = IMAGES in cmd
         is_copy = re.search(r"\b(cp|mv|rsync|install)\b", cmd) is not None
         uses_sync = "sync_results_images.py" in cmd
-        # allow the verified script and pure reads (ls/find/grep/cat) even if path appears
-        if touches_images and is_copy and not uses_sync:
+        # Only block when Images is a DESTINATION, not a source (`cp Images/x refs/` is fine).
+        # An IMAGES occurrence is a SOURCE iff it sits in first-arg position right after
+        # cp/mv/rsync/install (optionally quoted). If ANY occurrence is NOT in source
+        # position, it's a destination -> block.
+        def _img_is_dest(c):
+            for m in re.finditer(re.escape(IMAGES), c):
+                pre = c[max(0, m.start() - 8):m.start()]
+                if re.search(r"\b(cp|mv|rsync|install)\b\s*[\"']?$", pre):
+                    continue  # source position
+                return True   # destination position
+            return False
+        if IMAGES in cmd and is_copy and not uses_sync and _img_is_dest(cmd):
             block(
                 "BLOCKED (artifact_guard: file-op-without-verify).\n"
                 f"Ad-hoc {('cp/mv')} into {IMAGES} is forbidden — a hand-rolled loop "

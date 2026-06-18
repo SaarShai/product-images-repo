@@ -1,0 +1,8 @@
+{
+  "candidate": "tasks/space-np02-front-bottom-01/experiments-outset/FB01-OPENAI-s3/raw.png",
+  "overall": "PASS",
+  "outside_painted": 3221,
+  "outside_frac": 0.0057,
+  "mean_iou": 0.0,
+  "holes": []
+}

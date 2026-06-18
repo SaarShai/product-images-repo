@@ -1,0 +1,8 @@
+{
+  "candidate": "tasks/space-np01-back-bottom-02/experiments-outset/NANOV3-s4/raw.png",
+  "overall": "FAIL",
+  "outside_painted": 100130,
+  "outside_frac": 0.2385,
+  "mean_iou": 0.0,
+  "holes": []
+}

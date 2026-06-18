@@ -1,0 +1,27 @@
+{
+  "candidate": "tasks/space-np02-back-bottom-02/experiments-outset/OPENAI-s1/raw.png",
+  "overall": "PASS",
+  "outside_painted": 848,
+  "outside_frac": 0.0018,
+  "mean_iou": 0.4118,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 0.015,
+      "iou": 0.489,
+      "verdict": "PASS"
+    },
+    {
+      "i": 2,
+      "painted_frac": 0.0,
+      "iou": 0.335,
+      "verdict": "PASS"
+    }
+  ],
+  "id": "OPENAI-s1",
+  "model": "openai",
+  "bbox": "277,12,656,1656",
+  "secs": 191.8,
+  "map": "tasks/space-np02-back-bottom-02/outputs/generated/base-outset30-1440x2560.png",
+  "prompt": "tasks/_shared/prompts/BoN-nano-letterbox-generic.md"
+}

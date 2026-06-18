@@ -1,0 +1,15 @@
+{
+  "candidate": "tasks/space-np01-back-bottom-02/experiments-outset/OPENAI-s1/raw.png",
+  "overall": "FAIL",
+  "outside_painted": 2326,
+  "outside_frac": 0.0039,
+  "mean_iou": 0.2619,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 0.335,
+      "iou": 0.262,
+      "verdict": "FAIL"
+    }
+  ]
+}

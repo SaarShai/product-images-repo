@@ -119,3 +119,14 @@ Created `concepts/a-route-needs-a-success-criterion-and-measure-gate-before-laun
 - PREVIOUS lessons banked (write-gate PASS, user_confirmed): + wiki/concepts/background-routes-must-write-resumable-checkpoints.md pattern:daemon-work-needs-checkpoints + wiki/concepts/a-route-needs-a-success-criterion-and-measure-gate-before-launch.md pattern:route-spec-with-success-gates
 - subscription reinforcement: memory subscription-image-gen-one-path (extend subgen.py, no parallel module) pattern:subscription-always-working-fallback
 - recurrence across BOTH sessions: results-collection / no-post-op-verify, style-render-must-use-reference-images (already gated)
+
+## [2026-06-18] update | Space NP02 Front-Bottom-01 Watercolor Panel Generation (space_control_panel_1781771362280)
+
+Synthesized a high-resolution watercolor space control-panel illustration using generate_image matching layout contract base-silhouette-v2-1440x2560.png and style references, saving the raw output to /Users/za/.gemini/antigravity-cli/brain/49f562c7-91a7-4482-808c-a9589a5fa3dc/space_control_panel_1781771362280.jpg.
+
+## [2026-06-18] retro | multi-panel generation stretch (9 SVGs, agy debugging, edge-socket fix)
+- root causes: background drivers died silently (nohup& in bg-wrapper detach; broad pkill killed siblings); reported gen-status without verifying output; zsh bare-glob no-match aborted commands; agy 429 quota + health-lies + Pillow code-fallback.
+- gates/tools (this repo only, per user): + scripts/genbatch.sh (supervised pgroup runner, status=real raw count, scoped stop) + scripts/build_silhouette_base.py (edge-socket/polyline silhouette base) + glob-no-match-abort drift probe (skills/verify-before-completion/drift_probes.json) pattern:glob-no-match-abort + artifact_guard fixed to block only Images-as-destination.
+- lessons banked (memory): background-gen-supervision, zsh-glob-abort-guard, edge-socket-panel-recipe; subscription-image-gen-one-path updated (nano 429/health-lies/openai fallback).
+- canonical Brainer: added SCOPE note to skills/task-retrospective/SKILL.md — never run task-retrospective on the Brainer repo itself, only in the consuming/current repo.
+- accepted results: np01-back-bottom-02 = OPENAI-s2 (then 6 nano v2/v3 alternates); np02-front-bottom-01 = 6 nano + openai (pending pick).

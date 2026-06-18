@@ -1,0 +1,16 @@
+Use your image generation tool to create an image.
+
+Prompt:
+A watercolor space control-panel illustration, centered on a white background canvas with white margins around it. Do not stretch the panel to fill the canvas.
+
+The outer silhouette of the control panel must match the shape in the first attached reference image (base-outset30-sq-1700x1620.png) exactly, keeping it as a roughly square panel (1:1 aspect ratio), not a tall vertical strip. Copy the outer silhouette's slanted top-left edge, the small tabs and screw-ears on the sides and top, and the concave notch cut up into the bottom edge between the two bottom feet. This concave bottom notch is empty white background outside the panel, not an interior hole. Do not draw a bevelled rim around this notch, and do not put any control inside or across it.
+
+The watercolor paint style and color scheme must copy the look of the second and third attached reference images: a bright luminous mid-cobalt blue body with soft top-left lighting, crisp hand-painted dark-blue ink outlines, and a granulated watercolor paper texture. Request the successful edge language: dark blue rim, slight bevel, soft inner shadow, pale edge highlight, and occasional subtle rim/lip.
+
+Openings: There are exactly two interior openings in the upper half: a diagonal rounded slot on the upper-left and a circular port on the upper-right, corresponding to the grey shapes in the first reference image. Paint a beveled rim around each opening with a soft dark-navy inner shadow on the upper-left edge and a pale lit lip on the lower-right; the recessed center of these openings stays empty white background. Do not add any other openings.
+
+Hardware: Populate the open blue body areas of the panel (clear of all openings and outer edges) with colorful hardware: capsule buttons and toggles in red, golden-yellow, green, and teal; cream-colored knobs with thin dark rims and short white radial tick marks; small sliders, indicator dots, and corner screws.
+
+Do not include any text, labels, arrows, grids, or watermarks.
+
+Save the generated PNG image to '/Users/za/Documents/product images repo/tasks/space-np02-front-top/outputs/generated/watercolor_control_panel.png'.

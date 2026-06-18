@@ -1,0 +1,8 @@
+{
+  "candidate": "tasks/space-np01-back-bottom-02/experiments-outset/NANOV2-s5/raw.png",
+  "overall": "PASS",
+  "outside_painted": 2795,
+  "outside_frac": 0.0062,
+  "mean_iou": 0.0,
+  "holes": []
+}

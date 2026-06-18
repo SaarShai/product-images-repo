@@ -1,0 +1,14 @@
+{
+  "candidate": "tasks/space-np02-front-bottom-01/experiments-outset/FB01-OPENAI-s4/raw.png",
+  "overall": "PASS",
+  "outside_painted": 2258,
+  "outside_frac": 0.0042,
+  "mean_iou": 0.0,
+  "holes": [],
+  "id": "FB01-OPENAI-s4",
+  "model": "openai",
+  "bbox": "290,56,652,1618",
+  "secs": 360.3,
+  "map": "tasks/space-np02-front-bottom-01/outputs/generated/base-silhouette-v2-1440x2560.png",
+  "prompt": "tasks/_shared/prompts/BoN-nano-plain-panel.md"
+}
