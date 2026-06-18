@@ -1,0 +1,22 @@
+{
+  "image": "tasks/space-np02-front-bottom-02/experiments/RESEAT-srcfinal-nb-s4/exact.png",
+  "bbox": [
+    89,
+    1,
+    503,
+    1375
+  ],
+  "mean_region_iou": 0.9014,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "path",
+      "region_iou": 0.924
+    },
+    {
+      "i": 2,
+      "kind": "path",
+      "region_iou": 0.879
+    }
+  ]
+}

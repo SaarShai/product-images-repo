@@ -1,0 +1,98 @@
+[
+  {
+    "candidate": "SRC-nb-s1",
+    "bbox": "88,2,502,1375",
+    "region_iou": 0.8855,
+    "openings_region_iou": {
+      "opening_1_path": 0.918,
+      "opening_2_path": 0.853
+    },
+    "white_iou": 0.5037,
+    "max_painted_frac": 0.308,
+    "outside_frac": 0.0
+  },
+  {
+    "candidate": "SRC-nb-s2",
+    "bbox": "89,2,503,1374",
+    "region_iou": 0.8838,
+    "openings_region_iou": {
+      "opening_1_path": 0.917,
+      "opening_2_path": 0.85
+    },
+    "white_iou": 0.5221,
+    "max_painted_frac": 0.309,
+    "outside_frac": 0.0
+  },
+  {
+    "candidate": "SRC-nb-s3",
+    "bbox": "177,1,591,1375",
+    "region_iou": 0.0,
+    "openings_region_iou": {
+      "opening_1_path": 0.0,
+      "opening_2_path": 0.0
+    },
+    "white_iou": 0.6423,
+    "max_painted_frac": 0.219,
+    "outside_frac": 0.0
+  },
+  {
+    "candidate": "SRC-nb-s4",
+    "bbox": "89,1,503,1375",
+    "region_iou": 0.9014,
+    "openings_region_iou": {
+      "opening_1_path": 0.924,
+      "opening_2_path": 0.879
+    },
+    "white_iou": 0.6583,
+    "max_painted_frac": 0.311,
+    "outside_frac": 0.0
+  },
+  {
+    "candidate": "SRC-nb-s5",
+    "bbox": "89,2,502,1375",
+    "region_iou": 0.8815,
+    "openings_region_iou": {
+      "opening_1_path": 0.915,
+      "opening_2_path": 0.848
+    },
+    "white_iou": 0.7324,
+    "max_painted_frac": 0.302,
+    "outside_frac": 0.0
+  },
+  {
+    "candidate": "SRC-nb-s6",
+    "bbox": "89,2,503,1375",
+    "region_iou": 0.8761,
+    "openings_region_iou": {
+      "opening_1_path": 0.911,
+      "opening_2_path": 0.841
+    },
+    "white_iou": 0.7025,
+    "max_painted_frac": 0.311,
+    "outside_frac": 0.0
+  },
+  {
+    "candidate": "SRC-nb-s7",
+    "bbox": "88,2,502,1375",
+    "region_iou": 0.8827,
+    "openings_region_iou": {
+      "opening_1_path": 0.918,
+      "opening_2_path": 0.847
+    },
+    "white_iou": 0.6201,
+    "max_painted_frac": 0.308,
+    "outside_frac": 0.0
+  },
+  {
+    "candidate": "SRC-nb-s8",
+    "bbox": "89,1,502,1375",
+    "region_iou": 0.8853,
+    "openings_region_iou": {
+      "opening_1_path": 0.913,
+      "opening_2_path": 0.857
+    },
+    "white_iou": 0.7226,
+    "max_painted_frac": 0.306,
+    "outside_frac": 0.0
+  }
+]

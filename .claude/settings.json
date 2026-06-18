@@ -1,5 +1,16 @@
 {
   "hooks": {
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "command": "python3 ./.claude/hooks/artifact_guard.py",
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ],
     "PreCompact": [
       {
         "hooks": [

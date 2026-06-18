@@ -1,0 +1,25 @@
+{
+  "geometry_score": 4,
+  "geometry_notes": "The exact cutouts (green outline) align perfectly with the silhouette. However, because the model painted the openings shifted to the right, the exact cutout circle cuts into the cream knob on the left, and the slot cutout cuts into the slider track.",
+  "cutout_cleanliness": 2,
+  "style_score": 4.5,
+  "style_notes": "Beautiful bright mid-cobalt watercolor wash with excellent granulated paper texture. Cream knobs with white radial tick marks and colorful buttons (red, yellow, green, teal) match the style references perfectly.",
+  "overall_score": 2,
+  "region_iou_agreement": "overstates, because while the exact cutout fits the SVG perfectly (0.9014 region-IoU), the final composite has a severe double-opening layout defect.",
+  "verdict": "RESTART",
+  "passes": [
+    "Perfect silhouette alignment",
+    "Excellent watercolor style, colors, and hardware elements"
+  ],
+  "failures": [
+    "Severe duplicate openings: the model's painted openings (circle and slot) are left completely visible on the right of the exact cutouts because the drift (~47px) exceeded the local-erase window (41.2px)"
+  ],
+  "next_move": "Restart generation with a prompt emphasizing that openings must be shifted further to the right, or expand the local-erase window.",
+  "one_line": "Perfect watercolor style and exact geometry fit, but ruined by severe double openings (ghosting) due to large model layout drift.",
+  "crosscheck_gpt": {
+    "gpt_verdict": "",
+    "gpt_geometry": "",
+    "gpt_style": "",
+    "gpt_note": ""
+  }
+}

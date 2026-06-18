@@ -1,0 +1,26 @@
+{
+  "geometry_score": 4,
+  "geometry_notes": "The exact cutouts (green outline) align perfectly with the silhouette.",
+  "cutout_cleanliness": 3.5,
+  "style_score": 4,
+  "style_notes": "Bright cobalt watercolor panel with cream knobs and colorful capsule buttons. Matches reference style, but the wash is slightly less vibrant than s4.",
+  "overall_score": 3.5,
+  "region_iou_agreement": "agrees, geometry is exact and the local-erase mostly succeeded in covering the drift.",
+  "verdict": "ACCEPT",
+  "passes": [
+    "Exact silhouette and cutout geometry",
+    "Successfully covers the model's drifted openings, preventing double openings",
+    "Style matches the color palette and elements of the reference panels"
+  ],
+  "failures": [
+    "The covered areas where the model's drifted openings used to be are visible as slightly lighter blue smudges/watercolor patches around the exact circle and slot"
+  ],
+  "next_move": "Select as the best available deliverable since it avoids the critical double-opening defect.",
+  "one_line": "Best candidate: exact geometry and no double openings, but has minor lighter-blue smudges where the model's drift was covered.",
+  "crosscheck_gpt": {
+    "gpt_verdict": "",
+    "gpt_geometry": "",
+    "gpt_style": "",
+    "gpt_note": ""
+  }
+}

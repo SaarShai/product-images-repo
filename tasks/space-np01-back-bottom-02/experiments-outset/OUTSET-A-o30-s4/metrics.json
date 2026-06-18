@@ -1,0 +1,8 @@
+{
+  "candidate": "tasks/space-np01-back-bottom-02/experiments-outset/OUTSET-A-o30-s4/raw.png",
+  "overall": "PASS",
+  "outside_painted": 4649,
+  "outside_frac": 0.0122,
+  "mean_iou": 0.0,
+  "holes": []
+}

@@ -1,0 +1,27 @@
+{
+  "candidate": "tasks/space-np01-back-top/experiments-outset/OUTSET-A-o30-sq-s6/raw.png",
+  "overall": "FAIL",
+  "outside_painted": 9753,
+  "outside_frac": 0.0223,
+  "mean_iou": 0.0314,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 1.0,
+      "iou": 0.0,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 2,
+      "painted_frac": 0.664,
+      "iou": 0.063,
+      "verdict": "FAIL"
+    }
+  ],
+  "id": "OUTSET-A-o30-sq-s6",
+  "model": "nanobanana",
+  "bbox": "87,135,937,888",
+  "secs": 34.5,
+  "map": "tasks/space-np01-back-top/outputs/generated/base-outset30-sq-1700x1620.png",
+  "prompt": "tasks/_shared/prompts/BoN-nano-square-top-generic.md"
+}

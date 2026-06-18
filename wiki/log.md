@@ -85,3 +85,37 @@ Synthesized a high-resolution watercolor space control-panel illustration using 
 
 Synthesized a high-resolution watercolor space control-panel illustration using generate_image matching layout contract np01-fb-02-base-trueaspect-1440x2560.png and style references, saving the raw output to tasks/space-np01-front-bottom-02/experiments/SRC-nb-s8/raw.png.
 
+## [2026-06-17] update | Space NP01 Front-Bottom-01 Watercolor Panel Generation (space_control_panel_1781738909664)
+
+Synthesized a high-resolution watercolor space control-panel illustration using generate_image matching layout contract np01-fb-01-base-outset30-1440x2560.png and style references, saving the raw output to /Users/za/.gemini/antigravity-cli/brain/11ab6649-4f9a-4e06-b4dd-b0221e279e88/space_control_panel_1781738909664.jpg.
+
+## [2026-06-17] update | Space NP01 Back-Bottom-01 Watercolor Panel Generation (watercolor_space_panel_1781740733425)
+
+Synthesized a high-resolution watercolor space control-panel illustration using generate_image matching layout contract base-outset30-1440x2560.png and style references, saving the raw output to /Users/za/.gemini/antigravity-cli/brain/ad03fc04-4205-4f64-ae68-7043fb660ff7/watercolor_space_panel_1781740733425.jpg.
+
+## [2026-06-17] update | Space NP01 Back-Top Watercolor Panel Generation (watercolor_control_panel_1781740848112)
+
+Synthesized a high-resolution watercolor space control-panel illustration using generate_image matching layout contract base-outset30-sq-1700x1620.png and style references, saving the raw output to /Users/za/.gemini/antigravity-cli/brain/e22e08d7-71f3-4d61-bcd4-186ddf12f23d/watercolor_control_panel_1781740848112.jpg.
+
+## [2026-06-17] update | Space NP01 Back-Bottom-02 Watercolor Panel Generation (watercolor_control_panel_1781741152887)
+
+Synthesized a high-resolution watercolor space control-panel illustration using generate_image matching layout contract base-outset30-1440x2560.png and style references, saving the raw output to /Users/za/.gemini/antigravity-cli/brain/2ff7a0d3-42b1-4e7f-85d0-a16c5283da6b/watercolor_control_panel_1781741152887.jpg.
+
+## [2026-06-17] update | Space NP02 Front-Top Watercolor Panel Generation (space_control_panel_1781741159760)
+
+Synthesized a high-resolution watercolor space control-panel illustration using generate_image matching layout contract base-outset30-sq-1700x1620.png and style references, saving the raw output to /Users/za/.gemini/antigravity-cli/brain/4f963e22-f0d7-43df-8a5a-01de2f41528a/space_control_panel_1781741159760.jpg.
+
+## [2026-06-17] update | Background routes must write resumable checkpoints
+
+Created `concepts/background-routes-must-write-resumable-checkpoints.md` from `page` template.
+
+## [2026-06-17] update | A route needs a success-criterion and measure gate before launch
+
+Created `concepts/a-route-needs-a-success-criterion-and-measure-gate-before-launch.md` from `page` template.
+
+
+## [2026-06-17] retro | two-session task-retrospective (current ca17625c + previous "SVG geometry style skill cleanup" 34d36036), cross-vendor verified via codex/GPT
+- CURRENT escalations (repeated past prose gates → mechanical boundary block): + .claude/hooks/artifact_guard.py PreToolUse + .claude/settings.json wiring + lesson_patterns.json pattern:edit-without-read (re-escalated) + pattern:file-op-without-verify (new)
+- PREVIOUS lessons banked (write-gate PASS, user_confirmed): + wiki/concepts/background-routes-must-write-resumable-checkpoints.md pattern:daemon-work-needs-checkpoints + wiki/concepts/a-route-needs-a-success-criterion-and-measure-gate-before-launch.md pattern:route-spec-with-success-gates
+- subscription reinforcement: memory subscription-image-gen-one-path (extend subgen.py, no parallel module) pattern:subscription-always-working-fallback
+- recurrence across BOTH sessions: results-collection / no-post-op-verify, style-render-must-use-reference-images (already gated)

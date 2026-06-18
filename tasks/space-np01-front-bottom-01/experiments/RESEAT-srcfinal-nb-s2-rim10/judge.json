@@ -1,0 +1,14 @@
+{
+  "geometry_score": 5,
+  "geometry_notes": "Overlay full-res: both openings (1 long tapered slot + 1 round port) hug the SVG target. region-IoU 0.899 (slot 0.92, port 0.84... per-opening [0.853-rounded, 0.915]) — best geometry among the 8 re-seated sources. V-notch correct. outside_frac 0.004 (well under 0.02 gate).",
+  "cutout_cleanliness": 4,
+  "style_score": 4,
+  "style_notes": "Has every reference trait: bright luminous mid-cobalt, colorful capsule controls (red/yellow/green/teal), cream knobs with white radial tick marks, sliders, indicator dots, corner screws, painted bevel rims, clean white bg with white side margins. Slightly busier than the airy reference but clearly in-style.",
+  "overall_score": 4,
+  "verdict": "ACCEPT",
+  "passes": ["both openings hug exact SVG outline (region-IoU 0.899)", "bright reference palette", "colorful tick-marked controls", "painted bevel rims", "clean white slot + port cores", "0.4% paint outside contour"],
+  "failures": ["white-IoU 0.47 / painted_frac 0.16-0.29 = the by-design navy bevel band (recessed-port look); same trade-off the accepted np01-02 winner made (it was WORSE: white 0.24/painted 0.56)"],
+  "next_move": "Ship. Optional polish only: a sparser source for more white margin.",
+  "region_iou_agreement": "agrees — 0.899 matches the overlay (both openings hug)",
+  "one_line": "Goal met: bright reference-style watercolor + colorful tick-marked controls at near-exact geometry (0.899), CLEANER cores than the accepted np01-02 deliverable. Re-seat route, source SRC-nb-s2, rim-scale 1.0."
+}

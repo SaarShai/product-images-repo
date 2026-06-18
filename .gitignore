@@ -18,3 +18,7 @@ wiki/.brainer/
 # Keep generated outputs local unless explicitly curated.
 tasks/*/outputs/generated/*
 !tasks/*/outputs/generated/.gitkeep
+
+# transient runtime state (not work product)
+.claude/state/
+.brainer/

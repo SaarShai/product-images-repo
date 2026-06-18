@@ -1,0 +1,14 @@
+{
+  "candidate": "tasks/space-np01-back-bottom-02/experiments-outset/OUTSET-A-o30-s6/raw.png",
+  "overall": "FAIL",
+  "outside_painted": 194419,
+  "outside_frac": 0.3457,
+  "mean_iou": 0.0,
+  "holes": [],
+  "id": "OUTSET-A-o30-s6",
+  "model": "nanobanana",
+  "bbox": "0,0,768,1376",
+  "secs": 44.3,
+  "map": "tasks/space-np01-back-bottom-02/outputs/generated/base-outset30-1440x2560.png",
+  "prompt": "tasks/_shared/prompts/BoN-nano-letterbox-generic.md"
+}

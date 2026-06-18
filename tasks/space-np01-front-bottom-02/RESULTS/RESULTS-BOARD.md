@@ -56,7 +56,9 @@
 | **RESEAT-reflayout-nano-s3** | nano-filled-contract | nano-banana | 0.883 | unjudged | unjudged | unjudged | PASS |
 | **RESEAT-it3-nb-s4-thin** | reseat-composite | unknown | 0.882 | 4 | 4.5 | ACCEPT | PASS |
 | **RESEAT-sparse-openai-s2** | gpt-image-best-of-n | gpt-image-2 | 0.881 | unjudged | unjudged | unjudged | PASS |
+| **RESEAT-nb2-s1** | unknown | unknown | 0.880 | unjudged | unjudged | unjudged | PASS |
 | **RESEAT-srcfinal-nb-s5** | unknown | unknown | 0.878 | unjudged | unjudged | unjudged | PASS |
+| **RESEAT-nb2-s5** | unknown | unknown | 0.876 | unjudged | unjudged | unjudged | PASS |
 | **RESEAT-it1-nb-s4** | reseat-composite | unknown | 0.876 | 4 | 4.5 | LOCAL PATCH | PASS |
 | **RESEAT-bon2-s8** | unknown | unknown | 0.876 | unjudged | unjudged | unjudged | PASS |
 | **RESEAT-nb-v3-s1-v2** | reseat-composite | unknown | 0.874 | 4 | 4 | ACCEPT | PASS |
@@ -73,8 +75,6 @@
 | RESTYLE-nb-v3-s3 | restyle-locked | nano-banana | 0.782 | 4 | 5 | ACCEPT | FAIL |
 | RESEAT-nb-v3-s3-v2 | reseat-composite | unknown | 0.779 | 4 | 5 | ACCEPT | FAIL |
 | RESEAT-nb-v3-s2-v2 | reseat-composite | unknown | 0.776 | 4 | 4 | ACCEPT | FAIL |
-| RESTYLE-nb-v1-s1 | restyle-locked | nano-banana | 0.770 | 4 | 5 | ACCEPT | FAIL |
-| RESEAT-sparse-openai-s1 | gpt-image-best-of-n | gpt-image-2 | 0.761 | unjudged | unjudged | unjudged | FAIL |
 
 ---
 
@@ -273,7 +273,7 @@
 
 ### GROUP F: Orphan raw model outputs (inputs unrecoverable)
 
-Every gen image on disk is cataloged so none is dropped. Total **108** orphans (raw model gens + renders NOT already tied to an experiment dir, deduped by content hash). By model: gpt-image-2=98, nano-banana=4, render-output=6.
+Every gen image on disk is cataloged so none is dropped. Total **201** orphans (raw model gens + renders NOT already tied to an experiment dir, deduped by content hash). By model: gpt-image-2=98, nano-banana=97, render-output=6.
 Per-image records (path + mtime) are in `results.jsonl` under id prefix `orphan-`. Listed as counts here to keep the board readable.
 
 ### GROUP X: unknown
@@ -284,23 +284,39 @@ Per-image records (path + mtime) are in `results.jsonl` under id prefix `orphan-
 | **RESEAT-srcfinal-nb-s2** | unknown | 0.922 | unknown | unknown | PASS | region-IoU=0.922 |
 | **RESEAT-rip-v1** | unknown | 0.910 | unknown | unknown | PASS | region-IoU=0.910 |
 | **RESEAT-srcfinal-nb-s4** | unknown | 0.898 | unknown | unknown | PASS | region-IoU=0.898 |
+| **RESEAT-nb2-s1** | unknown | 0.880 | unknown | unknown | PASS | region-IoU=0.880 |
 | **RESEAT-srcfinal-nb-s5** | unknown | 0.878 | unknown | unknown | PASS | region-IoU=0.878 |
+| **RESEAT-nb2-s5** | unknown | 0.876 | unknown | unknown | PASS | region-IoU=0.876 |
 | **RESEAT-bon2-s8** | unknown | 0.876 | unknown | unknown | PASS | region-IoU=0.876 |
 | **RESEAT-srcfinal-nb-s1** | unknown | 0.872 | unknown | unknown | PASS | region-IoU=0.872 |
 | **RESEAT-bon2-s2** | unknown | 0.862 | unknown | unknown | PASS | region-IoU=0.862 |
 | RESTYLE-nb-v1-s3 | nano-banana | 0.722 | 0.684 | 0.001 | FAIL | region-IoU=0.722. white-IoU=0.684. outside_frac=0.0013 |
+| SRC-nb2-s6 | unknown | 0.617 | unknown | unknown | FAIL | region-IoU=0.617 |
 | SRC-nb-s7 | nano-banana | 0.589 | 0.594 | 0.000 | FAIL | region-IoU=0.589. white-IoU=0.594. outside_frac=0.0004 |
 | SRC-nb-s6 | nano-banana | 0.577 | 0.000 | 0.000 | FAIL | region-IoU=0.577. white-IoU=0.000. outside_frac=0.0002 |
 | SRC-nb-s8 | nano-banana | 0.561 | 0.001 | 0.000 | FAIL | region-IoU=0.561. white-IoU=0.001. outside_frac=0.0003 |
 | SRC-nb-s3 | nano-banana | 0.549 | 0.550 | 0.000 | FAIL | region-IoU=0.549. white-IoU=0.550. outside_frac=0.0001 |
+| SRC-nb2-s7 | unknown | 0.540 | unknown | unknown | FAIL | region-IoU=0.540 |
+| SRC-nb2-s8 | unknown | 0.540 | unknown | unknown | FAIL | region-IoU=0.540 |
+| SRC-nb2-s4 | unknown | 0.537 | unknown | unknown | FAIL | region-IoU=0.537 |
+| SRC-nb2-s2 | unknown | 0.524 | unknown | unknown | FAIL | region-IoU=0.524 |
+| SRC-nb2-s3 | unknown | 0.513 | unknown | unknown | FAIL | region-IoU=0.513 |
+| SRC-nb2-s5 | unknown | 0.315 | unknown | unknown | FAIL | region-IoU=0.315 |
 | SRC-nb-s5 | nano-banana | 0.300 | 0.191 | 0.009 | FAIL | region-IoU=0.300. white-IoU=0.191. outside_frac=0.0088 |
 | SRC-oai-s3 | gpt-image-2 | 0.267 | 0.277 | 0.001 | FAIL | region-IoU=0.267. white-IoU=0.277. outside_frac=0.0011 |
 | SRC-nb-s1 | nano-banana | 0.261 | 0.184 | 0.010 | FAIL | region-IoU=0.261. white-IoU=0.184. outside_frac=0.0099 |
 | SRC-oai-s1 | gpt-image-2 | 0.189 | 0.192 | 0.002 | FAIL | region-IoU=0.189. white-IoU=0.192. outside_frac=0.0019 |
+| RESEAT-nb2-s3 | unknown | 0.096 | unknown | unknown | FAIL | region-IoU=0.096 |
+| RESEAT-nb2-s7 | unknown | 0.065 | unknown | unknown | FAIL | region-IoU=0.065 |
+| RESEAT-nb2-s6 | unknown | 0.064 | unknown | unknown | FAIL | region-IoU=0.064 |
 | RESEAT-srcfinal-nb-s3 | unknown | 0.064 | unknown | unknown | FAIL | region-IoU=0.064 |
 | RESEAT-srcfinal-nb-s7 | unknown | 0.064 | unknown | unknown | FAIL | region-IoU=0.064 |
 | RESEAT-srcfinal-nb-s6 | unknown | 0.064 | unknown | unknown | FAIL | region-IoU=0.064 |
+| RESEAT-nb2-s8 | unknown | 0.063 | unknown | unknown | FAIL | region-IoU=0.063 |
+| RESEAT-nb2-s4 | unknown | 0.062 | unknown | unknown | FAIL | region-IoU=0.062 |
 | RESEAT-srcfinal-nb-s8 | unknown | 0.062 | unknown | unknown | FAIL | region-IoU=0.062 |
+| RESEAT-nb2-s2 | unknown | 0.062 | unknown | unknown | FAIL | region-IoU=0.062 |
+| SRC-nb2-s1 | unknown | 0.056 | unknown | unknown | FAIL | region-IoU=0.056 |
 | SRC-nb-s4 | nano-banana | 0.030 | 0.010 | 0.011 | FAIL | region-IoU=0.030. white-IoU=0.010. outside_frac=0.0106 |
 | BoN2-openai-s2 | unknown | unknown | unknown | unknown | unknown | Empty experiment directory — no outputs. |
 | E5-bestof-3 | unknown | unknown | unknown | unknown | unknown | Empty experiment directory — no outputs. |
@@ -311,7 +327,6 @@ Per-image records (path + mtime) are in `results.jsonl` under id prefix `orphan-
 | RESTYLE-oai-v3-s4 | gpt-image-2 | unknown | unknown | unknown | unknown | unknown |
 | RIMSPLIT-d14-s12345 | unknown | unknown | unknown | unknown | unknown | unknown |
 | SRC-nb-s2 | nano-banana | 0.000 | 0.118 | 0.010 | FAIL | region-IoU=0.000. white-IoU=0.118. outside_frac=0.0103 |
-| SRC-nb2-s1 | unknown | unknown | unknown | unknown | unknown | unknown |
 | SRC-oai-s2 | unknown | unknown | unknown | unknown | unknown | unknown |
 
 ### GROUP X: reseat-composite
@@ -351,10 +366,10 @@ Per-image records (path + mtime) are in `results.jsonl` under id prefix `orphan-
 
 ## SUMMARY: WHERE WE STAND
 
-- Total records: **285**
-- PASS (region-IoU >= 0.85 or procedural): **40**
-- FAIL: **114**
-- Unknown / stub: **131**
+- Total records: **393**
+- PASS (region-IoU >= 0.85 or procedural): **42**
+- FAIL: **128**
+- Unknown / stub: **223**
 
 **Top-5 by region-IoU:**
 - FINAL-exact-frame: region-IoU=0.980 (PASS)

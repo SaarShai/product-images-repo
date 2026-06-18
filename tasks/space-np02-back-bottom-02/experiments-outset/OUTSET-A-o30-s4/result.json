@@ -1,0 +1,27 @@
+{
+  "candidate": "tasks/space-np02-back-bottom-02/experiments-outset/OUTSET-A-o30-s4/raw.png",
+  "overall": "FAIL",
+  "outside_painted": 2099,
+  "outside_frac": 0.0047,
+  "mean_iou": 0.3453,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 0.505,
+      "iou": 0.374,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 2,
+      "painted_frac": 0.593,
+      "iou": 0.317,
+      "verdict": "FAIL"
+    }
+  ],
+  "id": "OUTSET-A-o30-s4",
+  "model": "nanobanana",
+  "bbox": "190,0,632,1351",
+  "secs": 38.4,
+  "map": "tasks/space-np02-back-bottom-02/outputs/generated/base-outset30-1440x2560.png",
+  "prompt": "tasks/_shared/prompts/BoN-nano-letterbox-generic.md"
+}

@@ -42,13 +42,126 @@ This is an orchestration skill. It deliberately delegates specialized work to:
 The winning pattern is:
 
 ```text
-SVG geometry -> safe composition map -> visual style packet -> attachment-aware
-style synthesis -> exact SVG export/check -> visual judge
+SVG geometry -> OUTSET cutouts -> outset contract base -> visual style packet ->
+attachment-aware style synthesis (model RAW) -> pick best raw by eye -> visual judge
 ```
+
+The official end-to-end recipe for this is the "Official Method" section below.
+Geometry exactness, when separately required, is verified/exported as a
+NON-destructive step that never overwrites the chosen raw.
 
 Do not collapse those steps into one vague prompt. In particular, do not ask an
 image-generation agent to "match the style" from prose while the actual
 reference images sit unused.
+
+## Official Method — Outset + Keep-Raw (DEFAULT; use this)
+
+This is the canonical, user-confirmed method for these SVG control-panel
+illustrations (Screenery space/top panels and the like). Use it by default. It
+generates a model RAW directly against an OUTSET contract base and keeps the raw;
+it does NOT carve geometry into the raw afterward. The deterministic re-seat
+route (`exact_bevel_composite.py`) is a last-resort backstop only — see
+Validated Lesson A.
+
+Steps (scripts are in `scripts/`, run from repo root; `T=tasks/<task>`):
+
+1. **Scaffold + geometry report.** Copy the source SVG to `$T/source/template.svg`
+   and the style references to `$T/refs/`. Run
+   `python3 scripts/svg_geometry_report.py $T/source/template.svg --out $T/svg-geometry-report.md`
+   and confirm the opening count/kinds.
+2. **Outset the cutouts** (drift safety — Validated Lesson B):
+   `python3 scripts/outset_cutouts.py $T/source/template.svg --out $T/source/template-outset30.svg --outset 30`
+   Buffers every internal cutout outward by `N` user-units (default **30**), outer
+   contour verbatim. The real die-cut always uses the ORIGINAL SVG; the outset only
+   enlarges the empty keep-clear zone so a drifted painted hole still encloses the cut.
+3. **Build the contract base from the OUTSET SVG** (this image is "image 1", the
+   layout law): `python3 scripts/build_trueaspect_base.py --svg $T/source/template-outset30.svg --out $T/outputs/generated/<task>-base-outset30-1440x2560.png`.
+   Open it: enlarged holes at the report's positions.
+4. **Write the layout-contract prompt** describing the silhouette + each opening's
+   position/shape, plus the STYLE block (bright palette, colorful tick-marked
+   controls, clean white bg + white side margins). The reference IMAGES are the
+   single source of truth for the look and MUST be passed as attachments. A mild
+   "keep all hardware clear of the openings" nudge is fine; do NOT try to express
+   the outset in prose (prompt-only outset is unreliable — Validated Lesson B).
+5. **Generate N raws** (≈6–8), serial + race-safe, nano via
+   `scripts/geom_adherence_test.py --model nanobanana --map <outset-base> --prompt <prompt> --refs <ref1> <ref2> --svg <outset-svg> --outdir $T/experiments-outset`
+   (or `scripts/subgen.py`). Every output is a first-class `raw.png` — never overwrite it.
+6. **Pick the best raw BY EYE** (Validated Lesson C): both openings clean empty
+   paper, each fully enclosed by its own bevel rim (no painted edge poking past the
+   rim), generous even outset margin, openings stay separate, style matches the
+   references. A single bad raw (opening overlap/oversize/merge) is variance —
+   regenerate a few more and pick a clean one; do NOT post-process the bad raw.
+7. **Deliver the chosen raw + sync ALL results (HARD RULE).** Promote the pick to
+   `$T/RESULTS/`. Then copy EVERY result image (all raws/exacts/overlays, not just
+   the pick) into the central library by running
+   `python3 scripts/sync_results_images.py` followed by
+   `python3 scripts/sync_results_images.py --check` to VERIFY none are missing.
+   Never hand-roll a `cp` loop for this — a silent shell-glob bug once collapsed 8
+   variants into one overwritten file and dropped them. No re-seat / `exact.png` in
+   the deliverable path.
+
+Confirmed defaults: `--outset 30` for tall narrow space panels; nano (agy) backend;
+the trueaspect 1440x2560 letterbox base. Tune `--outset` per template if openings
+are very large or very close to the contour.
+
+## Validated Lessons (np01-front-bottom, 2026-06-17)
+
+These three rules are user-confirmed on real deliverables. They override older
+guidance where they conflict.
+
+### A. Never RUIN a good raw (it may or may not be the final deliverable)
+
+A model `raw.png` that nails layout + style is valuable. The raw is not always
+the final deliverable — but you must NEVER destroy or degrade it. The re-seat
+compositor (`scripts/exact_bevel_composite.py` -> `exact.png`) carves openings,
+paints navy bevel bands, and erases hardware near openings; it visibly DEGRADES a
+good raw (user verdict: "raw was good, you ruined it with exact.png").
+
+- ALWAYS keep `raw.png` untouched and preserved as a first-class candidate.
+- Any geometry post-process writes a SEPARATE file (e.g. `exact.png`), never
+  overwrites or silently supersedes the raw.
+- When the raw already nails layout + style, present it as the result. If a
+  downstream step is needed, it must be NON-destructive to the raw.
+- Re-seat / `exact_bevel_composite.py` is a LAST-RESORT backstop, not the default.
+  If geometry must be enforced, prefer a non-destructive route (below) first.
+
+### B. Absorb cutout drift with an OUTSET — adapt the SVG, not the prompt
+
+Painted cutouts drift by several points. If the empty (paper-white) area equals
+the true cutout, drift pushes the real die-cut into painted hardware. Fix: make
+the EMPTY keep-clear area LARGER than the cutout.
+
+The outset must arrive as PIXELS in the contract base, not as prose. Tested both:
+
+- **Adapt the SVG (correct):** `python3 scripts/outset_cutouts.py SRC.svg --out
+  OUT.svg --outset N` buffers every internal cutout outward by `N` user-units
+  (shapely), outer contour verbatim; rebuild the true-aspect base from `OUT.svg`
+  so the layout-contract image shows the enlarged holes. Consistent, controlled,
+  exactly `+N` pt, openings stay separate and correctly sized.
+- **Prompt-only outset (unreliable — do not rely on it):** telling the model to
+  "leave an oversized empty band" produces variable results — oversized one
+  opening, MERGED two openings with a white channel, run-to-run drift.
+
+Default `--outset` ~30 user-units for these tall narrow space panels (~1.2% of
+panel height) — user-confirmed pick at outset 30. Tune per template; the real cut
+always uses the ORIGINAL SVG, the outset only governs the empty zone. A mild
+prompt nudge ("keep all hardware clear of the openings") is fine as
+reinforcement, but the outset SVG/base is load-bearing.
+
+### C. Geometry comes from the contract base image, then pick from N raws
+
+Generate N source raws (nano via `scripts/geom_adherence_test.py` /
+`subgen.py`) against the outset base + reference images, then PICK the best raw
+by eye. A single bad raw (e.g. the slot top poking past its bevel) is generation
+variance — regenerate a few more candidates and pick a clean one rather than
+post-processing the bad one.
+
+**Review EVERY candidate before picking — never a sample.** If you generated
+s1..s8, LOOK at all eight; do not eyeball s1/s3/s5 and pick from those. Better
+raws routinely sit in the unviewed cells (confirmed miss: np01-front-bottom-02
+s6 was the best but was skipped because only s1/s3/s5 were viewed). When showing
+the user, show the contender set (or a contact sheet), not just your one pick, so
+their eye can catch what yours missed.
 
 ## Routing Decision
 
@@ -286,6 +399,9 @@ The judge must inspect:
 - Geometry report exists.
 - `template-manifest.json` names outer contours, cutouts, keep-clear zones, and
   safe pockets.
+- Cutouts are OUTSET by `scripts/outset_cutouts.py` and the contract base is
+  rebuilt from the outset SVG (Validated Lesson B); the real cut still uses the
+  original SVG.
 - Style packet exists and has been visually inspected.
 - The prompt includes actual image attachments, not only adjectives.
 - The selected route is written as `ELEMENTS-FIRST`, `WHOLE-PANEL-REDRAW`,
@@ -320,6 +436,12 @@ The judge must inspect:
   for style adaptation.
 - Broad packet-crop collage.
 - Calling a metric `PASS` production approval.
+- Ruining/degrading a good `raw.png` — letting a destructive post-process
+  (`exact_bevel_composite.py` / `exact.png`) overwrite or supersede it instead of
+  preserving the raw as a separate first-class file (Validated Lesson A).
+- Trying to outset cutouts with prompt prose instead of an outset SVG/base
+  (Validated Lesson B).
+- Post-processing one bad raw instead of regenerating clean candidates.
 - Asking one agent to solve SVG geometry, style synthesis, exact export, and
   acceptance review without separate gates.
 - Keeping a procedural placement pipeline after the user approves geometry but

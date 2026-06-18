@@ -1,0 +1,25 @@
+{
+  "geometry_score": 4,
+  "geometry_notes": "The exact cutouts (green outline) align perfectly with the silhouette.",
+  "cutout_cleanliness": 2.5,
+  "style_score": 4,
+  "style_notes": "Good watercolor style with double knobs at the top, but less balanced than s4 or s5.",
+  "overall_score": 2.5,
+  "region_iou_agreement": "overstates, because of the ghost rim on the circle opening and the large light blue smudge over the slot.",
+  "verdict": "RESTART",
+  "passes": [
+    "Exact silhouette and cutout geometry"
+  ],
+  "failures": [
+    "The model's drifted circle opening was only partially covered, leaving a visible dark ghost rim on its right",
+    "The slot cover left a large, flat, very light blue smudge that stands out from the watercolor wash"
+  ],
+  "next_move": "Restart generation.",
+  "one_line": "Exact geometry, but has a visible ghost circle rim and a large light blue smudge over the slot.",
+  "crosscheck_gpt": {
+    "gpt_verdict": "",
+    "gpt_geometry": "",
+    "gpt_style": "",
+    "gpt_note": ""
+  }
+}

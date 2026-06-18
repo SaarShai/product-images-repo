@@ -1,0 +1,21 @@
+{
+  "candidate": "tasks/space-np02-front-bottom-02/experiments-outset/OUTSET-A-o30-s3/raw.png",
+  "overall": "FAIL",
+  "outside_painted": 1368,
+  "outside_frac": 0.0028,
+  "mean_iou": 0.537,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 0.393,
+      "iou": 0.558,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 2,
+      "painted_frac": 0.462,
+      "iou": 0.516,
+      "verdict": "FAIL"
+    }
+  ]
+}

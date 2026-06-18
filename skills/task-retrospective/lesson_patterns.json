@@ -4,7 +4,14 @@
     "description": "Edit/Write attempted before the file was Read (bash cat does not register as a read)",
     "regex": "File has not been read yet|edit-without-read",
     "promoted": "2026-06-12",
-    "fix": "repeated_tool_error probe 'edit-without-read' declared in skills/verify-before-completion/drift_probes.json, fired by compliance-canary (transcript-mined: 15/18 tool errors). See wiki/log.md [2026-06-12]."
+    "fix": "ESCALATED 2026-06-17: the post-hoc compliance-canary probe (UserPromptSubmit) only WARNS — it fired AGAIN (21x in the 2026-06-17 session) because it cannot block at the tool boundary (cross-vendor/GPT finding). Now BLOCKED at the boundary by a PreToolUse hook: .claude/hooks/artifact_guard.py denies Edit/Write to an existing file with no fresh Read since its last modification. Original post-hoc probe in skills/verify-before-completion/drift_probes.json retained as the recurrence counter. See wiki/log.md [2026-06-17]."
+  },
+  {
+    "id": "file-op-without-verify",
+    "description": "Bulk file op (cp/mv into the central results library) run as an ad-hoc shell loop with no post-op count/verify; a $n__raw->empty bug once collapsed 8 result images into one overwrite, undetected until the user found a missing file.",
+    "regex": "file-op-without-verify|\\$n__raw|silently dropped|collapsed .* into one",
+    "promoted": "2026-06-17",
+    "fix": "BLOCKED at the tool boundary by .claude/hooks/artifact_guard.py: denies ad-hoc cp/mv into tasks/space-np01-front-bottom-02/RESULTS/Images and requires scripts/sync_results_images.py (which has a --check that exits 1 on any missing file). See wiki/log.md [2026-06-17]."
   },
   {
     "id": "loop-ran-past-budget",
