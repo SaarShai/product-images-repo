@@ -18,14 +18,6 @@
     "severity": "warn"
   },
   {
-    "id": "glob-no-match-abort",
-    "kind": "repeated_tool_error",
-    "pattern": "no matches found",
-    "min_count": 1,
-    "message": "a zsh glob hit 'no matches found' and ABORTED the Bash command (nullglob is off) — the rest of a compound command silently never ran (wrong 0-counts, skipped copies/promotions). Guard globs: `setopt null_glob`, or `for f in PATTERN; do [ -e \"$f\" ] || continue; ...; done`, or use `find` instead of a bare `*` glob.",
-    "severity": "warn"
-  },
-  {
     "id": "visual-claim-without-vision",
     "kind": "claim_without_evidence",
     "claim_pattern": "(?i)\\b(chart|diagram|graph|figure|render(?:ed|s|ing)?|screenshot|layout|mockup|plot|svg|png|jpe?g|pdf|visuali[sz]ation|the ui|web ?page|slide)\\b[^.?!\\n]{0,45}\\b(?:looks?|renders?|displays?|correct|good|right|fine|aligned|positioned|legible|readable)\\b",

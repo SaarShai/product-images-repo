@@ -8,6 +8,18 @@ pulse_reminder: at task end run task-retrospective — self-audit (5-whys to roo
 
 # task-retrospective — close the learning loop
 
+> **SCOPE — run this ONLY in a consuming ("current") repo, NEVER on the canonical Brainer
+> repo itself.** Brainer is the source-of-truth skill library that is *synced out* into
+> working repos; it is not a place where tasks get done. A retrospective harvests lessons
+> and gates into the repo where the work happened — so it must execute against that working
+> repo, writing to *its* wiki/memory/skills (synced copies) and *its* drift probes. Pointing
+> this skill at the Brainer repo (treating Brainer's own development as the "task") pollutes
+> the canonical library with project-specific lessons and creates sync conflicts. If you find
+> yourself about to bank a retrospective lesson into `Brainer/` because that is `cwd`, STOP:
+> the only edits this skill may make under `Brainer/` are deliberate, human-directed changes
+> to the skill definitions themselves — not auto-harvested task lessons. (Even those should be
+> the rare exception, made knowingly.)
+
 [`wiki-memory`](../wiki-memory/SKILL.md) records and retrieves lessons; [`write-gate`](../write-gate/SKILL.md)
 keeps junk out; [`compliance-canary`](../compliance-canary/SKILL.md) fires drift probes. What was
 missing is the **close**: a fast self-audit, a real user check, a gated write, and — the load-bearing
@@ -84,6 +96,17 @@ bracket breaks naive splitting). The caller reads the LAST such block:
 ````
 All three arrays may be empty — `{"retrospective": {"banked": [], "dropped": [], "recurrence": []}}` is
 the valid "no durable lesson" result.
+
+## Loop-pass mode
+
+When called from a long-running loop, this skill does not replace the loop state file. It closes one pass:
+
+1. Read the loop contract (`anchor_files`, `state_store`, `recall`, `writeback`, `state_concurrency`) from the [`loop-engineering`](../loop-engineering/SKILL.md) spec.
+2. Persist the pass-local facts to `state_store`: pass number, attempts tried/abandoned, verifier verdict, failure reason, state revision, and next action. This write happens even when no durable lesson is banked.
+3. Apply the Part C nomination cap to decide whether any finding is a general lesson. Most pass facts stay in loop state; only verified, project-specific lessons route through [`write-gate`](../write-gate/SKILL.md) into [`wiki-memory`](../wiki-memory/SKILL.md).
+4. For fleets, record which writer owned the state update (`single_writer`, `optimistic_revision`, or `worktree_isolated`) so a later pass can detect clobbered or stale state.
+
+The loop may run thousands of passes; the wiki should not receive thousands of pass logs. Promote the rule, not the trace.
 
 ## Part C — route each accepted lesson
 
@@ -197,6 +220,15 @@ documented fix did NOT hold = **exit 1** = escalate that pattern to a mechanical
 RULE. Every recurrence row carries the grep-locatable log date + the verbatim snippet — the output is
 a queryable record, not prose. A pattern with zero post-promotion hits is reported as *holding*. Run
 at the retrospective or periodically.
+
+Transcript mining can also surface advisory candidates:
+```
+python3 scripts/mine_transcripts.py
+```
+The ignored `scratch/transcript_report.json` may contain `candidate_lessons` mined from repeated tool
+errors, large Bash outputs, and repeated-read/search-chain traces. Treat these as prompts for Part A
+and Part C only. They are not durable memory, they do not bypass `write-gate`, and they never auto-write
+wiki pages or carrier files.
 
 ## Never
 - Run Part B for a one-file trivial edit — a `wiki/log.md` line is enough.
