@@ -1,6 +1,6 @@
 ---
 name: compliance-canary
-description: Use when a long session drifts — the single always-on drift watcher: one UserPromptSubmit hook combining a periodic skill-rule re-anchor (every N turns), symptomatic per-skill drift probes (filler creep, word-count growth, unverified done-claims, self-closing without asking, looping tool errors, rule fade), and a request ledger that keeps every user request OPEN until completed or the user closes it (so nothing the user asked for is silently dropped). Absorbs the former skill-pulse; the re-anchor yields to a fired probe so the two never double-nag. Tune/disable via COMPLIANCE_CANARY_* env vars (SKILL_PULSE_* honored as aliases).
+description: "Use when a long session drifts — the single always-on drift watcher: one UserPromptSubmit hook combining a periodic skill-rule re-anchor (every N turns), symptomatic per-skill drift probes (filler creep, word-count growth, unverified done-claims, self-closing without asking, looping tool errors, rule fade), and a request ledger that keeps every user request OPEN until completed or the user closes it (so nothing the user asked for is silently dropped). Absorbs the former skill-pulse; the re-anchor yields to a fired probe so the two never double-nag. Tune/disable via COMPLIANCE_CANARY_* env vars (SKILL_PULSE_* honored as aliases)."
 model: haiku
 effort: low
 tools: [Bash, Read, Write]
@@ -107,7 +107,7 @@ Use for: any tool error the agent keeps re-triggering after the native error mes
 
 #### `user_correction` *(v1.7)*
 
-Matches the user's CURRENT prompt (not the transcript) against correction patterns ("no, use X", "that's wrong", "I said …"). Fires the harvest reflex at the exact turn the correction lands — corrections are the highest-value learning source (exp1: feedback lift +0.667) but the prose-only reflex under-fires. Lineage: BayramAnnakov/claude-reflect; ships in `wiki-memory/drift_probes.json`.
+Matches the user's CURRENT prompt (not the transcript) against correction patterns ("no, use X", "that's wrong", "I said …"). It surfaces the correction at the exact turn it lands; if task-retrospective is armed, record it as evidence, and if persistence is explicitly selected, route the lesson through write-gate. Lineage: BayramAnnakov/claude-reflect; ships in `wiki-memory/drift_probes.json`.
 
 ```json
 {
@@ -118,7 +118,7 @@ Matches the user's CURRENT prompt (not the transcript) against correction patter
 }
 ```
 
-Use for: routing corrections into write-gate → wiki-memory instead of losing them to the session.
+Use for: preventing corrections from being ignored without turning every correction into an automatic memory write.
 
 #### `trajectory_drift` *(v1.8)*
 
