@@ -1,0 +1,27 @@
+{
+  "overlay": "tasks/whole-panel-build/B2-narrow/packet-punched/overlay.png",
+  "crops": [
+    "tasks/whole-panel-build/B2-narrow/packet-punched/crops/cutout_0.png",
+    "tasks/whole-panel-build/B2-narrow/packet-punched/crops/cutout_1.png"
+  ],
+  "counts": {
+    "cutouts": 2,
+    "red_keep_clear": 0
+  },
+  "geometry_floor": {
+    "openings": [
+      {
+        "i": 1,
+        "kind": "path",
+        "region_iou": 0.829
+      },
+      {
+        "i": 2,
+        "kind": "path",
+        "region_iou": 0.736
+      }
+    ]
+  },
+  "rubric": "A fill-to-contour (no empty gap inside the contour, esp. bottom) \u00b7\nB cutout-fit (empty cutout=clean bg + bleed margin + rim/bevel; feature cutout=painted feature on the cut) \u00b7\nC keep-clear (NO focal motif inside a red zone) \u00b7 D top-contour (top silhouette follows the green guide) \u00b7\nE arch-fit (door/window/landmark fits the orange arch + door-flap lines) \u00b7\nF margins/seams (bleed margin; no focal element split by a blue fold / panel seam) \u00b7\nG style (one coherent painted illustration, not collage). No guide lines baked into art.\nVERDICT=PASS only if A-F hold AND G ok; else FAIL + failing checks + one fix.",
+  "instruction": "Open overlay + every crop. Apply the rubric. Return {verdict, failing_checks[], reasons[], one_fix}."
+}

@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import re
 import sys
 import xml.etree.ElementTree as ET
@@ -148,69 +149,94 @@ def close_open_path_with_polyline(points: list[Point], polylines: list[list[Poin
     return points
 
 
-def rect_polygon(el: ET.Element) -> tuple[Polygon | None, tuple[float, float, float, float]]:
+def rect_polygon(el: ET.Element, ctm=G.IDENTITY) -> tuple[Polygon | None, tuple[float, float, float, float]]:
     x = float(el.attrib.get("x", 0))
     y = float(el.attrib.get("y", 0))
     w = float(el.attrib.get("width", 0))
     h = float(el.attrib.get("height", 0))
     if w <= 0 or h <= 0:
         return None, (x, y, x, y)
-    return Polygon([(x, y), (x + w, y), (x + w, y + h), (x, y + h)]), (x, y, x + w, y + h)
+    corners = G.apply_ctm(ctm, [(x, y), (x + w, y), (x + w, y + h), (x, y + h)])
+    xs = [p[0] for p in corners]
+    ys = [p[1] for p in corners]
+    return Polygon(corners), (min(xs), min(ys), max(xs), max(ys))
 
 
-def extract_shapes(svg: Path) -> tuple[tuple[float, float, float, float], list[Shape]]:
+def extract_shapes(svg: Path, clip_to_viewbox: bool = True) -> tuple[tuple[float, float, float, float], list[Shape]]:
     root = ET.parse(svg).getroot()
     css = parse_css(root)
     viewbox = G.read_viewbox(root)
 
     polylines: list[list[Point]] = [
-        G.parse_points(el.attrib["points"])
-        for el in root.iter()
+        G.apply_ctm(ctm, G.parse_points(el.attrib["points"]))
+        for el, ctm in G.iter_with_ctm(root)
         if G.tag_name(el) == "polyline" and el.attrib.get("points")
     ]
 
     shapes: list[Shape] = []
     pidx = 0
-    for el in root.iter():
+    for el, ctm in G.iter_with_ctm(root):
         name = G.tag_name(el)
         ref = el.attrib.get("id") or el.attrib.get("class") or f"{name}#{pidx}"
         style = element_style(el, css)
         if name == "path" and el.attrib.get("d"):
             for sub in G.parse_path_d(el.attrib["d"]):
-                sub = close_open_path_with_polyline(sub, polylines)
+                sub = close_open_path_with_polyline(G.apply_ctm(ctm, sub), polylines)
                 poly = poly_from_points(sub)
                 if poly is None:
                     continue
                 shapes.append(Shape("path", ref, poly, poly.area, poly.bounds, style))
                 pidx += 1
         elif name == "polygon" and el.attrib.get("points"):
-            poly = poly_from_points(G.parse_points(el.attrib["points"]))
+            poly = poly_from_points(G.apply_ctm(ctm, G.parse_points(el.attrib["points"])))
             if poly is not None:
                 shapes.append(Shape("polygon", ref, poly, poly.area, poly.bounds, style))
                 pidx += 1
         elif name == "rect":
-            poly, bounds = rect_polygon(el)
+            poly, bounds = rect_polygon(el, ctm)
             if poly is not None:
                 shapes.append(Shape("rect", ref, poly, poly.area, bounds, style))
                 pidx += 1
         elif name in ("line", "polyline"):
             if name == "line":
-                bounds = (
-                    float(el.attrib.get("x1", 0)), float(el.attrib.get("y1", 0)),
-                    float(el.attrib.get("x2", 0)), float(el.attrib.get("y2", 0)),
-                )
+                pts = G.apply_ctm(ctm, [
+                    (float(el.attrib.get("x1", 0)), float(el.attrib.get("y1", 0))),
+                    (float(el.attrib.get("x2", 0)), float(el.attrib.get("y2", 0))),
+                ])
             else:
-                pts = G.parse_points(el.attrib.get("points", ""))
-                xs = [p[0] for p in pts] or [0]
-                ys = [p[1] for p in pts] or [0]
-                bounds = (min(xs), min(ys), max(xs), max(ys))
+                pts = G.apply_ctm(ctm, G.parse_points(el.attrib.get("points", "")))
+            xs = [p[0] for p in pts] or [0]
+            ys = [p[1] for p in pts] or [0]
+            bounds = (min(xs), min(ys), max(xs), max(ys))
             shapes.append(Shape(name, ref, None, 0.0, bounds, style))
             pidx += 1
+        elif name in ("circle", "ellipse"):
+            cx = float(el.attrib.get("cx", 0)); cy = float(el.attrib.get("cy", 0))
+            rx = float(el.attrib.get("r", el.attrib.get("rx", 0)))
+            ry = float(el.attrib.get("r", el.attrib.get("ry", 0)))
+            if rx > 0 and ry > 0:
+                ring = [(cx + rx * math.cos(math.tau * k / 48), cy + ry * math.sin(math.tau * k / 48))
+                        for k in range(48)]
+                poly = poly_from_points(G.apply_ctm(ctm, ring))
+                if poly is not None:
+                    shapes.append(Shape("circle", ref, poly, poly.area, poly.bounds, style))
+                    pidx += 1
+
+    if clip_to_viewbox:
+        # drop shapes entirely OUTSIDE the visible viewBox (off-canvas other-panel/rogue elements);
+        # keep anything that overlaps it. Matches a renderer clipping content to the viewport.
+        vx, vy, vw, vh = viewbox
+        mx, my = vw * 0.02, vh * 0.02
+
+        def _overlaps(b):
+            return not (b[2] < vx - mx or b[0] > vx + vw + mx or b[3] < vy - my or b[1] > vy + vh + my)
+
+        shapes = [s for s in shapes if _overlaps(s.bounds)]
     return viewbox, shapes
 
 
 def classify(shapes: list[Shape]) -> list[Shape]:
-    contours = [s for s in shapes if s.kind in ("path", "polygon") and s.polygon is not None]
+    contours = [s for s in shapes if s.kind in ("path", "polygon", "circle") and s.polygon is not None]
     if contours:
         max_area = max(s.area for s in contours)
         biggest = max(contours, key=lambda s: s.area)
@@ -237,7 +263,7 @@ def classify(shapes: list[Shape]) -> list[Shape]:
                 s.role, s.reason = "internal_cutout", "small contour (<10% of largest)"
 
     for s in shapes:
-        if s.kind in ("path", "polygon"):
+        if s.kind in ("path", "polygon", "circle"):
             continue
         fam = color_family(s.style.get("stroke") or s.style.get("fill"))
         dashed = is_dashed(s.style)

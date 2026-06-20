@@ -1,0 +1,38 @@
+{
+  "candidate": "tasks/whole-panel-build/B4-princess-window/princess01-ref.png",
+  "size": [
+    649,
+    1400
+  ],
+  "context": "context.png",
+  "tiles": [
+    {
+      "file": "tile_0.png",
+      "frac_bbox": [
+        0.0,
+        0.0,
+        1.0,
+        0.373
+      ]
+    },
+    {
+      "file": "tile_1.png",
+      "frac_bbox": [
+        0.0,
+        0.293,
+        1.0,
+        0.706
+      ]
+    },
+    {
+      "file": "tile_2.png",
+      "frac_bbox": [
+        0.0,
+        0.626,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "regions": []
+}

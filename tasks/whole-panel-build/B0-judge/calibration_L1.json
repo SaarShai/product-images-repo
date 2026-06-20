@@ -1,0 +1,32 @@
+{
+  "princess-narrow-01": {
+    "label": "PASS",
+    "coverage": 1.0,
+    "bottom_fill": 1.0,
+    "top_fill": 1.0
+  },
+  "space-stabilizer-01": {
+    "label": "PASS",
+    "coverage": 1.0,
+    "bottom_fill": 1.0,
+    "top_fill": 1.0
+  },
+  "space-narrow-panels-01": {
+    "label": "PASS",
+    "coverage": 1.0,
+    "bottom_fill": 1.0,
+    "top_fill": 1.0
+  },
+  "princess-panels-FAIL-01": {
+    "label": "FAIL",
+    "coverage": 1.0,
+    "bottom_fill": 1.0,
+    "top_fill": 1.0
+  },
+  "window-fit-01": {
+    "label": "PASS",
+    "coverage": 1.0,
+    "bottom_fill": 1.0,
+    "top_fill": 1.0
+  }
+}

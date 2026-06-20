@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3116.34 1030.08">
+  <defs>
+    <style>
+      .cls-1 {
+        isolation: isolate;
+      }
+
+      .cls-2 {
+        mix-blend-mode: multiply;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+        stroke-width: 10px;
+      }
+    </style>
+  </defs>
+  <g class="cls-1">
+    <g id="white_spot_layer" data-name="white spot layer">
+      <g id="stabilizer1_mask.tif">
+        
+      </g>
+    </g>
+    <g id="print">
+      
+    </g>
+    <g id="cut">
+      <g id="connector_stabilizer_01_front_layer" data-name="connector stabilizer 01 &amp;gt; front layer">
+        <path id="connector_stabilizer_03_front_layer_short_slot_on_stabilizer" data-name="connector stabilizer 03 &amp;gt; front layer &amp;gt; short slot on stabilizer" class="cls-3" d="M3108.98,586.69c0-15.7-12.73-28.43-28.43-28.43l-212.51-.02v-103.75l212.51-.02c15.7,0,28.43-12.73,28.43-28.43"/>
+        <g>
+          <path id="connector_stabilizer_03_front_layer_outer_contour" data-name="connector stabilizer 03 &amp;gt; front layer &amp;gt; outer contour" class="cls-3" d="M3108.98,426.02v-10.48c0-3.81-1.91-7.37-5.09-9.46-347.24-227.6-802.1-234.31-1281.52-234.3-36.51,0-103.03.84-139.11,2.33,0,0-26.38-17.41-130.14-62.7-90.02-39.28-239.94-58.97-388.91-58.93L45.72,29.4c-22.42,0-40.6,12.57-40.67,28.11v64.27c0,7.25,4.02,14.2,11.28,19.42l96.51,69.78v55.65c0,7.8-6.32,14.12-14.12,14.12H19.21c-7.85,0-14.21,6.36-14.21,14.21v148.16"/>
+          <path id="connector_stabilizer_03_front_layer_outer_contour-2" data-name="connector stabilizer 03 &amp;gt; front layer &amp;gt; outer contour" class="cls-3" d="M3108.98,586.69v10.48c0,3.81-1.91,7.37-5.09,9.46-347.24,227.6-802.1,234.31-1281.52,234.3-36.51,0-103.03-.84-139.11-2.33,0,0-26.38,17.41-130.14,62.7-90.02,39.28-239.94,58.97-388.91,58.93l-1118.49,23.09c-22.42,0-40.6-12.57-40.67-28.11v-64.27c0-7.25,4.02-14.2,11.28-19.42l96.51-69.78v-55.65c0-7.8-6.32-14.12-14.12-14.12H19.21c-7.85,0-14.21-6.36-14.21-14.21v-148.16"/>
+        </g>
+        <path id="connector_stabilizer_03_front_layer_long_slot_on_stabilizer" data-name="connector stabilizer 03 &amp;gt; front layer &amp;gt; long slot on stabilizer" class="cls-3" d="M5,443.13c0,6.28,5.09,11.37,11.37,11.37h1299.67v103.75H16.33c-6.26,0-11.33,5.07-11.33,11.33"/>
+        <g>
+          <g>
+            <circle class="cls-3" cx="1310.75" cy="266.85" r="49.77"/>
+            <circle class="cls-3" cx="1046.47" cy="266.85" r="49.77"/>
+            <circle class="cls-3" cx="782.19" cy="266.85" r="49.77"/>
+          </g>
+          <g>
+            <circle class="cls-3" cx="2282.74" cy="339.46" r="38.65"/>
+            <circle class="cls-3" cx="2077.47" cy="339.46" r="38.65"/>
+            <circle class="cls-3" cx="1872.2" cy="339.46" r="38.65"/>
+          </g>
+          <g>
+            <circle class="cls-3" cx="1310.75" cy="745.87" r="49.77"/>
+            <circle class="cls-3" cx="1046.47" cy="745.87" r="49.77"/>
+            <circle class="cls-3" cx="782.19" cy="745.87" r="49.77"/>
+          </g>
+          <g>
+            <circle class="cls-3" cx="2282.74" cy="673.25" r="38.65"/>
+            <circle class="cls-3" cx="2077.47" cy="673.25" r="38.65"/>
+            <circle class="cls-3" cx="1872.2" cy="673.25" r="38.65"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

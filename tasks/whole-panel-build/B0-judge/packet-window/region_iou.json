@@ -1,0 +1,37 @@
+{
+  "image": "tasks/whole-panel-build/B0-judge/packet-window/overlay.png",
+  "bbox": [
+    0,
+    0,
+    1097,
+    1608
+  ],
+  "mean_region_iou": 0.0,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "path",
+      "region_iou": 0.0
+    },
+    {
+      "i": 2,
+      "kind": "path",
+      "region_iou": 0.0
+    },
+    {
+      "i": 3,
+      "kind": "path",
+      "region_iou": 0.0
+    },
+    {
+      "i": 4,
+      "kind": "path",
+      "region_iou": 0.0
+    },
+    {
+      "i": 5,
+      "kind": "circle",
+      "region_iou": 0.0
+    }
+  ]
+}

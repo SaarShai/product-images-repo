@@ -1,0 +1,1015 @@
+{
+  "created_at": "2026-06-20T15:34:18Z",
+  "task": "B2-narrow",
+  "purpose": "visual style packet for image-generation/style agents",
+  "source_refs": [
+    "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png",
+    "tasks/whole-panel-build/B2-narrow/stylecrops/gauge_pills.png",
+    "tasks/whole-panel-build/B2-narrow/stylecrops/toggles_sliders.png"
+  ],
+  "contact_sheets": {
+    "reference_contact_sheet": "tasks/whole-panel-build/B2-narrow/style-packet/reference-contact-sheet.png",
+    "style_exemplar_sheet": "tasks/whole-panel-build/B2-narrow/style-packet/style-exemplar-sheet.png"
+  },
+  "palette_hex": [
+    "#000000",
+    "#a0c2e5",
+    "#85b0da",
+    "#b8d3ed",
+    "#6598cb",
+    "#447cb7",
+    "#275d99",
+    "#e9ebee",
+    "#213658",
+    "#e8765c",
+    "#eba88d",
+    "#a84845"
+  ],
+  "crops": [
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-full-panel.png",
+      "bbox": [
+        0,
+        0,
+        3347,
+        3300
+      ],
+      "size": [
+        3347,
+        3300
+      ],
+      "label": "ref 1 full panel",
+      "type": "full-panel",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-left-region.png",
+      "bbox": [
+        0,
+        0,
+        1279,
+        3300
+      ],
+      "size": [
+        1279,
+        3300
+      ],
+      "label": "ref 1 left-region",
+      "type": "left-region",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-center-region.png",
+      "bbox": [
+        1029,
+        0,
+        2350,
+        3300
+      ],
+      "size": [
+        1321,
+        3300
+      ],
+      "label": "ref 1 center-region",
+      "type": "center-region",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-right-region.png",
+      "bbox": [
+        2067,
+        0,
+        3347,
+        3300
+      ],
+      "size": [
+        1280,
+        3300
+      ],
+      "label": "ref 1 right-region",
+      "type": "right-region",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-body-texture.png",
+      "bbox": [
+        1330,
+        916,
+        2083,
+        2384
+      ],
+      "size": [
+        753,
+        1468
+      ],
+      "label": "ref 1 body-texture",
+      "type": "body-texture",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-edge-treatment.png",
+      "bbox": [
+        0,
+        0,
+        811,
+        1394
+      ],
+      "size": [
+        811,
+        1394
+      ],
+      "label": "ref 1 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-accent-component-01.png",
+      "bbox": [
+        1928,
+        2256,
+        2538,
+        2560
+      ],
+      "size": [
+        610,
+        304
+      ],
+      "label": "ref 1 accent component 01",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-accent-component-02.png",
+      "bbox": [
+        1935,
+        2723,
+        2538,
+        3023
+      ],
+      "size": [
+        603,
+        300
+      ],
+      "label": "ref 1 accent component 02",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-accent-component-03.png",
+      "bbox": [
+        113,
+        2360,
+        699,
+        2661
+      ],
+      "size": [
+        586,
+        301
+      ],
+      "label": "ref 1 accent component 03",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-accent-component-04.png",
+      "bbox": [
+        128,
+        2638,
+        703,
+        2934
+      ],
+      "size": [
+        575,
+        296
+      ],
+      "label": "ref 1 accent component 04",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-accent-component-05.png",
+      "bbox": [
+        1938,
+        2498,
+        2529,
+        2775
+      ],
+      "size": [
+        591,
+        277
+      ],
+      "label": "ref 1 accent component 05",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-accent-component-06.png",
+      "bbox": [
+        1121,
+        273,
+        1360,
+        647
+      ],
+      "size": [
+        239,
+        374
+      ],
+      "label": "ref 1 accent component 06",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-accent-component-07.png",
+      "bbox": [
+        917,
+        706,
+        1155,
+        1077
+      ],
+      "size": [
+        238,
+        371
+      ],
+      "label": "ref 1 accent component 07",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-accent-component-08.png",
+      "bbox": [
+        790,
+        277,
+        1024,
+        647
+      ],
+      "size": [
+        234,
+        370
+      ],
+      "label": "ref 1 accent component 08",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref02-gauge-pills-full-panel.png",
+      "bbox": [
+        0,
+        0,
+        1673,
+        1419
+      ],
+      "size": [
+        1673,
+        1419
+      ],
+      "label": "ref 2 full panel",
+      "type": "full-panel",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/gauge_pills.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref02-gauge-pills-left-region.png",
+      "bbox": [
+        0,
+        0,
+        643,
+        1419
+      ],
+      "size": [
+        643,
+        1419
+      ],
+      "label": "ref 2 left-region",
+      "type": "left-region",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/gauge_pills.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref02-gauge-pills-center-region.png",
+      "bbox": [
+        510,
+        0,
+        1179,
+        1419
+      ],
+      "size": [
+        669,
+        1419
+      ],
+      "label": "ref 2 center-region",
+      "type": "center-region",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/gauge_pills.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref02-gauge-pills-right-region.png",
+      "bbox": [
+        1029,
+        0,
+        1673,
+        1419
+      ],
+      "size": [
+        644,
+        1419
+      ],
+      "label": "ref 2 right-region",
+      "type": "right-region",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/gauge_pills.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref02-gauge-pills-body-texture.png",
+      "bbox": [
+        661,
+        389,
+        1045,
+        1029
+      ],
+      "size": [
+        384,
+        640
+      ],
+      "label": "ref 2 body-texture",
+      "type": "body-texture",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/gauge_pills.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref02-gauge-pills-edge-treatment.png",
+      "bbox": [
+        0,
+        0,
+        409,
+        603
+      ],
+      "size": [
+        409,
+        603
+      ],
+      "label": "ref 2 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/gauge_pills.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref02-gauge-pills-accent-component-01.png",
+      "bbox": [
+        0,
+        545,
+        532,
+        846
+      ],
+      "size": [
+        532,
+        301
+      ],
+      "label": "ref 2 accent component 01",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/gauge_pills.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref02-gauge-pills-accent-component-02.png",
+      "bbox": [
+        0,
+        823,
+        536,
+        1119
+      ],
+      "size": [
+        536,
+        296
+      ],
+      "label": "ref 2 accent component 02",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/gauge_pills.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref02-gauge-pills-accent-component-03.png",
+      "bbox": [
+        1270,
+        0,
+        1509,
+        125
+      ],
+      "size": [
+        239,
+        125
+      ],
+      "label": "ref 2 accent component 03",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/gauge_pills.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref02-gauge-pills-accent-component-04.png",
+      "bbox": [
+        407,
+        0,
+        644,
+        124
+      ],
+      "size": [
+        237,
+        124
+      ],
+      "label": "ref 2 accent component 04",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/gauge_pills.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref02-gauge-pills-accent-component-05.png",
+      "bbox": [
+        827,
+        0,
+        1068,
+        123
+      ],
+      "size": [
+        241,
+        123
+      ],
+      "label": "ref 2 accent component 05",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/gauge_pills.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref03-toggles-sliders-full-panel.png",
+      "bbox": [
+        0,
+        0,
+        1506,
+        1320
+      ],
+      "size": [
+        1506,
+        1320
+      ],
+      "label": "ref 3 full panel",
+      "type": "full-panel",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/toggles_sliders.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref03-toggles-sliders-left-region.png",
+      "bbox": [
+        0,
+        0,
+        580,
+        1320
+      ],
+      "size": [
+        580,
+        1320
+      ],
+      "label": "ref 3 left-region",
+      "type": "left-region",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/toggles_sliders.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref03-toggles-sliders-center-region.png",
+      "bbox": [
+        458,
+        0,
+        1062,
+        1320
+      ],
+      "size": [
+        604,
+        1320
+      ],
+      "label": "ref 3 center-region",
+      "type": "center-region",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/toggles_sliders.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref03-toggles-sliders-right-region.png",
+      "bbox": [
+        925,
+        0,
+        1506,
+        1320
+      ],
+      "size": [
+        581,
+        1320
+      ],
+      "label": "ref 3 right-region",
+      "type": "right-region",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/toggles_sliders.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref03-toggles-sliders-body-texture.png",
+      "bbox": [
+        594,
+        361,
+        941,
+        958
+      ],
+      "size": [
+        347,
+        597
+      ],
+      "label": "ref 3 body-texture",
+      "type": "body-texture",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/toggles_sliders.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref03-toggles-sliders-edge-treatment.png",
+      "bbox": [
+        0,
+        0,
+        369,
+        562
+      ],
+      "size": [
+        369,
+        562
+      ],
+      "label": "ref 3 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/toggles_sliders.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref03-toggles-sliders-accent-component-01.png",
+      "bbox": [
+        787,
+        108,
+        1026,
+        482
+      ],
+      "size": [
+        239,
+        374
+      ],
+      "label": "ref 3 accent component 01",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/toggles_sliders.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref03-toggles-sliders-accent-component-02.png",
+      "bbox": [
+        583,
+        541,
+        821,
+        912
+      ],
+      "size": [
+        238,
+        371
+      ],
+      "label": "ref 3 accent component 02",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/toggles_sliders.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref03-toggles-sliders-accent-component-03.png",
+      "bbox": [
+        456,
+        112,
+        690,
+        482
+      ],
+      "size": [
+        234,
+        370
+      ],
+      "label": "ref 3 accent component 03",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/toggles_sliders.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref03-toggles-sliders-accent-component-04.png",
+      "bbox": [
+        663,
+        1217,
+        905,
+        1320
+      ],
+      "size": [
+        242,
+        103
+      ],
+      "label": "ref 3 accent component 04",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/toggles_sliders.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref03-toggles-sliders-accent-component-05.png",
+      "bbox": [
+        252,
+        1219,
+        485,
+        1320
+      ],
+      "size": [
+        233,
+        101
+      ],
+      "label": "ref 3 accent component 05",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/toggles_sliders.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref03-toggles-sliders-accent-component-06.png",
+      "bbox": [
+        1109,
+        1222,
+        1344,
+        1320
+      ],
+      "size": [
+        235,
+        98
+      ],
+      "label": "ref 3 accent component 06",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/toggles_sliders.png"
+    }
+  ],
+  "agent_attachments": [
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-full-panel.png",
+      "bbox": [
+        0,
+        0,
+        3347,
+        3300
+      ],
+      "size": [
+        3347,
+        3300
+      ],
+      "label": "ref 1 full panel",
+      "type": "full-panel",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref02-gauge-pills-full-panel.png",
+      "bbox": [
+        0,
+        0,
+        1673,
+        1419
+      ],
+      "size": [
+        1673,
+        1419
+      ],
+      "label": "ref 2 full panel",
+      "type": "full-panel",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/gauge_pills.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref03-toggles-sliders-full-panel.png",
+      "bbox": [
+        0,
+        0,
+        1506,
+        1320
+      ],
+      "size": [
+        1506,
+        1320
+      ],
+      "label": "ref 3 full panel",
+      "type": "full-panel",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/toggles_sliders.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-center-region.png",
+      "bbox": [
+        1029,
+        0,
+        2350,
+        3300
+      ],
+      "size": [
+        1321,
+        3300
+      ],
+      "label": "ref 1 center-region",
+      "type": "center-region",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-left-region.png",
+      "bbox": [
+        0,
+        0,
+        1279,
+        3300
+      ],
+      "size": [
+        1279,
+        3300
+      ],
+      "label": "ref 1 left-region",
+      "type": "left-region",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-right-region.png",
+      "bbox": [
+        2067,
+        0,
+        3347,
+        3300
+      ],
+      "size": [
+        1280,
+        3300
+      ],
+      "label": "ref 1 right-region",
+      "type": "right-region",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref02-gauge-pills-center-region.png",
+      "bbox": [
+        510,
+        0,
+        1179,
+        1419
+      ],
+      "size": [
+        669,
+        1419
+      ],
+      "label": "ref 2 center-region",
+      "type": "center-region",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/gauge_pills.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref02-gauge-pills-left-region.png",
+      "bbox": [
+        0,
+        0,
+        643,
+        1419
+      ],
+      "size": [
+        643,
+        1419
+      ],
+      "label": "ref 2 left-region",
+      "type": "left-region",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/gauge_pills.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref02-gauge-pills-right-region.png",
+      "bbox": [
+        1029,
+        0,
+        1673,
+        1419
+      ],
+      "size": [
+        644,
+        1419
+      ],
+      "label": "ref 2 right-region",
+      "type": "right-region",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/gauge_pills.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref03-toggles-sliders-center-region.png",
+      "bbox": [
+        458,
+        0,
+        1062,
+        1320
+      ],
+      "size": [
+        604,
+        1320
+      ],
+      "label": "ref 3 center-region",
+      "type": "center-region",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/toggles_sliders.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref03-toggles-sliders-left-region.png",
+      "bbox": [
+        0,
+        0,
+        580,
+        1320
+      ],
+      "size": [
+        580,
+        1320
+      ],
+      "label": "ref 3 left-region",
+      "type": "left-region",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/toggles_sliders.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref03-toggles-sliders-right-region.png",
+      "bbox": [
+        925,
+        0,
+        1506,
+        1320
+      ],
+      "size": [
+        581,
+        1320
+      ],
+      "label": "ref 3 right-region",
+      "type": "right-region",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/toggles_sliders.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-body-texture.png",
+      "bbox": [
+        1330,
+        916,
+        2083,
+        2384
+      ],
+      "size": [
+        753,
+        1468
+      ],
+      "label": "ref 1 body-texture",
+      "type": "body-texture",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-edge-treatment.png",
+      "bbox": [
+        0,
+        0,
+        811,
+        1394
+      ],
+      "size": [
+        811,
+        1394
+      ],
+      "label": "ref 1 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref02-gauge-pills-body-texture.png",
+      "bbox": [
+        661,
+        389,
+        1045,
+        1029
+      ],
+      "size": [
+        384,
+        640
+      ],
+      "label": "ref 2 body-texture",
+      "type": "body-texture",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/gauge_pills.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref02-gauge-pills-edge-treatment.png",
+      "bbox": [
+        0,
+        0,
+        409,
+        603
+      ],
+      "size": [
+        409,
+        603
+      ],
+      "label": "ref 2 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/gauge_pills.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref03-toggles-sliders-body-texture.png",
+      "bbox": [
+        594,
+        361,
+        941,
+        958
+      ],
+      "size": [
+        347,
+        597
+      ],
+      "label": "ref 3 body-texture",
+      "type": "body-texture",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/toggles_sliders.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref03-toggles-sliders-edge-treatment.png",
+      "bbox": [
+        0,
+        0,
+        369,
+        562
+      ],
+      "size": [
+        369,
+        562
+      ],
+      "label": "ref 3 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/whole-panel-build/B2-narrow/stylecrops/toggles_sliders.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-accent-component-01.png",
+      "bbox": [
+        1928,
+        2256,
+        2538,
+        2560
+      ],
+      "size": [
+        610,
+        304
+      ],
+      "label": "ref 1 accent component 01",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-accent-component-02.png",
+      "bbox": [
+        1935,
+        2723,
+        2538,
+        3023
+      ],
+      "size": [
+        603,
+        300
+      ],
+      "label": "ref 1 accent component 02",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-accent-component-03.png",
+      "bbox": [
+        113,
+        2360,
+        699,
+        2661
+      ],
+      "size": [
+        586,
+        301
+      ],
+      "label": "ref 1 accent component 03",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-accent-component-04.png",
+      "bbox": [
+        128,
+        2638,
+        703,
+        2934
+      ],
+      "size": [
+        575,
+        296
+      ],
+      "label": "ref 1 accent component 04",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-accent-component-05.png",
+      "bbox": [
+        1938,
+        2498,
+        2529,
+        2775
+      ],
+      "size": [
+        591,
+        277
+      ],
+      "label": "ref 1 accent component 05",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B2-narrow/style-packet/crops/ref01-illustration-10-accent-component-06.png",
+      "bbox": [
+        1121,
+        273,
+        1360,
+        647
+      ],
+      "size": [
+        239,
+        374
+      ],
+      "label": "ref 1 accent component 06",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/anchors/space-narrow-panels-01/illustration-10.png"
+    }
+  ],
+  "agent_contract": [
+    "Attach packet images when asking a style agent to generate elements.",
+    "Generate style-matched element sheets before geometry placement.",
+    "Reject outputs that only match palette while missing watercolor edge, line, lighting, and object vocabulary.",
+    "Geometry agents place accepted elements into SVG safe pockets after style generation."
+  ],
+  "prompt": "tasks/whole-panel-build/B2-narrow/prompts/prompt-v2-style-packet-elements-first.md"
+}

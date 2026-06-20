@@ -1,0 +1,90 @@
+{
+  "overlay": "tasks/whole-panel-build/B1-gen/packet-stab-punched2/overlay.png",
+  "crops": [
+    "tasks/whole-panel-build/B1-gen/packet-stab-punched2/crops/cutout_0.png",
+    "tasks/whole-panel-build/B1-gen/packet-stab-punched2/crops/cutout_1.png",
+    "tasks/whole-panel-build/B1-gen/packet-stab-punched2/crops/cutout_2.png",
+    "tasks/whole-panel-build/B1-gen/packet-stab-punched2/crops/cutout_3.png",
+    "tasks/whole-panel-build/B1-gen/packet-stab-punched2/crops/cutout_4.png",
+    "tasks/whole-panel-build/B1-gen/packet-stab-punched2/crops/cutout_5.png",
+    "tasks/whole-panel-build/B1-gen/packet-stab-punched2/crops/cutout_6.png",
+    "tasks/whole-panel-build/B1-gen/packet-stab-punched2/crops/cutout_7.png",
+    "tasks/whole-panel-build/B1-gen/packet-stab-punched2/crops/cutout_8.png",
+    "tasks/whole-panel-build/B1-gen/packet-stab-punched2/crops/cutout_9.png"
+  ],
+  "counts": {
+    "cutouts": 13,
+    "red_keep_clear": 0
+  },
+  "geometry_floor": {
+    "openings": [
+      {
+        "i": 1,
+        "kind": "path",
+        "region_iou": 0.697
+      },
+      {
+        "i": 2,
+        "kind": "circle",
+        "region_iou": 0.567
+      },
+      {
+        "i": 3,
+        "kind": "circle",
+        "region_iou": 0.581
+      },
+      {
+        "i": 4,
+        "kind": "circle",
+        "region_iou": 0.582
+      },
+      {
+        "i": 5,
+        "kind": "circle",
+        "region_iou": 0.49
+      },
+      {
+        "i": 6,
+        "kind": "circle",
+        "region_iou": 0.497
+      },
+      {
+        "i": 7,
+        "kind": "circle",
+        "region_iou": 0.488
+      },
+      {
+        "i": 8,
+        "kind": "circle",
+        "region_iou": 0.5
+      },
+      {
+        "i": 9,
+        "kind": "circle",
+        "region_iou": 0.504
+      },
+      {
+        "i": 10,
+        "kind": "circle",
+        "region_iou": 0.51
+      },
+      {
+        "i": 11,
+        "kind": "circle",
+        "region_iou": 0.459
+      },
+      {
+        "i": 12,
+        "kind": "circle",
+        "region_iou": 0.455
+      },
+      {
+        "i": 13,
+        "kind": "circle",
+        "region_iou": 0.461
+      }
+    ]
+  },
+  "rubric": "A fill-to-contour (no empty gap inside the contour, esp. bottom) \u00b7\nB cutout-fit (empty cutout=clean bg + bleed margin + rim/bevel; feature cutout=painted feature on the cut) \u00b7\nC keep-clear (NO focal motif inside a red zone) \u00b7 D top-contour (top silhouette follows the green guide) \u00b7\nE arch-fit (door/window/landmark fits the orange arch + door-flap lines) \u00b7\nF margins/seams (bleed margin; no focal element split by a blue fold / panel seam) \u00b7\nG style (one coherent painted illustration, not collage). No guide lines baked into art.\nVERDICT=PASS only if A-F hold AND G ok; else FAIL + failing checks + one fix.",
+  "instruction": "Open overlay + every crop. Apply the rubric. Return {verdict, failing_checks[], reasons[], one_fix}."
+}

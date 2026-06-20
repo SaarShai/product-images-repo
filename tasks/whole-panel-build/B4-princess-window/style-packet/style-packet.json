@@ -1,0 +1,646 @@
+{
+  "created_at": "2026-06-20T17:45:23Z",
+  "task": "B4-princess-window",
+  "purpose": "visual style packet for image-generation/style agents",
+  "source_refs": [
+    "tasks/whole-panel-build/B4-princess-window/refs/princess01-ref.png",
+    "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+  ],
+  "contact_sheets": {
+    "reference_contact_sheet": "tasks/whole-panel-build/B4-princess-window/style-packet/reference-contact-sheet.png",
+    "style_exemplar_sheet": "tasks/whole-panel-build/B4-princess-window/style-packet/style-exemplar-sheet.png"
+  },
+  "palette_hex": [
+    "#efdcc4",
+    "#e5bd91",
+    "#eccca8",
+    "#d8ac7d",
+    "#f5ebdd",
+    "#bf9a6d",
+    "#cab7a1",
+    "#d8c9b8",
+    "#a18d66",
+    "#b5a48a",
+    "#8b784e",
+    "#ca8651"
+  ],
+  "crops": [
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref01-princess01-ref-full-panel.png",
+      "bbox": [
+        0,
+        0,
+        649,
+        1400
+      ],
+      "size": [
+        649,
+        1400
+      ],
+      "label": "ref 1 full panel",
+      "type": "full-panel",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/princess01-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref01-princess01-ref-left-region.png",
+      "bbox": [
+        0,
+        0,
+        254,
+        1400
+      ],
+      "size": [
+        254,
+        1400
+      ],
+      "label": "ref 1 left-region",
+      "type": "left-region",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/princess01-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref01-princess01-ref-center-region.png",
+      "bbox": [
+        193,
+        0,
+        462,
+        1400
+      ],
+      "size": [
+        269,
+        1400
+      ],
+      "label": "ref 1 center-region",
+      "type": "center-region",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/princess01-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref01-princess01-ref-right-region.png",
+      "bbox": [
+        394,
+        0,
+        649,
+        1400
+      ],
+      "size": [
+        255,
+        1400
+      ],
+      "label": "ref 1 right-region",
+      "type": "right-region",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/princess01-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref01-princess01-ref-body-texture.png",
+      "bbox": [
+        251,
+        384,
+        410,
+        1016
+      ],
+      "size": [
+        159,
+        632
+      ],
+      "label": "ref 1 body-texture",
+      "type": "body-texture",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/princess01-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref01-princess01-ref-edge-treatment.png",
+      "bbox": [
+        0,
+        0,
+        163,
+        596
+      ],
+      "size": [
+        163,
+        596
+      ],
+      "label": "ref 1 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/princess01-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-full-panel.png",
+      "bbox": [
+        0,
+        18,
+        978,
+        1370
+      ],
+      "size": [
+        978,
+        1352
+      ],
+      "label": "ref 2 full panel",
+      "type": "full-panel",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-left-region.png",
+      "bbox": [
+        0,
+        10,
+        379,
+        1370
+      ],
+      "size": [
+        379,
+        1360
+      ],
+      "label": "ref 2 left-region",
+      "type": "left-region",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-center-region.png",
+      "bbox": [
+        295,
+        10,
+        692,
+        1370
+      ],
+      "size": [
+        397,
+        1360
+      ],
+      "label": "ref 2 center-region",
+      "type": "center-region",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-right-region.png",
+      "bbox": [
+        598,
+        10,
+        984,
+        1370
+      ],
+      "size": [
+        386,
+        1360
+      ],
+      "label": "ref 2 right-region",
+      "type": "right-region",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-body-texture.png",
+      "bbox": [
+        383,
+        388,
+        614,
+        999
+      ],
+      "size": [
+        231,
+        611
+      ],
+      "label": "ref 2 body-texture",
+      "type": "body-texture",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-edge-treatment.png",
+      "bbox": [
+        0,
+        10,
+        242,
+        593
+      ],
+      "size": [
+        242,
+        583
+      ],
+      "label": "ref 2 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-accent-component-01.png",
+      "bbox": [
+        214,
+        35,
+        387,
+        253
+      ],
+      "size": [
+        173,
+        218
+      ],
+      "label": "ref 2 accent component 01",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-accent-component-02.png",
+      "bbox": [
+        595,
+        144,
+        746,
+        300
+      ],
+      "size": [
+        151,
+        156
+      ],
+      "label": "ref 2 accent component 02",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-accent-component-03.png",
+      "bbox": [
+        127,
+        259,
+        280,
+        403
+      ],
+      "size": [
+        153,
+        144
+      ],
+      "label": "ref 2 accent component 03",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-accent-component-04.png",
+      "bbox": [
+        706,
+        1024,
+        857,
+        1175
+      ],
+      "size": [
+        151,
+        151
+      ],
+      "label": "ref 2 accent component 04",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-accent-component-05.png",
+      "bbox": [
+        100,
+        1036,
+        241,
+        1185
+      ],
+      "size": [
+        141,
+        149
+      ],
+      "label": "ref 2 accent component 05",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-accent-component-06.png",
+      "bbox": [
+        714,
+        1082,
+        852,
+        1220
+      ],
+      "size": [
+        138,
+        138
+      ],
+      "label": "ref 2 accent component 06",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-accent-component-07.png",
+      "bbox": [
+        581,
+        100,
+        717,
+        237
+      ],
+      "size": [
+        136,
+        137
+      ],
+      "label": "ref 2 accent component 07",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    }
+  ],
+  "agent_attachments": [
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref01-princess01-ref-full-panel.png",
+      "bbox": [
+        0,
+        0,
+        649,
+        1400
+      ],
+      "size": [
+        649,
+        1400
+      ],
+      "label": "ref 1 full panel",
+      "type": "full-panel",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/princess01-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-full-panel.png",
+      "bbox": [
+        0,
+        18,
+        978,
+        1370
+      ],
+      "size": [
+        978,
+        1352
+      ],
+      "label": "ref 2 full panel",
+      "type": "full-panel",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref01-princess01-ref-center-region.png",
+      "bbox": [
+        193,
+        0,
+        462,
+        1400
+      ],
+      "size": [
+        269,
+        1400
+      ],
+      "label": "ref 1 center-region",
+      "type": "center-region",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/princess01-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref01-princess01-ref-left-region.png",
+      "bbox": [
+        0,
+        0,
+        254,
+        1400
+      ],
+      "size": [
+        254,
+        1400
+      ],
+      "label": "ref 1 left-region",
+      "type": "left-region",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/princess01-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref01-princess01-ref-right-region.png",
+      "bbox": [
+        394,
+        0,
+        649,
+        1400
+      ],
+      "size": [
+        255,
+        1400
+      ],
+      "label": "ref 1 right-region",
+      "type": "right-region",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/princess01-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-center-region.png",
+      "bbox": [
+        295,
+        10,
+        692,
+        1370
+      ],
+      "size": [
+        397,
+        1360
+      ],
+      "label": "ref 2 center-region",
+      "type": "center-region",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-left-region.png",
+      "bbox": [
+        0,
+        10,
+        379,
+        1370
+      ],
+      "size": [
+        379,
+        1360
+      ],
+      "label": "ref 2 left-region",
+      "type": "left-region",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-right-region.png",
+      "bbox": [
+        598,
+        10,
+        984,
+        1370
+      ],
+      "size": [
+        386,
+        1360
+      ],
+      "label": "ref 2 right-region",
+      "type": "right-region",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref01-princess01-ref-body-texture.png",
+      "bbox": [
+        251,
+        384,
+        410,
+        1016
+      ],
+      "size": [
+        159,
+        632
+      ],
+      "label": "ref 1 body-texture",
+      "type": "body-texture",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/princess01-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref01-princess01-ref-edge-treatment.png",
+      "bbox": [
+        0,
+        0,
+        163,
+        596
+      ],
+      "size": [
+        163,
+        596
+      ],
+      "label": "ref 1 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/princess01-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-body-texture.png",
+      "bbox": [
+        383,
+        388,
+        614,
+        999
+      ],
+      "size": [
+        231,
+        611
+      ],
+      "label": "ref 2 body-texture",
+      "type": "body-texture",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-edge-treatment.png",
+      "bbox": [
+        0,
+        10,
+        242,
+        593
+      ],
+      "size": [
+        242,
+        583
+      ],
+      "label": "ref 2 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-accent-component-01.png",
+      "bbox": [
+        214,
+        35,
+        387,
+        253
+      ],
+      "size": [
+        173,
+        218
+      ],
+      "label": "ref 2 accent component 01",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-accent-component-02.png",
+      "bbox": [
+        595,
+        144,
+        746,
+        300
+      ],
+      "size": [
+        151,
+        156
+      ],
+      "label": "ref 2 accent component 02",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-accent-component-03.png",
+      "bbox": [
+        127,
+        259,
+        280,
+        403
+      ],
+      "size": [
+        153,
+        144
+      ],
+      "label": "ref 2 accent component 03",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-accent-component-04.png",
+      "bbox": [
+        706,
+        1024,
+        857,
+        1175
+      ],
+      "size": [
+        151,
+        151
+      ],
+      "label": "ref 2 accent component 04",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-accent-component-05.png",
+      "bbox": [
+        100,
+        1036,
+        241,
+        1185
+      ],
+      "size": [
+        141,
+        149
+      ],
+      "label": "ref 2 accent component 05",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-accent-component-06.png",
+      "bbox": [
+        714,
+        1082,
+        852,
+        1220
+      ],
+      "size": [
+        138,
+        138
+      ],
+      "label": "ref 2 accent component 06",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    },
+    {
+      "path": "tasks/whole-panel-build/B4-princess-window/style-packet/crops/ref02-style-ref-accent-component-07.png",
+      "bbox": [
+        581,
+        100,
+        717,
+        237
+      ],
+      "size": [
+        136,
+        137
+      ],
+      "label": "ref 2 accent component 07",
+      "type": "accent-component",
+      "source": "tasks/whole-panel-build/B4-princess-window/refs/style-ref.png"
+    }
+  ],
+  "agent_contract": [
+    "Attach packet images when asking a style agent to generate elements.",
+    "Generate style-matched element sheets before geometry placement.",
+    "Reject outputs that only match palette while missing watercolor edge, line, lighting, and object vocabulary.",
+    "Geometry agents place accepted elements into SVG safe pockets after style generation."
+  ],
+  "prompt": "tasks/whole-panel-build/B4-princess-window/prompts/prompt-v2-style-packet-elements-first.md"
+}

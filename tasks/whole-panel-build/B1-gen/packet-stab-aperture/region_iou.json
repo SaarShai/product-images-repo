@@ -1,0 +1,77 @@
+{
+  "image": "tasks/whole-panel-build/B1-gen/stab-aperture-s7.png",
+  "bbox": [
+    0,
+    0,
+    1024,
+    336
+  ],
+  "mean_region_iou": 0.8613,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "path",
+      "region_iou": 0.0
+    },
+    {
+      "i": 2,
+      "kind": "circle",
+      "region_iou": 0.918
+    },
+    {
+      "i": 3,
+      "kind": "circle",
+      "region_iou": 0.938
+    },
+    {
+      "i": 4,
+      "kind": "circle",
+      "region_iou": 0.943
+    },
+    {
+      "i": 5,
+      "kind": "circle",
+      "region_iou": 0.941
+    },
+    {
+      "i": 6,
+      "kind": "circle",
+      "region_iou": 0.934
+    },
+    {
+      "i": 7,
+      "kind": "circle",
+      "region_iou": 0.944
+    },
+    {
+      "i": 8,
+      "kind": "circle",
+      "region_iou": 0.939
+    },
+    {
+      "i": 9,
+      "kind": "circle",
+      "region_iou": 0.926
+    },
+    {
+      "i": 10,
+      "kind": "circle",
+      "region_iou": 0.935
+    },
+    {
+      "i": 11,
+      "kind": "circle",
+      "region_iou": 0.92
+    },
+    {
+      "i": 12,
+      "kind": "circle",
+      "region_iou": 0.926
+    },
+    {
+      "i": 13,
+      "kind": "circle",
+      "region_iou": 0.931
+    }
+  ]
+}

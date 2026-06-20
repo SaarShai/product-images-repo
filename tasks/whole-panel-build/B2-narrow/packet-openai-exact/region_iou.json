@@ -1,0 +1,22 @@
+{
+  "image": "tasks/whole-panel-build/B2-narrow/sub/openai-GS-exact.png",
+  "bbox": [
+    1,
+    8,
+    1022,
+    1002
+  ],
+  "mean_region_iou": 0.8923,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "path",
+      "region_iou": 0.912
+    },
+    {
+      "i": 2,
+      "kind": "path",
+      "region_iou": 0.872
+    }
+  ]
+}

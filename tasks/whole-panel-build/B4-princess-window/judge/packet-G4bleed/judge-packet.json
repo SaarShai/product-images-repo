@@ -1,0 +1,50 @@
+{
+  "overlay": "tasks/whole-panel-build/B4-princess-window/judge/packet-G4bleed/overlay.png",
+  "tiles": [
+    "tasks/whole-panel-build/B4-princess-window/judge/packet-G4bleed/tiles/tile_0.png",
+    "tasks/whole-panel-build/B4-princess-window/judge/packet-G4bleed/tiles/tile_1.png"
+  ],
+  "crops": [
+    "tasks/whole-panel-build/B4-princess-window/judge/packet-G4bleed/crops/cutout_0.png",
+    "tasks/whole-panel-build/B4-princess-window/judge/packet-G4bleed/crops/cutout_1.png",
+    "tasks/whole-panel-build/B4-princess-window/judge/packet-G4bleed/crops/cutout_2.png",
+    "tasks/whole-panel-build/B4-princess-window/judge/packet-G4bleed/crops/cutout_3.png",
+    "tasks/whole-panel-build/B4-princess-window/judge/packet-G4bleed/crops/cutout_4.png"
+  ],
+  "counts": {
+    "cutouts": 5,
+    "red_keep_clear": 1
+  },
+  "geometry_floor": {
+    "openings": [
+      {
+        "i": 1,
+        "kind": "path",
+        "region_iou": 0.0
+      },
+      {
+        "i": 2,
+        "kind": "path",
+        "region_iou": 0.0
+      },
+      {
+        "i": 3,
+        "kind": "path",
+        "region_iou": 0.0
+      },
+      {
+        "i": 4,
+        "kind": "path",
+        "region_iou": 0.0
+      },
+      {
+        "i": 5,
+        "kind": "path",
+        "region_iou": 0.0
+      }
+    ]
+  },
+  "rubric": "OBJECTIVE (gate on these, from HI-DPI TILES, >=3 judges, verify on disagreement):\nA fill-to-contour (no empty gap inside the contour, esp. bottom) \u00b7\nB cutout-fit (empty cutout=clean bg + bleed margin + rim/bevel; feature cutout=present+faithful on the cut) \u00b7\nC keep-clear (NO focal motif inside a red zone) \u00b7 D top-contour (top silhouette follows the green guide) \u00b7\nE arch/feature-fit (door/window/landmark present, faithful, at its marked position) \u00b7\nF margins/seams (bleed margin; no focal element split by a blue fold / panel seam) \u00b7\nH edges-organic (art runs organically to the panel edges / full-bleed; NO drawn arch-frame line, NO white\nbackground panel, NO hard straight cut edge). No guide lines baked into art.\n\nAESTHETIC (advisory only, route to human):\nG style-quality + proportions (watercolor refinement, believable tower/feature proportions,\noverall taste). VLM-UNRELIABLE \u2014 report as advisory only; the HUMAN decides PASS/FAIL on aesthetics.\n\nVERDICT(objective)=PASS only if A-F + H hold; else FAIL + failing checks + one fix. Report style/proportions as advisory; do NOT auto-PASS aesthetics.",
+  "protocol": "Run >=3 INDEPENDENT judges; report per-metric median + spread; on disagreement a human verifies. OBJECTIVE metrics gate; AESTHETIC (style/proportions) is advisory \u2192 human decides.",
+  "instruction": "Read the TILES (hi-DPI) for any presence/position/detail/edge check \u2014 NOT the downsampled overlay alone (causes false 'absent' calls). overlay+crops for geometry/holes, tiles for edges & features. Apply OBJECTIVE rubric; AESTHETIC advisory. Return {objective_verdict, failing_checks[], reasons[], aesthetic_advisory, one_fix}."
+}

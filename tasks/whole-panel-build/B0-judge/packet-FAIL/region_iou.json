@@ -1,0 +1,87 @@
+{
+  "image": "tasks/whole-panel-build/anchors/princess-panels-FAIL-01/illustration-0.png",
+  "bbox": [
+    0,
+    0,
+    1096,
+    1456
+  ],
+  "mean_region_iou": 0.0333,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "path",
+      "region_iou": 0.0
+    },
+    {
+      "i": 2,
+      "kind": "path",
+      "region_iou": 0.0
+    },
+    {
+      "i": 3,
+      "kind": "path",
+      "region_iou": 0.0
+    },
+    {
+      "i": 4,
+      "kind": "circle",
+      "region_iou": 0.0
+    },
+    {
+      "i": 5,
+      "kind": "path",
+      "region_iou": 0.0
+    },
+    {
+      "i": 6,
+      "kind": "path",
+      "region_iou": 0.0
+    },
+    {
+      "i": 7,
+      "kind": "path",
+      "region_iou": 0.0
+    },
+    {
+      "i": 8,
+      "kind": "circle",
+      "region_iou": 0.0
+    },
+    {
+      "i": 9,
+      "kind": "path",
+      "region_iou": 0.0
+    },
+    {
+      "i": 10,
+      "kind": "path",
+      "region_iou": 0.0
+    },
+    {
+      "i": 11,
+      "kind": "path",
+      "region_iou": 0.0
+    },
+    {
+      "i": 12,
+      "kind": "path",
+      "region_iou": 0.0
+    },
+    {
+      "i": 13,
+      "kind": "path",
+      "region_iou": 0.0
+    },
+    {
+      "i": 14,
+      "kind": "path",
+      "region_iou": 0.237
+    },
+    {
+      "i": 15,
+      "kind": "path",
+      "region_iou": 0.263
+    }
+  ]
+}

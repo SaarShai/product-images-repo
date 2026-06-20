@@ -1,0 +1,77 @@
+{
+  "image": "tasks/whole-panel-build/B1-gen/stab-punched2-s7.png",
+  "bbox": [
+    0,
+    0,
+    1024,
+    336
+  ],
+  "mean_region_iou": 0.5224,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "path",
+      "region_iou": 0.697
+    },
+    {
+      "i": 2,
+      "kind": "circle",
+      "region_iou": 0.567
+    },
+    {
+      "i": 3,
+      "kind": "circle",
+      "region_iou": 0.581
+    },
+    {
+      "i": 4,
+      "kind": "circle",
+      "region_iou": 0.582
+    },
+    {
+      "i": 5,
+      "kind": "circle",
+      "region_iou": 0.49
+    },
+    {
+      "i": 6,
+      "kind": "circle",
+      "region_iou": 0.497
+    },
+    {
+      "i": 7,
+      "kind": "circle",
+      "region_iou": 0.488
+    },
+    {
+      "i": 8,
+      "kind": "circle",
+      "region_iou": 0.5
+    },
+    {
+      "i": 9,
+      "kind": "circle",
+      "region_iou": 0.504
+    },
+    {
+      "i": 10,
+      "kind": "circle",
+      "region_iou": 0.51
+    },
+    {
+      "i": 11,
+      "kind": "circle",
+      "region_iou": 0.459
+    },
+    {
+      "i": 12,
+      "kind": "circle",
+      "region_iou": 0.455
+    },
+    {
+      "i": 13,
+      "kind": "circle",
+      "region_iou": 0.461
+    }
+  ]
+}

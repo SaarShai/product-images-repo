@@ -264,18 +264,124 @@ def read_viewbox(root: ET.Element) -> tuple[float, float, float, float]:
     return (0.0, 0.0, width, height)
 
 
+# --- SVG transform handling ---------------------------------------------------
+# Element/group `transform` attributes were previously IGNORED, which placed any
+# transformed element (common in Illustrator exports with nested groups) at its
+# raw local coordinates — up to thousands of units outside the viewBox. We now
+# compose the full current-transform-matrix (CTM) down the tree and apply it.
+
+Matrix = tuple  # (a, b, c, d, e, f): x' = a*x + c*y + e ; y' = b*x + d*y + f
+IDENTITY: Matrix = (1.0, 0.0, 0.0, 1.0, 0.0, 0.0)
+_TRANSFORM_OP = re.compile(r"(matrix|translate|scale|rotate|skewX|skewY)\s*\(([^)]*)\)")
+
+
+def mat_mul(m: Matrix, n: Matrix) -> Matrix:
+    """Compose m then n as column-vector affines: result applies n after m? -> m·n."""
+    a1, b1, c1, d1, e1, f1 = m
+    a2, b2, c2, d2, e2, f2 = n
+    return (
+        a1 * a2 + c1 * b2,
+        b1 * a2 + d1 * b2,
+        a1 * c2 + c1 * d2,
+        b1 * c2 + d1 * d2,
+        a1 * e2 + c1 * f2 + e1,
+        b1 * e2 + d1 * f2 + f1,
+    )
+
+
+def parse_transform(value: str) -> Matrix:
+    """Parse an SVG transform list into a single affine matrix (left = outermost)."""
+    import math
+    m: Matrix = IDENTITY
+    for op, args in _TRANSFORM_OP.findall(value or ""):
+        nums = [float(x) for x in re.findall(FLOAT, args)]
+        if op == "matrix" and len(nums) == 6:
+            t = tuple(nums)  # type: ignore[assignment]
+        elif op == "translate":
+            tx = nums[0] if nums else 0.0
+            ty = nums[1] if len(nums) > 1 else 0.0
+            t = (1.0, 0.0, 0.0, 1.0, tx, ty)
+        elif op == "scale":
+            sx = nums[0] if nums else 1.0
+            sy = nums[1] if len(nums) > 1 else sx
+            t = (sx, 0.0, 0.0, sy, 0.0, 0.0)
+        elif op == "rotate":
+            ang = math.radians(nums[0]) if nums else 0.0
+            cos, sin = math.cos(ang), math.sin(ang)
+            r = (cos, sin, -sin, cos, 0.0, 0.0)
+            if len(nums) >= 3:
+                cx, cy = nums[1], nums[2]
+                t = mat_mul(mat_mul((1.0, 0.0, 0.0, 1.0, cx, cy), r), (1.0, 0.0, 0.0, 1.0, -cx, -cy))
+            else:
+                t = r
+        elif op == "skewX":
+            t = (1.0, 0.0, math.tan(math.radians(nums[0])) if nums else 0.0, 1.0, 0.0, 0.0)
+        elif op == "skewY":
+            t = (1.0, math.tan(math.radians(nums[0])) if nums else 0.0, 0.0, 1.0, 0.0, 0.0)
+        else:
+            continue
+        m = mat_mul(m, t)
+    return m
+
+
+def apply_ctm(m: Matrix, pts: list[Point]) -> list[Point]:
+    a, b, c, d, e, f = m
+    return [(a * x + c * y + e, b * x + d * y + f) for x, y in pts]
+
+
+def hidden_classes(root: ET.Element) -> set[str]:
+    """CSS classes set to display:none / visibility:hidden in any <style> block."""
+    out: set[str] = set()
+    for el in root.iter():
+        if tag_name(el) != "style" or not (el.text):
+            continue
+        for rule in re.finditer(r"([^{}]+)\{([^}]*)\}", el.text):
+            body = rule.group(2)
+            if re.search(r"display\s*:\s*none", body) or re.search(r"visibility\s*:\s*hidden", body):
+                out |= set(re.findall(r"\.([A-Za-z0-9_-]+)", rule.group(1)))
+    return out
+
+
+def is_hidden(el: ET.Element, hidden: set[str]) -> bool:
+    """True if the element is display:none / visibility:hidden by attribute, inline style, or class."""
+    if el.attrib.get("display") == "none" or el.attrib.get("visibility") == "hidden":
+        return True
+    st = el.attrib.get("style", "")
+    if re.search(r"display\s*:\s*none", st) or re.search(r"visibility\s*:\s*hidden", st):
+        return True
+    return bool(set((el.attrib.get("class", "") or "").split()) & hidden)
+
+
+def iter_with_ctm(root: ET.Element, skip_hidden: bool = True):
+    """Yield (element, ctm) for every VISIBLE element, composing ancestor + own transforms.
+    Subtrees under a display:none / visibility:hidden group (attribute, inline style, or CSS
+    class) are skipped entirely — matching how a real SVG renderer (e.g. WebKit) treats them,
+    so hidden construction/annotation layers do not leak into geometry/overlays."""
+    hidden = hidden_classes(root) if skip_hidden else set()
+    stack = [(root, IDENTITY)]
+    while stack:
+        el, ctm = stack.pop()
+        if skip_hidden and is_hidden(el, hidden):
+            continue
+        t = el.attrib.get("transform")
+        cur = mat_mul(ctm, parse_transform(t)) if t else ctm
+        yield el, cur
+        for child in reversed(list(el)):
+            stack.append((child, cur))
+
+
 def read_template(svg_path: Path) -> TemplateGeometry:
-    """Drop-in replacement for export_svg_template_fit.read_template."""
+    """Drop-in replacement for export_svg_template_fit.read_template (transform-aware)."""
     root = ET.parse(svg_path).getroot()
     viewbox = read_viewbox(root)
     paths: list[list[Point]] = []
     polygons: list[list[Point]] = []
-    for element in root.iter():
+    for element, ctm in iter_with_ctm(root):
         name = tag_name(element)
         if name == "path" and element.attrib.get("d"):
-            paths.extend(parse_path_d(element.attrib["d"]))
+            paths.extend(apply_ctm(ctm, sub) for sub in parse_path_d(element.attrib["d"]))
         elif name == "polygon" and element.attrib.get("points"):
-            polygons.append(parse_points(element.attrib["points"]))
+            polygons.append(apply_ctm(ctm, parse_points(element.attrib["points"])))
     if not paths and not polygons:
         raise ValueError(f"No path/polygon geometry found in {svg_path}")
     return TemplateGeometry(viewbox=viewbox, paths=paths, polygons=polygons)

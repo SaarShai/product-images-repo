@@ -50,6 +50,30 @@ def _valid_image(p) -> bool:
         return False
 
 
+_NANO_TALL_RATIO = 1.6  # h/w above this = "tall"; nano is square-biased and recomposes tall panels
+
+
+def _warn_nano_tall(images):
+    """NON-BREAKING: if any input/ref image is tall (h/w > ~1.6), warn to stderr that
+    nano (Nano Banana) is square-biased and recomposes tall panels — prefer openai.
+    Inspection only; never changes generation behavior or raises."""
+    try:
+        from PIL import Image
+        for img in images:
+            try:
+                w, h = Image.open(img).size
+            except Exception:
+                continue
+            if w and h / w > _NANO_TALL_RATIO:
+                print(f"[subgen nano] WARNING: ref/target '{img}' is tall "
+                      f"(h/w={h / w:.2f} > {_NANO_TALL_RATIO}). Nano Banana is square-biased "
+                      f"and recomposes/crops tall panels — use --provider openai for tall panels.",
+                      file=sys.stderr)
+                return
+    except Exception:
+        pass
+
+
 def _run(cmd, stdin_text, timeout):
     """Run cmd in its OWN process group; killpg the whole group on timeout.
     Returns (rc, stdout, stderr, timed_out)."""
@@ -113,6 +137,7 @@ def gen_openai(prompt, images, out, timeout=300, retries=3, model=None) -> Path:
 def gen_nano(prompt, images, out, timeout=300, retries=3) -> Path:
     out = Path(out); out.parent.mkdir(parents=True, exist_ok=True)
     imgs = [str(Path(i).resolve()) for i in images]
+    _warn_nano_tall(imgs)  # NON-BREAKING aspect advisory; does not change generation
     add = []
     for d in {str(Path(i).parent) for i in imgs} | {str(out.parent.resolve())}:
         add += ["--add-dir", d]

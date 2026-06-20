@@ -1,0 +1,37 @@
+{
+  "image": "tasks/whole-panel-build/B4-princess-window/sub/openai-G3winin.png",
+  "bbox": [
+    53,
+    24,
+    813,
+    1805
+  ],
+  "mean_region_iou": 0.0,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "path",
+      "region_iou": 0.0
+    },
+    {
+      "i": 2,
+      "kind": "path",
+      "region_iou": 0.0
+    },
+    {
+      "i": 3,
+      "kind": "path",
+      "region_iou": 0.0
+    },
+    {
+      "i": 4,
+      "kind": "path",
+      "region_iou": 0.0
+    },
+    {
+      "i": 5,
+      "kind": "path",
+      "region_iou": 0.0
+    }
+  ]
+}

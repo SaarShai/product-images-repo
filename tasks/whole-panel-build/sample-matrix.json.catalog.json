@@ -1,0 +1,34 @@
+[
+  {
+    "label": "o1-complete",
+    "provider": "openai",
+    "prompt_file": "tasks/whole-panel-build/B4-princess-window/prompt-W-complete.md",
+    "refs": [
+      "tasks/whole-panel-build/B4-princess-window/guide-clean2.png",
+      "tasks/whole-panel-build/B4-princess-window/window-cut.png",
+      "tasks/whole-panel-build/B4-princess-window/style-ref.png",
+      "tasks/whole-panel-build/B4-princess-window/princess01-ref.png"
+    ],
+    "out": "tasks/whole-panel-build/sample-out/o1-complete.png",
+    "exists": false,
+    "dims": null,
+    "prompt_version": null,
+    "status": "skipped(dry-run)"
+  },
+  {
+    "label": "o2-winin",
+    "provider": "openai",
+    "prompt_file": "tasks/whole-panel-build/B4-princess-window/prompt-W-winin.md",
+    "refs": [
+      "tasks/whole-panel-build/B4-princess-window/guide-clean2.png",
+      "tasks/whole-panel-build/B4-princess-window/window-cut.png",
+      "tasks/whole-panel-build/B4-princess-window/style-ref.png",
+      "tasks/whole-panel-build/B4-princess-window/princess01-ref.png"
+    ],
+    "out": "tasks/whole-panel-build/sample-out/o2-winin.png",
+    "exists": false,
+    "dims": null,
+    "prompt_version": null,
+    "status": "skipped(dry-run)"
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "_doc": "Ground-truth user labels for the combined-SVG anchors (template + illustration). The B0 judge must reproduce these. Skyline rasters are rule-evidence, not registered anchors.",
+  "anchors": {
+    "princess-narrow-01": {
+      "label": "PASS",
+      "notes": "Fairies on side towers clear of central red keep-clear band; art fills to bottom; crown within green top-contour."
+    },
+    "space-stabilizer-01": {
+      "label": "PASS",
+      "notes": "Circle holes + long slot kept clear background; controls only on solid areas; nothing cut.",
+      "primary_illustration": "illustration-1.png"
+    },
+    "space-narrow-panels-01": {
+      "label": "PASS",
+      "notes": "Each cutout in an empty beveled recess with outset/bleed margin; controls designed around cutouts.",
+      "primary_illustration": "illustration-6.png"
+    },
+    "window-fit-01": {
+      "label": "PASS",
+      "notes": "Arched window fits the arched cutout almost exactly; finger-hole knob aligns.",
+      "primary_illustration": "illustration-0.png"
+    },
+    "princess-panels-FAIL-01": {
+      "label": "FAIL",
+      "fail_modes": ["under_fill_bottom", "cutout_misalign_wings_vs_finger_holes", "top_contour_shape", "fairies_cropped_in_red_zone"],
+      "notes": "Same castle+door subject as a passing princess panel but rejected for 4 reasons.",
+      "primary_illustration": "illustration-0.png"
+    }
+  }
+}

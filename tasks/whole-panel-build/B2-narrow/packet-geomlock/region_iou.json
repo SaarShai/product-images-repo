@@ -1,0 +1,22 @@
+{
+  "image": "tasks/whole-panel-build/B2-narrow/panel3-geomlock-s7.png",
+  "bbox": [
+    0,
+    0,
+    512,
+    496
+  ],
+  "mean_region_iou": 0.9481,
+  "openings": [
+    {
+      "i": 1,
+      "kind": "path",
+      "region_iou": 0.963
+    },
+    {
+      "i": 2,
+      "kind": "path",
+      "region_iou": 0.933
+    }
+  ]
+}
