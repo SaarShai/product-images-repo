@@ -1,0 +1,25 @@
+{
+  "n_instances": 1,
+  "matched": 1,
+  "gate_passed": 1,
+  "set_consistent": true,
+  "ref": "tasks/improve/_left_cab_ref.png",
+  "src": "tasks/nyc-taxi/out/nyc-fixed.png",
+  "sheet": "tasks/improve/_consistency_sheet.png",
+  "instances": [
+    {
+      "suffix": "mid",
+      "box": "1700,2950,2700,3340",
+      "outside_changed": 0,
+      "gate_pass": true,
+      "judge_winner": "tie",
+      "judge_consistent": false,
+      "match": "MATCH",
+      "files": {
+        "raw": "tasks/improve/mid.raw.png",
+        "final": "tasks/improve/mid.final.png",
+        "region": "tasks/improve/mid.region.png"
+      }
+    }
+  ]
+}

@@ -24,6 +24,7 @@ ENDPOINTS = {
     "fill": "fal-ai/flux-pro/v1/fill",
     "kontext": "fal-ai/flux-pro/kontext",
     "flux2edit": "fal-ai/flux-2-pro/edit",
+    "eraser": "fal-ai/bria/eraser",
 }
 
 
@@ -53,6 +54,7 @@ def main():
     ap.add_argument("--maxside", type=int, default=1024, help="resize longer side to this before sending")
     ap.add_argument("--seed", type=int, default=None)
     ap.add_argument("--guidance", type=float, default=None)
+    ap.add_argument("--cache", action="store_true", help="reuse cached result for identical deterministic calls")
     a = ap.parse_args()
 
     prompt = a.prompt or (Path(a.prompt_file).read_text() if a.prompt_file else "")
@@ -63,18 +65,38 @@ def main():
             img = img.resize((round(w * s), round(h * s)), Image.LANCZOS)
     W, H = img.size
 
-    body = {"prompt": prompt, "image_url": data_uri(img), "output_format": "png", "num_images": 1}
+    # cache only deterministic calls: eraser (no seed) or an explicit seed was given
+    import sys as _sys
+    _sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from gencache import cache_key, cache_get, cache_put
+    deterministic = (a.mode == "eraser") or (a.seed is not None)
+    ckey = None
+    if a.cache and deterministic:
+        mb = Path(a.mask).read_bytes() if a.mask else (a.mask_box or "")
+        ckey = cache_key(a.mode, a.image, prompt, mb, a.seed if a.seed is not None else "", a.guidance or "", a.maxside, a.feather)
+        hit = cache_get(ckey)
+        if hit:
+            Path(a.out).parent.mkdir(parents=True, exist_ok=True)
+            import shutil; shutil.copy(hit, a.out)
+            print(f"[falgen] CACHE HIT mode={a.mode} -> {a.out} (0 API calls)"); return
+    elif a.cache and not deterministic:
+        print("[falgen] --cache ignored: non-deterministic call (set --seed to enable caching)", file=sys.stderr)
+
+    if a.mode == "eraser":
+        body = {"image_url": data_uri(img)}  # bria eraser: image_url + mask_url, no prompt
+    else:
+        body = {"prompt": prompt, "image_url": data_uri(img), "output_format": "png", "num_images": 1}
     if a.seed is not None: body["seed"] = a.seed
     if a.guidance is not None: body["guidance_scale"] = a.guidance
 
-    if a.mode == "fill":
+    if a.mode in ("fill", "eraser"):
         if a.mask:
             m = Image.open(a.mask).convert("L").resize((W, H))
         else:
             m = Image.new("L", (W, H), 0)
             if a.mask_box:
                 x0, y0, x1, y1 = (int(v) for v in a.mask_box.split(","))
-                ImageDraw.Draw(m).rectangle([x0, y0, x1, y1], fill=255)  # white=repaint
+                ImageDraw.Draw(m).rectangle([x0, y0, x1, y1], fill=255)  # white=repaint/erase
                 if a.feather > 0: m = m.filter(ImageFilter.GaussianBlur(a.feather))
         body["mask_url"] = data_uri(m.convert("RGB"))
 
@@ -85,13 +107,15 @@ def main():
     if r.status_code != 200:
         print(f"ERROR {r.status_code}: {r.text[:600]}", file=sys.stderr); raise SystemExit(1)
     j = r.json()
-    imgs = j.get("images") or []
+    imgs = j.get("images") or ([j["image"]] if j.get("image") else [])
     if not imgs:
         print(f"no images in response: {str(j)[:400]}", file=sys.stderr); raise SystemExit(1)
-    out_url = imgs[0]["url"]
+    out_url = imgs[0]["url"] if isinstance(imgs[0], dict) else imgs[0]
     data = requests.get(out_url, timeout=120).content
     Path(a.out).parent.mkdir(parents=True, exist_ok=True)
     Path(a.out).write_bytes(data)
+    if ckey is not None:
+        cache_put(ckey, a.out)
     print(f"[falgen] OK mode={a.mode} -> {a.out}  sent={W}x{H} seed={j.get('seed')}")
 
 

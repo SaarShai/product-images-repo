@@ -1,0 +1,133 @@
+{
+  "src": "tasks/nyc-taxi/src/nyc-hires.png",
+  "op": "redraw",
+  "element": "yellow taxi car",
+  "desc": "a clean classic NYC yellow sedan",
+  "box": "1680,2950,2700,3340",
+  "free": false,
+  "engine": "fal_flux_fill",
+  "seed": 12345,
+  "mask_dilate": 8,
+  "ctx_pad": 240,
+  "src_size": [
+    4192,
+    3848
+  ],
+  "crop": [
+    1440,
+    2710,
+    2940,
+    3580
+  ],
+  "mask_bbox": [
+    1908,
+    3025,
+    2662,
+    3285
+  ],
+  "jcrop": [
+    1848,
+    2965,
+    2722,
+    3345
+  ],
+  "out": "tasks/improve/_capstone4.png",
+  "overlay": "tasks/improve/_capstone4_editov.png",
+  "pixel_gate_ok": true,
+  "leak_metric": {
+    "available": true,
+    "exit_code": 0,
+    "orig": "tasks/nyc-taxi/src/nyc-hires.png",
+    "edited": "tasks/improve/_capstone4.png",
+    "mask": "/var/folders/0j/0fv2szdj15xg_wbgl96cbf_r0000gn/T/edit_hgjx4ze1/fullmask.png",
+    "size": [
+      4192,
+      3848
+    ],
+    "outside_fraction": 0.9878,
+    "device": "mps",
+    "ssim_outside": 1.0,
+    "lpips_outside": 3e-06,
+    "dino_outside": 0.998831,
+    "dino_patches": 1246,
+    "leak_signals": {
+      "ssim_leak": 0.0,
+      "lpips_leak": 1.8e-05,
+      "dino_leak": 0.001169
+    },
+    "leak_score": 0.001169,
+    "thresh": 0.06,
+    "verdict": "PASS",
+    "pass": true
+  },
+  "text_gate": {
+    "available": true,
+    "applicable": true,
+    "exit_code": 0,
+    "has_text": false,
+    "found": [],
+    "engine": "paddle",
+    "min_conf": 0.5,
+    "region": null,
+    "region_origin": [
+      0,
+      0
+    ],
+    "upscale": 3.0,
+    "prep": true,
+    "kept": [],
+    "all_detections": [
+      {
+        "text": "",
+        "conf": 0.0,
+        "box": [
+          489,
+          701,
+          675,
+          901
+        ]
+      }
+    ],
+    "runtime_s": 9.159,
+    "no_text": true
+  },
+  "judge": {
+    "wellformed": true,
+    "wellformed_reason": "The taxi is cleanly drawn with correct proportions and no distortions.",
+    "leftover_text": false,
+    "text_found": [],
+    "style_match": 0.9,
+    "artifacts": [],
+    "verdict": "PASS",
+    "notes": "The taxi is well-integrated into the watercolor and ink style of the background."
+  },
+  "repair_passes": 1,
+  "repair_log": [
+    {
+      "pass": 1,
+      "method": "ocr_boxes",
+      "text_bbox": [
+        2160,
+        3020,
+        2408,
+        3202
+      ],
+      "ctx_crop": [
+        2080,
+        2940,
+        2488,
+        3282
+      ],
+      "compose_outside_clean": true,
+      "judge_leftover_text": false,
+      "gate_found": [],
+      "gate_no_text": true,
+      "cleared": true
+    }
+  ],
+  "result": "SUCCESS",
+  "timestamp": null,
+  "tool_versions": {
+    "git_rev": "59cff27"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "ok": true,
+  "op": "redraw",
+  "mode": "fill",
+  "prompt": "a clean classic NYC yellow sedan",
+  "n": 3,
+  "scout_maxside": 768,
+  "final_maxside": 1400,
+  "candidates": [
+    {
+      "idx": 1,
+      "seed": 1000,
+      "out": "tasks/improve/_scout_c1.png",
+      "ok": true,
+      "seconds": 41.1,
+      "stdout": [
+        "[falgen] OK mode=fill -> tasks/improve/_scout_c1.png  sent=768x512 seed=1000"
+      ],
+      "stderr": []
+    },
+    {
+      "idx": 2,
+      "seed": 1001,
+      "out": "tasks/improve/_scout_c2.png",
+      "ok": true,
+      "seconds": 19.2,
+      "stdout": [
+        "[falgen] OK mode=fill -> tasks/improve/_scout_c2.png  sent=768x512 seed=1001"
+      ],
+      "stderr": []
+    },
+    {
+      "idx": 3,
+      "seed": 1002,
+      "out": "tasks/improve/_scout_c3.png",
+      "ok": true,
+      "seconds": 49.2,
+      "stdout": [
+        "[falgen] OK mode=fill -> tasks/improve/_scout_c3.png  sent=768x512 seed=1002"
+      ],
+      "stderr": []
+    }
+  ],
+  "winner": {
+    "idx": 1,
+    "seed": 1000,
+    "scout_png": "tasks/improve/_scout_c1.png",
+    "final_png": "tasks/improve/_scout_final.png"
+  },
+  "sweep_stdout": "\n[sweep] tournament:\n  _scout_c1.png vs _scout_c2.png -> _scout_c1.png (inconsistent)\n  _scout_c1.png vs _scout_c3.png -> _scout_c1.png (inconsistent)\n\n[sweep] WINNER: tasks/improve/_scout_c1.png\n",
+  "timing": {
+    "scout_wall_s": 49.2,
+    "pick_wall_s": 6.9,
+    "final_wall_s": 42.2,
+    "total_wall_s": 98.3,
+    "slowest_scout_gen_s": 49.2,
+    "final_gen_s": 42.2
+  }
+}

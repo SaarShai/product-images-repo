@@ -1,0 +1,94 @@
+{
+  "src": "tasks/nyc-taxi/out/nyc-fixed.png",
+  "op": "remove",
+  "element": "small yellow taxi car",
+  "desc": null,
+  "box": "3200,2950,3760,3320",
+  "free": false,
+  "engine": "fal_bria",
+  "seed": 12345,
+  "mask_dilate": 8,
+  "ctx_pad": 240,
+  "src_size": [
+    4192,
+    3848
+  ],
+  "crop": [
+    2960,
+    2710,
+    4000,
+    3560
+  ],
+  "mask_bbox": [
+    3271,
+    3087,
+    3657,
+    3255
+  ],
+  "jcrop": [
+    3211,
+    3027,
+    3717,
+    3315
+  ],
+  "out": "tasks/improve/_edit_hardened.png",
+  "overlay": "tasks/improve/_edit_hardened_editov.png",
+  "pixel_gate_ok": true,
+  "leak_metric": {
+    "available": true,
+    "exit_code": 0,
+    "orig": "tasks/nyc-taxi/out/nyc-fixed.png",
+    "edited": "tasks/improve/_edit_hardened.png",
+    "mask": "/var/folders/0j/0fv2szdj15xg_wbgl96cbf_r0000gn/T/edit_eajrzjxl/fullmask.png",
+    "size": [
+      4192,
+      3848
+    ],
+    "outside_fraction": 0.9959,
+    "device": "mps",
+    "ssim_outside": 0.999994,
+    "lpips_outside": 1.9e-05,
+    "dino_outside": 0.997992,
+    "dino_patches": 1252,
+    "leak_signals": {
+      "ssim_leak": 6e-06,
+      "lpips_leak": 0.000126,
+      "dino_leak": 0.002008
+    },
+    "leak_score": 0.002008,
+    "thresh": 0.06,
+    "verdict": "PASS",
+    "pass": true
+  },
+  "text_gate": {
+    "available": true,
+    "applicable": true,
+    "exit_code": 0,
+    "has_text": false,
+    "found": [],
+    "engine": "paddle",
+    "min_conf": 0.5,
+    "region": null,
+    "upscale": 3.0,
+    "prep": true,
+    "kept": [],
+    "all_detections": [],
+    "runtime_s": 4.355,
+    "no_text": true
+  },
+  "judge": {
+    "wellformed": false,
+    "wellformed_reason": "The main subject, a small yellow taxi car, is not visible in the image.",
+    "leftover_text": false,
+    "text_found": [],
+    "style_match": 0.5,
+    "artifacts": [],
+    "verdict": "FAIL",
+    "notes": "The image does not contain a small yellow taxi car to assess."
+  },
+  "result": "SUCCESS",
+  "timestamp": null,
+  "tool_versions": {
+    "git_rev": "59cff27"
+  }
+}

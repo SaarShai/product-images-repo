@@ -25,6 +25,15 @@ tasks/*/outputs/generated/*
 .secrets/
 
 .venv-gen/
+.venv-*/
+.iopaint-models/
 /princess/
 __pycache__/
 *.pyc
+.cache/
+
+# improvement-run scratch images (regenerable); keep the .md docs + research + eval manifest + scripts
+tasks/improve/_*.png
+tasks/improve/**/_*.png
+tasks/improve/style-packet-test/
+tasks/improve/eval/_tmp*.png
