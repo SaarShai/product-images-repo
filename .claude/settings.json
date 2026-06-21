@@ -1,10 +1,41 @@
 {
   "hooks": {
+    "PostCompact": [
+      {
+        "hooks": [
+          {
+            "command": "python3 ./.claude/skills/brainer-audit/tools/hook.py --host claude --event PostCompact",
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "command": "python3 ./.claude/skills/brainer-audit/tools/hook.py --host claude --event PostToolUse",
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ],
     "PreCompact": [
       {
         "hooks": [
           {
             "command": "bash ./.claude/skills/context-keeper/tools/hook.sh",
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      },
+      {
+        "hooks": [
+          {
+            "command": "python3 ./.claude/skills/brainer-audit/tools/hook.py --host claude --event PreCompact",
             "type": "command"
           }
         ],
@@ -16,6 +47,26 @@
         "hooks": [
           {
             "command": "python3 ./.claude/hooks/artifact_guard.py",
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      },
+      {
+        "hooks": [
+          {
+            "command": "python3 ./.claude/skills/brainer-audit/tools/hook.py --host claude --event PreToolUse",
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "command": "python3 ./.claude/skills/brainer-audit/tools/hook.py --host claude --event Stop",
             "type": "command"
           }
         ],
@@ -36,6 +87,15 @@
         "hooks": [
           {
             "command": "bash ./.claude/skills/prompt-triage/tools/hook.sh",
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      },
+      {
+        "hooks": [
+          {
+            "command": "python3 ./.claude/skills/brainer-audit/tools/hook.py --host claude --event UserPromptSubmit",
             "type": "command"
           }
         ],

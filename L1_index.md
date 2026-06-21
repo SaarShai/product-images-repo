@@ -1,0 +1,45 @@
+# L1 Index
+
+Compact pointers. Fetch details on demand.
+
+- start -> `start.md`
+- config -> `brainer.yaml`
+- model registry -> `models.yaml`
+- L0 rules -> `L0_rules.md`
+- schema -> `schema.md`
+- wiki catalog -> `index.md`
+- log -> `log.md`
+- raw sources -> `raw/` (search only; fetch after relevance)
+- .github/PULL_REQUEST_TEMPLATE (page) -> `.github/PULL_REQUEST_TEMPLATE.md`
+- CONTRIBUTING (page) -> `CONTRIBUTING.md`
+- assets/skyline/README (page) -> `assets/skyline/README.md`
+- docs/JUDGING_PROTOCOL (page) -> `docs/JUDGING_PROTOCOL.md`
+- docs/agent-simulation-report (page) -> `docs/agent-simulation-report.md`
+- docs/baci-door-template-fit (page) -> `docs/baci-door-template-fit.md`
+- docs/brainer-skills (page) -> `docs/brainer-skills.md`
+- docs/image-generation (page) -> `docs/image-generation.md`
+- docs/local-tooling (page) -> `docs/local-tooling.md`
+- docs/review-judge-checklist (page) -> `docs/review-judge-checklist.md`
+- docs/setup-verification (page) -> `docs/setup-verification.md`
+- docs/skyline-template-illustration-workflow (page) -> `docs/skyline-template-illustration-workflow.md`
+- docs/svg-template-illustration-workflow (page) -> `docs/svg-template-illustration-workflow.md`
+- docs/whole-panel-VALIDATED-RECIPE (page) -> `docs/whole-panel-VALIDATED-RECIPE.md`
+- docs/whole-panel-workflow-blueprint (page) -> `docs/whole-panel-workflow-blueprint.md`
+- docs/workflow (page) -> `docs/workflow.md`
+- princess/images/character-repair/fanout-20260618/GOAL (page) -> `princess/images/character-repair/fanout-20260618/GOAL.md`
+- princess/images/character-repair/fanout-20260618/STATE (page) -> `princess/images/character-repair/fanout-20260618/STATE.md`
+- princess/images/character-repair/fanout-20260618/SYNTHESIS (page) -> `princess/images/character-repair/fanout-20260618/SYNTHESIS.md`
+- princess/images/character-repair/fanout-20260618/loop-spec (page) -> `princess/images/character-repair/fanout-20260618/loop-spec.md`
+- princess/images/character-repair/fanout-20260618/nano-crop/dimensions (page) -> `princess/images/character-repair/fanout-20260618/nano-crop/dimensions.md`
+- princess/images/character-repair/fanout-20260618/nano-crop/route-notes (page) -> `princess/images/character-repair/fanout-20260618/nano-crop/route-notes.md`
+- princess/images/character-repair/fanout-20260618/nano-highres/NOTES (page) -> `princess/images/character-repair/fanout-20260618/nano-highres/NOTES.md`
+- princess/images/character-repair/fanout-20260618/nano-highres/REPORT (page) -> `princess/images/character-repair/fanout-20260618/nano-highres/REPORT.md`
+- princess/images/character-repair/fanout-20260618/openai-crop/DIMENSIONS (page) -> `princess/images/character-repair/fanout-20260618/openai-crop/DIMENSIONS.md`
+- princess/images/character-repair/fanout-20260618/openai-highres/NOTES (page) -> `princess/images/character-repair/fanout-20260618/openai-highres/NOTES.md`
+- princess/images/character-repair/fanout-20260618/openai-highres/RETROSPECTIVE (page) -> `princess/images/character-repair/fanout-20260618/openai-highres/RETROSPECTIVE.md`
+- princess/images/character-repair/fanout-20260618/openai-whole-panel/REPORT (page) -> `princess/images/character-repair/fanout-20260618/openai-whole-panel/REPORT.md`
+- princess/images/character-repair/fanout-20260618/openai-whole-panel/RETROSPECTIVE (page) -> `princess/images/character-repair/fanout-20260618/openai-whole-panel/RETROSPECTIVE.md`
+- princess/images/character-repair/handfix-fanout-20260618/GOAL (page) -> `princess/images/character-repair/handfix-fanout-20260618/GOAL.md`
+- princess/images/character-repair/handfix-fanout-20260618/SYNTHESIS (page) -> `princess/images/character-repair/handfix-fanout-20260618/SYNTHESIS.md`
+- princess/images/character-repair/handfix-fanout-20260618/lanes/deterministic-anatomy/REPORT (page) -> `princess/images/character-repair/handfix-fanout-20260618/lanes/deterministic-anatomy/REPORT.md`
+- princess/images/character-repair/handfix-fanout-20260618/lanes/nano-localized/REPORT (page) -> `princess/images/character-repair/handfix-fanout-20260618/lanes/nano-localized/REPORT.md`

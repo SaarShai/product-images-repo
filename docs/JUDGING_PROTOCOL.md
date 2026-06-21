@@ -44,6 +44,46 @@ VLM judge subagents failed in two ways; this is the corrected, evidence-based pr
 6. **Never declare a "winner" by eyeballing sub-metrics.** Run the gate first; quote the verdict; for
    aesthetics, defer to the human. **Surface every anomaly you notice — never silently drop it.**
 
+## Cross-model judge panel (codex + GLM + Claude) — validated
+All-Claude judging shares blind spots (the "3 independent judges" were 3 Claude instances). A cross-MODEL
+panel catches what one model family misses. All three are vision-capable (verified):
+- **Claude** — Workflow `agent()` / Agent tool (hi-DPI tiles).
+- **codex GPT-5.5** — `scripts/codex_judge.sh "PROMPT" img...` (pipes prompt on stdin, image via `-i`;
+  needs the codex app/auth open on the device or it hangs).
+- **GLM-5.2** — the `glm-executor` subagent (Read the image; it sees pixels).
+
+PROVEN on the exact cases Claude missed: the EW-B2 **double-window** (Claude counted 1 on tiles) → both
+codex and GLM counted **2** on the whole-panel context; nano-G3winin **poor proportions** (Claude scored
+~90) → both codex and GLM flagged proportions 2/5 + the specific defects (skinny central tower, oversized
+window, top template-line artifact).
+
+Rules:
+- **One image per call. Do NOT pass A/B pairs** — GLM flipped its verdict on an A/B comparison (label swap),
+  then judged correctly on the single image. Comparative pairs risk a swap.
+- **Objective defects (count/duplicate/crop/structural proportions) are reliably cross-model-catchable** →
+  run codex + GLM (+ Claude) and take the UNION of real flags.
+- **Style score still varies across models** (codex style 4 vs GLM 2 on the same image) → style stays
+  advisory; PROPORTIONS + structural defects do not.
+- **Model DISAGREEMENT is the signal to escalate to the human.**
+
+## Judge against the GEOMETRY SPEC, not a generic prior
+A judge with no geometry context scores against its own idea of what the panel "should" look like —
+that is how the trapezoid doors passed an eyeball check (the model's prior said "arched poster," and a
+tapered building looks arched). **Every geometry judgment must be handed the panel's spec**, the single
+contract emitted from the SVG by `scripts/skyline_panel.py --mode spec` (also dropped beside every guide
+as `<guide>.spec.json`). The spec gives the judge the exact: `aspect` (+ `aspect_tol`), `contour`
+("domed rectangle, fill edge-to-edge"), `saloon_arch_frac`, `keep_clear_lanes_frac`, and `must_not`
+(taper/pinch, background in corners/sides, cropped base, focal feature in a keep-clear lane).
+
+Judge instruction template (codex / GLM / Claude — one image per call):
+> Here is the candidate and its geometry spec `{spec json}`. Score ONLY against this spec.
+> Does the artwork fill the contour edge-to-edge (no taper/pinch/trapezoid, no background in the
+> bottom corners or mid-height sides)? Is the gateway aligned to `saloon_arch_frac`? Is anything iconic
+> inside a `keep_clear` lane? Is any landmark base cropped? Report each `must_not` as pass/fail.
+
+The deterministic `--mode check` (side-fill/taper gate) is the floor; the spec-anchored VLM judges are
+the ceiling. Run both; a `must_not` failure from either blocks acceptance.
+
 ## Tools
 - `scripts/judge_tiles.py` — candidate → hi-DPI tiles + region crops + manifest.
 - `scripts/judge_panel.py` — builds the packet (overlay + tiles + cutout crops + geometry floor) with the

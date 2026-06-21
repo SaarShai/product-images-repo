@@ -22,3 +22,9 @@ tasks/*/outputs/generated/*
 # transient runtime state (not work product)
 .claude/state/
 .brainer/
+.secrets/
+
+.venv-gen/
+/princess/
+__pycache__/
+*.pyc

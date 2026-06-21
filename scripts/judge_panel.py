@@ -59,6 +59,11 @@ def main() -> int:
     ap.add_argument("--max-crops", type=int, default=10)
     ap.add_argument("--expect-windows", type=int, default=1,
                     help="expected embedded window count (metric I); default 1")
+    ap.add_argument("--panel", choices=["door", "left", "right"],
+                    help="skyline panel → attaches the geometry-spec contract (aspect/contour/arch/keep-clear/must_not)")
+    ap.add_argument("--spec", help="path to a .spec.json geometry contract (overrides --panel derivation)")
+    ap.add_argument("--refs", nargs="*", default=[],
+                    help="reference / gold style images the judge anchors style-faithfulness to")
     args = ap.parse_args()
     out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
     (out / "crops").mkdir(exist_ok=True)
@@ -79,6 +84,20 @@ def main() -> int:
     cl = C.classify(shapes)
     vx, vy, vw, vh = vb
     sf = W / vw
+
+    # 2a) GEOMETRY SPEC contract — the judge must score against THIS, not a generic prior
+    # (a judge with no contract scores against "what an arched poster should look like", which is
+    # exactly how the tapered/trapezoid doors looked acceptable).
+    spec = None
+    if args.spec and Path(args.spec).exists():
+        spec = json.loads(Path(args.spec).read_text())
+    elif args.panel:
+        try:
+            import skyline_panel as SP
+            spec = SP.panel_spec(args.svg, args.panel, vb, cl)
+        except Exception as e:  # noqa: BLE001
+            spec = {"error": f"spec derivation failed: {e}"}
+
     cutouts = [s for s in cl if s.role == "internal_cutout"]
     redzones = [s for s in cl if s.role == "no_focal_motif_zone"]
     crops = []
@@ -92,6 +111,30 @@ def main() -> int:
         p = out / "crops" / f"cutout_{i}.png"
         ov.crop(box).save(p)
         crops.append(str(p))
+
+    # 2a') KEEP-CLEAR LANE crops — so the judge can verify NO recognizable feature
+    # (face/head/sign/roof-tip) sits in or is cropped at a keep-clear lane. This is the
+    # exact miss on RC-right-geoK2 (a horse HEAD was cropped in the narrow center lane);
+    # a pixel gate can't tell a tower facade from a head, so the judge must SEE the lane.
+    keep_clear_crops = []
+    src = Image.open(args.candidate) if args.candidate else ov
+    src = src.convert("RGB"); SW, SH = src.size
+    # These crops use FULL-TEMPLATE SVG coords, so they only align when the candidate IS
+    # the full template raster. A single-panel raw (aspect far from the template's) would
+    # produce misaligned slivers — for those use skyline_panel.py --mode check (panel-
+    # relative lane crop) instead. Skip rather than emit a misleading crop.
+    template_aspect = vw / vh
+    lane_aligned = abs((SW / SH) - template_aspect) / template_aspect < 0.15
+    for i, s in enumerate(redzones if lane_aligned else []):
+        x0, y0, x1, y1 = s.bounds
+        padx = 0.5 * (x1 - x0)
+        box = (max(0, int((x0 - vx - padx) / vw * SW)), max(0, int((y0 - vy) / vh * SH)),
+               min(SW, int((x1 - vx + padx) / vw * SW)), min(SH, int((y1 - vy) / vh * SH)))
+        if box[2] - box[0] < 8 or box[3] - box[1] < 8:
+            continue
+        p = out / "crops" / f"keepclear_{i}.png"
+        src.crop(box).save(p)
+        keep_clear_crops.append(str(p))
 
     # 2b) HI-DPI TILES of the candidate — judges MUST read these (the whole tall image is downsampled
     # by the reader → hallucinations). Tiling is the fix for the "feature absent" false negatives.
@@ -130,6 +173,9 @@ def main() -> int:
         "context": context,  # whole-panel downscaled image for the MANDATORY count step (metric I)
         "tiles": tiles,
         "crops": crops,
+        "keep_clear_crops": keep_clear_crops,  # judge: no recognizable feature in/cropped at a keep-clear lane
+        "geometry_spec": spec,  # the contract to score geometry against (None if --panel/--spec omitted)
+        "references": [str(r) for r in args.refs],  # gold/style images for faithfulness (advisory)
         "counts": {"cutouts": len(cutouts), "red_keep_clear": len(redzones)},
         "expected_element_counts": {"windows": args.expect_windows},
         "geometry_floor": {k: geom.get(k) for k in ("mean_iou", "openings", "pass") if k in geom},
@@ -146,7 +192,13 @@ def main() -> int:
                        "continuing' (this exact miss happened — two stacked windows passed). Use the context for "
                        "the count, tiles only to confirm each instance is real. A single-window panel must show "
                        "EXACTLY ONE — report window_count and FAIL if it is not the expected number. "
-                       "Return {objective_verdict, window_count, failing_checks[], reasons[], aesthetic_advisory, one_fix}.",
+                       "GEOMETRY: if geometry_spec is present, score geometry ONLY against it — verify the "
+                       "artwork fills the contour edge-to-edge (no taper/pinch/trapezoid, no background in the "
+                       "bottom corners or mid-height sides), the gateway aligns to saloon_arch_frac, nothing "
+                       "iconic sits in a keep_clear lane, and no landmark base is cropped; report EACH must_not "
+                       "as pass/fail. STYLE: if references are present, judge style-faithfulness against them "
+                       "(advisory only). "
+                       "Return {objective_verdict, window_count, must_not_results{}, failing_checks[], reasons[], aesthetic_advisory, one_fix}.",
     }
     (out / "judge-packet.json").write_text(json.dumps(packet, indent=2))
     print(f"packet: {out/'judge-packet.json'}  overlay={overlay.name}  tiles={len(tiles)} crops={len(crops)}  cutouts={len(cutouts)} red={len(redzones)}")

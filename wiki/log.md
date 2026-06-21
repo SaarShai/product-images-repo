@@ -130,3 +130,7 @@ Synthesized a high-resolution watercolor space control-panel illustration using 
 - lessons banked (memory): background-gen-supervision, zsh-glob-abort-guard, edge-socket-panel-recipe; subscription-image-gen-one-path updated (nano 429/health-lies/openai fallback).
 - canonical Brainer: added SCOPE note to skills/task-retrospective/SKILL.md — never run task-retrospective on the Brainer repo itself, only in the consuming/current repo.
 - accepted results: np01-back-bottom-02 = OPENAI-s2 (then 6 nano v2/v3 alternates); np02-front-bottom-01 = 6 nano + openai (pending pick).
+
+- 2026-06-21 element-edit retrospective: banked element-edit-diffmask-composite, image-edit-engine-routing, reference-lock-for-consistency (.claude memory); Flux.2-pro=engine, diffmask gate.
+
+- 2026-06-21 window-widen (n02): exact-geometry element reshape — blob-mask Fill FAILED to widen; WIN = no-redo stretch (anchored) -> Flux Kontext cleanup -> arched-mask composite + reattach alpha. Banked element-reshape-stretch-then-refine.
