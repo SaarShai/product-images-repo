@@ -65,7 +65,6 @@
 | **RESEAT-bon2-s2-v2** | reseat-composite | unknown | 0.873 | 4 | 4 | ACCEPT | PASS |
 | **RESEAT-srcfinal-nb-s1** | unknown | unknown | 0.872 | unjudged | unjudged | unjudged | PASS |
 | **RESEAT-bon2-s8-v2** | reseat-composite | unknown | 0.866 | 4 | 4 | ACCEPT | PASS |
-| **HYB1** | hybrid-composite | gpt-image-2+code | 0.863 | unjudged | unjudged | unjudged | PASS |
 | **RESEAT-bon2-s2** | unknown | unknown | 0.862 | unjudged | unjudged | unjudged | PASS |
 | **RESTYLE-nb-v1-s2** | restyle-locked | nano-banana | 0.856 | 5 | 5 | ACCEPT | PASS |
 | RESEAT-oai-v3-s2-v2 | reseat-composite | unknown | 0.843 | 4 | 4 | ACCEPT | FAIL |
@@ -75,6 +74,7 @@
 | RESTYLE-nb-v3-s3 | restyle-locked | nano-banana | 0.782 | 4 | 5 | ACCEPT | FAIL |
 | RESEAT-nb-v3-s3-v2 | reseat-composite | unknown | 0.779 | 4 | 5 | ACCEPT | FAIL |
 | RESEAT-nb-v3-s2-v2 | reseat-composite | unknown | 0.776 | 4 | 4 | ACCEPT | FAIL |
+| RESTYLE-nb-v1-s1 | restyle-locked | nano-banana | 0.770 | 4 | 5 | ACCEPT | FAIL |
 
 ---
 
@@ -104,7 +104,6 @@
 | **CN-style-exact** | sd1.5 | 0.969 | unknown | unknown | PASS | region-IoU=0.969 |
 | STYLE1 | sd1.5 | 0.506 | unknown | unknown | FAIL | SD1.5 style injection with ref images, visual-only. region-IoU=0.506 |
 | CN-style-drift | sd1.5 | 0.000 | unknown | unknown | FAIL | region-IoU=0.000 |
-| DREAM-ip | dreamshaper-8 | unknown | unknown | unknown | unknown | IP-Adapter attempt crashed: ValueError ip_adapter_image must match number of IP Adapters (got 2 images, 1 adapter). No o |
 
 ### GROUP A4: ControlNet Inpaint SD1.5 (local-diffusers)
 
@@ -128,7 +127,7 @@
 
 | id | model | region-IoU | white-IoU | outside_frac | verdict | notes |
 |---|---|---|---|---|---|---|
-| **HYB1** | gpt-image-2+code | 0.863 | 0.795 | 0.000 | PASS | hybrid composite: gpt-image-2 art re-seated by exact_bevel_composite.py. region-IoU=0.863. white-IoU=0.795. outside_frac |
+| HYB1 | gpt-image-2+code | unknown | 0.795 | 0.000 | unknown | hybrid composite: gpt-image-2 art re-seated by exact_bevel_composite.py. white-IoU=0.795. outside_frac=0.0000 |
 
 ### GROUP C1: gpt-image-2 Best-of-N (codex)
 
@@ -155,24 +154,12 @@
 | BoN2-openai-s5 | gpt-image-2 | 0.225 | 0.255 | 0.004 | FAIL | gpt-image-2 BoN round-2 letterboxed. region-IoU=0.225. white-IoU=0.255. outside_frac=0.0036 |
 | BoN2-openai-s3 | gpt-image-2 | 0.191 | 0.222 | 0.002 | FAIL | gpt-image-2 BoN round-2 letterboxed. region-IoU=0.191. white-IoU=0.222. outside_frac=0.0017 |
 | BoN-openai-s2 | gpt-image-2 | 0.184 | 0.366 | 0.004 | FAIL | gpt-image-2 BoN sample. AspectRatio forced 9:16 vs panel 1:3.4 (aspect mismatch).. region-IoU=0.184. white-IoU=0.366. ou |
-| SRC-reflayout-openai-s1 | gpt-image-2 | 0.095 | unknown | unknown | FAIL | region-IoU=0.095 |
-| SRC-sparse-openai-s2 | gpt-image-2 | 0.082 | unknown | unknown | FAIL | region-IoU=0.082 |
 | BoN-openai-s6 | gpt-image-2 | 0.076 | 0.311 | 0.005 | FAIL | gpt-image-2 BoN sample. AspectRatio forced 9:16 vs panel 1:3.4 (aspect mismatch).. region-IoU=0.076. white-IoU=0.311. ou |
-| SRC-reflayout-openai-s2 | gpt-image-2 | 0.068 | unknown | unknown | FAIL | region-IoU=0.068 |
-| SRC-sparse-openai-s1 | gpt-image-2 | 0.066 | unknown | unknown | FAIL | region-IoU=0.066 |
-| BoN-openai-s1 | gpt-image-2 | unknown | unknown | unknown | unknown | gpt-image-2 BoN sample. AspectRatio forced 9:16 vs panel 1:3.4 (aspect mismatch). |
-| BoN-openai-s10 | gpt-image-2 | unknown | unknown | unknown | unknown | gpt-image-2 BoN sample. AspectRatio forced 9:16 vs panel 1:3.4 (aspect mismatch). |
-| BoN-openai-s3 | gpt-image-2 | unknown | unknown | unknown | unknown | gpt-image-2 BoN sample. AspectRatio forced 9:16 vs panel 1:3.4 (aspect mismatch). |
-| BoN-openai-s8 | gpt-image-2 | unknown | unknown | unknown | unknown | gpt-image-2 BoN sample. AspectRatio forced 9:16 vs panel 1:3.4 (aspect mismatch). |
-| BoN2-openai-s4 | gpt-image-2 | unknown | unknown | unknown | unknown | gpt-image-2 BoN round-2 letterboxed |
-| BoN2-openai-s8 | gpt-image-2 | unknown | unknown | unknown | unknown | gpt-image-2 BoN round-2 letterboxed |
 | FIX-openai-v1 | gpt-image-2 | unknown | unknown | unknown | unknown | unknown |
 | FIX-openai-v2 | gpt-image-2 | unknown | unknown | unknown | unknown | unknown |
 | FIX-openai-v3 | gpt-image-2 | unknown | unknown | unknown | unknown | unknown |
 | FIX-openai-v4 | gpt-image-2 | unknown | unknown | unknown | unknown | unknown |
 | RIP-openai-v2 | gpt-image-2 | unknown | unknown | unknown | unknown | unknown |
-| SRC-reflayout-openai-s3 | gpt-image-2 | 0.000 | unknown | unknown | FAIL | region-IoU=0.000 |
-| SRC-sparse-openai-s3 | gpt-image-2 | 0.000 | unknown | unknown | FAIL | region-IoU=0.000 |
 
 ### GROUP C2: gpt-image-2 Filled Contract (codex)
 
@@ -212,18 +199,12 @@
 | BoN-nano-s6 | nano-banana | 0.477 | 0.003 | 0.002 | FAIL | Nano Banana BoN sample. AspectRatio forced 9:16 vs panel 1:3.4 (aspect mismatch).. region-IoU=0.477. white-IoU=0.003. ou |
 | BoN-nano-s7 | nano-banana | 0.428 | 0.002 | 0.002 | FAIL | Nano Banana BoN sample. AspectRatio forced 9:16 vs panel 1:3.4 (aspect mismatch).. region-IoU=0.428. white-IoU=0.002. ou |
 | BoN-nano-s8 | nano-banana | 0.421 | 0.368 | 0.002 | FAIL | Nano Banana BoN sample. AspectRatio forced 9:16 vs panel 1:3.4 (aspect mismatch).. region-IoU=0.421. white-IoU=0.368. ou |
-| SRC-sparse-nano-s2 | nano-banana | 0.225 | unknown | unknown | FAIL | region-IoU=0.225 |
-| SRC-reflayout-nano-s1 | nano-banana | 0.113 | unknown | unknown | FAIL | region-IoU=0.113 |
 | BoN-nano-s9 | nano-banana | 0.106 | 0.420 | 0.005 | FAIL | Nano Banana BoN sample. AspectRatio forced 9:16 vs panel 1:3.4 (aspect mismatch).. region-IoU=0.106. white-IoU=0.420. ou |
 | BoN2-nano-s7 | nano-banana | 0.098 | 0.303 | 0.003 | FAIL | Nano Banana BoN round-2 letterboxed. region-IoU=0.098. white-IoU=0.303. outside_frac=0.0032 |
-| SRC-reflayout-nano-s3 | nano-banana | 0.091 | unknown | unknown | FAIL | region-IoU=0.091 |
 | BoN-nano-s2 | nano-banana | 0.079 | 0.033 | 0.004 | FAIL | Nano Banana BoN sample. AspectRatio forced 9:16 vs panel 1:3.4 (aspect mismatch).. region-IoU=0.079. white-IoU=0.033. ou |
-| SRC-sparse-nano-s1 | nano-banana | 0.075 | unknown | unknown | FAIL | region-IoU=0.075 |
 | RESEAT-reflayout-nano-s1 | nano-banana | 0.066 | unknown | unknown | FAIL | region-IoU=0.066 |
 | RESEAT-sparse-nano-s1 | nano-banana | 0.065 | unknown | unknown | FAIL | region-IoU=0.065 |
 | RESEAT-sparse-nano-s2 | nano-banana | 0.064 | unknown | unknown | FAIL | region-IoU=0.064 |
-| SRC-sparse-nano-s3 | nano-banana | 0.048 | unknown | unknown | FAIL | region-IoU=0.048 |
-| SRC-reflayout-nano-s2 | nano-banana | 0.037 | unknown | unknown | FAIL | region-IoU=0.037 |
 | BoN-nano-s10 | nano-banana | 0.031 | 0.008 | 0.004 | FAIL | Nano Banana BoN sample. AspectRatio forced 9:16 vs panel 1:3.4 (aspect mismatch).. region-IoU=0.031. white-IoU=0.008. ou |
 | RESEAT-reflayout-nano-s2 | nano-banana | 0.021 | unknown | unknown | FAIL | region-IoU=0.021 |
 | BoN-nano-s1 | nano-banana | 0.019 | 0.064 | 0.005 | FAIL | Nano Banana BoN sample. AspectRatio forced 9:16 vs panel 1:3.4 (aspect mismatch).. region-IoU=0.019. white-IoU=0.064. ou |
@@ -273,7 +254,7 @@
 
 ### GROUP F: Orphan raw model outputs (inputs unrecoverable)
 
-Every gen image on disk is cataloged so none is dropped. Total **306** orphans (raw model gens + renders NOT already tied to an experiment dir, deduped by content hash). By model: gpt-image-2=244, nano-banana=56, render-output=6.
+Every gen image on disk is cataloged so none is dropped. Total **330** orphans (raw model gens + renders NOT already tied to an experiment dir, deduped by content hash). By model: gpt-image-2=274, nano-banana=56.
 Per-image records (path + mtime) are in `results.jsonl` under id prefix `orphan-`. Listed as counts here to keep the board readable.
 
 ### GROUP X: unknown
@@ -291,19 +272,11 @@ Per-image records (path + mtime) are in `results.jsonl` under id prefix `orphan-
 | **RESEAT-srcfinal-nb-s1** | unknown | 0.872 | unknown | unknown | PASS | region-IoU=0.872 |
 | **RESEAT-bon2-s2** | unknown | 0.862 | unknown | unknown | PASS | region-IoU=0.862 |
 | RESTYLE-nb-v1-s3 | nano-banana | 0.722 | 0.684 | 0.001 | FAIL | region-IoU=0.722. white-IoU=0.684. outside_frac=0.0013 |
-| SRC-nb2-s6 | unknown | 0.617 | unknown | unknown | FAIL | region-IoU=0.617 |
 | SRC-nb-s7 | nano-banana | 0.589 | 0.594 | 0.000 | FAIL | region-IoU=0.589. white-IoU=0.594. outside_frac=0.0004 |
 | SRC-nb-s6 | nano-banana | 0.577 | 0.000 | 0.000 | FAIL | region-IoU=0.577. white-IoU=0.000. outside_frac=0.0002 |
 | SRC-nb-s8 | nano-banana | 0.561 | 0.001 | 0.000 | FAIL | region-IoU=0.561. white-IoU=0.001. outside_frac=0.0003 |
 | SRC-nb-s3 | nano-banana | 0.549 | 0.550 | 0.000 | FAIL | region-IoU=0.549. white-IoU=0.550. outside_frac=0.0001 |
-| SRC-nb2-s7 | unknown | 0.540 | unknown | unknown | FAIL | region-IoU=0.540 |
-| SRC-nb2-s8 | unknown | 0.540 | unknown | unknown | FAIL | region-IoU=0.540 |
-| SRC-nb2-s4 | unknown | 0.537 | unknown | unknown | FAIL | region-IoU=0.537 |
-| SRC-nb2-s2 | unknown | 0.524 | unknown | unknown | FAIL | region-IoU=0.524 |
-| SRC-nb2-s3 | unknown | 0.513 | unknown | unknown | FAIL | region-IoU=0.513 |
-| SRC-nb2-s5 | unknown | 0.315 | unknown | unknown | FAIL | region-IoU=0.315 |
 | SRC-nb-s5 | nano-banana | 0.300 | 0.191 | 0.009 | FAIL | region-IoU=0.300. white-IoU=0.191. outside_frac=0.0088 |
-| SRC-oai-s3 | gpt-image-2 | 0.267 | 0.277 | 0.001 | FAIL | region-IoU=0.267. white-IoU=0.277. outside_frac=0.0011 |
 | SRC-nb-s1 | nano-banana | 0.261 | 0.184 | 0.010 | FAIL | region-IoU=0.261. white-IoU=0.184. outside_frac=0.0099 |
 | SRC-oai-s1 | gpt-image-2 | 0.189 | 0.192 | 0.002 | FAIL | region-IoU=0.189. white-IoU=0.192. outside_frac=0.0019 |
 | RESEAT-nb2-s3 | unknown | 0.096 | unknown | unknown | FAIL | region-IoU=0.096 |
@@ -316,10 +289,8 @@ Per-image records (path + mtime) are in `results.jsonl` under id prefix `orphan-
 | RESEAT-nb2-s4 | unknown | 0.062 | unknown | unknown | FAIL | region-IoU=0.062 |
 | RESEAT-srcfinal-nb-s8 | unknown | 0.062 | unknown | unknown | FAIL | region-IoU=0.062 |
 | RESEAT-nb2-s2 | unknown | 0.062 | unknown | unknown | FAIL | region-IoU=0.062 |
-| SRC-nb2-s1 | unknown | 0.056 | unknown | unknown | FAIL | region-IoU=0.056 |
 | SRC-nb-s4 | nano-banana | 0.030 | 0.010 | 0.011 | FAIL | region-IoU=0.030. white-IoU=0.010. outside_frac=0.0106 |
 | BoN2-openai-s2 | unknown | unknown | unknown | unknown | unknown | Empty experiment directory — no outputs. |
-| E5-bestof-3 | unknown | unknown | unknown | unknown | unknown | Empty experiment directory — no outputs. |
 | RESTYLE-ip-is60-cs15-prompt | unknown | unknown | unknown | unknown | unknown | unknown |
 | RESTYLE-ip-is85-cs125 | unknown | 0.000 | unknown | unknown | FAIL | region-IoU=0.000 |
 | RESTYLE-ip-is85-cs15 | unknown | 0.000 | unknown | unknown | FAIL | region-IoU=0.000 |
@@ -327,7 +298,7 @@ Per-image records (path + mtime) are in `results.jsonl` under id prefix `orphan-
 | RESTYLE-oai-v3-s4 | gpt-image-2 | unknown | unknown | unknown | unknown | unknown |
 | RIMSPLIT-d14-s12345 | unknown | unknown | unknown | unknown | unknown | unknown |
 | SRC-nb-s2 | nano-banana | 0.000 | 0.118 | 0.010 | FAIL | region-IoU=0.000. white-IoU=0.118. outside_frac=0.0103 |
-| SRC-oai-s2 | unknown | unknown | unknown | unknown | unknown | unknown |
+| SRC-oai-s3 | gpt-image-2 | unknown | 0.277 | 0.001 | unknown | white-IoU=0.277. outside_frac=0.0011 |
 
 ### GROUP X: reseat-composite
 
@@ -366,10 +337,10 @@ Per-image records (path + mtime) are in `results.jsonl` under id prefix `orphan-
 
 ## SUMMARY: WHERE WE STAND
 
-- Total records: **498**
-- PASS (region-IoU >= 0.85 or procedural): **42**
-- FAIL: **128**
-- Unknown / stub: **328**
+- Total records: **493**
+- PASS (region-IoU >= 0.85 or procedural): **41**
+- FAIL: **107**
+- Unknown / stub: **345**
 
 **Top-5 by region-IoU:**
 - FINAL-exact-frame: region-IoU=0.980 (PASS)
