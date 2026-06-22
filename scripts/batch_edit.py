@@ -195,9 +195,11 @@ def main():
     ap.add_argument("--final", help="final accumulated image path (default: <outdir>/<srcstem>_batch_final.png)")
     ap.add_argument("--outdir", default="tasks/improve", help="dir for the final image + provenance")
     ap.add_argument("--parallel", action="store_true",
-                    help="OPT-IN: run jobs concurrently against the ORIGINAL src + diff-merge "
-                         "(fast for NON-OVERLAPPING elements; errors if changed regions intersect). "
-                         "Default is the verified sequential accumulation.")
+                    help="OPT-IN: run NON-OVERLAPPING jobs concurrently against the ORIGINAL src + diff-merge "
+                         "(errors if changed regions intersect). Merge is correct (verified byte-identical to "
+                         "sequential). NOTE: measured SLOWER than sequential on the default local-compute-bound "
+                         "pipeline (SAM+leak_metric+auto-repair contend for CPU/MPS); only wins when the remote "
+                         "fal call dominates (light/disabled local judges, slow fal queue, jobs >> cores).")
     ap.add_argument("--max-workers", type=int, default=6, help="max concurrent edit.py processes when --parallel")
     a = ap.parse_args()
 
