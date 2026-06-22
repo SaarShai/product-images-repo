@@ -13,6 +13,7 @@ Usage:
   .venv-gen/bin/python scripts/dehalo.py --image IN.png --out OUT.png [--bright 198] [--neutral 12]
 """
 import argparse
+import sys
 import numpy as np
 import cv2
 from PIL import Image
@@ -31,10 +32,15 @@ def dehalo(img: Image.Image, bright=198, neutral=12, protect=None):
     border = set(lab[0, :].tolist()) | set(lab[-1, :].tolist()) | set(lab[:, 0].tolist()) | set(lab[:, -1].tolist())
     border.discard(0)
     bgmask = np.isin(lab, list(border))
+    protected_px = 0
     for x0, y0, x1, y1 in (protect or []):
+        if x1 <= x0 or y1 <= y0:   # swapped/empty coords => empty slice => silent no-op shield. warn, don't crash.
+            print(f"[dehalo] WARN degenerate protect box {(x0, y0, x1, y1)} skipped (need x0<x1 and y0<y1)", file=sys.stderr)
+            continue
+        protected_px += int(bgmask[y0:y1, x0:x1].sum())  # count what we actually spare (0 => shield hit nothing)
         bgmask[y0:y1, x0:x1] = False  # shield protected subject from the flood
     out = a.copy(); out[bgmask] = [255, 255, 255]
-    return Image.fromarray(out.astype("uint8")), float(bgmask.mean())
+    return Image.fromarray(out.astype("uint8")), float(bgmask.mean()), protected_px
 
 
 def main():
@@ -47,9 +53,10 @@ def main():
                     help="x0,y0,x1,y1 box to shield from the flood (repeatable) — for white-on-white subjects")
     a = ap.parse_args()
     protect = [[int(v) for v in p.split(",")] for p in a.protect]
-    res, frac = dehalo(Image.open(a.image), a.bright, a.neutral, protect)
+    res, frac, protected_px = dehalo(Image.open(a.image), a.bright, a.neutral, protect)
     res.save(a.out)
-    print(f"[dehalo] {a.image} -> {a.out}  whitened={frac*100:.1f}% (page+halo)  protected={len(protect)}")
+    # protected_px=0 with boxes given => the shield hit nothing (swapped coords / wrong box) — a real signal
+    print(f"[dehalo] {a.image} -> {a.out}  whitened={frac*100:.1f}% (page+halo)  protected_boxes={len(protect)} protected_px={protected_px}")
 
 
 if __name__ == "__main__":

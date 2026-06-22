@@ -242,7 +242,7 @@ def autorepair_text(a, src, out, work, W, H, elem_bbox, jcrop_box,
                      "--mask", f"{tx0},{ty0},{tx1},{ty1}",
                      "--diffmask", "--diff-thresh", "20", "--diff-close", "5",
                      "--diff-dilate", "4", "--diff-feather", "3"])
-        comp_ok = "outside_max_delta=0" in rcomp.stdout
+        comp_ok = rcomp.returncode == 0 and "outside_max_delta=0" in rcomp.stdout  # returncode guards a crashed compose
 
         # --- re-gate the repaired result ---
         verdict, jcrop = judge_region(out, jcrop_box, a.element, work)
@@ -313,10 +313,16 @@ def main():
         lx0, ly0, lx1, ly1 = mask_bbox(ctx_mask)
     ex0, ey0, ex1, ey1 = cx0 + lx0, cy0 + ly0, cx0 + lx1, cy0 + ly1  # full-coord element bbox
 
-    # 3) guardrail (soft): mask non-empty + covers element ink edges; overlay for inspection
-    run([PY, R/"mask_check.py", "--image", ctx, "--mask", ctx_mask, "--target", "edges",
-         "--region", f"{lx0},{ly0},{lx1},{ly1}", "--min-contain", "0.4", "--max-leak", "0.9",
-         "--out", str(work/"_mc_ov.png")])
+    # 3) guardrail: mask non-empty + covers element ink edges; overlay for inspection.
+    # SURFACE the exit code (was discarded => the gate was decorative). WARN-loud rather than hard-exit:
+    # target=edges on soft watercolor can yield sparse edges -> a good mask could dip below contain 0.4,
+    # so a hard refusal would false-fail legit edits; a visible warning still kills the silent-discard.
+    # ratio guard disabled here (--max-ratio 999): target=edges makes mask/edge-px ratio naturally high.
+    if run([PY, R/"mask_check.py", "--image", ctx, "--mask", ctx_mask, "--target", "edges",
+            "--region", f"{lx0},{ly0},{lx1},{ly1}", "--min-contain", "0.4", "--max-leak", "0.9",
+            "--max-ratio", "999", "--out", str(work/"_mc_ov.png")]).returncode == 2:
+        print("  [edit][WARN] mask_check FAIL — mask may miss the element or leak heavily; "
+              "inspect _mc_ov.png before trusting this edit", flush=True)
 
     # 4) route engine
     regen = work / "regen.png"
@@ -349,7 +355,7 @@ def main():
     comp = run([PY, R/"compose_fairy.py", "--orig", src, "--regen", regen, "--out", out,
                 "--crop", f"{cx0},{cy0},{cx1},{cy1}", "--mask", f"{ex0},{ey0},{ex1},{ey1}",
                 "--diffmask", "--diff-thresh", "28", "--diff-close", "5", "--diff-dilate", "3", "--diff-feather", "3"])
-    gate_ok = "outside_max_delta=0" in comp.stdout
+    gate_ok = comp.returncode == 0 and "outside_max_delta=0" in comp.stdout  # returncode guards a crashed compose
 
     # 6) judge the result region
     jcrop_box = (max(0,ex0-60), max(0,ey0-60), min(W,ex1+60), min(H,ey1+60))

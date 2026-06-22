@@ -22,24 +22,9 @@ import numpy as np
 from PIL import Image, ImageFilter
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from gencache import cache_key, cache_get, cache_put
+from _falcommon import load_fal_key as load_key, data_uri
 
 ENDPOINT = "fal-ai/sam-3/image"
-
-
-def load_key():
-    k = os.environ.get("FAL_KEY")
-    if k:
-        return k
-    env = Path(__file__).resolve().parent.parent / ".secrets" / "fal.env"
-    for line in env.read_text().splitlines():
-        if line.startswith("FAL_KEY="):
-            return line.split("=", 1)[1].strip()
-    raise SystemExit("no FAL_KEY")
-
-
-def data_uri(img):
-    b = io.BytesIO(); img.save(b, format="PNG")
-    return "data:image/png;base64," + base64.b64encode(b.getvalue()).decode()
 
 
 def box(s):

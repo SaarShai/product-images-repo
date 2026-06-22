@@ -14,19 +14,8 @@ import argparse, base64, io, sys
 from pathlib import Path
 import requests
 from PIL import Image
-
-
-def load_key():
-    env = Path(__file__).resolve().parent.parent / ".secrets" / "fal.env"
-    for line in env.read_text().splitlines():
-        if line.startswith("FAL_KEY="):
-            return line.split("=", 1)[1].strip()
-    raise SystemExit("no FAL_KEY")
-
-
-def du(img):
-    b = io.BytesIO(); img.save(b, format="PNG")
-    return "data:image/png;base64," + base64.b64encode(b.getvalue()).decode()
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _falcommon import load_fal_key as load_key, data_uri as du
 
 
 def main():

@@ -58,6 +58,12 @@ def fix_one(src_img, box, prompt, wd, name):
     nano_img = Image.open(outp).convert("RGB").resize((S, S), Image.LANCZOS)
     fixed = nano_img.crop((ox, oy, ox + W, oy + H))      # unpad -> exact W x H
     fixed.save(str(wd / f"_fix_{name}.png"))
+    # in-box visibility: how much did nano rewrite vs the source crop? The outside-box gate is
+    # blind to this. A high, ~uniform delta = nano repainted the WHOLE crop (it silently degrades
+    # fine detail like wings) -> eyeball every fine sub-region before trusting it. No threshold/skip
+    # (nano INTENTIONALLY changes the hand/foot pixels, so a scalar gate would false-reject good fixes).
+    chg = float(np.abs(np.asarray(fixed).astype(int) - np.asarray(c).astype(int)).mean())
+    print(f"  {name} in-box mean change={chg:.1f} (uniform-high => whole-crop rewrite; verify wings/face)", file=sys.stderr)
     return fixed
 
 
@@ -75,6 +81,7 @@ def main():
     specs = json.loads(Path(a.boxes).read_text())
 
     base = Image.open(a.src).convert("RGB")
+    src0 = np.asarray(base).astype(int)   # snapshot BEFORE the paste loop (astype copy, decoupled from paste)
     boxes = []
     for i, s in enumerate(specs):
         name = s.get("name", f"f{i}"); box = tuple(s["box"]); prompt = s.get("prompt", a.prompt)
@@ -90,8 +97,7 @@ def main():
         boxes.append(box)
 
     base.save(a.out)
-    # verify: nothing changed outside the boxes
-    src0 = np.asarray(Image.open(a.src).convert("RGB")).astype(int)
+    # verify: nothing changed outside the boxes (src0 snapshot taken before the loop -> no 2nd decode)
     out0 = np.asarray(base).astype(int)
     d = np.abs(src0 - out0).sum(2)
     mask = np.zeros(d.shape, bool)
@@ -99,6 +105,8 @@ def main():
         mask[b[1]:b[3], b[0]:b[2]] = True
     outside = int((d[~mask] > 8).sum())
     print(f"[nanofix] -> {a.out}  fixed={len(boxes)}/{len(specs)}  pixels_changed_outside_boxes={outside}")
+    # nonzero exit on any miss so a returncode-gating caller can't read a total no-op as success
+    raise SystemExit(0 if len(boxes) == len(specs) else 2)
 
 
 if __name__ == "__main__":

@@ -23,6 +23,8 @@ import argparse, os, sys
 from pathlib import Path
 
 import fal_client
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _falcommon import load_fal_key as load_key
 import requests
 
 # Faithful default prompt: name the medium so it rebuilds in-style, forbid new content.
@@ -34,17 +36,6 @@ DEFAULT_NEG = (
     "blurry, smeared, melted, warped, distorted, deformed, extra structures, "
     "text, watermark, jpeg artifacts, oversharpened, plastic, noise"
 )
-
-
-def load_key():
-    k = os.environ.get("FAL_KEY")
-    if k:
-        return k
-    env = Path(__file__).resolve().parent.parent / ".secrets" / "fal.env"
-    for line in env.read_text().splitlines():
-        if line.startswith("FAL_KEY="):
-            return line.split("=", 1)[1].strip()
-    raise SystemExit("no FAL_KEY")
 
 
 def main():

@@ -54,6 +54,8 @@ def main():
     ap.add_argument("--region", help="x0,y0,x1,y1 where the target is expected (default whole image)")
     ap.add_argument("--min-contain", type=float, default=0.85)
     ap.add_argument("--max-leak", type=float, default=0.65)
+    ap.add_argument("--max-ratio", type=float, default=4.0,
+                    help="fail if mask_px > N*target_px (mask grossly larger than target -> inpaint repaints bg even at low leak)")
     ap.add_argument("--out", default=None)
     a = ap.parse_args()
 
@@ -88,8 +90,11 @@ def main():
     m_n = int(m.sum())
     leak = float((m & ~tgt_d).sum()) / m_n if m_n else 1.0
 
-    ok = (contain >= a.min_contain) and (leak <= a.max_leak)
-    print(f"[mask_check] target={a.target} target_px={tgt_n} mask_px={m_n}")
+    # ratio guard: a mask much larger than the detected target passes leak+containment yet repaints bg.
+    # (verified hole: whole-image mask over a left-half target gave contain=1.0 leak=0.48<0.65 PASS at ratio 4.0)
+    ratio = (m_n / tgt_n) if tgt_n else float("inf")
+    ok = (contain >= a.min_contain) and (leak <= a.max_leak) and (tgt_n > 0) and (ratio <= a.max_ratio)
+    print(f"[mask_check] target={a.target} target_px={tgt_n} mask_px={m_n} ratio={ratio:.2f} (need <= {a.max_ratio})")
     print(f"  containment={contain:.3f} (need >= {a.min_contain})   leak={leak:.3f} (need <= {a.max_leak})")
     print(f"  -> {'PASS' if ok else 'FAIL'}")
 

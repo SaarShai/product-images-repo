@@ -21,18 +21,8 @@ from pathlib import Path
 
 import requests
 from PIL import Image, ImageDraw, ImageFilter
-
-
-def load_key():
-    k = os.environ.get("OPENAI_API_KEY")
-    if k:
-        return k
-    env = Path(__file__).resolve().parent.parent / ".secrets" / "openai.env"
-    if env.exists():
-        for line in env.read_text().splitlines():
-            if line.startswith("OPENAI_API_KEY="):
-                return line.split("=", 1)[1].strip()
-    raise SystemExit("no OPENAI_API_KEY (env or .secrets/openai.env)")
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _falcommon import load_openai_key as load_key
 
 
 def main():

@@ -47,7 +47,11 @@ import shutil
 import subprocess
 import sys
 import tempfile
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
+
+import numpy as np
+from PIL import Image
 
 R = Path(__file__).resolve().parent          # scripts/
 ROOT = R.parent                              # repo root
@@ -116,6 +120,56 @@ def run_edit(src: Path, job: dict, out: Path) -> dict:
     }
 
 
+def run_parallel(src: Path, jobs: list[dict], work: Path, max_workers: int):
+    """OPT-IN fast path for NON-OVERLAPPING multi-element edits.
+
+    Runs edit.py concurrently per job — each against the ORIGINAL src (not an accumulating
+    canvas) — so the N fal gens overlap (wall ~= slowest, not sum). This is only correct when
+    the elements don't touch: edit.py guarantees the output equals src byte-exact OUTSIDE its
+    element (diffmask + outside_max_delta=0), so each output differs from src only in its own
+    region. We then MERGE by diff: final = src, overlaid with each output's changed pixels.
+    If two jobs' changed regions intersect we cannot safely merge in parallel (each gen was
+    blind to the other) -> hard error telling the caller to use the sequential default.
+
+    Returns (rows, final_image). The overlap test is MEASURED (diff intersection), not a box guess.
+    """
+    src_arr = np.asarray(Image.open(src).convert("RGB")).astype(np.int16)
+
+    def one(idx_job):
+        i, job = idx_job
+        suffix = job.get("out_suffix") or f"job{i}"
+        step_out = work / f"par_{i}_{suffix}.png"
+        print(f"[batch_edit//] dispatch job {i}/{len(jobs)}: {job['op']} '{job['element']}' -> {step_out.name}")
+        r = run_edit(src, job, step_out)      # each job edits the ORIGINAL src, in its own process
+        return i, job, r, step_out
+
+    with ThreadPoolExecutor(max_workers=min(len(jobs), max_workers)) as ex:
+        results = sorted(ex.map(one, list(enumerate(jobs, 1))), key=lambda t: t[0])
+
+    final_arr = src_arr.copy()
+    union = np.zeros(src_arr.shape[:2], bool)   # pixels already claimed by a prior job
+    rows = []
+    for i, job, r, step_out in results:
+        rows.append(r)
+        if not r["applied"]:
+            print(f"[batch_edit//] WARN job {i} produced no output; skipped in merge")
+            continue
+        out_arr = np.asarray(Image.open(step_out).convert("RGB")).astype(np.int16)
+        if out_arr.shape != src_arr.shape:
+            raise SystemExit(f"[batch_edit//] job {i} output {out_arr.shape} != src {src_arr.shape}; "
+                             "edit.py must not resize. Use the sequential default for this set.")
+        diff = np.abs(out_arr - src_arr).sum(2) > 8      # where this job actually changed src
+        inter = int((diff & union).sum())
+        if inter > 0:
+            raise SystemExit(
+                f"[batch_edit//] job {i} ('{job['element']}') OVERLAPS an earlier job's changed "
+                f"region by {inter}px — parallel merge would lose an edit. Re-run WITHOUT --parallel "
+                "(the sequential default accumulates onto one canvas and handles overlap correctly).")
+        union |= diff
+        final_arr[diff] = out_arr[diff]
+    return rows, Image.fromarray(final_arr.astype("uint8"))
+
+
 def print_summary(rows: list[dict], final: Path):
     print("\n" + "=" * 78)
     print("[batch_edit] SUMMARY")
@@ -140,6 +194,11 @@ def main():
     ap.add_argument("--jobs", required=True, help="JSON list of jobs (op/element/box/desc/out_suffix)")
     ap.add_argument("--final", help="final accumulated image path (default: <outdir>/<srcstem>_batch_final.png)")
     ap.add_argument("--outdir", default="tasks/improve", help="dir for the final image + provenance")
+    ap.add_argument("--parallel", action="store_true",
+                    help="OPT-IN: run jobs concurrently against the ORIGINAL src + diff-merge "
+                         "(fast for NON-OVERLAPPING elements; errors if changed regions intersect). "
+                         "Default is the verified sequential accumulation.")
+    ap.add_argument("--max-workers", type=int, default=6, help="max concurrent edit.py processes when --parallel")
     a = ap.parse_args()
 
     src = Path(a.src).resolve()
@@ -162,32 +221,37 @@ def main():
 
     work = Path(tempfile.mkdtemp(prefix="batch_edit_"))
     print(f"[batch_edit] {len(jobs)} job(s) on {src.name}  final={final}  work={work}")
-    print("[batch_edit] SEQUENTIAL accumulation: each edit composites onto the previous result.")
-
-    rows = []
-    chain = [str(src)]
-    cur = src  # accumulating image; starts at the source
-    for i, job in enumerate(jobs, 1):
-        suffix = job.get("out_suffix") or f"job{i}"
-        step_out = work / f"step_{i}_{suffix}.png"
-        print(f"\n[batch_edit] --- job {i}/{len(jobs)}: {job['op']} '{job['element']}' "
-              f"(suffix={suffix}) ---")
-        r = run_edit(cur, job, step_out)
-        rows.append(r)
-        if r["applied"]:
-            # accumulate: next job edits THIS result (sequential stacking)
-            cur = step_out
-            chain.append(str(step_out))
-        else:
-            print(f"[batch_edit] WARN job {i} produced no output; keeping prior canvas "
-                  f"({cur}) for the next job")
-
-    # the last successfully-applied step is the final image
-    shutil.copy(cur, final)
-    # carry the final overlay next to it if edit.py made one for the last step
-    last_ov = Path(str(cur).replace(".png", "_editov.png"))
-    if last_ov.exists():
-        shutil.copy(last_ov, final.with_name(final.stem + "_editov.png"))
+    if a.parallel and len(jobs) > 1:
+        print("[batch_edit] PARALLEL mode: jobs run concurrently vs the ORIGINAL src, then diff-merge "
+              "(NON-OVERLAPPING elements only; errors on intersecting changes).")
+        rows, final_img = run_parallel(src, jobs, work, a.max_workers)
+        final_img.save(final)
+        chain = [str(src), str(final)]
+    else:
+        print("[batch_edit] SEQUENTIAL accumulation: each edit composites onto the previous result.")
+        rows = []
+        chain = [str(src)]
+        cur = src  # accumulating image; starts at the source
+        for i, job in enumerate(jobs, 1):
+            suffix = job.get("out_suffix") or f"job{i}"
+            step_out = work / f"step_{i}_{suffix}.png"
+            print(f"\n[batch_edit] --- job {i}/{len(jobs)}: {job['op']} '{job['element']}' "
+                  f"(suffix={suffix}) ---")
+            r = run_edit(cur, job, step_out)
+            rows.append(r)
+            if r["applied"]:
+                # accumulate: next job edits THIS result (sequential stacking)
+                cur = step_out
+                chain.append(str(step_out))
+            else:
+                print(f"[batch_edit] WARN job {i} produced no output; keeping prior canvas "
+                      f"({cur}) for the next job")
+        # the last successfully-applied step is the final image
+        shutil.copy(cur, final)
+        # carry the final overlay next to it if edit.py made one for the last step
+        last_ov = Path(str(cur).replace(".png", "_editov.png"))
+        if last_ov.exists():
+            shutil.copy(last_ov, final.with_name(final.stem + "_editov.png"))
 
     combined = {
         "src": str(src),
@@ -196,9 +260,12 @@ def main():
         "step_chain": chain,
         "jobs": rows,
         "n_success": sum(1 for r in rows if r["result"] == "SUCCESS"),
-        "note": ("Edits applied SEQUENTIALLY onto an accumulating canvas (each "
-                 "composites onto the previous result). Composites are NOT "
-                 "parallelized — they share the canvas, so order matters."),
+        "mode": "parallel" if (a.parallel and len(jobs) > 1) else "sequential",
+        "note": ("PARALLEL: each job edited the ORIGINAL src concurrently; the final is a diff-merge "
+                 "of their disjoint changed regions (overlap is rejected)."
+                 if (a.parallel and len(jobs) > 1) else
+                 "Edits applied SEQUENTIALLY onto an accumulating canvas (each composites onto the "
+                 "previous result). Composites are NOT parallelized — they share the canvas, so order matters."),
     }
     prov_path = final.with_suffix(".batch.json")
     prov_path.write_text(json.dumps(combined, indent=2))

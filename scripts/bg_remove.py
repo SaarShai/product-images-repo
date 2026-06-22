@@ -12,6 +12,8 @@ Usage:
 import argparse, base64, io, os, sys
 from pathlib import Path
 from PIL import Image
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _falcommon import load_fal_key, data_uri
 
 
 def defringe(rgba, erode_px, feather):
@@ -49,13 +51,8 @@ def local(img_path, out_path, model, erode_px=2, feather=0.8, matting=False):
 
 def via_fal(img_path, out_path):
     import requests
-    env = Path(__file__).resolve().parent.parent / ".secrets" / "fal.env"
-    key = os.environ.get("FAL_KEY") or next(
-        (l.split("=", 1)[1].strip() for l in env.read_text().splitlines() if l.startswith("FAL_KEY=")), None)
-    if not key:
-        raise SystemExit("no FAL_KEY")
-    b = io.BytesIO(); Image.open(img_path).convert("RGB").save(b, format="PNG")
-    uri = "data:image/png;base64," + base64.b64encode(b.getvalue()).decode()
+    key = load_fal_key()
+    uri = data_uri(Image.open(img_path).convert("RGB"))
     r = requests.post("https://fal.run/fal-ai/birefnet",
                       headers={"Authorization": f"Key {key}", "Content-Type": "application/json"},
                       json={"image_url": uri}, timeout=180)

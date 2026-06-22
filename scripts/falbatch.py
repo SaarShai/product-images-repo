@@ -76,18 +76,8 @@ except ImportError:
     )
 
 import httpx
-
-
-def load_key() -> str:
-    """FAL_KEY from env or .secrets/fal.env. Never printed."""
-    k = os.environ.get("FAL_KEY")
-    if k:
-        return k.strip()
-    env = ROOT / ".secrets" / "fal.env"
-    for line in env.read_text().splitlines():
-        if line.startswith("FAL_KEY="):
-            return line.split("=", 1)[1].strip()
-    raise SystemExit("no FAL_KEY (set env or .secrets/fal.env)")
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _falcommon import load_fal_key as load_key
 
 
 def _resolve(p: str) -> Path:

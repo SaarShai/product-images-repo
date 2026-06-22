@@ -19,21 +19,13 @@ import argparse, base64, io, json, os, sys
 from pathlib import Path
 import requests
 from PIL import Image
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _falcommon import load_openai_key as load_key
 
 MODEL = "gpt-4o"
 
 
-def load_key():
-    k = os.environ.get("OPENAI_API_KEY")
-    if k:
-        return k
-    env = Path(__file__).resolve().parent.parent / ".secrets" / "openai.env"
-    for line in env.read_text().splitlines():
-        if line.startswith("OPENAI_API_KEY="):
-            return line.split("=", 1)[1].strip()
-    raise SystemExit("no OPENAI_API_KEY")
-
-
+# NOTE: this data_uri downsamples a FILE (different from _falcommon.data_uri(img)) — kept local on purpose.
 def data_uri(path, maxside=1024):
     img = Image.open(path).convert("RGB")
     w, h = img.size

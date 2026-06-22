@@ -19,6 +19,7 @@ import argparse, base64, io, os, sys
 from pathlib import Path
 import requests
 from PIL import Image, ImageDraw, ImageFilter
+from _falcommon import load_fal_key as load_key, data_uri
 
 ENDPOINTS = {
     "fill": "fal-ai/flux-pro/v1/fill",
@@ -26,22 +27,6 @@ ENDPOINTS = {
     "flux2edit": "fal-ai/flux-2-pro/edit",
     "eraser": "fal-ai/bria/eraser",
 }
-
-
-def load_key():
-    k = os.environ.get("FAL_KEY")
-    if k:
-        return k
-    env = Path(__file__).resolve().parent.parent / ".secrets" / "fal.env"
-    for line in env.read_text().splitlines():
-        if line.startswith("FAL_KEY="):
-            return line.split("=", 1)[1].strip()
-    raise SystemExit("no FAL_KEY")
-
-
-def data_uri(img: Image.Image) -> str:
-    b = io.BytesIO(); img.save(b, format="PNG")
-    return "data:image/png;base64," + base64.b64encode(b.getvalue()).decode()
 
 
 def main():
