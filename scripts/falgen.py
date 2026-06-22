@@ -88,6 +88,10 @@ def main():
         body = {"prompt": prompt, "image_url": data_uri(img), "output_format": "png", "num_images": 1}
     if a.seed is not None: body["seed"] = a.seed
     if a.guidance is not None: body["guidance_scale"] = a.guidance
+    # fal Flux safety checker false-flags innocuous content (e.g. skin/fairy hands) and
+    # returns a BLANK BLACK image. Disable it + max tolerance so legit edits aren't blanked.
+    body["enable_safety_checker"] = False
+    body["safety_tolerance"] = "6"
 
     if a.mode in ("fill", "eraser"):
         if a.mask:

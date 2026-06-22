@@ -41,3 +41,6 @@ tasks/improve/eval/_tmp*.png
 # nyc-taxi: keep deliverables (out/), drop scratch (work/) + the read-only Drive source copy (src/)
 tasks/nyc-taxi/work/
 tasks/nyc-taxi/src/
+
+# princess-sharpen: 1.4GB of regenerable scratch/intermediates (work/src/reup/final/small) — task unfinished; tooling lives in scripts/
+tasks/princess-sharpen/
