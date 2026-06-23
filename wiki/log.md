@@ -134,3 +134,15 @@ Synthesized a high-resolution watercolor space control-panel illustration using 
 - 2026-06-21 element-edit retrospective: banked element-edit-diffmask-composite, image-edit-engine-routing, reference-lock-for-consistency (.claude memory); Flux.2-pro=engine, diffmask gate.
 
 - 2026-06-21 window-widen (n02): exact-geometry element reshape — blob-mask Fill FAILED to widen; WIN = no-redo stretch (anchored) -> Flux Kontext cleanup -> arched-mask composite + reattach alpha. Banked element-reshape-stretch-then-refine.
+## [2026-06-23] update | Mask-Bounded External Redraw Donor
+
+Created `concepts/mask-bounded-external-redraw-donor.md` from `page` template.
+
+## [2026-06-23] retro | Berlin wave3 localized image repair
+
+User confirmed the bottom-right `S09 OpenAI redraw` candidate was near perfect.
+Banked the reusable rule in [[concepts/mask-bounded-external-redraw-donor]] and
+updated `skills/element-edit/SKILL.md` plus `docs/image-generation.md` so future
+localized watercolor artifact repairs try the mask-bounded OpenAI donor route
+alongside conservative local repairs, then verify outside-mask/protected-region
+delta before presenting results.

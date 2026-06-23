@@ -67,6 +67,42 @@ primary capture; as a fallback, grab the newest:
 ls -t ~/.codex/generated_images/*/ig_*.png | head -1
 ```
 
+### Preferred repo wrapper: `scripts/subgen.py`
+
+For repo tasks, prefer the wrapper over ad-hoc `codex exec`/`agy` calls:
+
+```bash
+python3 scripts/subgen.py --health
+python3 scripts/subgen.py --provider openai --prompt-file P.md --out O.png -i base.png mask.png --timeout 420 --retries 1
+python3 scripts/subgen.py --provider nano   --prompt-file P.md --out O.png -i base.png mask.png --timeout 420 --retries 1
+```
+
+`subgen.py` is the safer path because it kills timeout orphans, avoids
+newest-image races, retries no-image results, validates the output image with
+Pillow, and warns when Nano is likely to recompose tall references.
+
+### Localized repair: bounded external redraw donor
+
+When a finished illustration has a localized ghost/haze/smear artifact, the best
+route may be a broader OpenAI edit used only as a donor. The reliable sequence:
+
+1. Bank the current best full-resolution image first.
+2. Build an issue mask from the user-marked region or measured full-res boxes.
+3. Generate with `scripts/subgen.py --provider openai`, attaching the banked
+   image and mask.
+4. Treat the raw provider output as a donor, not the final file. It may be
+   lower resolution or over-edit the full image.
+5. Resize/register the donor back to baseline dimensions if needed.
+6. Composite only masked donor pixels back onto the banked baseline.
+7. Verify changed pixels against the banked baseline, including protected-region
+   checks for areas that must remain unchanged.
+8. Show a board with conservative local repairs plus the bounded donor, because
+   the broader donor can be visually best while still being mechanically safe.
+
+Recorded example:
+[Mask-Bounded External Redraw Donor](../wiki/concepts/mask-bounded-external-redraw-donor.md)
+from the Berlin wave3 TV tower / foreground repair.
+
 ---
 
 ## B) Nano Banana (Gemini) via Antigravity `agy`

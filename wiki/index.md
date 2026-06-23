@@ -7,3 +7,10 @@ Compact catalog. Update after material wiki changes.
 - [[concepts/castle-panel-template-cut-bands]] - user-confirmed cut-band rule
   and fixed-template scoring/export/semantic-review loop for castle-panel image
   generation.
+
+## Image Repair
+
+- [[concepts/mask-bounded-external-redraw-donor]] - user-confirmed Berlin wave3
+  lesson: for localized ghost/haze defects, use an OpenAI external edit as a
+  donor, then composite only masked pixels back onto a banked baseline and
+  verify protected regions stay unchanged.

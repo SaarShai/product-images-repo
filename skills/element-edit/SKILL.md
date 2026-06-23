@@ -24,6 +24,12 @@ VLM judge, and prints SUCCESS/NEEDS-REVIEW with the gate + judge results. Always
    - redraw in place → `falgen.py --mode fill` (Flux Fill) + a prompt from `prompt_templates.py`.
    - restyle keeping layout → Flux.2 edit; reshape to exact dims → stretch-then-Kontext ([[element-reshape-stretch-then-refine]]).
    - same element across many instances → reference-lock ([[reference-lock-for-consistency]]).
+   - broad ghost/haze or smeared local artifact → mask-bounded external redraw donor:
+     bank the best full-res baseline, generate an OpenAI edit via `scripts/subgen.py`,
+     treat the raw output as a donor only, composite it back through the issue mask,
+     then verify outside-mask delta is 0. This is the preferred escalation when
+     conservative clone/inpaint variants pass mechanically but look blocky or
+     smeared. See [[concepts/mask-bounded-external-redraw-donor]].
 4. **Composite + MEASURE** — `compose_fairy.py --diffmask`; outside-mask delta MUST be 0. In busy
    scenes a global-repaint engine seams → use masked-inpaint so the diff is localized. [[element-edit-diffmask-composite]]
 5. **Auto-verify** — `judge.py` check (leftover-text/artifacts hard gate); use `--mode pairwise` to pick
@@ -36,6 +42,9 @@ Never say "keep the style"; prescribe the medium. Never rely on negative prompts
 ## Efficiency
 - Cache: `--cache` on falgen (deterministic calls; pin `--seed`); automask caches always. [[auto-mask-and-guardrail]]
 - Parallel fan-out: `scripts/falbatch.py --jobs jobs.json` (fal queue, ~slowest-call wall time).
+- For subscription image edits, prefer `scripts/subgen.py --provider openai`
+  over ad-hoc nested `codex exec`; it validates real image output and avoids
+  timeout/orphan/newest-image races.
 - Regression: `python3 scripts/eval_runner.py` must stay green after changes.
 
 ## Hard rules
