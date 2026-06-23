@@ -1,11 +1,6 @@
 # Loop-spec schema (`loop_lint.py` input)
 
-A loop spec is a flat `key: value` block. Three accepted carriers:
-
-- a fenced ` ```loop … ``` ` block inside any `.md` (SKILL.md / PLAN.md);
-- a standalone `.yaml` / `.yml` file (one spec, or several split by `---`);
-- a `.json` file (one object, or a list of objects);
-- `-` to read a spec from stdin.
+A loop spec is a flat `key: value` block, read from a fenced ` ```loop ` block in any `.md` (e.g. SKILL.md / PLAN.md), a `.yaml`/`.yml` file (one spec, or several split by `---`), a `.json` file (one object or a list of objects), or `-` for stdin.
 
 No PyYAML dependency — values are read as plain strings after the first `:`.
 
@@ -27,12 +22,21 @@ No PyYAML dependency — values are read as plain strings after the first `:`.
 | `recall` | scheduled/fleet/outer | exact pre-pass retrieval procedure: read `state_store`, query wiki-memory, fetch timeline/pages, or load the task board. Missing on scheduled/fleet/outer loops → **R8 WARN** |
 | `writeback` | scheduled/fleet/outer | exact post-pass persistence procedure: record attempts, verifier verdict, failures, next action, and changed facts. Missing on scheduled/fleet/outer loops → **R8 WARN** |
 | `state_concurrency` | fleet with state | one of `single_writer`, `optimistic_revision`, or `worktree_isolated`. Missing/invalid on fleet specs with `state_store` → **R9 WARN** |
+| `output_actions` | unattended + side-effecting | the allowlist of world-mutating actions the loop MAY take (`post-comment`, `close-issue`, `add-label`, `merge`, `email`, …), each ideally with a per-action cap (`close-issue max 5`). Required once an unattended loop names a side-effecting action; missing → **R10 WARN**; a value of `*`/`all` is not an allowlist → **R10 WARN** |
+| `stuck` | fix loops | the stuck detector that fires the escalation, e.g. `same command 3×`, `same error 2×`, `2 iters no movement`. Declaring it opts the loop into **R11**: a stuck policy with no `advisor` warns. |
+| `advisor` | on `stuck` | the DIVERGENT panel consulted when stuck — a preferably cross-vendor, read-only set of models that propose structurally-different approaches/tools/methods and feed the **generator** (never the gate). Source it from [`skills/_shared/model_roster.py`](../../_shared/model_roster.py). `== verifier` → **R11 WARN** (propose-and-judge is self-grading). |
 
-**R7 IRREVERSIBLE-NO-HUMAN (WARN):** if `stop` / `gate` / `generator` names an irreversible action (deploy / merge to main / migrate / `rm -rf` / force-push / charge / refund / rotate secret / npm publish) and there is **no human in the loop** (no approve/sign-off/escalate gate, no human-token verifier) → WARN. Silence it by giving a human approval gate or a human verifier — the security tax: an unattended loop is an unattended attack surface.
+**R7 IRREVERSIBLE-NO-HUMAN (WARN):** if `stop` / `gate` / `generator` names an irreversible action (deploy / merge to main / migrate / `rm -rf` / force-push / charge / refund / rotate secret / npm publish) and there is **no human in the loop** (no approve/sign-off/escalate gate, no human-token verifier) → WARN. Silence it by giving a human approval gate or a human verifier.
 
 **R8 NO-MEMORY-CONTRACT (WARN):** if a loop is scheduled/event-triggered, fleet-shaped, or outer-loop-shaped, it must say what survives the context window: `anchor_files`, `state_store`, `recall`, and `writeback`. This is advisory for v1 so small inner fix loops stay lightweight, but a long-running loop without these fields is expected to re-derive, repeat work, or drift.
 
 **R9 FLEET-STATE-NO-CONCURRENCY (WARN):** if a fleet has a `state_store`, it must also name `state_concurrency`. Use `single_writer` when only the orchestrator writes state, `optimistic_revision` when workers read a revision/hash and retry on conflict, and `worktree_isolated` when each worker writes isolated state that only merges through aggregation.
+
+**R10 OUTPUT-SURFACE-UNBOUNDED (WARN):** if a loop is unattended (scheduled / event-triggered / outer / fleet / long-running) AND names a side-effecting world action (post / comment / close / label / merge / commit / push / open-PR / create-issue / delete / email / publish / deploy / charge / refund) in `generator` / `stop` / `gate`, it must declare an `output_actions` allowlist: the actions it MAY take, each with a per-action cap, **default-deny, enforced by the harness rather than asked for in the prompt.** Missing → WARN; an allowlist of `*` / `all` is not a control and still WARNs. This **inverts** R7's catastrophic-verb blocklist: R7 stops deploy/merge/charge without a human; R10 stops the *mundane-but-unbounded* case — a moderation bot that can `close`/`label`/`comment` at scale because nothing capped it. Silence it by enumerating capped actions. Scoped to unattended loops only — a watched inner loop's human IS the output gate, so it never fires there. Ported from GitHub Agentic Workflows `safe-outputs:` (`allowed:` actions + `max:` per action).
+
+**R11 STUCK-NO-ADVISOR (WARN):** two distinct triggers, both about the multi-model escalation a stalled loop should make:
+1. A spec that declares a `stuck` policy but names no `advisor` — the stuck agent retries harder against its own blind spot instead of consulting a fresh perspective. Silence it by naming an `advisor` panel sourced from [`skills/_shared/model_roster.py`](../../_shared/model_roster.py) (cross-vendor, read-only, fired on the stuck condition).
+2. An `advisor` that resolves to the same actor as the `verifier`. The advisor is **divergent** (proposes new approaches/tools/methods, feeds the generator); the verifier is **convergent** (judges pass/fail, IS the gate). One actor doing both judges a fix it proposed — self-grading by another door, the same hole R3 closes for generator/verifier. Keep them separate vendors; `model_roster.pick_panel(exclude_lane=…)` drops the orchestrator's own lane so the panel is genuinely independent. Opt-in: R11 stays silent until `stuck` (trigger 1) or `advisor` (trigger 2) is declared, so plain inner fix loops are never nagged.
 
 ## What makes a `gate` machine-checkable (R1 allowlist)
 
@@ -68,6 +72,20 @@ state_store: work/LOOP-STATE.json
 recall: read state_store and wiki-memory timeline before each pass
 writeback: record attempts, verifier verdict, failures, next action after each pass
 state_concurrency: worktree_isolated
+```
+
+## A non-iterating pipeline is a budget=1 loop
+
+A fixed once-through pipeline (A→B→C, each stage runs once, nothing retries) is **not a separate artifact** — it is a closed loop with `budget: max_iterations=1`. Give it a machine `gate` and a `verifier` separate from each stage's producer and it lints clean — no `stages:`/`edges:` keys, no second tool. The moment a stage loops back to retry an earlier one it is a real loop: raise the budget.
+
+```loop
+name: import-pipeline
+topology: closed · inner · single
+generator: import + transform stages
+verifier: validate stage + final schema check (separate actor)
+gate: python3 ./validate.py && python3 ./check_schema.py out.json
+stop: out.json written and passes the schema check
+budget: max_iterations=1
 ```
 
 ## Example (fails: R1 + R2 + R3)
