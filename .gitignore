@@ -44,3 +44,8 @@ tasks/nyc-taxi/src/
 
 # princess-sharpen: 1.4GB of regenerable scratch/intermediates (work/src/reup/final/small) — task unfinished; tooling lives in scripts/
 tasks/princess-sharpen/
+
+# cap-juluca: result images live in the Drive Images/ folder, not the repo
+tasks/cap-juluca/outputs/generated/
+tasks/cap-juluca/outputs/final/
+tasks/cap-juluca/outputs/reviews/
