@@ -146,3 +146,30 @@ updated `skills/element-edit/SKILL.md` plus `docs/image-generation.md` so future
 localized watercolor artifact repairs try the mask-bounded OpenAI donor route
 alongside conservative local repairs, then verify outside-mask/protected-region
 delta before presenting results.
+
+## [2026-06-23] retro | Berlin wave6 bridge stair continuity
+
+Task-retrospective evidence showed that local raster/linework stair patches were
+either invisible or crude. User confirmed the top-right OpenAI donor candidate
+for the bridge-stair repair was near perfect. Updated
+[[concepts/mask-bounded-external-redraw-donor]], `docs/image-generation.md`, and
+`skills/element-edit/SKILL.md` to route semantic continuity plus occlusion
+repairs to a mask-bounded OpenAI redraw donor, because the model can redraw the
+object and occluder relationship together while the final masked composite keeps
+unrelated pixels bounded.
+
+## [2026-06-23] retro | Berlin wave7 hotel roof and protected floors
+
+User confirmed the top-right hotel-roof donor look was perfect, but the large
+context verification showed the raw donor was not safe as a final composite: it
+changed `floor_guard_changed_vs_pre_roof=227064` and
+`stair_protected_changed_vs_pre_roof=631275`. Updated
+[[concepts/mask-bounded-external-redraw-donor]], `docs/image-generation.md`, and
+`skills/element-edit/SKILL.md` with the guard-zone extension: use broad donor
+context as a visual target, then apply a separate final blend mask, restore or
+protect repeated structures such as hotel floors/windows, and present a larger
+context board before banking the result.
+## [2026-06-24] update | Family-A architectural watercolor panel — proven recipe + geometry-gate (cap-juluca)
+
+Created `concepts/family-a-architectural-watercolor-panel-proven-recipe-geometry-gate-cap-juluca.md` from `page` template.
+

@@ -1,0 +1,34 @@
+{
+  "created_at": "2026-06-24T14:39:00Z",
+  "task": "cap-juluca",
+  "title": "Cap Juluca sub-panel illustrations",
+  "family": "A",
+  "family_label": "SVG-template / die-cut panel",
+  "stages": [
+    "0",
+    "1a",
+    "1b",
+    "2",
+    "3",
+    "4",
+    "5"
+  ],
+  "intent": "auto",
+  "element": null,
+  "svg": "tasks/cap-juluca/source/cap juluca template.svg",
+  "base_image": null,
+  "refs": [
+    "tasks/cap-juluca/refs/cap juluca reference.jpeg",
+    "tasks/cap-juluca/refs/ref01.png",
+    "tasks/cap-juluca/refs/ref02.png"
+  ],
+  "refs_original": [
+    "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/cap juluca/cap juluca reference.jpeg",
+    "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/cap juluca/ref01.png",
+    "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/cap juluca/ref02.png"
+  ],
+  "workflow": "docs/svg-template-illustration-workflow.md",
+  "skill": "svg-geometry-style-illustration",
+  "review_checklist": "docs/review-judge-checklist.md",
+  "spine": "docs/PIPELINE.md"
+}

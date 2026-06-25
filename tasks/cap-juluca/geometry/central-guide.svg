@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="1633 -55 3140 4490">
+  <rect x="1633" y="-55" width="3140" height="4490" fill="#ffffff"/>
+  <!-- central panel body (cream stucco), closed across bottom -->
+  <path d="M1751.28,4267.87V1122.05c0-583.17,650.17-1055.92,1452.2-1055.92s1452.2,472.75,1452.2,1055.92v3145.82 Z" fill="#ece3d4" stroke="#cdbfa6" stroke-width="8"/>
+  <!-- two saloon door flaps (wood zone) -->
+  <path d="M3930.19,2445.15c0-383.38-310.65-680.22-693.97-680.49h-.52c-3.06,0-6.11.02-18.46.06h-.92v2590.41c360.34,0,713.87,0,713.87,0 Z" fill="#c79a64" stroke="#9a7038" stroke-width="8"/>
+  <path d="M2476.72,2445.15c0-383.38,310.65-680.22,693.97-680.49h.52c3.06,0,6.11.02,18.46.06h.92v2590.41c-360.34,0-713.87,0-713.87,0 Z" fill="#c79a64" stroke="#9a7038" stroke-width="8"/>
+  <!-- oculus niche hint -->
+  <circle cx="3203" cy="900" r="150" fill="none" stroke="#cdbfa6" stroke-width="10"/>
+</svg>

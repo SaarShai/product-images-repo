@@ -11,6 +11,8 @@ Compact catalog. Update after material wiki changes.
 ## Image Repair
 
 - [[concepts/mask-bounded-external-redraw-donor]] - user-confirmed Berlin wave3
-  lesson: for localized ghost/haze defects, use an OpenAI external edit as a
-  donor, then composite only masked pixels back onto a banked baseline and
-  verify protected regions stay unchanged.
+  wave6, and wave7 lesson: for localized ghost/haze defects or semantic
+  continuity/occlusion failures, use an OpenAI external edit as a donor, then
+  composite only masked pixels back onto a banked baseline. For repeated
+  architecture, split generation context from final blend masks and verify
+  protected floor/window/approved-repair zones stay unchanged.

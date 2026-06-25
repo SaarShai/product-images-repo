@@ -25,6 +25,7 @@ ENDPOINTS = {
     "fill": "fal-ai/flux-pro/v1/fill",
     "kontext": "fal-ai/flux-pro/kontext",
     "flux2edit": "fal-ai/flux-2-pro/edit",
+    "i2i": "fal-ai/flux/dev/image-to-image",   # low-strength img2img: keep structure, restyle. --strength (0=keep, 1=ignore)
     "eraser": "fal-ai/bria/eraser",
 }
 
@@ -33,12 +34,14 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--mode", required=True, choices=list(ENDPOINTS))
     ap.add_argument("--image", required=True)
+    ap.add_argument("--refs", nargs="*", default=[], help="extra reference images (flux2edit only; appended to image_urls)")
     ap.add_argument("--out", required=True)
     ap.add_argument("--prompt"); ap.add_argument("--prompt-file")
     ap.add_argument("--mask"); ap.add_argument("--mask-box"); ap.add_argument("--feather", type=int, default=24)
     ap.add_argument("--maxside", type=int, default=1024, help="resize longer side to this before sending")
     ap.add_argument("--seed", type=int, default=None)
     ap.add_argument("--guidance", type=float, default=None)
+    ap.add_argument("--strength", type=float, default=None, help="i2i denoise strength (low=keep structure, e.g. 0.3)")
     ap.add_argument("--cache", action="store_true", help="reuse cached result for identical deterministic calls")
     a = ap.parse_args()
 
@@ -69,14 +72,26 @@ def main():
 
     if a.mode == "eraser":
         body = {"image_url": data_uri(img)}  # bria eraser: image_url + mask_url, no prompt
+    elif a.mode == "flux2edit":
+        # flux-2-pro/edit takes image_urls[] (up to 9 refs) + prose; resize refs to maxside
+        def _ref(p):
+            r = Image.open(p).convert("RGB")
+            if a.maxside:
+                w, h = r.size; s = a.maxside / max(w, h)
+                if s < 1: r = r.resize((round(w * s), round(h * s)), Image.LANCZOS)
+            return data_uri(r)
+        body = {"prompt": prompt, "image_urls": [data_uri(img)] + [_ref(r) for r in a.refs],
+                "output_format": "png", "num_images": 1}
     else:
         body = {"prompt": prompt, "image_url": data_uri(img), "output_format": "png", "num_images": 1}
+    if a.mode == "i2i" and a.strength is not None: body["strength"] = a.strength
     if a.seed is not None: body["seed"] = a.seed
     if a.guidance is not None: body["guidance_scale"] = a.guidance
     # fal Flux safety checker false-flags innocuous content (e.g. skin/fairy hands) and
     # returns a BLANK BLACK image. Disable it + max tolerance so legit edits aren't blanked.
     body["enable_safety_checker"] = False
-    body["safety_tolerance"] = "6"
+    if a.mode != "i2i":  # safety_tolerance is a flux-pro param; flux/dev i2i rejects it
+        body["safety_tolerance"] = "5" if a.mode == "flux2edit" else "6"  # flux-2-pro validates 1-5; kontext/fill accept 6
 
     if a.mode in ("fill", "eraser"):
         if a.mask:

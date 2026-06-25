@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 286 1660 4130">
+  <path id="outer_contour" d="M5,980.44 C5,619.23 368.04,326.42 827.05,326.42 C1286.06,326.42 1649.1,619.23 1649.1,980.44 L1649.1,4346 Q1649.1,4371 1624,4371 L30,4371 Q5,4371 5,4346 Z" fill="none" stroke="#000" stroke-width="6"/>
+  <rect x="-10" y="1700" width="1670" height="120" fill="none" stroke="#000" stroke-width="6"/>
+  <circle cx="827" cy="880" r="120" fill="none" stroke="#000" stroke-width="6"/>
+  <path d="M512,3150 V2780 a315,315 0 0 1 630,0 V3150 Z" fill="none" stroke="#000" stroke-width="6"/>
+</svg>
