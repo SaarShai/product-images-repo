@@ -1,0 +1,4 @@
+v01 whole segment	ghost_detail_changed=152314	path=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave11_ghost_element_regen/results/v01_whole_segment.png
+v05_whole_segment_soft85	ghost_detail_changed=152176	path=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave11_ghost_element_regen/results/v05_whole_segment_soft85.png
+v06_whole_segment_soft65	ghost_detail_changed=145869	path=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave11_ghost_element_regen/results/v06_whole_segment_soft65.png
+v07_bridge_foliage_soft85	ghost_detail_changed=132665	path=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave11_ghost_element_regen/results/v07_bridge_foliage_soft85.png

@@ -1,0 +1,5 @@
+A fine, detailed architectural watercolor with precise ink linework and soft transparent washes, in the exact style, palette, framing and scale of the FIRST image. Flat frontal architectural elevation — orthographic, no perspective distortion, no 3/4 street view.
+
+Redraw ONLY the ground floor of the building: the pale limestone hotel entrance (slender stone piers, a recessed central doorway with a soft warm glow, dark bronze-tinted windows) standing BEHIND, and a low dark charcoal-grey flat-roofed STATION MARQUEE canopy standing clearly IN FRONT of it (solid flat dark roof — not glass — on slender dark steel columns, a glazed lower wall set back beneath). Use the dark canopy and the limestone entrance shown in the other reference photos.
+
+Show the full width of the building base exactly as framed in the first image. Do not zoom, recenter, reframe or change the camera. Keep the upper tower, the stone quay wall, the water and the sky unchanged. Keep all signage blank — no legible text, letters or logos.

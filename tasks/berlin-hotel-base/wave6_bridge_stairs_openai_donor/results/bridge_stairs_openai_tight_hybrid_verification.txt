@@ -1,0 +1,4 @@
+v03_precise_tight_finalmask	inside_changed=170012	outside_changed=25023	path=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave6_bridge_stairs_openai_donor/results/v03_precise_tight_finalmask.png
+v04_precise_low_finalmask	inside_changed=133396	outside_changed=2427	path=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave6_bridge_stairs_openai_donor/results/v04_precise_low_finalmask.png
+v05_foliage_tight_finalmask	inside_changed=170260	outside_changed=25492	path=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave6_bridge_stairs_openai_donor/results/v05_foliage_tight_finalmask.png
+v06_foliage_low_softalpha	inside_changed=136122	outside_changed=4138	path=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave6_bridge_stairs_openai_donor/results/v06_foliage_low_softalpha.png

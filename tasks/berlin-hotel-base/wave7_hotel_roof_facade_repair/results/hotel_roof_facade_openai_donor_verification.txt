@@ -1,0 +1,2 @@
+reference_guided_top_loose	inside_changed=133304	outside_changed=25894	stair_protected_changed=0	path=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave7_hotel_roof_facade_repair/results/reference_guided_top_loose_masked.png
+reference_guided_top_precise	inside_changed=134825	outside_changed=27288	stair_protected_changed=0	path=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave7_hotel_roof_facade_repair/results/reference_guided_top_precise_masked.png

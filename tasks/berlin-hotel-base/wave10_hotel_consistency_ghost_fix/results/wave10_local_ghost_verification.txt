@@ -1,0 +1,2 @@
+v04_hotel_plus_ghost_inpaint	ghost_changed=38536	path=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave10_hotel_consistency_ghost_fix/results/v04_hotel_plus_ghost_inpaint.png
+v05_hotel_plus_ghost_seamless_clone	ghost_changed=44175	path=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave10_hotel_consistency_ghost_fix/results/v05_hotel_plus_ghost_seamless_clone.png

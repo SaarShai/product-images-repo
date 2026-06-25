@@ -1,0 +1,1 @@
+Continue the limestone building downward to the waterfront. Vertical stone piers and small regular rectangular windows in tidy rows, matching the upper floors exactly, ending in a simple stone ground floor along a stone quay. Watercolor and ink, pale limestone, soft muted palette, flat elevation. No glass facade, no atrium, no canopy, no text. Same scale and framing.

@@ -1,0 +1,3 @@
+current v11 baseline	top_changed=0	bottom_changed=0	floor_guard_changed=0	stair_guard_changed=0	path=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave7_hotel_roof_facade_repair/results/v11_right_parapet_precise_reinforced.png
+v01 top precise donor plus edge	top_changed=58952	bottom_changed=27	floor_guard_changed=0	stair_guard_changed=0	path=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave8_top_and_base_repair/results/v01_top_precise_edge.png
+v02 deterministic cleanup	top_changed=5803	bottom_changed=180323	floor_guard_changed=0	stair_guard_changed=0	path=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave8_top_and_base_repair/results/v02_deterministic_top_bottom_cleanup.png

@@ -1,0 +1,11 @@
+$ python3 tasks/berlin-hotel-base/wave2/verify_candidate.py --candidate /Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave2/w2_whole_tower/w2_whole_tower_p123_rhythm_fullmask_composited.png
+PASS candidate=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave2/w2_whole_tower/w2_whole_tower_p123_rhythm_fullmask_composited.png box=3162,2582,4082,2845 outside_max=0 outside_nonzero=0 inside_nonzero=719189
+exit=0
+
+$ python3 tasks/berlin-hotel-base/wave2/verify_candidate.py --candidate /Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave2/w2_whole_tower/w2_whole_tower_p123_rhythm_right_preserve_composited.png
+PASS candidate=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave2/w2_whole_tower/w2_whole_tower_p123_rhythm_right_preserve_composited.png box=3162,2582,4082,2845 outside_max=0 outside_nonzero=0 inside_nonzero=717126
+exit=0
+
+$ python3 tasks/berlin-hotel-base/wave2/verify_candidate.py --candidate /Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave2/w2_whole_tower/w2_whole_tower_p123_expanded_crop_occlusion_soft_composited.png
+PASS candidate=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave2/w2_whole_tower/w2_whole_tower_p123_expanded_crop_occlusion_soft_composited.png box=3162,2582,4082,2845 outside_max=0 outside_nonzero=0 inside_nonzero=706688
+exit=0

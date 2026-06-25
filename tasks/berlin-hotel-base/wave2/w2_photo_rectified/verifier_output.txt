@@ -1,0 +1,5 @@
+PASS candidate=tasks/berlin-hotel-base/wave2/w2_photo_rectified/w2_photo_rectified_cahill2_composited.png box=3162,2582,4082,2845 outside_max=0 outside_nonzero=0 inside_nonzero=717913
+PASS candidate=tasks/berlin-hotel-base/wave2/w2_photo_rectified/w2_photo_rectified_hybrid_composited.png box=3162,2582,4082,2845 outside_max=0 outside_nonzero=0 inside_nonzero=718075
+PASS candidate=tasks/berlin-hotel-base/wave2/w2_photo_rectified/w2_photo_rectified_simplified_composited.png box=3162,2582,4082,2845 outside_max=0 outside_nonzero=0 inside_nonzero=717991
+PASS candidate=tasks/berlin-hotel-base/wave2/w2_photo_rectified/w2_photo_rectified_simplified_strong_composited.png box=3162,2582,4082,2845 outside_max=0 outside_nonzero=0 inside_nonzero=718589
+PASS candidate=tasks/berlin-hotel-base/wave2/w2_photo_rectified/w2_photo_rectified_streetlevel_composited.png box=3162,2582,4082,2845 outside_max=0 outside_nonzero=0 inside_nonzero=718583

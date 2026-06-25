@@ -1,0 +1,5 @@
+Repaint the lower band: complete the bottom of the pale limestone tower so it looks finished and clean. Fine, detailed architectural watercolor with precise ink linework and soft transparent washes, exactly matching the limestone facade directly above — same pale stone colour, same vertical stone piers, same window rhythm and scale.
+
+Continue the tower's vertical limestone piers and tall rectangular windows straight down. At street level, a ground-floor arcade: a row of tall, slender recessed openings with dark, calm glazing set deep between the limestone piers — quiet and orderly, NOT bright glowing glass and NOT a glass curtain wall. The limestone base meets the stone quay wall cleanly at the waterline.
+
+No canopy, no marquee, no projecting roof, no awning. Keep the upper tower, the stone quay wall, the water and the sky exactly as they are. Same camera, flat frontal elevation, same scale — do not zoom, recenter or reframe. Keep all surfaces and signage blank: no text, letters, numbers or logos.

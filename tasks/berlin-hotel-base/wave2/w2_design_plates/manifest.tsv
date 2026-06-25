@@ -1,0 +1,21 @@
+name	family	path	verdict
+plate_01_source_continue_clean	source-continuation	plates/plate_01_source_continue_clean.png	artwork-native facade rhythm; quiet but can read repetitive
+plate_02_source_continue_lowerrow	source-continuation	plates/plate_02_source_continue_lowerrow.png	artwork-native facade rhythm; quiet but can read repetitive
+plate_03_source_continue_grounded	source-continuation	plates/plate_03_source_continue_grounded.png	artwork-native facade rhythm; quiet but can read repetitive
+plate_04_source_continue_tall	source-continuation	plates/plate_04_source_continue_tall.png	artwork-native facade rhythm; quiet but can read repetitive
+plate_05_openai_p1_lowerbase	standalone-extract	plates/plate_05_openai_p1_lowerbase.png	lower band harvested from cand_openai_p1.png; more designed base but registration risk
+plate_06_openai_p2_lowerbase	standalone-extract	plates/plate_06_openai_p2_lowerbase.png	lower band harvested from cand_openai_p2.png; more designed base but registration risk
+plate_07_openai_p3_lowerbase	standalone-extract	plates/plate_07_openai_p3_lowerbase.png	lower band harvested from cand_openai_p3.png; more designed base but registration risk
+plate_08_frontal_wc_lowerbase	standalone-extract	plates/plate_08_frontal_wc_lowerbase.png	lower band harvested from berlin_hotel_frontal_watercolor_elevation.png; more designed base but registration risk
+plate_09_flux2_p1_lowerbase	standalone-extract	plates/plate_09_flux2_p1_lowerbase.png	lower band harvested from cand_flux2_p1.png; more designed base but registration risk
+plate_10_flux2_p3_lowerbase	standalone-extract	plates/plate_10_flux2_p3_lowerbase.png	lower band harvested from cand_flux2_p3.png; more designed base but registration risk
+plate_11_streetlevel_watercolorized	streetlevel-reference	plates/plate_11_streetlevel_watercolorized.png	real base reference, but still carries street-photo perspective
+plate_12_hybrid_source_openai_p1	hybrid	plates/plate_12_hybrid_source_openai_p1.png	source facade on top, designed standalone base below
+plate_13_hybrid_source_openai_p2	hybrid	plates/plate_13_hybrid_source_openai_p2.png	source facade on top, designed standalone base below
+plate_14_hybrid_source_frontal_wc	hybrid	plates/plate_14_hybrid_source_frontal_wc.png	source facade on top, designed standalone base below
+plate_15_hybrid_source_streetlevel	hybrid	plates/plate_15_hybrid_source_streetlevel.png	source facade on top, designed standalone base below
+
+selected_composite	path	zoom
+candidate_1_12_hybrid_source_openai_p1	composites/candidate_1_12_hybrid_source_openai_p1_composited.png	zooms/candidate_1_12_hybrid_source_openai_p1_zoom.png
+candidate_2_14_hybrid_source_frontal_wc	composites/candidate_2_14_hybrid_source_frontal_wc_composited.png	zooms/candidate_2_14_hybrid_source_frontal_wc_zoom.png
+candidate_3_03_source_continue_grounded	composites/candidate_3_03_source_continue_grounded_composited.png	zooms/candidate_3_03_source_continue_grounded_zoom.png

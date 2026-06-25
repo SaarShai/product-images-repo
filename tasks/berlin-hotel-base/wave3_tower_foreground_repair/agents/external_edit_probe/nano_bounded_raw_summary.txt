@@ -1,0 +1,6 @@
+raw_path=tasks/berlin-hotel-base/wave3_tower_foreground_repair/agents/external_edit_probe/nano_bounded_raw.png
+raw_size=(1024, 1024)
+baseline_size=(4192, 3848)
+raw_resized_for_bounded_composite=True
+raw_changed_bbox_after_optional_resize=(0, 0, 4192, 3848)
+raw_max_delta=232

@@ -1,0 +1,14 @@
+Command:
+python3 tasks/berlin-hotel-base/wave2/verify_candidate.py --candidate tasks/berlin-hotel-base/wave2/w2_vector_linework/w2_vector_linework_v1_composited.png
+Output:
+PASS candidate=tasks/berlin-hotel-base/wave2/w2_vector_linework/w2_vector_linework_v1_composited.png box=3162,2582,4082,2845 outside_max=0 outside_nonzero=0 inside_nonzero=715072
+
+Command:
+python3 tasks/berlin-hotel-base/wave2/verify_candidate.py --candidate tasks/berlin-hotel-base/wave2/w2_vector_linework/w2_vector_linework_v2_composited.png
+Output:
+PASS candidate=tasks/berlin-hotel-base/wave2/w2_vector_linework/w2_vector_linework_v2_composited.png box=3162,2582,4082,2845 outside_max=0 outside_nonzero=0 inside_nonzero=713562
+
+Command:
+python3 tasks/berlin-hotel-base/wave2/verify_candidate.py --candidate tasks/berlin-hotel-base/wave2/w2_vector_linework/w2_vector_linework_v3_composited.png
+Output:
+PASS candidate=tasks/berlin-hotel-base/wave2/w2_vector_linework/w2_vector_linework_v3_composited.png box=3162,2582,4082,2845 outside_max=0 outside_nonzero=0 inside_nonzero=713205

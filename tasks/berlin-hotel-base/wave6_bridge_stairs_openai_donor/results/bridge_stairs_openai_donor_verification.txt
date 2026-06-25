@@ -1,0 +1,2 @@
+stair_architecture_under_foliage	inside_changed=234561	outside_changed=38318	path=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave6_bridge_stairs_openai_donor/results/stair_architecture_under_foliage_masked.png
+stair_continuation_precise	inside_changed=231850	outside_changed=38396	path=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave6_bridge_stairs_openai_donor/results/stair_continuation_precise_masked.png

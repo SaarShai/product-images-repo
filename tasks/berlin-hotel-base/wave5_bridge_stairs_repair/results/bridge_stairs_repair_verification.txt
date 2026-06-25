@@ -1,0 +1,4 @@
+v01_stair_continuation_subtle	inside_changed=4577	outside_changed=0	path=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave5_bridge_stairs_repair/results/v01_stair_continuation_subtle.png
+v02_stair_continuation_medium	inside_changed=4987	outside_changed=0	path=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave5_bridge_stairs_repair/results/v02_stair_continuation_medium.png
+v03_stair_continuation_stronger	inside_changed=5284	outside_changed=0	path=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave5_bridge_stairs_repair/results/v03_stair_continuation_stronger.png
+v04_linework_tread_hint_only	inside_changed=2323	outside_changed=0	path=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave5_bridge_stairs_repair/results/v04_linework_tread_hint_only.png

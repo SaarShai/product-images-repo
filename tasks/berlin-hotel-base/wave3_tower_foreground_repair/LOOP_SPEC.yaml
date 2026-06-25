@@ -1,0 +1,14 @@
+name: berlin-tower-foreground-wave3
+topology: open · inner · fleet
+generator: parallel repair-lane workers plus main orchestrator, one output directory per method
+verifier: main orchestrator running changed-box measurement, hotel-base preservation check, and visual board assembly
+gate: command: python3 tasks/berlin-hotel-base/wave3_tower_foreground_repair/verify_wave3.py --candidate <full_res_candidate.png>
+stop: at least 8 variants attempted or tool blockers recorded, verification table written, and user-facing review board produced
+budget: max_method_lanes=5 max_variants=16 max_wallclock=120m
+accepted_open_loop: true
+quorum: aggregate all mechanically clean candidates; human user selects visual direction
+anchor_files: tasks/berlin-hotel-base/wave3_tower_foreground_repair/PLAN.md, tasks/berlin-hotel-base/wave2/BANKED_CURRENT_BEST/berlin_hotel_base_current_best.png, tasks/berlin-hotel-base/wave2/USER_SELECTED_openai_subtle_integrations/README.md
+state_store: tasks/berlin-hotel-base/wave3_tower_foreground_repair/SUMMARY.md
+recall: read PLAN.md, inspect diagnostics crops, and review SUMMARY.md before synthesis
+writeback: append method attempt, files, verifier result, blocker, and next action to SUMMARY.md after each lane returns
+state_concurrency: single_writer

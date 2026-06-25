@@ -1,0 +1,1 @@
+PASS candidate=tasks/berlin-hotel-base/wave3_tower_foreground_repair/agents/external_edit_probe/nano_bounded_candidate.png bbox=(0, 1120, 621, 2921) max_delta=224 inside_allowed_changed=670143 outside_allowed_changed=0 hotel_base_changed=0 allowed_box=(0, 900, 860, 3050) hotel_base_box=(3162, 2582, 4082, 2845)

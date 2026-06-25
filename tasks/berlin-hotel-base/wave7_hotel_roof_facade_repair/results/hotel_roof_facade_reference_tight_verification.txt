@@ -1,0 +1,4 @@
+v03_loose_roof_top_only	inside_changed=104874	outside_changed=5903	stair_protected_changed=0	path=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave7_hotel_roof_facade_repair/results/v03_loose_roof_top_only.png
+v04_loose_roof_plus_top_windows	inside_changed=120030	outside_changed=16380	stair_protected_changed=0	path=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave7_hotel_roof_facade_repair/results/v04_loose_roof_plus_top_windows.png
+v05_precise_roof_top_only	inside_changed=106589	outside_changed=6249	stair_protected_changed=0	path=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave7_hotel_roof_facade_repair/results/v05_precise_roof_top_only.png
+v06_precise_roof_plus_top_windows	inside_changed=121990	outside_changed=17035	stair_protected_changed=0	path=/Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave7_hotel_roof_facade_repair/results/v06_precise_roof_plus_top_windows.png

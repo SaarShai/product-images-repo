@@ -1,0 +1,432 @@
+[
+  {
+    "method": "w2_controlnet_comfy",
+    "path": "tasks/berlin-hotel-base/wave2/w2_controlnet_comfy/candidate_sd15_lineart_inverted_s220603_composited.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 719600,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_controlnet_comfy__candidate_sd15_lineart_inverted_s220603_composited_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_controlnet_comfy__candidate_sd15_lineart_inverted_s220603_composited_zoom.png"
+  },
+  {
+    "method": "w2_controlnet_comfy",
+    "path": "tasks/berlin-hotel-base/wave2/w2_controlnet_comfy/candidate_sd15_lineart_s220602_composited.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 720885,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_controlnet_comfy__candidate_sd15_lineart_s220602_composited_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_controlnet_comfy__candidate_sd15_lineart_s220602_composited_zoom.png"
+  },
+  {
+    "method": "w2_controlnet_comfy",
+    "path": "tasks/berlin-hotel-base/wave2/w2_controlnet_comfy/mask_allowed_box_fullres.png",
+    "status": "FAIL",
+    "outside_max": 255,
+    "outside_nonzero": 47664464,
+    "inside_nonzero": 725433,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_controlnet_comfy__mask_allowed_box_fullres_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_controlnet_comfy__mask_allowed_box_fullres_zoom.png"
+  },
+  {
+    "method": "w2_main_design_plate",
+    "path": "tasks/berlin-hotel-base/wave2/w2_main_design_plate/flux2_p1_lower_base_registered.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 713736,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_main_design_plate__flux2_p1_lower_base_registered_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_main_design_plate__flux2_p1_lower_base_registered_zoom.png"
+  },
+  {
+    "method": "w2_main_design_plate",
+    "path": "tasks/berlin-hotel-base/wave2/w2_main_design_plate/flux2_p3_lower_base_registered.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 713493,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_main_design_plate__flux2_p3_lower_base_registered_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_main_design_plate__flux2_p3_lower_base_registered_zoom.png"
+  },
+  {
+    "method": "w2_main_design_plate",
+    "path": "tasks/berlin-hotel-base/wave2/w2_main_design_plate/openai_p1_lower_base_registered.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 712926,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_main_design_plate__openai_p1_lower_base_registered_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_main_design_plate__openai_p1_lower_base_registered_zoom.png"
+  },
+  {
+    "method": "w2_main_design_plate",
+    "path": "tasks/berlin-hotel-base/wave2/w2_main_design_plate/openai_p2_lower_base_registered.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 712926,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_main_design_plate__openai_p2_lower_base_registered_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_main_design_plate__openai_p2_lower_base_registered_zoom.png"
+  },
+  {
+    "method": "w2_main_design_plate",
+    "path": "tasks/berlin-hotel-base/wave2/w2_main_design_plate/openai_p3_lower_base_registered.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 712926,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_main_design_plate__openai_p3_lower_base_registered_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_main_design_plate__openai_p3_lower_base_registered_zoom.png"
+  },
+  {
+    "method": "w2_main_hybrid_plate",
+    "path": "tasks/berlin-hotel-base/wave2/w2_main_hybrid_plate/tower_seam_openai_groundfloor_hybrid.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 713141,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_main_hybrid_plate__tower_seam_openai_groundfloor_hybrid_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_main_hybrid_plate__tower_seam_openai_groundfloor_hybrid_zoom.png"
+  },
+  {
+    "method": "w2_main_photo_stylized",
+    "path": "tasks/berlin-hotel-base/wave2/w2_main_photo_stylized/streetlevel_facade_artified.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 713168,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_main_photo_stylized__streetlevel_facade_artified_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_main_photo_stylized__streetlevel_facade_artified_zoom.png"
+  },
+  {
+    "method": "w2_main_tower_plate",
+    "path": "tasks/berlin-hotel-base/wave2/w2_main_tower_plate/frontal_elevation_base_registered.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 712787,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_main_tower_plate__frontal_elevation_base_registered_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_main_tower_plate__frontal_elevation_base_registered_zoom.png"
+  },
+  {
+    "method": "w2_main_vector_paintover",
+    "path": "tasks/berlin-hotel-base/wave2/w2_main_vector_paintover/vector_pier_window_base.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 712268,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_main_vector_paintover__vector_pier_window_base_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_main_vector_paintover__vector_pier_window_base_zoom.png"
+  },
+  {
+    "method": "w2_manual_paintover",
+    "path": "tasks/berlin-hotel-base/wave2/w2_manual_paintover/w2_manual_a_clone_plinth_composited.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 620754,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_manual_paintover__w2_manual_a_clone_plinth_composited_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_manual_paintover__w2_manual_a_clone_plinth_composited_zoom.png"
+  },
+  {
+    "method": "w2_manual_paintover",
+    "path": "tasks/berlin-hotel-base/wave2/w2_manual_paintover/w2_manual_b_ref_piers_composited.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 622083,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_manual_paintover__w2_manual_b_ref_piers_composited_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_manual_paintover__w2_manual_b_ref_piers_composited_zoom.png"
+  },
+  {
+    "method": "w2_manual_paintover",
+    "path": "tasks/berlin-hotel-base/wave2/w2_manual_paintover/w2_manual_c_soft_podium_composited.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 613694,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_manual_paintover__w2_manual_c_soft_podium_composited_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_manual_paintover__w2_manual_c_soft_podium_composited_zoom.png"
+  },
+  {
+    "method": "w2_manual_paintover",
+    "path": "tasks/berlin-hotel-base/wave2/w2_manual_paintover/w2_manual_d_stronger_podium_composited.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 612092,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_manual_paintover__w2_manual_d_stronger_podium_composited_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_manual_paintover__w2_manual_d_stronger_podium_composited_zoom.png"
+  },
+  {
+    "method": "w2_manual_paintover",
+    "path": "tasks/berlin-hotel-base/wave2/w2_manual_paintover/w2_manual_e_soft_ref_hybrid_composited.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 614817,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_manual_paintover__w2_manual_e_soft_ref_hybrid_composited_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_manual_paintover__w2_manual_e_soft_ref_hybrid_composited_zoom.png"
+  },
+  {
+    "method": "w2_openai_integration",
+    "path": "tasks/berlin-hotel-base/wave2/w2_openai_integration/openai_p1_centered_front_face.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 708596,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_openai_integration__openai_p1_centered_front_face_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_openai_integration__openai_p1_centered_front_face_zoom.png"
+  },
+  {
+    "method": "w2_openai_integration",
+    "path": "tasks/berlin-hotel-base/wave2/w2_openai_integration/openai_p1_detail_transfer_soft.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 708923,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_openai_integration__openai_p1_detail_transfer_soft_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_openai_integration__openai_p1_detail_transfer_soft_zoom.png"
+  },
+  {
+    "method": "w2_openai_integration",
+    "path": "tasks/berlin-hotel-base/wave2/w2_openai_integration/openai_p1_floor_rhythm_crop.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 708928,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_openai_integration__openai_p1_floor_rhythm_crop_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_openai_integration__openai_p1_floor_rhythm_crop_zoom.png"
+  },
+  {
+    "method": "w2_openai_integration",
+    "path": "tasks/berlin-hotel-base/wave2/w2_openai_integration/openai_p1_groundfloor_only.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 708778,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_openai_integration__openai_p1_groundfloor_only_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_openai_integration__openai_p1_groundfloor_only_zoom.png"
+  },
+  {
+    "method": "w2_openai_large_insert",
+    "path": "tasks/berlin-hotel-base/wave2/w2_openai_large_insert/large_openai_p1_full_mask_fit.png",
+    "status": "FAIL",
+    "outside_max": 190,
+    "outside_nonzero": 3144780,
+    "inside_nonzero": 539248,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_openai_large_insert__large_openai_p1_full_mask_fit_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_openai_large_insert__large_openai_p1_full_mask_fit_zoom.png"
+  },
+  {
+    "method": "w2_openai_large_insert",
+    "path": "tasks/berlin-hotel-base/wave2/w2_openai_large_insert/large_openai_p1_lower_shifted.png",
+    "status": "FAIL",
+    "outside_max": 198,
+    "outside_nonzero": 2649486,
+    "inside_nonzero": 527929,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_openai_large_insert__large_openai_p1_lower_shifted_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_openai_large_insert__large_openai_p1_lower_shifted_zoom.png"
+  },
+  {
+    "method": "w2_openai_large_insert",
+    "path": "tasks/berlin-hotel-base/wave2/w2_openai_large_insert/large_openai_p2_full_mask_fit.png",
+    "status": "FAIL",
+    "outside_max": 190,
+    "outside_nonzero": 3144780,
+    "inside_nonzero": 539248,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_openai_large_insert__large_openai_p2_full_mask_fit_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_openai_large_insert__large_openai_p2_full_mask_fit_zoom.png"
+  },
+  {
+    "method": "w2_openai_large_insert",
+    "path": "tasks/berlin-hotel-base/wave2/w2_openai_large_insert/large_openai_p3_full_mask_fit.png",
+    "status": "FAIL",
+    "outside_max": 190,
+    "outside_nonzero": 3144780,
+    "inside_nonzero": 539248,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_openai_large_insert__large_openai_p3_full_mask_fit_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_openai_large_insert__large_openai_p3_full_mask_fit_zoom.png"
+  },
+  {
+    "method": "w2_openai_model_integration",
+    "path": "tasks/berlin-hotel-base/wave2/w2_openai_model_integration/openai_reference_integrated.png",
+    "status": "FAIL",
+    "outside_max": 217,
+    "outside_nonzero": 1278462,
+    "inside_nonzero": 721867,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_openai_model_integration__openai_reference_integrated_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_openai_model_integration__openai_reference_integrated_zoom.png"
+  },
+  {
+    "method": "w2_openai_model_integration",
+    "path": "tasks/berlin-hotel-base/wave2/w2_openai_model_integration/openai_reference_integrated_v3_tight_whole_scene_donor.png",
+    "status": "FAIL",
+    "outside_max": 217,
+    "outside_nonzero": 973034,
+    "inside_nonzero": 668431,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_openai_model_integration__openai_reference_integrated_v3_tight_whole_scene_donor_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_openai_model_integration__openai_reference_integrated_v3_tight_whole_scene_donor_zoom.png"
+  },
+  {
+    "method": "w2_openai_model_integration",
+    "path": "tasks/berlin-hotel-base/wave2/w2_openai_model_integration/openai_reference_integrated_v4_stronger_nomaskfoliage.png",
+    "status": "FAIL",
+    "outside_max": 217,
+    "outside_nonzero": 1278462,
+    "inside_nonzero": 721867,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_openai_model_integration__openai_reference_integrated_v4_stronger_nomaskfoliage_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_openai_model_integration__openai_reference_integrated_v4_stronger_nomaskfoliage_zoom.png"
+  },
+  {
+    "method": "w2_photo_rectified",
+    "path": "tasks/berlin-hotel-base/wave2/w2_photo_rectified/w2_photo_rectified_cahill2_composited.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 717913,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_photo_rectified__w2_photo_rectified_cahill2_composited_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_photo_rectified__w2_photo_rectified_cahill2_composited_zoom.png"
+  },
+  {
+    "method": "w2_photo_rectified",
+    "path": "tasks/berlin-hotel-base/wave2/w2_photo_rectified/w2_photo_rectified_hybrid_composited.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 718075,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_photo_rectified__w2_photo_rectified_hybrid_composited_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_photo_rectified__w2_photo_rectified_hybrid_composited_zoom.png"
+  },
+  {
+    "method": "w2_photo_rectified",
+    "path": "tasks/berlin-hotel-base/wave2/w2_photo_rectified/w2_photo_rectified_simplified_composited.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 717991,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_photo_rectified__w2_photo_rectified_simplified_composited_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_photo_rectified__w2_photo_rectified_simplified_composited_zoom.png"
+  },
+  {
+    "method": "w2_photo_rectified",
+    "path": "tasks/berlin-hotel-base/wave2/w2_photo_rectified/w2_photo_rectified_simplified_strong_composited.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 718589,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_photo_rectified__w2_photo_rectified_simplified_strong_composited_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_photo_rectified__w2_photo_rectified_simplified_strong_composited_zoom.png"
+  },
+  {
+    "method": "w2_photo_rectified",
+    "path": "tasks/berlin-hotel-base/wave2/w2_photo_rectified/w2_photo_rectified_streetlevel_composited.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 718583,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_photo_rectified__w2_photo_rectified_streetlevel_composited_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_photo_rectified__w2_photo_rectified_streetlevel_composited_zoom.png"
+  },
+  {
+    "method": "w2_vector_linework",
+    "path": "tasks/berlin-hotel-base/wave2/w2_vector_linework/w2_vector_linework_v1_composited.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 715072,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_vector_linework__w2_vector_linework_v1_composited_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_vector_linework__w2_vector_linework_v1_composited_zoom.png"
+  },
+  {
+    "method": "w2_vector_linework",
+    "path": "tasks/berlin-hotel-base/wave2/w2_vector_linework/w2_vector_linework_v2_composited.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 713562,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_vector_linework__w2_vector_linework_v2_composited_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_vector_linework__w2_vector_linework_v2_composited_zoom.png"
+  },
+  {
+    "method": "w2_vector_linework",
+    "path": "tasks/berlin-hotel-base/wave2/w2_vector_linework/w2_vector_linework_v3_composited.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 713205,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_vector_linework__w2_vector_linework_v3_composited_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_vector_linework__w2_vector_linework_v3_composited_zoom.png"
+  },
+  {
+    "method": "w2_whole_tower",
+    "path": "tasks/berlin-hotel-base/wave2/w2_whole_tower/w2_whole_tower_flux2_p1_perspective_composited.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 675788,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_whole_tower__w2_whole_tower_flux2_p1_perspective_composited_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_whole_tower__w2_whole_tower_flux2_p1_perspective_composited_zoom.png"
+  },
+  {
+    "method": "w2_whole_tower",
+    "path": "tasks/berlin-hotel-base/wave2/w2_whole_tower/w2_whole_tower_openai_p2_clean_masonry_composited.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 675440,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_whole_tower__w2_whole_tower_openai_p2_clean_masonry_composited_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_whole_tower__w2_whole_tower_openai_p2_clean_masonry_composited_zoom.png"
+  },
+  {
+    "method": "w2_whole_tower",
+    "path": "tasks/berlin-hotel-base/wave2/w2_whole_tower/w2_whole_tower_openai_p2_lower_shaft_sample_composited.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 675570,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_whole_tower__w2_whole_tower_openai_p2_lower_shaft_sample_composited_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_whole_tower__w2_whole_tower_openai_p2_lower_shaft_sample_composited_zoom.png"
+  },
+  {
+    "method": "w2_whole_tower",
+    "path": "tasks/berlin-hotel-base/wave2/w2_whole_tower/w2_whole_tower_openai_v2_generated_plate_composited.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 675595,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_whole_tower__w2_whole_tower_openai_v2_generated_plate_composited_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_whole_tower__w2_whole_tower_openai_v2_generated_plate_composited_zoom.png"
+  },
+  {
+    "method": "w2_whole_tower",
+    "path": "tasks/berlin-hotel-base/wave2/w2_whole_tower/w2_whole_tower_p123_expanded_crop_occlusion_soft_composited.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 706688,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_whole_tower__w2_whole_tower_p123_expanded_crop_occlusion_soft_composited_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_whole_tower__w2_whole_tower_p123_expanded_crop_occlusion_soft_composited_zoom.png"
+  },
+  {
+    "method": "w2_whole_tower",
+    "path": "tasks/berlin-hotel-base/wave2/w2_whole_tower/w2_whole_tower_p123_rhythm_fullmask_composited.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 719189,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_whole_tower__w2_whole_tower_p123_rhythm_fullmask_composited_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_whole_tower__w2_whole_tower_p123_rhythm_fullmask_composited_zoom.png"
+  },
+  {
+    "method": "w2_whole_tower",
+    "path": "tasks/berlin-hotel-base/wave2/w2_whole_tower/w2_whole_tower_p123_rhythm_right_preserve_composited.png",
+    "status": "PASS",
+    "outside_max": 0,
+    "outside_nonzero": 0,
+    "inside_nonzero": 717126,
+    "preview": "tasks/berlin-hotel-base/wave2/results/previews/w2_whole_tower__w2_whole_tower_p123_rhythm_right_preserve_composited_full.png",
+    "zoom": "tasks/berlin-hotel-base/wave2/results/previews/w2_whole_tower__w2_whole_tower_p123_rhythm_right_preserve_composited_zoom.png"
+  }
+]

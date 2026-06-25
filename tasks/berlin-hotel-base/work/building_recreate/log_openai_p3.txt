@@ -1,0 +1,2 @@
+[subgen openai] OK attempt 1 -> tasks/berlin-hotel-base/work/building_recreate/cand_openai_p3.png
+tasks/berlin-hotel-base/work/building_recreate/cand_openai_p3.png

@@ -1,0 +1,21 @@
+{
+  "source": "/Users/za/Documents/product images repo/tasks/berlin-hotel-base/work/src.png",
+  "box": [
+    3162,
+    2582,
+    4082,
+    2845
+  ],
+  "zoom_box": [
+    3060,
+    2480,
+    4120,
+    2900
+  ],
+  "gen_size": [
+    920,
+    264
+  ],
+  "prompt": "fine architectural watercolor and ink elevation of a pale limestone hotel facade base, strict flat near-frontal elevation, same vertical stone pier rhythm and same tall narrow windows continuing downward, quiet masonry ground floor, modest plain stone plinth meeting the quay, soft transparent watercolor wash, muted warm limestone, dark blue grey window recesses, delicate hand ink lines, no text",
+  "negative": "glass hall, atrium, high ceiling lobby, canopy, marquee, porte-cochere, awning, storefront sign, logo, letters, words, people, cars, photorealistic, 3d render, perspective view, rotated building, arched arcade, palace, neoclassical portico, heavy shadows, saturated colors"
+}

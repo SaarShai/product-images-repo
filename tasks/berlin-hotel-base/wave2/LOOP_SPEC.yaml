@@ -1,0 +1,15 @@
+name: berlin-hotel-base-wave2
+topology: open · inner · fleet
+generator: parallel method workers plus main orchestrator, one output directory per method
+verifier: main orchestrator running verify_candidate.py and assembling review board
+gate: command: python3 tasks/berlin-hotel-base/wave2/verify_candidate.py --candidate <full_res_candidate.png> --box 3162,2582,4082,2845
+stop: at least 7 method lanes attempted, verified candidates and blockers summarized, user-facing review board produced for human selection
+budget: max_method_lanes=7 max_wallclock=120m
+accepted_open_loop: true
+quorum: aggregate all verifier-passing candidates; human user selects or rejects visual direction
+anchor_files: tasks/berlin-hotel-base/HANDOFF.md, tasks/berlin-hotel-base/BRIEF.md, tasks/berlin-hotel-base/wave2/PLAN.md, skills/element-edit/SKILL.md, docs/image-generation.md
+state_store: tasks/berlin-hotel-base/wave2/SUMMARY.md
+recall: read PLAN.md, HANDOFF.md, BRIEF.md, and existing SUMMARY.md before each synthesis pass
+writeback: append method attempt, files, verifier result, blocker, and next action to SUMMARY.md after each lane returns
+state_concurrency: single_writer
+

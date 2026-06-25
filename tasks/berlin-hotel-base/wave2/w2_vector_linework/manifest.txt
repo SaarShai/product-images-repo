@@ -1,0 +1,17 @@
+Vector linework lane outputs:
+v1:
+  patch: /Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave2/w2_vector_linework/w2_vector_linework_v1_patch.png
+  full: /Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave2/w2_vector_linework/w2_vector_linework_v1_composited.png
+  zoom: /Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave2/w2_vector_linework/w2_vector_linework_v1_zoom.png
+  guide: /Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave2/w2_vector_linework/w2_vector_linework_v1_guide.png
+v2:
+  patch: /Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave2/w2_vector_linework/w2_vector_linework_v2_patch.png
+  full: /Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave2/w2_vector_linework/w2_vector_linework_v2_composited.png
+  zoom: /Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave2/w2_vector_linework/w2_vector_linework_v2_zoom.png
+  guide: /Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave2/w2_vector_linework/w2_vector_linework_v2_guide.png
+v3:
+  patch: /Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave2/w2_vector_linework/w2_vector_linework_v3_patch.png
+  full: /Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave2/w2_vector_linework/w2_vector_linework_v3_composited.png
+  zoom: /Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave2/w2_vector_linework/w2_vector_linework_v3_zoom.png
+  guide: /Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave2/w2_vector_linework/w2_vector_linework_v3_guide.png
+zoom_board: /Users/za/Documents/product images repo/tasks/berlin-hotel-base/wave2/w2_vector_linework/w2_vector_linework_zoom_board.png
