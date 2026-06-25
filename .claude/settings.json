@@ -62,6 +62,37 @@
         "matcher": "*"
       }
     ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "command": "bash ./.claude/skills/context-keeper/tools/archive.sh",
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      },
+      {
+        "hooks": [
+          {
+            "command": "bash ./.claude/skills/learn-skill/tools/hook_session_end.sh",
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "command": "bash ./.claude/skills/learn-skill/tools/hook_session_start.sh",
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ],
     "Stop": [
       {
         "hooks": [

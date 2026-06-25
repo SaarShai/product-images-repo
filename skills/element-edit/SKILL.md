@@ -24,12 +24,19 @@ VLM judge, and prints SUCCESS/NEEDS-REVIEW with the gate + judge results. Always
    - redraw in place → `falgen.py --mode fill` (Flux Fill) + a prompt from `prompt_templates.py`.
    - restyle keeping layout → Flux.2 edit; reshape to exact dims → stretch-then-Kontext ([[element-reshape-stretch-then-refine]]).
    - same element across many instances → reference-lock ([[reference-lock-for-consistency]]).
-   - broad ghost/haze or smeared local artifact → mask-bounded external redraw donor:
+   - broad ghost/haze, smeared local artifact, or semantic-continuity defect
+     where an object must continue behind occluders → mask-bounded external
+     redraw donor:
      bank the best full-res baseline, generate an OpenAI edit via `scripts/subgen.py`,
      treat the raw output as a donor only, composite it back through the issue mask,
      then verify outside-mask delta is 0. This is the preferred escalation when
-     conservative clone/inpaint variants pass mechanically but look blocky or
-     smeared. See [[concepts/mask-bounded-external-redraw-donor]].
+     conservative clone/inpaint/linework variants pass mechanically but look
+     blocky, smeared, invisible, or fail the actual semantic relationship. See
+     [[concepts/mask-bounded-external-redraw-donor]].
+   - when the donor fixes one architectural part but risks distorting adjacent
+     repeated structure, split the broad generation/context mask from a tighter
+     final blend mask. Restore/protect the repeated structure from the banked
+     baseline and add a pixel gate for that guard zone before presenting.
 4. **Composite + MEASURE** — `compose_fairy.py --diffmask`; outside-mask delta MUST be 0. In busy
    scenes a global-repaint engine seams → use masked-inpaint so the diff is localized. [[element-edit-diffmask-composite]]
 5. **Auto-verify** — `judge.py` check (leftover-text/artifacts hard gate); use `--mode pairwise` to pick
@@ -49,4 +56,5 @@ Never say "keep the style"; prescribe the medium. Never rely on negative prompts
 
 ## Hard rules
 Source art (Drive) is READ-ONLY → copy first. REFERENCE/GEOMETRY beats prose. Verify before claiming
-done; show full-size; link text = filename. Maximize fan-out across candidates, gate objectively.
+done; show enough context to prove protected neighboring structure did not drift; link text = filename.
+Maximize fan-out across candidates, gate objectively.
