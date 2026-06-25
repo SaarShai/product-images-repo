@@ -83,25 +83,44 @@ Pillow, and warns when Nano is likely to recompose tall references.
 
 ### Localized repair: bounded external redraw donor
 
-When a finished illustration has a localized ghost/haze/smear artifact, the best
-route may be a broader OpenAI edit used only as a donor. The reliable sequence:
+When a finished illustration has a localized ghost/haze/smear artifact, or a
+local semantic-continuity problem such as architecture that should continue
+behind trees/foreground occluders, the best route may be a broader OpenAI edit
+used only as a donor. The reliable sequence:
 
 1. Bank the current best full-resolution image first.
-2. Build an issue mask from the user-marked region or measured full-res boxes.
-3. Generate with `scripts/subgen.py --provider openai`, attaching the banked
+2. Diagnose the actual visual failure in words before generating. Do not turn a
+   semantic defect into a generic "clean haze" or "draw lines" patch.
+3. Build an issue mask from the user-marked region or measured full-res boxes.
+   For occlusion/continuity repairs, make the mask wide enough to include both
+   the object and its occluder, so the model can redraw the relationship.
+4. Generate with `scripts/subgen.py --provider openai`, attaching the banked
    image and mask.
-4. Treat the raw provider output as a donor, not the final file. It may be
+5. Treat the raw provider output as a donor, not the final file. It may be
    lower resolution or over-edit the full image.
-5. Resize/register the donor back to baseline dimensions if needed.
-6. Composite only masked donor pixels back onto the banked baseline.
-7. Verify changed pixels against the banked baseline, including protected-region
+6. Resize/register the donor back to baseline dimensions if needed.
+7. Composite only masked donor pixels back onto the banked baseline. Keep the
+   generation/context mask separate from the final blend mask; the final mask
+   may need to be tighter to avoid changing adjacent repeated structures.
+8. For repeated architecture such as windows, floor grids, roof courses, or
+   antenna shafts, define explicit preserve/guard zones and restore those zones
+   from the banked baseline after the donor blend.
+9. Verify changed pixels against the banked baseline, including protected-region
    checks for areas that must remain unchanged.
-8. Show a board with conservative local repairs plus the bounded donor, because
+10. Show a board with conservative local repairs plus the bounded donor, because
    the broader donor can be visually best while still being mechanically safe.
+   If the repair is subtle, include a marked crop or diff overlay; do not claim
+   visual improvement the reviewer cannot identify.
+11. If a user prefers a tight crop or raw donor tile, also show a larger context
+   crop that includes the protected neighbor structure. A crop that hides the
+   preserved windows/floors cannot prove the composite is safe.
 
 Recorded example:
 [Mask-Bounded External Redraw Donor](../wiki/concepts/mask-bounded-external-redraw-donor.md)
-from the Berlin wave3 TV tower / foreground repair.
+from the Berlin wave3 TV tower / foreground repair and Berlin wave6 bridge
+stair-continuity repair, extended by the Berlin wave7 hotel-roof repair where
+the raw donor looked best but the safe composite required floor-guarded final
+blending.
 
 ---
 
