@@ -1,3 +1,9 @@
+---
+name: element-edit
+description: "Use when editing ONE element of a finished illustration while keeping the rest byte-identical — redraw / remove / restyle / reshape / move a single element inside finished watercolor+ink art (or any fixed image). Runs the verified auto-mask → guardrail → routed-engine → diff-composite + pixel-gate → VLM-judge pipeline via scripts/edit.py, so you never re-derive or hand-eyeball masks."
+effort: medium
+---
+
 # element-edit — edit ONE element of a finished illustration, change nothing else
 
 Use when the task is: redraw / remove / restyle / reshape / move a single element inside a
