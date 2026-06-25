@@ -53,6 +53,23 @@
           }
         ],
         "matcher": "*"
+      },
+      {
+        "hooks": [
+          {
+            "command": "bash ./.claude/skills/context-keeper/tools/codex_archive.sh",
+            "type": "command"
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "command": "bash ./.codex/skills/learn-skill/tools/hook_session_end.sh",
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
       }
     ],
     "UserPromptSubmit": [
@@ -60,6 +77,15 @@
         "hooks": [
           {
             "command": "python3 ./.codex/skills/brainer-audit/tools/hook.py --host codex --event UserPromptSubmit",
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      },
+      {
+        "hooks": [
+          {
+            "command": "bash ./.codex/skills/learn-skill/tools/hook_session_start.sh",
             "type": "command"
           }
         ],
