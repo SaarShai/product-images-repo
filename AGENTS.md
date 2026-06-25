@@ -1,5 +1,13 @@
 # Global agent rules (all codex sessions)
 
+## Image output location
+
+ALWAYS save/copy result images to an `Images/` subfolder inside the folder the user points
+to — typically the production folder where the `.ai`/`.svg` template lives (e.g.
+`…/production files/<product>/Images/`), organized as `Images/finals/` + `Images/candidates/`.
+The repo `tasks/<task>/outputs/` is the working copy only and need not hold images unless one
+is used as a doc example. (user rule, 2026-06-24)
+
 ## Image-generation iteration: reset vs. patch
 
 **How to invoke image generation** (which CLI / command) is documented in
