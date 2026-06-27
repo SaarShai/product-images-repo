@@ -40,6 +40,7 @@ DEFAULT_WEIGHTS = {
     "entity_overlap": 0.5,      # per repeated capitalized identifier, capped at 1.5
     "filler": -1.5,
     "speculation": -1.5,
+    "vague": -1.5,            # content-free corporate buzzwords (anti-gaming)
 }
 ENTITY_CAP = 1.5
 
@@ -81,6 +82,21 @@ SPECULATION_PHRASES = (
     " might ", " maybe ", " probably ", "i think ", "seems like",
     " could maybe", " perhaps ", " possibly ",
 )
+# Content-free corporate filler. Adversarial finding (2026-06-27 PROMPTER opt run):
+# pure filler stuffed with marker substrings ("we decided to leverage our approach
+# so that things work better; uses synergy, depends on best practices; 1. align
+# stakeholders 2. maximize outcomes") scored 8.0 and PASSED — the lexical markers
+# fire on generic words. This penalty offsets that: buzzwords are negative signal,
+# like filler/speculation. Genuine facts carry concrete signal (numbers, code,
+# specific entities) that easily outweighs an incidental buzzword, and the
+# trust-bypass rescues vouched-but-terse facts — so this raises the bar against
+# gaming without re-introducing the false-reject problem.
+VAGUE_PHRASES = (
+    "synergy", "synergies", "best practices", "stakeholder", "move the needle",
+    "value-add", "going forward", "circle back", "low-hanging fruit", "holistic",
+    "leverage our", "leverage the", "things work better", "maximize outcomes",
+    "drive value", "our approach so", "streamline", "paradigm",
+)
 # NB: "since" is intentionally absent — it's overwhelmingly temporal in
 # practice ("tracked since yesterday") and was bypassing the gate as a
 # pseudo-causal token. Authors who genuinely mean causal "since" can write
@@ -94,6 +110,19 @@ WHY_CLAUSES = (
 # matching let reasonless decisions slip past the why-gate.
 WHY_RE = re.compile(r"\b(?:" + "|".join(re.escape(w) for w in WHY_CLAUSES) + r")\b")
 CODE_FENCE_PAIR_RE = re.compile(r"```.*?```", re.DOTALL)
+
+# Provenance trust tiers — a fact whose importance has been vouched for (checked
+# against code/test/fs = "verified", or a human said keep it = "user_confirmed")
+# bypasses the lexical signal FLOOR. The gate scores token-density, not importance:
+# a genuine atomic fact ("the PROMPTER folder is also called alfred") carries no
+# marker words, scores ~0, and would otherwise be dropped (measured: 82% false-
+# reject on bare keep-worthy facts). Trust vouches IMPORTANCE, not QUALITY — so
+# net-negative content (filler/speculation penalties) is still rejected, and a
+# plain "verified" does NOT waive the why-clause for a decision (only the strongest
+# tier, "user_confirmed", does). Raises recall on vouched content; precision on
+# un-vouched content is unchanged.
+TRUST_BYPASS = {"verified", "user_confirmed"}
+TRUST_RE = re.compile(r"^\s*trust:\s*([a-z_]+)", re.M | re.I)
 
 NUMBER_RE = re.compile(
     r"\b\d+(?:\.\d+)?\s?(?:%|ms|s|x|ops|qps|rps|MB|GB|KB|TB|tokens?|loc|lines?|"
@@ -203,6 +232,16 @@ def score_text(text: str, kind: str, weights: dict[str, float] | None = None) ->
         s.total += v
         s.reasons.append(f"speculation phrases ×{n_spec}")
 
+    # Vague corporate filler (negative, anti-gaming). Uncapped like filler —
+    # marker-stuffed content-free text accrues enough buzzwords to fall back
+    # under the floor; genuine concrete facts rarely use more than one.
+    n_vague = _count_any(text_lc, VAGUE_PHRASES)
+    if n_vague:
+        v = weights["vague"] * n_vague
+        s.features["vague"] = v
+        s.total += v
+        s.reasons.append(f"vague buzzwords ×{n_vague}")
+
     # Numbered / bulleted procedure (SOP signature: "1. ... 2. ... 3. ...")
     # Requires at least 2 ordered steps on their own lines.
     procedure_steps = len(re.findall(r"^\s*(?:\d+\.|[-*])\s+\S", text, re.M))
@@ -228,10 +267,28 @@ def score_text(text: str, kind: str, weights: dict[str, float] | None = None) ->
 
 # --- Decision -------------------------------------------------------------
 
-def decide(score: Score, kind: str, threshold: float, require_why: bool) -> tuple[bool, str]:
-    """Return (passed, reason)."""
-    if kind in ("decision", "convention") and require_why and not score.has_why:
+def extract_trust(text: str) -> str | None:
+    """Read the `trust:` tier from a candidate page's YAML frontmatter, if any.
+    Limited to the frontmatter block so a body mention of 'trust:' can't spoof it."""
+    if text.startswith("---"):
+        end = text.find("\n---", 3)
+        head = text[:end] if end != -1 else text[:2000]
+    else:
+        head = text[:2000]
+    m = TRUST_RE.search(head)
+    return m.group(1).lower() if m else None
+
+
+def decide(score: Score, kind: str, threshold: float, require_why: bool,
+           trust: str | None = None) -> tuple[bool, str]:
+    """Return (passed, reason). `trust` (if 'verified'/'user_confirmed') vouches
+    importance and bypasses the signal FLOOR — but never rescues net-negative
+    (filler/speculation) content, and only 'user_confirmed' waives the why-clause."""
+    if kind in ("decision", "convention") and require_why and not score.has_why \
+            and trust != "user_confirmed":
         return False, "REJECTED: decision/convention missing a why-clause (need 'because…', 'so that…', 'to avoid…', etc)"
+    if trust in TRUST_BYPASS and score.total >= 0:
+        return True, f"PASSED: trust '{trust}' vouches importance; bypasses signal floor (score {score.total:.2f} ≥ 0)"
     if score.total < threshold:
         return False, f"REJECTED: signal score {score.total:.2f} < threshold {threshold:.2f}"
     return True, f"PASSED: signal score {score.total:.2f} ≥ threshold {threshold:.2f}"
@@ -328,6 +385,10 @@ def main(argv: list[str]) -> int:
         p = sub.add_parser(name)
         p.add_argument("--kind", default="fact",
                        choices=["fact", "decision", "convention", "error", "sop"])
+        p.add_argument("--trust", default=None,
+                       choices=["asserted", "corroborated", "verified", "user_confirmed"],
+                       help="provenance tier; 'verified'/'user_confirmed' bypass the signal floor. "
+                            "If omitted, read from the candidate's `trust:` frontmatter.")
         p.add_argument("--text")
         p.add_argument("--file")
         p.add_argument("--threshold", type=float)
@@ -343,8 +404,9 @@ def main(argv: list[str]) -> int:
     if args.threshold is not None:
         threshold = args.threshold
 
+    trust = args.trust or extract_trust(text)
     s = score_text(text, args.kind, weights)
-    passed, verdict = decide(s, args.kind, threshold, require_why)
+    passed, verdict = decide(s, args.kind, threshold, require_why, trust=trust)
 
     if args.json:
         out = {
@@ -352,6 +414,7 @@ def main(argv: list[str]) -> int:
             "score": round(s.total, 3),
             "threshold": threshold,
             "kind": args.kind,
+            "trust": trust,
             "has_why": s.has_why,
             "features": {k: round(v, 3) for k, v in s.features.items()},
             "verdict": verdict,
