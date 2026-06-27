@@ -4,7 +4,7 @@
       {
         "hooks": [
           {
-            "command": "python3 ./.claude/skills/brainer-audit/tools/hook.py --host claude --event PostCompact",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR:-$PWD}/.claude/skills/brainer-audit/tools/hook.py\" --host claude --event PostCompact",
             "type": "command"
           }
         ],
@@ -15,7 +15,7 @@
       {
         "hooks": [
           {
-            "command": "python3 ./.claude/skills/brainer-audit/tools/hook.py --host claude --event PostToolUse",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR:-$PWD}/.claude/skills/brainer-audit/tools/hook.py\" --host claude --event PostToolUse",
             "type": "command"
           }
         ],
@@ -26,7 +26,7 @@
       {
         "hooks": [
           {
-            "command": "bash ./.claude/skills/context-keeper/tools/hook.sh",
+            "command": "bash \"${CLAUDE_PROJECT_DIR:-$PWD}/.claude/skills/context-keeper/tools/hook.sh\"",
             "type": "command"
           }
         ],
@@ -35,7 +35,7 @@
       {
         "hooks": [
           {
-            "command": "python3 ./.claude/skills/brainer-audit/tools/hook.py --host claude --event PreCompact",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR:-$PWD}/.claude/skills/brainer-audit/tools/hook.py\" --host claude --event PreCompact",
             "type": "command"
           }
         ],
@@ -55,7 +55,7 @@
       {
         "hooks": [
           {
-            "command": "python3 ./.claude/skills/brainer-audit/tools/hook.py --host claude --event PreToolUse",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR:-$PWD}/.claude/skills/brainer-audit/tools/hook.py\" --host claude --event PreToolUse",
             "type": "command"
           }
         ],
@@ -64,7 +64,7 @@
       {
         "hooks": [
           {
-            "command": "python3 ./.claude/skills/index-first/tools/augment.py",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR:-$PWD}/.claude/skills/index-first/tools/augment.py\"",
             "type": "command"
           }
         ],
@@ -75,7 +75,7 @@
       {
         "hooks": [
           {
-            "command": "bash ./.claude/skills/context-keeper/tools/archive.sh",
+            "command": "bash \"${CLAUDE_PROJECT_DIR:-$PWD}/.claude/skills/context-keeper/tools/archive.sh\"",
             "type": "command"
           }
         ],
@@ -84,7 +84,7 @@
       {
         "hooks": [
           {
-            "command": "bash ./.claude/skills/learn-skill/tools/hook_session_end.sh",
+            "command": "bash \"${CLAUDE_PROJECT_DIR:-$PWD}/.claude/skills/learn-skill/tools/hook_session_end.sh\"",
             "type": "command"
           }
         ],
@@ -95,7 +95,7 @@
       {
         "hooks": [
           {
-            "command": "bash ./.claude/skills/learn-skill/tools/hook_session_start.sh",
+            "command": "bash \"${CLAUDE_PROJECT_DIR:-$PWD}/.claude/skills/learn-skill/tools/hook_session_start.sh\"",
             "type": "command"
           }
         ],
@@ -106,7 +106,7 @@
       {
         "hooks": [
           {
-            "command": "python3 ./.claude/skills/brainer-audit/tools/hook.py --host claude --event Stop",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR:-$PWD}/.claude/skills/brainer-audit/tools/hook.py\" --host claude --event Stop",
             "type": "command"
           }
         ],
@@ -117,7 +117,7 @@
       {
         "hooks": [
           {
-            "command": "bash ./.claude/skills/compliance-canary/tools/hook.sh",
+            "command": "bash \"${CLAUDE_PROJECT_DIR:-$PWD}/.claude/skills/compliance-canary/tools/hook.sh\"",
             "type": "command"
           }
         ],
@@ -126,7 +126,7 @@
       {
         "hooks": [
           {
-            "command": "bash ./.claude/skills/prompt-triage/tools/hook.sh",
+            "command": "bash \"${CLAUDE_PROJECT_DIR:-$PWD}/.claude/skills/prompt-triage/tools/hook.sh\"",
             "type": "command"
           }
         ],
@@ -135,7 +135,7 @@
       {
         "hooks": [
           {
-            "command": "python3 ./.claude/skills/brainer-audit/tools/hook.py --host claude --event UserPromptSubmit",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR:-$PWD}/.claude/skills/brainer-audit/tools/hook.py\" --host claude --event UserPromptSubmit",
             "type": "command"
           }
         ],
