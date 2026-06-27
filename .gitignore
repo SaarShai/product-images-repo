@@ -49,3 +49,6 @@ tasks/princess-sharpen/
 tasks/cap-juluca/outputs/generated/
 tasks/cap-juluca/outputs/final/
 tasks/cap-juluca/outputs/reviews/
+
+# device-handoff prompt (contains live API keys — never commit)
+HANDOFF.md
