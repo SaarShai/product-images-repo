@@ -57,7 +57,28 @@ $EG suite --cases cases.jsonl --baseline base.json        # gate every change af
 # ratchet: a bad output becomes a permanent case (reason must say WHY)
 echo "$BAD_OUTPUT" | $EG add-case --cases cases.jsonl \
     --task "$INPUT" --reason "wrong total because it hallucinated a line item"
+
+# per-criterion rubric: judge each criterion PASS/FAIL -> a FAIL names WHICH one
+$EG score --criteria-file skills/eval-gate/tools/criteria.example.json --file draft.md
 ```
+
+**Per-criterion mode** (`--criteria-file` / `--criteria-json`) turns one holistic
+`0-5` into a list of `{id, description, weight, required}` criteria judged
+independently. Output carries a per-criterion `pass`/`reason` breakdown,
+a weighted `score_norm`, and `blocking_criteria` — a failed `required` criterion
+fails the gate **even if the weighted mean clears the threshold**, so a FAIL gives
+*failure coordinates* ("complete: missed ask #3"), not just "below the line". Without
+`--criteria*` the gate is unchanged (single holistic score). `--stub-criteria` mirrors
+`--stub-score` for offline CI. (Granularity adopted from cognee's `rubric.py`; the
+weighting + required-blocking + fail-safe parse are Brainer's.)
+
+**Judge strength is load-bearing for grounding-sensitive rubrics.** Live-judge testing
+on real briefings: a **≥32B** judge (`qwen3.6:35b`, `deepseek-r1:32b`) passed a
+well-grounded draft and failed a fabricated one with the *exact* blocking criteria;
+an **8B** judge (`llama3.1:8b`) both **false-failed** the good draft and **false-passed**
+weak criteria — discrimination collapsed. For rubrics that turn on facts/grounding, pin a
+≥32B judge with `--model`; don't let it default to a small fast model. (The per-criterion
+machinery is correct regardless; it's the *judge's* verdicts that degrade on a weak model.)
 
 Backends (from `eval/judge.py`): local **Ollama** by default (no key), **MiMo**
 when `MIMO_API_KEY` is set (`--backend mimo`). `--stub-score N` scores without a
@@ -66,10 +87,36 @@ fails *safe* — it never reports a pass it couldn't compute).
 
 ## Protocol
 
+0. **Author the case targets first — ground truth never comes from the system
+   under test.** Before writing a rubric or committing a case, lay out the
+   *facts the question asks about* (its targets) and validate them statically
+   with [`tools/validate_case.py`](tools/validate_case.py):
+
+   ```bash
+   python3 skills/eval-gate/tools/validate_case.py \
+     --mode preflight --questions questions.jsonl --repo-root .
+   ```
+
+   `questions.jsonl` is one JSON object per line —
+   `{id, skill, text, targets:[{fact, source, source_path}], sillito_dim}`.
+   Each target's `source ∈ {file, git, lsp_symbol, config, api_contract}` and
+   `source_path` must be **independently verifiable** (the file exists, the git
+   SHA resolves, the symbol is defined, the config key is present) — never a
+   model-generated answer key. `sillito_dim ∈ {D1..D5, cross-cutting}` anchors
+   the question to the Sillito/Murphy/De Volder taxonomy (IEEE TSE 2008) instead
+   of being authored ad-hoc. The validator **runs no skill and no model** — it
+   only reads static facts. Exit 0 → ready for rubric authoring; exit 1 → it
+   cites which targets failed (missing file, unresolved SHA, undefined symbol,
+   absent dim). This step is the circularity break: the author of the question
+   cannot also invent its answer key. *(Exempt: rubric-only gates with no
+   verifiable target — see [Status](#status); eval-gate itself is one.)*
 1. Write the rubric once, **as a file at task start** (`tools/rubric.example.md`
    is a starting point) — checkable criteria committed up front, not reverse-
    engineered after the work to fit what you produced. Encode your actual taste —
-   the criteria a reader would bookmark you for.
+   the criteria a reader would bookmark you for. The grader trusts this rubric
+   blindly: a **missing or wrong-target** criterion passes bad output as surely
+   as a vague one, so make it complete (covers the degenerate/edge cases that
+   matter), not just specific.
 2. `score` at the point of shipping. Exit 1 → rework or kill; do not ship.
    **Two-pass when a maker hands you a result:** score it once from the maker's
    claims, then again from the artifact alone — any criterion that drops on the
@@ -79,7 +126,31 @@ fails *safe* — it never reports a pass it couldn't compute).
    A regression blocks until you've looked at which case dropped and why.
 4. Every time you (or a reviewer) catch a bad output, `add-case` it. The reason
    is required and must say *why* it's bad — that's what makes the new case
-   teach instead of just accumulate.
+   teach instead of just accumulate. For a case promoting to the **N≥50 gate**,
+   the reason cites the **Sillito dimension** and the **ground-truth source**
+   (e.g. *"Tests D3 — targeted retrieval — of a function defined in git commit
+   abc1234"*), and the case's targets must clear Step 0's `validate_case.py`.
+
+## Case-design SOP (for N≥50 case-sets)
+
+When a case-set graduates from one-off `add-case` ratcheting to a measured
+N≥50 evaluation, design each case ground-truth-first:
+
+1. **Read the ground truth first.** Identify the fact (a function name in code, a
+   git SHA, a config key in a file) *before* drafting the question — never the
+   reverse.
+2. **Map to Sillito.** Is the question "where is X defined?" (D1), "what calls
+   X?" (D2), "what does X do?" (D3), "how are X/Y related?" (D4), "where is
+   similar code?" (D5), or cross-cutting? Record it as `sillito_dim`.
+3. **Run `validate_case.py --mode preflight`** to confirm every target is
+   independently verifiable before the question text is committed.
+4. **Benchmark cross-check (opportunistic).** If the skill touches retrieval and
+   a published set (SWE-QA, CoReQA) happens to ask a similar question on the same
+   repo, note that provenance in the reason. Opportunistic, not systematic —
+   Brainer keeps its own full case-set; the benchmark is a cross-check.
+5. **Aggregate by dimension.** `eval/FINDINGS.md` rolls results up by Sillito
+   dimension so a systematically weak *category* of question surfaces across the
+   catalog, not just one skill.
 
 ## The ratchet gate
 
@@ -118,7 +189,18 @@ instead of bloating. For heavier signal-scoring of the reason, pipe it through
 
 ## Status
 
-**Opt-in / unmeasured.** Plumbing self-tested offline (`tools/test.sh`, no
-network). Per catalog policy it earns N≥50 before any default promotion —
-target: gating output on a rubric cuts downstream rework / re-reads /
-"done"-reversals without rejecting good runs. See [EVAL.md](EVAL.md).
+**Opt-in / unmeasured.** Plumbing self-tested offline (`tools/test.sh` +
+`tools/test_validate_case.py`, no network). Per catalog policy it earns N≥50
+before any default promotion — target: gating output on a rubric cuts downstream
+rework / re-reads / "done"-reversals without rejecting good runs. See
+[EVAL.md](EVAL.md).
+
+**eval-gate is itself exempt from the N≥50 ground-truth regime** — it is a
+**design-by-intent** gate, not an empirically-measured skill. Its rubrics encode
+human taste ("the answer must include a copy-pasteable step"), which is authored
+intent, not a fact recoverable from git/file/LSP. So Step 0's `validate_case.py`
+has no verifiable target to check on eval-gate's *own* output, and N≥50 is not a
+meaningful bar for it. The Step-0 gate applies to the **case-sets eval-gate
+evaluates** (retrieval/comprehension skills with verifiable ground truth), not to
+the rubric-grading gate itself. To empirically validate a rubric, write a
+separate validator that judges against human-labeled gold outputs.

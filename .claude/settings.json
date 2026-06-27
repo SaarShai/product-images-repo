@@ -60,6 +60,15 @@
           }
         ],
         "matcher": "*"
+      },
+      {
+        "hooks": [
+          {
+            "command": "python3 ./.claude/skills/index-first/tools/augment.py",
+            "type": "command"
+          }
+        ],
+        "matcher": "Grep|Glob"
       }
     ],
     "SessionEnd": [
