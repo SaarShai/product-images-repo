@@ -31,6 +31,9 @@ deliberately, promote after it has earned trust on real diffs.
   user verifies the high-risk zones (this skill never runs tests).
 - Composed with **loop-engineering**: gate the "is the change safe enough to
   integrate?" decision in a generate→verify loop.
+- Composed with **[security-oversight](../security-oversight/SKILL.md)**: its
+  security sibling — impact says *what breaks*, security-oversight says *what's
+  exploitable*; run both on the same pre-commit diff.
 
 Do **not** use it as a linter (no style/quality checks), a formatter, a full
 reachability analyzer (depth-bounded; answers "who calls me", not "who
@@ -66,6 +69,18 @@ Per the spec thresholds, each changed symbol is scored from its inbound callers:
   (`main`/`cli`/`api`/`app`/`handler`/`route`/…), OR a transitive chain at depth ≥3.
 
 Overall report risk is the max across changed symbols.
+
+**Soundness limit — a static call graph sees only static callers.** A symbol
+invoked *dynamically* — reflection, dependency injection, event/route/signal
+handlers, framework callbacks, `getattr`/`importlib` dispatch, cross-service
+HTTP — has no inbound `CALLS` edge, so it can score **LOW ("no callers")** while
+still being live. LOW is a **floor, not proof of safety**: it means "no *static*
+caller found," not "safe to skip." Because the protocol routes only HIGH/MEDIUM
+to `verify-before-completion`, a dynamically-invoked symbol that reads LOW
+escapes verification — so for a changed symbol you know is reached dynamically,
+verify it regardless of the score. (graphify's `CALLS` layer does not resolve
+dynamic dispatch; tools that do — codegraph — and runtime-trace validation —
+codebase-memory-mcp's `ingest_traces` — confirm the gap independently.)
 
 ## Degraded mode (graphify absent)
 
