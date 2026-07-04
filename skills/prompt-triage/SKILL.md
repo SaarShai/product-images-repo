@@ -21,7 +21,7 @@ Heavy default model (opus, high-effort) burns tokens deciding what model a task 
 - **Ollama fallback** (<1.5s) — local small model classifies if regex uncertain. Model auto-resolves from installed tags (preference order in `PREFERRED_MODELS`; pin with `AGENTS_TRIAGE_OLLAMA_MODEL`). First call of a session may miss while the model cold-loads (`keep_alive=2h` keeps it warm after).
 - **Fail-closed** — a prompt carrying complex-work hints with no LLM available defers to the main model; no directive is emitted below 0.7 confidence.
 - **Context guard** (0ms) — prompts referencing the current session/conversation ("what we built", "this suite") get NO directive: a fresh subagent cannot see chat history, so any verdict just forces the main model to evaluate-and-override.
-- **Platform models only** — routing targets are in-platform small models (haiku/sonnet in Claude Code). Never out-of-platform local models; those are for explicit manual dispatch.
+- **Routing targets** — in-platform small models (haiku/sonnet tiers in Claude Code) plus `glm-executor` (GLM via z.ai) for bounded, self-contained content tasks only (summarize / classify / extract / rewrite over supplied content — cheap, 1M ctx, but blind to chat history). Local Ollama models are never auto-routed; manual dispatch only.
 
 Outputs JSON + directive block appended to context:
 
@@ -31,8 +31,22 @@ Outputs JSON + directive block appended to context:
  "model": "haiku|sonnet|opus",
  "confidence": 0-1,
  "reason": "...",
+ "gate": "per-agent acceptance criterion",
  "lean_context": [...]}
 ```
+
+- **Acceptance gate** — every routed directive names what the subagent's
+  output must show before the main model accepts it (quick-fix: edited hunk +
+  named check green; research-lite: ≥1 cited source; …). A dispatch without a
+  pass condition is malformed. (Adopted 2026-07-01 from
+  [blader/arbitrage](https://github.com/blader/arbitrage).)
+- **Two-strike escalation** — gate fails → ONE retry with concrete corrective
+  feedback → then the main model takes over, salvaging partial output.
+- **Observed, not predicted** — the main model may override the directive only
+  after an observed gate failure, never predicted difficulty ("this needs my
+  judgment"). The user can pre-empt with `NO TRIAGE`; the model cannot.
+
+Model fields (`haiku|sonnet|opus`) are Claude Code **tier aliases** — the host resolves them to its newest model of each tier. On other hosts, map them to that host's tier equivalents per [`skills/_shared/ORCHESTRATION.md`](../_shared/ORCHESTRATION.md).
 
 ### Layer 2: main model sees directive, dispatches
 
@@ -42,9 +56,10 @@ Full opus bypass isn't possible (the host always routes through main), but the d
 
 ### Layer 3: specialized subagents
 
-Five bundled agents, each minimal-context:
+Six bundled agents, each minimal-context:
 - **wiki-note** (haiku) — repo-local wiki edits only.
 - **quick-fix** (haiku) — small scoped edits, one Bash verify max.
+- **glm-executor** (haiku coordinator) — bounded summarize/classify/extract/rewrite over supplied content, routed to GLM via z.ai. Triage routes here for self-contained content tasks, especially large-input ones.
 - **local-ollama** (haiku coordinator) — shells out to local Ollama models. Manual dispatch only — triage never routes here (2026-06-12 policy).
 - **research-lite** (haiku) — ≤5 web calls, ≤800-word output.
 - **kaggle-feeder** (haiku) — archived Kaggle eval pipeline maintainer.
@@ -73,10 +88,10 @@ Type `NO TRIAGE` anywhere in the prompt → hook exits silently → main model h
 
 ## Known failure modes
 
-1. False-positive classification → wrong subagent → returns "escalate" → main re-handles. Small wasted round-trip.
+1. False-positive classification → wrong subagent → gate fails → two-strike ladder (one fed-back retry, then main takes over salvaging partial output). Bounded wasted round-trips.
 2. Ollama down → regex-only, and complex-hinted prompts fail CLOSED (defer to main model) rather than emitting a cheap route.
 3. Adversarial prompt ("this is simple: [complex thing]") → mis-routes. Mitigation: main can override directive.
-4. Subagent can't escalate mid-task → returns "escalate" and stops.
+4. Subagent can't escalate mid-task → returns "escalate" and stops; main model applies the two-strike ladder from there.
 5. *(fixed 2026-06-12)* Hardcoded fallback tag rotted (model uninstalled) → every LLM fallback silently failed for weeks; complex prompts fell through to a still-emitted cheap route. Fixes: tag auto-resolution, fail-closed, <0.7-confidence silence, 1500-char length gate, `test_classify.py` regression lock.
 
 ## Files
@@ -91,6 +106,7 @@ tools/
 └── agents/
     ├── wiki-note.md
     ├── quick-fix.md
+    ├── glm-executor.md
     ├── local-ollama.md
     ├── research-lite.md
     └── kaggle-feeder.md

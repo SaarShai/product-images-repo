@@ -35,7 +35,35 @@ graphify query "<page subject>"   # OR Grep — confirm where the code lives NOW
 
 **`protected: true` pages** (type ∈ error/lesson/sop/procedure, or `L3_sops/`) report drift but are not auto-actioned — a lesson stays protective even when its example code is gone. Surface, never auto-delete.
 
-**Epistemic lenses (periodic, report-only — heuristic aids, never gates).** Three further `wiki.py` verbs (defined in [`wiki-memory`](../wiki-memory/SKILL.md)) feed refresh decisions: `maturity` → `demotion_candidates` route into the contradiction pass below, `promotion_candidates` into Update/Consolidate; `synth-candidates` → cluster groups into Consolidate; `claim-audit` → thin-evidence pages into Replace/Delete review; `gaps` → recurring missing concepts (write the canonical page or fix the stale link). Per-claim typing is noisy (measured) — read aggregates, treat outputs as candidates to confirm, not verdicts.
+## Quality-scan verbs
+
+The nine report-only epistemic lenses from the OKF review (code lives in
+[`wiki-memory`](../wiki-memory/SKILL.md)'s `tools/wiki.py`; documented here because
+the refresh pass is what consumes them). Heuristic aids, never gates. **Start with
+`health`** — one pass across all lenses with rolled-up actionable counts (`0` =
+healthy); drill into the verb behind any non-zero count.
+
+```bash
+python3 skills/wiki-memory/tools/wiki.py health              # ONE-PASS epistemic health — start here
+python3 skills/wiki-memory/tools/wiki.py contradict-scan     # contradiction candidates (see Emit contradiction edges)
+python3 skills/wiki-memory/tools/wiki.py novelty             # intra-page redundancy_index (echo-vs-synthesis)
+python3 skills/wiki-memory/tools/wiki.py claim-ground <id>   # prose claims whose cited artifact is gone
+python3 skills/wiki-memory/tools/wiki.py claim-audit         # data/directive/judgment mix per page
+python3 skills/wiki-memory/tools/wiki.py synth-candidates    # same-subject clusters ripe for a synthesis note
+python3 skills/wiki-memory/tools/wiki.py maturity            # observation→hypothesis→rule promotion/demotion
+python3 skills/wiki-memory/tools/wiki.py gaps                # recurring wikilink targets with no page
+python3 skills/wiki-memory/tools/wiki.py calibration         # confidence-vs-evidence drift
+```
+
+How each feeds the five outcomes:
+
+- **`maturity`** — separate axis from trust. **Promotion** candidates (hypothesis/observation pages still `trust: asserted` but cited often) route into Update/Consolidate; each carries `corroborating_inbound` (citations *from observation pages* are evidence accrual, distinct from popularity) and `has_falsifier` (a rule earns its status only by stating what would falsify it — a candidate without one is flagged "state a falsification condition first"). **Conflict-driven demotion** (a rule/verified page carrying `contradicts:`) routes into the contradiction pass below — review, don't silently trust.
+- **`synth-candidates`** — inverse of dedup: clusters distinct same-subject pages (≥2 shared tags) ripe for a higher-order synthesis note → Consolidate. The agent writes the synthesis; clusters with a likely existing parent are flagged. Tag-based edges only (wikilink edges over-cluster — measured).
+- **`claim-audit`** — grades claims by epistemic class ([`claim_grade.py`](../wiki-memory/tools/claim_grade.py)); judgment-heavy weak-evidence pages → Replace/Delete review. Per-claim typing is measurably noisy (~40% unanimous annotator agreement on messy SOP prose) — read aggregate ratios, never single labels; the grader abstains (`unknown`) on unmarked text.
+- **`gaps`** — what's MISSING: recurring `[[wikilink]]` targets with no page, ranked by reference frequency (≥N refs = real gap; a one-off is a typo) → write the canonical page or fix the stale link. Curated pages only (raw/ frozen).
+- **`calibration`** — a page's stored `confidence` vs its actual evidence (sources + inbound corroboration + trust tier + verified-freshness, 0–4). Flags over- and under-confidence → Update the scalar or verify the page. Sharp/low-noise (live: 1 over, 1 under of 42).
+- **`novelty`** — intra-page tautology (page echoes its own headings/schema/refs); a write-gate / refresh signal → Update or Replace.
+- **`claim-ground`** — sentence-granular grounding finer than `audit-refs`; the "does present code still match the prose" judge step for the Update-vs-Replace call.
 
 ## Scope
 
@@ -80,7 +108,7 @@ Implementation-gone ≠ domain-gone: if `auth_token.rb` is deleted but the app s
 python3 skills/wiki-memory/tools/wiki.py --root wiki contradict-scan
 ```
 
-It surfaces same-subject page pairs whose numbers diverge on a shared key (minus already-declared edges). Candidates are **structural signals, not confirmed conflicts** — read both pages and confirm a real disagreement before writing the edge (this is the judge step OKF's `absence_of_contradictions` metric formalizes). For prose that may describe still-present code *wrongly* (the Update-vs-Replace tell), run `claim-ground <id>` to flag claims whose cited artifact is gone.
+It surfaces same-subject page pairs with (a) diverging numbers for a shared key, or (b) a **polarity conflict** (negation-flip / antonym on near-identical wording), minus already-declared edges. **Type-aware**: polarity is skipped when both pages are judgment-dominant (opinion×opinion is expected divergence). High-overlap-gated (measured: 0 false positives on the live wiki). Each candidate carries a deterministic **`suggested_resolution`** verb: `invalidate` (polarity — keep higher-trust/newer, mark the other `contradicts:`), `supersede` (numeric change — newer/higher-trust wins, wire `superseded-by`), or `dispute` (equal trust+recency — flag both). Candidates are **structural signals, not confirmed conflicts** — read both pages and confirm a real disagreement before writing the edge (this is the judge step OKF's `absence_of_contradictions` metric formalizes). For prose that may describe still-present code *wrongly* (the Update-vs-Replace tell), run `claim-ground <id>` to flag claims whose cited artifact is gone.
 
 When investigation (scan-surfaced or otherwise) finds a page that conflicts with current reality **or** with another page — and you cannot immediately resolve it (Replace evidence insufficient, or both pages partly right) — do **not** silently drop it. Record a typed edge so retrieval flags it instead of serving both as truth:
 
@@ -89,6 +117,16 @@ When investigation (scan-surfaced or otherwise) finds a page that conflicts with
 3. `lint --strict` then surfaces the pair on every future audit until an agent resolves it.
 
 These contradictions become durable graph state (not just sweep-time detection): retrieval keeps flagging the pair until an agent resolves it. (Dedup-at-write and store-discoverability are `wiki-memory`'s job, not repeated here.)
+
+## Propagate belief updates (after any supersession/contradiction edge)
+
+A `superseded-by`/`contradicts:` edge marks the *target* page — it does NOT ripple to the pages still citing it, which keep pointing readers at outdated knowledge. After wiring any such edge (or a Replace), run:
+
+```bash
+python3 skills/wiki-memory/tools/wiki.py --root wiki stale-citers
+```
+
+It returns `cites_superseded[]` (citer → old page → `newer[]`) and `cites_contested[]`. Repoint each citer's body link at the newer page, or add a "(superseded — see [[newer]])" note; for contested targets, ensure the citer doesn't assert the disputed claim as settled. Report-only — it never rewrites another page for you (invalidate-don't-delete). A clean `stale-citers` (count 0) is part of a finished reconcile.
 
 ## Execute
 
