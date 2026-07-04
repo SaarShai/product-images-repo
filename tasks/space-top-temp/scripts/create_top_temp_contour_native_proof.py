@@ -412,7 +412,7 @@ def build_art() -> tuple[Image.Image, Image.Image, Image.Image, dict]:
         "timestamp": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "method": METHOD,
         "source_svg": str(SVG.relative_to(REPO)),
-        "source_attachment": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/space/top-temp.svg",
+        "source_attachment": "<DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/space/top-temp.svg",
         "viewbox_crop": list(CROP),
         "outer_path_index": paths[0].element_index,
         "cutout_path_indices": [paths[1].element_index, paths[2].element_index],

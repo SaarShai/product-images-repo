@@ -24,7 +24,7 @@
     {
       "role": "authoritative_svg_template",
       "path": "assets/templates/two-panel-template.svg",
-      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/template 01.svg",
+      "source": "<DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/template 01.svg",
       "status": "present",
       "sha256": "d3e4403836eccc2c9e5dab45e4f4f0044436c0c8c5d79052e60d9e9f26bbfba8"
     }

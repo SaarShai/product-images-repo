@@ -2,7 +2,7 @@ import subprocess, os
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from PIL import Image
-SRC="/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/cafe/images"
+SRC="<DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/cafe/images"
 OUT=os.path.join(SRC,"Gelato")
 D="tasks/cafe-jars-restyle"; PROMPT=D+"/inputs/style_A.md"
 TMP=D+"/inputs/_batchA"; Path(TMP).mkdir(parents=True,exist_ok=True)

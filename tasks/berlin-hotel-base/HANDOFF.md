@@ -8,7 +8,7 @@ Another agent should be able to resume cold from this file. Read it top to botto
 
 ## 1. THE ARTWORK & WHAT WE'RE DOING
 
-- **Source (READ-ONLY, Google Drive):** `/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/berlin/Images/berlin-artwork-hires-4x-4192x3848 v2.png` (4192×3848, RGB).
+- **Source (READ-ONLY, Google Drive):** `<DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/berlin/Images/berlin-artwork-hires-4x-4192x3848 v2.png` (4192×3848, RGB).
 - **Working copy (edit here, never write to Drive without explicit ask):** `tasks/berlin-hotel-base/work/src.png`.
 - **Subject:** a fine architectural **watercolor + ink** Berlin skyline. Landmarks, left→right:
   1. **Fernsehturm** (TV tower, Alexanderplatz) — far-left.

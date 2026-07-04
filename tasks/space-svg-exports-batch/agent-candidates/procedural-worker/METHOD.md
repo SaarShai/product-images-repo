@@ -5,8 +5,8 @@
 - Used the repo-local SVG-template workflow and review-judge checklist.
 - Did not use image-generation APIs. Built a procedural/PIL fallback generator in this worker folder.
 - Chose two non-excluded source SVGs:
-  - `/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/space/svg-exports/np01-back-top.svg`
-  - `/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/space/svg-exports/np02-front-top.svg`
+  - `<DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/space/svg-exports/np01-back-top.svg`
+  - `<DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/space/svg-exports/np02-front-top.svg`
 - Excluded `np01-front-top.svg` as requested.
 - For each selected SVG, treated `path[0]` as the outer contour and all later paths as cutout/keep-clear geometry.
 - Built masks as `paintable = outer contour - dilated cutouts`, then used an eroded safe-pocket mask for decorative modules.

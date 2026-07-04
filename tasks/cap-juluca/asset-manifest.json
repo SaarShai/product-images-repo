@@ -23,9 +23,9 @@
     "tasks/cap-juluca/refs/ref02.png"
   ],
   "refs_original": [
-    "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/cap juluca/cap juluca reference.jpeg",
-    "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/cap juluca/ref01.png",
-    "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/cap juluca/ref02.png"
+    "<DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/cap juluca/cap juluca reference.jpeg",
+    "<DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/cap juluca/ref01.png",
+    "<DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/cap juluca/ref02.png"
   ],
   "workflow": "docs/svg-template-illustration-workflow.md",
   "skill": "svg-geometry-style-illustration",

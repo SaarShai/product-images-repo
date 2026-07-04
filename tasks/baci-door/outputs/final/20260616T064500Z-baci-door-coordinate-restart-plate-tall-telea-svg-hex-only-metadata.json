@@ -1,10 +1,10 @@
 {
   "timestamp": "2026-06-16T06:40:11Z",
-  "command": "scripts/export_svg_template_fit.py tasks/baci-door/outputs/generated/20260616T064500Z-baci-door-coordinate-restart-plate-tall-telea-svg-hex-only.png --template-svg /Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/space/baci door.svg --out-dir tasks/baci-door/outputs/final --prefix 20260616T064500Z-baci-door-coordinate-restart-plate-tall-telea-svg-hex-only --require-pass",
+  "command": "scripts/export_svg_template_fit.py tasks/baci-door/outputs/generated/20260616T064500Z-baci-door-coordinate-restart-plate-tall-telea-svg-hex-only.png --template-svg <DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/space/baci door.svg --out-dir tasks/baci-door/outputs/final --prefix 20260616T064500Z-baci-door-coordinate-restart-plate-tall-telea-svg-hex-only --require-pass",
   "source_image": "tasks/baci-door/outputs/generated/20260616T064500Z-baci-door-coordinate-restart-plate-tall-telea-svg-hex-only.png",
   "source_sha256": "ad02bfcca042f10dc29b689299d2e36ef56909616349b9c5c8c0e67cc0afc5d5",
   "source_dimensions": "923x1704",
-  "template_svg": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/space/baci door.svg",
+  "template_svg": "<DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/space/baci door.svg",
   "template_sha256": "09d5aef35dfd868ec2298ef335e6654809aad043ad64df0ab8467e68cdfa627e",
   "template_viewbox": [
     0.0,

@@ -1,7 +1,7 @@
 import subprocess, os
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
-SRC="/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/cafe/images"
+SRC="<DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/cafe/images"
 OUT=os.path.join(SRC,"Gelato")
 NUMS=[f"{i:03d}" for i in range(1,17)]
 def run(cmd):

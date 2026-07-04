@@ -2,7 +2,7 @@
   "timestamp": "2026-06-17T06:12:21Z",
   "method": "procedural_pil_svg_native_watercolor_control_panel",
   "seed": 2026061607,
-  "source_svg": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/space/svg-exports/np01-back-top.svg",
+  "source_svg": "<DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/space/svg-exports/np01-back-top.svg",
   "source_svg_sha256": "c28e125f9479c68f3952f4b7eeb4cabc6a88800ff0436288ca8167abc98f64cb",
   "svg_role_map": {
     "outer_contour": "path[0]",

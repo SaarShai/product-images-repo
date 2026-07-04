@@ -3,7 +3,7 @@
     "timestamp": "2026-06-17T06:12:21Z",
     "method": "procedural_pil_svg_native_watercolor_control_panel",
     "seed": 2026061607,
-    "source_svg": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/space/svg-exports/np01-back-top.svg",
+    "source_svg": "<DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/space/svg-exports/np01-back-top.svg",
     "source_svg_sha256": "c28e125f9479c68f3952f4b7eeb4cabc6a88800ff0436288ca8167abc98f64cb",
     "svg_role_map": {
       "outer_contour": "path[0]",
@@ -77,7 +77,7 @@
     "timestamp": "2026-06-17T06:12:35Z",
     "method": "procedural_pil_svg_native_watercolor_control_panel",
     "seed": 2026061608,
-    "source_svg": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/space/svg-exports/np02-front-top.svg",
+    "source_svg": "<DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/space/svg-exports/np02-front-top.svg",
     "source_svg_sha256": "18048d602b5c54a8291046819c27e27ee8088376efb1f3e7cced0f6218087d78",
     "svg_role_map": {
       "outer_contour": "path[0]",

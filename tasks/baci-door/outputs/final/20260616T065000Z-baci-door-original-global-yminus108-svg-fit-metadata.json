@@ -1,10 +1,10 @@
 {
   "timestamp": "2026-06-16T06:50:27Z",
-  "command": "scripts/export_svg_template_fit.py /Users/za/.codex/generated_images/019ecf0b-d53f-7151-8110-02dc2922dddf/ig_0938d5afc29c6ba8016a30eaf125e8819195fbd8941258f8f4.png --template-svg /Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/space/baci door.svg --out-dir tasks/baci-door/outputs/final --prefix 20260616T065000Z-baci-door-original-global-yminus108-svg-fit --art-offset-y -108 --require-pass",
+  "command": "scripts/export_svg_template_fit.py /Users/za/.codex/generated_images/019ecf0b-d53f-7151-8110-02dc2922dddf/ig_0938d5afc29c6ba8016a30eaf125e8819195fbd8941258f8f4.png --template-svg <DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/space/baci door.svg --out-dir tasks/baci-door/outputs/final --prefix 20260616T065000Z-baci-door-original-global-yminus108-svg-fit --art-offset-y -108 --require-pass",
   "source_image": "/Users/za/.codex/generated_images/019ecf0b-d53f-7151-8110-02dc2922dddf/ig_0938d5afc29c6ba8016a30eaf125e8819195fbd8941258f8f4.png",
   "source_sha256": "574bfe4156e7d716b75b0885ff699b0755636d76f14a675169172b18388edca7",
   "source_dimensions": "923x1704",
-  "template_svg": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/space/baci door.svg",
+  "template_svg": "<DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/space/baci door.svg",
   "template_sha256": "09d5aef35dfd868ec2298ef335e6654809aad043ad64df0ab8467e68cdfa627e",
   "template_viewbox": [
     0.0,

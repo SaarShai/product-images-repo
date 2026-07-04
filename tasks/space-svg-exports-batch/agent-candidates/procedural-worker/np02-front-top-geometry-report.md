@@ -1,6 +1,6 @@
 # SVG Geometry Report
 
-Source: `/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/space/svg-exports/np02-front-top.svg`
+Source: `<DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/space/svg-exports/np02-front-top.svg`
 ViewBox: `0 0 1644.0986 1628.0378`
 
 ## Active Geometry Bounds

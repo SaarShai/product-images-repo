@@ -25,10 +25,10 @@ ANCHORS = ROOT / "tasks/whole-panel-build/anchors"
 B0 = ROOT / "tasks/whole-panel-build/B0-judge"
 # combined source SVGs (lines+art) live outside the repo (too big for git)
 SRC = {
-    "princess-narrow-01": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/princess/princess narrow panel template and illustration.svg",
-    "space-stabilizer-01": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/space/space stabilizer example.svg",
-    "space-narrow-panels-01": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/space/space narrow panels example.svg",
-    "princess-panels-FAIL-01": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/princess/princess panels template FAIL.svg",
+    "princess-narrow-01": "<DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/princess/princess narrow panel template and illustration.svg",
+    "space-stabilizer-01": "<DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/space/space stabilizer example.svg",
+    "space-narrow-panels-01": "<DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/space/space narrow panels example.svg",
+    "princess-panels-FAIL-01": "<DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/princess/princess panels template FAIL.svg",
     "window-fit-01": "/Users/za/Downloads/example - window fit.svg",
 }
 WIDTH = 900

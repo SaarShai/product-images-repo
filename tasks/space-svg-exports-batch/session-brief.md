@@ -5,7 +5,7 @@
 Create template-constrained watercolor control-panel illustrations for every
 eligible non-top SVG in:
 
-`/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/space/svg-exports`
+`<DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/space/svg-exports`
 
 Exclude `np01-front-top.svg`, `np01-back-top.svg`, `np02-front-top.svg`, and
 `np02-back-top.svg`.

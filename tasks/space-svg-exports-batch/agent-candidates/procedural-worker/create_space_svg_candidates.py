@@ -27,7 +27,7 @@ from PIL import Image, ImageChops, ImageDraw, ImageFilter
 WORKER = Path(__file__).resolve().parent
 REPO = WORKER.parents[3]
 SOURCE_DIR = Path(
-    "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/"
+    "<DRIVE_ROOT>/"
     "Wanderland Folder/Files/Products/Screenery/production files/space/svg-exports"
 )
 

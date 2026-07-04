@@ -3,7 +3,7 @@
   "task": "top-temp-workflow-test",
   "title": "Top Temp Workflow Test",
   "copy_assets": true,
-  "source_svg_original": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/space/top-temp.svg",
+  "source_svg_original": "<DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/space/top-temp.svg",
   "task_svg": "tasks/top-temp-workflow-test/source/template.svg",
   "style_references_original": [
     "/Users/za/Downloads/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png",

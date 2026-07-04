@@ -3,7 +3,7 @@
 ## Source
 
 - Attached contour: `source/top-temp.svg`
-- Original file: `/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/space/top-temp.svg`
+- Original file: `<DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/space/top-temp.svg`
 
 ## Method
 

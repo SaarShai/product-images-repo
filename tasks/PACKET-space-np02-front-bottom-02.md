@@ -39,7 +39,7 @@ number alone — LOOK at the raw with your own vision. If your last line is a pr
 - Skill: `skills/svg-geometry-style-illustration/SKILL.md` → "Validated Lessons" section.
 
 ## Target identity
-- Source SVG: `/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/space/svg-exports/np02-front-bottom 02.svg`
+- Source SVG: `<DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/space/svg-exports/np02-front-bottom 02.svg`
 - Style references (copy from the sibling task):
   - `tasks/space-np01-front-bottom-01/refs/ChatGPT Image Jun 9, 2026, 11_17_34 PM.png`
   - `tasks/space-np01-front-bottom-01/refs/ChatGPT Image Jun 9, 2026, 11_19_45 PM.png`
@@ -58,7 +58,7 @@ Run from repo root. `T=tasks/space-np02-front-bottom-02`.
 **1. Scaffold:**
 ```
 mkdir -p $T/{source,refs,experiments-outset,outputs/generated,prompts,RESULTS}
-cp "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/space/svg-exports/np02-front-bottom 02.svg" "$T/source/template.svg"
+cp "<DRIVE_ROOT>/Wanderland Folder/Files/Products/Screenery/production files/space/svg-exports/np02-front-bottom 02.svg" "$T/source/template.svg"
 cp tasks/space-np01-front-bottom-01/refs/*.png $T/refs/
 ```
 
