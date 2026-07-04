@@ -14,7 +14,7 @@
 # Output cells: tasks/<slug-from-base>/experiments-outset/<name>-s<N>/raw.png
 # State: .genbatch/<name>.{pgid,log,outdir}
 set -u
-cd "/Users/za/Documents/product images repo"
+cd "$(cd "$(dirname "$0")/.." && pwd)"
 GEN="scripts/geom_adherence_test.py"
 STATE=".genbatch"; mkdir -p "$STATE"
 

@@ -3,7 +3,7 @@
 # Does NOT edit geom_adherence_test.py — only wraps it.
 # Usage: _routec_run.sh <id> <model openai|nanobanana> <map.png> <prompt.md> <outdir>
 set -u
-ROOT="/Users/za/Documents/product images repo"
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT" || exit 1
 ID="$1"; MODEL="$2"; MAP="$3"; PROMPT="$4"; OUTDIR="$5"
 SVG="tasks/space-np01-front-bottom-02/source/template.svg"

@@ -23,10 +23,11 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
+BRAINER_REPO = os.environ.get("BRAINER_REPO", os.path.expanduser("~/Documents/Brainer"))
 TRANSCRIPTS_DIR = Path.home() / ".claude/projects/-Users-za-Documents-Brainer"
-OUTPUT_PATH = Path("/Users/za/Documents/Brainer/scratch/transcript_report.json")
-CHECKPOINTS_DIR = Path("/Users/za/Documents/Brainer/.brainer/checkpoints")
-SESSIONS_DIR = Path("/Users/za/Documents/Brainer/.brainer/sessions")
+OUTPUT_PATH = Path(BRAINER_REPO) / "scratch" / "transcript_report.json"
+CHECKPOINTS_DIR = Path(BRAINER_REPO) / ".brainer" / "checkpoints"
+SESSIONS_DIR = Path(BRAINER_REPO) / ".brainer" / "sessions"
 
 # ─── helpers ────────────────────────────────────────────────────────────────
 
