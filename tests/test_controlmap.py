@@ -3,7 +3,7 @@ import json
 import numpy as np
 from PIL import Image, ImageDraw
 
-from studio.controlmap import _dilate, build_from_guide, cut_layer, panel_silhouette
+from studio.controlmap import _dilate, build_from_guide, cut_layer, panel_silhouette, score
 
 
 def test_dilate_does_not_wrap():
@@ -51,6 +51,42 @@ def _synthetic_guide(tmp_path):
     sp = tmp_path / "toy.spec.json"
     sp.write_text(json.dumps(spec))
     return p, sp
+
+
+def test_score_matching_and_bucket_drift(tmp_path):
+    # candidate at a DIFFERENT (bucket-snapped) size must still score high
+    mask = Image.new("L", (100, 200), 0)
+    ImageDraw.Draw(mask).rectangle([10, 20, 90, 180], fill=255)
+    mp = tmp_path / "m.png"; mask.save(mp)
+    cand = Image.new("RGB", (57, 153), "white")  # ~bucket-drifted dims
+    ImageDraw.Draw(cand).rectangle([6, 15, 51, 138], fill=(120, 60, 40))
+    cp = tmp_path / "c.png"; cand.save(cp)
+    rep = score(cp, mp)
+    assert rep["shape_pass"] and rep["silhouette_iou"] > 0.9
+
+
+def test_score_is_shape_only_never_content(tmp_path):
+    # documents the right_s1 lesson: an empty-but-outlined panel PASSES shape.
+    mask = Image.new("L", (100, 200), 0)
+    ImageDraw.Draw(mask).rectangle([10, 20, 90, 180], fill=255)
+    mp = tmp_path / "m.png"; mask.save(mp)
+    empty = Image.new("RGB", (100, 200), "white")
+    ImageDraw.Draw(empty).rectangle([10, 20, 90, 180], outline=(80, 80, 80), width=3)
+    ep = tmp_path / "e.png"; empty.save(ep)
+    rep = score(ep, mp)
+    assert rep["shape_pass"]  # this is WHY the vision judge is mandatory
+    assert "vision judge" in rep["note"]
+
+
+def test_score_rejects_wrong_shape(tmp_path):
+    mask = Image.new("L", (100, 200), 0)
+    ImageDraw.Draw(mask).rectangle([10, 20, 90, 180], fill=255)
+    mp = tmp_path / "m.png"; mask.save(mp)
+    blob = Image.new("RGB", (100, 200), "white")
+    ImageDraw.Draw(blob).ellipse([30, 60, 70, 120], fill=(120, 60, 40))
+    bp = tmp_path / "b.png"; blob.save(bp)
+    rep = score(bp, mp)
+    assert not rep["shape_pass"]
 
 
 def test_build_from_guide(tmp_path):

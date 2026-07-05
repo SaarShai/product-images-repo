@@ -228,17 +228,51 @@ def build_from_guide(guide_path, spec_path, outdir=None, content_path=None):
             "body_frac": round(float(body.mean()), 4)}
 
 
+def score(candidate_path, mask_path, iou_min=0.85, white=238):
+    """Silhouette-IoU of a generated candidate vs a panel mask (CLI gate).
+
+    Candidate is resized to the mask dims first — fal snaps image_size to
+    buckets (e.g. 820x2105 -> 576x1536), so raw dims rarely match the mask.
+    NOTE: this gate confirms SHAPE only, never content — a near-empty panel
+    can still score >0.97 (Marriott r3 right_s1). Always pair with a VLM
+    content/style judge. [[region-iou-not-fit-calibration]]
+    """
+    mask = np.array(Image.open(mask_path).convert("L")) > 127
+    mh, mw = mask.shape
+    img = Image.open(candidate_path).convert("RGB").resize((mw, mh), Image.NEAREST)
+    a = np.array(img)
+    r, g, b = (a[..., i].astype(int) for i in range(3))
+    sil = panel_silhouette(~((r > white) & (g > white) & (b > white)),
+                           dilate_iters=0, close_bottom=False)
+    iou = float((sil & mask).sum()) / float((sil | mask).sum() or 1)
+    return {"candidate": str(candidate_path), "mask": str(mask_path),
+            "silhouette_iou": round(iou, 4), "iou_min": iou_min,
+            "shape_pass": iou >= iou_min,
+            "note": "shape only — vision judge still required"}
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--spec", required=True)
+    ap.add_argument("--spec")
     ap.add_argument("--width", type=int, default=1800, help="full-template render width px")
     ap.add_argument("--outdir")
     ap.add_argument("--content", help="interior content edges json")
     ap.add_argument("--guide", help="derive from a skyline_panel guide PNG instead of the SVG cut layer")
+    ap.add_argument("--score", help="candidate PNG to gate: --score cand.png --mask panel-mask.png")
+    ap.add_argument("--mask", help="panel mask for --score")
+    ap.add_argument("--iou-min", type=float, default=0.85)
     a = ap.parse_args()
-    if a.guide:
+    if a.score:
+        if not a.mask:
+            ap.error("--score requires --mask")
+        print(json.dumps(score(a.score, a.mask, a.iou_min)))
+    elif a.guide:
+        if not a.spec:
+            ap.error("--guide requires --spec")
         print(json.dumps(build_from_guide(a.guide, a.spec, a.outdir, a.content)))
     else:
+        if not a.spec:
+            ap.error("--spec required (or use --score)")
         print(json.dumps(build(a.spec, a.width, a.outdir, a.content)))
 
 
