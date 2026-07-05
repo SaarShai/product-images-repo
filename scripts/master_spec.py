@@ -140,7 +140,15 @@ def build(render_path, census_path, scale_pct, outdir):
             if len(yrows):
                 cy0 = max(wy0 + yrows.min() - 6, 0)
         cy1 = min(wy0 + rows.max() + 7, H)
-        cut = col["black"][cy0:cy1].copy()
+        black_cut = col["black"][cy0:cy1].copy()
+        # the template also carries BLACK DASHED guide strokes (e.g. along the
+        # stabilizer-slot stripes) — annotation, not cuts, and dashes leak into
+        # generated art as dot marks (user, turn 66). Real cuts are long
+        # connected strokes / hole rings; dash segments are tiny blobs — drop them.
+        for comp in components(black_cut):
+            if comp.sum() < 300:
+                black_cut &= ~comp
+        cut = black_cut.copy()
         if adaptive_top:
             rel_sh = shoulder - cy0
             ydome = col["yellow"][cy0:cy1].copy()
@@ -157,9 +165,33 @@ def build(render_path, census_path, scale_pct, outdir):
 
         mask_img = ((paint | cut & body) * 255).astype("uint8")  # paintable incl. stroke band, minus holes
         mask_img[holes] = 0
-        ctrl = _dilate(cut, 2)
+        # control map: SOLID edges only — dashed annotation strokes leak into the
+        # art as painted dot marks (user, turn 66). Outer contour = the smooth
+        # boundary of the closed silhouette (covers the adaptive dome top);
+        # interior edges = the true black die cuts.
+        # close (fill dash notches) then open (shave dash bumps): the dome top was
+        # bridged from dashes and scallops in both directions
+        body_smooth = ~_dilate(~_dilate(body, 9), 9)
+        body_smooth = _dilate(~_dilate(~body_smooth, 7), 7)
+        outer_edge = body_smooth & ~(~_dilate(~body_smooth, 2))
+        ctrl = _dilate(black_cut, 2) | outer_edge
         if name == "door":
-            ctrl = ctrl | _dilate(col["orange"][cy0:cy1], 2)
+            # orange door anchor is dashed — never trace its pixels (dash leak).
+            # Draw a synthetic SOLID arch from the anchor's percentile bbox:
+            # straight sides + semicircular top, 3px stroke.
+            oy, ox = np.where(col["orange"][cy0:cy1])
+            if len(ox) > 50:
+                from PIL import ImageDraw
+                x0o, x1o = int(np.percentile(ox, 2)), int(np.percentile(ox, 98))
+                y0o, y1o = int(np.percentile(oy, 2)), int(np.percentile(oy, 98))
+                arch = Image.new("L", (cut.shape[1], cut.shape[0]), 0)
+                dr = ImageDraw.Draw(arch)
+                r = (x1o - x0o) // 2
+                dr.arc([x0o, y0o, x1o, y0o + 2 * r], 180, 360, fill=255, width=3)
+                dr.line([x0o, y0o + r, x0o, y1o], fill=255, width=3)
+                dr.line([x1o, y0o + r, x1o, y1o], fill=255, width=3)
+                dr.line([x0o, y1o, x1o, y1o], fill=255, width=3)
+                ctrl = ctrl | (np.array(arch) > 127)
         forb = col["red"][cy0:cy1]
         # forbidden stripes as filled boxes (dashes -> solid): per connected x-band
         fx = np.where(forb.any(axis=0))[0]

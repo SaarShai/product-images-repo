@@ -39,3 +39,17 @@ Notes:
 - spec/guide/mask/control files exist at the reported paths (`ls` proof).
 - Preflight aspect check passed.
 - Every candidate has BOTH gate JSONs; verdicts quoted, not paraphrased.
+
+## Control maps: SOLID strokes only (2026-07-05, user rule)
+
+Dashed strokes in a control map LEAK into generated art as painted dot marks
+(proven: Marriott r12 dome tops + door-anchor dashes). Templates carry dashed
+ANNOTATION lines (zone stripes, anchors, guides) and even black dashed guide
+strokes that pixel-classify identically to cuts. Rules for any packet/control
+builder (see scripts/master_spec.py for the reference implementation):
+- Drop small black components (< ~300 px at ~0.55 px/pt) — real cuts are long
+  strokes or hole rings; dash segments are tiny blobs.
+- Outer contour = smooth boundary of the CLOSED silhouette (close-then-open to
+  kill dash scallops), never the raw dash-bridged arc.
+- Never trace dashed anchor shapes — draw a SYNTHETIC solid outline from the
+  anchor's percentile bbox (arch = straight sides + semicircle top).
