@@ -54,3 +54,20 @@ Proven Marriott r5: `falgen.py --mode flux2edit --image <full-bleed cand> --refs
 - Every candidate in the results library (`studio.library.add_result`, lib `studio/library_store`) with route + scores.
 - Comparison board built; gate JSONs quoted; human shown ALL candidates full-size, not a sample.
 - Nothing promoted to production `Images/finals` without explicit user approval.
+
+## Internal-cut geometry (2026-07-05, binding)
+
+Mask-cut fixes the OUTER silhouette only. Restyle engines (flux2edit) drift
+INTERNAL cut geometry (saloon-arch door cuts) — proven: r6/r7 arch off the cut
+path, option H shrank the whole facade (overlay board:
+`tasks/marriott-hospital/outputs/geometry-overlay-board.jpg`). Rules:
+- Restyle+mask-cut = PREVIEW-ONLY for panels with internal cuts. Final art for
+  cut-bearing panels comes from the one-pass control route (cut edges in the
+  control channel) — geometry by construction.
+- Prompt-only style in the one-pass route COLLAPSES under a strong control
+  channel (r8: flat digital look + garbled painted text despite blank clause).
+  The style must ride in a LoRA trained on the TRUE flat-art style (Rule 0:
+  text-free, frame-free, opening-free crops — dirty crops teach text/substrate).
+- Acceptance for cut-bearing panels adds the OVERLAY check: red cut paths over
+  the candidate; painted structure must align with every internal cut. IoU
+  cannot see this.
