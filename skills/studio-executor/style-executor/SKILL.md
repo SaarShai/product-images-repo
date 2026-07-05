@@ -48,6 +48,9 @@ Proven Marriott r5: `falgen.py --mode flux2edit --image <full-bleed cand> --refs
 ## Finish chain (winners only)
 
 `scripts/reupscale.py --image <in> --out <out> --creativity 0.5 --resemblance 0.6 --factor 2` → `scripts/dehalo.py --image <in> --out <out>` → `scripts/white_key.py --image <in> --out <out>`. Assemble panels at their `bbox_svg` positions in the shared `viewbox` (read both from spec.jsons).
+- ASPECT LIMIT (clarity-upscaler): it only enlarges near-square-ish inputs (~0.5–2.0). Extreme-aspect panels (tall narrows ~0.43) come back DOWNSCALED at any factor (proven: 880×2052 → 520–832 tall, Marriott r14). For those, tile-upscale (split into square-ish tiles, upscale each, restitch) or keep native. Always verify output `size` is actually larger than input.
+- Re-cut hi-res at NATIVE resolution: resize the MASK up to the upscaled image, not the image down to the mask (else you throw away the resolution you just paid for).
+- Creative upscale can alter small fixed emblems — use low creativity (~0.4) on panels with just-fixed detail (crosses/badges).
 
 ## Done means
 

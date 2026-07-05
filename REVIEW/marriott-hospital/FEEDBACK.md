@@ -2,7 +2,32 @@
 
 Full folder path: `/Users/za/Documents/product images repo/REVIEW/marriott-hospital/`
 
-## CURRENT CANDIDATE: r13 (your 3 corrections applied)
+## CURRENT (r14) — "all in parallel": every open option resolved as an artifact
+
+**`r14-production-preview.jpg`** = the recommended set: hi-res door (2.5× upscaled,
+1800×2560, crosses preserved) + narrows + lighthouse stabilizers. **Main deliverable.**
+
+Pick per slot from the boards:
+- **Door — `door-options-board.jpg`**: (1) `r13_door_final.png` clean door-in-arch
+  [recommended — tightest to the die-cut]; (2) `r14_door_final.png` denser/ornate
+  (cupola, balustrade, cross-studded canopy) — richer, BUT the canopy dome overlaps
+  the arch cut line and a couple dome crosses are malformed; (3) `r14_door_noleafcross.png`
+  clean-glass (leaf crosses removed) if you'd rather add crosses as a VECTOR layer.
+- **Stabilizers — `stab-options-board.jpg`**: (1) `r14_stab1/2_final.png` lighthouse
+  tower [recommended — richest, reads as its own building]; (2) `r13` pilaster;
+  (3) `r12` lantern strip.
+
+Finish-chain note: the clarity upscaler enlarges the door (0.7 aspect) cleanly to
+2.5× but REFUSES the narrow panels (0.43 aspect → it downscales them); narrows are
+kept at native 880×2052 (already crisp restyle output). True narrow hi-res would
+need tile-upscaling — say the word and I'll do it.
+
+Still open for you: door choice, stab choice, and whether door emblems stay painted
+or become a vector layer. Once you pick, I lock the production set.
+
+---
+
+## r13 (your 3 corrections applied)
 
 Your turn-66 feedback → this round:
 1. **No dashed lines in geometry refs** — fixed at the source (master_spec.py):
