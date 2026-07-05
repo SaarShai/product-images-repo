@@ -1,0 +1,16 @@
+{"path": "tasks/_examples/fail/fairy-FAIL-K3-glossy-style-mismatch.png", "task": "_examples", "kind": "other", "ext": ".png", "px": [880, 1140], "kb": 999}
+{"path": "tasks/_examples/fail/fairy-FAIL-TL-faded-merged-tower.png", "task": "_examples", "kind": "other", "ext": ".png", "px": [720, 1000], "kb": 528}
+{"path": "tasks/_examples/fail/window-FAIL-Fill-blob-didnt-widen.png", "task": "_examples", "kind": "other", "ext": ".png", "px": [600, 611], "kb": 539}
+{"path": "tasks/_examples/fail/window-FAIL-stretch-only-rough-distort.png", "task": "_examples", "kind": "other", "ext": ".png", "px": [600, 611], "kb": 519}
+{"path": "tasks/_examples/pass/fairy-reflock-PASS-ML-zoom.png", "task": "_examples", "kind": "other", "ext": ".png", "px": [520, 960], "kb": 533}
+{"path": "tasks/_examples/pass/window-widen-AFTER-zoom.png", "task": "_examples", "kind": "other", "ext": ".png", "px": [600, 611], "kb": 525}
+{"path": "tasks/cap-juluca/refs/cap juluca reference.jpeg", "task": "cap-juluca", "kind": "style-ref", "ext": ".jpeg", "px": [975, 1280], "kb": 76}
+{"path": "tasks/cap-juluca/refs/ref01.png", "task": "cap-juluca", "kind": "style-ref", "ext": ".png", "px": [326, 608], "kb": 140}
+{"path": "tasks/cap-juluca/refs/ref02.png", "task": "cap-juluca", "kind": "style-ref", "ext": ".png", "px": [952, 566], "kb": 456}
+{"path": "tasks/marriott-hospital/refs/Birds Nest.png", "task": "marriott-hospital", "kind": "style-ref", "ext": ".png", "px": [1420, 1108], "kb": 2483}
+{"path": "tasks/marriott-hospital/refs/Police Station.jpg", "task": "marriott-hospital", "kind": "style-ref", "ext": ".jpg", "px": [1400, 787], "kb": 365}
+{"path": "tasks/marriott-hospital/refs/Updated Fire Station.png", "task": "marriott-hospital", "kind": "style-ref", "ext": ".png", "px": [1448, 1086], "kb": 2056}
+{"path": "tasks/marriott-hospital/refs/Updated Hospital 1.png", "task": "marriott-hospital", "kind": "style-ref", "ext": ".png", "px": [1536, 1024], "kb": 2397}
+{"path": "tasks/marriott-hospital/refs/Updated Kitchen 3.png", "task": "marriott-hospital", "kind": "style-ref", "ext": ".png", "px": [1536, 1024], "kb": 2523}
+{"path": "tasks/marriott-hospital/refs/Water Cube.png", "task": "marriott-hospital", "kind": "style-ref", "ext": ".png", "px": [1448, 1086], "kb": 1864}
+{"path": "tasks/marriott-hospital/source/Updated Hospital 1.png", "task": "marriott-hospital", "kind": "source-design", "ext": ".png", "px": [1536, 1024], "kb": 2397}

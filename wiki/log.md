@@ -173,3 +173,23 @@ context board before banking the result.
 
 Created `concepts/family-a-architectural-watercolor-panel-proven-recipe-geometry-gate-cap-juluca.md` from `page` template.
 
+## [2026-07-05] add | ONE-PASS geometry×style route SOLVED
+
+Added [[concepts/onepass-geometry-style-route-flux-control-lora]]: fal-ai/flux-control-lora-canny + trained style LoRA + control_lora_scale dial (0.35 proven) eliminates two-phase bottleneck. First-shot silhouette-IoU 0.975–0.988 on Cap Juluca + Marriott 3-panel. Evidence: .brainer/tenx/lora-pilot/ONEPASS-FINDINGS.md; commits 53f2e2e/7041dd4/d46e227. Wrapper: scripts/onepass_gen.py.
+
+## [2026-07-05] add | Two-gate acceptance proven necessary
+
+Added [[concepts/two-gate-acceptance-silhouette-iou-plus-vision-judge]]: silhouette-IoU alone insufficient (Marriott r3_right_s1 scored 0.976 but was near-empty). Vision judge caught content failure. Rule: always gate both geometry (measured IoU) and visual quality (vision judge). Never accept on IoU alone.
+
+## [2026-07-05] add | No painted text rule
+
+Added [[concepts/no-painted-text-vector-layer-or-omit]]: diffusion garbles signage/lettering. Rule: text is vector layer (.ai) / omitted (blank plaques) / manual (hand-draw post-gen). Auto-clause baked into onepass_gen.py. User rule 2026-07-04.
+
+## [2026-07-05] add | fal image_size bucket drift
+
+Added [[concepts/fal-image-size-bucket-drift]]: fal API snaps image_size to buckets (spec 820×2105 → actual 576×1536). Score resize-normalized, assemble at spec bbox_svg positions in shared viewbox. Silent failure: no error raised; assembly breaks on stale dimension assumptions.
+
+## [2026-07-05] add | Trained LoRA registry pattern
+
+Added [[concepts/trained-lora-registry-pattern]]: per-collection lora.json (lora_url / trigger_word / status); usable iff status == "COMPLETED". Enables onepass generation, prevents duplicate training, tracks collection style. Schema example: cap-juluca (CJWC), marriott (MRCH).
+
