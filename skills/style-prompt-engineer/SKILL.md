@@ -96,3 +96,14 @@ Ref+text vs text-only A/B, same source candidate, same prompt minus the ref:
 ref+text → watercolor matched the exemplar, silhouette-IoU 0.9989; text-only →
 weaker style AND broken geometry (IoU 0.8352). Board: `tasks/marriott-hospital/outputs/r6-ab-board.jpg`.
 Full r6 set (3 panels): IoU 0.987-0.9998, blank signage, style approved-pending-user.
+
+### china-marriott-luminous-storybook (read 2026-07-05 from the 6-screen collection; full read: tasks/marriott-hospital/style-read/STYLE-READ.md)
+style: "polished children's picture-book illustration, fine watercolor and gouache
+washes over delicate precise linework, fine paper-grain stipple texture, one
+harmonized scene palette, rich muted color, luminous glowing windows and lanterns,
+soft dusk light, dense storybook detail, architecturally faithful buildings with
+gently rounded corners"
+anti: "no photorealism, no 3D render, no felt or fabric or fiber texture, no
+embroidery, no loose sloppy washes, no heavy black outlines, no neon color, no flat vector look"
+note: the collection's fine stipple grain is PAPER texture, not fiber — this is the
+style a LoRA previously mis-learned as felt. Signature axis = luminous light.
