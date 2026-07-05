@@ -71,3 +71,20 @@ path, option H shrank the whole facade (overlay board:
 - Acceptance for cut-bearing panels adds the OVERLAY check: red cut paths over
   the candidate; painted structure must align with every internal cut. IoU
   cannot see this.
+
+## Route D — TWO-STAGE: control+LoRA init → ref-anchored restyle (2026-07-05, the cut-bearing + style-critical route)
+
+Solves the conflict where the control channel crushes style but restyle drifts cuts:
+1. **Stage 1 (geometry):** `onepass_gen.py` with the panel control map + style LoRA
+   (control-scale 0.3 / lora-scale 1.2 — control above ~0.4 flattens any LoRA style
+   to plastic-digital). Output = correct-but-flat init with every cut aligned.
+2. **Stage 2 (style):** `falgen.py --mode flux2edit` on that init, ACTUAL flat-art
+   ref crops as `--refs`, prompt: "Repaint in EXACTLY the reference images' style ...
+   CRITICAL: keep every structural element in its EXACT current position — nothing
+   moves or resizes. Same crop, do not zoom. All signs stay blank" + Rule-0 anti-clause.
+   Drift stays minimal because the init's structure already matches the cuts.
+3. **Gates:** `--score` + `geom_gate --mask` + the red-cut OVERLAY check (mandatory
+   for internal cuts).
+Proven: Marriott r9d door — true watercolor + luminous windows at IoU 0.966 with the
+saloon-arch aligned; direct one-pass at any control scale stayed plastic, direct
+restyle of a non-matching init drifted the arch.
