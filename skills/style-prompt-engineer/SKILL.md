@@ -107,3 +107,11 @@ anti: "no photorealism, no 3D render, no felt or fabric or fiber texture, no
 embroidery, no loose sloppy washes, no heavy black outlines, no neon color, no flat vector look"
 note: the collection's fine stipple grain is PAPER texture, not fiber — this is the
 style a LoRA previously mis-learned as felt. Signature axis = luminous light.
+
+## Lesson (2026-07-05): the anemia failure mode
+
+A technically-correct medium read can still produce ANEMIC output if the prompt
+omits (a) named palette colors + "rich saturated", (b) the warm↔cool interplay
+(both poles named), (c) per-surface content density (empty prompt = empty walls).
+Ship-gate: hi-DPI crop comparison against the ORIGINAL reference files — a style
+verdict from thumbnails or derived copies is void.

@@ -43,3 +43,19 @@ no flat vector look"
 ## Open question for user
 r6 (Cap Juluca-anchored) is looser/paler than this read. Regenerate r7 with this exact
 style section + Marriott crops as refs? (probe recommended)
+
+## Correction (2026-07-05, vision review vs Drive ORIGINALS)
+
+r9/r10 finals compared at hi-DPI against the original Police/Fire screens exposed
+what the first read underweighted:
+- **Palette axis was under-called**: the collection is RICH — deep navy + warm
+  cream stone + gold accents, strongly saturated. My outputs drifted to washed
+  grey-blue monochrome. The palette line must name the actual colors AND
+  "rich saturated".
+- **Warm/cool interplay is structural**, not just "luminous": warm cream/gold
+  lamps against cool navy — specify both poles or the model goes cold+glow-blobs.
+- **Detail density means NO EMPTY SURFACES**: every ref surface carries a feature
+  (badge, cornice, notice board, planter, crosswalk). Sparse content prompts
+  produce anemic panels even with the right technique words.
+- **Judging rule**: always compare against the ORIGINAL reference files at
+  hi-DPI crops (not derived/downscaled copies) before shipping.
