@@ -1,0 +1,24 @@
+{
+ "panel": "left",
+ "px_per_pt": 0.5548,
+ "box_px": [
+  985,
+  1483,
+  1930,
+  3687
+ ],
+ "size_px": [
+  945,
+  2204
+ ],
+ "aspect": 0.4288,
+ "body_frac": 0.9181,
+ "holes_n": 2,
+ "forbidden_bands_frac": [
+  [
+   0.4614,
+   0.5386
+  ]
+ ],
+ "green_top_frac": 0.0993
+}

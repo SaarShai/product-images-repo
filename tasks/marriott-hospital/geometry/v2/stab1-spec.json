@@ -1,0 +1,19 @@
+{
+ "panel": "stab1",
+ "px_per_pt": 0.5548,
+ "box_px": [
+  5309,
+  1933,
+  5583,
+  3673
+ ],
+ "size_px": [
+  274,
+  1740
+ ],
+ "aspect": 0.1575,
+ "body_frac": 0.6559,
+ "holes_n": 6,
+ "forbidden_bands_frac": [],
+ "green_top_frac": null
+}
