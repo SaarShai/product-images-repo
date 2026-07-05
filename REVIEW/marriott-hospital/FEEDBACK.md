@@ -2,25 +2,30 @@
 
 Full folder path: `/Users/za/Documents/product images repo/REVIEW/marriott-hospital/`
 
-## DECIDE NOW: pick the style (8 options, all on the door panel)
+## CURRENT CANDIDATE: r9 (two-stage route — geometry + true watercolor)
 
-**Open `style-options-board.jpg`** — all 8 side by side:
+Your geometry catch fixed. New route: geometry-locked init (arch cut edges in the
+control channel + new MRWC watercolor LoRA) → ref-anchored watercolor restyle with
+position lock. Result = style B (luminous storybook watercolor) at correct geometry.
 
-| opt | style | geometry IoU | notes |
-|---|---|---|---|
-| A | generic watercolor (r6) | 0.999 | loose, pale — Cap Juluca look |
-| B | **china-marriott read (r7)** | 0.989 | from the 8-axis read of your 6 screens: luminous windows, stipple paper grain, dense detail |
-| C | ink-and-wash | 0.887 | pen lines + loose wash, lots of white |
-| D | flat vector | 0.927 | crisp flat fills, no texture |
-| E | vintage gouache | 1.000 | matte opaque, warm nostalgic cream |
-| F | colored pencil | 0.988 | soft pencil grain, pastel |
-| G | dusk luminous (Birds Nest ref) | 1.000 | magic-hour sky, glowing warm windows |
-| H | fine-line elegant (Kitchen ref) | 0.917 | precise delicate linework, refined |
+Look at:
+1. `r9-screen-preview.jpg` — the full 3-panel screen. **Main deliverable.**
+2. `r9d_overlay.png` — door with red cut paths: saloon arch aligned (your check, now standard).
+3. `r9d_door_cut.png`, `r9d_left_v2_cut.png`, `r9d_right_cut.png` — full-res panels.
+   IoU: 0.966 / 0.974 / 0.974; geom_gate PASS; all signage blank.
+4. `r9-overlay-board.jpg`, `r8-overlay-board.jpg`, `geometry-overlay-board.jpg` — the
+   geometry evidence trail (why restyle-only and prompt-only both failed).
 
-Full-res singles: `r7_door_cm_cut.png` (B) + `r7b_ink…r7g_fineline_cut.png` (C–H) + `r6_door_wc_cut.png` (A).
-Style read behind option B: `STYLE-READ.md` + `china-marriott-art-crops.jpg`.
+## Notes
+- Left panel first version painted "CITY HOSPITA" — root cause: my style-ref crop
+  contained the lettering; re-cropped text-free and re-ran (Rule 0 now covers restyle refs).
+- Remaining polish available on request: per-panel best-of-N at this recipe, finish
+  chain (2x upscale + cutout), A/H flavor variants of the same recipe.
 
-**Tell me the letter (or combo, e.g. "B but with G's dusk sky").** I'll then:
-apply it to all 3 panels → finish chain → new screen preview.
+## Your feedback
+- r9: good direction? adjustments (wash intensity, luminosity, detail density, palette)?
+- Promote to production Images/finals? (yes/no + Drive folder if applicable):
 
-Earlier rounds (r3 smooth / r4 felt / r5 fiber — rejected) still in this folder for reference.
+---
+Earlier rounds kept in this folder for comparison: style-options-board.jpg (8 styles
+A-H), r3 smooth / r4 felt / r5 fiber (rejected) / r6 loose watercolor / r7 read probe.
