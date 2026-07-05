@@ -23,17 +23,22 @@ Look at (in this folder):
 5. `r13-overlay-board.jpg` — all 6 round-1 candidates with cut+forbidden overlays.
 6. `*_forb.png` — forbidden-lane overlays per final.
 
-KNOWN ISSUE (one, honest): the two crosses painted on the door leaves are thin
-crucifix-style, not equal-arm medical crosses. Three engine attempts failed to
-reshape/remove them (they sit under the glass-reflection wash — engines heal them
-back; one attempt erased the WRONG cross and was reverted). Options: (a) accept,
-(b) treat door emblems as a VECTOR layer in the .ai (like signage text), (c) one
-more targeted round. Your call.
+FIXED since first r13 post: door-leaf crosses are now clean equal-arm medical
+crosses (was thin crucifix). Hand-compositing seamed on the gradient glass; the
+working fix was Flux Fill masked-inpaint on a tight two-cross mask — integrates
+into the watercolor with no halo/seam. `r13_door_final.png` is the fixed door.
+
+ALSO NEW: stabilizers now MATCH the building look — narrow cream-stone pilaster
+strips with round windows, a wall lantern, blue tiled cap, hedges (was r12's
+hanging-lantern strips). `r13_stab1/2_final.png`. r12 lantern strips still on
+file if you prefer those.
 
 ## Questions
-- r13 vs r12 direction: door detail level right now, or push denser?
+- r13 door detail level right now, or push denser?
 - Narrows as buildings: does this match the cap-juluca/space/princess intent?
-- Stabilizers still the r12 lantern strips — keep, or match them to the new building look?
+- Stabilizers: building-pilaster (r13) or lantern-strip (r12)?
+- Door emblems: the two leaf crosses are painted — keep painted, or make them a
+  VECTOR layer in the .ai like signage (crisper, editable)?
 
 ---
 
