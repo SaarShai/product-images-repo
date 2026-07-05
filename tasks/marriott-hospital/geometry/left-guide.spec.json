@@ -1,0 +1,41 @@
+{
+  "panel": "left",
+  "svg": "tasks/marriott-hospital/geometry/city-skyline template.svg",
+  "svg_sha256_16": "6c510169e284dff4",
+  "viewbox": [
+    0.0,
+    0.0,
+    6399.64,
+    4376.93
+  ],
+  "bbox_svg": [
+    64.9,
+    390.3,
+    1589.2,
+    4303.9
+  ],
+  "aspect": 0.3895,
+  "aspect_tol": 0.02,
+  "contour": "domed rectangle: vertical sides, domed top; fill artwork edge-to-edge to the outer contour",
+  "saloon_arch_frac": null,
+  "keep_clear_lanes_frac": [
+    {
+      "x0": 0.468,
+      "y0": 0.223,
+      "x1": 0.532,
+      "y1": 1.0
+    }
+  ],
+  "must_not": [
+    "taper / pinch / trapezoid (narrow bottom or hourglass waist)",
+    "leave outer corners or mid-height sides as background",
+    "crop a landmark base or focal feature at a seam",
+    "place a focal/iconic feature in a keep_clear lane"
+  ],
+  "gateway": null,
+  "guide_png": "tasks/marriott-hospital/geometry/left-guide.png",
+  "guide_size": [
+    820,
+    2105
+  ]
+}
