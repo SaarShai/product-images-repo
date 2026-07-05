@@ -74,13 +74,17 @@ def load_panel_mask(mask_path: Path, size_wh: tuple[int, int]) -> np.ndarray:
     a = np.asarray(m)
     interior = a > 127
     # Defensive: if the file is inverted (interior dark), flip so interior is the
-    # MINORITY-or-majority blob that touches the center rather than the border.
+    # blob that owns the image CENTER, not the border. Border-frac alone is not
+    # enough: a tight-cropped panel mask (controlmap output, body bbox-cropped and
+    # touching left/right/bottom edges) has a mostly-white border yet is NOT
+    # inverted — flipping it zeroed every metric (bug found 2026-07-05).
     H, W = interior.shape
     border = np.zeros_like(interior)
     border[0, :] = border[-1, :] = border[:, 0] = border[:, -1] = True
     border_interior_frac = interior[border].mean()
-    if border_interior_frac > 0.5:
-        # the border is mostly "interior" -> mask is inverted relative to convention
+    center_interior_frac = interior[H // 3: 2 * H // 3, W // 3: 2 * W // 3].mean()
+    if border_interior_frac > 0.5 and center_interior_frac < 0.5:
+        # border claims "interior" while the center doesn't -> truly inverted
         interior = ~interior
     return interior
 
@@ -191,7 +195,8 @@ def coverage(art: np.ndarray, region: np.ndarray) -> float:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--cand", required=True, type=Path, help="candidate PNG")
-    ap.add_argument("--svg", required=True, type=Path, help="panel SVG (for per-role checks)")
+    ap.add_argument("--svg", type=Path, help="panel SVG (for per-role checks); omit for a mask-authoritative "
+                    "run on templates with no drawn panel contour (city-skyline narrows) — --mask required then")
     ap.add_argument("--mask", type=Path, help="contour-mask PNG (interior=white); default: <svg dir up>/contour-mask.png")
     ap.add_argument("--thresh", type=float, default=0.82, help="min fill_inside_contour to PASS (default 0.82)")
     ap.add_argument("--overflow-max", type=float, default=0.45,
@@ -208,12 +213,14 @@ def main() -> int:
     from PIL import Image
 
     cand_path = a.cand if a.cand.is_absolute() else ROOT / a.cand
-    svg_path = a.svg if a.svg.is_absolute() else ROOT / a.svg
+    svg_path = (a.svg if a.svg.is_absolute() else ROOT / a.svg) if a.svg else None
     if a.mask:
         mask_path = a.mask if a.mask.is_absolute() else ROOT / a.mask
-    else:
+    elif svg_path:
         # default: contour-mask.png next to the SVG's task dir (source/foo.svg -> ../contour-mask.png)
         mask_path = svg_path.parent.parent / "contour-mask.png"
+    else:
+        ap.error("--mask is required when --svg is omitted (mask-authoritative run)")
 
     rgb = np.asarray(Image.open(cand_path).convert("RGB"))
     H, W = rgb.shape[:2]
@@ -236,7 +243,10 @@ def main() -> int:
     edge_iou = inter / union if union else 0.0
 
     # ---- per-role checks ----------------------------------------------------
-    cut_masks, keep_masks = role_masks_from_svg(svg_path, interior)
+    # mask-authoritative run (no SVG): the mask IS the geometry contract; per-role
+    # checks are skipped — templates with no drawn panel contour have no role
+    # polygons to map anyway (city-skyline narrows).
+    cut_masks, keep_masks = role_masks_from_svg(svg_path, interior) if svg_path else ([], [])
     cutouts = []
     for i, cm in enumerate(cut_masks, 1):
         # a confirmed die-cut void is EXTERIOR in the panel mask, so measure art
@@ -275,7 +285,7 @@ def main() -> int:
 
     report = {
         "candidate": str(cand_path),
-        "svg": str(svg_path),
+        "svg": str(svg_path) if svg_path else None,
         "mask": str(mask_path),
         "candidate_size": [W, H],
         "thresh": a.thresh,
