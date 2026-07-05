@@ -1,0 +1,133 @@
+{
+  "src": "tasks/marriott-hospital/outputs/r13_door_final.png",
+  "op": "redraw",
+  "element": "the two thin crosses on the blue door leaves",
+  "desc": "two small thick equal-arm rounded medical crosses, white cross on a small round white-rimmed badge, watercolor storybook style matching the door",
+  "box": null,
+  "free": false,
+  "engine": "fal_flux_fill",
+  "seed": 12345,
+  "mask_dilate": 8,
+  "ctx_pad": 240,
+  "src_size": [
+    720,
+    1024
+  ],
+  "crop": [
+    81,
+    0,
+    641,
+    471
+  ],
+  "mask_bbox": [
+    321,
+    150,
+    401,
+    231
+  ],
+  "jcrop": [
+    261,
+    90,
+    461,
+    291
+  ],
+  "out": "tasks/marriott-hospital/outputs/r13_door_final_fix.png",
+  "overlay": "tasks/marriott-hospital/outputs/r13_door_final_fix_editov.png",
+  "pixel_gate_ok": true,
+  "leak_metric": {
+    "available": true,
+    "exit_code": 0,
+    "orig": "tasks/marriott-hospital/outputs/r13_door_final.png",
+    "edited": "tasks/marriott-hospital/outputs/r13_door_final_fix.png",
+    "mask": "/var/folders/0j/0fv2szdj15xg_wbgl96cbf_r0000gn/T/edit_fd791qg9/fullmask.png",
+    "size": [
+      720,
+      1024
+    ],
+    "outside_fraction": 0.991,
+    "device": "mps",
+    "ssim_outside": 0.999998,
+    "lpips_outside": 1.2e-05,
+    "dino_outside": 0.999593,
+    "dino_patches": 954,
+    "leak_signals": {
+      "ssim_leak": 2e-06,
+      "lpips_leak": 8.3e-05,
+      "dino_leak": 0.000407
+    },
+    "leak_score": 0.000407,
+    "thresh": 0.06,
+    "verdict": "PASS",
+    "pass": true
+  },
+  "text_gate": {
+    "available": true,
+    "applicable": true,
+    "exit_code": 0,
+    "has_text": false,
+    "found": [],
+    "engine": "paddle",
+    "min_conf": 0.5,
+    "region": null,
+    "region_origin": [
+      0,
+      0
+    ],
+    "upscale": 3.0,
+    "prep": true,
+    "kept": [],
+    "all_detections": [
+      {
+        "text": "0",
+        "conf": 0.4188,
+        "box": [
+          277,
+          566,
+          330,
+          602
+        ]
+      }
+    ],
+    "runtime_s": 2.864,
+    "no_text": true
+  },
+  "judge": {
+    "wellformed": true,
+    "wellformed_reason": "The crosses are cleanly drawn with correct proportions and no distortion.",
+    "leftover_text": false,
+    "text_found": [],
+    "style_match": 0.9,
+    "artifacts": [],
+    "verdict": "PASS",
+    "notes": "The crosses are well integrated into the watercolor and ink style of the image."
+  },
+  "repair_passes": 1,
+  "repair_log": [
+    {
+      "pass": 1,
+      "method": "ocr_boxes",
+      "text_bbox": [
+        306,
+        134,
+        418,
+        244
+      ],
+      "ctx_crop": [
+        226,
+        54,
+        498,
+        324
+      ],
+      "compose_outside_clean": true,
+      "judge_leftover_text": false,
+      "gate_found": [],
+      "gate_no_text": true,
+      "cleared": true
+    }
+  ],
+  "result": "SUCCESS",
+  "timestamp": null,
+  "tool_versions": {
+    "git_rev": "4d93530"
+  }
+}

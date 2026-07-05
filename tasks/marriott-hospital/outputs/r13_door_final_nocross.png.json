@@ -1,0 +1,124 @@
+{
+  "src": "tasks/marriott-hospital/outputs/r13_door_final.png",
+  "op": "remove",
+  "element": "the two thin white crosses painted on the blue door leaves",
+  "desc": null,
+  "box": "230,545,500,680",
+  "free": false,
+  "engine": "fal_bria",
+  "seed": 12345,
+  "mask_dilate": 8,
+  "ctx_pad": 240,
+  "src_size": [
+    720,
+    1024
+  ],
+  "crop": [
+    0,
+    305,
+    720,
+    920
+  ],
+  "mask_bbox": [
+    413,
+    574,
+    483,
+    685
+  ],
+  "jcrop": [
+    353,
+    514,
+    543,
+    745
+  ],
+  "out": "tasks/marriott-hospital/outputs/r13_door_final_nocross.png",
+  "overlay": "tasks/marriott-hospital/outputs/r13_door_final_nocross_editov.png",
+  "pixel_gate_ok": true,
+  "leak_metric": {
+    "available": true,
+    "exit_code": 0,
+    "orig": "tasks/marriott-hospital/outputs/r13_door_final.png",
+    "edited": "tasks/marriott-hospital/outputs/r13_door_final_nocross.png",
+    "mask": "/var/folders/0j/0fv2szdj15xg_wbgl96cbf_r0000gn/T/edit_nyfknbam/fullmask.png",
+    "size": [
+      720,
+      1024
+    ],
+    "outside_fraction": 0.9892,
+    "device": "mps",
+    "ssim_outside": 0.999957,
+    "lpips_outside": 9.5e-05,
+    "dino_outside": 0.999473,
+    "dino_patches": 954,
+    "leak_signals": {
+      "ssim_leak": 4.3e-05,
+      "lpips_leak": 0.000637,
+      "dino_leak": 0.000527
+    },
+    "leak_score": 0.000637,
+    "thresh": 0.06,
+    "verdict": "PASS",
+    "pass": true
+  },
+  "text_gate": {
+    "available": true,
+    "applicable": true,
+    "exit_code": 2,
+    "has_text": true,
+    "found": [
+      "\u5341"
+    ],
+    "engine": "paddle",
+    "min_conf": 0.5,
+    "region": null,
+    "region_origin": [
+      0,
+      0
+    ],
+    "upscale": 3.0,
+    "prep": true,
+    "kept": [
+      {
+        "text": "\u5341",
+        "conf": 0.9914,
+        "box": [
+          159,
+          163,
+          389,
+          437
+        ]
+      }
+    ],
+    "all_detections": [
+      {
+        "text": "\u5341",
+        "conf": 0.9914,
+        "box": [
+          159,
+          163,
+          389,
+          437
+        ]
+      }
+    ],
+    "runtime_s": 2.955,
+    "no_text": false
+  },
+  "judge": {
+    "wellformed": true,
+    "wellformed_reason": "The cross is cleanly drawn with correct proportions and no distortion.",
+    "leftover_text": false,
+    "text_found": [],
+    "style_match": 0.9,
+    "artifacts": [],
+    "verdict": "PASS",
+    "notes": "The cross is well integrated with the watercolor and ink style of the door."
+  },
+  "repair_passes": 0,
+  "repair_log": [],
+  "result": "NEEDS-REVIEW",
+  "timestamp": null,
+  "tool_versions": {
+    "git_rev": "4d93530"
+  }
+}

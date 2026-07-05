@@ -2,7 +2,42 @@
 
 Full folder path: `/Users/za/Documents/product images repo/REVIEW/marriott-hospital/`
 
-## CURRENT CANDIDATE: r12 (GEOMETRY V2 contract — first full round)
+## CURRENT CANDIDATE: r13 (your 3 corrections applied)
+
+Your turn-66 feedback → this round:
+1. **No dashed lines in geometry refs** — fixed at the source (master_spec.py):
+   dashed guide strokes filtered, dome closure smoothed, door anchor drawn as a
+   synthetic SOLID arch. Dash marks gone from the finals' dome tops.
+2. **Door details, police/fire spirit** — detail vocabulary mined from the
+   Police/Fire originals (cupola, shield badge, canopy downlights, framed arched
+   windows, notice board, sconces, ceramic planters) and adapted to hospital.
+3. **Narrows = independent buildings** — both narrows are now complete building
+   facades (left: garden wing; right: tower with ambulance bay + red cross shield),
+   center slot lanes on plain pilaster/wall strips.
+
+Look at (in this folder):
+1. `r13-screen-preview.jpg` — full screen. **Main deliverable.**
+2. `r13_left_final.png` — garden-wing facade. Fill-IoU 0.9999, forbidden OK (0.94).
+3. `r13_door_final.png` — detail-rich entrance (striped awning dome, cross roundels, canopy, sconce clusters, hedges, blank plaque). Fill-IoU 1.0, forbidden OK (1.10).
+4. `r13_right_final.png` — emergency tower, ambulance in warm-lit bay. Fill-IoU 1.0, forbidden OK (1.16).
+5. `r13-overlay-board.jpg` — all 6 round-1 candidates with cut+forbidden overlays.
+6. `*_forb.png` — forbidden-lane overlays per final.
+
+KNOWN ISSUE (one, honest): the two crosses painted on the door leaves are thin
+crucifix-style, not equal-arm medical crosses. Three engine attempts failed to
+reshape/remove them (they sit under the glass-reflection wash — engines heal them
+back; one attempt erased the WRONG cross and was reverted). Options: (a) accept,
+(b) treat door emblems as a VECTOR layer in the .ai (like signage text), (c) one
+more targeted round. Your call.
+
+## Questions
+- r13 vs r12 direction: door detail level right now, or push denser?
+- Narrows as buildings: does this match the cap-juluca/space/princess intent?
+- Stabilizers still the r12 lantern strips — keep, or match them to the new building look?
+
+---
+
+## PREVIOUS: r12 (GEOMETRY V2 contract — first full round)
 
 First round generated on the APPROVED master-template contract: door at the
 orange anchor, center stabilizer-slot stripes kept feature-free, circle cutouts
