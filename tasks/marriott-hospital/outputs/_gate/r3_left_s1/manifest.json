@@ -1,0 +1,38 @@
+{
+  "candidate": "/Users/za/Documents/product images repo/tasks/marriott-hospital/outputs/r3_left_s1.png",
+  "size": [
+    576,
+    1536
+  ],
+  "context": "context.png",
+  "tiles": [
+    {
+      "file": "tile_2.png",
+      "frac_bbox": [
+        0.0,
+        0.627,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "file": "tile_1.png",
+      "frac_bbox": [
+        0.0,
+        0.294,
+        1.0,
+        0.706
+      ]
+    },
+    {
+      "file": "tile_0.png",
+      "frac_bbox": [
+        0.0,
+        0.0,
+        1.0,
+        0.373
+      ]
+    }
+  ],
+  "regions": []
+}

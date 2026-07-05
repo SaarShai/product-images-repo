@@ -1,0 +1,1770 @@
+{
+  "created_at": "2026-07-05T08:46:54Z",
+  "task": "marriott-hospital",
+  "purpose": "visual style packet for image-generation/style agents",
+  "source_refs": [
+    "tasks/marriott-hospital/refs/Birds Nest.png",
+    "tasks/marriott-hospital/refs/Police Station.jpg",
+    "tasks/marriott-hospital/refs/Updated Fire Station.png",
+    "tasks/marriott-hospital/refs/Updated Hospital 1.png",
+    "tasks/marriott-hospital/refs/Updated Kitchen 3.png",
+    "tasks/marriott-hospital/refs/Water Cube.png"
+  ],
+  "contact_sheets": {
+    "reference_contact_sheet": "tasks/marriott-hospital/style-packet/reference-contact-sheet.png",
+    "style_exemplar_sheet": "tasks/marriott-hospital/style-packet/style-exemplar-sheet.png"
+  },
+  "palette_hex": [
+    "#938f91",
+    "#79746b",
+    "#5e5e51",
+    "#444436",
+    "#c4aa95",
+    "#a4abb6",
+    "#ebe9ea",
+    "#6290ba",
+    "#cacacc",
+    "#a48768",
+    "#815b3f",
+    "#425c80"
+  ],
+  "crops": [
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref01-birds-nest-full-panel.png",
+      "bbox": [
+        0,
+        105,
+        1420,
+        1035
+      ],
+      "size": [
+        1420,
+        930
+      ],
+      "label": "ref 1 full panel",
+      "type": "full-panel",
+      "source": "tasks/marriott-hospital/refs/Birds Nest.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref01-birds-nest-left-region.png",
+      "bbox": [
+        0,
+        97,
+        547,
+        1043
+      ],
+      "size": [
+        547,
+        946
+      ],
+      "label": "ref 1 left-region",
+      "type": "left-region",
+      "source": "tasks/marriott-hospital/refs/Birds Nest.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref01-birds-nest-center-region.png",
+      "bbox": [
+        432,
+        97,
+        1001,
+        1043
+      ],
+      "size": [
+        569,
+        946
+      ],
+      "label": "ref 1 center-region",
+      "type": "center-region",
+      "source": "tasks/marriott-hospital/refs/Birds Nest.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref01-birds-nest-right-region.png",
+      "bbox": [
+        872,
+        97,
+        1420,
+        1043
+      ],
+      "size": [
+        548,
+        946
+      ],
+      "label": "ref 1 right-region",
+      "type": "right-region",
+      "source": "tasks/marriott-hospital/refs/Birds Nest.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref01-birds-nest-body-texture.png",
+      "bbox": [
+        560,
+        357,
+        888,
+        782
+      ],
+      "size": [
+        328,
+        425
+      ],
+      "label": "ref 1 body-texture",
+      "type": "body-texture",
+      "source": "tasks/marriott-hospital/refs/Birds Nest.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref01-birds-nest-edge-treatment.png",
+      "bbox": [
+        0,
+        97,
+        348,
+        503
+      ],
+      "size": [
+        348,
+        406
+      ],
+      "label": "ref 1 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/marriott-hospital/refs/Birds Nest.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref01-birds-nest-accent-component-01.png",
+      "bbox": [
+        1101,
+        80,
+        1259,
+        216
+      ],
+      "size": [
+        158,
+        136
+      ],
+      "label": "ref 1 accent component 01",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Birds Nest.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref01-birds-nest-accent-component-02.png",
+      "bbox": [
+        836,
+        156,
+        981,
+        300
+      ],
+      "size": [
+        145,
+        144
+      ],
+      "label": "ref 1 accent component 02",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Birds Nest.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref01-birds-nest-accent-component-03.png",
+      "bbox": [
+        861,
+        176,
+        1007,
+        321
+      ],
+      "size": [
+        146,
+        145
+      ],
+      "label": "ref 1 accent component 03",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Birds Nest.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref01-birds-nest-accent-component-04.png",
+      "bbox": [
+        716,
+        551,
+        861,
+        698
+      ],
+      "size": [
+        145,
+        147
+      ],
+      "label": "ref 1 accent component 04",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Birds Nest.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref01-birds-nest-accent-component-05.png",
+      "bbox": [
+        964,
+        181,
+        1102,
+        317
+      ],
+      "size": [
+        138,
+        136
+      ],
+      "label": "ref 1 accent component 05",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Birds Nest.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref01-birds-nest-accent-component-06.png",
+      "bbox": [
+        1325,
+        293,
+        1420,
+        429
+      ],
+      "size": [
+        95,
+        136
+      ],
+      "label": "ref 1 accent component 06",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Birds Nest.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref01-birds-nest-accent-component-07.png",
+      "bbox": [
+        615,
+        134,
+        750,
+        269
+      ],
+      "size": [
+        135,
+        135
+      ],
+      "label": "ref 1 accent component 07",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Birds Nest.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref01-birds-nest-accent-component-08.png",
+      "bbox": [
+        656,
+        137,
+        791,
+        272
+      ],
+      "size": [
+        135,
+        135
+      ],
+      "label": "ref 1 accent component 08",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Birds Nest.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref02-police-station-full-panel.png",
+      "bbox": [
+        0,
+        5,
+        1400,
+        776
+      ],
+      "size": [
+        1400,
+        771
+      ],
+      "label": "ref 2 full panel",
+      "type": "full-panel",
+      "source": "tasks/marriott-hospital/refs/Police Station.jpg"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref02-police-station-left-region.png",
+      "bbox": [
+        0,
+        0,
+        540,
+        784
+      ],
+      "size": [
+        540,
+        784
+      ],
+      "label": "ref 2 left-region",
+      "type": "left-region",
+      "source": "tasks/marriott-hospital/refs/Police Station.jpg"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref02-police-station-center-region.png",
+      "bbox": [
+        426,
+        0,
+        987,
+        784
+      ],
+      "size": [
+        561,
+        784
+      ],
+      "label": "ref 2 center-region",
+      "type": "center-region",
+      "source": "tasks/marriott-hospital/refs/Police Station.jpg"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref02-police-station-right-region.png",
+      "bbox": [
+        860,
+        0,
+        1400,
+        784
+      ],
+      "size": [
+        540,
+        784
+      ],
+      "label": "ref 2 right-region",
+      "type": "right-region",
+      "source": "tasks/marriott-hospital/refs/Police Station.jpg"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref02-police-station-body-texture.png",
+      "bbox": [
+        552,
+        212,
+        876,
+        568
+      ],
+      "size": [
+        324,
+        356
+      ],
+      "label": "ref 2 body-texture",
+      "type": "body-texture",
+      "source": "tasks/marriott-hospital/refs/Police Station.jpg"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref02-police-station-edge-treatment.png",
+      "bbox": [
+        0,
+        0,
+        344,
+        336
+      ],
+      "size": [
+        344,
+        336
+      ],
+      "label": "ref 2 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/marriott-hospital/refs/Police Station.jpg"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref02-police-station-accent-component-01.png",
+      "bbox": [
+        0,
+        44,
+        358,
+        503
+      ],
+      "size": [
+        358,
+        459
+      ],
+      "label": "ref 2 accent component 01",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Police Station.jpg"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref02-police-station-accent-component-02.png",
+      "bbox": [
+        974,
+        176,
+        1400,
+        662
+      ],
+      "size": [
+        426,
+        486
+      ],
+      "label": "ref 2 accent component 02",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Police Station.jpg"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref02-police-station-accent-component-03.png",
+      "bbox": [
+        246,
+        349,
+        643,
+        749
+      ],
+      "size": [
+        397,
+        400
+      ],
+      "label": "ref 2 accent component 03",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Police Station.jpg"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref02-police-station-accent-component-04.png",
+      "bbox": [
+        0,
+        424,
+        352,
+        768
+      ],
+      "size": [
+        352,
+        344
+      ],
+      "label": "ref 2 accent component 04",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Police Station.jpg"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref02-police-station-accent-component-05.png",
+      "bbox": [
+        976,
+        588,
+        1400,
+        787
+      ],
+      "size": [
+        424,
+        199
+      ],
+      "label": "ref 2 accent component 05",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Police Station.jpg"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref02-police-station-accent-component-06.png",
+      "bbox": [
+        613,
+        405,
+        841,
+        600
+      ],
+      "size": [
+        228,
+        195
+      ],
+      "label": "ref 2 accent component 06",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Police Station.jpg"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref02-police-station-accent-component-07.png",
+      "bbox": [
+        141,
+        581,
+        387,
+        772
+      ],
+      "size": [
+        246,
+        191
+      ],
+      "label": "ref 2 accent component 07",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Police Station.jpg"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref02-police-station-accent-component-08.png",
+      "bbox": [
+        871,
+        223,
+        1160,
+        431
+      ],
+      "size": [
+        289,
+        208
+      ],
+      "label": "ref 2 accent component 08",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Police Station.jpg"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref03-updated-fire-station-full-panel.png",
+      "bbox": [
+        0,
+        100,
+        1448,
+        1035
+      ],
+      "size": [
+        1448,
+        935
+      ],
+      "label": "ref 3 full panel",
+      "type": "full-panel",
+      "source": "tasks/marriott-hospital/refs/Updated Fire Station.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref03-updated-fire-station-left-region.png",
+      "bbox": [
+        0,
+        92,
+        558,
+        1043
+      ],
+      "size": [
+        558,
+        951
+      ],
+      "label": "ref 3 left-region",
+      "type": "left-region",
+      "source": "tasks/marriott-hospital/refs/Updated Fire Station.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref03-updated-fire-station-center-region.png",
+      "bbox": [
+        440,
+        92,
+        1021,
+        1043
+      ],
+      "size": [
+        581,
+        951
+      ],
+      "label": "ref 3 center-region",
+      "type": "center-region",
+      "source": "tasks/marriott-hospital/refs/Updated Fire Station.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref03-updated-fire-station-right-region.png",
+      "bbox": [
+        889,
+        92,
+        1448,
+        1043
+      ],
+      "size": [
+        559,
+        951
+      ],
+      "label": "ref 3 right-region",
+      "type": "right-region",
+      "source": "tasks/marriott-hospital/refs/Updated Fire Station.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref03-updated-fire-station-body-texture.png",
+      "bbox": [
+        571,
+        353,
+        905,
+        781
+      ],
+      "size": [
+        334,
+        428
+      ],
+      "label": "ref 3 body-texture",
+      "type": "body-texture",
+      "source": "tasks/marriott-hospital/refs/Updated Fire Station.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref03-updated-fire-station-edge-treatment.png",
+      "bbox": [
+        0,
+        92,
+        355,
+        500
+      ],
+      "size": [
+        355,
+        408
+      ],
+      "label": "ref 3 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/marriott-hospital/refs/Updated Fire Station.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref03-updated-fire-station-accent-component-01.png",
+      "bbox": [
+        730,
+        785,
+        1067,
+        924
+      ],
+      "size": [
+        337,
+        139
+      ],
+      "label": "ref 3 accent component 01",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Updated Fire Station.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref03-updated-fire-station-accent-component-02.png",
+      "bbox": [
+        1171,
+        788,
+        1343,
+        923
+      ],
+      "size": [
+        172,
+        135
+      ],
+      "label": "ref 3 accent component 02",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Updated Fire Station.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref03-updated-fire-station-accent-component-03.png",
+      "bbox": [
+        0,
+        896,
+        138,
+        1052
+      ],
+      "size": [
+        138,
+        156
+      ],
+      "label": "ref 3 accent component 03",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Updated Fire Station.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref03-updated-fire-station-accent-component-04.png",
+      "bbox": [
+        1240,
+        789,
+        1408,
+        925
+      ],
+      "size": [
+        168,
+        136
+      ],
+      "label": "ref 3 accent component 04",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Updated Fire Station.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref03-updated-fire-station-accent-component-05.png",
+      "bbox": [
+        1135,
+        786,
+        1283,
+        923
+      ],
+      "size": [
+        148,
+        137
+      ],
+      "label": "ref 3 accent component 05",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Updated Fire Station.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref03-updated-fire-station-accent-component-06.png",
+      "bbox": [
+        1349,
+        788,
+        1448,
+        930
+      ],
+      "size": [
+        99,
+        142
+      ],
+      "label": "ref 3 accent component 06",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Updated Fire Station.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref03-updated-fire-station-accent-component-07.png",
+      "bbox": [
+        1027,
+        793,
+        1170,
+        929
+      ],
+      "size": [
+        143,
+        136
+      ],
+      "label": "ref 3 accent component 07",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Updated Fire Station.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref03-updated-fire-station-accent-component-08.png",
+      "bbox": [
+        252,
+        843,
+        388,
+        983
+      ],
+      "size": [
+        136,
+        140
+      ],
+      "label": "ref 3 accent component 08",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Updated Fire Station.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref04-updated-hospital-1-full-panel.png",
+      "bbox": [
+        0,
+        90,
+        1536,
+        947
+      ],
+      "size": [
+        1536,
+        857
+      ],
+      "label": "ref 4 full panel",
+      "type": "full-panel",
+      "source": "tasks/marriott-hospital/refs/Updated Hospital 1.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref04-updated-hospital-1-left-region.png",
+      "bbox": [
+        0,
+        82,
+        591,
+        955
+      ],
+      "size": [
+        591,
+        873
+      ],
+      "label": "ref 4 left-region",
+      "type": "left-region",
+      "source": "tasks/marriott-hospital/refs/Updated Hospital 1.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref04-updated-hospital-1-center-region.png",
+      "bbox": [
+        468,
+        82,
+        1083,
+        955
+      ],
+      "size": [
+        615,
+        873
+      ],
+      "label": "ref 4 center-region",
+      "type": "center-region",
+      "source": "tasks/marriott-hospital/refs/Updated Hospital 1.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref04-updated-hospital-1-right-region.png",
+      "bbox": [
+        944,
+        82,
+        1536,
+        955
+      ],
+      "size": [
+        592,
+        873
+      ],
+      "label": "ref 4 right-region",
+      "type": "right-region",
+      "source": "tasks/marriott-hospital/refs/Updated Hospital 1.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref04-updated-hospital-1-body-texture.png",
+      "bbox": [
+        606,
+        321,
+        960,
+        715
+      ],
+      "size": [
+        354,
+        394
+      ],
+      "label": "ref 4 body-texture",
+      "type": "body-texture",
+      "source": "tasks/marriott-hospital/refs/Updated Hospital 1.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref04-updated-hospital-1-edge-treatment.png",
+      "bbox": [
+        0,
+        82,
+        376,
+        457
+      ],
+      "size": [
+        376,
+        375
+      ],
+      "label": "ref 4 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/marriott-hospital/refs/Updated Hospital 1.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref04-updated-hospital-1-accent-component-01.png",
+      "bbox": [
+        1152,
+        212,
+        1536,
+        948
+      ],
+      "size": [
+        384,
+        736
+      ],
+      "label": "ref 4 accent component 01",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Updated Hospital 1.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref04-updated-hospital-1-accent-component-02.png",
+      "bbox": [
+        877,
+        572,
+        1230,
+        911
+      ],
+      "size": [
+        353,
+        339
+      ],
+      "label": "ref 4 accent component 02",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Updated Hospital 1.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref04-updated-hospital-1-accent-component-03.png",
+      "bbox": [
+        255,
+        313,
+        624,
+        525
+      ],
+      "size": [
+        369,
+        212
+      ],
+      "label": "ref 4 accent component 03",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Updated Hospital 1.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref04-updated-hospital-1-accent-component-04.png",
+      "bbox": [
+        966,
+        298,
+        1279,
+        530
+      ],
+      "size": [
+        313,
+        232
+      ],
+      "label": "ref 4 accent component 04",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Updated Hospital 1.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref04-updated-hospital-1-accent-component-05.png",
+      "bbox": [
+        1096,
+        480,
+        1419,
+        656
+      ],
+      "size": [
+        323,
+        176
+      ],
+      "label": "ref 4 accent component 05",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Updated Hospital 1.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref04-updated-hospital-1-accent-component-06.png",
+      "bbox": [
+        280,
+        463,
+        603,
+        625
+      ],
+      "size": [
+        323,
+        162
+      ],
+      "label": "ref 4 accent component 06",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Updated Hospital 1.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref04-updated-hospital-1-accent-component-07.png",
+      "bbox": [
+        978,
+        211,
+        1168,
+        383
+      ],
+      "size": [
+        190,
+        172
+      ],
+      "label": "ref 4 accent component 07",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Updated Hospital 1.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref04-updated-hospital-1-accent-component-08.png",
+      "bbox": [
+        425,
+        193,
+        616,
+        360
+      ],
+      "size": [
+        191,
+        167
+      ],
+      "label": "ref 4 accent component 08",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Updated Hospital 1.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref05-updated-kitchen-3-full-panel.png",
+      "bbox": [
+        0,
+        89,
+        1536,
+        966
+      ],
+      "size": [
+        1536,
+        877
+      ],
+      "label": "ref 5 full panel",
+      "type": "full-panel",
+      "source": "tasks/marriott-hospital/refs/Updated Kitchen 3.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref05-updated-kitchen-3-left-region.png",
+      "bbox": [
+        0,
+        81,
+        591,
+        974
+      ],
+      "size": [
+        591,
+        893
+      ],
+      "label": "ref 5 left-region",
+      "type": "left-region",
+      "source": "tasks/marriott-hospital/refs/Updated Kitchen 3.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref05-updated-kitchen-3-center-region.png",
+      "bbox": [
+        468,
+        81,
+        1083,
+        974
+      ],
+      "size": [
+        615,
+        893
+      ],
+      "label": "ref 5 center-region",
+      "type": "center-region",
+      "source": "tasks/marriott-hospital/refs/Updated Kitchen 3.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref05-updated-kitchen-3-right-region.png",
+      "bbox": [
+        944,
+        81,
+        1536,
+        974
+      ],
+      "size": [
+        592,
+        893
+      ],
+      "label": "ref 5 right-region",
+      "type": "right-region",
+      "source": "tasks/marriott-hospital/refs/Updated Kitchen 3.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref05-updated-kitchen-3-body-texture.png",
+      "bbox": [
+        606,
+        326,
+        960,
+        728
+      ],
+      "size": [
+        354,
+        402
+      ],
+      "label": "ref 5 body-texture",
+      "type": "body-texture",
+      "source": "tasks/marriott-hospital/refs/Updated Kitchen 3.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref05-updated-kitchen-3-edge-treatment.png",
+      "bbox": [
+        0,
+        81,
+        376,
+        465
+      ],
+      "size": [
+        376,
+        384
+      ],
+      "label": "ref 5 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/marriott-hospital/refs/Updated Kitchen 3.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref05-updated-kitchen-3-accent-component-01.png",
+      "bbox": [
+        0,
+        63,
+        439,
+        862
+      ],
+      "size": [
+        439,
+        799
+      ],
+      "label": "ref 5 accent component 01",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Updated Kitchen 3.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref05-updated-kitchen-3-accent-component-02.png",
+      "bbox": [
+        725,
+        57,
+        1203,
+        949
+      ],
+      "size": [
+        478,
+        892
+      ],
+      "label": "ref 5 accent component 02",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Updated Kitchen 3.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref05-updated-kitchen-3-accent-component-03.png",
+      "bbox": [
+        1091,
+        62,
+        1536,
+        747
+      ],
+      "size": [
+        445,
+        685
+      ],
+      "label": "ref 5 accent component 03",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Updated Kitchen 3.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref05-updated-kitchen-3-accent-component-04.png",
+      "bbox": [
+        34,
+        691,
+        438,
+        965
+      ],
+      "size": [
+        404,
+        274
+      ],
+      "label": "ref 5 accent component 04",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Updated Kitchen 3.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref05-updated-kitchen-3-accent-component-05.png",
+      "bbox": [
+        1092,
+        718,
+        1485,
+        970
+      ],
+      "size": [
+        393,
+        252
+      ],
+      "label": "ref 5 accent component 05",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Updated Kitchen 3.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref05-updated-kitchen-3-accent-component-06.png",
+      "bbox": [
+        327,
+        789,
+        807,
+        946
+      ],
+      "size": [
+        480,
+        157
+      ],
+      "label": "ref 5 accent component 06",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Updated Kitchen 3.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref05-updated-kitchen-3-accent-component-07.png",
+      "bbox": [
+        434,
+        726,
+        833,
+        896
+      ],
+      "size": [
+        399,
+        170
+      ],
+      "label": "ref 5 accent component 07",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Updated Kitchen 3.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref05-updated-kitchen-3-accent-component-08.png",
+      "bbox": [
+        331,
+        681,
+        536,
+        895
+      ],
+      "size": [
+        205,
+        214
+      ],
+      "label": "ref 5 accent component 08",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Updated Kitchen 3.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref06-water-cube-full-panel.png",
+      "bbox": [
+        0,
+        149,
+        1448,
+        942
+      ],
+      "size": [
+        1448,
+        793
+      ],
+      "label": "ref 6 full panel",
+      "type": "full-panel",
+      "source": "tasks/marriott-hospital/refs/Water Cube.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref06-water-cube-left-region.png",
+      "bbox": [
+        0,
+        141,
+        558,
+        950
+      ],
+      "size": [
+        558,
+        809
+      ],
+      "label": "ref 6 left-region",
+      "type": "left-region",
+      "source": "tasks/marriott-hospital/refs/Water Cube.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref06-water-cube-center-region.png",
+      "bbox": [
+        440,
+        141,
+        1021,
+        950
+      ],
+      "size": [
+        581,
+        809
+      ],
+      "label": "ref 6 center-region",
+      "type": "center-region",
+      "source": "tasks/marriott-hospital/refs/Water Cube.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref06-water-cube-right-region.png",
+      "bbox": [
+        889,
+        141,
+        1448,
+        950
+      ],
+      "size": [
+        559,
+        809
+      ],
+      "label": "ref 6 right-region",
+      "type": "right-region",
+      "source": "tasks/marriott-hospital/refs/Water Cube.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref06-water-cube-body-texture.png",
+      "bbox": [
+        571,
+        363,
+        905,
+        727
+      ],
+      "size": [
+        334,
+        364
+      ],
+      "label": "ref 6 body-texture",
+      "type": "body-texture",
+      "source": "tasks/marriott-hospital/refs/Water Cube.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref06-water-cube-edge-treatment.png",
+      "bbox": [
+        0,
+        141,
+        355,
+        490
+      ],
+      "size": [
+        355,
+        349
+      ],
+      "label": "ref 6 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/marriott-hospital/refs/Water Cube.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref06-water-cube-accent-component-01.png",
+      "bbox": [
+        0,
+        512,
+        730,
+        813
+      ],
+      "size": [
+        730,
+        301
+      ],
+      "label": "ref 6 accent component 01",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Water Cube.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref06-water-cube-accent-component-02.png",
+      "bbox": [
+        0,
+        186,
+        346,
+        606
+      ],
+      "size": [
+        346,
+        420
+      ],
+      "label": "ref 6 accent component 02",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Water Cube.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref06-water-cube-accent-component-03.png",
+      "bbox": [
+        1206,
+        634,
+        1448,
+        961
+      ],
+      "size": [
+        242,
+        327
+      ],
+      "label": "ref 6 accent component 03",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Water Cube.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref06-water-cube-accent-component-04.png",
+      "bbox": [
+        994,
+        533,
+        1266,
+        739
+      ],
+      "size": [
+        272,
+        206
+      ],
+      "label": "ref 6 accent component 04",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Water Cube.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref06-water-cube-accent-component-05.png",
+      "bbox": [
+        1242,
+        505,
+        1448,
+        740
+      ],
+      "size": [
+        206,
+        235
+      ],
+      "label": "ref 6 accent component 05",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Water Cube.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref06-water-cube-accent-component-06.png",
+      "bbox": [
+        624,
+        576,
+        840,
+        783
+      ],
+      "size": [
+        216,
+        207
+      ],
+      "label": "ref 6 accent component 06",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Water Cube.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref06-water-cube-accent-component-07.png",
+      "bbox": [
+        0,
+        519,
+        178,
+        712
+      ],
+      "size": [
+        178,
+        193
+      ],
+      "label": "ref 6 accent component 07",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Water Cube.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref06-water-cube-accent-component-08.png",
+      "bbox": [
+        995,
+        631,
+        1285,
+        791
+      ],
+      "size": [
+        290,
+        160
+      ],
+      "label": "ref 6 accent component 08",
+      "type": "accent-component",
+      "source": "tasks/marriott-hospital/refs/Water Cube.png"
+    }
+  ],
+  "agent_attachments": [
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref01-birds-nest-full-panel.png",
+      "bbox": [
+        0,
+        105,
+        1420,
+        1035
+      ],
+      "size": [
+        1420,
+        930
+      ],
+      "label": "ref 1 full panel",
+      "type": "full-panel",
+      "source": "tasks/marriott-hospital/refs/Birds Nest.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref02-police-station-full-panel.png",
+      "bbox": [
+        0,
+        5,
+        1400,
+        776
+      ],
+      "size": [
+        1400,
+        771
+      ],
+      "label": "ref 2 full panel",
+      "type": "full-panel",
+      "source": "tasks/marriott-hospital/refs/Police Station.jpg"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref03-updated-fire-station-full-panel.png",
+      "bbox": [
+        0,
+        100,
+        1448,
+        1035
+      ],
+      "size": [
+        1448,
+        935
+      ],
+      "label": "ref 3 full panel",
+      "type": "full-panel",
+      "source": "tasks/marriott-hospital/refs/Updated Fire Station.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref04-updated-hospital-1-full-panel.png",
+      "bbox": [
+        0,
+        90,
+        1536,
+        947
+      ],
+      "size": [
+        1536,
+        857
+      ],
+      "label": "ref 4 full panel",
+      "type": "full-panel",
+      "source": "tasks/marriott-hospital/refs/Updated Hospital 1.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref05-updated-kitchen-3-full-panel.png",
+      "bbox": [
+        0,
+        89,
+        1536,
+        966
+      ],
+      "size": [
+        1536,
+        877
+      ],
+      "label": "ref 5 full panel",
+      "type": "full-panel",
+      "source": "tasks/marriott-hospital/refs/Updated Kitchen 3.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref06-water-cube-full-panel.png",
+      "bbox": [
+        0,
+        149,
+        1448,
+        942
+      ],
+      "size": [
+        1448,
+        793
+      ],
+      "label": "ref 6 full panel",
+      "type": "full-panel",
+      "source": "tasks/marriott-hospital/refs/Water Cube.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref01-birds-nest-center-region.png",
+      "bbox": [
+        432,
+        97,
+        1001,
+        1043
+      ],
+      "size": [
+        569,
+        946
+      ],
+      "label": "ref 1 center-region",
+      "type": "center-region",
+      "source": "tasks/marriott-hospital/refs/Birds Nest.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref01-birds-nest-left-region.png",
+      "bbox": [
+        0,
+        97,
+        547,
+        1043
+      ],
+      "size": [
+        547,
+        946
+      ],
+      "label": "ref 1 left-region",
+      "type": "left-region",
+      "source": "tasks/marriott-hospital/refs/Birds Nest.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref01-birds-nest-right-region.png",
+      "bbox": [
+        872,
+        97,
+        1420,
+        1043
+      ],
+      "size": [
+        548,
+        946
+      ],
+      "label": "ref 1 right-region",
+      "type": "right-region",
+      "source": "tasks/marriott-hospital/refs/Birds Nest.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref02-police-station-center-region.png",
+      "bbox": [
+        426,
+        0,
+        987,
+        784
+      ],
+      "size": [
+        561,
+        784
+      ],
+      "label": "ref 2 center-region",
+      "type": "center-region",
+      "source": "tasks/marriott-hospital/refs/Police Station.jpg"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref02-police-station-left-region.png",
+      "bbox": [
+        0,
+        0,
+        540,
+        784
+      ],
+      "size": [
+        540,
+        784
+      ],
+      "label": "ref 2 left-region",
+      "type": "left-region",
+      "source": "tasks/marriott-hospital/refs/Police Station.jpg"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref02-police-station-right-region.png",
+      "bbox": [
+        860,
+        0,
+        1400,
+        784
+      ],
+      "size": [
+        540,
+        784
+      ],
+      "label": "ref 2 right-region",
+      "type": "right-region",
+      "source": "tasks/marriott-hospital/refs/Police Station.jpg"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref03-updated-fire-station-center-region.png",
+      "bbox": [
+        440,
+        92,
+        1021,
+        1043
+      ],
+      "size": [
+        581,
+        951
+      ],
+      "label": "ref 3 center-region",
+      "type": "center-region",
+      "source": "tasks/marriott-hospital/refs/Updated Fire Station.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref03-updated-fire-station-left-region.png",
+      "bbox": [
+        0,
+        92,
+        558,
+        1043
+      ],
+      "size": [
+        558,
+        951
+      ],
+      "label": "ref 3 left-region",
+      "type": "left-region",
+      "source": "tasks/marriott-hospital/refs/Updated Fire Station.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref03-updated-fire-station-right-region.png",
+      "bbox": [
+        889,
+        92,
+        1448,
+        1043
+      ],
+      "size": [
+        559,
+        951
+      ],
+      "label": "ref 3 right-region",
+      "type": "right-region",
+      "source": "tasks/marriott-hospital/refs/Updated Fire Station.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref04-updated-hospital-1-center-region.png",
+      "bbox": [
+        468,
+        82,
+        1083,
+        955
+      ],
+      "size": [
+        615,
+        873
+      ],
+      "label": "ref 4 center-region",
+      "type": "center-region",
+      "source": "tasks/marriott-hospital/refs/Updated Hospital 1.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref04-updated-hospital-1-left-region.png",
+      "bbox": [
+        0,
+        82,
+        591,
+        955
+      ],
+      "size": [
+        591,
+        873
+      ],
+      "label": "ref 4 left-region",
+      "type": "left-region",
+      "source": "tasks/marriott-hospital/refs/Updated Hospital 1.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref04-updated-hospital-1-right-region.png",
+      "bbox": [
+        944,
+        82,
+        1536,
+        955
+      ],
+      "size": [
+        592,
+        873
+      ],
+      "label": "ref 4 right-region",
+      "type": "right-region",
+      "source": "tasks/marriott-hospital/refs/Updated Hospital 1.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref05-updated-kitchen-3-center-region.png",
+      "bbox": [
+        468,
+        81,
+        1083,
+        974
+      ],
+      "size": [
+        615,
+        893
+      ],
+      "label": "ref 5 center-region",
+      "type": "center-region",
+      "source": "tasks/marriott-hospital/refs/Updated Kitchen 3.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref05-updated-kitchen-3-left-region.png",
+      "bbox": [
+        0,
+        81,
+        591,
+        974
+      ],
+      "size": [
+        591,
+        893
+      ],
+      "label": "ref 5 left-region",
+      "type": "left-region",
+      "source": "tasks/marriott-hospital/refs/Updated Kitchen 3.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref05-updated-kitchen-3-right-region.png",
+      "bbox": [
+        944,
+        81,
+        1536,
+        974
+      ],
+      "size": [
+        592,
+        893
+      ],
+      "label": "ref 5 right-region",
+      "type": "right-region",
+      "source": "tasks/marriott-hospital/refs/Updated Kitchen 3.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref06-water-cube-center-region.png",
+      "bbox": [
+        440,
+        141,
+        1021,
+        950
+      ],
+      "size": [
+        581,
+        809
+      ],
+      "label": "ref 6 center-region",
+      "type": "center-region",
+      "source": "tasks/marriott-hospital/refs/Water Cube.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref06-water-cube-left-region.png",
+      "bbox": [
+        0,
+        141,
+        558,
+        950
+      ],
+      "size": [
+        558,
+        809
+      ],
+      "label": "ref 6 left-region",
+      "type": "left-region",
+      "source": "tasks/marriott-hospital/refs/Water Cube.png"
+    },
+    {
+      "path": "tasks/marriott-hospital/style-packet/crops/ref06-water-cube-right-region.png",
+      "bbox": [
+        889,
+        141,
+        1448,
+        950
+      ],
+      "size": [
+        559,
+        809
+      ],
+      "label": "ref 6 right-region",
+      "type": "right-region",
+      "source": "tasks/marriott-hospital/refs/Water Cube.png"
+    }
+  ],
+  "agent_contract": [
+    "Attach packet images when asking a style agent to generate elements.",
+    "Generate style-matched element sheets before geometry placement.",
+    "Reject outputs that only match palette while missing watercolor edge, line, lighting, and object vocabulary.",
+    "Geometry agents place accepted elements into SVG safe pockets after style generation."
+  ],
+  "prompt": "tasks/marriott-hospital/prompts/prompt-v2-style-packet-elements-first.md"
+}
