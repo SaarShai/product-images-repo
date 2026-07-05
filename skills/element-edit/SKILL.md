@@ -28,6 +28,12 @@ VLM judge, and prints SUCCESS/NEEDS-REVIEW with the gate + judge results. Always
 3. **Route engine by op** (don't re-derive): [[image-edit-engine-routing]]
    - remove → `falgen.py --mode eraser` (fal Bria) — reconstructs bg in-style. NOT flux-fill (it heals back).
    - redraw in place → `falgen.py --mode fill` (Flux Fill) + a prompt from `prompt_templates.py`.
+     Reshape a SMALL emblem/symbol (cross, badge, logo) sitting on a GRADIENT or
+     reflective surface (glass, sky, water) → Flux Fill masked-inpaint on a tight
+     mask, NOT a hand composite: flat-tone cover dithers, texture-transplant
+     imports the wrong neighbour detail, feathered ovals leave visible halos —
+     all seam on the gradient. Masked-inpaint blends to the boundary. (Marriott
+     r13 door crosses: 4 hand-composite variants failed, masked-inpaint clean.)
    - restyle keeping layout → Flux.2 edit; reshape to exact dims → stretch-then-Kontext ([[element-reshape-stretch-then-refine]]).
    - same element across many instances → reference-lock ([[reference-lock-for-consistency]]).
    - broad ghost/haze, smeared local artifact, or semantic-continuity defect
