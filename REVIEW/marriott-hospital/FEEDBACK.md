@@ -2,30 +2,25 @@
 
 Full folder path: `/Users/za/Documents/product images repo/REVIEW/marriott-hospital/`
 
-## NEW (r6): watercolor per your correction — no fibrous texture
+## DECIDE NOW: pick the style (8 options, all on the door panel)
 
-Your feedback applied: illustration = professional children's-book WATERCOLOR;
-fiber texture banned (it was the product substrate, not the art — my error).
-Medium exemplar used: the approved Cap Juluca watercolor final.
+**Open `style-options-board.jpg`** — all 8 side by side:
 
-Look at (in order):
-1. `r6-screen-preview.jpg` — the watercolor 3-panel screen. **Current candidate.**
-2. `r6-ab-board.jpg` — Cap Juluca exemplar vs ref+text door vs text-only door
-   (text-only also broke geometry: IoU 0.835 vs 0.999 — evidence for the new skill's ref+text rule).
-3. `r6_door_wc_cut.png`, `r6_left_wc_cut.png`, `r6_right_wc_cut.png` — full-res panels.
-   Geometry: door 0.9989 / left 0.987 / right 0.9998, all blank signage.
+| opt | style | geometry IoU | notes |
+|---|---|---|---|
+| A | generic watercolor (r6) | 0.999 | loose, pale — Cap Juluca look |
+| B | **china-marriott read (r7)** | 0.989 | from the 8-axis read of your 6 screens: luminous windows, stipple paper grain, dense detail |
+| C | ink-and-wash | 0.887 | pen lines + loose wash, lots of white |
+| D | flat vector | 0.927 | crisp flat fills, no texture |
+| E | vintage gouache | 1.000 | matte opaque, warm nostalgic cream |
+| F | colored pencil | 0.988 | soft pencil grain, pastel |
+| G | dusk luminous (Birds Nest ref) | 1.000 | magic-hour sky, glowing warm windows |
+| H | fine-line elegant (Kitchen ref) | 0.917 | precise delicate linework, refined |
 
-Older rounds kept below for comparison: r3 (smooth), r4 (felt — rejected), r5/r5-v3 (fiber — rejected).
+Full-res singles: `r7_door_cm_cut.png` (B) + `r7b_ink…r7g_fineline_cut.png` (C–H) + `r6_door_wc_cut.png` (A).
+Style read behind option B: `STYLE-READ.md` + `china-marriott-art-crops.jpg`.
 
-## The new skill (built per your ask — please review the draft)
+**Tell me the letter (or combo, e.g. "B but with G's dusk sky").** I'll then:
+apply it to all 3 panels → finish chain → new screen preview.
 
-`skills/style-prompt-engineer/SKILL.md` — style → prompt sections + ref-input plan:
-- named styles → snippet blocks (watercolor-storybook, flat-vector, ink-and-wash, felt-craft)
-- reference image → 8-axis style read → text AND ref-as-input (both, always, when engine supports)
-- Rule 0: substrate ≠ illustration style (today's lesson, now codified)
-- validated by this r6 A/B (ref+text 0.999 vs text-only 0.835)
-
-## Your feedback
-- r6 watercolor: right direction? what to adjust (wash intensity, palette warmth, detail)?
-- Skill draft: which styles/snippets to add? anything wrong in the axes?
-- Promote r6 winners to production Images/finals? (yes/no + Drive folder if applicable):
+Earlier rounds (r3 smooth / r4 felt / r5 fiber — rejected) still in this folder for reference.
