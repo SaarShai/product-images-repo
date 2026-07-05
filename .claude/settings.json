@@ -46,7 +46,7 @@
       {
         "hooks": [
           {
-            "command": "python3 ./.claude/hooks/artifact_guard.py",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR:-$PWD}/.claude/hooks/artifact_guard.py\"",
             "type": "command"
           }
         ],
