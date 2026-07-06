@@ -40,9 +40,11 @@ detail_density:
 
 motif_vocabulary:
   required_props: ["teddy bear", "siren lights", "defibrillator wall box"]
-  optional_props: ["first-aid kit", "single medical cross badge", "rounded windows", "small awning", "string lights", "flower-basket lamppost", "3/4-view ambulance with star-of-life"]
+  optional_props: ["first-aid kit", "single medical cross badge", "rounded windows", "string lights", "flower-basket lamppost", "3/4-view ambulance with star-of-life"]
+  forbidden_props: ["awning or canopy over the door (user, r16 verdict)"]
   treatment: "playful medical-themed details integrated into the building, not floating stickers"
-  cross_rule: "ONE main cross badge per panel maximum (rounded-square badge, white cross); never multiple mismatched crosses"
+  cross_rule: "ONE main cross badge per panel maximum; never multiple mismatched crosses"
+  cross_badge_form: "BLUE ROUNDED-SQUARE badge with a WHITE equal-arm cross (as in the original's crown badge and r15). WRONG forms (permanent cases): round golden porthole w/ gold cross (r16), coin-style navy-in-white-circle (r13), thin crucifix (r13 leaves), red shield (r13 right)"
 
 texture_rules:
   allowed: ["subtle watercolor paper grain", "light pigment granulation", "soft wash pooling"]
@@ -87,7 +89,7 @@ reference_role_map:
 
 # r5 lesson: reference style over-applied globally shifted the door navy.
 per_surface_palette:
-  facade_walls: "warm cream / clean white"
+  facade_walls: "HOSPITAL WHITE (clean bright white; user r16 verdict — NOT warm cream)"
   door_leaves: "cerulean-to-cobalt blue, visible panel detail"
   roof_dome: "deep cobalt blue"
   glass: "medical teal with soft reflections"
@@ -97,7 +99,7 @@ per_surface_palette:
 
 # r9/r10 anemia lesson: warm/cool interplay is STRUCTURAL — name both poles.
 warm_cool_structure:
-  warm_pole: "cream stone, golden lamp glow, warm window light"
+  warm_pole: "golden lamp glow, warm window light, warm prop accents (walls stay hospital WHITE)"
   cool_pole: "cobalt/teal blues of roof, door, glass, sky"
   rule: "every panel carries BOTH poles; a single-pole panel is a defect"
 

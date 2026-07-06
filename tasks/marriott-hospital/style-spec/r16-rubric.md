@@ -20,3 +20,9 @@ Every failure becomes a spec patch + a permanent case here.
 5 density **5** (toy-filled windows, no empty walls) · 6 motifs **3.5** (teddy ✓; SIREN dropped by model despite prompt) ·
 7 signage **4** (notes carry dash-squiggles, not letters — verified hi-DPI; one 7-ish pot mark) · 8 geometry **5** (IoU 1.0, forbidden OK 1.13).
 GATE: **PASS** → shipped. Case learned: required props need a per-prop presence CHECK, not just prompt inclusion.
+
+## r16b_door_final scores (post user-patch round)
+1 medium **5** · 2 poles **5** (white walls + warm window glow + cobalt) · 3 architecture **5** ·
+4 cross **5 after LaMa fix** (correct blue rounded-square/white; restyle had ADDED a duplicate round cross — new case: restyle can INSERT extra emblems, count-check must run POST-restyle) ·
+5 density **5** (toy arch) · 6 motifs **4** (teddy ✓ siren nub small) · 7 signage **5** · 8 geometry **4.5** (fill-IoU 0.9322, forbidden OK).
+GATE: PASS. User corrections applied: no awning ✓, hospital-white ✓, badge form ✓.
