@@ -71,7 +71,7 @@ $EG score --rubric rubric.md --file draft.md --panel 3
 cross-vendor escalation): after the normal single-judge score, an odd-N cross-vendor
 panel (`skills/_shared/model_roster.py`, verifier role, refute-if-you-can) re-checks
 "does this output meet the rubric at ≥ threshold". Ship only on judge-PASS **+** panel
-majority; any disagreement exits 1 with per-member verdicts. Fewer than 2 reachable
+majority; any disagreement exits 1 with per-member verdicts. Fewer than 3 reachable
 members → loud warning + single-judge fallback, never a fabricated quorum. Closes the
 same-model-judging hole for outputs that are hard to reverse.
 
@@ -129,7 +129,11 @@ fails *safe* — it never reports a pass it couldn't compute).
    the criteria a reader would bookmark you for. The grader trusts this rubric
    blindly: a **missing or wrong-target** criterion passes bad output as surely
    as a vague one, so make it complete (covers the degenerate/edge cases that
-   matter), not just specific.
+   matter), not just specific. **At least one criterion must be spec-tied** —
+   a restatement of the original ask ("does this do what was actually asked"),
+   marked `required` in per-criterion mode: a rubric of only generic craft
+   dimensions lets an iteration loop hill-climb polish while drifting off-spec
+   (asked for a boat, shipped a painting of a boat).
 2. `score` at the point of shipping. Exit 1 → rework or kill; do not ship.
    **When a maker hands you a result, run the two-pass refute check** — see
    [`verify-before-completion`](../verify-before-completion/SKILL.md): a criterion

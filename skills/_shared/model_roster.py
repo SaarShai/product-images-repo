@@ -61,8 +61,12 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 try:
     from audit_redact import redact as _redact          # type: ignore
 except Exception:                                        # pragma: no cover - defensive
-    def _redact(s: str) -> str:                          # never let a missing import egress raw
-        return s
+    def _redact(s: str) -> str:
+        # EGRESS fails CLOSED: with no scrubber, refuse to build the prompt
+        # rather than send raw text to a third-party model. (Persistence paths
+        # may fail open — local files, hook must not die — but egress must not.)
+        raise RuntimeError(
+            "audit_redact unavailable — refusing cross-vendor egress without redaction")
 
 Role = Literal["advisor", "verifier"]
 
@@ -140,10 +144,17 @@ def _zai_key() -> str:
 
 
 def _run_glm(prompt: str, *, timeout: float, model: str = "glm-5.2",
-             base: str = "https://api.z.ai/api/coding/paas/v4") -> tuple[bool, str, str]:
+             base: str = "https://api.z.ai/api/coding/paas/v4",
+             thinking: bool = False) -> tuple[bool, str, str]:
     """Dispatch GLM directly over z.ai's OpenAI-compatible chat/completions
     (proven HTTP 200; codex's Responses-only wire 404s here, so this bypasses
-    codex entirely). Returns (ok, text, error). Never raises."""
+    codex entirely). Returns (ok, text, error). Never raises.
+
+    thinking=False (default) sends `"thinking": {"type": "disabled"}` — the
+    delegate-router gotcha: glm-5.2's reasoning otherwise eats the max_tokens
+    budget and `content` comes back empty (reproduced 2026-07-05: 9/12 eval
+    cells unparseable through this very function). Pass thinking=True only when
+    the caller wants the reasoning trace and handles the fallback."""
     key = _zai_key()
     if not key:
         return False, "", "no z.ai key (env ZAI_API_KEY/… or ~/.config/zai/key)"
@@ -151,8 +162,11 @@ def _run_glm(prompt: str, *, timeout: float, model: str = "glm-5.2",
     import urllib.request
     # max_tokens is REQUIRED in practice: glm-5.2 is a reasoning model, and without a
     # cap it emits an unbounded reasoning trace and the request times out (measured).
-    body = json.dumps({"model": model, "max_tokens": 2048,
-                       "messages": [{"role": "user", "content": prompt}]}).encode()
+    payload = {"model": model, "max_tokens": 2048,
+               "messages": [{"role": "user", "content": prompt}]}
+    if not thinking:
+        payload["thinking"] = {"type": "disabled"}
+    body = json.dumps(payload).encode()
     req = urllib.request.Request(f"{base}/chat/completions", data=body, method="POST",
                                  headers={"Authorization": f"Bearer {key}",
                                           "Content-Type": "application/json"})
@@ -166,6 +180,14 @@ def _run_glm(prompt: str, *, timeout: float, model: str = "glm-5.2",
         text = (msg.get("content") or "").strip() or (msg.get("reasoning_content") or "").strip()
         if not text:
             return False, "", "z.ai returned empty content + reasoning"
+        # Transport-level identity check (2026-07-05 review): the API's returned
+        # `model` is authoritative — a silent substitution shows up HERE, where a
+        # model's self-report in its answer could not. Warn loudly; don't fail
+        # the member (the text is still usable), but the pin violation is visible.
+        served = data.get("model", "")
+        if served and model and served.split("-")[0] != model.split("-")[0]:
+            print(f"model_roster: PIN MISMATCH — requested {model}, served {served}",
+                  file=sys.stderr)
         return True, text, ""
     except (urllib.error.URLError, OSError) as e:
         return False, "", f"z.ai dispatch failed: {e}"
@@ -505,15 +527,23 @@ def run_dispatch(b: Backend, role: Role, task: str, brief: str, *,
     import shlex     # stdlib; local so the pure path needs no import
     result = {"vendor": b.vendor, "lane": b.lane, "role": role,
               "ok": False, "findings": "", "raw": "", "error": ""}
+    # Render once, up front. render_prompt fails CLOSED (raises) when the
+    # redactor is unavailable — catch it here so "never raises" holds and the
+    # caller drops this member instead of the whole panel crashing (2026-07-05).
+    try:
+        prompt = render_prompt(role, task, brief)
+    except RuntimeError as e:
+        result["error"] = str(e)
+        return result
     if b.kind == "http" and b.transport == "openrouter":
-        ok, text, err = _run_openrouter(render_prompt(role, task, brief),
+        ok, text, err = _run_openrouter(prompt,
                                         timeout=timeout, model=model or b.slug)
         text = _strip_ansi(text)
         result.update(ok=ok, raw=text,
                       findings=_extract_findings(text) if ok else "", error=err)
         return result
     if b.kind == "http" and b.lane == LANE_GLM:
-        ok, text, err = _run_glm(render_prompt(role, task, brief),
+        ok, text, err = _run_glm(prompt,
                                  timeout=timeout, model=model or "glm-5.2")
         text = _strip_ansi(text)
         result.update(ok=ok, raw=text,
@@ -530,7 +560,6 @@ def run_dispatch(b: Backend, role: Role, task: str, brief: str, *,
     except ValueError as e:
         result["error"] = f"unparseable invocation {inv!r}: {e}"
         return result
-    prompt = render_prompt(role, task, brief)
     try:
         proc = subprocess.run(argv, input=prompt, capture_output=True, text=True, timeout=timeout)
     except subprocess.TimeoutExpired:

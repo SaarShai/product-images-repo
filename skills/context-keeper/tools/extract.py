@@ -18,6 +18,7 @@ Schema (stable — pre-registered):
   - loop_next_actions next-pass / next-action lines
   - user_goals       lines from user messages starting with imperative verbs
   - failed_attempts  blocks near "fail/error/bug/wrong/doesn't work"
+  - compromises      settled-for choices near workaround/stopgap markers
   - pending_todos    unchecked items from TodoWrite (if present)
 
 Usage:
@@ -41,6 +42,20 @@ NUM_RE = re.compile(r"\b\d+(?:\.\d+)?\s*(?:%|ms|s|x|tokens?|tok|GB|MB|KB|B|bytes
 ERROR_RE = re.compile(r"(?:Error|Exception|Traceback|fail(?:ed|ure)?|SIGKILL|exit code [1-9]|stderr)[^\n]{3,200}", re.I)
 IMPERATIVE_RE = re.compile(r"^(?:build|make|create|fix|find|implement|add|run|test|check|set up|design|write|measure|eval|compare|explain|research|install|deploy)\b", re.I)
 FAIL_WORD_RE = re.compile(r"didn't work|doesn't work|not work|broke|broken|bug|wrong|mismatch|incompat", re.I)
+# Compromise markers: settled-for choices that compaction would otherwise
+# launder into "intended design" — the next session must not build on them
+# as if deliberate.
+COMPROMISE_WORD_RE = re.compile(
+    r"workaround|stopgap|for now\b"
+    # bare "temporary/temporarily" false-positives on operational text
+    # ("temporary file", "temporarily unavailable") — require a fix-shaped
+    # noun or a settled-for verb nearby (cross-vendor review 2026-07-05).
+    # "temporary <fix-noun>" OR "temporarily <compromise-verb>" — but NOT bare
+    # "temporary file" / "temporarily unavailable" (operational, not a compromise).
+    r"|temporar(?:y|ily)[ -](?:fix|workaround|hack|solution|patch|measure|shim|stub|kludge"
+    r"|disabl\w*|remov\w*|comment\w*|skip\w*|bypass\w*|hardcod\w*|ignor\w*|suppress\w*|disable\w*)"
+    r"|(?:went with|using|keep(?:ing)?|accept(?:ed|ing)?) (?:a |the )?temporar(?:y|ily)"
+    r"|\bhacky?\b|settled? for|good enough for now|revisit (?:this |it )?later|quick fix|band-aid|kludge", re.I)
 LOOP_PASS_RE = re.compile(r"\b(?:loop\s+)?(?:pass|iteration|round)\s*(?:#|:|=)?\s*\d+\b", re.I)
 LOOP_ANCHOR_RE = re.compile(r"\b(?:anchor_files|anchor files?|VISION\.md|PROMPT\.md|AGENTS\.md|SKILL\.md)\b[^\n]{0,180}", re.I)
 LOOP_STATE_RE = re.compile(r"\b(?:state_store|state store|state path|loop state|LOOP-STATE(?:\.json)?|STATE\.md)\b[^\n]{0,180}", re.I)
@@ -226,6 +241,16 @@ def regex_extract(events):
             if len(s) >= 15:
                 add("failed_attempts", s[:200], limit=20)
 
+        for m in COMPROMISE_WORD_RE.finditer(text):
+            lo = max(0, m.start() - 150)
+            hi = min(len(text), m.end() + 150)
+            window = text[lo:hi]
+            head = window[:m.start() - lo].rsplit("\n", 1)[-1].rsplit(". ", 1)[-1]
+            tail = window[m.start() - lo:].split("\n", 1)[0].split(". ", 1)[0]
+            s = (head + tail).strip()
+            if len(s) >= 15:
+                add("compromises", s[:200], limit=12)
+
     result = dict(out)
     result["_confidence"] = {k: dict(v) for k, v in confidence.items()}
     return result
@@ -246,6 +271,7 @@ def llm_extract(events, model="qwen3:8b"):
 
     prompt = f"""Extract from this session transcript. Output ONLY JSON on one line with keys:
 "decisions" (list of {{"what":..., "why":...}}),
+"compromises" (list of {{"what":..., "why":...}} — workaround/settled-for choices that are NOT the intended design),
 "failed_attempts" (list of {{"tried":..., "why_failed":...}}),
 "next_steps" (list of short strings).
 Keep each field under 200 chars. Max 8 items per list.
@@ -308,7 +334,7 @@ def git_snapshot(repo_root):
 # must not treat as verified. Rendered as a per-section tag.
 _VERIFIED_KEYS = {"files_created", "commands_run", "urls"}
 _ASSUMED_KEYS = {"user_goals", "numbers", "failed_attempts", "files_touched",
-                 "errors_seen"}
+                 "errors_seen", "compromises"}
 
 
 def render_markdown(regex_out, llm_out, session_id, transcript_path, git_state=None):
@@ -384,6 +410,12 @@ def render_markdown(regex_out, llm_out, session_id, transcript_path, git_state=N
             for d in dec:
                 lines.append(f"- **{d.get('what','?')}** — {d.get('why','')}")
             lines.append("")
+        comp = llm_out.get("compromises", [])
+        if comp:
+            lines.append("## Compromises (settled-for — NOT intended design)")
+            for d in comp:
+                lines.append(f"- **{d.get('what','?')}** — {d.get('why','')}")
+            lines.append("")
         fa = llm_out.get("failed_attempts", [])
         if fa:
             lines.append("## Failed attempts (avoid repeating)")
@@ -406,6 +438,9 @@ def render_markdown(regex_out, llm_out, session_id, transcript_path, git_state=N
     section("URLs", regex_out.get("urls", []), section_key="urls")
     if regex_out.get("failed_attempts") and not (llm_out and llm_out.get("failed_attempts")):
         section("Failure signals (regex)", regex_out.get("failed_attempts", []))
+    if regex_out.get("compromises") and not (llm_out and llm_out.get("compromises")):
+        section("Compromises (settled-for — NOT intended design)",
+                regex_out.get("compromises", []), section_key="compromises")
 
     return "\n".join(lines)
 
@@ -520,6 +555,19 @@ def main():
         while out_path.exists():
             out_path = base / f"{stamp}-{sid[:8]}-{trig}-{n}.md"
             n += 1
+    # Secrets-only scrub before persistence (paths stay — they're the resume
+    # pointers). Fail-OPEN by design (unlike model_roster egress, which fails
+    # closed): a missing _shared import must not kill the PreCompact hook — a
+    # lost local snapshot is worse than an unredacted local file. The manifest
+    # below counts against `md_preredact` so redaction is never miscounted as
+    # cap-loss (redaction rewrites items out of `md`, but they DID land).
+    md_preredact = md
+    try:
+        sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "_shared"))
+        from audit_redact import redact_secrets  # type: ignore
+        md = redact_secrets(md)
+    except Exception:
+        pass
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(md, encoding="utf-8")
 
@@ -536,7 +584,7 @@ def main():
     persisted = sum(
         1 for k, v in regex_out.items()
         if not k.startswith("_") and isinstance(v, list)
-        for item in v if str(item) in md
+        for item in v if str(item) in md_preredact
     )
 
     # Terse pointer for PreCompact hook: gets injected into compaction context

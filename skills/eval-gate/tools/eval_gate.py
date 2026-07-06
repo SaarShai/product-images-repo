@@ -608,8 +608,10 @@ def cmd_score(args):
             args.panel, args.threshold, rubric_txt, candidate, _score_summary(res, verdict, criteria)
         )
         responders = panel["responders"]
-        if len(responders) < 2:
-            print(f"panel degraded to single-judge (only {len(responders)} members reachable)",
+        # <3 responders is a fabricated quorum — same rule as the plain-score
+        # branch below (was <2: a half-fix caught by the 2026-07-05 review).
+        if len(responders) < 3:
+            print(f"panel degraded to single-judge (only {len(responders)} members reachable, need 3)",
                   file=sys.stderr)
             return single_exit
         if single_exit != 0 or not panel["majority_holds"]:
@@ -633,8 +635,11 @@ def cmd_score(args):
         args.panel, args.threshold, rubric_txt, candidate, _score_summary(res, verdict, criteria)
     )
     responders = panel["responders"]
-    if len(responders) < 2:
-        print(f"panel degraded to single-judge (only {len(responders)} members reachable)",
+    # A 2-member "majority" is a fabricated quorum (2/2 or a tie) — a panel
+    # verdict needs the full odd-N (>=3); anything less degrades loudly to the
+    # single-judge result. (Cross-vendor review 2026-07-05.)
+    if len(responders) < 3:
+        print(f"panel degraded to single-judge (only {len(responders)} members reachable, need 3)",
               file=sys.stderr)
         return single_exit
     if single_exit != 0 or not panel["majority_holds"]:

@@ -91,3 +91,15 @@ Solves the conflict where the control channel crushes style but restyle drifts c
 Proven: Marriott r9d door — true watercolor + luminous windows at IoU 0.966 with the
 saloon-arch aligned; direct one-pass at any control scale stayed plastic, direct
 restyle of a non-matching init drifted the arch.
+
+## Door-anchor fit (2026-07-05, r16b incident — binding)
+
+The painted door must BE the anchor: leaves fill the arch edge-to-edge, the
+door frame IS the arch. cs 0.3 lets the model draw its own smaller arch inside
+the anchor (r16b "two arches") — for the DOOR panel use control-scale 0.45
+(style comes from the restyle now, the init can afford it) + the literal
+prompt clause "door leaves FILL the entire arch opening — the frame IS the
+arch, no separate decorative arch above it". The red-cut OVERLAY runs
+POST-RESTYLE too (restyle both drifts arches AND paints spurious ones along
+the anchor). scripts/door_anchor_gate.py is ADVISORY ONLY — pixel heuristics
+inverted on calibration; the overlay is the arbiter, every door round, no skips.

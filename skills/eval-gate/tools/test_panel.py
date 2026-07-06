@@ -112,7 +112,17 @@ def test_degraded_fallback_warns_and_uses_single_exit():
         rc, out, err = run_cli(score_args("--stub-score", "5", "--panel", "3"))
     assert rc == 0, (rc, out, err)
     assert_json_score(out, "pass")
-    assert "panel degraded to single-judge (only 1 members reachable)" in err, err
+    assert "panel degraded to single-judge (only 1 members reachable, need 3)" in err, err
+
+
+def test_two_responders_is_not_a_quorum():
+    # 2/2 "majority" is a fabricated quorum — must degrade to single-judge,
+    # never return a panel verdict (cross-vendor review 2026-07-05).
+    with patched_roster([True, True, "drop"]):
+        rc, out, err = run_cli(score_args("--stub-score", "5", "--panel", "3"))
+    assert rc == 0, (rc, out, err)
+    assert "panel degraded to single-judge (only 2 members reachable, need 3)" in err, err
+    assert "panel verdicts" not in err, err
 
 
 def test_panel_argparse_rejects_bad_counts():
@@ -128,6 +138,7 @@ def main():
         test_majority_holds_passes,
         test_majority_refutes_fails,
         test_degraded_fallback_warns_and_uses_single_exit,
+        test_two_responders_is_not_a_quorum,
         test_panel_argparse_rejects_bad_counts,
     ]
     for test in tests:
