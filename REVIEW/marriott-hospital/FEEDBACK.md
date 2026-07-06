@@ -2,10 +2,28 @@
 
 Full folder path: `/Users/za/Documents/product images repo/REVIEW/marriott-hospital/`
 
-## CURRENT (r14) — "all in parallel": every open option resolved as an artifact
+## NEWEST (r14-hires) — FULL hi-res set, both upscale paths built
 
-**`r14-production-preview.jpg`** = the recommended set: hi-res door (2.5× upscaled,
-1800×2560, crosses preserved) + narrows + lighthouse stabilizers. **Main deliverable.**
+**`r14-production-hires.jpg`** = the complete set, EVERY panel now hi-res:
+door 1800×2560, narrows upscaled to 1040×2560, lighthouse stabs. **Main deliverable.**
+
+Narrow hi-res — you said "both", so both paths are done + compared
+(`upscale-compare.jpg`):
+- **fal clarity 2.5×** → 1040×2560, softer/watercolor, matches door height — used in
+  the hi-res preview [recommended for the on-brand look].
+- **Real-ESRGAN 4×** (now installed locally, FREE) → 1664×4096, sharper/higher-res,
+  slightly more digital (`left_esrgan.png`). New reusable tool `scripts/esrgan_upscale.py`.
+- Correction: the narrows' source was only 416×1024 (the restyle downsized them),
+  so they genuinely needed this; my earlier "clarity refuses narrows" was wrong.
+
+Slot choices below still stand (door / stab / vector emblems).
+
+---
+
+## r14 — "all in parallel": every open option resolved as an artifact
+
+**`r14-production-preview.jpg`** = earlier recommended set: hi-res door (2.5× upscaled,
+1800×2560, crosses preserved) + narrows + lighthouse stabilizers.
 
 Pick per slot from the boards:
 - **Door — `door-options-board.jpg`**: (1) `r13_door_final.png` clean door-in-arch
