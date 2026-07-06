@@ -115,3 +115,50 @@ omits (a) named palette colors + "rich saturated", (b) the warm↔cool interplay
 (both poles named), (c) per-surface content density (empty prompt = empty walls).
 Ship-gate: hi-DPI crop comparison against the ORIGINAL reference files — a style
 verdict from thumbnails or derived copies is void.
+
+## STYLE-SPEC protocol (v1, 2026-07-05 — built from 15-incident drift evidence + AD-practice research)
+
+One coarse "style" knob drifts (proven: watercolor→felt, →anemic, →glossy-3D in ONE
+week). Every style-sensitive gen now runs off a per-collection SPEC file
+(`tasks/<task>/style-spec/<collection>.style-spec.yaml`) + a MOOD BOARD image.
+Marriott reference implementation: `tasks/marriott-hospital/style-spec/` +
+`tasks/marriott-hospital/MOOD-BOARD-v1.jpg`.
+
+### The spec's load-bearing fields (each traceable to an incident)
+- `art_medium` + `rendering_finish` + `texture_rules` — medium≠substrate≠finish
+  (felt r4, glossy r15). Finish is its OWN axis: "matte watercolor" vs "glossy 3D".
+- `reference_role_map` — EVERY ref carries ONE role: architecture/composition,
+  medium/finish, content/motifs, palette, anti-example. The r15 oscillation came
+  from role-less refs (content ref read as style). Annotate borrow/don't-borrow
+  per ref (AD practice; prevents "content leakage", arXiv 2506.09916).
+- `per_surface_palette` (r5 navy-drift) + `warm_cool_structure` (r9 anemia:
+  BOTH poles named, structural) + named colors + saturation.
+- `motif_vocabulary` w/ counts (crosses r13: ONE badge, style pinned).
+- `anti_style` — explicit NOTs repeated in every prompt AND judge criteria.
+- `signage_text_rule` (blank; text=vector layer), `detail_density` (no empty walls),
+  `set_consistency` (stabs inherit same spec version), `review_gate` (side-by-side
+  vs hi-DPI originals; verdicts update the spec).
+
+### Mood board rules (NN/g + production practice)
+Three labeled rows: TARGET refs (annotated per role) / APPROVED outputs
+(user-verified rounds = medium anchors) / REJECTED anti-examples WITH reason
+labels. 4-5 mood words on the board. One board per direction — never mix
+contradictory directions. Board approval is a GATE: no generation before the
+user confirms the style family.
+
+### Elicitation flow (fun, low-effort, per user brief)
+1. ONE-TIME per collection: build mood board → user gate verdict ("yes / almost / wrong").
+2. ONE-TIME: style SLIDERS prefilled by us from evidence (literal↔abstract,
+   simple↔detailed, muted↔saturated, geometric↔organic, matte↔glossy) — user
+   only moves wrong ones.
+3. PER-ROUND: A/B drift game when a parameter is uncertain (two crops, forced
+   choice — "this-not-that"); adjective must/avoid sort for new mood words.
+4. PER-ROUND: generate → judge board next to anchors + anti-examples → user
+   verdicts in parameter words ("glossy drift", "too empty") → verdicts patch
+   the SPEC, not just the round.
+
+### Prompt assembly from a spec
+Order: scene/subject → per-panel motifs (with counts) → medium+finish → named
+palette + warm/cool poles → line/shape language → texture allowed → anti_style
+block → signage rule. Refs attached BY ROLE (architecture anchors + medium
+anchors + content ref); never attach an anti-example as a positive ref.

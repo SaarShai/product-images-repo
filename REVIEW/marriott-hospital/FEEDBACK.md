@@ -2,7 +2,44 @@
 
 Full folder path: `/Users/za/Documents/product images repo/REVIEW/marriott-hospital/`
 
-## NEWEST (r15) — style corrected to the TRUE original + your detail list
+## NEWEST — STYLE-SPEC system (your anti-drift brief) — GATE before r16
+
+r15 glossy = drift, confirmed. Root cause across ALL drifts (15 incidents mined
+from this project's record): refs without ROLES + one coarse "style" knob.
+
+Built (3 parallel gpt-5.5 research lanes + my synthesis):
+1. **`MOOD-BOARD-v1.jpg`** (this folder) — TARGET row (police/fire = architecture/
+   composition anchors; hospital original = content only), APPROVED row (r13/r11 =
+   medium anchors), REJECTED row with reason labels (glossy / felt / anemic).
+2. **STYLE-SPEC v1** — 19-field granular matrix, every field traceable to a drift
+   incident: medium, finish (its own axis!), named palette + per-surface colors +
+   warm/cool poles, line, shape language, detail density, motif vocabulary (with
+   COUNTS — one cross badge), texture rules, anti-style NOTs, reference role map,
+   signage rule, set consistency, review gate, mood words.
+   File: `tasks/marriott-hospital/style-spec/marriott-hospital.style-spec.yaml`.
+3. **Process** (wired into the style skill, used from now on):
+   - ONE-TIME: mood-board gate (below) + prefilled style sliders.
+   - PER-ROUND: A/B drift picks only when uncertain; your verdicts in parameter
+     words patch the SPEC, not just the round.
+
+### YOUR GATE (one-time, ~30 seconds)
+A. Mood board verdict: **yes / almost / wrong**?
+B. Prefilled sliders — move any that are wrong:
+   - literal ←——●——→ abstract (storybook-literal)
+   - simple ←———●—→ detailed (storybook-medium-dense)
+   - muted ←———●—→ saturated (bright-rich, not neon)
+   - geometric ←——●———→ organic (rounded-chunky)
+   - matte ●————————→ glossy (fully matte watercolor)
+   - real ←———●——→ fictional (slightly fictional, toy-like charm)
+C. Mood words: playful, bright, friendly, storybook, slightly fictional
+   (avoid: glossy, slick, clinical, gloomy, realistic) — edits?
+
+On your "yes": r16 = police/fire cartoon architecture + r13 watercolor medium +
+r15's playful details (teddy, defib, sirens, 3/4 ambulance), driven by the spec.
+
+---
+
+## PREVIOUS (r15) — style corrected to the TRUE original + your detail list
 
 `r15-screen-preview.jpg` — style refs switched from Police/Fire (stone/dusk) to
 YOUR true original `Updated Hospital 1.png` crops. Bright glossy modern-toy look

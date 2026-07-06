@@ -1,0 +1,123 @@
+# STYLE-SPEC v1 — Marriott China Hospital (filled instance)
+# Drafted by gpt-5.5 xhigh (agent C), synthesized by Fable 2026-07-05.
+# Mood board: tasks/marriott-hospital/MOOD-BOARD-v1.jpg (target/approved/rejected rows).
+# Rule: every gen agent MUST load this + the mood board before generating.
+
+mood_words:  # 4-5 verbal anchors (NN/g practice); user-editable
+  must: ["playful", "bright", "friendly", "storybook", "slightly fictional"]
+  avoid: ["glossy", "slick", "clinical", "gloomy", "realistic"]
+
+art_medium:
+  primary: "hand-painted watercolor"
+  secondary_allowed: "small gouache-like opaque accents only where needed for readable details"
+  forbidden: ["felt craft", "flat vector-only look", "3D render"]
+
+rendering_finish:
+  target: "matte watercolor on paper"
+  light_response: "soft diffuse highlights, no shiny specular reflections"
+  forbidden: ["glossy plastic", "toy-render bevels", "polished 3D surface"]
+
+color_palette:
+  named_colors: ["sky blue", "warm cream", "coral red", "sunny yellow", "medical teal", "soft green", "clean white"]
+  saturation: "bright-rich and cheerful, not neon"
+  lighting_time_of_day: "bright daylight"
+  avoid: ["anemic monochrome", "gray low-saturation wash", "single-hue palette"]
+
+line_quality:
+  target: "delicate precise storybook linework with soft watercolor edges"
+  edge_behavior: "controlled, rounded, friendly"
+  forbidden: ["heavy black outlines", "hard 3D bevel edges", "blurred undefined edges"]
+
+shape_language:
+  target: "police/fire-station cartoon composition adapted to a hospital panel"
+  architecture: "chunky rounded storybook building, simplified facade, friendly civic-building proportions"
+  toy_like_note: "toy-like means playful shape charm only, not glossy toy material"
+
+detail_density:
+  target: "storybook-medium"
+  distribution: "enough small details on facade and around entry to feel playful; keep main hospital shape readable"
+  avoid: ["empty walls", "overcrowded clutter", "low-content anemic result"]
+
+motif_vocabulary:
+  required_props: ["teddy bear", "siren lights", "defibrillator wall box"]
+  optional_props: ["first-aid kit", "single medical cross badge", "rounded windows", "small awning", "string lights", "flower-basket lamppost", "3/4-view ambulance with star-of-life"]
+  treatment: "playful medical-themed details integrated into the building, not floating stickers"
+  cross_rule: "ONE main cross badge per panel maximum (rounded-square badge, white cross); never multiple mismatched crosses"
+
+texture_rules:
+  allowed: ["subtle watercolor paper grain", "light pigment granulation", "soft wash pooling"]
+  forbidden: ["felt fiber", "fabric weave", "wool texture", "embroidery", "plush texture", "plastic sheen"]
+
+anti_style:
+  - "no felt, fiber, fabric, wool, embroidery, or stitched look"
+  - "no glossy 3D toy render"
+  - "no plastic shine or bevel-heavy product-render lighting"
+  - "no anemic monochrome or weak low-saturation wash"
+  - "no photorealism"
+  - "no generated text, letters, numbers, or logos"
+
+reference_images:
+  style_anchor:
+    - path: tasks/marriott-hospital/style-read/ref_police_facade.png
+      role: "shape language, composition, line charm"
+    - path: tasks/marriott-hospital/style-read/ref_fire_facade.png
+      role: "playful civic-building composition and detail style"
+  content_reference:
+    - path: tasks/marriott-hospital/style-read/orig-door-notext.png
+      role: "hospital identity and panel layout ONLY — its glossy render finish is NOT the style"
+  anti_example:
+    - path: tasks/marriott-hospital/outputs/r4_door_consist.png
+      reason: "felt/fiber substrate drift"
+    - path: tasks/marriott-hospital/outputs/r15_door_style_fix2.png
+      reason: "glossy 3D toy drift"
+    - path: tasks/marriott-hospital/outputs/r12_door_b_s1_final.png
+      reason: "anemic monochrome drift"
+
+# --- merged from drift-evidence mining (agent B), 2026-07-05 ---
+
+# Reference ROLE refinement — the r15 oscillation root cause: a ref used for
+# architecture was also read as finish/palette. Each ref carries ONE role.
+reference_role_map:
+  architecture_composition: ["ref_police_facade.png", "ref_fire_facade.png"]
+  architecture_warning: "do NOT copy their stone/felt texture or their dusk mood"
+  medium_finish: ["outputs/r13_door_final.png", "outputs/r11_right_c1_style.png"]
+  medium_note: "APPROVED user-verified watercolor rounds = the medium anchors"
+  content_motifs: ["style-read/orig-door-notext.png", "style-read/orig-left-crop.png", "style-read/orig-right-crop.png"]
+  content_warning: "glossy 3D finish of the content refs is FORBIDDEN as style"
+
+# r5 lesson: reference style over-applied globally shifted the door navy.
+per_surface_palette:
+  facade_walls: "warm cream / clean white"
+  door_leaves: "cerulean-to-cobalt blue, visible panel detail"
+  roof_dome: "deep cobalt blue"
+  glass: "medical teal with soft reflections"
+  trim_mullions: "white"
+  lamps_lights: "warm gold glow"
+  greenery: "soft rich greens with flower accents"
+
+# r9/r10 anemia lesson: warm/cool interplay is STRUCTURAL — name both poles.
+warm_cool_structure:
+  warm_pole: "cream stone, golden lamp glow, warm window light"
+  cool_pole: "cobalt/teal blues of roof, door, glass, sky"
+  rule: "every panel carries BOTH poles; a single-pole panel is a defect"
+
+# r13/r15 stabilizer lesson: the whole SET moves together.
+set_consistency:
+  rule: "stabilizers + all panels inherit THIS spec version together; never ship a set mixing spec versions"
+
+# r4 lesson: judging from memory/thumbnails is void.
+review_gate:
+  rule: "before shipping: side-by-side board vs hi-DPI ORIGINALS + this spec's anti-examples; verdicts recorded per parameter ('glossy drift', 'too empty') and fed back into this spec"
+
+signage_text_rule:
+  policy: "all signs, plaques, labels, and boards must remain blank"
+  allowed: ["blank sign shapes", "plain colored plaques", "simple medical symbol if needed"]
+  forbidden: ["rendered words", "letters", "numbers", "logos", "fake signage"]
+
+character_prop_proportions:
+  props: "slightly oversized, rounded, readable at panel scale"
+  teddy_bear: "small friendly accent, simplified plush shape without plush/fiber texture"
+  medical_equipment: "defibrillator and first-aid props simplified and softened, not realistic clinical gear"
+
+geometry_contract:
+  note: "geometry lives in tasks/marriott-hospital/geometry/v2/ (approved) — style-spec governs LOOK only"
