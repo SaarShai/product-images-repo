@@ -176,21 +176,36 @@ def build(render_path, census_path, scale_pct, outdir):
         outer_edge = body_smooth & ~(~_dilate(~body_smooth, 2))
         ctrl = _dilate(black_cut, 2) | outer_edge
         if name == "door":
-            # orange door anchor is dashed — never trace its pixels (dash leak).
-            # Draw a synthetic SOLID arch from the anchor's percentile bbox:
-            # straight sides + semicircular top, 3px stroke.
-            oy, ox = np.where(col["orange"][cy0:cy1])
-            if len(ox) > 50:
+            # orange door anchor: trace the TRUE dashed path (r16c incident —
+            # a synthetic bbox+semicircle arch was WIDER than the template's
+            # real shape because stray orange dashes near the panel edges
+            # inflated the percentile bbox). Method: close the dashes into one
+            # curve, keep the LARGEST connected component only (strays are
+            # small), then fill its closed outline and take the boundary.
+            oz = col["orange"][cy0:cy1]
+            if oz.sum() > 50:
+                # keep the largest connected orange structure (strays are small)
+                main = components(_dilate(oz, 30))[0]
+                opix = main & _dilate(oz, 2)
+                oy2, ox2 = np.where(opix)
+                # ANALYTIC fit (morphological smoothing of a thin traced path
+                # proved unstable): measure sides + crown from the pixels, draw
+                # a clean arc + straight sides at the TRUE positions.
+                y_top, y_bot = int(oy2.min()), int(oy2.max())
+                lower = oy2 > (y_top + (y_bot - y_top) * 0.55)
+                xL = int(np.median([ox2[lower & (ox2 < np.median(ox2))].min()
+                                    if (lower & (ox2 < np.median(ox2))).any() else ox2.min()]))
+                xL = int(np.percentile(ox2[lower], 1))
+                xR = int(np.percentile(ox2[lower], 99))
+                r_true = (xR - xL) / 2.0
+                spring_y = y_top + r_true               # crown at y_top
                 from PIL import ImageDraw
-                x0o, x1o = int(np.percentile(ox, 2)), int(np.percentile(ox, 98))
-                y0o, y1o = int(np.percentile(oy, 2)), int(np.percentile(oy, 98))
                 arch = Image.new("L", (cut.shape[1], cut.shape[0]), 0)
                 dr = ImageDraw.Draw(arch)
-                r = (x1o - x0o) // 2
-                dr.arc([x0o, y0o, x1o, y0o + 2 * r], 180, 360, fill=255, width=3)
-                dr.line([x0o, y0o + r, x0o, y1o], fill=255, width=3)
-                dr.line([x1o, y0o + r, x1o, y1o], fill=255, width=3)
-                dr.line([x0o, y1o, x1o, y1o], fill=255, width=3)
+                dr.arc([xL, y_top, xR, int(y_top + 2 * r_true)], 180, 360, fill=255, width=4)
+                dr.line([xL, int(spring_y), xL, y_bot], fill=255, width=4)
+                dr.line([xR, int(spring_y), xR, y_bot], fill=255, width=4)
+                dr.line([xL, y_bot, xR, y_bot], fill=255, width=4)
                 ctrl = ctrl | (np.array(arch) > 127)
         forb = col["red"][cy0:cy1]
         # forbidden stripes as filled boxes (dashes -> solid): per connected x-band
@@ -219,13 +234,14 @@ def build(render_path, census_path, scale_pct, outdir):
             "green_top_frac": _zone_frac(col["green"][max(rows.min()-int(1200*px_per_pt),0):cy1], pw),
         }
         if name == "door":
-            oy, ox = np.where(col["orange"][cy0:cy1])
-            if len(ox) > 50:
-                # percentile bbox: robust against stray anti-aliased pixels
-                x0o, x1o = np.percentile(ox, 2), np.percentile(ox, 98)
-                y0o, y1o = np.percentile(oy, 2), np.percentile(oy, 98)
-                spec["door_anchor_frac"] = [round(x0o/pw, 4), round(y0o/ph, 4),
-                                            round(x1o/pw, 4), round(y1o/ph, 4)]
+            # anchor bbox from the LARGEST connected orange structure only —
+            # global percentiles spanned stray edge dashes (r16c incident)
+            oz2 = col["orange"][cy0:cy1]
+            if oz2.sum() > 50:
+                main2 = components(_dilate(oz2, 30))[0]
+                oy, ox = np.where(main2 & _dilate(oz2, 2))
+                spec["door_anchor_frac"] = [round(ox.min()/pw, 4), round(oy.min()/ph, 4),
+                                            round(ox.max()/pw, 4), round(oy.max()/ph, 4)]
         json.dump(spec, open(outdir / f"{name}-spec.json", "w"), indent=1)
         report[name] = spec
     return report

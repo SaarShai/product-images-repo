@@ -53,3 +53,16 @@ builder (see scripts/master_spec.py for the reference implementation):
   kill dash scallops), never the raw dash-bridged arc.
 - Never trace dashed anchor shapes — draw a SYNTHETIC solid outline from the
   anchor's percentile bbox (arch = straight sides + semicircle top).
+
+## Verify synthetic geometry against source pixels (2026-07-05, r16c incident — binding)
+
+If a control-map element is RECONSTRUCTED (dashed anchor → solid path, closed
+dome, synthetic shape), it MUST be verified pixel-on-pixel against the source
+template render BEFORE any generation uses it: overlay the reconstruction on
+the raw classified pixels (e.g. scratchpad/anchor-verify.png pattern) and eyeball
+coincidence. The r16c incident: a synthetic bbox+semicircle anchor was ~35%
+wider than the template's true orange path (stray dashes inflated the bbox);
+three rounds generated + validated against the invented shape — circular
+validation. Reconstruction rules: largest connected component only (excludes
+stray dashes), then ANALYTIC fit (arc + lines at measured positions) — NOT
+morphological smoothing of thin paths (beads or erases).
