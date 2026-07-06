@@ -2,7 +2,34 @@
 
 Full folder path: `/Users/za/Documents/product images repo/REVIEW/marriott-hospital/`
 
-## NEWEST (r14-hires) — FULL hi-res set, both upscale paths built
+## NEWEST (r15) — style corrected to the TRUE original + your detail list
+
+`r15-screen-preview.jpg` — style refs switched from Police/Fire (stone/dusk) to
+YOUR true original `Updated Hospital 1.png` crops. Bright glossy modern-toy look
+now, matching it.
+
+Applied from your list:
+- Domes kept physical (retracted my earlier sky-top idea); minimal sky, full
+  building fill.
+- Crosses cut from 5 mismatched → 2 CONSISTENT badges (main crest + canopy),
+  same rounded-square white-cross style; door-leaf glass now plain (matches ref).
+- Left: defibrillator wall box, teddy bear in window, string lights, lamppost
+  w/ flower basket, bench — all present.
+- Right: rooftop siren beacon, blank red panel (was painted "EMERGENCY" text —
+  caught + fixed), ambulance in 3/4 view w/ star-of-life.
+- Stabilizers regenerated to match (were still old dusk-lighthouse style —
+  caught before shipping).
+- Door: siren beacons added either side of canopy per your police-ref inspiration.
+
+Still open / your call: is 2 badges (vs the original's 1) fine, or cut the
+canopy one too? Anything else reads off vs the true original?
+
+KNOWN ISSUE: this round is NOT yet hi-res (that was r14's contribution, on the
+now-superseded style). Say the word and I'll re-run the finish chain on r15.
+
+---
+
+## PREVIOUS (r14-hires) — FULL hi-res set, both upscale paths built
 
 **`r14-production-hires.jpg`** = the complete set, EVERY panel now hi-res:
 door 1800×2560, narrows upscaled to 1040×2560, lighthouse stabs. **Main deliverable.**
