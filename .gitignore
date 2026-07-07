@@ -52,3 +52,41 @@ tasks/cap-juluca/outputs/reviews/
 
 # device-handoff prompt (contains live API keys — never commit)
 HANDOFF.md
+
+# --- 2026-07-07 cleanup: regenerable binaries, worktrees, scratch ---
+# nested git worktree (separate checkout — never commit into the parent repo)
+.claude/worktrees/
+# repo-root scratch: one-off round scripts + intermediates (durable tooling lives in scripts/)
+/scratchpad/
+# workflow preview PNGs (regenerable)
+/workflows/
+# editor/OS/proc leftovers
+*.bak
+*.orig
+*.pid
+
+# Marine Pod upscale — side task; multi-GB upscaled waves + source .ai stay local (relink is done in Illustrator, not git)
+tasks/marine-pod-upscale/
+
+# marriott-hospital: keep the specs/scripts/docs; drop regenerable render outputs
+tasks/marriott-hospital/outputs/
+
+# cap-juluca: result images live in the Drive Images/ folder, not the repo
+tasks/cap-juluca/Images/
+
+# workflow-rebuild R&D: keep docs (md/json/sh/py); drop the ~1GB of generated round images
+tasks/workflow-rebuild/**/raws/
+tasks/workflow-rebuild/**/raws-*/
+tasks/workflow-rebuild/**/board/
+tasks/workflow-rebuild/**/boards/
+tasks/workflow-rebuild/**/gates/
+tasks/workflow-rebuild/**/gates-*/
+tasks/workflow-rebuild/**/overlays/
+tasks/workflow-rebuild/**/*.png
+tasks/workflow-rebuild/**/*.jpg
+
+# REVIEW is a transient local inbox — boards regenerate from tasks/; keep only the .md notes
+REVIEW/**/*.png
+REVIEW/**/*.jpg
+REVIEW/**/*.jpeg
+REVIEW/**/*.mp4
