@@ -1,0 +1,56 @@
+[
+ {
+  "name": "endpct04",
+  "door_fill": 0.988,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c2/gates/endpct04-doorfill-overlay.png"
+ },
+ {
+  "name": "endpct08",
+  "door_fill": 0.9976,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c2/gates/endpct08-doorfill-overlay.png"
+ },
+ {
+  "name": "genl3-s100",
+  "door_fill": 0.9655,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c2/gates/genl3-s100-doorfill-overlay.png"
+ },
+ {
+  "name": "genl3-s200",
+  "door_fill": 0.9203,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c2/gates/genl3-s200-doorfill-overlay.png"
+ },
+ {
+  "name": "i2i-d042",
+  "door_fill": 0.9886,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c2/gates/i2i-d042-doorfill-overlay.png"
+ },
+ {
+  "name": "i2i-d058",
+  "door_fill": 0.988,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c2/gates/i2i-d058-doorfill-overlay.png"
+ },
+ {
+  "name": "i2iseed200",
+  "door_fill": 0.988,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c2/gates/i2iseed200-doorfill-overlay.png"
+ },
+ {
+  "name": "i2iseed300",
+  "door_fill": 0.9902,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c2/gates/i2iseed300-doorfill-overlay.png"
+ },
+ {
+  "name": "i2iseed400",
+  "door_fill": 0.9851,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c2/gates/i2iseed400-doorfill-overlay.png"
+ }
+]

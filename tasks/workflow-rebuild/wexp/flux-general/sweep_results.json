@@ -1,0 +1,38 @@
+[
+  {
+    "name": "cs035_rs050",
+    "control_scale": 0.35,
+    "ref_strength": 0.5,
+    "error": "{\"detail\":\"Could not load pipeline due to error: Sizes of tensors must match except in dimension 0. Expected size 128 but got size 64 for tensor number 1 in the list.\"}"
+  },
+  {
+    "name": "cs035_rs080",
+    "control_scale": 0.35,
+    "ref_strength": 0.8,
+    "error": "{\"detail\":\"Could not load pipeline due to error: Sizes of tensors must match except in dimension 0. Expected size 128 but got size 64 for tensor number 1 in the list.\"}"
+  },
+  {
+    "name": "cs050_rs050",
+    "control_scale": 0.5,
+    "ref_strength": 0.5,
+    "error": "{\"detail\":\"Could not load pipeline due to error: Sizes of tensors must match except in dimension 0. Expected size 128 but got size 64 for tensor number 1 in the list.\"}"
+  },
+  {
+    "name": "cs050_rs080",
+    "control_scale": 0.5,
+    "ref_strength": 0.8,
+    "error": "{\"detail\":\"Could not load pipeline due to error: Sizes of tensors must match except in dimension 0. Expected size 128 but got size 64 for tensor number 1 in the list.\"}"
+  },
+  {
+    "name": "cs070_rs050",
+    "control_scale": 0.7,
+    "ref_strength": 0.5,
+    "error": "{\"detail\":\"Could not load pipeline due to error: Sizes of tensors must match except in dimension 0. Expected size 128 but got size 64 for tensor number 1 in the list.\"}"
+  },
+  {
+    "name": "cs070_rs080",
+    "control_scale": 0.7,
+    "ref_strength": 0.8,
+    "error": "{\"detail\":\"Could not load pipeline due to error: Sizes of tensors must match except in dimension 0. Expected size 128 but got size 64 for tensor number 1 in the list.\"}"
+  }
+]

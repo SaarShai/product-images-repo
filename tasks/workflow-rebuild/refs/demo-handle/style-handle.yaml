@@ -1,0 +1,38 @@
+created_at: '2026-07-06T12:00:00Z'
+rows:
+- file: 01-medium_ref.png
+  role: medium_ref
+  provenance: style-read crop, watercolor technique sample
+  notes: primary medium anchor
+  source_file: tasks/marriott-hospital/style-read/crop-watercube-technique.png
+- file: 02-palette_ref.png
+  role: palette_ref
+  provenance: style-read crop, hospital facade palette
+  notes: ''
+  source_file: tasks/marriott-hospital/style-read/crop-hospital-facade.png
+- file: 03-style_ref.png
+  role: style_ref
+  provenance: police-station facade, shape language + composition anchor
+  notes: ''
+  source_file: tasks/marriott-hospital/style-read/ref_police_facade.png
+  hold_out: door
+- file: 04-feature_ref.png
+  role: feature_ref
+  provenance: "r13 approved door \u2014 user-confirmed watercolor finish"
+  notes: ''
+  source_file: tasks/marriott-hospital/outputs/r13_door_final.png
+- file: 05-feature_ref-02.png
+  role: feature_ref
+  provenance: r11 approved right-panel style detail
+  notes: ''
+  source_file: tasks/marriott-hospital/outputs/r11_right_c1_style.png
+- file: 06-geometry_ref.png
+  role: geometry_ref
+  provenance: v3 door mask, keep-clear + hole geometry
+  notes: ''
+  source_file: tasks/marriott-hospital/geometry/v3/door-mask.png
+- file: 07-layout_ref.png
+  role: layout_ref
+  provenance: original door layout, content-only (glossy finish NOT the style)
+  notes: ''
+  source_file: tasks/marriott-hospital/style-read/orig-door-notext.png

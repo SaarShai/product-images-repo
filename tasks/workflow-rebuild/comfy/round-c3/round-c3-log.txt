@@ -1,0 +1,118 @@
+=== BUILD hires-i2i_s300 ===
+wrote /tmp/wf-c3-hires-i2i_s300.json  (17 nodes)
+=== RUN hires-i2i_s300 ===
+Traceback (most recent call last):
+  File "/Users/za/Documents/product images repo/scripts/comfy_run.py", line 81, in <module>
+    raise SystemExit(main())
+  File "/Users/za/Documents/product images repo/scripts/comfy_run.py", line 45, in main
+    resp = post_json(f"{base}/prompt", {"prompt": wf})
+  File "/Users/za/Documents/product images repo/scripts/comfy_run.py", line 25, in post_json
+    with urllib.request.urlopen(req, timeout=60) as r:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 214, in urlopen
+    return opener.open(url, data, timeout)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 523, in open
+    response = meth(req, response)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 632, in http_response
+    response = self.parent.error(
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 561, in error
+    return self._call_chain(*args)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 494, in _call_chain
+    result = func(*args)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 641, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 400: Bad Request
+FAILED hires-i2i_s300
+=== BUILD hires-endpct_s300 ===
+wrote /tmp/wf-c3-hires-endpct_s300.json  (16 nodes)
+=== RUN hires-endpct_s300 ===
+Traceback (most recent call last):
+  File "/Users/za/Documents/product images repo/scripts/comfy_run.py", line 81, in <module>
+    raise SystemExit(main())
+  File "/Users/za/Documents/product images repo/scripts/comfy_run.py", line 45, in main
+    resp = post_json(f"{base}/prompt", {"prompt": wf})
+  File "/Users/za/Documents/product images repo/scripts/comfy_run.py", line 25, in post_json
+    with urllib.request.urlopen(req, timeout=60) as r:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 214, in urlopen
+    return opener.open(url, data, timeout)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 523, in open
+    response = meth(req, response)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 632, in http_response
+    response = self.parent.error(
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 561, in error
+    return self._call_chain(*args)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 494, in _call_chain
+    result = func(*args)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 641, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 400: Bad Request
+FAILED hires-endpct_s300
+=== BUILD hires-i2i-hd03_s300 ===
+wrote /tmp/wf-c3-hires-i2i-hd03_s300.json  (17 nodes)
+=== RUN hires-i2i-hd03_s300 ===
+Traceback (most recent call last):
+  File "/Users/za/Documents/product images repo/scripts/comfy_run.py", line 81, in <module>
+    raise SystemExit(main())
+  File "/Users/za/Documents/product images repo/scripts/comfy_run.py", line 45, in main
+    resp = post_json(f"{base}/prompt", {"prompt": wf})
+  File "/Users/za/Documents/product images repo/scripts/comfy_run.py", line 25, in post_json
+    with urllib.request.urlopen(req, timeout=60) as r:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 214, in urlopen
+    return opener.open(url, data, timeout)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 523, in open
+    response = meth(req, response)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 632, in http_response
+    response = self.parent.error(
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 561, in error
+    return self._call_chain(*args)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 494, in _call_chain
+    result = func(*args)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 641, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 400: Bad Request
+FAILED hires-i2i-hd03_s300
+=== BUILD hires-i2i-hd06_s300 ===
+wrote /tmp/wf-c3-hires-i2i-hd06_s300.json  (17 nodes)
+=== RUN hires-i2i-hd06_s300 ===
+Traceback (most recent call last):
+  File "/Users/za/Documents/product images repo/scripts/comfy_run.py", line 81, in <module>
+    raise SystemExit(main())
+  File "/Users/za/Documents/product images repo/scripts/comfy_run.py", line 45, in main
+    resp = post_json(f"{base}/prompt", {"prompt": wf})
+  File "/Users/za/Documents/product images repo/scripts/comfy_run.py", line 25, in post_json
+    with urllib.request.urlopen(req, timeout=60) as r:
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 214, in urlopen
+    return opener.open(url, data, timeout)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 523, in open
+    response = meth(req, response)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 632, in http_response
+    response = self.parent.error(
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 561, in error
+    return self._call_chain(*args)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 494, in _call_chain
+    result = func(*args)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 641, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 400: Bad Request
+FAILED hires-i2i-hd06_s300
+=== BUILD dualregion_s100 ===
+wrote /tmp/wf-c3-dualregion_s100.json  (18 nodes)
+=== RUN dualregion_s100 ===
+[comfy_run] queued prompt ba195232-af3a-45c6-999b-f120cdeff985
+[comfy_run] saved tasks/workflow-rebuild/comfy/round-c3/raws/dualregion_s100.png  (66s total)
+DONE dualregion_s100
+=== BUILD dualregion_s300 ===
+wrote /tmp/wf-c3-dualregion_s300.json  (18 nodes)
+=== RUN dualregion_s300 ===
+[comfy_run] queued prompt 30c0b550-8d26-4cf4-a084-f66a29004b33
+[comfy_run] saved tasks/workflow-rebuild/comfy/round-c3/raws/dualregion_s300.png  (72s total)
+DONE dualregion_s300
+ROUND C3 COMPLETE
+=== BUILD hires-i2i_s300 (rerun after LatentUpscaleBy fix) ===
+wrote /tmp/wf-c3-hires-i2i_s300.json  (17 nodes)
+=== RUN hires-i2i_s300 ===
+[comfy_run] queued prompt b77bf01c-2a94-4465-81b9-5bbb0d122d22
+[comfy_run] TIMEOUT after 900s, no output image
+FAILED hires-i2i_s300
+=== BUILD hires-endpct_s300 (rerun after LatentUpscaleBy fix) ===
+wrote /tmp/wf-c3-hires-endpct_s300.json  (16 nodes)
+=== RUN hires-endpct_s300 ===

@@ -1,0 +1,8 @@
+workflow_rebuild_comfy:
+  base_path: /Users/za/Documents/product images repo/tasks/workflow-rebuild/comfy
+  checkpoints: models/checkpoints
+  clip_vision: models/clip_vision
+  controlnet: models/controlnet
+  diffusers: models/diffusers
+  vae: models/vae
+  loras: models/loras

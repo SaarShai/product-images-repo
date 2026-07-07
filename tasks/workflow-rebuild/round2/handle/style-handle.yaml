@@ -1,0 +1,86 @@
+created_at: '2026-07-06T13:48:54Z'
+rows:
+- file: 01-medium_ref.png
+  role: medium_ref
+  provenance: 'round2 rebuild from bible-v1 refs_by_role.medium_anchor source tasks/marriott-hospital/style-read/crop-watercube-technique.png;
+    cropped to the pure glass-facade watercolor wash region only (removed stone border
+    strip + foreground ornament balls) to give a text-free, single-texture medium
+    exemplar. Not a generated DOOR round output.
+
+    '
+  notes: watercolor wash texture + paper grain + linework on glass panels; no scene
+    content, no text
+  source_file: /private/tmp/claude-501/-Users-za-Documents-product-images-repo/55a97e3d-59cd-4d0e-b23b-c277c2643396/scratchpad/round2crops/01-medium_ref.png
+- file: 02-palette_ref.png
+  role: palette_ref
+  provenance: 'round2 rebuild (v2, post-review fix) from bible-v1 refs_by_role.palette
+    source tasks/marriott-hospital/refs/Updated Hospital 1.png; re-cropped to the
+    canopy/lamp trim band ONLY (no door leaf, no white arch void, no lettering) to
+    carry the collection palette (sky blue canopy, warm cream stone, warm lamp glow)
+    after v1 was flagged for showing an open door leaf + white void (banned reference
+    signal).
+
+    '
+  notes: blue/cream/white palette carrier via canopy+trim band, no door leaf, no white
+    void, no text
+  source_file: /private/tmp/claude-501/-Users-za-Documents-product-images-repo/55a97e3d-59cd-4d0e-b23b-c277c2643396/scratchpad/round2crops/02-palette_ref.png
+- file: 03-style_ref.png
+  role: style_ref
+  provenance: 'round2 rebuild (v2, post-review fix), same hold-out-safe exemplar as
+    round1 (tasks/marriott-hospital/style-read/ref_police_facade.png, harvested photo
+    not a generated DOOR round); re-cropped to the UPPER facade only (tower + dome
+    + windows + star badge), ending above the arch opening, after v1 was flagged for
+    showing the empty white arch void (banned reference signal) in addition to the
+    notice-board text risk.
+
+    '
+  notes: shape language + composition anchor via tower/dome/badge only, no arch opening,
+    no white void, no text; do NOT copy stone/felt texture or dusk mood; hold-out
+    not applicable (source art, not a DOOR-round gen)
+  source_file: /private/tmp/claude-501/-Users-za-Documents-product-images-repo/55a97e3d-59cd-4d0e-b23b-c277c2643396/scratchpad/round2crops/03-style_ref.png
+- file: 04-feature_ref.png
+  role: feature_ref
+  provenance: 'round2 rebuild from tasks/marriott-hospital/style-read/orig-door-notext.png
+    (collection''s own original source art, not a generated DOOR round); tight crop
+    isolating only the blue cross badge on the door leaf.
+
+    '
+  notes: single-subject cross badge card, no text, no surrounding scene
+  source_file: /private/tmp/claude-501/-Users-za-Documents-product-images-repo/55a97e3d-59cd-4d0e-b23b-c277c2643396/scratchpad/round2crops/04-feature_ref.png
+- file: 05-feature_ref-02.png
+  role: feature_ref
+  provenance: 'round2 rebuild (v2, post-review replacement): the v1 flame-shield-badge
+    crop from ref_fire_facade.png was flagged because feature-callouts-v1''s avoid-list
+    bans shield forms for the hospital badge, so that crop invited a banned form.
+    No teddy exists in the collection''s original source art (refs/ + style-read/
+    searched, none found), so this is a freshly generated single-subject teddy character
+    card via scripts/subgen.py --provider openai, prompted for a cheerful waving teddy
+    with a small non-injured-looking bandage, watercolor style, using 01-medium_ref.png
+    and 03-style_ref.png (v2) as image refs; one attempt, accepted as a clean single
+    subject with no text. Inaugurates the reusable element library''s teddy asset.
+
+    '
+  notes: single-subject teddy character card (waving, small cheerful bandage), plain
+    white background, no text, watercolor style matching medium/style refs
+  source_file: /private/tmp/claude-501/-Users-za-Documents-product-images-repo/55a97e3d-59cd-4d0e-b23b-c277c2643396/scratchpad/round2crops/05-feature_ref-02.png
+- file: 06-feature_ref-03.png
+  role: feature_ref
+  provenance: 'round2 rebuild from tasks/marriott-hospital/refs/Police Station.jpg
+    (collection''s own original source art, not a generated DOOR round); tight crop
+    isolating one potted topiary shrub beside the entry arch.
+
+    '
+  notes: single-subject potted topiary/entry greenery card, no text, no surrounding
+    scene
+  source_file: /private/tmp/claude-501/-Users-za-Documents-product-images-repo/55a97e3d-59cd-4d0e-b23b-c277c2643396/scratchpad/round2crops/06-feature_ref-03.png
+- file: 07-feature_ref-04.png
+  role: feature_ref
+  provenance: 'round2 rebuild from tasks/marriott-hospital/refs/Police Station.jpg
+    (collection''s own original source art, not a generated DOOR round); tight crop
+    isolating a pair of arched blue-framed windows (window treatment detail), deliberately
+    re-cropped away from the adjacent notice-board (which carries readable text) after
+    first-pass review.
+
+    '
+  notes: single-subject arched window-treatment card, no text, no surrounding scene
+  source_file: /private/tmp/claude-501/-Users-za-Documents-product-images-repo/55a97e3d-59cd-4d0e-b23b-c277c2643396/scratchpad/round2crops/07-feature_ref-04.png

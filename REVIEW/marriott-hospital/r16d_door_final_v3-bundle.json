@@ -1,0 +1,227 @@
+{
+  "panel": "door",
+  "stage": "finish",
+  "candidate_path": "/Users/za/Documents/product images repo/tasks/marriott-hospital/outputs/r16d_door_final_v3.png",
+  "candidate_sha256": "eaaa7dd894926569e4d794129289305455d7489ccbaead1b400696180390eb87",
+  "geometry_dir": "/Users/za/Documents/product images repo/tasks/marriott-hospital/geometry/v3",
+  "overlay_path": "/Users/za/Documents/product images repo/tasks/marriott-hospital/outputs/door-finish-overlay.png",
+  "overlay": {
+    "path": "/Users/za/Documents/product images repo/tasks/marriott-hospital/outputs/door-finish-overlay.png",
+    "control_edges": true,
+    "forbidden_bands": true,
+    "hole_regions": 6
+  },
+  "bundle_path": "/Users/za/Documents/product images repo/tasks/marriott-hospital/outputs/door-finish-bundle.json",
+  "gates": {
+    "geom": {
+      "gate": "geom",
+      "verdict": "WARN",
+      "raw_verdict": "FAIL",
+      "returncode": 1,
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "/Users/za/Documents/product images repo/scripts/geom_gate.py",
+        "--cand",
+        "/Users/za/Documents/product images repo/tasks/marriott-hospital/outputs/r16d_door_final_v3.png",
+        "--mask",
+        "/Users/za/Documents/product images repo/tasks/marriott-hospital/geometry/v3/door-mask.png"
+      ],
+      "fill_inside_contour": 0.7018,
+      "overflow_outside_contour": 0.0055,
+      "edge_iou": 0.6991,
+      "candidate_size": [
+        727,
+        1031
+      ],
+      "thresh": 0.82,
+      "fails": [
+        "fill_inside_contour 0.702 < thresh 0.82 (big empty gap inside the panel)"
+      ],
+      "warnings": [],
+      "downgraded_failures": [
+        "fill_inside_contour 0.702 < thresh 0.82 (big empty gap inside the panel)"
+      ],
+      "downgrade_rule": "fill_inside_contour failures are WARN because geom_gate.py's fill detector false-fails legitimately white or sparse panels",
+      "raw": {
+        "candidate": "/Users/za/Documents/product images repo/tasks/marriott-hospital/outputs/r16d_door_final_v3.png",
+        "svg": null,
+        "mask": "/Users/za/Documents/product images repo/tasks/marriott-hospital/geometry/v3/door-mask.png",
+        "candidate_size": [
+          727,
+          1031
+        ],
+        "thresh": 0.82,
+        "fill_inside_contour": 0.7018,
+        "overflow_outside_contour": 0.0055,
+        "edge_iou": 0.6991,
+        "per_role": {
+          "cutouts": [],
+          "keep_clear": [],
+          "note": "no per-role polygons resolved from SVG (mask-only run)"
+        },
+        "verdict": "FAIL",
+        "fails": [
+          "fill_inside_contour 0.702 < thresh 0.82 (big empty gap inside the panel)"
+        ],
+        "warnings": []
+      }
+    },
+    "forbidden": {
+      "gate": "forbidden",
+      "verdict": "PASS",
+      "raw_verdict": "OK",
+      "returncode": 0,
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "/Users/za/Documents/product images repo/scripts/forbidden_gate.py",
+        "--cand",
+        "/Users/za/Documents/product images repo/tasks/marriott-hospital/outputs/r16d_door_final_v3.png",
+        "--forbidden",
+        "/Users/za/Documents/product images repo/tasks/marriott-hospital/geometry/v3/door-forbidden.png",
+        "--mask",
+        "/Users/za/Documents/product images repo/tasks/marriott-hospital/geometry/v3/door-mask.png",
+        "--exclude-edges",
+        "/Users/za/Documents/product images repo/tasks/marriott-hospital/geometry/v3/door-control.png"
+      ],
+      "advisory": true,
+      "edge_density": {
+        "forbidden": 16.69,
+        "body": 13.85,
+        "ratio": 1.205
+      },
+      "color_variance": {
+        "forbidden": 75.76,
+        "body": 65.7,
+        "ratio": 1.153
+      },
+      "ratio_warn": 1.35,
+      "note": null,
+      "raw": {
+        "verdict": "OK",
+        "advisory": true,
+        "edge_density": {
+          "forbidden": 16.69,
+          "body": 13.85,
+          "ratio": 1.205
+        },
+        "color_variance": {
+          "forbidden": 75.76,
+          "body": 65.7,
+          "ratio": 1.153
+        },
+        "ratio_warn": 1.35,
+        "overlay": null
+      }
+    },
+    "holes": {
+      "gate": "holes",
+      "verdict": "PASS",
+      "threshold_min": 245.0,
+      "holes_found": 6,
+      "holes": [
+        {
+          "i": 1,
+          "area_px": 5905,
+          "core_px": 2155,
+          "bbox": [
+            110,
+            346,
+            127,
+            715
+          ],
+          "mean_luminance": 250.275,
+          "threshold_min": 245.0,
+          "verdict": "PASS"
+        },
+        {
+          "i": 2,
+          "area_px": 5904,
+          "core_px": 2154,
+          "bbox": [
+            600,
+            346,
+            616,
+            715
+          ],
+          "mean_luminance": 250.274,
+          "threshold_min": 245.0,
+          "verdict": "PASS"
+        },
+        {
+          "i": 3,
+          "area_px": 337,
+          "core_px": 185,
+          "bbox": [
+            315,
+            659,
+            336,
+            680
+          ],
+          "mean_luminance": 249.986,
+          "threshold_min": 245.0,
+          "verdict": "PASS"
+        },
+        {
+          "i": 4,
+          "area_px": 337,
+          "core_px": 184,
+          "bbox": [
+            391,
+            659,
+            412,
+            680
+          ],
+          "mean_luminance": 249.998,
+          "threshold_min": 245.0,
+          "verdict": "PASS"
+        },
+        {
+          "i": 5,
+          "area_px": 257,
+          "core_px": 122,
+          "bbox": [
+            30,
+            446,
+            48,
+            464
+          ],
+          "mean_luminance": 250.039,
+          "threshold_min": 245.0,
+          "verdict": "PASS"
+        },
+        {
+          "i": 6,
+          "area_px": 253,
+          "core_px": 119,
+          "bbox": [
+            30,
+            966,
+            48,
+            984
+          ],
+          "mean_luminance": 250.049,
+          "threshold_min": 245.0,
+          "verdict": "PASS"
+        }
+      ]
+    },
+    "dimensions": {
+      "gate": "dimensions",
+      "verdict": "WARN",
+      "candidate_size_px": [
+        727,
+        1031
+      ],
+      "expected_size_px": [
+        1692,
+        2400
+      ],
+      "exact_match": false,
+      "candidate_aspect": 0.705141,
+      "expected_aspect": 0.705,
+      "aspect_abs_diff": 0.000141,
+      "aspect_tolerance": 0.01
+    }
+  },
+  "overall_verdict": "WARN"
+}

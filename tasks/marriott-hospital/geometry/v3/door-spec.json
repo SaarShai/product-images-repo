@@ -1,0 +1,34 @@
+{
+ "panel": "door",
+ "source": "vector",
+ "px_per_pt": 0.5548,
+ "box_px": [
+  1930,
+  1285,
+  3622,
+  3685
+ ],
+ "size_px": [
+  1692,
+  2400
+ ],
+ "aspect": 0.705,
+ "body_frac": 0.903,
+ "holes_n": 6,
+ "forbidden_bands_frac": [
+  [
+   0.143,
+   0.1838
+  ],
+  [
+   0.8156,
+   0.857
+  ]
+ ],
+ "door_anchor_frac": [
+  0.2705,
+  0.4001,
+  0.7293,
+  0.9864
+ ]
+}

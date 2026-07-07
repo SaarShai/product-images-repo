@@ -1,0 +1,79 @@
+# FEATURE CALLOUTS v1 — hospital DOOR panel (trial run; user M/N/X pass pending —
+# these are agent-provisional picks from FEATURE-MENU-hospital.md, marked for override)
+# Zones are frac coords in the v3 door frame (1692x2400). Forbidden stripes:
+# x 0.143-0.184 and 0.816-0.857 (nothing salient there). Door anchor: x 0.271-0.729,
+# y 0.400-0.986. ≤3 MUST protected.
+panel: door
+contract: v3
+features:
+  - feature_id: cross_beacon
+    name: Rooftop cross-beacon
+    why_toy_like: police siren bar transposed — a glowing red/white cross lamp on a
+      little pole; over-scaled roof signal like a playset part
+    role_signifier: hospital / emergency care
+    signature_exaggeration: beacon ~12% of panel width, clearly bigger than realistic
+    zone_bbox_frac: [0.40, 0.02, 0.60, 0.13]   # atop the dome
+    relative_size: medium-dominant
+    layer: architecture
+    count: 1
+    priority: must
+    avoid: no readable text; not a second cross badge (the facade badge is THE one)
+  - feature_id: cross_badge
+    name: Blue rounded-square badge, white equal-arm cross
+    why_toy_like: the shield-with-star class — one proud emblem over the arch
+    role_signifier: hospital
+    signature_exaggeration: badge larger than a realistic plaque (~10% panel width)
+    zone_bbox_frac: [0.43, 0.20, 0.57, 0.30]   # over the door arch, under dome
+    relative_size: medium
+    layer: architecture
+    count: 1
+    priority: must
+    avoid: wrong forms (gold porthole / coin / crucifix / shield / oval); exactly ONE
+  - feature_id: teddy_patient
+    name: Teddy-bear patient waving from a window, bandaged arm
+    why_toy_like: mini-narrative kid-findable; upgrades the approved r16d teddy
+    role_signifier: caring / patients
+    signature_exaggeration: bear fills its window opening
+    zone_bbox_frac: [0.205, 0.32, 0.32, 0.42]   # x0→0.205 (clearance nudge: was 0.190, now ≥0.02 from left stripe edge 0.184)
+    relative_size: small
+    layer: prop
+    count: 1
+    priority: must
+    open_ended_story_hook: bear is getting better — waving, not sad
+    avoid: no bandages that read as injury/gore; cheerful
+  - feature_id: pinwheel_window
+    name: Round window, cross-shaped mullions
+    why_toy_like: police porthole-pinwheel transposed
+    role_signifier: hospital (subtle)
+    zone_bbox_frac: [0.44, 0.135, 0.56, 0.195]  # between dome base and badge
+    relative_size: small
+    layer: architecture
+    count: 1
+    priority: nice
+    avoid: must NOT read as another cross badge — window glazing, not an emblem
+  - feature_id: balloons
+    name: Get-well balloon bouquet tied to entrance rail
+    why_toy_like: celebration prop; classic toy-scene charm
+    zone_bbox_frac: [0.735, 0.55, 0.795, 0.72]  # x1→0.795 (clearance nudge: was 0.810, now ≥0.02 from right stripe edge 0.816)
+    relative_size: small
+    layer: prop
+    count: 1
+    priority: nice
+    avoid: max 4 balloons; no text on balloons
+  - feature_id: topiary
+    name: Potted topiary balls flanking the door
+    zone_bbox_frac: [0.24, 0.82, 0.76, 0.99]   # base line, both sides of arch
+    relative_size: small
+    layer: detail
+    count: 2
+    priority: nice
+    avoid: keep off the forbidden stripes
+    dodge_portal: true   # renderer (layout_ref._dodge_feature_boxes) shifts the two
+      # count=2 sub-shapes clear of the door-portal mask at render time (they flank
+      # the arch, not sit on it); a real portal-mask overlap here is advisory only
+negative_callouts:
+  - no awning or canopy over the door (user veto)
+  - no painted text anywhere; plaques blank or icon-only
+  - exactly ONE cross badge on the facade (the beacon is a LAMP, not a badge)
+  - no scary medical props (syringes, IV stands)
+layout_route: BEACON_ROOF   # beacon+dome dominate top; badge centers; door fills anchor

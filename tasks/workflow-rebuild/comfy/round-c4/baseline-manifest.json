@@ -1,0 +1,36 @@
+{
+  "baseline_raws": [
+    {
+      "arm": "arm-g_s1",
+      "path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/raws/arm-g_s1.png",
+      "door_fill": 0.9877,
+      "overlay_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/gates/arm-g_s1-door-finish-overlay.png"
+    },
+    {
+      "arm": "arm-g_s2",
+      "path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/raws/arm-g_s2.png",
+      "door_fill": 0.9743,
+      "overlay_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/gates/arm-g_s2-door-finish-overlay.png"
+    },
+    {
+      "arm": "arm-g_s3",
+      "path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/raws/arm-g_s3.png",
+      "door_fill": 0.9796,
+      "overlay_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/gates/arm-g_s3-door-finish-overlay.png"
+    },
+    {
+      "arm": "arm-g_s4",
+      "path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/raws/arm-g_s4.png",
+      "door_fill": 0.9864,
+      "overlay_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/gates/arm-g_s4-door-finish-overlay.png"
+    },
+    {
+      "arm": "arm-g_s5",
+      "path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/raws/arm-g_s5.png",
+      "door_fill": 0.969,
+      "overlay_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/gates/arm-g_s5-door-finish-overlay.png"
+    }
+  ],
+  "best_arm": "arm-g_s1",
+  "notes": "Round 3 gpt-image (OpenAI provider via subgen.py) door-panel candidates. All samples use 'arm-g' prompt and geometry-only guide. arm-g_s1 selected as best based on user statement that it had best geometry. door_fill values sourced from round3-results.json. All raw and overlay paths verified to exist on disk."
+}

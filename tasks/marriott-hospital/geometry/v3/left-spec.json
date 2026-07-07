@@ -1,0 +1,24 @@
+{
+ "panel": "left",
+ "source": "vector",
+ "px_per_pt": 0.5548,
+ "box_px": [
+  993,
+  1467,
+  1921,
+  3685
+ ],
+ "size_px": [
+  928,
+  2219
+ ],
+ "aspect": 0.4182,
+ "body_frac": 0.9304,
+ "holes_n": 1,
+ "forbidden_bands_frac": [
+  [
+   0.4623,
+   0.5377
+  ]
+ ]
+}

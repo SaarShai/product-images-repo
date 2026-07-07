@@ -1,0 +1,572 @@
+[
+  {
+    "arm": "ARM-L",
+    "sample": "s1",
+    "raw_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/raws/arm-l_s1.png",
+    "geom_overall_verdict": "FAIL",
+    "geom_iou": 0.7499,
+    "geom_verdict": "WARN",
+    "fill_inside_contour": 0.7679,
+    "overflow_outside_contour": 0.0304,
+    "forbidden_verdict": "PASS",
+    "holes_verdict": "FAIL",
+    "dimensions_verdict": "WARN",
+    "dual_geom_available": false,
+    "dual_geom_region_iou": null,
+    "dual_geom_white_iou": null,
+    "dual_geom_disagreement": null,
+    "dual_geom_disagreement_flag": null,
+    "overlay_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-l_s1-overlay.png",
+    "bundle_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-l_s1-bundle.json",
+    "emblem_pass": true,
+    "emblem_json_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-l_s1-emblem.json",
+    "presence_total": 3,
+    "presence_count": 3,
+    "emblem_violations": [],
+    "motif_counts": {
+      "cross_beacon": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "cross_badge": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "teddy_patient": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "pinwheel_window": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "balloons": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "topiary": {
+        "seen": 2,
+        "expected": 2,
+        "match": true
+      }
+    }
+  },
+  {
+    "arm": "ARM-L",
+    "sample": "s2",
+    "raw_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/raws/arm-l_s2.png",
+    "geom_overall_verdict": "FAIL",
+    "geom_iou": 0.7673,
+    "geom_verdict": "WARN",
+    "fill_inside_contour": 0.7855,
+    "overflow_outside_contour": 0.0293,
+    "forbidden_verdict": "WARN",
+    "holes_verdict": "FAIL",
+    "dimensions_verdict": "WARN",
+    "dual_geom_available": false,
+    "dual_geom_region_iou": null,
+    "dual_geom_white_iou": null,
+    "dual_geom_disagreement": null,
+    "dual_geom_disagreement_flag": null,
+    "overlay_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-l_s2-overlay.png",
+    "bundle_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-l_s2-bundle.json",
+    "emblem_pass": true,
+    "emblem_json_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-l_s2-emblem.json",
+    "presence_total": 3,
+    "presence_count": 3,
+    "emblem_violations": [],
+    "motif_counts": {
+      "cross_beacon": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "cross_badge": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "teddy_patient": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "pinwheel_window": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "balloons": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "topiary": {
+        "seen": 2,
+        "expected": 2,
+        "match": true
+      }
+    }
+  },
+  {
+    "arm": "ARM-L",
+    "sample": "s3",
+    "raw_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/raws/arm-l_s3.png",
+    "geom_overall_verdict": "FAIL",
+    "geom_iou": 0.745,
+    "geom_verdict": "WARN",
+    "fill_inside_contour": 0.7634,
+    "overflow_outside_contour": 0.0314,
+    "forbidden_verdict": "WARN",
+    "holes_verdict": "FAIL",
+    "dimensions_verdict": "WARN",
+    "dual_geom_available": false,
+    "dual_geom_region_iou": null,
+    "dual_geom_white_iou": null,
+    "dual_geom_disagreement": null,
+    "dual_geom_disagreement_flag": null,
+    "overlay_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-l_s3-overlay.png",
+    "bundle_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-l_s3-bundle.json",
+    "emblem_pass": true,
+    "emblem_json_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-l_s3-emblem.json",
+    "presence_total": 3,
+    "presence_count": 3,
+    "emblem_violations": [],
+    "motif_counts": {
+      "cross_beacon": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "cross_badge": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "teddy_patient": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "pinwheel_window": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "balloons": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "topiary": {
+        "seen": 2,
+        "expected": 2,
+        "match": true
+      }
+    }
+  },
+  {
+    "arm": "ARM-L",
+    "sample": "s4",
+    "raw_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/raws/arm-l_s4.png",
+    "geom_overall_verdict": "FAIL",
+    "geom_iou": 0.78,
+    "geom_verdict": "WARN",
+    "fill_inside_contour": 0.8016,
+    "overflow_outside_contour": 0.0334,
+    "forbidden_verdict": "PASS",
+    "holes_verdict": "FAIL",
+    "dimensions_verdict": "WARN",
+    "dual_geom_available": false,
+    "dual_geom_region_iou": null,
+    "dual_geom_white_iou": null,
+    "dual_geom_disagreement": null,
+    "dual_geom_disagreement_flag": null,
+    "overlay_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-l_s4-overlay.png",
+    "bundle_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-l_s4-bundle.json",
+    "emblem_pass": true,
+    "emblem_json_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-l_s4-emblem.json",
+    "presence_total": 3,
+    "presence_count": 3,
+    "emblem_violations": [],
+    "motif_counts": {
+      "cross_beacon": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "cross_badge": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "teddy_patient": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "pinwheel_window": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "balloons": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "topiary": {
+        "seen": 2,
+        "expected": 2,
+        "match": true
+      }
+    }
+  },
+  {
+    "arm": "ARM-L",
+    "sample": "s5",
+    "raw_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/raws/arm-l_s5.png",
+    "geom_overall_verdict": "FAIL",
+    "geom_iou": 0.8316,
+    "geom_verdict": "PASS",
+    "fill_inside_contour": 0.8553,
+    "overflow_outside_contour": 0.0323,
+    "forbidden_verdict": "WARN",
+    "holes_verdict": "FAIL",
+    "dimensions_verdict": "WARN",
+    "dual_geom_available": false,
+    "dual_geom_region_iou": null,
+    "dual_geom_white_iou": null,
+    "dual_geom_disagreement": null,
+    "dual_geom_disagreement_flag": null,
+    "overlay_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-l_s5-overlay.png",
+    "bundle_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-l_s5-bundle.json",
+    "emblem_pass": true,
+    "emblem_json_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-l_s5-emblem.json",
+    "presence_total": 3,
+    "presence_count": 3,
+    "emblem_violations": [],
+    "motif_counts": {
+      "cross_beacon": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "cross_badge": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "teddy_patient": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "pinwheel_window": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "balloons": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "topiary": {
+        "seen": 2,
+        "expected": 2,
+        "match": true
+      }
+    }
+  },
+  {
+    "arm": "ARM-G",
+    "sample": "s1",
+    "raw_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/raws/arm-g_s1.png",
+    "geom_overall_verdict": "FAIL",
+    "geom_iou": 0.6018,
+    "geom_verdict": "WARN",
+    "fill_inside_contour": 0.6147,
+    "overflow_outside_contour": 0.0338,
+    "forbidden_verdict": "WARN",
+    "holes_verdict": "FAIL",
+    "dimensions_verdict": "WARN",
+    "dual_geom_available": false,
+    "dual_geom_region_iou": null,
+    "dual_geom_white_iou": null,
+    "dual_geom_disagreement": null,
+    "dual_geom_disagreement_flag": null,
+    "overlay_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-g_s1-overlay.png",
+    "bundle_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-g_s1-bundle.json",
+    "emblem_pass": true,
+    "emblem_json_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-g_s1-emblem.json",
+    "presence_total": 3,
+    "presence_count": 3,
+    "emblem_violations": [],
+    "motif_counts": {
+      "cross_beacon": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "cross_badge": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "teddy_patient": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "pinwheel_window": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "balloons": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "topiary": {
+        "seen": 2,
+        "expected": 2,
+        "match": true
+      }
+    }
+  },
+  {
+    "arm": "ARM-G",
+    "sample": "s2",
+    "raw_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/raws/arm-g_s2.png",
+    "geom_overall_verdict": "FAIL",
+    "geom_iou": 0.7388,
+    "geom_verdict": "WARN",
+    "fill_inside_contour": 0.7555,
+    "overflow_outside_contour": 0.0291,
+    "forbidden_verdict": "WARN",
+    "holes_verdict": "FAIL",
+    "dimensions_verdict": "WARN",
+    "dual_geom_available": false,
+    "dual_geom_region_iou": null,
+    "dual_geom_white_iou": null,
+    "dual_geom_disagreement": null,
+    "dual_geom_disagreement_flag": null,
+    "overlay_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-g_s2-overlay.png",
+    "bundle_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-g_s2-bundle.json",
+    "emblem_pass": true,
+    "emblem_json_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-g_s2-emblem.json",
+    "presence_total": 3,
+    "presence_count": 3,
+    "emblem_violations": [],
+    "motif_counts": {
+      "cross_beacon": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "cross_badge": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "teddy_patient": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "pinwheel_window": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "balloons": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "topiary": {
+        "seen": 2,
+        "expected": 2,
+        "match": true
+      }
+    }
+  },
+  {
+    "arm": "ARM-G",
+    "sample": "s3",
+    "raw_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/raws/arm-g_s3.png",
+    "geom_overall_verdict": "FAIL",
+    "geom_iou": 0.7519,
+    "geom_verdict": "WARN",
+    "fill_inside_contour": 0.7709,
+    "overflow_outside_contour": 0.0317,
+    "forbidden_verdict": "PASS",
+    "holes_verdict": "FAIL",
+    "dimensions_verdict": "WARN",
+    "dual_geom_available": false,
+    "dual_geom_region_iou": null,
+    "dual_geom_white_iou": null,
+    "dual_geom_disagreement": null,
+    "dual_geom_disagreement_flag": null,
+    "overlay_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-g_s3-overlay.png",
+    "bundle_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-g_s3-bundle.json",
+    "emblem_pass": true,
+    "emblem_json_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-g_s3-emblem.json",
+    "presence_total": 3,
+    "presence_count": 3,
+    "emblem_violations": [],
+    "motif_counts": {
+      "cross_beacon": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "cross_badge": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "teddy_patient": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "pinwheel_window": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "balloons": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "topiary": {
+        "seen": 2,
+        "expected": 2,
+        "match": true
+      }
+    }
+  },
+  {
+    "arm": "ARM-G",
+    "sample": "s4",
+    "raw_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/raws/arm-g_s4.png",
+    "geom_overall_verdict": "FAIL",
+    "geom_iou": 0.8257,
+    "geom_verdict": "PASS",
+    "fill_inside_contour": 0.8456,
+    "overflow_outside_contour": 0.0277,
+    "forbidden_verdict": "WARN",
+    "holes_verdict": "FAIL",
+    "dimensions_verdict": "WARN",
+    "dual_geom_available": false,
+    "dual_geom_region_iou": null,
+    "dual_geom_white_iou": null,
+    "dual_geom_disagreement": null,
+    "dual_geom_disagreement_flag": null,
+    "overlay_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-g_s4-overlay.png",
+    "bundle_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-g_s4-bundle.json",
+    "emblem_pass": true,
+    "emblem_json_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-g_s4-emblem.json",
+    "presence_total": 3,
+    "presence_count": 3,
+    "emblem_violations": [],
+    "motif_counts": {
+      "cross_beacon": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "cross_badge": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "teddy_patient": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "pinwheel_window": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "balloons": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "topiary": {
+        "seen": 2,
+        "expected": 2,
+        "match": true
+      }
+    }
+  },
+  {
+    "arm": "ARM-G",
+    "sample": "s5",
+    "raw_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/raws/arm-g_s5.png",
+    "geom_overall_verdict": "FAIL",
+    "geom_iou": 0.7212,
+    "geom_verdict": "WARN",
+    "fill_inside_contour": 0.7391,
+    "overflow_outside_contour": 0.0324,
+    "forbidden_verdict": "PASS",
+    "holes_verdict": "FAIL",
+    "dimensions_verdict": "WARN",
+    "dual_geom_available": false,
+    "dual_geom_region_iou": null,
+    "dual_geom_white_iou": null,
+    "dual_geom_disagreement": null,
+    "dual_geom_disagreement_flag": null,
+    "overlay_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-g_s5-overlay.png",
+    "bundle_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-g_s5-bundle.json",
+    "emblem_pass": true,
+    "emblem_json_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round1/gates/arm-g_s5-emblem.json",
+    "presence_total": 3,
+    "presence_count": 3,
+    "emblem_violations": [],
+    "motif_counts": {
+      "cross_beacon": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "cross_badge": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "teddy_patient": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "pinwheel_window": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "balloons": {
+        "seen": 1,
+        "expected": 1,
+        "match": true
+      },
+      "topiary": {
+        "seen": 2,
+        "expected": 2,
+        "match": true
+      }
+    }
+  }
+]

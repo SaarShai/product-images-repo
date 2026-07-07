@@ -1,0 +1,51 @@
+created_at: '2026-07-06T11:09:29Z'
+rows:
+- file: 01-medium_ref.jpg
+  role: medium_ref
+  provenance: bible-v1 refs_by_role.medium_anchor -> medium_ref (brief role map);
+    harvested flat-art crop of collection's own original source art, not a generated
+    DOOR round
+  notes: primary watercolor+gouache medium anchor (multi-screen crop sheet)
+  source_file: tasks/marriott-hospital/style-read/china-marriott-art-crops.jpg
+- file: 02-feature_ref.png
+  role: feature_ref
+  provenance: bible-v1 refs_by_role.medium_anchor supplementary crop; demoted to feature_ref
+    since build_style_handle.py allows exactly one medium_ref file (Kitchen screen
+    fine-line technique diversity)
+  notes: ''
+  source_file: tasks/marriott-hospital/style-read/crop-kitchen-fineline.png
+- file: 03-feature_ref-02.png
+  role: feature_ref
+  provenance: bible-v1 refs_by_role.medium_anchor supplementary crop; demoted to feature_ref
+    (Water Cube technique diversity)
+  notes: ''
+  source_file: tasks/marriott-hospital/style-read/crop-watercube-technique.png
+- file: 04-palette_ref.png
+  role: palette_ref
+  provenance: bible-v1 refs_by_role.palette -> palette_ref (brief role map); Hospital-screen
+    facade crop, same-screen palette truth
+  notes: ''
+  source_file: tasks/marriott-hospital/style-read/crop-hospital-facade.png
+- file: 05-feature_ref-03.png
+  role: feature_ref
+  provenance: bible-v1 refs_by_role.palette supplementary crop; demoted to feature_ref
+    (Hospital-screen garden crop, warm/cool pole coverage)
+  notes: ''
+  source_file: tasks/marriott-hospital/style-read/crop-hospital-garden.png
+- file: 06-style_ref.png
+  role: style_ref
+  provenance: bible-v1 refs_by_role.architecture_anchor -> style_ref (brief role map,
+    naming mismatch is known); shape language + composition anchor; harvested photo,
+    not a generated DOOR round, so hold-out rule does not apply
+  notes: architecture_composition per reference_role_map; do NOT copy stone/felt texture
+    or dusk mood
+  source_file: tasks/marriott-hospital/style-read/ref_police_facade.png
+- file: 07-feature_ref-04.png
+  role: feature_ref
+  provenance: bible-v1 refs_by_role.architecture_anchor supplementary; demoted to
+    feature_ref since build_style_handle.py allows exactly one style_ref file; playful
+    civic-building composition and detail style; harvested photo, not a generated
+    DOOR round
+  notes: architecture_composition per reference_role_map; do NOT copy stone/felt texture
+    or dusk mood
+  source_file: tasks/marriott-hospital/style-read/ref_fire_facade.png

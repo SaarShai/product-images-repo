@@ -1,0 +1,122 @@
+[
+  {
+    "arm": "arm-l",
+    "sample": "s1",
+    "raw_path": "tasks/workflow-rebuild/round3/raws/arm-l_s1.png",
+    "gates_overall_verdict": "FAIL",
+    "gates_bundle_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/gates/arm-l_s1-door-finish-bundle.json",
+    "door_fill_verdict": "PASS",
+    "door_fill": 0.9971,
+    "overlay_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/gates/arm-l_s1-door-finish-overlay.png",
+    "emblem_pass": null,
+    "content_verdict": null
+  },
+  {
+    "arm": "arm-l",
+    "sample": "s2",
+    "raw_path": "tasks/workflow-rebuild/round3/raws/arm-l_s2.png",
+    "gates_overall_verdict": "FAIL",
+    "gates_bundle_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/gates/arm-l_s2-door-finish-bundle.json",
+    "door_fill_verdict": "PASS",
+    "door_fill": 0.9945,
+    "overlay_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/gates/arm-l_s2-door-finish-overlay.png",
+    "emblem_pass": null,
+    "content_verdict": null
+  },
+  {
+    "arm": "arm-l",
+    "sample": "s3",
+    "raw_path": "tasks/workflow-rebuild/round3/raws/arm-l_s3.png",
+    "gates_overall_verdict": "FAIL",
+    "gates_bundle_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/gates/arm-l_s3-door-finish-bundle.json",
+    "door_fill_verdict": "PASS",
+    "door_fill": 0.9584,
+    "overlay_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/gates/arm-l_s3-door-finish-overlay.png",
+    "emblem_pass": null,
+    "content_verdict": null
+  },
+  {
+    "arm": "arm-l",
+    "sample": "s4",
+    "raw_path": "tasks/workflow-rebuild/round3/raws/arm-l_s4.png",
+    "gates_overall_verdict": "FAIL",
+    "gates_bundle_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/gates/arm-l_s4-door-finish-bundle.json",
+    "door_fill_verdict": "PASS",
+    "door_fill": 0.987,
+    "overlay_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/gates/arm-l_s4-door-finish-overlay.png",
+    "emblem_pass": null,
+    "content_verdict": null
+  },
+  {
+    "arm": "arm-l",
+    "sample": "s5",
+    "raw_path": "tasks/workflow-rebuild/round3/raws/arm-l_s5.png",
+    "gates_overall_verdict": "FAIL",
+    "gates_bundle_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/gates/arm-l_s5-door-finish-bundle.json",
+    "door_fill_verdict": "PASS",
+    "door_fill": 0.964,
+    "overlay_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/gates/arm-l_s5-door-finish-overlay.png",
+    "emblem_pass": null,
+    "content_verdict": null
+  },
+  {
+    "arm": "arm-g",
+    "sample": "s1",
+    "raw_path": "tasks/workflow-rebuild/round3/raws/arm-g_s1.png",
+    "gates_overall_verdict": "FAIL",
+    "gates_bundle_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/gates/arm-g_s1-door-finish-bundle.json",
+    "door_fill_verdict": "PASS",
+    "door_fill": 0.9877,
+    "overlay_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/gates/arm-g_s1-door-finish-overlay.png",
+    "emblem_pass": null,
+    "content_verdict": null
+  },
+  {
+    "arm": "arm-g",
+    "sample": "s2",
+    "raw_path": "tasks/workflow-rebuild/round3/raws/arm-g_s2.png",
+    "gates_overall_verdict": "FAIL",
+    "gates_bundle_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/gates/arm-g_s2-door-finish-bundle.json",
+    "door_fill_verdict": "PASS",
+    "door_fill": 0.9743,
+    "overlay_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/gates/arm-g_s2-door-finish-overlay.png",
+    "emblem_pass": null,
+    "content_verdict": null
+  },
+  {
+    "arm": "arm-g",
+    "sample": "s3",
+    "raw_path": "tasks/workflow-rebuild/round3/raws/arm-g_s3.png",
+    "gates_overall_verdict": "FAIL",
+    "gates_bundle_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/gates/arm-g_s3-door-finish-bundle.json",
+    "door_fill_verdict": "PASS",
+    "door_fill": 0.9796,
+    "overlay_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/gates/arm-g_s3-door-finish-overlay.png",
+    "emblem_pass": null,
+    "content_verdict": null
+  },
+  {
+    "arm": "arm-g",
+    "sample": "s4",
+    "raw_path": "tasks/workflow-rebuild/round3/raws/arm-g_s4.png",
+    "gates_overall_verdict": "FAIL",
+    "gates_bundle_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/gates/arm-g_s4-door-finish-bundle.json",
+    "door_fill_verdict": "PASS",
+    "door_fill": 0.9864,
+    "overlay_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/gates/arm-g_s4-door-finish-overlay.png",
+    "emblem_pass": null,
+    "content_verdict": null
+  },
+  {
+    "arm": "arm-g",
+    "sample": "s5",
+    "raw_path": "tasks/workflow-rebuild/round3/raws/arm-g_s5.png",
+    "gates_overall_verdict": "FAIL",
+    "gates_bundle_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/gates/arm-g_s5-door-finish-bundle.json",
+    "door_fill_verdict": "PASS",
+    "door_fill": 0.969,
+    "overlay_path": "/Users/za/Documents/product images repo/tasks/workflow-rebuild/round3/gates/arm-g_s5-door-finish-overlay.png",
+    "emblem_pass": null,
+    "content_verdict": null
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "svg": "door-panel.svg",
+  "source_mask": "tasks/marriott-hospital/geometry/v3/door-mask.png",
+  "source_holes": "tasks/marriott-hospital/geometry/v3/door-holes.png",
+  "source_pixel_size": [
+    1692,
+    2400
+  ],
+  "frame": "panel-local: SVG viewBox 0,0,1678,2387 == source raster pixel space translated by (-6,-6) (the --pad crop origin); 1 SVG unit == 1 source-mask pixel (no rescale)",
+  "viewbox": [
+    0,
+    0,
+    1678,
+    2387
+  ],
+  "crop_origin_in_source_px": [
+    6,
+    6
+  ],
+  "body_mode": "nonblack",
+  "holes_n": 6
+}

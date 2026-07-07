@@ -1,5 +1,9 @@
 # Wiki Log
 
+## [2026-07-06] create | Marriott Hospital T2 Method-Matrix
+
+Created `concepts/marriott-hospital-t2-method-matrix.md` from user-confirmed t2 finalist verdict: gpt-image (codex free) wins; nano-banana killed from die-cut pipeline due to aspect recompose. Recorded new style-bible axis (intentional-complete-building; slight-overhang OK), method scorecard, open items (emblem discipline, artifact logging, panel coverage), and next-phase direction.
+
 - 2026-06-15: Added [[concepts/castle-panel-template-cut-bands]] after
   user-confirmed V6/V7 feedback. The durable rule is that center rectangles and
   the horizontal split may cut only inert background, not fairies, birds,

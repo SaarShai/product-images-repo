@@ -1,0 +1,221 @@
+{
+  "panel": "door",
+  "stage": "restyle",
+  "candidate_path": "/Users/za/Documents/product images repo/tasks/marriott-hospital/outputs/t2_e4_final.png",
+  "candidate_sha256": "d3d0785c26053fc3db4a590053375283b44243244948d72b1eca16362266e11f",
+  "geometry_dir": "/Users/za/Documents/product images repo/tasks/marriott-hospital/geometry/v3",
+  "overlay_path": "/Users/za/Documents/product images repo/tasks/marriott-hospital/outputs/door-restyle-overlay.png",
+  "overlay": {
+    "path": "/Users/za/Documents/product images repo/tasks/marriott-hospital/outputs/door-restyle-overlay.png",
+    "control_edges": true,
+    "forbidden_bands": true,
+    "hole_regions": 6
+  },
+  "bundle_path": "/Users/za/Documents/product images repo/tasks/marriott-hospital/outputs/door-restyle-bundle.json",
+  "gates": {
+    "geom": {
+      "gate": "geom",
+      "verdict": "PASS",
+      "raw_verdict": "PASS",
+      "returncode": 0,
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "/Users/za/Documents/product images repo/scripts/geom_gate.py",
+        "--cand",
+        "/Users/za/Documents/product images repo/tasks/marriott-hospital/outputs/t2_e4_final.png",
+        "--mask",
+        "/Users/za/Documents/product images repo/tasks/marriott-hospital/geometry/v3/door-mask.png"
+      ],
+      "fill_inside_contour": 0.9467,
+      "overflow_outside_contour": 0.0011,
+      "edge_iou": 0.9457,
+      "candidate_size": [
+        832,
+        1184
+      ],
+      "thresh": 0.82,
+      "fails": [],
+      "warnings": [],
+      "downgraded_failures": [],
+      "downgrade_rule": "fill_inside_contour failures are WARN because geom_gate.py's fill detector false-fails legitimately white or sparse panels",
+      "raw": {
+        "candidate": "/Users/za/Documents/product images repo/tasks/marriott-hospital/outputs/t2_e4_final.png",
+        "svg": null,
+        "mask": "/Users/za/Documents/product images repo/tasks/marriott-hospital/geometry/v3/door-mask.png",
+        "candidate_size": [
+          832,
+          1184
+        ],
+        "thresh": 0.82,
+        "fill_inside_contour": 0.9467,
+        "overflow_outside_contour": 0.0011,
+        "edge_iou": 0.9457,
+        "per_role": {
+          "cutouts": [],
+          "keep_clear": [],
+          "note": "no per-role polygons resolved from SVG (mask-only run)"
+        },
+        "verdict": "PASS",
+        "fails": [],
+        "warnings": []
+      }
+    },
+    "forbidden": {
+      "gate": "forbidden",
+      "verdict": "PASS",
+      "raw_verdict": "OK",
+      "returncode": 0,
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "/Users/za/Documents/product images repo/scripts/forbidden_gate.py",
+        "--cand",
+        "/Users/za/Documents/product images repo/tasks/marriott-hospital/outputs/t2_e4_final.png",
+        "--forbidden",
+        "/Users/za/Documents/product images repo/tasks/marriott-hospital/geometry/v3/door-forbidden.png",
+        "--mask",
+        "/Users/za/Documents/product images repo/tasks/marriott-hospital/geometry/v3/door-mask.png",
+        "--exclude-edges",
+        "/Users/za/Documents/product images repo/tasks/marriott-hospital/geometry/v3/door-control.png"
+      ],
+      "advisory": true,
+      "edge_density": {
+        "forbidden": 15.0,
+        "body": 13.4,
+        "ratio": 1.119
+      },
+      "color_variance": {
+        "forbidden": 70.84,
+        "body": 52.61,
+        "ratio": 1.347
+      },
+      "ratio_warn": 1.35,
+      "note": null,
+      "raw": {
+        "verdict": "OK",
+        "advisory": true,
+        "edge_density": {
+          "forbidden": 15.0,
+          "body": 13.4,
+          "ratio": 1.119
+        },
+        "color_variance": {
+          "forbidden": 70.84,
+          "body": 52.61,
+          "ratio": 1.347
+        },
+        "ratio_warn": 1.35,
+        "overlay": null
+      }
+    },
+    "holes": {
+      "gate": "holes",
+      "verdict": "PASS",
+      "threshold_min": 245.0,
+      "holes_found": 6,
+      "holes": [
+        {
+          "i": 1,
+          "area_px": 7618,
+          "core_px": 2470,
+          "bbox": [
+            126,
+            398,
+            146,
+            821
+          ],
+          "mean_luminance": 255.0,
+          "threshold_min": 245.0,
+          "verdict": "PASS"
+        },
+        {
+          "i": 2,
+          "area_px": 7618,
+          "core_px": 2470,
+          "bbox": [
+            686,
+            398,
+            706,
+            821
+          ],
+          "mean_luminance": 255.0,
+          "threshold_min": 245.0,
+          "verdict": "PASS"
+        },
+        {
+          "i": 3,
+          "area_px": 445,
+          "core_px": 210,
+          "bbox": [
+            447,
+            756,
+            471,
+            780
+          ],
+          "mean_luminance": 255.0,
+          "threshold_min": 245.0,
+          "verdict": "PASS"
+        },
+        {
+          "i": 4,
+          "area_px": 443,
+          "core_px": 209,
+          "bbox": [
+            360,
+            756,
+            385,
+            780
+          ],
+          "mean_luminance": 255.0,
+          "threshold_min": 245.0,
+          "verdict": "PASS"
+        },
+        {
+          "i": 5,
+          "area_px": 342,
+          "core_px": 183,
+          "bbox": [
+            34,
+            1109,
+            55,
+            1130
+          ],
+          "mean_luminance": 255.0,
+          "threshold_min": 245.0,
+          "verdict": "PASS"
+        },
+        {
+          "i": 6,
+          "area_px": 332,
+          "core_px": 177,
+          "bbox": [
+            34,
+            513,
+            55,
+            533
+          ],
+          "mean_luminance": 255.0,
+          "threshold_min": 245.0,
+          "verdict": "PASS"
+        }
+      ]
+    },
+    "dimensions": {
+      "gate": "dimensions",
+      "verdict": "WARN",
+      "candidate_size_px": [
+        832,
+        1184
+      ],
+      "expected_size_px": [
+        1692,
+        2400
+      ],
+      "exact_match": false,
+      "candidate_aspect": 0.702703,
+      "expected_aspect": 0.705,
+      "aspect_abs_diff": 0.002297,
+      "aspect_tolerance": 0.01
+    }
+  },
+  "overall_verdict": "WARN"
+}

@@ -1,0 +1,116 @@
+[
+ {
+  "name": "BASELINE-gptimage-arm-g_s1",
+  "door_fill": 0.9877,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c1/gates/BASELINE-gptimage-arm-g_s1-doorfill-overlay.png"
+ },
+ {
+  "name": "comb-cfg9-st30_s1",
+  "door_fill": 0.9597,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c1/gates/comb-cfg9-st30_s1-doorfill-overlay.png"
+ },
+ {
+  "name": "comb-cn10-w05_s1",
+  "door_fill": 0.9583,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c1/gates/comb-cn10-w05_s1-doorfill-overlay.png"
+ },
+ {
+  "name": "comb-cn10-w08_s1",
+  "door_fill": 0.9821,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c1/gates/comb-cn10-w08_s1-doorfill-overlay.png"
+ },
+ {
+  "name": "comb-styletransfer_s1",
+  "door_fill": 0.977,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c1/gates/comb-styletransfer_s1-doorfill-overlay.png"
+ },
+ {
+  "name": "endpct06_s1",
+  "door_fill": 0.9901,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c1/gates/endpct06_s1-doorfill-overlay.png"
+ },
+ {
+  "name": "geom-cn06_s1",
+  "door_fill": 0.9964,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c1/gates/geom-cn06_s1-doorfill-overlay.png"
+ },
+ {
+  "name": "geom-cn08_s1",
+  "door_fill": 0.9963,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c1/gates/geom-cn08_s1-doorfill-overlay.png"
+ },
+ {
+  "name": "geom-cn100_s1",
+  "door_fill": 0.996,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c1/gates/geom-cn100_s1-doorfill-overlay.png"
+ },
+ {
+  "name": "i2i-d035_s1",
+  "door_fill": 0.989,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c1/gates/i2i-d035_s1-doorfill-overlay.png"
+ },
+ {
+  "name": "i2i-d050-noIPA_s1",
+  "door_fill": 0.9894,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c1/gates/i2i-d050-noIPA_s1-doorfill-overlay.png"
+ },
+ {
+  "name": "i2i-d050_s1",
+  "door_fill": 0.9881,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c1/gates/i2i-d050_s1-doorfill-overlay.png"
+ },
+ {
+  "name": "i2i-d065_s1",
+  "door_fill": 0.9956,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c1/gates/i2i-d065_s1-doorfill-overlay.png"
+ },
+ {
+  "name": "reflock-composition_s1",
+  "door_fill": 0.9957,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c1/gates/reflock-composition_s1-doorfill-overlay.png"
+ },
+ {
+  "name": "reflock-noCN_s1",
+  "door_fill": 0.9871,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c1/gates/reflock-noCN_s1-doorfill-overlay.png"
+ },
+ {
+  "name": "reflock-w08_s1",
+  "door_fill": 0.9977,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c1/gates/reflock-w08_s1-doorfill-overlay.png"
+ },
+ {
+  "name": "reflock-w10_s1",
+  "door_fill": 0.9907,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c1/gates/reflock-w10_s1-doorfill-overlay.png"
+ },
+ {
+  "name": "regional-w08_s1",
+  "door_fill": 0.996,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c1/gates/regional-w08_s1-doorfill-overlay.png"
+ },
+ {
+  "name": "style-w08_s1",
+  "door_fill": 0.9995,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c1/gates/style-w08_s1-doorfill-overlay.png"
+ }
+]

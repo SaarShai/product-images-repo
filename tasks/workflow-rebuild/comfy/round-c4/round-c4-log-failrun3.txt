@@ -1,0 +1,3 @@
+=== BUILD dr55_s100 21:25:55 ===
+wrote /tmp/wf-c4-dr55_s100.json  (18 nodes)
+=== RUN dr55_s100 ===

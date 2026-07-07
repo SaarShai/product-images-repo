@@ -1,0 +1,14 @@
+[
+ {
+  "name": "dualregion_s100",
+  "door_fill": 0.9934,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c3/gates/dualregion_s100-doorfill-overlay.png"
+ },
+ {
+  "name": "dualregion_s300",
+  "door_fill": 0.9998,
+  "verdict": "PASS",
+  "overlay_path": "tasks/workflow-rebuild/comfy/round-c3/gates/dualregion_s300-doorfill-overlay.png"
+ }
+]
