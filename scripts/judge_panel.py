@@ -41,12 +41,22 @@ I element-count / NO-DUPLICATES — COUNT every embedded window / door / gate ac
 every tile; there must be EXACTLY the number the geometry specifies (a single-window panel = ONE). A second
 or extra window/door/gate anywhere (commonly stacked vertically, or an added ground gate at the bottom) =
 FAIL. 'double-door / double-window' is a KNOWN recurring failure mode — the model adds its own gate/window
-on top of the intended one. Always report the integer count you actually see."""
+on top of the intended one. Always report the integer count you actually see. ·
+J COMPLETE-BUILDING (edges deliberately drawn, not accidentally cropped: the building/structure must read as
+a finished, intentional whole at the panel edge — a slight <2%-of-panel-width detail overhang past the
+silhouette (a roofline, sign, or ornament tip bleeding a hair past the die line) is WELCOMED as evidence of a
+complete building drawn at true scale; a HARD, flat crop that lops off a wall/roof/facade markedly worse than
+that (looks unfinished/cut-off) is PENALIZED · K GEOMETRY-EMBRACE (does the art embrace the die-cut geometry
+instead of ignoring it: the outer silhouette gets a deliberate rim/edge treatment that reads as PART of the
+illustration, and each cutout/hole gets an integrated painted frame or border around the clean void rather
+than a void that looks accidentally left blank; scores HIGH when the cutout's surrounding paint clearly
+acknowledges and frames the hole, scores LOW when the cutout is merely avoided/ignored with no framing, or
+when the rim/edge is untreated raw canvas)."""
 AESTHETIC = """G style-quality + proportions (watercolor refinement, believable tower/feature proportions,
 overall taste). VLM-UNRELIABLE — report as advisory only; the HUMAN decides PASS/FAIL on aesthetics."""
 RUBRIC = ("OBJECTIVE (gate on these, from HI-DPI TILES, >=3 judges, verify on disagreement):\n" + OBJECTIVE
           + "\n\nAESTHETIC (advisory only, route to human):\n" + AESTHETIC
-          + "\n\nVERDICT(objective)=PASS only if A-F + H + I hold; else FAIL + failing checks + one fix. "
+          + "\n\nVERDICT(objective)=PASS only if A-F + H + I + J + K hold; else FAIL + failing checks + one fix. "
             "Report style/proportions as advisory; do NOT auto-PASS aesthetics.")
 
 
