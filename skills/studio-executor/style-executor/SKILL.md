@@ -51,6 +51,14 @@ Proven Marriott r5: `falgen.py --mode flux2edit --image <full-bleed cand> --refs
 - ASPECT LIMIT (clarity-upscaler): it only enlarges near-square-ish inputs (~0.5–2.0). Extreme-aspect panels (tall narrows ~0.43) come back DOWNSCALED at any factor (proven: 880×2052 → 520–832 tall, Marriott r14). For those, tile-upscale (split into square-ish tiles, upscale each, restitch) or keep native. Always verify output `size` is actually larger than input.
 - Re-cut hi-res at NATIVE resolution: resize the MASK up to the upscaled image, not the image down to the mask (else you throw away the resolution you just paid for).
 - Creative upscale can alter small fixed emblems — use low creativity (~0.4) on panels with just-fixed detail (crosses/badges).
+- MASK-CUT edge quality (2026-07-05, binding): cut with a SOFT ALPHA — erode the
+  silhouette at the mask's source resolution (outer boundary only; holes untouched),
+  then LANCZOS-downsample to the candidate and alpha-composite over white. A
+  NEAREST 1-bit mask cut leaves a staircase edge (user-flagged jagged top, twice).
+- CONTRACT VERSION (2026-07-05, binding): every candidate is cut/gated against ONE
+  geometry contract version and carries it (bundle JSON). When the contract is
+  superseded, re-cut or regenerate before showing — never showcase an artifact from
+  a superseded contract as current (that's how the "still jagged" incident happened).
 
 ## Done means
 

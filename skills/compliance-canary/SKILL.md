@@ -1,6 +1,6 @@
 ---
 name: compliance-canary
-description: "Use when a long session drifts — the single always-on drift watcher: one UserPromptSubmit hook combining symptomatic per-skill drift probes (filler creep, verbosity growth, unverified done-claims, looping tool errors), a periodic skill-rule re-anchor, and a request ledger that keeps every user request OPEN until completed or user-closed. Tune/disable via COMPLIANCE_CANARY_* env vars."
+description: "Use when a long session drifts — the single always-on drift watcher: one UserPromptSubmit hook combining symptomatic per-skill drift probes (filler creep, verbosity growth, unverified done-claims, looping tool errors), a periodic skill-rule re-anchor, a request ledger that keeps every user request OPEN until completed or user-closed, and a correction ledger that keeps every user correction OPEN (LEARNING_CONTRACT §2) until it is banked or user-closed. Tune/disable via COMPLIANCE_CANARY_* env vars."
 model: haiku
 effort: low
 tools: [Bash, Read, Write]
@@ -8,28 +8,37 @@ auto-install: true
 pulse_reminder: drift detectors are watching — your recent reply is scanned each user turn against the active skills' drift_probes.json files.
 ---
 
+<!-- split-justified -->
+
 # compliance-canary — the drift watcher
 
 The single, non-optional drift defense for long sessions. One `UserPromptSubmit`
-hook runs **three orthogonal mechanisms** in one process (skill-pulse was folded
+hook runs **four orthogonal mechanisms** in one process (skill-pulse was folded
 in here 2026-06-16 — the leaner "one reactive hook instead of two" the eval
-notes had flagged; the request ledger was added 2026-06-17):
+notes had flagged; the request ledger was added 2026-06-17; the correction
+ledger closes the LEARNING_CONTRACT §2 gap — a user correction must become a
+durable artifact before the task closes):
 
 | # | Mechanism | When it speaks | Covers |
 |---|---|---|---|
 | 1 | **Symptomatic probes** | only when a drift symptom appears | filler, verbosity creep, unverified done-claims, self-closing without asking, looping tool errors, error-rate spikes |
 | 2 | **Periodic re-anchor** | every Nth turn, unconditionally | rules that *fade* before any symptom shows — incl. rules with no probe |
 | 3 | **Request ledger** | at wrap-up turns (+ on cadence) | a user request silently dropped before it was completed or the user closed it |
+| 4 | **Correction ledger** | every turn it is non-empty | a user correction closed out without being banked as a durable rule + gate + exemplar (LEARNING_CONTRACT §2) |
 
-All three emit into **one** `<system-reminder>` with a shared budget. On a turn
+All four emit into **one** `<system-reminder>` with a shared budget. On a turn
 where a probe fires, the periodic re-anchor **yields** (symptom correction is
 higher-signal and itself re-anchors attention) — so the two never stack into
-consecutive nags. The ledger does NOT yield at a wrap-up turn: surfacing still-open
-requests precisely as the agent moves to close is the whole point.
+consecutive nags. The request ledger does NOT yield at a wrap-up turn: surfacing
+still-open requests precisely as the agent moves to close is the whole point.
+The correction ledger likewise does not yield — it is closeout-blocking, so it
+surfaces every turn it holds an open item.
 
 Emergency off-switch: `COMPLIANCE_CANARY_DISABLED=1` (kills both). This is a
 safety valve, not an install option — the skill is default-on (`auto-install:
 true`) and meant to stay wired.
+
+Deep-dive reference: [REFERENCE.md](REFERENCE.md) — the offline `measure.py` analyzer, host compatibility notes, and known gaps.
 
 ## Mechanism 1 — symptomatic probes
 
@@ -45,7 +54,7 @@ Each kind is the JSON shape an author writes in their skill's `drift_probes.json
 - **`word_count_per_message`** — avg words/msg over a window → terseness drift (caveman-ultra creep, explanation bloat).
 - **`claim_without_evidence`** — a claim word with no verify-style tool call in recent history → [verify-before-completion](../verify-before-completion/SKILL.md) drift.
 - **`repeated_tool_error`** *(v1.7)* — a recurring `is_error` signature → a tool error the agent keeps re-triggering.
-- **`user_correction`** *(v1.7)* — current prompt matches a correction pattern → surface it so it isn't ignored (route the lesson through [write-gate](../write-gate/SKILL.md) only when persistence is explicitly selected).
+- **`user_correction`** *(v1.7)* — current prompt matches a correction pattern → surface it so it isn't ignored (route the lesson through [write-gate](../write-gate/SKILL.md)) and open a closeout-blocking correction-ledger item (Mechanism 4, LEARNING_CONTRACT §2) until it is banked or user-closed.
 - **`trajectory_drift`** *(v1.8)* — session tool-error RATE over the tail → thrashing (retry loops, schema-mismatch storms).
 - **`prompt_intent`** *(v1.11)* — current prompt matches a governed situation → a PRE-TASK skill nudge (spontaneous Skill invocation is unreliable, so fire mechanically).
 - **`early_stop`** *(v1.11)* — last turn is a forward-looking promise with no tool/claim/question → the anti-early-stop reflex ([verify-before-completion](../verify-before-completion/SKILL.md)).
@@ -122,6 +131,87 @@ is the whole-hook `COMPLIANCE_CANARY_DISABLED=1`. Stored items are
 capped at `LEDGER_STORE_CAP=50`, surfaced at `LEDGER_SHOW_MAX=8` (with "+N more
 open").
 
+## Mechanism 4 — correction ledger
+
+[`LEARNING_CONTRACT`](../_shared/LEARNING_CONTRACT.md) §2: a user correction is
+**closeout-blocking** — it must become a durable artifact (rule + gate +
+exemplar, SCOPE-classified per §1) before the task closes, unconditionally, not
+only "if a retrospective is armed". The `user_correction` probe (Mechanism 1)
+already detects the correction at the turn it lands; the correction ledger is
+the stateful guard that keeps it from being forgotten — mirroring the request
+ledger's shape exactly, one mechanism level up.
+
+Lifecycle (per-session state under `COMPLIANCE_CANARY_STATE_DIR`, key
+`correction_ledger`):
+
+- **Open.** Every fired `user_correction` probe (any skill's) opens an OPEN
+  item `{id, turn, text}` — unconditional capture, the same no-opt-out posture
+  as Mechanism 3. This is unconditional even when `COMPLIANCE_CANARY_PROBE_SKILLS`
+  scopes DISPLAY to a different allowlist: the allowlist filters which fired
+  probes are shown in the drift-signal block, but every discovered
+  `user_correction` probe is still evaluated for ledger OPENING regardless of
+  that filter — an allowlist that happens to exclude a skill's `user_correction`
+  probe must never silently prevent its corrections from ever entering the
+  ledger (this was a confirmed hole; fixed by evaluating `user_correction`
+  probes on a path the allowlist doesn't reach, see `hook.py`'s `ledger_probes`).
+- **Surface.** Unlike the request ledger (which waits for a wrap-up turn or
+  drift coupling), an open correction is surfaced **every turn** it is
+  non-empty — "closeout-blocking" means it does not wait for the agent to
+  believe it is done.
+- **Close.** An item leaves the ledger when (a) a Bash tool call banking the
+  lesson is observed — `write_gate.py` (the quality gate §2 requires) or
+  `wiki.py new` (materializing the durable artifact; `wiki.py` has no `update`
+  subcommand — `new` is the only page-writing verb it exposes) — **actually
+  ran and produced a passing execution-evidence signature**, which resolves
+  ALL open corrections, or (b) the user explicitly closes it (the same closure
+  phrasing as Mechanism 3: "close it", "that's all", …), for a correction the
+  agent judges already handled outside the banking tools.
+
+**The hook never judges whether the banked lesson is any good** — only whether
+a banking tool call ACTUALLY RAN. There is no auto-resolve on the mere passage
+of turns: an unbanked correction stays OPEN indefinitely until one of the two
+close paths above fires.
+
+**Bank-resolution requires EXECUTION EVIDENCE, not just command text.** Two
+prior fix attempts were each defeated adversarially:
+
+1. A bare substring match let `echo write_gate.py`, `wiki.py new --help`, and
+   `grep write_gate.py x` all falsely resolve a closeout-blocking correction —
+   none of them ran the gate. Fixed by requiring **command-position invocation
+   shape** (the matched token must be the thing actually invoked in a shell
+   segment split on `&&`/`||`/`;`/`|`, after stripping leading
+   env-assignments/`sudo`, optionally behind a `python`/`python3`/`bash`/`sh`
+   interpreter; a segment containing `--help`/`-h` is rejected).
+2. Invocation shape alone is still **text-trust**: `CMD="python3
+   .../write_gate.py gate --text x"` (a bare shell variable assignment — the
+   command string matches, but nothing executes) and `false && python3
+   .../write_gate.py gate ...` (a short-circuited compound — the second
+   segment still "looks like" an invocation even though `&&` guarantees it
+   never runs) both resolved a correction without the gate ever running.
+   Command-string matching cannot tell a typed-but-never-run command from a
+   genuine one.
+
+The fix: the hook now requires the SAME Bash `tool_use` to have a **paired
+`tool_result`** (correlated by `tool_use_id`, the same id every real Claude
+Code transcript carries — confirmed against a live transcript fixture) whose
+content carries a real execution signature:
+
+- `write_gate.py score`/`explain` (or any subcommand with `--json`) prints a
+  `PASSED: …` / `REJECTED: …` verdict (JSON: the `"verdict"` field). **`gate`
+  alone (no `--json`) prints nothing to stdout — only an exit code** — so a
+  banking call must use `--json` or `score`/`explain` for the hook to see a
+  verdict at all; a bare `gate` invocation carries no signature to detect,
+  banked or not.
+- `wiki.py new` prints JSON with a `"created": "<path>"` key on success, or
+  `"refused": "REFUSED: …"` on a write-gate/overlap refusal.
+
+A `REJECTED`/`REFUSED` result is **not** a bank signature — the gate ran but
+refused the candidate, so the correction stays OPEN (a rejected banking
+attempt is not a successful banking). A command with matching invocation shape
+but no observed `tool_result` in the transcript window never resolves anything
+either — invocation shape narrows which Bash calls are worth checking, but
+shape alone no longer resolves the ledger.
+
 ## Install
 
 Claude Code (project-local):
@@ -130,7 +220,7 @@ Claude Code (project-local):
 bash skills/compliance-canary/tools/install.sh --project
 ```
 
-Wires `tools/hook.sh` into `.claude/settings.json` under `UserPromptSubmit` — a single hook running all three mechanisms. (`prompt-triage` may also wire `UserPromptSubmit`; the hooks fire in sequence, each independent.)
+Wires `tools/hook.sh` into `.claude/settings.json` under `UserPromptSubmit` — a single hook running all four mechanisms. (`prompt-triage` may also wire `UserPromptSubmit`; the hooks fire in sequence, each independent.)
 
 ## How a skill opts in
 
@@ -172,16 +262,6 @@ Env vars (all optional). `SKILL_PULSE_*` names are honored as back-compat aliase
 | `COMPLIANCE_CANARY_STATE_DIR` | `.brainer/compliance-canary` | override state location |
 | `COMPLIANCE_CANARY_SKILLS_ROOT` | `.claude/skills` | override skills lookup root. Alias: `SKILL_PULSE_SKILLS_ROOT` |
 
-## Offline analyzer (`measure.py`)
-
-Runs the same probes against any transcript JSONL without installing the hook. Useful for baselining past sessions and tuning thresholds:
-
-```bash
-python3 skills/compliance-canary/tools/measure.py ~/.claude/projects/<proj>/<sid>.jsonl
-```
-
-Prints per-probe trigger counts and the offending snippets. No state writes, no side effects.
-
 ## Rules
 
 - Read at most `TRANSCRIPT_LINE_CAP=400` trailing lines of the transcript (bound transcript-read cost).
@@ -196,21 +276,10 @@ Prints per-probe trigger counts and the offending snippets. No state writes, no 
 ```
 tools/
 ├── hook.sh        # UserPromptSubmit shell shim
-├── hook.py        # probes + periodic re-anchor + request ledger + state (one process)
+├── hook.py        # probes + periodic re-anchor + request ledger + correction ledger + state (one process)
 ├── install.sh     # wires UserPromptSubmit into project-local .claude/
-├── test.sh        # regression suite (80 cases: probes + re-anchor + ledger + hardening)
+├── test.sh        # regression suite (108 cases: probes + re-anchor + ledger + correction ledger + hardening)
 └── measure.py     # standalone offline probe analyzer
 ```
 
-## Compatibility
-
-**Claude Code + Codex.** Both fire `UserPromptSubmit` with a stdin payload carrying `transcript_path`, so the installer wires the hook on both (`.claude/settings.json` and `.codex/hooks.json`). Codex transcripts use a different schema (`{type, payload}`, `function_call` instead of `tool_use`); the hook normalizes them to Claude shape via [`skills/_shared/transcript_norm.py`](../_shared/transcript_norm.py) — including mapping Codex shell calls (`exec_command`) to `Bash` so the nomination substantive-action filter works, and reading Codex's injected `<skill><name>…</name>` block as a skill invocation. Cursor gets the folder symlinked for description visibility but no hook (no equivalent event); Gemini's path is the migrated `BeforeAgent` hook (next paragraph).
-
-Codex gets the canary via `.codex/hooks.json` `UserPromptSubmit` (Claude-compatible schema, wired by `tools/install.sh`). Gemini gets it on `BeforeAgent` via `gemini hooks migrate`. Cursor has no equivalent surface — the resident catalog's host matrix tells cursor agents to self-anchor.
-
-## Known gaps
-
-- Probe detectors are syntactic — they catch keyword/structural signals but miss semantic drift (a paraphrased "done" without claim-word match). A judge-style probe using a tiny LLM is the natural next add (the `llm_judge` kind, currently deferred).
-- `edit_count_per_turn` (lean-execution drift) and `tool_choice_drift` (model picks Write when rule says Edit) are not yet detector kinds. Easy adds when needed.
-- The re-anchor is cadence-based (turn count), not staleness-aware: it re-states rules on schedule even if attention hasn't actually decayed. It yields to probes, but on a quiet long session it still fires every N turns. A true staleness signal would need a cheap per-rule "faded?" probe — none exists yet.
-- The request ledger is one-item-per-prompt and closes by heuristic (most-recent-open, or all on "everything") — it can't map "yes, that one's done" to a specific item, and a single prompt bundling several asks ("do X, Y, and Z") is tracked as one line (the `completion_without_closure` gate is what forces per-item enumeration at wrap-up). It errs toward keeping items open. A semantic ledger (split sub-asks, map closures to items) again wants the deferred `llm_judge`.
+REFERENCE.md — deep-dive: offline `measure.py` usage, host compatibility, known gaps.

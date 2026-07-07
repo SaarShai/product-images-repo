@@ -14,8 +14,16 @@ from __future__ import annotations
 
 import argparse
 import os
+import re
 import sys
 from dataclasses import dataclass
+
+
+PHASE0_BLOCK = """PHASE 0 — before any edit: reply with your plan and EVERY disagreement with this
+brief, citing real files as evidence — or state what you checked before concluding
+it is sound. Verify named APIs/paths/versions against the live repo before
+planning. Silent compliance is a lane defect; silent scope additions are a lane
+defect."""
 
 
 GATE_BLOCK = """GATE (re-run, do not self-certify): your final output is judged by a SEPARATE
@@ -23,6 +31,14 @@ verifier on a machine check — not your done-claim. Return raw findings/data, n
 "done". State attempts tried + abandoned and every assumption. If you produce a
 file/artifact, say exactly what you changed; do NOT touch anything outside the
 named scope. END with "READY FOR JUDGING", never "complete"."""
+
+
+LANE_REPORT_BLOCK = """LANE REPORT (hard shape — the orchestrator reads only this): summary <=200 words;
+changed_paths (every file, exhaustive); evidence (exact commands + output lines
+for each done-means criterion); attempts; assumptions; leftovers/concerns. End
+with exactly one status line: STATUS: COMPLETE | COMPLETE_WITH_CONCERNS (list) |
+BLOCKED (exact blocker + what you tried) — then the line READY FOR JUDGING. Raw
+results only — no verdicts about your own work, no 'done'."""
 
 
 @dataclass(frozen=True)
@@ -112,11 +128,38 @@ def render_header(args: argparse.Namespace, root: str) -> str:
         lines.append(f"IN-SCOPE: {args.scope}")
     if args.out_of_scope:
         lines.append(f"OUT-OF-SCOPE: {args.out_of_scope}")
+    if not args.no_phase0:
+        lines.extend(["", PHASE0_BLOCK])
     lines.extend(["", GATE_BLOCK, "", "ACTIVE RULES:"])
     lines.extend(f"- {r.name}: {r.reminder}" for r in reminders)
     if hidden_count:
         lines.append(f"- +{hidden_count} more (use --skills)")
+    if not args.no_report:
+        lines.extend(["", LANE_REPORT_BLOCK])
     return "\n".join(lines)
+
+
+# --- brief lint: user-supplied literals must be VERBATIM (ORCHESTRATION §6) --
+# Observed live 2026-07-07 (screenery "Baton"): a judge brief carried
+# `'…/FINAL production/birthday …'` for a path the user had given in FULL —
+# the lane burned calls re-discovering the folder. An elision marker adjacent
+# to a path-like fragment means the composer summarized a literal instead of
+# pasting it; a context-empty subagent cannot un-elide it.
+_ELISION_RE = re.compile(
+    r"(?:…|\.\.\.)\s*/"          # '…/' or '.../' — elided path prefix
+    r"|/[\w ()+.-]+(?:…|/\.\.\.)"  # '/dir…' or '/dir/...' — elided tail
+    r"|(?:<|\[)(?:path|dir|folder|file)(?:>|\])",  # '<path>' / '[folder]' stubs
+    re.IGNORECASE)
+
+
+def lint_brief(text: str) -> list[str]:
+    findings = []
+    for m in _ELISION_RE.finditer(text):
+        start = max(0, m.start() - 40)
+        findings.append(
+            f"elided literal at char {m.start()}: ...{text[start:m.end()+20]!r}... "
+            f"— paste the user-supplied value VERBATIM (ORCHESTRATION §6)")
+    return findings
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -127,6 +170,11 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--skills", help="comma-separated skill names to include")
     p.add_argument("--skills-root", help="skills root (default: skills, fallback: .claude/skills)")
     p.add_argument("--list", action="store_true", help="list discoverable skill reminders and exit")
+    p.add_argument("--no-phase0", action="store_true", help="omit the PHASE 0 disagreement-gate block")
+    p.add_argument("--no-report", action="store_true", help="omit the LANE REPORT block")
+    p.add_argument("--lint-brief", metavar="FILE", nargs="?", const="-",
+                   help="lint a composed brief (file or '-' for stdin) for elided "
+                        "user literals; exit 1 on findings")
     return p
 
 
@@ -144,6 +192,15 @@ def main(argv: list[str] | None = None) -> int:
         for r in discover(root):
             print(f"{r.name}: {r.reminder}")
         return 0
+
+    if args.lint_brief:
+        text = (sys.stdin.read() if args.lint_brief == "-"
+                else open(args.lint_brief, encoding="utf-8").read())
+        findings = lint_brief(text)
+        for f in findings:
+            print(f"LINT: {f}")
+        print("brief lint: " + ("FAIL" if findings else "clean"))
+        return 1 if findings else 0
 
     if not args.task:
         parser.error("--task is required unless --list is used")

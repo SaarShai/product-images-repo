@@ -107,6 +107,50 @@ bash skills/compliance-canary/tools/test.sh
 - Edit-vs-Write tool-choice drift detector. Easy v2 add.
 - Cross-session drift trends (week-over-week regression in a project). Belongs in `wiki-memory` long-term, not here.
 
+## Failure modes
+
+Premortem ([`LEARNING_CONTRACT`](../_shared/LEARNING_CONTRACT.md) §8):
+
+- **Silent-failure path** — the hook is wired via `.claude/settings.json`; if that wiring is
+  ever dropped (a manual settings edit, a settings-file overwrite by another installer, or a
+  fresh clone that skipped `install.sh`), `UserPromptSubmit` simply never fires and the
+  session runs with zero drift detection — there is no other signal telling the agent or
+  user the canary is dead, because a hook that never runs cannot itself report absence.
+- **Rot-when-unwatched** — `drift_probes.json` patterns go stale as skills rename rules or
+  rewrite the phrasing a probe's regex was tuned to; the probes keep matching nothing and the
+  canary reports clean, which reads as compliance rather than blindness. Liveness lint
+  (`knowledge_liveness.py`) catches parse-rot (malformed JSON, dangling paths) but not
+  relevance-rot (a syntactically valid regex that no longer matches the current prose) —
+  that reconciliation is `wiki-refresh`'s cycle, not this skill's.
+- **No-hooks host** — Codex/Gemini require an explicit hook-porting step (`.codex/hooks.json`,
+  `gemini hooks migrate --from-claude`) per `docs/HOST_CAPABILITY_MATRIX.md`; on a host where
+  that step was skipped, none of the three mechanisms (probes, re-anchor, ledger) fire at
+  all, and — unlike a Claude Code session where `auto-install: true` wires it by default —
+  there is no fallback in-band enforcement, so every rule this skill covers reverts to being
+  manually self-policed.
+- **Correction-ledger bank-resolution is execution-evidence, not command-text** — Mechanism 4's
+  resolver requires the SAME Bash `tool_use` to carry a matching invocation shape
+  (`write_gate.py`/`wiki.py new` in command position, not a bare substring) **AND** a paired
+  `tool_result` (correlated by `tool_use_id`) whose content carries a real signature
+  (`write_gate.py score`/`explain`/`--json` prints `PASSED:`/`REJECTED:`; `wiki.py new` prints
+  `"created": "<path>"` on success or `"refused": "REFUSED: …"` on refusal). Two command-text-only
+  attacks were adversarially confirmed and are now closed: `echo write_gate.py` /
+  `wiki.py new --help` / `grep write_gate.py x` (bare substring, no invocation shape), and — the
+  sharper hole — `CMD="python3 .../write_gate.py gate --text x"` (a shell variable assignment;
+  the command string matches but nothing executes) and `false && python3 .../write_gate.py gate
+  ...` (a short-circuited compound; the invocation shape is present in the second segment but
+  `&&` guarantees it never runs). Both looked like a genuine invocation to a text matcher and
+  both now fail to resolve because no passing execution signature is observed. Residual gap
+  (accepted, not silently assumed away): a bare `write_gate.py gate ...` invocation with **no**
+  `--json` flag prints nothing to stdout at all — it cannot be distinguished from "ran and
+  produced no output" vs. "never ran", so such a call never resolves the ledger regardless of
+  whether the gate actually passed; a banking call must use `--json` (or `score`/`explain`) to
+  be recognized. If a future transcript format ever omits `tool_result` from the hook's window
+  (unconfirmed — verified present in real Claude Code transcripts as of 2026-07-06), the
+  resolver degrades to "never resolves via banking" rather than falling back to the weaker
+  text-only match, since a silently-reopened false-negative is safer than a silently-resolved
+  false-positive for a closeout-blocking gate.
+
 ## Moved from SKILL.md (2026-06-12 SkillReducer-criteria audit)
 
 _Provenance/rationale below is maintainer context, not runtime instruction — relocated so the lazy-loaded body stays actionable._

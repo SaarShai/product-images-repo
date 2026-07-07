@@ -40,7 +40,7 @@ if [ ! -d "$SRC" ]; then
   exit 2
 fi
 
-[ -z "$HOSTS_REQUESTED" ] && HOSTS_REQUESTED="claude-code,codex,cursor,gemini"
+[ -z "$HOSTS_REQUESTED" ] && HOSTS_REQUESTED="claude-code,codex,gemini"
 
 run() {
   if [ "$DRY_RUN" = "1" ]; then echo "DRY: $*"; else eval "$@"; fi
@@ -69,10 +69,10 @@ link() {
 
 # --- Resident skills catalog ---------------------------------------------
 # Skill bodies are lazy-loaded on trigger, which means a freshly booted (or
-# post-compaction) agent doesn't know a model-invokable skill (say `wiki-memory`) even exists —
+# post-compaction) agent doesn't know a model-invokable skill (say `wiki-memory`) even exists
 # so it can't recognize the trigger. We fix this by compiling a 1-line-per-
 # skill catalog and injecting it between sentinels into each host's
-# always-resident doc (CLAUDE.md / AGENTS.md / GEMINI.md / cursor rule).
+# always-resident doc (CLAUDE.md / AGENTS.md / GEMINI.md).
 # Slash-triggered skills (disable-model-invocation: true) get their own
 # section so the agent knows to dispatch on the literal token.
 
@@ -158,20 +158,17 @@ render_skills_catalog() {
   cat <<'HEADER'
 ## Repo-local trigger skills (resident at boot)
 
-Skill bodies under `skills/<name>/` lazy-load on trigger. The names + 1-line
-descriptions below are kept in this resident doc so a freshly booted (or
-post-compaction) agent still knows what's available — so a model-invokable
-trigger (e.g. `wiki-memory` for "have we done X") is recognised on sight
-rather than re-derived from scratch.
+Skill bodies under `skills/<name>/` lazy-load on trigger; the 1-line
+descriptions below stay resident so a freshly booted (or post-compaction)
+agent still recognises a trigger on sight instead of re-deriving it.
 
 ### Slash-triggered (user types literally; model cannot auto-invoke)
 
-These are literal text tokens you recognise yourself — NOT host-registered
-commands. When the user's message starts with one of these tokens, load
-`skills/<name>/SKILL.md` and follow it yourself, even if this host has no such
-command installed (e.g. Codex, Antigravity) or shows an "unknown command"
-error. Treat the rest of the message as the task. Don't improvise a hand-rolled
-equivalent:
+Literal tokens you recognise yourself — NOT host-registered commands. If the
+user's message starts with one, load `skills/<name>/SKILL.md` and follow it
+yourself even if this host has no such command (e.g. Codex, Antigravity) or
+shows "unknown command". Treat the rest of the message as the task; don't
+improvise a hand-rolled equivalent:
 
 HEADER
   local any_slash=0
@@ -191,8 +188,8 @@ HEADER
 
 ### Model-invokable (host fires on matching context)
 
-You don't need to dispatch these manually — but knowing they exist helps you
-notice when context matches one (e.g. `wiki-memory` for "have we done X").
+No manual dispatch needed — but knowing these exist helps you notice a
+context match (e.g. `wiki-memory` for "have we done X").
 
 MID
   for skill in "$SRC"/*/; do
@@ -214,15 +211,37 @@ MID
 
 ### Durable memory store (`wiki/`)
 
-This repo carries a curated knowledge store at `wiki/` — the *why/decision/
-failure-lesson* layer (rationale, trade-offs, incidents, procedures), distinct
-from auto-extracted code structure. Relevant when the task references past work,
-prior decisions, or "have we done X". Query it before re-deriving: read
-`wiki/L1_index.md` first, then `python3 skills/wiki-memory/tools/wiki.py search "<q>"`
-→ `timeline` → `fetch`. Maintained by `wiki-memory` (write) and `wiki-refresh`
-(reconcile vs code).
+Curated why/decision/failure-lesson layer at `wiki/`. Query before re-deriving
+(e.g. "have we done X"): read `wiki/L1_index.md`, then
+`python3 skills/wiki-memory/tools/wiki.py search "<q>"` → `timeline` → `fetch`.
+Maintained by `wiki-memory` (write) / `wiki-refresh` (reconcile vs code).
 STORE
   fi
+  cat <<'CRAFT'
+
+### Code-craft directives (resident at boot)
+
+Always-on rules for writing code — they apply on every coding turn, not only when
+a skill happens to trigger:
+
+- **Surgical diffs.** Smallest reversible change; touch only what the ask needs;
+  match local style; never reformat code you didn't change. Justify every changed
+  line by the task — revert "while I was in there" edits. (`lean-execution` covers
+  this when invoked; this is the always-on copy. The `whitespace_only_edit` +
+  `dependency-manifest-changed` `compliance-canary` probes enforce it mechanically.)
+- **Failure-mode interrupt.** If mid-task you slide into scope-creep (Kitchen
+  Sink), premature abstraction (abstract only on the 3rd repeat — rule of three),
+  happy-path-only (error path ignored), or a fix cascading across files (Runaway
+  Refactor) — STOP, restate the goal, narrow scope.
+CRAFT
+  cat <<'MATRIX'
+
+### Host capability matrix (honest degradation)
+
+Host capability & degradation matrix (claude/codex/gemini): see
+`docs/HOST_CAPABILITY_MATRIX.md` — the RULE still binds on a host lacking a
+hook; enforce it manually.
+MATRIX
   cat <<'FOOT'
 
 _Auto-generated by `./install.sh` — do not hand-edit between sentinels._
@@ -487,67 +506,6 @@ install_codex() {
   inject_catalog_into_doc "$REPO_ROOT/AGENTS.md"
 }
 
-install_cursor() {
-  echo "[cursor]"
-  run "mkdir -p '$REPO_ROOT/.cursor/skills' '$REPO_ROOT/.cursor/rules'"
-  prune_stale_skill_links "$REPO_ROOT/.cursor/skills"
-  # Prune orphan rule files for skills removed from the catalog.
-  for mdc in "$REPO_ROOT"/.cursor/rules/*.mdc; do
-    [ -e "$mdc" ] || continue
-    local base; base=$(basename "$mdc" .mdc)
-    [ "$base" = "_brainer-catalog" ] && continue
-    if [ ! -d "$SRC/$base" ]; then
-      if [ "$DRY_RUN" = "1" ]; then echo "DRY: prune orphan $mdc"
-      else rm -f "$mdc"; echo "    [prune] ${base}.mdc (removed from catalog)"; fi
-    fi
-  done
-  for skill in "$SRC"/*/; do
-    name=$(basename "$skill")
-    [ "$name" = "_shared" ] && continue
-    link "$skill" "$REPO_ROOT/.cursor/skills/$name"
-    local mdc="$REPO_ROOT/.cursor/rules/${name}.mdc"
-    if [ "$DRY_RUN" = "1" ]; then
-      echo "DRY: write $mdc"
-    else
-      local desc
-      # `|| true`: a skill with no `description:` line must NOT abort the whole
-      # installer under `set -euo pipefail` (grep no-match exits 1 → pipefail). An
-      # empty description is fine; crashing the run (and skipping every later skill +
-      # the gemini pass) is not. This is why product-images' gemini install stalled.
-      desc=$(grep -m1 '^description:' "$skill/SKILL.md" | sed 's/^description: *//' || true)
-      cat > "$mdc" <<MDC
----
-description: $desc
-globs: ["**/*"]
-alwaysApply: false
----
-
-@$SKILLS_DIR/$name/SKILL.md
-MDC
-      echo "    [write] $mdc"
-    fi
-  done
-  # Always-apply catalog rule — keeps slash-triggers visible in Cursor's
-  # resident context even though individual skill .mdc files are alwaysApply:false.
-  local catalog_mdc="$REPO_ROOT/.cursor/rules/_brainer-catalog.mdc"
-  if [ "$DRY_RUN" = "1" ]; then
-    echo "DRY: write $catalog_mdc"
-  else
-    local body_tmp; body_tmp=$(mktemp)
-    render_skills_catalog > "$body_tmp"
-    {
-      printf -- '---\n'
-      printf -- 'description: Brainer repo-local skills catalog — slash-trigger awareness.\n'
-      printf -- 'globs: ["**/*"]\n'
-      printf -- 'alwaysApply: true\n'
-      printf -- '---\n\n'
-      cat "$body_tmp"
-    } > "$catalog_mdc"
-    rm -f "$body_tmp"
-    echo "    [write] $catalog_mdc"
-  fi
-}
-
 install_gemini() {
   echo "[gemini]"
   run "mkdir -p '$REPO_ROOT/.gemini/skills'"
@@ -578,13 +536,18 @@ for h in "${HOST_LIST[@]}"; do
   case "$h" in
     claude-code) install_claude_code ;;
     codex)       install_codex ;;
-    cursor)      install_cursor ;;
     gemini)      install_gemini ;;
-    *) echo "unknown host: $h (claude-code|codex|cursor|gemini)" >&2; exit 2 ;;
+    *) echo "unknown host: $h (claude-code|codex|gemini)" >&2; exit 2 ;;
   esac
 done
 
 # Per-skill tools/install.sh — for skills with Python/MCP deps (best-effort).
+# Export the requested host list so a per-skill installer that merges HOST-
+# specific config (e.g. context-keeper's merge_codex writing .codex/hooks.json)
+# only touches hosts actually requested here — a `--host gemini` run must not
+# also merge an inert codex/claude-code hook entry nobody asked for. Unset/empty
+# in a direct `bash skills/x/tools/install.sh` run (back-compat: all hosts).
+export BRAINER_HOSTS="$HOSTS_REQUESTED"
 echo
 echo "[skill-tools] running per-skill installers (Python deps, MCP servers)"
 for tool_installer in "$SRC"/*/tools/install.sh; do

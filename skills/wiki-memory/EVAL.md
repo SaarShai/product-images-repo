@@ -5,8 +5,8 @@
 | field | tokens / size |
 |---|---|
 | description (always resident) | **90 tokens** (378 chars) |
-| body (loaded on trigger)      | **5009 tokens** (20394 chars) |
-| tools/ payload                 | 506.5 KB |
+| body (loaded on trigger)      | **3623 tokens** (14388 chars) — re-measured 2026-07-06 after the core+deep-dive split (REFERENCE.md carries compile-ingest, loop-mode, consolidate/decay, schema-evolution, aging/reconcile, graphify boundary, and OKF interop; loaded only when consulted, not on every trigger) |
+| tools/ payload                 | 400.7 KB |
 | model pin                      | `any` |
 | effort pin                     | `low` |
 
@@ -35,4 +35,23 @@ See [`eval/FINDINGS.md`](../../eval/FINDINGS.md) for consolidated numbers. `eval
 
 ## Failure modes
 
-To be filled in after analysis of result outputs (see raw JSON for individual trial outputs).
+Premortem ([`LEARNING_CONTRACT`](../_shared/LEARNING_CONTRACT.md) §8):
+
+- **Silent-failure path** — `new_page()` calls `gate_candidate()` in-code (write-gate is
+  structurally wired, not conventional), but the *retrieval* half has no such gate: an agent
+  that skips `search`/`timeline`/`fetch` and answers from conversation memory instead
+  produces a plausible-looking answer with no visible error — there is nothing that detects
+  "the wiki was never consulted" the way write-gate detects "the candidate was never scored."
+- **Rot-when-unwatched** — pages accumulate without re-validation against the codebase they
+  describe; a fact that was true when written (a file path, a config default, a decision that
+  got reversed) silently goes stale and is served at full confidence by `fetch` — the wiki has
+  no self-decay for factual accuracy, only reuse-driven promotion/aging (`test_consolidate.py`,
+  `test_decay.py`) which tracks *staleness of attention*, not *staleness of truth*.
+  `wiki-refresh`'s reconcile cycle (Keep/Update/Consolidate/Replace/Delete) is the owning
+  mechanism, and it only runs when invoked.
+- **No-hooks host** — wiki-memory is a plain CLI (`wiki.py`), so retrieval and gated writes
+  work identically on Codex/Gemini per `docs/HOST_CAPABILITY_MATRIX.md` ("tools are plain
+  python3/bash"); the actual host-shaped gap is the **loop-mode memory contract** (recall
+  before each pass / write after each pass), which depends on a harness that inlines skill
+  directives into subagent briefs — on a host or subagent context that skips that inlining,
+  the recall/write rhythm silently doesn't happen, and no probe fires to say so.

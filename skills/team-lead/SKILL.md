@@ -38,9 +38,10 @@ retry loop, or generate-and-grade pipeline.
 
 ## 2. Delegate — the roster (cheapest capable hand wins)
 
-Frontier tokens are the scarce resource. Route down the ladder; escalate only
-on an observed failure or a validated capability gap — never on predicted
-difficulty.
+Frontier tokens are the scarce resource. Route down the ladder; a lane failure
+alone is a brief/context problem — diagnose and fix the input first (§4).
+Escalate tier only on a diagnosed capability gap, never on predicted
+difficulty or failure count.
 
 | Lane shape | Agent | Cost tier |
 |---|---|---|
@@ -59,6 +60,14 @@ untrusted content → read-only agent types only. A consuming repo may append
 domain lanes to this table (e.g. screenery-lean routes `.ai` edits to its
 `bracket` planner/executor/judge) — domain tables extend this one, they don't
 replace the protocol.
+
+**Backend canary preflight.** Before recording lane routing for a multi-lane
+run, canary each backend with one trivial task proving TOOLS actually work
+(shell present, files readable) — reply `CANARY: OK` or `CANARY: DEGRADED`; a
+DEGRADED backend is substituted BEFORE dispatch and the substitution
+recorded. (Evidence: architect-loop measured 6/6 Claude subagent spawns
+shell-stripped in one day; identity-level verify-the-pin does not catch
+capability loss.)
 
 ### Hosts without an Agent tool
 
@@ -88,6 +97,16 @@ DONE MEANS: <≤5 verifiable criteria>
 MAX ITERATIONS: 2, then stop and report blockers.
 ```
 
+`brief_header.py` now renders PHASE 0 (mandatory disagreement) and the LANE
+REPORT contract by default; the worker must state plan + disagreements with
+file evidence before editing — silent compliance is a lane defect.
+
+**User-supplied literals go in VERBATIM** (ORCHESTRATION §6): every concrete
+value the user gave — path, filename, ID, threshold — is pasted
+character-for-character; never elide ("…"), abbreviate, or paraphrase it. Gate
+the composed brief with `python3 skills/_shared/brief_header.py --lint-brief -`
+(exit 1 = elided literal found; fix before dispatch).
+
 Brief altitude follows ORCHESTRATION §6: spec-shaped for cheap lanes,
 goal-shaped for frontier lanes. The template above is altitude-neutral — GOAL,
 boundaries, DONE MEANS, and the report contract apply to every lane; what
@@ -112,12 +131,33 @@ lanes) or leaves the how to the worker (frontier lanes).
   task required — file count, format, stale prior-version artifacts REMOVED —
   not merely that the edits applied. An unexplained mismatch or anomaly is
   never a pass: ask WHY before grading.
-- Failed review → route the defect list back to the SAME lane (fresh spawn,
-  brief amended with WHY-MISSED), max 2 round-trips, then escalate one rung up
-  the roster or surface to the user. Stop, don't loop.
+- **Reviewable-diff cap.** A lane whose judged diff exceeds ~400 changed lines
+  should have been two lanes; review effectiveness collapses past a few
+  hundred lines; split before dispatch, not at review.
+- Failed review → a lane failure is a BRIEF/context problem first: fix the
+  input and route the defect list back to the SAME lane tier (fresh spawn,
+  brief amended with WHY-MISSED), max 2 round-trips; tier moves only on a
+  diagnosed capability gap, never on failure count. After 2 round-trips,
+  surface to the user — escalate a rung only if the diagnosis names a
+  capability gap. Stop, don't loop.
+- **Recovery ladder — a lane that goes idle without its deliverable:** (1)
+  retrieve its output via the harness task-output mechanism, (2) nudge once
+  for the missing artifact, (3) discard and respawn fresh; the leader NEVER
+  authors the missing verdict or fills it from memory.
 - Leader synthesizes as lanes return — don't barrier-wait unless a lane
   consumes another's output.
+- **User-facing synthesis contract.** The `LANE_REPORT` shape is worker→leader;
+  the leader→USER synthesis is a different register. State the OUTCOME first,
+  then evidence, risks, next step. Strip internal orchestration vocabulary —
+  lane IDs, `STATUS:` / `READY FOR JUDGING` tokens, arrow chains, agent handles.
+  **A failed, blocked, or dropped lane is named as an explicit gap in that
+  synthesis — never silently filtered to the surviving lanes** (the no-drop
+  guarantee, applied at the output edge: a `.filter(Boolean)` that removes a
+  dead lane must still be reported as "lane X produced nothing").
 - Ledger: a lane is OPEN until its verification passes.
+- **Mechanical no-git check, not just the prose rule.** Run
+  `lane_guard.py check` (ORCHESTRATION §6) after EVERY lane returns — a FAIL
+  quarantines that lane's report until reconciled.
 
 ## 5. Leader keystroke budget
 

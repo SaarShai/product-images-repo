@@ -54,15 +54,32 @@ builder (see scripts/master_spec.py for the reference implementation):
 - Never trace dashed anchor shapes — draw a SYNTHETIC solid outline from the
   anchor's percentile bbox (arch = straight sides + semicircle top).
 
-## Verify synthetic geometry against source pixels (2026-07-05, r16c incident — binding)
+## Geometry comes from VECTOR paths, not raster reconstruction (2026-07-05, binding)
 
-If a control-map element is RECONSTRUCTED (dashed anchor → solid path, closed
-dome, synthetic shape), it MUST be verified pixel-on-pixel against the source
-template render BEFORE any generation uses it: overlay the reconstruction on
-the raw classified pixels (e.g. scratchpad/anchor-verify.png pattern) and eyeball
-coincidence. The r16c incident: a synthetic bbox+semicircle anchor was ~35%
-wider than the template's true orange path (stray dashes inflated the bbox);
-three rounds generated + validated against the invented shape — circular
-validation. Reconstruction rules: largest connected component only (excludes
-stray dashes), then ANALYTIC fit (arc + lines at measured positions) — NOT
-morphological smoothing of thin paths (beads or erases).
+The master-template geometry lives in the .ai bezier paths. Extract them once with
+scratchpad/master_paths.jsx (read-only; opens the master template explicitly) →
+tasks/_templates/master_paths.json, then build the contract with
+`python3 scripts/vector_spec.py --outdir <dir>`. It renders CONTINUOUS SOLID
+strokes per class and needs NO morphology — dashes are just stroke styling over a
+real path, so a continuous stroke has no gaps to bridge. This is the source of
+truth; `scripts/master_spec.py` (raster PNG reconstruction) is SUPERSEDED — it
+caused the jagged arch, the r16c synthetic wide-anchor, and dash leaks, and its
+heuristics were co-tuned to the messy export (broke on clean input).
+
+vector_spec rules baked in (don't re-derive):
+- silhouette: the die-cut is ONE continuous strip, so per-panel side/base edges are
+  the crop window (seal them), NOT real cuts. Domed panels (left/door/right) flood
+  the exterior from the TOP only — the yellow/green envelope arc closes the dome.
+  Stab strips seal all four borders (near-rectangular; contour open on one side).
+- body vs holes: classify interior regions by AREA (≥3% of panel = paintable body).
+  The door face splits into left/centre/right thirds at the slot cuts — all three
+  are body; "largest component only" dropped two of them (body_frac 0.34, wrong).
+- door anchor: render the orange bezier path directly (smooth), never a synthetic
+  bbox+semicircle (r16c: the bbox was ~35% too wide from stray edge dashes).
+
+Verification (mandatory before any gen uses a new contract): the arch/contour must
+be SMOOTH — overlay or per-column top-edge check, jumps ≤ a few px/col (see
+tests/test_vector_spec.py::test_door_arch_is_smooth and the v2-vs-v3 proof at
+scratchpad/arch-smoothness-v2-vs-v3.png). If you ever reconstruct from raster
+again, verify pixel-on-pixel against the source and eyeball coincidence — but the
+vector path removes the need.

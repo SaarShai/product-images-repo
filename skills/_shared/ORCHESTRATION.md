@@ -74,7 +74,34 @@ loop. Cross-vendor egress goes through redaction + consent
 When the orchestrating session itself runs a frontier-tier model, **invert the
 token volume**: the expensive model emits judgment — decomposition, specs,
 routing, verdicts — and cheap lanes emit the volume (code, boilerplate, tests,
-bulk reads). Rules:
+bulk reads).
+
+**Topology default.** The frontier model IS the main loop and routes DOWN
+(plan → delegate → review); every surveyed production coding agent (aider
+architect mode, opusplan, Devin) uses strong-leads. A cheap main loop
+escalates UP only via the prompt-triage escalate-up mode
+(`BRAINER_TRIAGE_ESCALATE_UP=1` → frontier-advisor / frontier-verifier
+subagents) and may only EXECUTE from a frontier-authored plan — never decide
+architecture or escalation timing from scratch. Model switches (`/model`)
+happen only at phase boundaries (plan → execute → review), never mid-phase:
+model switching splits the prompt-cache namespace (cache-lint rule 4), so
+switch coarse-grained or spawn a subagent instead.
+
+**Evidence.** Orchestrator/worker splits measure 58–74% cheaper than
+end-to-end top-model (architect-loop DESIGN.md, PEAR); weak planners hurt
+multi-agent output more than weak executors (PEAR) — so the plan seat gets
+the strongest model, the typing seat doesn't; reasoning-effort curve: xhigh
+vs high = 88% vs 69% semantic equivalence to human PR, 69% vs 38%
+review-pass, at ~2.2× cost (stet.sh via architect-loop) — buy xhigh for
+unattended work where review-survival matters, tier down effort for
+recipe-shaped work; RouteLLM: 85% cost cut at 95% GPT-4 quality (MT Bench) —
+a per-request router for one-shot queries, not a coding-agent topology, cited
+for the cost-routing principle only. These are **external single-source
+anchors**, not reproduced here; the one figure measured on THIS stack is 72.1%
+structural savings on a 17-lane run (team-lead/EVAL.md), which lands inside the
+58–74% anchor. Treat the rest as directional, not settled.
+
+Rules:
 
 - **A code block longer than an interface signature is a spec that hasn't been
   delegated yet** — stop and delegate it. Fixing a cheap lane's bug by hand is
@@ -97,6 +124,16 @@ bulk reads). Rules:
   the orchestrator is the sub-agent's user, and it owns the sub-agent's whole
   context (inlined directives = global, injected precomputed facts = project,
   the brief = task — a subagent starts context-empty and sees nothing else).
+- **User-supplied literals pass VERBATIM.** Any concrete value the user gave —
+  an absolute path, filename, ID, threshold, URL — is copied into the brief
+  character-for-character, never elided ("…", "..."), abbreviated, or
+  paraphrased. A subagent starts context-empty: an elided literal forces it to
+  re-discover (wasted calls) or guess (wrong target). Observed live 2026-07-07
+  (screenery "Baton": brief carried `'…/FINAL production/birthday …'` for a
+  path the user had given in full → the lane went hunting for the folder →
+  user rage "i gave you the path!"). `brief_header.py --lint-brief` refuses
+  briefs with elision markers next to path-like fragments — run it on every
+  composed brief, not only the header it renders.
 - **Commitment boundaries, not only stuckness:** before an architecture choice,
   migration, API shape, or wide-blast-radius refactor — take a read-only,
   context-fresh skeptic verdict (advisor role, preferably cross-vendor; short:
@@ -120,6 +157,39 @@ bulk reads). Rules:
   prints `PIN MISMATCH` on divergence. A lane re-route (e.g. cross-vendor →
   in-family) is reported loudly, never absorbed — the caller may have chosen
   the lane for its failure distribution.
+- **A lane failure is a BRIEF/context problem first.** Diagnose from evidence,
+  fix the input, respawn at the SAME tier; move tier only on a diagnosed
+  capability gap, never on failure count or predicted difficulty. A
+  merge/file conflict between lanes is a DECOMPOSITION failure (kill the
+  lane, re-split), not a worker failure. **Scope:** this governs the
+  team-lead *multi-lane tier decision*. It does NOT override prompt-triage's
+  single-shot gate: a cheap subagent routed for one task that fails its gate
+  twice hands the task back to the main model (two-strike takeover) — that is
+  a per-task routing fallback, not a tier move on the team-lead ladder, and
+  the two rules do not conflict.
+- **Cross-vendor review direction caveat.** One directional study found
+  Claude-reviews-GPT helped while GPT-reviews-Claude hurt; treat direction as
+  a recorded variable, not settled doctrine (single study).
+- **Lane returns are digests, not dumps.** Compact-return target ≈2,500
+  tokens against the artifact paths; payloads go to disk, conclusions to
+  context.
+- **No state-changing git inside a lane; stand down by hunks.** A worker lane
+  NEVER runs `git checkout`/`restore`/`reset`/`clean`/`stash`/`add -A`/`commit`
+  on the shared tree — one `git checkout -- <paths>` for a "clean baseline"
+  wiped 5 concurrent lanes' uncommitted work (2026-07-06). Inline this in every
+  brief (`brief_header.py`). When a lane must discard its OWN edits it removes
+  ONLY its own hunks, never a whole file a sibling may share. The leader
+  checkpoint-commits each verified lane BEFORE the next parallel wave, so a
+  rogue revert's blast radius is one wave, not the session. (Harvested from
+  screenery-lean failure #18 — independently re-derived there and in Brainer's
+  own fleet incident the same day.)
+- **Leader-side mechanical twin of the no-git rule** (hooks don't fire inside
+  lanes, so the guard can't live there): run
+  [`lane_guard.py snapshot`](../../skills/_shared/lane_guard.py) before dispatching a
+  multi-lane wave, then `lane_guard.py check` after EACH lane returns — a
+  stash created, HEAD moved, or a dirty file reverted-to-HEAD is a FAIL that
+  quarantines that lane's report until the tree is reconciled (never
+  self-absorbed as "looks fine").
 
 (Adapted from DannyMac180/fable-advisor, MIT — generalized from concrete
 models to tiers.)

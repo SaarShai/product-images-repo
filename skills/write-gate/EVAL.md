@@ -45,6 +45,42 @@ Status: design + smoke tests shipped; project-local A/B pending the wiki-memory 
 - English-only. Phrase tables would need translation for non-English wikis.
 - No semantic novelty check — a write that scores high but duplicates an existing page still passes the gate. Dedup is `wiki-memory`'s job.
 
+## Failure modes
+
+Premortem ([`LEARNING_CONTRACT`](../_shared/LEARNING_CONTRACT.md) §8):
+
+- **Silent-failure path** — callers write to persistent stores without invoking the gate at
+  all; the gate can't reject a call that never happens. `wiki.py new_page()` closes this for
+  its own path (calls `gate_candidate()` in-code, not by convention), but a hand-edit to
+  `CLAUDE.md`/`AGENTS.md` or a raw `mcp__memory__*` write bypasses the gate entirely with no
+  error surfaced anywhere — the pollution looks identical to a gated write until someone
+  reads it back. (Distinct from the frontmatter-spoofing hole below: this bullet is about the
+  gate never running at all, not about a run being fooled.)
+- **Frontmatter-spoofing (fixed 2026-07-06)** — `extract_scope`/`extract_trust`/`extract_kind`
+  used to fall back to scanning the first 2000 chars of the RAW TEXT whenever the leading
+  `---` frontmatter block wasn't well-formed (no frontmatter at all, or an opener with no
+  closer). That let a body line like `scope: canon` on line 1 of a frontmatter-less file, or
+  a `scope:`/`trust:`/`kind:` line stuffed after an unclosed `---` opener, spoof a
+  classification the gate never actually validated. Now each extractor requires a
+  WELL-FORMED leading block (`---\n` ... `\n---`) and returns `None` otherwise — a candidate
+  with no real frontmatter falls back to the explicit `--scope`/`--trust`/`--kind` CLI flag
+  (or the "fact"/unclassified default), same as before frontmatter reading existed. Separately,
+  frontmatter `kind:` is now actually honored when `--kind` is omitted (previously the CLI's
+  `--kind` default of `"fact"` silently overrode a declared `kind: decision`, letting a
+  reasonless decision dodge the why-clause requirement); an explicit `--kind` that conflicts
+  with frontmatter `kind:` is a hard error (exit 2) rather than a silent pick. See
+  `test_write_gate.py`'s `test_attack_*` regression tests for the exact replayed attacks.
+- **Rot-when-unwatched** — the phrase tables (decision markers, why-clause connectives,
+  filler/speculation regex) are tuned to today's writing style; as skills and users drift
+  toward new phrasing ("landed on X" instead of "chose X"), true decisions silently stop
+  scoring the decision-marker weight and slip through the why-clause requirement unchecked.
+  Nothing currently re-validates the phrase tables against fresh wiki content.
+- **No-hooks host** — write-gate is a CLI invoked in-band (`write_gate.py gate`), not a hook,
+  so it works identically on Codex/Gemini per `docs/HOST_CAPABILITY_MATRIX.md` ("skills are
+  text-portable; tools are plain python3/bash") — the exposure is procedural, not
+  hook-availability: nothing forces the caller to run it before writing except the
+  instruction in this file and the in-code wiring at wiki-memory's own write path.
+
 ## Moved from SKILL.md (2026-06-12 SkillReducer-criteria audit)
 
 _Provenance/rationale below is maintainer context, not runtime instruction — relocated so the lazy-loaded body stays actionable._

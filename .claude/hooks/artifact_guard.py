@@ -24,6 +24,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import shlex
 import sys
 import time
 from pathlib import Path
@@ -32,6 +33,74 @@ REPO = Path(__file__).resolve().parents[2]
 STATE = REPO / ".claude/state/read_paths.json"
 IMAGES = "tasks/space-np01-front-bottom-02/RESULTS/Images"
 SYNC = "scripts/sync_results_images.py"
+IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp", ".tif", ".tiff"}
+# only round-CANDIDATE images need a gate bundle; boards/overlays/previews flow free
+CANDIDATE_NAME = re.compile(r"(final|_s\d+)", re.IGNORECASE)
+
+
+def _review_candidate_copy_without_bundle(cmd: str) -> str | None:
+    """PROCESS-V3 law 4: a candidate image cannot enter REVIEW/ without its
+    sibling *-bundle.json (the gate runner's output). Fail-open on parse errors
+    (a hook crash blocks ALL tools — never risk that for this check)."""
+    try:
+        words = shlex.split(cmd)
+        if not words or Path(words[0]).name not in ("cp", "mv"):
+            return None
+        args = [w for w in words[1:] if not w.startswith("-")]
+        if len(args) < 2:
+            return None
+        dest = args[-1]
+        if not (dest == "REVIEW" or dest.startswith("REVIEW/") or "/REVIEW/" in dest):
+            return None
+        for src in args[:-1]:
+            sp = Path(src)
+            if sp.suffix.lower() not in IMAGE_SUFFIXES:
+                continue
+            if not CANDIDATE_NAME.search(sp.name):
+                continue  # boards / overlays / previews are not gated candidates
+            src_path = sp if sp.is_absolute() else REPO / sp
+            if not any(src_path.parent.glob("*-bundle.json")):
+                return src
+        return None
+    except Exception:
+        return None
+
+
+def _is_existing_raw(pth: Path) -> bool:
+    try:
+        p = pth if pth.is_absolute() else REPO / pth
+        return (
+            p.suffix.lower() in IMAGE_SUFFIXES
+            and "raws" in p.parent.parts
+            and p.exists()
+        )
+    except Exception:
+        return False
+
+
+def _raw_overwrite_dest(cmd: str) -> str | None:
+    """never-ruin-good-raw (memory law): block cp/mv whose destination would
+    OVERWRITE an existing image inside a raws/ dir. Fail-open on parse errors."""
+    try:
+        words = shlex.split(cmd)
+        if not words or Path(words[0]).name not in ("cp", "mv", "rsync", "install"):
+            return None
+        args = [w for w in words[1:] if not w.startswith("-")]
+        if len(args) < 2:
+            return None
+        dest = Path(args[-1])
+        if _is_existing_raw(dest):
+            return args[-1]
+        # dest is a raws/ DIR: overwrite iff a same-named source exists inside it
+        dp = dest if dest.is_absolute() else REPO / dest
+        if dp.is_dir() and dp.name == "raws":
+            for src in args[:-1]:
+                cand = dp / Path(src).name
+                if cand.suffix.lower() in IMAGE_SUFFIXES and cand.exists():
+                    return str(cand)
+        return None
+    except Exception:
+        return None
 
 
 def load_state() -> dict:
@@ -101,6 +170,27 @@ def main() -> int:
                 f"  python3 {SYNC} --check  # verifies none are missing (exit 1 if any)\n"
                 "If you truly need a one-off copy, run sync afterward and quote its --check output."
             )
+        raw_overwrite = _raw_overwrite_dest(cmd)
+        if raw_overwrite:
+            block(
+                "BLOCKED (artifact_guard: raw-overwrite).\n"
+                f"cp/mv would OVERWRITE an existing generator raw: {raw_overwrite}\n"
+                "Raws are immutable evidence (user law: never ruin a good raw — "
+                "'raw was good, you ruined it with exact.png').\n"
+                "Write derived outputs beside the raw under a new name "
+                "(exact/overlay/repair-*), never on top of it."
+            )
+        missing_bundle_src = _review_candidate_copy_without_bundle(cmd)
+        if missing_bundle_src:
+            block(
+                "BLOCKED (artifact_guard: review-candidate-without-gate-bundle).\n"
+                "A CANDIDATE image cannot enter REVIEW/ without its gate bundle "
+                "(*-bundle.json beside the source image).\n"
+                f"Ungated source: {missing_bundle_src}\n"
+                "Run the one-command gate first:\n"
+                "  python3 scripts/gates.py --cand <img> --geom <geomdir> --panel <name> --outdir <dir>\n"
+                "then copy the image together with its bundle + overlay."
+            )
         return 0
 
     # --- gate 2: edit/write to an existing file with no fresh read ---
@@ -111,6 +201,13 @@ def main() -> int:
         p = Path(fp)
         if not p.exists():
             return 0  # creating a new file is fine
+        if _is_existing_raw(p):
+            block(
+                "BLOCKED (artifact_guard: raw-overwrite).\n"
+                f"{tool} would overwrite an existing generator raw: {fp}\n"
+                "Raws are immutable evidence (never ruin a good raw). Write derived "
+                "outputs under a new name beside it."
+            )
         s = load_state()
         last_read = s.get(norm(fp), 0)
         try:
