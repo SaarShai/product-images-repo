@@ -90,3 +90,9 @@ REVIEW/**/*.png
 REVIEW/**/*.jpg
 REVIEW/**/*.jpeg
 REVIEW/**/*.mp4
+
+# drive-copies is a local mirror of Google Drive source files (masters live in
+# Drive, never in the repo). Committing it risks GitHub's 100MB blob limit
+# (2026-07-07: 4 blobs up to 655MB got in and blocked a push; purged from
+# history + untracked here).
+tasks/_templates/drive-copies/
