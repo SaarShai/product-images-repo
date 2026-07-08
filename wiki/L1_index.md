@@ -15,6 +15,7 @@ Compact pointers. Fetch details on demand.
 - concepts/castle-panel-template-cut-bands (concept tags=castle-panels,prompting,template,cut-bands,template-fit,scoring,semantic-review,contour) -> `concepts/castle-panel-template-cut-bands.md`
 - concepts/fal-image-size-bucket-drift (fact tags=fal,image-generation,bucket,resolution,aspect,normalization) -> `concepts/fal-image-size-bucket-drift.md`
 - concepts/family-a-architectural-watercolor-panel-proven-recipe-geometry-gate-cap-juluca (concept) -> `concepts/family-a-architectural-watercolor-panel-proven-recipe-geometry-gate-cap-juluca.md`
+- concepts/illustrated-product-upscale-and-background-removal-workflow (concept tags=image-generation,upscaling,background-removal,hard-alpha,screenery,task-retrospective) -> `concepts/illustrated-product-upscale-and-background-removal-workflow.md`
 - concepts/marriott-hospital-t2-method-matrix (fact tags=image-generation,gpt-image,nano-banana,flux,method-matrix,marriott,architecture,watercolor,style-transfer,geom-fidelity) -> `concepts/marriott-hospital-t2-method-matrix.md`
 - concepts/mask-bounded-external-redraw-donor (concept tags=image-generation,localized-repair,openai,bounded-composite,task-retrospective) -> `concepts/mask-bounded-external-redraw-donor.md`
 - concepts/no-painted-text-vector-layer-or-omit (fact tags=text,signage,image-generation,diffusion,vector,prompt-clause) -> `concepts/no-painted-text-vector-layer-or-omit.md`

@@ -16,3 +16,11 @@ Compact catalog. Update after material wiki changes.
   composite only masked pixels back onto a banked baseline. For repeated
   architecture, split generation context from final blend masks and verify
   protected floor/window/approved-repair zones stay unchanged.
+
+## Product Image Finishing
+
+- [[concepts/illustrated-product-upscale-and-background-removal-workflow]] -
+  sample-proven double Marine Bed Wrapper lesson: upscale first, use hard180
+  BRIA background removal for hard alpha, repair over-cut foreground with
+  reviewed colored-margin mask surgery, keep white-gap cleanup ROI/manual, and
+  batch only after sample approval.

@@ -197,3 +197,15 @@ Added [[concepts/fal-image-size-bucket-drift]]: fal API snaps image_size to buck
 
 Added [[concepts/trained-lora-registry-pattern]]: per-collection lora.json (lora_url / trigger_word / status); usable iff status == "COMPLETED". Enables onepass generation, prevents duplicate training, tracks collection style. Schema example: cap-juluca (CJWC), marriott (MRCH).
 
+## [2026-07-07] update | Illustrated product upscale and background-removal workflow
+
+Created `concepts/illustrated-product-upscale-and-background-removal-workflow.md` from `page` template.
+
+## [2026-07-08] review | GLM 5.2 adversarial pass on upscale/background SOP
+
+Ran a GLM 5.2 adversarial review of
+[[concepts/illustrated-product-upscale-and-background-removal-workflow]]. Accepted
+the review's strongest concerns by narrowing the SOP from all illustrated
+watercolor assets to similar/folder-style assets, adding the binary-alpha
+default plus reviewed one-pixel anti-aliasing exception, and making unattended
+non-default routes explicit.
