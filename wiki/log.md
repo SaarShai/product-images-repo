@@ -209,3 +209,20 @@ the review's strongest concerns by narrowing the SOP from all illustrated
 watercolor assets to similar/folder-style assets, adding the binary-alpha
 default plus reviewed one-pixel anti-aliasing exception, and making unattended
 non-default routes explicit.
+
+## [2026-07-08] update | Double Marine x8 background-removal batch verified
+
+Updated [[concepts/illustrated-product-upscale-and-background-removal-workflow]]
+from sample-proven to full-folder batch-proven because the double Marine Bed
+Wrapper run produced `19/19` x8 transparent PNG finals, the verifier passed
+`19/19`, and the manifest reported `0` semi-transparent alpha pixels. Recorded
+the guarded colored-margin restore default (`256` px minimum repair component)
+because smaller candidates produced speck-like restore noise on the first batch
+image.
+
+## [2026-07-08] update | Clarify internal x16 scratch vs delivered x8 finals
+
+Updated [[concepts/illustrated-product-upscale-and-background-removal-workflow]]
+to require delivered-scale verification and x16 scratch cleanup when an x8
+deliverable uses a temporary x16 stage, because transient `@x16` artifact names
+can make users reasonably think the wrong scale was produced.

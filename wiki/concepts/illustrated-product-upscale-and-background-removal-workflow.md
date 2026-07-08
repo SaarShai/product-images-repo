@@ -4,9 +4,9 @@ title: "Illustrated product upscale and background-removal workflow"
 type: concept
 domain: image-generation
 tier: semantic
-confidence: 0.8
+confidence: 0.9
 trust: verified
-validation_scope: "single-sample: sample08; full-folder batch not yet verified"
+validation_scope: "full-folder batch: double Marine Bed Wrapper, 19 images verified"
 created: "2026-07-08"
 updated: "2026-07-08"
 verified: "2026-07-08"
@@ -51,32 +51,42 @@ candidates before a batch run.
 4. For x8, prefer the known-good x16-then-Lanczos-downsample route over direct
    Real-ESRGAN second-pass `-s 2`, because direct `-s 2` produced tile/mosaic
    artifacts on sample08.
-5. Run background removal on the x4 RGB sample, not the x8/x16 final, to keep
+5. When using x16 internally for an x8 deliverable, keep x16 files as scratch
+   only: delete or hide them after the run, label the manifest/finals as x8,
+   and verify source-to-final dimensions so transient artifact names cannot be
+   mistaken for the delivered scale.
+6. Run background removal on the x4 RGB sample, not the x8/x16 final, to keep
    model inference practical.
-6. Use BRIA RMBG hard180 as the current baseline when the user wants hard alpha
+7. Use BRIA RMBG hard180 as the current baseline when the user wants hard alpha
    and minimal halos.
-7. Verify alpha histogram and report transparent %, opaque %, and
+8. Verify alpha histogram and report transparent %, opaque %, and
    semi-transparent %. The expected hard-alpha gate is `semi_pct == 0.0`.
    Keep final alpha binary by default; allow a localized one-pixel
    anti-aliasing patch only if a specific jagged curve is reviewed and approved,
    and report any nonzero `semi_pct` as a deliberate exception.
-8. Build a high-resolution crop board plus individual clickable file paths; do
+9. Build a high-resolution crop board plus individual clickable file paths; do
    not rely only on a compressed overview grid.
-9. For remaining defects, treat them as mask-repair defects rather than as a
+10. For remaining defects, treat them as mask-repair defects rather than as a
    reason to switch global removers:
    - colored enclosed restore for over-cut holes;
-   - colored-margin restore near existing foreground for thin-stem erosion;
+   - colored-margin restore near existing foreground for thin-stem erosion,
+     with a component-size guard so speck-like candidates are not restored;
    - reviewed ROI white-gap cleanup for trapped background.
-10. Reject broad unattended repairs if metrics show many new small foreground
+11. Reject broad unattended repairs if metrics show many new small foreground
     components or the change overlay shows widespread restored pixels.
-11. Transfer the approved x4 binary mask to x8 by resizing the mask and
+12. Transfer the approved x4 binary mask to x8 by resizing the mask and
     hard-thresholding again, then QA at x8 on gray, white, black/magenta, and
     the final expected background.
-12. Only batch the folder after the user approves scale, baseline background
+13. Only batch the folder after the user approves scale, baseline background
     method, and repair policy on the sample.
 
-Production default if the sample is approved:
-`x4 Real-ESRGAN -> BRIA hard180 -> colored-margin restore -> human ROI white-gap cleanup -> binary x8 mask transfer`.
+Production default after the 19-image batch:
+`x4 Real-ESRGAN -> BRIA hard180 -> guarded colored-margin restore -> x16/Lanczos RGB downsample -> binary x8 mask transfer`.
+
+For the batch script, the colored-margin restore guard uses a minimum repair
+component size of `256` pixels because smaller candidates produced thousands of
+speck-like components on the first batch image. Keep that guard or a comparable
+component filter to avoid restoring stray background pixels as foreground.
 
 Do not use these as unattended defaults for this workflow: soft160, broad color
 reclaim, direct Real-ESRGAN second-pass `-s 2`, or automatic white-gap removal.
@@ -96,15 +106,29 @@ reclaim, direct Real-ESRGAN second-pass `-s 2`, or automatic white-gap removal.
 - White-gap automation was demoted to ROI/manual review because metrics jumped
   to many small foreground components.
 - User corrections: soft160 edges were too faded, halos were unacceptable,
-  hard180 was closest, and image references need clickable full paths.
+  hard180 was closest, image references need clickable full paths, and x16
+  should be communicated as an internal transient when the requested deliverable
+  is x8.
+- Full-folder batch evidence:
+  `/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/finals/batch-manifest.json`.
+- Batch verifier passed `19/19` entries with `0` failures. All finals are x8
+  transparent PNGs, final dimensions equal source dimensions times `8`, and
+  total semi-transparent alpha pixels across the manifest were `0`.
+- After the x16/x8 clarification, a fresh dimension audit reported
+  `non_x8_count 0` and the batch temp folder reported `tmp_count 0`.
+- Review sheets exist under:
+  `/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/finals/review`.
+- Pause/resume was verified: after stopping at 8 completed finals, the runner
+  resumed from cached/intermediate state, skipped completed finals, and
+  finished the remaining images without source-file changes.
 
 ## Why Not A Skill Yet
 
-This is a repeatable SOP, but it is sample-proven rather than batch-proven
-because the full folder batch has not been run or approved yet. Store it as a
-wiki SOP now so future sessions recall the current workflow, and promote it to a
-proposed skill only after one successful folder batch confirms the commands and
-gates end-to-end.
+This is now batch-proven for one full folder. Keep it as a wiki SOP until the
+workflow recurs on another folder or the user explicitly asks to turn it into a
+proposed skill, because the current runner is still product-folder-specific and
+the safest next promotion would be a parameterized wrapper around the verified
+script and verifier.
 
 ## Related
 
@@ -114,9 +138,9 @@ gates end-to-end.
 
 ## Open Questions
 
-- Whether the hard180 plus colored-margin restore route holds across the full
-  double Marine Bed Wrapper folder, not only sample08.
+- Whether the guarded colored-margin restore holds on a second illustrated
+  product folder.
 - Whether ROI/manual white-gap cleanup can be made safe enough for unattended
   batch use after more examples.
-- Before batching, compare baseline hard180, colored-margin restore, and its
-  change overlay on the known defect zones.
+- Whether to promote the verified runner into a proposed repo-local skill if
+  the same workflow recurs.
