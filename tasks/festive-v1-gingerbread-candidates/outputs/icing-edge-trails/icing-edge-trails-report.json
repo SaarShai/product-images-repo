@@ -1,0 +1,27 @@
+{
+  "pass": true,
+  "metrics": {
+    "edge-v1-smooth-rope": {
+      "icing_inside": 86935,
+      "icing_outside": 90189,
+      "cookie_outside_far": 0,
+      "cookie_inside": 489184,
+      "icing_in_out_ratio": 0.963920211999246
+    },
+    "edge-v2-scallop-edge": {
+      "icing_inside": 84716,
+      "icing_outside": 85187,
+      "cookie_outside_far": 0,
+      "cookie_inside": 492843,
+      "icing_in_out_ratio": 0.9944709873572258
+    },
+    "edge-v3-soft-watercolor": {
+      "icing_inside": 92830,
+      "icing_outside": 97734,
+      "cookie_outside_far": 0,
+      "cookie_inside": 482423,
+      "icing_in_out_ratio": 0.9498229889291342
+    }
+  },
+  "board": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/icing-edge-trails/festive-v1-icing-edge-trails-board.png"
+}

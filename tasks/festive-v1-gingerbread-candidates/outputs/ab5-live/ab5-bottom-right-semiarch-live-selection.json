@@ -1,0 +1,27 @@
+{
+  "selected_path_index": 5,
+  "selected": {
+    "name": "cut > door panel > bottom right subpanel > door backing > back layer > outer contour",
+    "item_path": "cut > cut > door panel > bottom right subpanel > door backing > back layer > outer contour",
+    "layer": "cut",
+    "bounds": [
+      942.012682894263,
+      -7300.42439675462,
+      2149.18830168526,
+      -9594.42555470255
+    ],
+    "rel_center": [
+      0.79267945349688,
+      0.80643077380527
+    ],
+    "width": 1207.175618791,
+    "height": 2294.00115794793,
+    "area": 2689836.13027195
+  },
+  "guide": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-live/ab5-bottom-right-semiarch-live-geometry-guide.png",
+  "production_guide": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/ab5-bottom-right-semiarch-live-geometry-guide.png",
+  "canvas_size": [
+    1100,
+    1600
+  ]
+}

@@ -24,3 +24,10 @@ Compact catalog. Update after material wiki changes.
   BRIA background removal for hard alpha, repair over-cut foreground with
   reviewed colored-margin mask surgery, keep white-gap cleanup ROI/manual, and
   batch only after sample approval.
+
+- [[concepts/double-marine-bed-wrapper-background-removal-fusion-pipeline]] -
+  fusion pipeline for watercolor marine illustrations on near-white backgrounds:
+  border-flood + disagreement-recovery restore → binary alpha (18-image validated).
+  v1 works but fails on ultra-pale ghost layers; v2 spec tightens flood (chroma≤5)
+  + adaptive boundary erode. Gate: defect_scan_v2.py hi-DPI tiles vs. original-source
+  BG model.

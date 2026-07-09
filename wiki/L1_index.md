@@ -13,8 +13,10 @@ Compact pointers. Fetch details on demand.
 - concepts/a-route-needs-a-success-criterion-and-measure-gate-before-launch (concept) -> `concepts/a-route-needs-a-success-criterion-and-measure-gate-before-launch.md`
 - concepts/background-routes-must-write-resumable-checkpoints (concept) -> `concepts/background-routes-must-write-resumable-checkpoints.md`
 - concepts/castle-panel-template-cut-bands (concept tags=castle-panels,prompting,template,cut-bands,template-fit,scoring,semantic-review,contour) -> `concepts/castle-panel-template-cut-bands.md`
+- concepts/double-marine-bed-wrapper-background-removal-fusion-pipeline (fact tags=background-removal,watercolor,marine-illustration,fusion-pipeline,batch-processing,hard-alpha,image-processing,ml-matting) -> `concepts/double-marine-bed-wrapper-background-removal-fusion-pipeline.md`
 - concepts/fal-image-size-bucket-drift (fact tags=fal,image-generation,bucket,resolution,aspect,normalization) -> `concepts/fal-image-size-bucket-drift.md`
 - concepts/family-a-architectural-watercolor-panel-proven-recipe-geometry-gate-cap-juluca (concept) -> `concepts/family-a-architectural-watercolor-panel-proven-recipe-geometry-gate-cap-juluca.md`
+- concepts/gingerbread-panel-cutouts-decoration-slots (concept tags=gingerbread,cutouts,image-generation,watercolor,screenery,prompt-gate,style-gate) -> `concepts/gingerbread-panel-cutouts-decoration-slots.md`
 - concepts/illustrated-product-upscale-and-background-removal-workflow (concept tags=image-generation,upscaling,background-removal,hard-alpha,screenery,task-retrospective) -> `concepts/illustrated-product-upscale-and-background-removal-workflow.md`
 - concepts/marriott-hospital-t2-method-matrix (fact tags=image-generation,gpt-image,nano-banana,flux,method-matrix,marriott,architecture,watercolor,style-transfer,geom-fidelity) -> `concepts/marriott-hospital-t2-method-matrix.md`
 - concepts/mask-bounded-external-redraw-donor (concept tags=image-generation,localized-repair,openai,bounded-composite,task-retrospective) -> `concepts/mask-bounded-external-redraw-donor.md`

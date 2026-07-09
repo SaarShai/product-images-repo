@@ -1,0 +1,35 @@
+{
+  "candidates": [
+    {
+      "title": "A. Royal Icing Cookie Trim",
+      "slug": "opt-a-royal-icing-cookie-trim",
+      "raw": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/round2-options/opt-a-royal-icing-cookie-trim-raw.png",
+      "artwork": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/round2-options/opt-a-royal-icing-cookie-trim-artwork.png",
+      "preview": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/round2-options/opt-a-royal-icing-cookie-trim-preview.png",
+      "production_preview": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/new cutting files/NEW Festive/Images/candidates/opt-a-royal-icing-cookie-trim-preview.png",
+      "outside_alpha_pixels": 0,
+      "method": "openai-subgen-reference-attached"
+    },
+    {
+      "title": "B. Candy Cane Holly Cascade",
+      "slug": "opt-b-candy-cane-holly-cascade",
+      "raw": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/round2-options/opt-b-candy-cane-holly-cascade-raw.png",
+      "artwork": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/round2-options/opt-b-candy-cane-holly-cascade-artwork.png",
+      "preview": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/round2-options/opt-b-candy-cane-holly-cascade-preview.png",
+      "production_preview": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/new cutting files/NEW Festive/Images/candidates/opt-b-candy-cane-holly-cascade-preview.png",
+      "outside_alpha_pixels": 0,
+      "method": "openai-subgen-reference-attached"
+    },
+    {
+      "title": "C. Frosted Snowflake Lattice",
+      "slug": "opt-c-frosted-snowflake-lattice",
+      "raw": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/round2-options/opt-c-frosted-snowflake-lattice-raw.png",
+      "artwork": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/round2-options/opt-c-frosted-snowflake-lattice-artwork.png",
+      "preview": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/round2-options/opt-c-frosted-snowflake-lattice-preview.png",
+      "production_preview": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/new cutting files/NEW Festive/Images/candidates/opt-c-frosted-snowflake-lattice-preview.png",
+      "outside_alpha_pixels": 0,
+      "method": "openai-subgen-reference-attached"
+    }
+  ],
+  "board": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/round2-options/festive-v1-round2-options-board.png"
+}

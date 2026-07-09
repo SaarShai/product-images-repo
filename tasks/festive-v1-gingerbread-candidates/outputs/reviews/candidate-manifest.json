@@ -1,0 +1,37 @@
+{
+  "task": "festive-v1-gingerbread-candidates",
+  "geometry": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/geometry/ab2-cutouts.json",
+  "mask": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/geometry/combined-mask.png",
+  "candidates": [
+    {
+      "title": "Cocoa Glaze Village",
+      "preview": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/reviews/v1-cocoa-glaze-village-preview.png",
+      "production_preview": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/new cutting files/NEW Festive/Images/candidates/v1-cocoa-glaze-village-preview.png"
+    },
+    {
+      "title": "Holly-Berry Bakery",
+      "preview": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/reviews/v2-holly-berry-bakery-preview.png",
+      "production_preview": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/new cutting files/NEW Festive/Images/candidates/v2-holly-berry-bakery-preview.png"
+    },
+    {
+      "title": "Powdered Sugar Frost",
+      "preview": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/reviews/v3-powdered-sugar-frost-preview.png",
+      "production_preview": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/new cutting files/NEW Festive/Images/candidates/v3-powdered-sugar-frost-preview.png"
+    },
+    {
+      "title": "Painted Ornament Candy Shop",
+      "preview": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/reviews/v4-painted-ornament-candy-shop-preview.png",
+      "production_preview": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/new cutting files/NEW Festive/Images/candidates/v4-painted-ornament-candy-shop-preview.png"
+    },
+    {
+      "title": "Peppermint Roofline",
+      "preview": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/reviews/v5-peppermint-roofline-preview.png",
+      "production_preview": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/new cutting files/NEW Festive/Images/candidates/v5-peppermint-roofline-preview.png"
+    },
+    {
+      "title": "Icing Garland House",
+      "preview": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/reviews/v6-icing-garland-house-preview.png",
+      "production_preview": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/new cutting files/NEW Festive/Images/candidates/v6-icing-garland-house-preview.png"
+    }
+  ]
+}

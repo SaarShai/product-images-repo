@@ -1,0 +1,50 @@
+[
+  {
+    "file": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/best-magenta-background-09-border-repair-method1-alpha-trim.png",
+    "size": [
+      4200,
+      5463
+    ],
+    "outside_original_alpha_pixels": 0,
+    "alpha_pixels_removed": 68552,
+    "changed_pixels": 3469285,
+    "alpha_bbox": [
+      98,
+      110,
+      4078,
+      5310
+    ]
+  },
+  {
+    "file": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/best-magenta-background-09-border-repair-method2-cream-halo-neutralize.png",
+    "size": [
+      4200,
+      5463
+    ],
+    "outside_original_alpha_pixels": 0,
+    "alpha_pixels_removed": 0,
+    "changed_pixels": 559253,
+    "alpha_bbox": [
+      93,
+      105,
+      4083,
+      5316
+    ]
+  },
+  {
+    "file": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/best-magenta-background-09-border-repair-method3-detached-line-remove.png",
+    "size": [
+      4200,
+      5463
+    ],
+    "outside_original_alpha_pixels": 0,
+    "alpha_pixels_removed": 38756,
+    "changed_pixels": 2837680,
+    "alpha_bbox": [
+      96,
+      110,
+      4080,
+      5311
+    ]
+  }
+]

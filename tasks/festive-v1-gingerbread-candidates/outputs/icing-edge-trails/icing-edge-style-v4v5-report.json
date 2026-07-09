@@ -1,0 +1,26 @@
+{
+  "pass": true,
+  "candidates": [
+    {
+      "title": "V4. Watercolor + Piped Edge",
+      "slug": "edge-v4-watercolor-piped",
+      "preview": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/icing-edge-trails/edge-v4-watercolor-piped-preview.png",
+      "metrics": {
+        "icing_inside": 113101,
+        "icing_outside": 87954,
+        "cookie_outside_far": 0
+      }
+    },
+    {
+      "title": "V5. Watercolor + Scallop Pipe",
+      "slug": "edge-v5-watercolor-scallop",
+      "preview": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/icing-edge-trails/edge-v5-watercolor-scallop-preview.png",
+      "metrics": {
+        "icing_inside": 139014,
+        "icing_outside": 102289,
+        "cookie_outside_far": 0
+      }
+    }
+  ],
+  "board": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/icing-edge-trails/festive-v1-icing-edge-style-v4v5-board.png"
+}

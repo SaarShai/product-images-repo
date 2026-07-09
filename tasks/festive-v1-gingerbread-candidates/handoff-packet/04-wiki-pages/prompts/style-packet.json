@@ -1,0 +1,1192 @@
+{
+  "created_at": "2026-07-08T19:55:48Z",
+  "task": "festive-v1-gingerbread-candidates",
+  "purpose": "visual style packet for image-generation/style agents",
+  "source_refs": [
+    "tasks/festive-v1-gingerbread-candidates/refs/christmas-elements-watercolor.png",
+    "tasks/festive-v1-gingerbread-candidates/refs/watercolor-gingerbread-cookies.png",
+    "tasks/festive-v1-gingerbread-candidates/refs/watercolor-ornaments.png",
+    "tasks/festive-v1-gingerbread-candidates/refs/watercolor-snowflake.png"
+  ],
+  "contact_sheets": {
+    "reference_contact_sheet": "tasks/festive-v1-gingerbread-candidates/style-packet/reference-contact-sheet.png",
+    "style_exemplar_sheet": "tasks/festive-v1-gingerbread-candidates/style-packet/style-exemplar-sheet.png"
+  },
+  "palette_hex": [
+    "#f6f7f3",
+    "#bf9e74",
+    "#d8e5e7",
+    "#ccc6ac",
+    "#284537",
+    "#e2a45f",
+    "#4d5c62",
+    "#b5784f",
+    "#8b98a6",
+    "#75a46a",
+    "#691a12",
+    "#a2412f"
+  ],
+  "crops": [
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref01-christmas-elements-watercolor-full-panel.png",
+      "bbox": [
+        0,
+        0,
+        1206,
+        1164
+      ],
+      "size": [
+        1206,
+        1164
+      ],
+      "label": "ref 1 full panel",
+      "type": "full-panel",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/christmas-elements-watercolor.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref01-christmas-elements-watercolor-left-region.png",
+      "bbox": [
+        0,
+        0,
+        466,
+        1164
+      ],
+      "size": [
+        466,
+        1164
+      ],
+      "label": "ref 1 left-region",
+      "type": "left-region",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/christmas-elements-watercolor.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref01-christmas-elements-watercolor-center-region.png",
+      "bbox": [
+        365,
+        0,
+        852,
+        1164
+      ],
+      "size": [
+        487,
+        1164
+      ],
+      "label": "ref 1 center-region",
+      "type": "center-region",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/christmas-elements-watercolor.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref01-christmas-elements-watercolor-right-region.png",
+      "bbox": [
+        739,
+        0,
+        1206,
+        1164
+      ],
+      "size": [
+        467,
+        1164
+      ],
+      "label": "ref 1 right-region",
+      "type": "right-region",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/christmas-elements-watercolor.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref01-christmas-elements-watercolor-body-texture.png",
+      "bbox": [
+        474,
+        317,
+        755,
+        846
+      ],
+      "size": [
+        281,
+        529
+      ],
+      "label": "ref 1 body-texture",
+      "type": "body-texture",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/christmas-elements-watercolor.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref01-christmas-elements-watercolor-edge-treatment.png",
+      "bbox": [
+        0,
+        0,
+        297,
+        496
+      ],
+      "size": [
+        297,
+        496
+      ],
+      "label": "ref 1 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/christmas-elements-watercolor.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref01-christmas-elements-watercolor-accent-component-01.png",
+      "bbox": [
+        591,
+        0,
+        1206,
+        586
+      ],
+      "size": [
+        615,
+        586
+      ],
+      "label": "ref 1 accent component 01",
+      "type": "accent-component",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/christmas-elements-watercolor.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref01-christmas-elements-watercolor-accent-component-02.png",
+      "bbox": [
+        378,
+        492,
+        850,
+        927
+      ],
+      "size": [
+        472,
+        435
+      ],
+      "label": "ref 1 accent component 02",
+      "type": "accent-component",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/christmas-elements-watercolor.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref01-christmas-elements-watercolor-accent-component-03.png",
+      "bbox": [
+        0,
+        6,
+        381,
+        433
+      ],
+      "size": [
+        381,
+        427
+      ],
+      "label": "ref 1 accent component 03",
+      "type": "accent-component",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/christmas-elements-watercolor.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref01-christmas-elements-watercolor-accent-component-04.png",
+      "bbox": [
+        0,
+        549,
+        281,
+        807
+      ],
+      "size": [
+        281,
+        258
+      ],
+      "label": "ref 1 accent component 04",
+      "type": "accent-component",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/christmas-elements-watercolor.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref01-christmas-elements-watercolor-accent-component-05.png",
+      "bbox": [
+        32,
+        349,
+        286,
+        598
+      ],
+      "size": [
+        254,
+        249
+      ],
+      "label": "ref 1 accent component 05",
+      "type": "accent-component",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/christmas-elements-watercolor.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref01-christmas-elements-watercolor-accent-component-06.png",
+      "bbox": [
+        75,
+        665,
+        282,
+        891
+      ],
+      "size": [
+        207,
+        226
+      ],
+      "label": "ref 1 accent component 06",
+      "type": "accent-component",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/christmas-elements-watercolor.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref01-christmas-elements-watercolor-accent-component-07.png",
+      "bbox": [
+        58,
+        935,
+        255,
+        1141
+      ],
+      "size": [
+        197,
+        206
+      ],
+      "label": "ref 1 accent component 07",
+      "type": "accent-component",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/christmas-elements-watercolor.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref01-christmas-elements-watercolor-accent-component-08.png",
+      "bbox": [
+        61,
+        847,
+        263,
+        1058
+      ],
+      "size": [
+        202,
+        211
+      ],
+      "label": "ref 1 accent component 08",
+      "type": "accent-component",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/christmas-elements-watercolor.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref02-watercolor-gingerbread-cookies-full-panel.png",
+      "bbox": [
+        0,
+        0,
+        848,
+        750
+      ],
+      "size": [
+        848,
+        750
+      ],
+      "label": "ref 2 full panel",
+      "type": "full-panel",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-gingerbread-cookies.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref02-watercolor-gingerbread-cookies-left-region.png",
+      "bbox": [
+        0,
+        0,
+        330,
+        750
+      ],
+      "size": [
+        330,
+        750
+      ],
+      "label": "ref 2 left-region",
+      "type": "left-region",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-gingerbread-cookies.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref02-watercolor-gingerbread-cookies-center-region.png",
+      "bbox": [
+        254,
+        0,
+        601,
+        750
+      ],
+      "size": [
+        347,
+        750
+      ],
+      "label": "ref 2 center-region",
+      "type": "center-region",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-gingerbread-cookies.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref02-watercolor-gingerbread-cookies-right-region.png",
+      "bbox": [
+        517,
+        0,
+        848,
+        750
+      ],
+      "size": [
+        331,
+        750
+      ],
+      "label": "ref 2 right-region",
+      "type": "right-region",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-gingerbread-cookies.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref02-watercolor-gingerbread-cookies-body-texture.png",
+      "bbox": [
+        331,
+        202,
+        533,
+        548
+      ],
+      "size": [
+        202,
+        346
+      ],
+      "label": "ref 2 body-texture",
+      "type": "body-texture",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-gingerbread-cookies.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref02-watercolor-gingerbread-cookies-edge-treatment.png",
+      "bbox": [
+        0,
+        0,
+        211,
+        323
+      ],
+      "size": [
+        211,
+        323
+      ],
+      "label": "ref 2 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-gingerbread-cookies.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref03-watercolor-ornaments-full-panel.png",
+      "bbox": [
+        0,
+        0,
+        976,
+        1024
+      ],
+      "size": [
+        976,
+        1024
+      ],
+      "label": "ref 3 full panel",
+      "type": "full-panel",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-ornaments.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref03-watercolor-ornaments-left-region.png",
+      "bbox": [
+        0,
+        0,
+        378,
+        1024
+      ],
+      "size": [
+        378,
+        1024
+      ],
+      "label": "ref 3 left-region",
+      "type": "left-region",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-ornaments.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref03-watercolor-ornaments-center-region.png",
+      "bbox": [
+        294,
+        0,
+        691,
+        1024
+      ],
+      "size": [
+        397,
+        1024
+      ],
+      "label": "ref 3 center-region",
+      "type": "center-region",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-ornaments.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref03-watercolor-ornaments-right-region.png",
+      "bbox": [
+        597,
+        0,
+        976,
+        1024
+      ],
+      "size": [
+        379,
+        1024
+      ],
+      "label": "ref 3 right-region",
+      "type": "right-region",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-ornaments.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref03-watercolor-ornaments-body-texture.png",
+      "bbox": [
+        382,
+        278,
+        613,
+        745
+      ],
+      "size": [
+        231,
+        467
+      ],
+      "label": "ref 3 body-texture",
+      "type": "body-texture",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-ornaments.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref03-watercolor-ornaments-edge-treatment.png",
+      "bbox": [
+        0,
+        0,
+        242,
+        438
+      ],
+      "size": [
+        242,
+        438
+      ],
+      "label": "ref 3 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-ornaments.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref03-watercolor-ornaments-accent-component-01.png",
+      "bbox": [
+        0,
+        339,
+        354,
+        714
+      ],
+      "size": [
+        354,
+        375
+      ],
+      "label": "ref 3 accent component 01",
+      "type": "accent-component",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-ornaments.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref03-watercolor-ornaments-accent-component-02.png",
+      "bbox": [
+        0,
+        0,
+        354,
+        369
+      ],
+      "size": [
+        354,
+        369
+      ],
+      "label": "ref 3 accent component 02",
+      "type": "accent-component",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-ornaments.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref03-watercolor-ornaments-accent-component-03.png",
+      "bbox": [
+        627,
+        341,
+        976,
+        701
+      ],
+      "size": [
+        349,
+        360
+      ],
+      "label": "ref 3 accent component 03",
+      "type": "accent-component",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-ornaments.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref03-watercolor-ornaments-accent-component-04.png",
+      "bbox": [
+        302,
+        43,
+        665,
+        368
+      ],
+      "size": [
+        363,
+        325
+      ],
+      "label": "ref 3 accent component 04",
+      "type": "accent-component",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-ornaments.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref03-watercolor-ornaments-accent-component-05.png",
+      "bbox": [
+        301,
+        730,
+        660,
+        1024
+      ],
+      "size": [
+        359,
+        294
+      ],
+      "label": "ref 3 accent component 05",
+      "type": "accent-component",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-ornaments.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref03-watercolor-ornaments-accent-component-06.png",
+      "bbox": [
+        0,
+        685,
+        326,
+        961
+      ],
+      "size": [
+        326,
+        276
+      ],
+      "label": "ref 3 accent component 06",
+      "type": "accent-component",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-ornaments.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref03-watercolor-ornaments-accent-component-07.png",
+      "bbox": [
+        667,
+        708,
+        912,
+        962
+      ],
+      "size": [
+        245,
+        254
+      ],
+      "label": "ref 3 accent component 07",
+      "type": "accent-component",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-ornaments.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref03-watercolor-ornaments-accent-component-08.png",
+      "bbox": [
+        664,
+        19,
+        900,
+        263
+      ],
+      "size": [
+        236,
+        244
+      ],
+      "label": "ref 3 accent component 08",
+      "type": "accent-component",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-ornaments.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref04-watercolor-snowflake-full-panel.png",
+      "bbox": [
+        0,
+        18,
+        1067,
+        1124
+      ],
+      "size": [
+        1067,
+        1106
+      ],
+      "label": "ref 4 full panel",
+      "type": "full-panel",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-snowflake.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref04-watercolor-snowflake-left-region.png",
+      "bbox": [
+        0,
+        10,
+        413,
+        1132
+      ],
+      "size": [
+        413,
+        1122
+      ],
+      "label": "ref 4 left-region",
+      "type": "left-region",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-snowflake.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref04-watercolor-snowflake-center-region.png",
+      "bbox": [
+        322,
+        10,
+        754,
+        1132
+      ],
+      "size": [
+        432,
+        1122
+      ],
+      "label": "ref 4 center-region",
+      "type": "center-region",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-snowflake.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref04-watercolor-snowflake-right-region.png",
+      "bbox": [
+        653,
+        10,
+        1075,
+        1132
+      ],
+      "size": [
+        422,
+        1122
+      ],
+      "label": "ref 4 right-region",
+      "type": "right-region",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-snowflake.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref04-watercolor-snowflake-body-texture.png",
+      "bbox": [
+        418,
+        319,
+        669,
+        822
+      ],
+      "size": [
+        251,
+        503
+      ],
+      "label": "ref 4 body-texture",
+      "type": "body-texture",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-snowflake.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref04-watercolor-snowflake-edge-treatment.png",
+      "bbox": [
+        0,
+        10,
+        264,
+        490
+      ],
+      "size": [
+        264,
+        480
+      ],
+      "label": "ref 4 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-snowflake.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref04-watercolor-snowflake-accent-component-01.png",
+      "bbox": [
+        579,
+        147,
+        752,
+        324
+      ],
+      "size": [
+        173,
+        177
+      ],
+      "label": "ref 4 accent component 01",
+      "type": "accent-component",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-snowflake.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref04-watercolor-snowflake-accent-component-02.png",
+      "bbox": [
+        108,
+        359,
+        264,
+        517
+      ],
+      "size": [
+        156,
+        158
+      ],
+      "label": "ref 4 accent component 02",
+      "type": "accent-component",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-snowflake.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref04-watercolor-snowflake-accent-component-03.png",
+      "bbox": [
+        159,
+        416,
+        325,
+        586
+      ],
+      "size": [
+        166,
+        170
+      ],
+      "label": "ref 4 accent component 03",
+      "type": "accent-component",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-snowflake.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref04-watercolor-snowflake-accent-component-04.png",
+      "bbox": [
+        611,
+        92,
+        775,
+        252
+      ],
+      "size": [
+        164,
+        160
+      ],
+      "label": "ref 4 accent component 04",
+      "type": "accent-component",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-snowflake.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref04-watercolor-snowflake-accent-component-05.png",
+      "bbox": [
+        202,
+        338,
+        348,
+        499
+      ],
+      "size": [
+        146,
+        161
+      ],
+      "label": "ref 4 accent component 05",
+      "type": "accent-component",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-snowflake.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref04-watercolor-snowflake-accent-component-06.png",
+      "bbox": [
+        692,
+        642,
+        834,
+        800
+      ],
+      "size": [
+        142,
+        158
+      ],
+      "label": "ref 4 accent component 06",
+      "type": "accent-component",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-snowflake.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref04-watercolor-snowflake-accent-component-07.png",
+      "bbox": [
+        774,
+        626,
+        916,
+        783
+      ],
+      "size": [
+        142,
+        157
+      ],
+      "label": "ref 4 accent component 07",
+      "type": "accent-component",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-snowflake.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref04-watercolor-snowflake-accent-component-08.png",
+      "bbox": [
+        322,
+        818,
+        461,
+        972
+      ],
+      "size": [
+        139,
+        154
+      ],
+      "label": "ref 4 accent component 08",
+      "type": "accent-component",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-snowflake.png"
+    }
+  ],
+  "agent_attachments": [
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref01-christmas-elements-watercolor-full-panel.png",
+      "bbox": [
+        0,
+        0,
+        1206,
+        1164
+      ],
+      "size": [
+        1206,
+        1164
+      ],
+      "label": "ref 1 full panel",
+      "type": "full-panel",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/christmas-elements-watercolor.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref02-watercolor-gingerbread-cookies-full-panel.png",
+      "bbox": [
+        0,
+        0,
+        848,
+        750
+      ],
+      "size": [
+        848,
+        750
+      ],
+      "label": "ref 2 full panel",
+      "type": "full-panel",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-gingerbread-cookies.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref03-watercolor-ornaments-full-panel.png",
+      "bbox": [
+        0,
+        0,
+        976,
+        1024
+      ],
+      "size": [
+        976,
+        1024
+      ],
+      "label": "ref 3 full panel",
+      "type": "full-panel",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-ornaments.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref04-watercolor-snowflake-full-panel.png",
+      "bbox": [
+        0,
+        18,
+        1067,
+        1124
+      ],
+      "size": [
+        1067,
+        1106
+      ],
+      "label": "ref 4 full panel",
+      "type": "full-panel",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-snowflake.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref01-christmas-elements-watercolor-center-region.png",
+      "bbox": [
+        365,
+        0,
+        852,
+        1164
+      ],
+      "size": [
+        487,
+        1164
+      ],
+      "label": "ref 1 center-region",
+      "type": "center-region",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/christmas-elements-watercolor.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref01-christmas-elements-watercolor-left-region.png",
+      "bbox": [
+        0,
+        0,
+        466,
+        1164
+      ],
+      "size": [
+        466,
+        1164
+      ],
+      "label": "ref 1 left-region",
+      "type": "left-region",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/christmas-elements-watercolor.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref01-christmas-elements-watercolor-right-region.png",
+      "bbox": [
+        739,
+        0,
+        1206,
+        1164
+      ],
+      "size": [
+        467,
+        1164
+      ],
+      "label": "ref 1 right-region",
+      "type": "right-region",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/christmas-elements-watercolor.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref02-watercolor-gingerbread-cookies-center-region.png",
+      "bbox": [
+        254,
+        0,
+        601,
+        750
+      ],
+      "size": [
+        347,
+        750
+      ],
+      "label": "ref 2 center-region",
+      "type": "center-region",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-gingerbread-cookies.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref02-watercolor-gingerbread-cookies-left-region.png",
+      "bbox": [
+        0,
+        0,
+        330,
+        750
+      ],
+      "size": [
+        330,
+        750
+      ],
+      "label": "ref 2 left-region",
+      "type": "left-region",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-gingerbread-cookies.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref02-watercolor-gingerbread-cookies-right-region.png",
+      "bbox": [
+        517,
+        0,
+        848,
+        750
+      ],
+      "size": [
+        331,
+        750
+      ],
+      "label": "ref 2 right-region",
+      "type": "right-region",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-gingerbread-cookies.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref03-watercolor-ornaments-center-region.png",
+      "bbox": [
+        294,
+        0,
+        691,
+        1024
+      ],
+      "size": [
+        397,
+        1024
+      ],
+      "label": "ref 3 center-region",
+      "type": "center-region",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-ornaments.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref03-watercolor-ornaments-left-region.png",
+      "bbox": [
+        0,
+        0,
+        378,
+        1024
+      ],
+      "size": [
+        378,
+        1024
+      ],
+      "label": "ref 3 left-region",
+      "type": "left-region",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-ornaments.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref03-watercolor-ornaments-right-region.png",
+      "bbox": [
+        597,
+        0,
+        976,
+        1024
+      ],
+      "size": [
+        379,
+        1024
+      ],
+      "label": "ref 3 right-region",
+      "type": "right-region",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-ornaments.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref04-watercolor-snowflake-center-region.png",
+      "bbox": [
+        322,
+        10,
+        754,
+        1132
+      ],
+      "size": [
+        432,
+        1122
+      ],
+      "label": "ref 4 center-region",
+      "type": "center-region",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-snowflake.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref04-watercolor-snowflake-left-region.png",
+      "bbox": [
+        0,
+        10,
+        413,
+        1132
+      ],
+      "size": [
+        413,
+        1122
+      ],
+      "label": "ref 4 left-region",
+      "type": "left-region",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-snowflake.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref04-watercolor-snowflake-right-region.png",
+      "bbox": [
+        653,
+        10,
+        1075,
+        1132
+      ],
+      "size": [
+        422,
+        1122
+      ],
+      "label": "ref 4 right-region",
+      "type": "right-region",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-snowflake.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref01-christmas-elements-watercolor-body-texture.png",
+      "bbox": [
+        474,
+        317,
+        755,
+        846
+      ],
+      "size": [
+        281,
+        529
+      ],
+      "label": "ref 1 body-texture",
+      "type": "body-texture",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/christmas-elements-watercolor.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref01-christmas-elements-watercolor-edge-treatment.png",
+      "bbox": [
+        0,
+        0,
+        297,
+        496
+      ],
+      "size": [
+        297,
+        496
+      ],
+      "label": "ref 1 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/christmas-elements-watercolor.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref02-watercolor-gingerbread-cookies-body-texture.png",
+      "bbox": [
+        331,
+        202,
+        533,
+        548
+      ],
+      "size": [
+        202,
+        346
+      ],
+      "label": "ref 2 body-texture",
+      "type": "body-texture",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-gingerbread-cookies.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref02-watercolor-gingerbread-cookies-edge-treatment.png",
+      "bbox": [
+        0,
+        0,
+        211,
+        323
+      ],
+      "size": [
+        211,
+        323
+      ],
+      "label": "ref 2 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-gingerbread-cookies.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref03-watercolor-ornaments-body-texture.png",
+      "bbox": [
+        382,
+        278,
+        613,
+        745
+      ],
+      "size": [
+        231,
+        467
+      ],
+      "label": "ref 3 body-texture",
+      "type": "body-texture",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-ornaments.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref03-watercolor-ornaments-edge-treatment.png",
+      "bbox": [
+        0,
+        0,
+        242,
+        438
+      ],
+      "size": [
+        242,
+        438
+      ],
+      "label": "ref 3 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-ornaments.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref04-watercolor-snowflake-body-texture.png",
+      "bbox": [
+        418,
+        319,
+        669,
+        822
+      ],
+      "size": [
+        251,
+        503
+      ],
+      "label": "ref 4 body-texture",
+      "type": "body-texture",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-snowflake.png"
+    },
+    {
+      "path": "tasks/festive-v1-gingerbread-candidates/style-packet/crops/ref04-watercolor-snowflake-edge-treatment.png",
+      "bbox": [
+        0,
+        10,
+        264,
+        490
+      ],
+      "size": [
+        264,
+        480
+      ],
+      "label": "ref 4 edge-treatment",
+      "type": "edge-treatment",
+      "source": "tasks/festive-v1-gingerbread-candidates/refs/watercolor-snowflake.png"
+    }
+  ],
+  "agent_contract": [
+    "Attach packet images when asking a style agent to generate elements.",
+    "Generate style-matched element sheets before geometry placement.",
+    "Reject outputs that only match palette while missing watercolor edge, line, lighting, and object vocabulary.",
+    "Geometry agents place accepted elements into SVG safe pockets after style generation."
+  ],
+  "prompt": "tasks/festive-v1-gingerbread-candidates/prompts/prompt-v2-style-packet-elements-first.md"
+}

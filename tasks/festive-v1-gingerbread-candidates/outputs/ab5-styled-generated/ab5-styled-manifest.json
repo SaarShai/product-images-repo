@@ -1,0 +1,29 @@
+{
+  "candidates": [
+    {
+      "title": "Styled AB5 V1 - Peppermint Holly Icing",
+      "slug": "ab5-styled-v1-peppermint-holly",
+      "method": "openai-subgen-reference-attached plus exact AB5 mask postprocess",
+      "raw": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-styled-generated/ab5-styled-v1-peppermint-holly-raw.png",
+      "artwork": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-styled-generated/ab5-styled-v1-peppermint-holly-artwork.png",
+      "preview": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-styled-generated/ab5-styled-v1-peppermint-holly-preview.png",
+      "production_raw": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/ab5-styled-v1-peppermint-holly-raw.png",
+      "production_artwork": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/ab5-styled-v1-peppermint-holly-artwork.png",
+      "production_preview": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/ab5-styled-v1-peppermint-holly-preview.png",
+      "outside_alpha_pixels": 0
+    },
+    {
+      "title": "Styled AB5 V2 - Gumdrop Royal Icing",
+      "slug": "ab5-styled-v2-gumdrop-icing",
+      "method": "openai-subgen-reference-attached plus exact AB5 mask postprocess",
+      "raw": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-styled-generated/ab5-styled-v2-gumdrop-icing-raw.png",
+      "artwork": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-styled-generated/ab5-styled-v2-gumdrop-icing-artwork.png",
+      "preview": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-styled-generated/ab5-styled-v2-gumdrop-icing-preview.png",
+      "production_raw": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/ab5-styled-v2-gumdrop-icing-raw.png",
+      "production_artwork": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/ab5-styled-v2-gumdrop-icing-artwork.png",
+      "production_preview": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/ab5-styled-v2-gumdrop-icing-preview.png",
+      "outside_alpha_pixels": 0
+    }
+  ],
+  "board": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-styled-generated/festive-ab5-styled-options-board.png"
+}

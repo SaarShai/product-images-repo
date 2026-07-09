@@ -1,0 +1,34 @@
+{
+  "pass": true,
+  "candidates": [
+    {
+      "title": "V6. Dense Holly-Candy on V4",
+      "slug": "edge-v6-holly-dense",
+      "preview": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/icing-edge-trails/edge-v6-holly-dense-preview.png",
+      "metrics": {
+        "opaque_outside_halo": 0,
+        "opaque_inside": 581879
+      }
+    },
+    {
+      "title": "V7. Sparse Holly-Candy on V4",
+      "slug": "edge-v7-holly-sparse",
+      "preview": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/icing-edge-trails/edge-v7-holly-sparse-preview.png",
+      "metrics": {
+        "opaque_outside_halo": 0,
+        "opaque_inside": 581879
+      }
+    }
+  ],
+  "board": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/icing-edge-trails/festive-v1-holly-on-v4-board.png",
+  "metrics": {
+    "edge-v6-holly-dense": {
+      "opaque_outside_halo": 0,
+      "opaque_inside": 581879
+    },
+    "edge-v7-holly-sparse": {
+      "opaque_outside_halo": 0,
+      "opaque_inside": 581879
+    }
+  }
+}

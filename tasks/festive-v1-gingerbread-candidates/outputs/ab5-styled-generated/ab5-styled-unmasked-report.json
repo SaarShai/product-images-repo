@@ -1,0 +1,32 @@
+{
+  "pass": true,
+  "note": "unmasked exports copied from reference-attached raw styled renders; no AB5 mask or cutout-outline crop applied",
+  "candidates": [
+    {
+      "title": "Styled AB5 V1 - Peppermint Holly Icing",
+      "slug": "ab5-styled-v1-peppermint-holly",
+      "source_raw": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-styled-generated/ab5-styled-v1-peppermint-holly-raw.png",
+      "unmasked": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-styled-generated/ab5-styled-v1-peppermint-holly-unmasked.png",
+      "production_unmasked": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/ab5-styled-v1-peppermint-holly-unmasked.png",
+      "size": [
+        1140,
+        1380
+      ],
+      "mode": "RGB"
+    },
+    {
+      "title": "Styled AB5 V2 - Gumdrop Royal Icing",
+      "slug": "ab5-styled-v2-gumdrop-icing",
+      "source_raw": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-styled-generated/ab5-styled-v2-gumdrop-icing-raw.png",
+      "unmasked": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-styled-generated/ab5-styled-v2-gumdrop-icing-unmasked.png",
+      "production_unmasked": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/ab5-styled-v2-gumdrop-icing-unmasked.png",
+      "size": [
+        1140,
+        1380
+      ],
+      "mode": "RGB"
+    }
+  ],
+  "board": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-styled-generated/festive-ab5-styled-unmasked-options-board.png",
+  "production_board": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/festive-ab5-styled-unmasked-options-board.png"
+}

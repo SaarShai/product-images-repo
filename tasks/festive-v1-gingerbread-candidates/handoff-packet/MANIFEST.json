@@ -1,0 +1,210 @@
+{
+  "packet_root": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/handoff-packet",
+  "created": "2026-07-09",
+  "purpose": "Self-contained handoff for task-retrospective + learn-skill on two festive gingerbread sessions; no durable writes performed in packet build.",
+  "sessions": {
+    "cursor_chimney_tree": {
+      "id": "5b86a89c-f70b-4e8c-aade-33cf2cb73529",
+      "digest": "01-cursor-chimney-tree/"
+    },
+    "codex_gingerbread_style": {
+      "id": "019f42e2-a53d-7b73-933d-eeab76bca988",
+      "digest": "02-codex-gingerbread-style/",
+      "title_confidence": 0.93
+    }
+  },
+  "file_count": 38,
+  "total_bytes": 240501,
+  "files": [
+    {
+      "rel": "01-cursor-chimney-tree/ASSISTANT_CLAIMS.md",
+      "bytes": 3294,
+      "lines": 18
+    },
+    {
+      "rel": "01-cursor-chimney-tree/CORRECTIONS.md",
+      "bytes": 3129,
+      "lines": 17
+    },
+    {
+      "rel": "01-cursor-chimney-tree/KEY_ARTIFACTS.md",
+      "bytes": 10748,
+      "lines": 144
+    },
+    {
+      "rel": "01-cursor-chimney-tree/TIMELINE.md",
+      "bytes": 7322,
+      "lines": 94
+    },
+    {
+      "rel": "01-cursor-chimney-tree/USER_MESSAGES.md",
+      "bytes": 15082,
+      "lines": 273
+    },
+    {
+      "rel": "01-cursor-chimney-tree/session-meta.json",
+      "bytes": 627,
+      "lines": 7
+    },
+    {
+      "rel": "02-codex-gingerbread-style/CORRECTIONS.md",
+      "bytes": 3787,
+      "lines": 73
+    },
+    {
+      "rel": "02-codex-gingerbread-style/KEY_ARTIFACTS.md",
+      "bytes": 5257,
+      "lines": 44
+    },
+    {
+      "rel": "02-codex-gingerbread-style/METHODS_AND_FAILURES.md",
+      "bytes": 4451,
+      "lines": 78
+    },
+    {
+      "rel": "02-codex-gingerbread-style/SESSION_ID.md",
+      "bytes": 2902,
+      "lines": 39
+    },
+    {
+      "rel": "02-codex-gingerbread-style/TIMELINE.md",
+      "bytes": 3865,
+      "lines": 53
+    },
+    {
+      "rel": "02-codex-gingerbread-style/USER_MESSAGES.md",
+      "bytes": 12292,
+      "lines": 194
+    },
+    {
+      "rel": "02-codex-gingerbread-style/session-meta.json",
+      "bytes": 19127,
+      "lines": 154
+    },
+    {
+      "rel": "03-existing-project-memory/ARTIFACT_TREE.md",
+      "bytes": 51320,
+      "lines": 674
+    },
+    {
+      "rel": "03-existing-project-memory/CORRECTION-GATE.md",
+      "bytes": 1820,
+      "lines": 31
+    },
+    {
+      "rel": "03-existing-project-memory/INDEX.md",
+      "bytes": 1690,
+      "lines": 11
+    },
+    {
+      "rel": "03-existing-project-memory/RELATED_SKILLS.md",
+      "bytes": 2673,
+      "lines": 13
+    },
+    {
+      "rel": "03-existing-project-memory/RETROSPECTIVE-styled-oversight.md",
+      "bytes": 3778,
+      "lines": 79
+    },
+    {
+      "rel": "03-existing-project-memory/WIKI_HITS.md",
+      "bytes": 9007,
+      "lines": 327
+    },
+    {
+      "rel": "03-existing-project-memory/icing-edge-trails-NOTES-cookie-fill.md",
+      "bytes": 277,
+      "lines": 6
+    },
+    {
+      "rel": "03-existing-project-memory/retrospective-styled-oversight-rationale.md",
+      "bytes": 1192,
+      "lines": 20
+    },
+    {
+      "rel": "03-existing-project-memory/session-brief.md",
+      "bytes": 1699,
+      "lines": 27
+    },
+    {
+      "rel": "03-existing-project-memory/skill-styled-candidate-proof-gate-SKILL.md",
+      "bytes": 3969,
+      "lines": 66
+    },
+    {
+      "rel": "03-existing-project-memory/upscale-research-DIAGNOSIS.md",
+      "bytes": 2994,
+      "lines": 61
+    },
+    {
+      "rel": "04-wiki-pages/INDEX.md",
+      "bytes": 1753,
+      "lines": 47
+    },
+    {
+      "rel": "04-wiki-pages/concepts-gingerbread-panel-cutouts-decoration-slots.md",
+      "bytes": 4058,
+      "lines": 69
+    },
+    {
+      "rel": "04-wiki-pages/concepts-illustrated-product-upscale-and-background-removal-workflow.md",
+      "bytes": 6630,
+      "lines": 119
+    },
+    {
+      "rel": "04-wiki-pages/prompts/opt-h-brick-chimney-gingerbread-tree.md",
+      "bytes": 1486,
+      "lines": 29
+    },
+    {
+      "rel": "04-wiki-pages/prompts/opt-tree-exact-silhouette.md",
+      "bytes": 965,
+      "lines": 19
+    },
+    {
+      "rel": "04-wiki-pages/prompts/opt-tree-green-candy.md",
+      "bytes": 1263,
+      "lines": 25
+    },
+    {
+      "rel": "04-wiki-pages/prompts/style-packet-README.md",
+      "bytes": 629,
+      "lines": 17
+    },
+    {
+      "rel": "04-wiki-pages/prompts/style-packet.json",
+      "bytes": 32259,
+      "lines": 1192
+    },
+    {
+      "rel": "04-wiki-pages/prompts/styled-candidate-eval-rubric.md",
+      "bytes": 1293,
+      "lines": 27
+    },
+    {
+      "rel": "04-wiki-pages/prompts/styled-redraw-v1-peppermint.md",
+      "bytes": 2076,
+      "lines": 40
+    },
+    {
+      "rel": "CANDIDATE_LESSONS.md",
+      "bytes": 6331,
+      "lines": 130
+    },
+    {
+      "rel": "HOW_TO_USE.md",
+      "bytes": 2845,
+      "lines": 64
+    },
+    {
+      "rel": "ORIGINAL_ASK.md",
+      "bytes": 1390,
+      "lines": 28
+    },
+    {
+      "rel": "README.md",
+      "bytes": 5221,
+      "lines": 110
+    }
+  ]
+}

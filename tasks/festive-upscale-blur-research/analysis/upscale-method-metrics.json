@@ -1,0 +1,83 @@
+{
+  "source_object": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/best option 2-05.png",
+  "source_panel": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/best option 2-06.png",
+  "source_size": [
+    224,
+    946
+  ],
+  "source_black_background_pct": 67.87979462398067,
+  "clean_rgba_path": "tasks/festive-upscale-blur-research/analysis/best-option-2-05-object-clean-rgba.png",
+  "heatmap_path": "tasks/festive-upscale-blur-research/analysis/object-local-sharpness-heatmap.png",
+  "methods": {
+    "m1 OpenCV Lanczos": {
+      "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/best-option-2-05-upscale-m1-opencv-lanczos-unsharp-x4.png",
+      "size": [
+        896,
+        3784
+      ],
+      "alpha_nonzero": 3390464,
+      "lap_var_fg": 8.629651870658412,
+      "grad_p95_fg": 91.21404266357422
+    },
+    "m2 alpha+adaptive": {
+      "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/best-option-2-05-upscale-m2-alpha-premult-pillow-adaptive-x4.png",
+      "size": [
+        896,
+        3784
+      ],
+      "alpha_nonzero": 1119069,
+      "lap_var_fg": 257.5126959384088,
+      "grad_p95_fg": 200.35968017578125
+    },
+    "m3 ESRGAN direct": {
+      "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/best-option-2-05-upscale-m3-realesrgan-direct-x4.png",
+      "size": [
+        896,
+        3784
+      ],
+      "alpha_nonzero": 3390464,
+      "lap_var_fg": 142.103063179553,
+      "grad_p95_fg": 71.11962127685547
+    },
+    "m4 ESRGAN padded fix": {
+      "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/best-option-2-05-upscale-m4-realesrgan-alpha-padded-fixed-x4.png",
+      "size": [
+        896,
+        3784
+      ],
+      "alpha_nonzero": 1119069,
+      "lap_var_fg": 604.4191100532312,
+      "grad_p95_fg": 302.3011779785156
+    },
+    "m5 FAL Recraft Crisp padded": {
+      "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/best-option-2-05-upscale-m5-fal-recraft-crisp-alpha-padded-fixed-x4.png",
+      "size": [
+        896,
+        3784
+      ],
+      "alpha_nonzero": 1119069,
+      "lap_var_fg": 665.7944758563491,
+      "grad_p95_fg": 342.3974304199219
+    },
+    "m4 ESRGAN padded edgeclean": {
+      "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/best-option-2-05-upscale-m4-realesrgan-alpha-padded-edgeclean-x4.png",
+      "size": [
+        896,
+        3784
+      ],
+      "alpha_nonzero": 1110638,
+      "lap_var_fg": 557.6911920494888,
+      "grad_p95_fg": 298.6703796386719
+    },
+    "m5 FAL Recraft Crisp padded edgeclean": {
+      "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/best-option-2-05-upscale-m5-fal-recraft-crisp-alpha-padded-edgeclean-x4.png",
+      "size": [
+        896,
+        3784
+      ],
+      "alpha_nonzero": 1110108,
+      "lap_var_fg": 613.3923808423867,
+      "grad_p95_fg": 336.8857116699219
+    }
+  }
+}

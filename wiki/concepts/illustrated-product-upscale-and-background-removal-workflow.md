@@ -8,8 +8,8 @@ confidence: 0.9
 trust: verified
 validation_scope: "full-folder batch: double Marine Bed Wrapper, 19 images verified"
 created: "2026-07-08"
-updated: "2026-07-08"
-verified: "2026-07-08"
+updated: "2026-07-09"
+verified: "2026-07-09"
 sources:
   - "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/upscale-first/hard180-manual-repair-workflow-v1.md"
   - "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/upscale-first/sample08-hard180-surgical-repair-metrics-v2.json"
@@ -39,6 +39,16 @@ beat the sample-specific hard180 result.
 background-removal tasks where the user needs high-resolution PNGs with clean
 transparent backgrounds, hard or nearly-hard alpha, and reviewable sample
 candidates before a batch run.
+
+**Trigger / symptom:** artifacts after a high-creativity detail or
+enhancement pass, or an agent treating one approved creative probe as a batch
+recipe. Single-probe approval is not batch approval. Prefer the safer
+sample-approved upscale path for batches. Treat high-creativity enhancement as
+probe-only with per-image re-approval, and do not heal failed creative outputs;
+regenerate from the original source. Product-family recipes can live in task
+diagnostics, for example
+`tasks/festive-v1-gingerbread-candidates/outputs/upscale-research/DIAGNOSIS.md`
+for one festive workflow.
 
 ## Procedure
 

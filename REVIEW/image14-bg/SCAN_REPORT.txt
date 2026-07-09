@@ -1,0 +1,170 @@
+================================================================================
+FULL-RESOLUTION DEFECT SCAN REPORT
+Image: 14-fusion-Tw250-erode1-defringe.png
+Scanned: 2026-07-08
+================================================================================
+
+INPUT IMAGES:
+  Result (RGBA, bg-removed):
+    Path: Images/candidates/image14-research/fusion/14-fusion-Tw250-erode1-defringe.png
+    Size: 13,376 × 7,528 pixels (100.6 megapixels)
+    
+  Source (RGB, white-bg reference):
+    Path: /Users/za/Library/CloudStorage/GoogleDrive-.../14-ChatGPT_Image_Jul_7_2026_11_22_35_AM@x8-bg-removed.png
+    Size: 13,376 × 7,528 pixels (100.6 megapixels)
+
+================================================================================
+DEFECT 1: WRONG CUTOUTS
+================================================================================
+Description:
+  Transparent regions in the result image containing pixels far from the
+  background color model. These are removal errors: areas that should be
+  transparent but contain visible content (>3σ from background model).
+
+Background Model (derived from border-connected transparent pixels):
+  Mean RGB: (255, 255, 255) — pure white
+  Std RGB:  (0.0, 0.0, 0.0) — uniform white background
+
+Findings:
+  Total suspicious components:     827
+  Total suspicious pixels:         487,968 pixels (0.48% of image)
+  Components with area >= 200:     827 (all retained)
+  Threshold:                       >3σ deviation per channel, ALL channels
+
+Severity Ranking (top 20 sampled):
+  Rank  Coords (x,y)              Area      Z-Score  Severity
+  ────────────────────────────────────────────────────────────
+  1     (3601,6253)→(3921,8041)  26,184    48.94    CRITICAL
+  2     (2175,7911)→(2407,8299)   9,265    88.46    CRITICAL
+  3     (4447,7013)→(4628,7267)   6,717    61.85    CRITICAL
+  4     (3053,6337)→(3339,6933)   3,735    86.93    HIGH
+  5     (6199,6923)→(6447,7897)   3,395    83.95    HIGH
+  6     (6119,8123)→(6240,8977)   2,721    91.39    HIGH
+  7     (3127,5917)→(3319,6303)   2,571    87.45    HIGH
+  8     (2706,6365)→(3009,6923)   2,185   101.93    HIGH
+  9     (4087,7261)→(4283,7703)   1,775   115.34    HIGH
+  10    (2872,7082)→(3254,7563)   2,485    81.91    HIGH
+
+Root Cause Analysis:
+  The result image contains large regions where the background removal was
+  incomplete or incorrect. The highest-ranking defect (#1) spans ~260 pixels
+  wide × 1788 pixels tall. These artifacts suggest:
+  - Insufficient erosion or dilation during alpha matting
+  - Mask edge artifacts from the removal algorithm
+  - Possible color fringing or halo from selective transparency
+
+Action Required:
+  ✗ FAILED: The background removal quality is POOR. 827 defect regions
+    with significant pixels (>200 each) indicates systemic issues, not
+    isolated edge artifacts.
+
+================================================================================
+DEFECT 2: WHITE FRINGE
+================================================================================
+Description:
+  High-luma pixels (>240) at the foreground boundary ring (FG - erode(FG,2)).
+  These indicate white halos or fringing around the foreground edge.
+
+Detection Method:
+  FG boundary ring = (alpha > 0) ∩ ¬erode(alpha > 0, 2)
+  Fringe score = (count of pixels with luma>240 in ring) / total ring pixels
+  Threshold: score > 0.15 (15% of boundary is high-luma white)
+
+Findings:
+  Total tiles (256×256) with fringe:  5 tiles
+  Fringe threshold:                   >0.15 score
+  Critical fringe (score > 0.4):       1 tile
+
+Severity Ranking (top 5 detected):
+  Rank  Tile (x,y)          Score   Severity
+  ────────────────────────────────────────────
+  1     (6912, 8448)        0.570   CRITICAL
+  2     (1024, 3584)        0.415   CRITICAL
+  3     (1024, 3840)        0.248   MEDIUM
+  4     (1536, 1536)        0.197   LOW
+  5     (5632, 5120)        0.183   LOW
+
+Interpretation:
+  Only 5 tiles out of 4,128 total tiles (52×29 grid) show fringing above
+  the threshold. This is relatively CLEAN for a full-resolution x8 image.
+  
+  However, the top two tiles show CRITICAL fringing (>0.4 score), indicating
+  pronounced white halos at those boundaries.
+
+Root Cause Analysis:
+  - Insufficient defringing post-processing
+  - Edge pixels preserved at high alpha when they should be blended down
+  - Possible JPEG artifact amplification from the bg-removal process
+
+Action Required:
+  ✓ ACCEPTABLE: Only 5 tiles exceed fringe threshold (0.12% of image).
+    Recommend targeted re-defringing on tiles #1 and #2 via morphological
+    cleanup or selective unsharp-mask inversion.
+
+================================================================================
+SAMPLE DEFECT CROPS
+================================================================================
+Output Directory:
+  /Users/za/Documents/product images repo/REVIEW/image14-bg/defects/
+
+Cutout Defect Crops (20 samples):
+  cutout-00-x3601-y6253.jpg  ← LARGEST/WORST
+  cutout-01-x2175-y7911.jpg
+  cutout-02-x4447-y7013.jpg
+  ...
+  cutout-19-x4317-y6837.jpg
+
+Each crop is displayed as: [source RGB | result composited on mid-grey]
+  Left side:   Original background-filled pixels (source)
+  Right side:  Result alpha composited onto 50% grey (shows transparency via grey)
+
+Fringe Defect Crops (5 samples):
+  fringe-00-x6912-y8448.jpg  ← WORST FRINGING
+  fringe-01-x1024-y3584.jpg
+  fringe-02-x1024-y3840.jpg
+  fringe-03-x1536-y1536.jpg
+  fringe-04-x5632-y5120.jpg
+
+Each crop is displayed as: [result on mid-grey | result on black]
+  Left side:   Result composited on 50% grey (reveals alpha blend artifacts)
+  Right side:  Result on pure black (reveals white/bright pixels at boundary)
+
+================================================================================
+OVERALL ASSESSMENT
+================================================================================
+
+CUTOUT DEFECTS:        CRITICAL FAILURE (827 defects, 487,968 px)
+  Status: Image requires rework. Background removal is incomplete.
+  
+FRINGE DEFECTS:        ACCEPTABLE (5 tiles, 0.12% of grid)
+  Status: Minor fringing in isolated regions. Targeted cleanup recommended.
+
+RECOMMENDATION:
+  → The background removal algorithm produced significant artifacts.
+  → Re-run with tighter tolerance or manual cleanup of the 20 worst regions.
+  → For production use, fix at minimum the top 3 defects (#1–#3), which
+    account for ~42,166 pixels of visible contamination.
+
+================================================================================
+TECHNICAL NOTES
+================================================================================
+
+Image Processing Parameters:
+  - Transparent = alpha == 0 (binary alpha)
+  - Opaque = alpha == 255 (binary alpha)
+  - BG model: border-connected transparent pixels → mean/std RGB
+  - Suspicious: (all channels > 3σ from BG mean) ∩ transparent
+  - Fringe luma: 0.299R + 0.587G + 0.114B (ITU-R BT.601)
+  - Ring detection: erosion by 2 pixels (4-connectivity)
+
+File Sizes:
+  Cutout crops:  12–38 KB each (scaled to max 512px, JPEG Q90)
+  Fringe crops:  3.7–15 KB each (256×256 tile pair, JPEG Q90)
+  Total output:  ~1.0 MB
+
+Scanner Version: defect_scan_v2.py (optimized for large images)
+Runtime: ~120 seconds for 13,376 × 7,528 × 2 images
+
+================================================================================
+REPORT END
+================================================================================

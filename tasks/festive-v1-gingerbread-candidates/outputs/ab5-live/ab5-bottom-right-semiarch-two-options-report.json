@@ -1,0 +1,32 @@
+{
+  "pass": true,
+  "selected_live_path": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-live/ab5-bottom-right-semiarch-live-selection.json",
+  "source": "open Illustrator active document artboard 5 live export",
+  "note": "raw unmasked styled renders; no postprocess cutout mask/crop applied",
+  "candidates": [
+    {
+      "title": "AB5 bottom-right semi-arch V1 - Peppermint Holly",
+      "local": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-live/ab5-bottom-right-semiarch-v1-peppermint-holly-raw.png",
+      "production": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/ab5-bottom-right-semiarch-v1-peppermint-holly-raw.png",
+      "mode": "RGB",
+      "size": [
+        1040,
+        1512
+      ],
+      "bytes": 2834148
+    },
+    {
+      "title": "AB5 bottom-right semi-arch V2 - Gumdrop Icing",
+      "local": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-live/ab5-bottom-right-semiarch-v2-gumdrop-icing-raw.png",
+      "production": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/ab5-bottom-right-semiarch-v2-gumdrop-icing-raw.png",
+      "mode": "RGB",
+      "size": [
+        1040,
+        1513
+      ],
+      "bytes": 2817014
+    }
+  ],
+  "board": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-live/ab5-bottom-right-semiarch-two-options-board.png",
+  "production_board": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/ab5-bottom-right-semiarch-two-options-board.png"
+}

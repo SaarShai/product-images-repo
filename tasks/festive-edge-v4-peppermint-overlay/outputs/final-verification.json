@@ -1,0 +1,39 @@
+{
+  "paths": [
+    "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/candidates/edge-v4-peppermint-option-1-highres.png",
+    "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/candidates/edge-v4-peppermint-option-2-highres.png"
+  ],
+  "checks": [
+    {
+      "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/candidates/edge-v4-peppermint-option-1-highres.png",
+      "size": [
+        1400,
+        1899
+      ],
+      "mode": "RGBA",
+      "sha16": "ec22aa9beaeec133",
+      "outside_alpha": 0,
+      "alpha_equal": true,
+      "changed_inside_inner": 177458,
+      "changed_protected": 0,
+      "protected_frac": 0.0
+    },
+    {
+      "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/candidates/edge-v4-peppermint-option-2-highres.png",
+      "size": [
+        1400,
+        1899
+      ],
+      "mode": "RGBA",
+      "sha16": "fd4bae3c61da465b",
+      "outside_alpha": 0,
+      "alpha_equal": true,
+      "changed_inside_inner": 176963,
+      "changed_protected": 0,
+      "protected_frac": 0.0
+    }
+  ],
+  "ok": true,
+  "distinct_hashes": true,
+  "failures": []
+}

@@ -1,0 +1,44 @@
+{
+  "pass": true,
+  "candidates": [
+    {
+      "title": "V8. Brick Chimney + Gingerbread Tree",
+      "slug": "edge-v8-brick-tree",
+      "preview": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/icing-edge-trails/edge-v8-brick-tree-preview.png",
+      "preview_2x": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/icing-edge-trails/edge-v8-brick-tree-preview-2x.png",
+      "artwork": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/icing-edge-trails/edge-v8-brick-tree-artwork.png",
+      "artwork_2x": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/icing-edge-trails/edge-v8-brick-tree-artwork-2x.png",
+      "metrics": {
+        "opaque_outside": 0,
+        "tree_coverage": 24085,
+        "chimney_coverage": 40874
+      }
+    },
+    {
+      "title": "V9. Soft Brick + Ornament Tree",
+      "slug": "edge-v9-softbrick-tree",
+      "preview": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/icing-edge-trails/edge-v9-softbrick-tree-preview.png",
+      "preview_2x": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/icing-edge-trails/edge-v9-softbrick-tree-preview-2x.png",
+      "artwork": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/icing-edge-trails/edge-v9-softbrick-tree-artwork.png",
+      "artwork_2x": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/icing-edge-trails/edge-v9-softbrick-tree-artwork-2x.png",
+      "metrics": {
+        "opaque_outside": 0,
+        "tree_coverage": 24085,
+        "chimney_coverage": 40874
+      }
+    }
+  ],
+  "board": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/icing-edge-trails/festive-v1-brick-tree-board.png",
+  "metrics": {
+    "edge-v8-brick-tree": {
+      "opaque_outside": 0,
+      "tree_coverage": 24085,
+      "chimney_coverage": 40874
+    },
+    "edge-v9-softbrick-tree": {
+      "opaque_outside": 0,
+      "tree_coverage": 24085,
+      "chimney_coverage": 40874
+    }
+  }
+}

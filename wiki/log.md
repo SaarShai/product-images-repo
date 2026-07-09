@@ -226,3 +226,74 @@ Updated [[concepts/illustrated-product-upscale-and-background-removal-workflow]]
 to require delivered-scale verification and x16 scratch cleanup when an x8
 deliverable uses a temporary x16 stage, because transient `@x16` artifact names
 can make users reasonably think the wrong scale was produced.
+
+## [2026-07-08] add | Double Marine Bed Wrapper — Background Removal Fusion Pipeline
+
+Added [[concepts/double-marine-bed-wrapper-background-removal-fusion-pipeline]]:
+watercolor marine illustration batch-processing (x18 images). v1 fusion pipeline
+(border-flood + disagreement-recovery restore) validated: 18/18 binary alpha,
+exact dims, 0 intrusions. v1 failures: ultra-pale ghost corals, residual
+white-ish edges, image15 haze-to-white ambiguity. v2 spec: flood chroma≤5 +
+tint-coherence restore + contrast-adaptive boundary erode. Gate: defect_scan_v2.py
+(hi-DPI tiles, BG model from original source, not white-filled RGB). Tooling
+lessons: codex sandbox paths, codex-rescue one-shot forwarding, edge judgment
+at full-res only.
+## [2026-07-08] update | Gingerbread panel cutouts are decoration slots
+
+Created `concepts/gingerbread-panel-cutouts-decoration-slots.md` from `page` template.
+
+## [2026-07-08] update | Gingerbread cutout styled means reference-attached redraw
+
+Updated [[concepts/gingerbread-panel-cutouts-decoration-slots]] after the user
+rejected the local Pillow `d1`-`d6` decoration previews as not actually styled.
+Lesson: for festive gingerbread cutouts, alpha-mask containment is not enough;
+styled means the actual watercolor reference images or style-packet sheets were
+attached to image generation, with procedural mask-valid previews used only as
+composition maps before exact mask/export checks.
+
+## [2026-07-08] retro | Styled candidate proof gate
+
+Added proposed slash-only skill `skills/styled-candidate-proof-gate/SKILL.md`
+and task report `tasks/festive-v1-gingerbread-candidates/RETROSPECTIVE-styled-oversight.md`
+after the styled-image oversight. Root cause: geometry containment was allowed to
+stand in for the user-facing style claim. Prevention: prove method provenance
+and visual style before exact mask containment when showing "styled generated"
+Screenery/template candidates.
+
+## [2026-07-09] update | Follow the approved styled gingerbread candidate
+
+Updated [[concepts/gingerbread-panel-cutouts-decoration-slots]] after the user
+identified the left `v1style-donor-test` option as the good direction and said
+later variants drifted less good. Lesson: when a user points to a specific
+styled cutout candidate, lock that candidate family as the visual target because
+geometry-valid variants can still regress in style/density. Verify style against
+the approved candidate and verify `edge-v4` base/alpha preservation separately.
+
+## [2026-07-09] update | Check every gingerbread cutout instance
+
+Updated [[concepts/gingerbread-panel-cutouts-decoration-slots]] after the user
+caught that the two left vertical strips were still mostly plain while the right
+strips had candy/icing. Lesson: global geometry/base checks and a representative
+visual sample are not enough; inspect every repeated cutout component, especially
+left/right strip pairs, before presenting final Screenery cutout candidates.
+
+## [2026-07-09] update | Festive clarity Stage C probe-only + cutout gotchas
+
+Task-retrospective on Cursor chimney/tree + Codex gingerbread-style sessions.
+Updated [[concepts/illustrated-product-upscale-and-background-removal-workflow]]
+with a magenta/neon Stage C candy-creative artifact trigger (single-probe ≠ batch;
+regenerate from clean sources; recipe in
+`tasks/festive-v1-gingerbread-candidates/outputs/upscale-research/DIAGNOSIS.md`).
+Updated [[concepts/gingerbread-panel-cutouts-decoration-slots]] and
+`tasks/festive-v1-gingerbread-candidates/CORRECTION-GATE.md` with chimney
+biscuit-brick texture (not scenes), unmask-first before redesign, and
+unmasked artwork vs masked preview deliverable rules. No new skill — route-probe
+FACT-shaped; Fable advisor endorsed patch-existing over `/learn`.
+
+## [2026-07-09] update | Generalize cutout and upscale rules
+
+Generalized [[concepts/gingerbread-panel-cutouts-decoration-slots]] and
+[[concepts/illustrated-product-upscale-and-background-removal-workflow]] to remove
+design-specific standing rules. Product details such as festive chimney texture,
+candy motifs, candidate names, and task recipes remain only as labeled exemplars
+or task-local notes.

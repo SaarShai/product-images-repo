@@ -1,0 +1,139 @@
+
+BENCHMARK RESULTS: Background Removal on Watercolor Illustration
+====================================================================
+
+Source image: 941x1672 px, watercolor on white
+Output directory: /Users/za/Documents/product images repo/REVIEW/image14-bg/benchmark
+
+CANDIDATE RESULTS:
+------------------
+
+1. transparent_background (InSPyReNet, default mode)
+   File: transparent_background_default.png (2.3M)
+   Board: transparent_background_default-board.jpg (396K)
+   
+   Metrics:
+   - Overcut (px with chroma>15 where alpha<127): 36,585 (3.92%)
+   - Fringe mean luma: 173.88 (bright edge)
+   - Semi-transparent px (0<a<255): 52.95%
+   
+   Note: Best fringe luma (bright edge, cleaner). Low overcut %.
+
+2. rembg (U-2-Net via onnxruntime)
+   File: rembg.png (1.3M)
+   Board: rembg-board.jpg (103K)
+   
+   Metrics:
+   - Overcut: 610,384 (39.24%)
+   - Fringe mean luma: 109.29 (medium)
+   - Semi-transparent px: 0% (binarized output)
+   
+   Note: Highest overcut %. Completely binarized alpha (only 0/255).
+
+3. carvekit (tracer-b7)
+   File: carvekit.png (1.5M)
+   Board: carvekit-board.jpg (352K)
+   
+   Metrics:
+   - Overcut: 96,873 (10.27%)
+   - Fringe mean luma: 174.08 (bright edge)
+   - Semi-transparent px: 0% (binarized output)
+   
+   Note: 2nd best overcut %. Good edge quality (bright fringe).
+
+4. color_to_alpha (soft alpha, GIMP algorithm)
+   File: color_to_alpha_soft.png (2.5M)
+   Board: color_to_alpha_soft-board.jpg (259K)
+   
+   Metrics:
+   - Overcut: 486,475 (33.91%)
+   - Fringe mean luma: 52.39 (dark edge)
+   - Semi-transparent px: 92.28% (most gradual alpha)
+   
+   Note: Highest semi-transparent %. Softest alpha gradient, darkest edge.
+
+5. color_to_alpha (binary eroded, GIMP algorithm)
+   File: color_to_alpha_binary.png (2.0M)
+   Board: color_to_alpha_binary-board.jpg (182K)
+   
+   Metrics:
+   - Overcut: 545,286 (36.48%)
+   - Fringe mean luma: 55.10 (dark edge)
+   - Semi-transparent px: 0% (hard binary with 1px erode)
+   
+   Note: High overcut (erode sacrificed precision). Dark fringe.
+
+RANKING BY METRIC:
+-------------------
+
+Overcut % (lower is better):
+  1. transparent_background:  3.92%  ✓ BEST
+  2. carvekit:               10.27%
+  3. color_to_alpha_binary:  36.48%
+  4. color_to_alpha_soft:    33.91%
+  5. rembg:                  39.24%
+
+Fringe mean luma (higher is better; bright edge = cleaner):
+  1. carvekit:               174.08  ✓ BEST
+  2. transparent_background: 173.88  ≈ TIED
+  3. rembg:                  109.29
+  4. color_to_alpha_binary:  55.10
+  5. color_to_alpha_soft:    52.39
+
+Semi-alpha softness (for soft-alpha candidates):
+  1. color_to_alpha_soft:    92.28% ✓ MOST GRADUAL
+  2. transparent_background: 52.95%
+
+IMPLEMENTATION NOTES:
+---------------------
+
+Tools tested:
+  ✓ transparent-background (InSPyReNet): installed via pip, MPS device
+  ✓ rembg (U-2-Net): installed via pip + onnxruntime dependency
+  ✓ carvekit (tracer-b7): installed via pip, downloaded ~270MB model
+  ✓ color-to-alpha: custom implementation (GIMP exact algorithm)
+  
+Failed/skipped:
+  (none - all 4 tools completed + 2 color-to-alpha variants)
+
+Comparison boards:
+  - Layout: full image on mid-grey | full on black | 2 detail crops on black
+  - Crop1: (250, 980)-(650, 1380): pale coral zone
+  - Crop2: (420, 1310)-(820, 1710): sand/shell zone
+  - All scaled for visual inspection at standard resolution
+
+FACTS SUMMARY:
+---------------
+
+1. Overcut tolerance: transparent_background wins decisively on colored-
+   pixel cleanup (3.92% false transparency). rembg is worst (39.24%).
+
+2. Edge quality: transparent_background + carvekit have bright, clean
+   fringes (173.8+ luma). color-to-alpha variants show dark fringing
+   (52-55 luma), rembg intermediate.
+
+3. Alpha gradation: Only transparent_background (52.95%) and color_to_alpha_soft
+   (92.28%) maintain soft alpha transitions. Others are binarized (0/255 only).
+
+4. File sizes: color_to_alpha_soft largest (2.5M, due to soft alpha data);
+   rembg smallest (1.3M, likely via compression of binarized alpha).
+
+5. No single "winner" across all metrics:
+   - Best overcut:    transparent_background
+   - Best fringe:     carvekit (tied with transparent_background)
+   - Softest alpha:   color_to_alpha_soft
+   - Smallest file:   rembg
+
+Performance notes:
+  - transparent_background: ~5 sec (GPU/MPS inference)
+  - rembg:                  ~3 sec (fast ONNX inference)
+  - carvekit:               ~10-15 sec (larger model)
+  - color_to_alpha:         <1 sec (no ML, pure numpy)
+
+User should review comparison boards against actual use case:
+  - Precision removal (watercolor fine details):
+    → transparent_background or carvekit
+  - Soft artistic transitions:
+    → color_to_alpha_soft (GIMP algorithm)
+  - Speed + acceptable quality:
+    → rembg

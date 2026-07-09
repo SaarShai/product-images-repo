@@ -1,0 +1,7 @@
+{
+  "session_id": "5b86a89c-f70b-4e8c-aade-33cf2cb73529",
+  "path": "/Users/za/.cursor/projects/Users-za-Documents-product-images-repo/agent-transcripts/5b86a89c-f70b-4e8c-aade-33cf2cb73529/5b86a89c-f70b-4e8c-aade-33cf2cb73529.jsonl",
+  "approx_span": "Wednesday Jul 8, 2026 1:10 PM to Thursday Jul 9, 2026 2:30 AM UTC-7",
+  "line_count": 336,
+  "evidence_quality": "High for main-session user text and assistant claims: parsed 336 main JSONL records, checked 33 subagent transcripts and empty-window copy (231 records). Subagents were used as supporting evidence only; artifact existence was not independently re-verified."
+}

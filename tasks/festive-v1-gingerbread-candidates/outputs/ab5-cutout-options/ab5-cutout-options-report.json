@@ -1,0 +1,77 @@
+{
+  "pass": true,
+  "geometry": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/geometry/ab5-cutouts.json",
+  "crop_rect": [
+    -1180.5110806646298,
+    -2992.80319903721,
+    2215.7312367447603,
+    -7101.76373787651
+  ],
+  "canvas_size": [
+    1600,
+    1936
+  ],
+  "count_cutouts": 6,
+  "same_base": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-cutout-options/ab5-base-gingerbread-icing.png",
+  "candidates": [
+    {
+      "slug": "ab5-option-a-peppermint-holly",
+      "title": "A. Peppermint Holly Ribbons",
+      "artwork": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-cutout-options/ab5-option-a-peppermint-holly-artwork.png",
+      "preview": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-cutout-options/ab5-option-a-peppermint-holly-preview.png",
+      "metrics": {
+        "opaque_outside_mask": 0,
+        "opaque_inside_mask": 798348
+      }
+    },
+    {
+      "slug": "ab5-option-b-gumdrop-pearls",
+      "title": "B. Gumdrop Pearls",
+      "artwork": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-cutout-options/ab5-option-b-gumdrop-pearls-artwork.png",
+      "preview": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-cutout-options/ab5-option-b-gumdrop-pearls-preview.png",
+      "metrics": {
+        "opaque_outside_mask": 0,
+        "opaque_inside_mask": 798348
+      }
+    },
+    {
+      "slug": "ab5-option-c-snow-icing-scrolls",
+      "title": "C. Snow Icing Scrolls",
+      "artwork": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-cutout-options/ab5-option-c-snow-icing-scrolls-artwork.png",
+      "preview": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-cutout-options/ab5-option-c-snow-icing-scrolls-preview.png",
+      "metrics": {
+        "opaque_outside_mask": 0,
+        "opaque_inside_mask": 798348
+      }
+    },
+    {
+      "slug": "ab5-option-d-candy-brick-garlands",
+      "title": "D. Candy Brick Garlands",
+      "artwork": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-cutout-options/ab5-option-d-candy-brick-garlands-artwork.png",
+      "preview": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-cutout-options/ab5-option-d-candy-brick-garlands-preview.png",
+      "metrics": {
+        "opaque_outside_mask": 0,
+        "opaque_inside_mask": 798348
+      }
+    }
+  ],
+  "board": "/Users/za/Documents/product images repo/tasks/festive-v1-gingerbread-candidates/outputs/ab5-cutout-options/festive-ab5-cutout-options-board.png",
+  "metrics": {
+    "ab5-option-a-peppermint-holly": {
+      "opaque_outside_mask": 0,
+      "opaque_inside_mask": 798348
+    },
+    "ab5-option-b-gumdrop-pearls": {
+      "opaque_outside_mask": 0,
+      "opaque_inside_mask": 798348
+    },
+    "ab5-option-c-snow-icing-scrolls": {
+      "opaque_outside_mask": 0,
+      "opaque_inside_mask": 798348
+    },
+    "ab5-option-d-candy-brick-garlands": {
+      "opaque_outside_mask": 0,
+      "opaque_inside_mask": 798348
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "method": "m5 FAL/Recraft crisp clean, cream padded, clean alpha transfer, edge clean, x2 final from FAL crisp detail",
+  "scale": 2,
+  "pilots": [
+    {
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/best magenta background-07.png",
+      "source_sha_before": "0a7060ca3b8f46d3ac542c94e956c3be0c9ce426d9b1bdb7640bed9732ceb222",
+      "source_sha_after": "0a7060ca3b8f46d3ac542c94e956c3be0c9ce426d9b1bdb7640bed9732ceb222",
+      "source_size": [
+        692,
+        1187
+      ],
+      "target_size": [
+        1384,
+        2374
+      ],
+      "clean_rgba": "tasks/festive-magenta-m5-upscale/analysis/best-magenta-background-07-clean-rgba.png",
+      "padded_input": "tasks/festive-magenta-m5-upscale/analysis/best-magenta-background-07-cream-padded-input.png",
+      "raw_fal": "tasks/festive-magenta-m5-upscale/analysis/best-magenta-background-07-m5-fal-crisp-raw.png",
+      "raw_fal_size": [
+        2388,
+        4096
+      ],
+      "raw_scale": [
+        3.4508670520231215,
+        3.450716090985678
+      ],
+      "output": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/best-magenta-background-07-m5-fal-crisp-clean-x2.png",
+      "output_size": [
+        1384,
+        2374
+      ]
+    },
+    {
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/best magenta background-03.png",
+      "source_sha_before": "f521ce5ca2e4a664d56e0c187143531fce659386f71996b848da17f1620e6ae2",
+      "source_sha_after": "f521ce5ca2e4a664d56e0c187143531fce659386f71996b848da17f1620e6ae2",
+      "source_size": [
+        771,
+        2957
+      ],
+      "target_size": [
+        1542,
+        5914
+      ],
+      "clean_rgba": "tasks/festive-magenta-m5-upscale/analysis/best-magenta-background-03-clean-rgba.png",
+      "padded_input": "tasks/festive-magenta-m5-upscale/analysis/best-magenta-background-03-cream-padded-input.png",
+      "raw_fal": "tasks/festive-magenta-m5-upscale/analysis/best-magenta-background-03-m5-fal-crisp-raw.png",
+      "raw_fal_size": [
+        1068,
+        4096
+      ],
+      "raw_scale": [
+        1.3852140077821011,
+        1.385187690226581
+      ],
+      "output": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/best-magenta-background-03-m5-fal-crisp-clean-x2.png",
+      "output_size": [
+        1542,
+        5914
+      ]
+    }
+  ],
+  "boards": {
+    "contact_magenta": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/best-magenta-background-m5-fal-crisp-clean-x2-pilots-contact-magenta.jpg",
+    "contact_white": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/best-magenta-background-m5-fal-crisp-clean-x2-pilots-contact-white.jpg",
+    "zoom_magenta": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/best-magenta-background-m5-fal-crisp-clean-x2-pilots-zoom-magenta.jpg",
+    "zoom_black": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/festive/images/Images/candidates/best-magenta-background-m5-fal-crisp-clean-x2-pilots-zoom-black.jpg"
+  }
+}

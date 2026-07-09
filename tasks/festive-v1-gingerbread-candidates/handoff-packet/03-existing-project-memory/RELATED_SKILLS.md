@@ -1,0 +1,13 @@
+# Related Skills
+
+Project skills already covering this domain, with path and first description line from frontmatter.
+
+- `.claude/skills/svg-template-illustration/SKILL.md` — Use when a user gives an SVG template, dieline, contour, cutout layout, or Screenery panel plus style/color references and wants generated artwork to fit exactly inside the SVG contour while avoiding internal cutouts and keep-clear areas.
+- `.claude/skills/svg-template-review-judge/SKILL.md` — Use when judging, reviewing, scoring, or deciding whether to accept, patch, or restart SVG-template-constrained illustration candidates.
+- `.claude/skills/svg-template-style-agent/SKILL.md` — Use for agents that generate or transform visual elements from a reference-style packet before SVG geometry placement. This is intentionally separate from geometry/template-fit agents.
+- `.claude/skills/svg-geometry-style-illustration/SKILL.md` — Use when an agent must produce an SVG-template-constrained illustration that both fits exact contour/cutout geometry and adapts to the actual attached reference image style. Orchestrates geometry agents, style-packet/style-imagegen agents, whole-panel redraw, and review judges.
+- `.claude/skills/style-prompt-engineer/SKILL.md` — Turn a requested art style (named by the user, or embodied in a reference image) into the best generation prompt sections + the right reference-image inputs. Use before ANY style-sensitive generation or restyle — by Fable or weaker agents.
+- `.claude/skills/reference-style-packet/SKILL.md` — Use when reference images must be turned into a visual style packet for image-generation agents, especially when previous outputs matched geometry but missed the actual art style.
+- `.claude/skills/element-edit/SKILL.md` — Use when editing ONE element of a finished illustration while keeping the rest byte-identical — redraw / remove / restyle / reshape / move a single element inside finished watercolor+ink art (or any fixed image). Runs the verified auto-mask → guardrail → routed-engine → diff-composite + pixel-gate → VLM-judge pipeline via scripts/edit.py, so you never re-derive or hand-eyeball masks.
+- `.claude/skills/result-vision-judge/SKILL.md` — Use whenever judging/reviewing a generated illustration against a geometry template — by YOU or a sub-agent. Judge on BOTH vision (look at the candidate WITH the SVG-geometry overlay drawn on it) AND the geometry calculation (region-IoU / white-IoU). Never score from the metric alone or the raw image alone. Writes a judge.json verdict into the results library.
+- `skills/styled-candidate-proof-gate/SKILL.md` — Gate styled generated image claims
