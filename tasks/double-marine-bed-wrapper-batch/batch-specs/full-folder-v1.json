@@ -1,0 +1,412 @@
+{
+  "cases": [
+    {
+      "id": "01-41b95e75-99cf-4002-916f-0bf390d0c256",
+      "legacy_rgba_proposal": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/finals/01-41b95e75-99cf-4002-916f-0bf390d0c256@x8-bg-removed.png",
+        "resample": "lanczos",
+        "sha256": "61e45f512c74fea98492c23201225bb361a9f4e85ebeebf23d7f83c6919bd578",
+        "size_wh": [
+          11584,
+          8688
+        ]
+      },
+      "output_dir": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/01-41b95e75-99cf-4002-916f-0bf390d0c256/batch-r110",
+      "source": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/41b95e75-99cf-4002-916f-0bf390d0c256.png",
+        "sha256": "b464eeae78f6131baad89e51d1fc289f118f65ca36bb94d23d179a72ce700574",
+        "size_wh": [
+          1448,
+          1086
+        ]
+      }
+    },
+    {
+      "id": "02-c7d6956e-97e6-40cd-8859-bced1156f66e",
+      "legacy_rgba_proposal": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/finals/02-c7d6956e-97e6-40cd-8859-bced1156f66e@x8-bg-removed.png",
+        "resample": "lanczos",
+        "sha256": "5db15341b5a87cdbd8aa003377d6a3a3886cba925bb4da443d90b3d68a16ac35",
+        "size_wh": [
+          7096,
+          14192
+        ]
+      },
+      "output_dir": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/02-c7d6956e-97e6-40cd-8859-bced1156f66e/batch-r110",
+      "source": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/c7d6956e-97e6-40cd-8859-bced1156f66e.png",
+        "sha256": "abd01f2a9cda0da5077e0b7acdc425e06be01a6dd859fa07bb785834dc84fcf6",
+        "size_wh": [
+          887,
+          1774
+        ]
+      }
+    },
+    {
+      "id": "03-ChatGPT_Image_Jul_7_2026_10_47_28_AM",
+      "legacy_rgba_proposal": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/finals/03-ChatGPT_Image_Jul_7_2026_10_47_28_AM@x8-bg-removed.png",
+        "resample": "lanczos",
+        "sha256": "09b1f679048b92af0ff3f79f60f3d7d02d6b22468a4a8a06d5440bdd28ab89c1",
+        "size_wh": [
+          13376,
+          7528
+        ]
+      },
+      "output_dir": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/03-ChatGPT_Image_Jul_7_2026_10_47_28_AM/batch-r110",
+      "source": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/ChatGPT Image Jul 7, 2026, 10_47_28 AM.png",
+        "sha256": "5355341894dac4473cad2f5122729a828bf12deb312e09228b1c1b0580de10b4",
+        "size_wh": [
+          1672,
+          941
+        ]
+      }
+    },
+    {
+      "id": "04-ChatGPT_Image_Jul_7_2026_10_48_33_AM",
+      "legacy_rgba_proposal": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/finals/04-ChatGPT_Image_Jul_7_2026_10_48_33_AM@x8-bg-removed.png",
+        "resample": "lanczos",
+        "sha256": "d70917e7fdccc5cc46a946d357c3ef4acb113ecf1c689242ed05a494609ede2d",
+        "size_wh": [
+          13376,
+          7528
+        ]
+      },
+      "output_dir": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/04-ChatGPT_Image_Jul_7_2026_10_48_33_AM/batch-r110",
+      "source": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/ChatGPT Image Jul 7, 2026, 10_48_33 AM.png",
+        "sha256": "5288ead80dc8d84fc4758428c241bebe9be3fdfdb04376e8df55d605dc5c9121",
+        "size_wh": [
+          1672,
+          941
+        ]
+      }
+    },
+    {
+      "id": "05-ChatGPT_Image_Jul_7_2026_10_54_39_AM",
+      "legacy_rgba_proposal": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/finals/05-ChatGPT_Image_Jul_7_2026_10_54_39_AM@x8-bg-removed.png",
+        "resample": "lanczos",
+        "sha256": "cf2b5bc458eb75e8abfa22d24eb9f9b22c4e85da93f792e5468b1b2fed6d9b2e",
+        "size_wh": [
+          13376,
+          7528
+        ]
+      },
+      "output_dir": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/05-ChatGPT_Image_Jul_7_2026_10_54_39_AM/batch-r110",
+      "source": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/ChatGPT Image Jul 7, 2026, 10_54_39 AM.png",
+        "sha256": "6e9860227ae8c3b2d852d6e72d8c7eb6f4d23a4b88d262c41dbb2cc728603a2b",
+        "size_wh": [
+          1672,
+          941
+        ]
+      }
+    },
+    {
+      "id": "06-ChatGPT_Image_Jul_7_2026_10_54_48_AM",
+      "legacy_rgba_proposal": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/finals/06-ChatGPT_Image_Jul_7_2026_10_54_48_AM@x8-bg-removed.png",
+        "resample": "lanczos",
+        "sha256": "ee426c80b3d81cf049da525296f6cf67562e99316f2340841b7c10e37e26549d",
+        "size_wh": [
+          14192,
+          7096
+        ]
+      },
+      "output_dir": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/06-ChatGPT_Image_Jul_7_2026_10_54_48_AM/batch-r110",
+      "source": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/ChatGPT Image Jul 7, 2026, 10_54_48 AM.png",
+        "sha256": "5433f105232716f4270ba642912b22f35f8131e440c9033c1b6cb670e9d20b37",
+        "size_wh": [
+          1774,
+          887
+        ]
+      }
+    },
+    {
+      "id": "07-ChatGPT_Image_Jul_7_2026_11_05_55_AM",
+      "legacy_rgba_proposal": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/finals/07-ChatGPT_Image_Jul_7_2026_11_05_55_AM@x8-bg-removed.png",
+        "resample": "lanczos",
+        "sha256": "df316a717ef2a50fca12d5b9804d7375a3d4c003d52a4c75d29120cd628501a8",
+        "size_wh": [
+          12288,
+          8192
+        ]
+      },
+      "output_dir": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/07-ChatGPT_Image_Jul_7_2026_11_05_55_AM/batch-r110",
+      "source": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/ChatGPT Image Jul 7, 2026, 11_05_55 AM.png",
+        "sha256": "ccaf940cc0ba8b17c82425bf060737d9d93d8652b6ad1139cbbcc4506b367f41",
+        "size_wh": [
+          1536,
+          1024
+        ]
+      }
+    },
+    {
+      "id": "08-ChatGPT_Image_Jul_7_2026_11_09_25_AM",
+      "legacy_rgba_proposal": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/finals/08-ChatGPT_Image_Jul_7_2026_11_09_25_AM@x8-bg-removed.png",
+        "resample": "lanczos",
+        "sha256": "6c8a4c7196b1b4929bd0e3804c9bc4a52a7865aed1a1ca3eac40467b2619a680",
+        "size_wh": [
+          13072,
+          7696
+        ]
+      },
+      "output_dir": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/08-ChatGPT_Image_Jul_7_2026_11_09_25_AM/batch-r110",
+      "source": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/ChatGPT Image Jul 7, 2026, 11_09_25 AM.png",
+        "sha256": "8b0111dab8fb19887a83b8aaf8c6140e89d1b3e93b8b61265ab94e6ac3416af2",
+        "size_wh": [
+          1634,
+          962
+        ]
+      }
+    },
+    {
+      "id": "09-ChatGPT_Image_Jul_7_2026_11_13_45_AM",
+      "legacy_rgba_proposal": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/finals/09-ChatGPT_Image_Jul_7_2026_11_13_45_AM@x8-bg-removed.png",
+        "resample": "lanczos",
+        "sha256": "36836858237ef5acfc0217bc1ac8a61d3f77ada0db8d1871670aeb6cdd1ff088",
+        "size_wh": [
+          11584,
+          8688
+        ]
+      },
+      "output_dir": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/09-ChatGPT_Image_Jul_7_2026_11_13_45_AM/batch-r110",
+      "source": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/ChatGPT Image Jul 7, 2026, 11_13_45 AM.png",
+        "sha256": "2855006de085798bcbb8eeb8707749ce79453589964e4b7a6c6764362215b1cc",
+        "size_wh": [
+          1448,
+          1086
+        ]
+      }
+    },
+    {
+      "id": "10-ChatGPT_Image_Jul_7_2026_11_14_14_AM",
+      "legacy_rgba_proposal": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/finals/10-ChatGPT_Image_Jul_7_2026_11_14_14_AM@x8-bg-removed.png",
+        "resample": "lanczos",
+        "sha256": "1bb17526f8ff111cad1b3fa9d25839b32b50653fba2534fe439ca932f03624eb",
+        "size_wh": [
+          13376,
+          7528
+        ]
+      },
+      "output_dir": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/10-ChatGPT_Image_Jul_7_2026_11_14_14_AM/batch-r110",
+      "source": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/ChatGPT Image Jul 7, 2026, 11_14_14 AM.png",
+        "sha256": "0f21d9b6c717b2242e9138809958aaa6d7aad01969733b3928db801338b9b0e3",
+        "size_wh": [
+          1672,
+          941
+        ]
+      }
+    },
+    {
+      "id": "11-ChatGPT_Image_Jul_7_2026_11_17_21_AM",
+      "legacy_rgba_proposal": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/finals/11-ChatGPT_Image_Jul_7_2026_11_17_21_AM@x8-bg-removed.png",
+        "resample": "lanczos",
+        "sha256": "59710462adec297160267039dd28021426b94b72b88904dc990a246b1618d7ab",
+        "size_wh": [
+          10032,
+          10032
+        ]
+      },
+      "output_dir": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/11-ChatGPT_Image_Jul_7_2026_11_17_21_AM/batch-r110",
+      "source": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/ChatGPT Image Jul 7, 2026, 11_17_21 AM.png",
+        "sha256": "4ed0b06e8f23e0f8d1586be5f6fe5b7b1c1118a2b16f31936b3c19915aa8c171",
+        "size_wh": [
+          1254,
+          1254
+        ]
+      }
+    },
+    {
+      "id": "12-ChatGPT_Image_Jul_7_2026_11_20_05_AM",
+      "legacy_rgba_proposal": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/finals/12-ChatGPT_Image_Jul_7_2026_11_20_05_AM@x8-bg-removed.png",
+        "resample": "lanczos",
+        "sha256": "fd7e946b941ae1344ea03255ee388d63ed6cf77efc7810ce8b680d46547afd13",
+        "size_wh": [
+          6344,
+          15864
+        ]
+      },
+      "output_dir": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/12-ChatGPT_Image_Jul_7_2026_11_20_05_AM/batch-r110",
+      "source": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/ChatGPT Image Jul 7, 2026, 11_20_05 AM.png",
+        "sha256": "68b0048b6bac90b9a660acf0e54cbb8dcb21d769083813e834ba02defe1c3153",
+        "size_wh": [
+          793,
+          1983
+        ]
+      }
+    },
+    {
+      "id": "13-ChatGPT_Image_Jul_7_2026_11_21_15_AM",
+      "legacy_rgba_proposal": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/finals/13-ChatGPT_Image_Jul_7_2026_11_21_15_AM@x8-bg-removed.png",
+        "resample": "lanczos",
+        "sha256": "fa24140ac2f2bd39c4904371828f3d4f70625db43ceeb77c96b8c12efb711919",
+        "size_wh": [
+          8976,
+          11216
+        ]
+      },
+      "output_dir": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/13-ChatGPT_Image_Jul_7_2026_11_21_15_AM/batch-r110",
+      "source": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/ChatGPT Image Jul 7, 2026, 11_21_15 AM.png",
+        "sha256": "ce2ed4e991245d111f949c064cf51fdaa7ac147219d54e3d807f659b172bf062",
+        "size_wh": [
+          1122,
+          1402
+        ]
+      }
+    },
+    {
+      "corrections": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v1/image14-labels/image14-correction-labels-rgba.png",
+        "sha256": "18d695a2cada3a2e1fb9a7c72f2ec04ed90a9e89d6dfc1d8d96a73bd47ab6a61",
+        "size_wh": [
+          941,
+          1672
+        ]
+      },
+      "id": "14-ChatGPT_Image_Jul_7_2026_11_22_35_AM",
+      "legacy_rgba_proposal": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/finals/14-ChatGPT_Image_Jul_7_2026_11_22_35_AM@x8-bg-removed.png",
+        "resample": "lanczos",
+        "sha256": "765ce64e54a5eeeb8f35d498f391b26d8eb0b5c17d5ce0817eb46ca53ab69faa",
+        "size_wh": [
+          7528,
+          13376
+        ]
+      },
+      "output_dir": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/14-ChatGPT_Image_Jul_7_2026_11_22_35_AM/batch-r110",
+      "source": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/ChatGPT Image Jul 7, 2026, 11_22_35 AM.png",
+        "sha256": "925c34a39a0e2b5a09ad92ba39dace87f652bcc90ff8e063e2a6f644e735df9d",
+        "size_wh": [
+          941,
+          1672
+        ]
+      }
+    },
+    {
+      "id": "15-ChatGPT_Image_Jul_7_2026_11_34_15_AM",
+      "legacy_rgba_proposal": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/finals/15-ChatGPT_Image_Jul_7_2026_11_34_15_AM@x8-bg-removed.png",
+        "resample": "lanczos",
+        "sha256": "6bf45f116d35eeebacba7a5f926b7381f1788e06dad50dd487f3af5c27eeffcd",
+        "size_wh": [
+          12288,
+          8192
+        ]
+      },
+      "output_dir": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/15-ChatGPT_Image_Jul_7_2026_11_34_15_AM/batch-r110",
+      "source": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/ChatGPT Image Jul 7, 2026, 11_34_15 AM.png",
+        "sha256": "bf6f2deb7bce6e2b76a644d0caa7e3ae6519837c4d0842d47c548bc4fb650e72",
+        "size_wh": [
+          1536,
+          1024
+        ]
+      }
+    },
+    {
+      "id": "16-ChatGPT_Image_Jul_7_2026_11_36_20_AM",
+      "legacy_rgba_proposal": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/finals/16-ChatGPT_Image_Jul_7_2026_11_36_20_AM@x8-bg-removed.png",
+        "resample": "lanczos",
+        "sha256": "c9db1e954f6de0d2772c3cc5a0b809c0d4cc07ca9925e4ce9ed011c9f4e259b4",
+        "size_wh": [
+          6344,
+          15864
+        ]
+      },
+      "output_dir": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/16-ChatGPT_Image_Jul_7_2026_11_36_20_AM/batch-r110",
+      "source": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/ChatGPT Image Jul 7, 2026, 11_36_20 AM.png",
+        "sha256": "a9b2b6b13314c6aa633f4d25dd81ee2213a4ccb868abadeda8f71803aca7d29f",
+        "size_wh": [
+          793,
+          1983
+        ]
+      }
+    },
+    {
+      "id": "17-ChatGPT_Image_Jul_7_2026_11_36_44_AM",
+      "legacy_rgba_proposal": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/finals/17-ChatGPT_Image_Jul_7_2026_11_36_44_AM@x8-bg-removed.png",
+        "resample": "lanczos",
+        "sha256": "708ce362b6ec47d8274e31c9d0519a16e95788f9e5af72ddcf003bf5183ba2bd",
+        "size_wh": [
+          7528,
+          13376
+        ]
+      },
+      "output_dir": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/17-ChatGPT_Image_Jul_7_2026_11_36_44_AM/batch-r110",
+      "source": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/ChatGPT Image Jul 7, 2026, 11_36_44 AM.png",
+        "sha256": "135a3ec43e62a6d3f4722e44a8367fc7e637db5b6f1fdaa5f3b361c0b4c9f712",
+        "size_wh": [
+          941,
+          1672
+        ]
+      }
+    },
+    {
+      "id": "18-ChatGPT_Image_Jul_7_2026_11_39_53_AM",
+      "legacy_rgba_proposal": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/finals/18-ChatGPT_Image_Jul_7_2026_11_39_53_AM@x8-bg-removed.png",
+        "resample": "lanczos",
+        "sha256": "9416066305cdab21ff3d31829f803853f63b5bc3c9836115cf3310c081bf97b6",
+        "size_wh": [
+          8192,
+          12288
+        ]
+      },
+      "output_dir": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/18-ChatGPT_Image_Jul_7_2026_11_39_53_AM/batch-r110",
+      "source": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/ChatGPT Image Jul 7, 2026, 11_39_53 AM.png",
+        "sha256": "cca70d7ba8c85eb417309ae207c3fbedc811fd1a3c869eec361992e80bed1b64",
+        "size_wh": [
+          1024,
+          1536
+        ]
+      }
+    },
+    {
+      "id": "19-ChatGPT_Image_Jul_7_2026_11_44_05_AM",
+      "legacy_rgba_proposal": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/finals/19-ChatGPT_Image_Jul_7_2026_11_44_05_AM@x8-bg-removed.png",
+        "resample": "lanczos",
+        "sha256": "363501e498ad3fd058c074fb16b296409b9f8d739c29b6cdc5bd5dd4222d5b55",
+        "size_wh": [
+          8688,
+          11584
+        ]
+      },
+      "output_dir": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/19-ChatGPT_Image_Jul_7_2026_11_44_05_AM/batch-r110",
+      "source": {
+        "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/ChatGPT Image Jul 7, 2026, 11_44_05 AM.png",
+        "sha256": "6396147405572921f5887c661dfbdfa2d514e8a866d8055c1c5785be8bb1342c",
+        "size_wh": [
+          1086,
+          1448
+        ]
+      }
+    }
+  ],
+  "schema": "assisted-bg-batch-spec/v1"
+}

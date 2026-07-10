@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "case_id": "synthetic",
+  "coordinate_space": {
+    "reference": "original",
+    "width": 64,
+    "height": 64,
+    "origin": "top_left",
+    "units": "pixels"
+  },
+  "provenance": {
+    "method": "synthetic_ground_truth",
+    "candidate_independent": true,
+    "note": "Guards are defined from the fixture construction, not recovered from candidates."
+  },
+  "sure_foreground": [
+    {
+      "id": "fg-painted-core",
+      "center": [
+        20,
+        32
+      ],
+      "radius": 2,
+      "alpha_min": 200,
+      "min_fraction": 0.9,
+      "median_min": 220
+    },
+    {
+      "id": "fg-pale-appendage",
+      "center": [
+        50,
+        32
+      ],
+      "radius": 2,
+      "alpha_min": 128,
+      "min_fraction": 0.9,
+      "median_min": 160
+    }
+  ],
+  "sure_background_exterior": [
+    {
+      "id": "bg-exterior",
+      "center": [
+        4,
+        4
+      ],
+      "radius": 2,
+      "alpha_max": 16,
+      "min_fraction": 1.0
+    }
+  ],
+  "sure_background_enclosed": [
+    {
+      "id": "bg-enclosed-hole",
+      "center": [
+        30,
+        32
+      ],
+      "radius": 2,
+      "alpha_max": 16,
+      "min_fraction": 1.0
+    }
+  ],
+  "edge_probes": [
+    {
+      "id": "edge-painted-shape",
+      "bbox": [
+        8,
+        12,
+        60,
+        52
+      ],
+      "band_width": 1,
+      "paper_distance_min": 10,
+      "max_white_fraction": 0.05,
+      "min_boundary_pixels_per_scale": 10
+    }
+  ],
+  "human_review": []
+}

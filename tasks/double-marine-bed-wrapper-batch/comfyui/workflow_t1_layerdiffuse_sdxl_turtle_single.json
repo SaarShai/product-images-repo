@@ -1,0 +1,89 @@
+{
+  "1": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "sd_xl_base_1.0.safetensors"
+    }
+  },
+  "2": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": ["1", 1],
+      "text": "watercolor painting of one sea turtle, single isolated subject, plain simple composition, fully closed outlines, crisp edges, no fade into background, hand painted texture, high detail"
+    }
+  },
+  "3": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": ["1", 1],
+      "text": "text, watermark, signature, blurry, fuzzy edges, faded background, soft glow, gradient fade, vignette, low quality, jpeg artifacts, extra border, multiple objects, scene, landscape, background elements, second subject"
+    }
+  },
+  "4": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    }
+  },
+  "5": {
+    "class_type": "LayeredDiffusionApply",
+    "inputs": {
+      "model": ["1", 0],
+      "config": "SDXL, Attention Injection",
+      "weight": 1.0
+    }
+  },
+  "6": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": ["5", 0],
+      "positive": ["2", 0],
+      "negative": ["3", 0],
+      "latent_image": ["4", 0],
+      "seed": 20260710,
+      "steps": 28,
+      "cfg": 7.0,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "denoise": 1.0
+    }
+  },
+  "7": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": ["6", 0],
+      "vae": ["1", 2]
+    }
+  },
+  "8": {
+    "class_type": "LayeredDiffusionDecode",
+    "inputs": {
+      "samples": ["6", 0],
+      "images": ["7", 0],
+      "sd_version": "SDXL",
+      "sub_batch_size": 16
+    }
+  },
+  "10": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": ["8", 1]
+    }
+  },
+  "11": {
+    "class_type": "JoinImageWithAlpha",
+    "inputs": {
+      "image": ["8", 0],
+      "alpha": ["10", 0]
+    }
+  },
+  "9": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": ["11", 0],
+      "filename_prefix": "comfyui-v1/layerdiffuse-sdxl-turtle/marine_layerdiffuse_turtle"
+    }
+  }
+}

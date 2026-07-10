@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "case_id": "sample08",
+  "coordinate_space": {
+    "reference": "original",
+    "width": 1634,
+    "height": 962,
+    "origin": "top_left",
+    "units": "pixels"
+  },
+  "provenance": {
+    "method": "manual_visual_selection",
+    "candidate_independent": true,
+    "source": "Original RGB source, inspected at native resolution.",
+    "prior_feedback_evidence": [
+      "wiki/concepts/illustrated-product-upscale-and-background-removal-workflow.md",
+      ".brainer/ledger/403a82ce7a7ad357.md"
+    ],
+    "annotation_quality_audit": {
+      "method": "source_only_semantic_boundary_review",
+      "rule": "At least 75 percent of each intended boundary must genuinely be pigment-colored at RGB distance 80 or more from paper; intentional white or cream subject highlights are foreground and cannot be treated as contamination.",
+      "edge_probe_result": "PASS with no replacements: all three intended outer silhouettes are pigment-lined; their white strokes and dots are internal highlights rather than boundary truth.",
+      "enclosed_background_result": "PASS: all four centers are visibly blank white paper, not pale paint; their source RGB distance from white is at most 5.4."
+    },
+    "note": "All guards and edge boxes were selected from the original source without inspecting any candidate. Sure-FG points deliberately span pale bubbles, kelp, coral, shell, starfish, and the authored base wash. Interior sure-BG points are visually blank paper gaps, not white highlights painted on subjects."
+  },
+  "sure_foreground": [
+    {
+      "id": "fg-top-blue-bubble-rim",
+      "center": [705, 45],
+      "radius": 2,
+      "alpha_min": 32,
+      "min_fraction": 0.5,
+      "median_min": 64,
+      "why": "Top bubble's pale blue rim is foreground."
+    },
+    {
+      "id": "fg-left-bubble-pale-blue",
+      "center": [640, 270],
+      "radius": 2,
+      "alpha_min": 32,
+      "min_fraction": 0.5,
+      "median_min": 64,
+      "why": "Large pale blue bubble body is authored illustration."
+    },
+    {
+      "id": "fg-left-orange-coral-tip",
+      "center": [250, 250],
+      "radius": 2,
+      "alpha_min": 64,
+      "min_fraction": 0.65,
+      "median_min": 96,
+      "why": "Pale orange coral tip must remain."
+    },
+    {
+      "id": "fg-center-green-seaweed-tip",
+      "center": [785, 180],
+      "radius": 2,
+      "alpha_min": 48,
+      "min_fraction": 0.55,
+      "median_min": 80,
+      "why": "Thin pale green seaweed tip is foreground."
+    },
+    {
+      "id": "fg-center-yellow-seaweed-tip",
+      "center": [840, 50],
+      "radius": 2,
+      "alpha_min": 48,
+      "min_fraction": 0.55,
+      "median_min": 80,
+      "why": "Thin pale yellow seaweed tip is foreground."
+    },
+    {
+      "id": "fg-right-orange-coral-tip",
+      "center": [1330, 220],
+      "radius": 2,
+      "alpha_min": 64,
+      "min_fraction": 0.65,
+      "median_min": 96,
+      "why": "Pale orange coral tip on the right is illustration."
+    },
+    {
+      "id": "fg-right-pink-coral-tip",
+      "center": [1270, 350],
+      "radius": 2,
+      "alpha_min": 48,
+      "min_fraction": 0.55,
+      "median_min": 80,
+      "why": "Light pink coral tip must not be deleted."
+    },
+    {
+      "id": "fg-left-pale-blue-coral",
+      "center": [50, 630],
+      "radius": 2,
+      "alpha_min": 48,
+      "min_fraction": 0.55,
+      "median_min": 80,
+      "why": "Pale blue blade at the far left is foreground."
+    },
+    {
+      "id": "fg-right-shell-pale-stripe",
+      "center": [1110, 780],
+      "radius": 2,
+      "alpha_min": 64,
+      "min_fraction": 0.65,
+      "median_min": 96,
+      "why": "Cream stripe on the right shell is part of the illustration."
+    },
+    {
+      "id": "fg-left-base-blue-wash",
+      "center": [220, 900],
+      "radius": 2,
+      "alpha_min": 32,
+      "min_fraction": 0.5,
+      "median_min": 64,
+      "why": "Pale blue watercolor in the left base footprint is foreground."
+    },
+    {
+      "id": "fg-center-terminal-sand-wash",
+      "center": [820, 920],
+      "radius": 2,
+      "alpha_min": 24,
+      "min_fraction": 0.5,
+      "median_min": 48,
+      "why": "Very pale but visibly authored central sand wash must remain."
+    },
+    {
+      "id": "fg-right-terminal-blue-wash",
+      "center": [1320, 900],
+      "radius": 2,
+      "alpha_min": 24,
+      "min_fraction": 0.5,
+      "median_min": 48,
+      "why": "Very pale blue wash inside the right base footprint is foreground."
+    },
+    {
+      "id": "fg-left-starfish-pale-arm",
+      "center": [430, 800],
+      "radius": 2,
+      "alpha_min": 64,
+      "min_fraction": 0.65,
+      "median_min": 96,
+      "why": "Pale orange starfish arm is illustration."
+    },
+    {
+      "id": "fg-center-green-seaweed",
+      "center": [1030, 600],
+      "radius": 2,
+      "alpha_min": 64,
+      "min_fraction": 0.65,
+      "median_min": 96,
+      "why": "Green seaweed blade in a crowded interior region is foreground."
+    },
+    {
+      "id": "fg-left-pink-coral-pale-edge",
+      "center": [530, 480],
+      "radius": 2,
+      "alpha_min": 48,
+      "min_fraction": 0.55,
+      "median_min": 80,
+      "why": "Pale edge of the left pink coral is painted art."
+    }
+  ],
+  "sure_background_exterior": [
+    {"id": "bg-ext-top-left", "center": [25, 25], "radius": 5, "alpha_max": 16, "min_fraction": 0.95},
+    {"id": "bg-ext-top-right", "center": [1608, 25], "radius": 5, "alpha_max": 16, "min_fraction": 0.95},
+    {"id": "bg-ext-upper-left", "center": [300, 100], "radius": 5, "alpha_max": 16, "min_fraction": 0.95},
+    {"id": "bg-ext-upper-center", "center": [500, 250], "radius": 5, "alpha_max": 16, "min_fraction": 0.95},
+    {"id": "bg-ext-upper-right", "center": [1150, 100], "radius": 5, "alpha_max": 16, "min_fraction": 0.95},
+    {"id": "bg-ext-far-right", "center": [1600, 150], "radius": 5, "alpha_max": 16, "min_fraction": 0.95}
+  ],
+  "sure_background_enclosed": [
+    {
+      "id": "bg-interior-left-orange-fork",
+      "center": [275, 480],
+      "radius": 2,
+      "alpha_max": 16,
+      "min_fraction": 0.9,
+      "why": "Blank paper inside the fork of the large left orange coral."
+    },
+    {
+      "id": "bg-interior-center-green-gap",
+      "center": [730, 430],
+      "radius": 2,
+      "alpha_max": 16,
+      "min_fraction": 0.9,
+      "why": "Blank paper between tall central green blades."
+    },
+    {
+      "id": "bg-interior-center-yellow-gap",
+      "center": [910, 500],
+      "radius": 2,
+      "alpha_max": 16,
+      "min_fraction": 0.9,
+      "why": "Blank paper between narrow yellow-green blades."
+    },
+    {
+      "id": "bg-interior-right-pink-fork",
+      "center": [1365, 440],
+      "radius": 2,
+      "alpha_max": 16,
+      "min_fraction": 0.9,
+      "why": "Blank paper pocket among right pink coral branches."
+    }
+  ],
+  "edge_probes": [
+    {
+      "id": "edge-left-pale-blue-blades",
+      "bbox": [20, 450, 215, 720],
+      "band_width": 2,
+      "paper_distance_min": 80,
+      "max_white_fraction": 0.25,
+      "min_boundary_pixels_per_scale": 10,
+      "why": "Pale blue blades at far left are vulnerable to a white paper rim.",
+      "source_semantic_audit": "PASS: blue and lavender pigment visibly outlines more than three quarters of the intended blade silhouettes; white marks are internal."
+    },
+    {
+      "id": "edge-central-kelp-tips",
+      "bbox": [680, 20, 900, 650],
+      "band_width": 2,
+      "paper_distance_min": 80,
+      "max_white_fraction": 0.25,
+      "min_boundary_pixels_per_scale": 10,
+      "why": "Thin yellow-green kelp edges must retain subject color.",
+      "source_semantic_audit": "PASS: the tall kelp silhouettes have continuous yellow, green, or blue pigment outlines; cream streaks are internal highlights."
+    },
+    {
+      "id": "edge-right-pale-coral-tips",
+      "bbox": [1180, 200, 1580, 610],
+      "band_width": 2,
+      "paper_distance_min": 80,
+      "max_white_fraction": 0.25,
+      "min_boundary_pixels_per_scale": 10,
+      "why": "Pale pink and orange right-side coral tips are a fringe-prone region.",
+      "source_semantic_audit": "PASS: pink, purple, and orange pigment bounds well over three quarters of the intended coral silhouette; white dots and streaks are internal highlights."
+    }
+  ],
+  "human_review": [
+    {
+      "id": "review-native-multibg-all-edge-probes",
+      "kind": "edge_probes",
+      "backgrounds": ["white", "gray", "black", "magenta"],
+      "required": true,
+      "why": "Watercolor translucency and fringe quality still require direct visual judgment."
+    },
+    {
+      "id": "review-terminal-base-fade",
+      "kind": "bbox",
+      "bbox": [150, 850, 1450, 955],
+      "backgrounds": ["white", "gray", "black", "magenta"],
+      "required": true,
+      "why": "The irregular watercolor footprint fades continuously toward paper at the lower edge."
+    },
+    {
+      "id": "review-left-coral-paper-pockets",
+      "kind": "bbox",
+      "bbox": [150, 250, 600, 700],
+      "backgrounds": ["white", "gray", "black", "magenta"],
+      "required": true,
+      "why": "Crowded pale coral branches contain both painted highlights and true paper gaps."
+    },
+    {
+      "id": "review-right-coral-paper-pockets",
+      "kind": "bbox",
+      "bbox": [1180, 250, 1580, 640],
+      "backgrounds": ["white", "gray", "black", "magenta"],
+      "required": true,
+      "why": "Dense right coral forks need visual confirmation that paper holes open without deleting pale paint."
+    }
+  ]
+}

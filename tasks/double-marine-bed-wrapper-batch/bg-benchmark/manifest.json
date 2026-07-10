@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "benchmark_id": "double-marine-bg-v1",
+  "purpose": "Candidate-independent checks for foreground deletion, retained exterior or enclosed paper, white edge contamination, dimensions, alpha, and straight-RGB reconstruction.",
+  "product_root": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images",
+  "contract": {
+    "paper_rgb": [255, 255, 255],
+    "alpha_background_max": 16,
+    "alpha_foreground_min": 96,
+    "min_background_fraction": 0.15,
+    "min_foreground_fraction": 0.05,
+    "reconstruction_mae_max": 1.5,
+    "reconstruction_p99_max": 8,
+    "composite_backgrounds": {
+      "white": [255, 255, 255],
+      "gray": [140, 140, 140],
+      "black": [0, 0, 0],
+      "magenta": [255, 0, 255]
+    }
+  },
+  "cases": [
+    {
+      "id": "image14",
+      "status": "ready",
+      "original": {
+        "base": "product_root",
+        "path": "ChatGPT Image Jul 7, 2026, 11_22_35 AM.png",
+        "sha256": "925c34a39a0e2b5a09ad92ba39dace87f652bcc90ff8e063e2a6f644e735df9d",
+        "width": 941,
+        "height": 1672
+      },
+      "references": [
+        {
+          "scale": 1,
+          "base": "product_root",
+          "path": "ChatGPT Image Jul 7, 2026, 11_22_35 AM.png",
+          "sha256": "925c34a39a0e2b5a09ad92ba39dace87f652bcc90ff8e063e2a6f644e735df9d",
+          "width": 941,
+          "height": 1672
+        },
+        {
+          "scale": 4,
+          "base": "product_root",
+          "path": "Images/candidates/batch-x8-hard180/x4-rgb/14-ChatGPT_Image_Jul_7_2026_11_22_35_AM@x4-rgb.png",
+          "sha256": "7da93dcdd94c7d0c00dd28f71d8d59e1216c4bb63ee3b63351a0e3c4ba59970a",
+          "width": 3764,
+          "height": 6688
+        }
+      ],
+      "annotations": {
+        "base": "manifest",
+        "path": "annotations/image14.json"
+      }
+    },
+    {
+      "id": "image15",
+      "status": "ready",
+      "paper_rgb": [250, 246, 241],
+      "original": {
+        "base": "product_root",
+        "path": "ChatGPT Image Jul 7, 2026, 11_34_15 AM.png",
+        "sha256": "bf6f2deb7bce6e2b76a644d0caa7e3ae6519837c4d0842d47c548bc4fb650e72",
+        "width": 1536,
+        "height": 1024
+      },
+      "references": [
+        {
+          "scale": 1,
+          "base": "product_root",
+          "path": "ChatGPT Image Jul 7, 2026, 11_34_15 AM.png",
+          "sha256": "bf6f2deb7bce6e2b76a644d0caa7e3ae6519837c4d0842d47c548bc4fb650e72",
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "scale": 4,
+          "base": "product_root",
+          "path": "Images/candidates/batch-x8-hard180/x4-rgb/15-ChatGPT_Image_Jul_7_2026_11_34_15_AM@x4-rgb.png",
+          "sha256": "e97f55266e626af1030c53365b19dac0ffdc3eb2b15047c109be259f8a9f6477",
+          "width": 6144,
+          "height": 4096
+        }
+      ],
+      "annotations": {
+        "base": "manifest",
+        "path": "annotations/image15.json"
+      },
+      "decision_contract": "Visible authored sand and watercolor base wash is foreground; uniform cream paper beyond the fade is background; the exact terminal fade remains mandatory human review."
+    },
+    {
+      "id": "sample08",
+      "status": "ready",
+      "original": {
+        "base": "product_root",
+        "path": "ChatGPT Image Jul 7, 2026, 11_09_25 AM.png",
+        "sha256": "8b0111dab8fb19887a83b8aaf8c6140e89d1b3e93b8b61265ab94e6ac3416af2",
+        "width": 1634,
+        "height": 962
+      },
+      "references": [
+        {
+          "scale": 1,
+          "base": "product_root",
+          "path": "ChatGPT Image Jul 7, 2026, 11_09_25 AM.png",
+          "sha256": "8b0111dab8fb19887a83b8aaf8c6140e89d1b3e93b8b61265ab94e6ac3416af2",
+          "width": 1634,
+          "height": 962
+        },
+        {
+          "scale": 4,
+          "base": "product_root",
+          "path": "Images/candidates/batch-x8-hard180/x4-rgb/08-ChatGPT_Image_Jul_7_2026_11_09_25_AM@x4-rgb.png",
+          "sha256": "afa9dcf1b9df607cb9587900af9a36b0fa719d50d41f71d9e3605934c34ccbdb",
+          "width": 6536,
+          "height": 3848
+        }
+      ],
+      "annotations": {
+        "base": "manifest",
+        "path": "annotations/sample08.json"
+      },
+      "decision_contract": "Visibly authored watercolor footprint is foreground; visually blank paper gaps and exterior are background; the irregular lower fade remains mandatory human review."
+    }
+  ]
+}

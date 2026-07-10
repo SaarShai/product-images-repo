@@ -1,0 +1,327 @@
+{
+  "schema_version": 1,
+  "benchmark_id": "synthetic-bg-negative-controls-v1",
+  "contract": {
+    "paper_rgb": [
+      255,
+      255,
+      255
+    ],
+    "alpha_background_max": 16,
+    "alpha_foreground_min": 96,
+    "min_background_fraction": 0.15,
+    "min_foreground_fraction": 0.05,
+    "reconstruction_mae_max": 0.0,
+    "reconstruction_p99_max": 0,
+    "composite_backgrounds": {
+      "white": [
+        255,
+        255,
+        255
+      ],
+      "gray": [
+        140,
+        140,
+        140
+      ],
+      "black": [
+        0,
+        0,
+        0
+      ],
+      "magenta": [
+        255,
+        0,
+        255
+      ]
+    }
+  },
+  "cases": [
+    {
+      "id": "good",
+      "status": "ready",
+      "original": {
+        "base": "manifest",
+        "path": "source.png",
+        "sha256": "91301b3ec14195db74a98036046d707404091455e6f4d2cc3c16e88ae90b096f",
+        "width": 64,
+        "height": 64
+      },
+      "references": [
+        {
+          "base": "manifest",
+          "path": "source.png",
+          "sha256": "91301b3ec14195db74a98036046d707404091455e6f4d2cc3c16e88ae90b096f",
+          "width": 64,
+          "height": 64,
+          "scale": 1
+        }
+      ],
+      "annotations": {
+        "base": "manifest",
+        "path": "annotations.json"
+      },
+      "candidate": {
+        "base": "manifest",
+        "path": "candidates/good.png"
+      },
+      "expected_failure_codes": []
+    },
+    {
+      "id": "negative-white-fringe",
+      "status": "ready",
+      "original": {
+        "base": "manifest",
+        "path": "source.png",
+        "sha256": "91301b3ec14195db74a98036046d707404091455e6f4d2cc3c16e88ae90b096f",
+        "width": 64,
+        "height": 64
+      },
+      "references": [
+        {
+          "base": "manifest",
+          "path": "source.png",
+          "sha256": "91301b3ec14195db74a98036046d707404091455e6f4d2cc3c16e88ae90b096f",
+          "width": 64,
+          "height": 64,
+          "scale": 1
+        }
+      ],
+      "annotations": {
+        "base": "manifest",
+        "path": "annotations.json"
+      },
+      "candidate": {
+        "base": "manifest",
+        "path": "candidates/negative-white-fringe.png"
+      },
+      "expected_failure_codes": [
+        "white_edge_contamination"
+      ]
+    },
+    {
+      "id": "negative-deleted-foreground",
+      "status": "ready",
+      "original": {
+        "base": "manifest",
+        "path": "source.png",
+        "sha256": "91301b3ec14195db74a98036046d707404091455e6f4d2cc3c16e88ae90b096f",
+        "width": 64,
+        "height": 64
+      },
+      "references": [
+        {
+          "base": "manifest",
+          "path": "source.png",
+          "sha256": "91301b3ec14195db74a98036046d707404091455e6f4d2cc3c16e88ae90b096f",
+          "width": 64,
+          "height": 64,
+          "scale": 1
+        }
+      ],
+      "annotations": {
+        "base": "manifest",
+        "path": "annotations.json"
+      },
+      "candidate": {
+        "base": "manifest",
+        "path": "candidates/negative-deleted-foreground.png"
+      },
+      "expected_failure_codes": [
+        "deleted_foreground"
+      ]
+    },
+    {
+      "id": "negative-retained-enclosed-bg",
+      "status": "ready",
+      "original": {
+        "base": "manifest",
+        "path": "source.png",
+        "sha256": "91301b3ec14195db74a98036046d707404091455e6f4d2cc3c16e88ae90b096f",
+        "width": 64,
+        "height": 64
+      },
+      "references": [
+        {
+          "base": "manifest",
+          "path": "source.png",
+          "sha256": "91301b3ec14195db74a98036046d707404091455e6f4d2cc3c16e88ae90b096f",
+          "width": 64,
+          "height": 64,
+          "scale": 1
+        }
+      ],
+      "annotations": {
+        "base": "manifest",
+        "path": "annotations.json"
+      },
+      "candidate": {
+        "base": "manifest",
+        "path": "candidates/negative-retained-enclosed-bg.png"
+      },
+      "expected_failure_codes": [
+        "enclosed_background_retained"
+      ]
+    },
+    {
+      "id": "negative-degenerate-alpha",
+      "status": "ready",
+      "original": {
+        "base": "manifest",
+        "path": "source.png",
+        "sha256": "91301b3ec14195db74a98036046d707404091455e6f4d2cc3c16e88ae90b096f",
+        "width": 64,
+        "height": 64
+      },
+      "references": [
+        {
+          "base": "manifest",
+          "path": "source.png",
+          "sha256": "91301b3ec14195db74a98036046d707404091455e6f4d2cc3c16e88ae90b096f",
+          "width": 64,
+          "height": 64,
+          "scale": 1
+        }
+      ],
+      "annotations": {
+        "base": "manifest",
+        "path": "annotations.json"
+      },
+      "candidate": {
+        "base": "manifest",
+        "path": "candidates/negative-degenerate-alpha.png"
+      },
+      "expected_failure_codes": [
+        "alpha_background_missing"
+      ]
+    },
+    {
+      "id": "negative-premultiplied-rgb",
+      "status": "ready",
+      "original": {
+        "base": "manifest",
+        "path": "source.png",
+        "sha256": "91301b3ec14195db74a98036046d707404091455e6f4d2cc3c16e88ae90b096f",
+        "width": 64,
+        "height": 64
+      },
+      "references": [
+        {
+          "base": "manifest",
+          "path": "source.png",
+          "sha256": "91301b3ec14195db74a98036046d707404091455e6f4d2cc3c16e88ae90b096f",
+          "width": 64,
+          "height": 64,
+          "scale": 1
+        }
+      ],
+      "annotations": {
+        "base": "manifest",
+        "path": "annotations.json"
+      },
+      "candidate": {
+        "base": "manifest",
+        "path": "candidates/negative-premultiplied-rgb.png"
+      },
+      "expected_failure_codes": [
+        "rgb_reconstruction"
+      ]
+    },
+    {
+      "id": "negative-bad-dimensions",
+      "status": "ready",
+      "original": {
+        "base": "manifest",
+        "path": "source.png",
+        "sha256": "91301b3ec14195db74a98036046d707404091455e6f4d2cc3c16e88ae90b096f",
+        "width": 64,
+        "height": 64
+      },
+      "references": [
+        {
+          "base": "manifest",
+          "path": "source.png",
+          "sha256": "91301b3ec14195db74a98036046d707404091455e6f4d2cc3c16e88ae90b096f",
+          "width": 64,
+          "height": 64,
+          "scale": 1
+        }
+      ],
+      "annotations": {
+        "base": "manifest",
+        "path": "annotations.json"
+      },
+      "candidate": {
+        "base": "manifest",
+        "path": "candidates/negative-bad-dimensions.png"
+      },
+      "expected_failure_codes": [
+        "candidate_dimension_mismatch"
+      ]
+    },
+    {
+      "id": "negative-missing-alpha",
+      "status": "ready",
+      "original": {
+        "base": "manifest",
+        "path": "source.png",
+        "sha256": "91301b3ec14195db74a98036046d707404091455e6f4d2cc3c16e88ae90b096f",
+        "width": 64,
+        "height": 64
+      },
+      "references": [
+        {
+          "base": "manifest",
+          "path": "source.png",
+          "sha256": "91301b3ec14195db74a98036046d707404091455e6f4d2cc3c16e88ae90b096f",
+          "width": 64,
+          "height": 64,
+          "scale": 1
+        }
+      ],
+      "annotations": {
+        "base": "manifest",
+        "path": "annotations.json"
+      },
+      "candidate": {
+        "base": "manifest",
+        "path": "candidates/negative-missing-alpha.png"
+      },
+      "expected_failure_codes": [
+        "alpha_channel_missing"
+      ]
+    },
+    {
+      "id": "negative-wrong-format",
+      "status": "ready",
+      "original": {
+        "base": "manifest",
+        "path": "source.png",
+        "sha256": "91301b3ec14195db74a98036046d707404091455e6f4d2cc3c16e88ae90b096f",
+        "width": 64,
+        "height": 64
+      },
+      "references": [
+        {
+          "base": "manifest",
+          "path": "source.png",
+          "sha256": "91301b3ec14195db74a98036046d707404091455e6f4d2cc3c16e88ae90b096f",
+          "width": 64,
+          "height": 64,
+          "scale": 1
+        }
+      ],
+      "annotations": {
+        "base": "manifest",
+        "path": "annotations.json"
+      },
+      "candidate": {
+        "base": "manifest",
+        "path": "candidates/negative-wrong-format.tiff"
+      },
+      "expected_failure_codes": [
+        "candidate_format_invalid"
+      ]
+    }
+  ]
+}

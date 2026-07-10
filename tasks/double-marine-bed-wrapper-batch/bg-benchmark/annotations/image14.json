@@ -1,0 +1,274 @@
+{
+  "schema_version": 1,
+  "case_id": "image14",
+  "coordinate_space": {
+    "reference": "original",
+    "width": 941,
+    "height": 1672,
+    "origin": "top_left",
+    "units": "pixels"
+  },
+  "provenance": {
+    "method": "manual_visual_selection",
+    "candidate_independent": true,
+    "source": "Original RGB source, inspected at native resolution.",
+    "user_defect_evidence": [
+      "REVIEW/image14-bg/defects/cutout-00-x3601-y6253.jpg",
+      "REVIEW/image14-bg/defects/cutout-01-x2175-y7911.jpg",
+      "REVIEW/image14-bg/defects/cutout-02-x4447-y7013.jpg",
+      "REVIEW/image14-bg/defects/fringe-00-x6912-y8448.jpg",
+      "REVIEW/image14-bg/defects/fringe-03-x1536-y1536.jpg",
+      "REVIEW/image14-bg/USER_REVIEW/03-enclosed_tri-v3f.jpg"
+    ],
+    "note": "Defect crops located regions the user had rejected. Labels were chosen by looking at the original/source artwork, never by thresholding or sampling a candidate alpha mask. Edge RGB uses a conservative unassociated-color rule: at least 75 percent of a labelled boundary band must be farther than Euclidean RGB distance 80 from white paper; ambiguous appearance still requires human review."
+  },
+  "sure_foreground": [
+    {
+      "id": "fg-fish-translucent-tail",
+      "center": [150, 180],
+      "radius": 2,
+      "alpha_min": 64,
+      "min_fraction": 0.6,
+      "median_min": 96,
+      "why": "Pale gray-blue fish tail is illustration, not paper; also covers the known fish fringe region."
+    },
+    {
+      "id": "fg-fish-lower-fin",
+      "center": [175, 205],
+      "radius": 2,
+      "alpha_min": 64,
+      "min_fraction": 0.6,
+      "median_min": 96,
+      "why": "Translucent lower fin must remain visible."
+    },
+    {
+      "id": "fg-upper-purple-pale-tip",
+      "center": [365, 250],
+      "radius": 2,
+      "alpha_min": 64,
+      "min_fraction": 0.65,
+      "median_min": 96,
+      "why": "Pale branch tip in sparse upper coral."
+    },
+    {
+      "id": "fg-cut00-main-pink",
+      "center": [465, 820],
+      "radius": 3,
+      "alpha_min": 128,
+      "min_fraction": 0.8,
+      "median_min": 180,
+      "why": "Painted pink trunk inside the user's largest wrong-cutout ROI."
+    },
+    {
+      "id": "fg-cut00-pale-brown-branch",
+      "center": [495, 870],
+      "radius": 2,
+      "alpha_min": 64,
+      "min_fraction": 0.65,
+      "median_min": 96,
+      "why": "Pale brown branch inside the user's largest wrong-cutout ROI."
+    },
+    {
+      "id": "fg-cut00-gray-branch",
+      "center": [488, 900],
+      "radius": 2,
+      "alpha_min": 64,
+      "min_fraction": 0.65,
+      "median_min": 96,
+      "why": "Gray-beige watercolor branch previously at risk of deletion."
+    },
+    {
+      "id": "fg-cut01-pale-tube",
+      "center": [315, 1015],
+      "radius": 2,
+      "alpha_min": 64,
+      "min_fraction": 0.65,
+      "median_min": 96,
+      "why": "Pale orange tube inside known wrong-cutout crop 01."
+    },
+    {
+      "id": "fg-cut01-orange-paint",
+      "center": [320, 1040],
+      "radius": 2,
+      "alpha_min": 96,
+      "min_fraction": 0.75,
+      "median_min": 128,
+      "why": "Orange tube body inside known wrong-cutout crop 01."
+    },
+    {
+      "id": "fg-cut02-green-branch",
+      "center": [550, 890],
+      "radius": 2,
+      "alpha_min": 96,
+      "min_fraction": 0.75,
+      "median_min": 128,
+      "why": "Green branch inside known wrong-cutout crop 02."
+    },
+    {
+      "id": "fg-cut02-pale-green-tip",
+      "center": [570, 920],
+      "radius": 2,
+      "alpha_min": 64,
+      "min_fraction": 0.65,
+      "median_min": 96,
+      "why": "Pale green tip inside known wrong-cutout crop 02."
+    },
+    {
+      "id": "fg-known-fringe-pink-branch",
+      "center": [536, 620],
+      "radius": 1,
+      "alpha_min": 64,
+      "min_fraction": 0.6,
+      "median_min": 96,
+      "why": "Paint side of the exact x8 fringe_pink review location."
+    },
+    {
+      "id": "fg-right-seaweed-pale-edge",
+      "center": [860, 1040],
+      "radius": 1,
+      "alpha_min": 48,
+      "min_fraction": 0.55,
+      "median_min": 80,
+      "why": "Thin pale blade at the known fringe-00 tile."
+    },
+    {
+      "id": "fg-right-seaweed-lower-edge",
+      "center": [850, 1120],
+      "radius": 1,
+      "alpha_min": 48,
+      "min_fraction": 0.55,
+      "median_min": 80,
+      "why": "Second sure-painted point on the same translucent blade."
+    },
+    {
+      "id": "fg-seastar-pale-arm",
+      "center": [400, 1570],
+      "radius": 3,
+      "alpha_min": 48,
+      "min_fraction": 0.55,
+      "median_min": 80,
+      "why": "Pale peach starfish arm is illustration, not white background."
+    },
+    {
+      "id": "fg-sand-watercolor-wash",
+      "center": [500, 1570],
+      "radius": 2,
+      "alpha_min": 32,
+      "min_fraction": 0.5,
+      "median_min": 64,
+      "why": "Pale beige sand wash is intentional art even where it approaches paper white."
+    }
+  ],
+  "sure_background_exterior": [
+    {"id": "bg-ext-top-left", "center": [25, 25], "radius": 5, "alpha_max": 16, "min_fraction": 0.95},
+    {"id": "bg-ext-top-right", "center": [915, 25], "radius": 5, "alpha_max": 16, "min_fraction": 0.95},
+    {"id": "bg-ext-upper-left", "center": [80, 400], "radius": 5, "alpha_max": 16, "min_fraction": 0.95},
+    {"id": "bg-ext-upper-right", "center": [850, 400], "radius": 5, "alpha_max": 16, "min_fraction": 0.95},
+    {"id": "bg-ext-mid-left", "center": [25, 800], "radius": 5, "alpha_max": 16, "min_fraction": 0.95},
+    {"id": "bg-ext-mid-right", "center": [915, 800], "radius": 5, "alpha_max": 16, "min_fraction": 0.95}
+  ],
+  "sure_background_enclosed": [
+    {
+      "id": "bg-enclosed-triangle-a",
+      "center": [790, 690],
+      "radius": 2,
+      "alpha_max": 16,
+      "min_fraction": 0.9,
+      "why": "White paper inside the exact enclosed_tri review region between seaweed blades."
+    },
+    {
+      "id": "bg-enclosed-triangle-b",
+      "center": [798, 700],
+      "radius": 2,
+      "alpha_max": 16,
+      "min_fraction": 0.9,
+      "why": "Second independent point in the known enclosed triangular paper pocket."
+    },
+    {
+      "id": "bg-enclosed-triangle-c",
+      "center": [785, 710],
+      "radius": 2,
+      "alpha_max": 16,
+      "min_fraction": 0.9,
+      "why": "Lower point in the known enclosed triangular paper pocket."
+    },
+    {
+      "id": "bg-interior-gap-cut00",
+      "center": [500, 830],
+      "radius": 1,
+      "alpha_max": 16,
+      "min_fraction": 0.85,
+      "why": "Paper gap between painted branches inside the largest wrong-cutout review area."
+    },
+    {
+      "id": "bg-interior-gap-cut02",
+      "center": [590, 890],
+      "radius": 1,
+      "alpha_max": 16,
+      "min_fraction": 0.85,
+      "why": "Paper gap among green branches inside known cutout crop 02."
+    }
+  ],
+  "edge_probes": [
+    {
+      "id": "edge-fish-translucent-fin",
+      "bbox": [135, 145, 205, 220],
+      "band_width": 2,
+      "paper_distance_min": 80,
+      "max_white_fraction": 0.25,
+      "min_boundary_pixels_per_scale": 8,
+      "why": "Known fringe-03 tile; colored translucent fin makes opaque paper-white boundary pixels invalid."
+    },
+    {
+      "id": "edge-known-fringe-pink",
+      "bbox": [528, 603, 550, 642],
+      "band_width": 2,
+      "paper_distance_min": 80,
+      "max_white_fraction": 0.25,
+      "min_boundary_pixels_per_scale": 5,
+      "why": "Exact fringe_pink review region centered near x8 (4355, 5013)."
+    },
+    {
+      "id": "edge-right-pale-seaweed",
+      "bbox": [842, 1008, 868, 1170],
+      "band_width": 2,
+      "paper_distance_min": 80,
+      "max_white_fraction": 0.25,
+      "min_boundary_pixels_per_scale": 10,
+      "why": "Known fringe-00 tile beginning near x8 (6912, 8448)."
+    }
+  ],
+  "human_review": [
+    {
+      "id": "review-native-multibg-all-edge-probes",
+      "kind": "edge_probes",
+      "backgrounds": ["white", "gray", "black", "magenta"],
+      "required": true,
+      "why": "A conservative pixel metric cannot decide whether every translucent watercolor edge looks natural."
+    },
+    {
+      "id": "review-pale-sand-boundary",
+      "kind": "bbox",
+      "bbox": [210, 1480, 720, 1640],
+      "backgrounds": ["white", "gray", "black", "magenta"],
+      "required": true,
+      "why": "Sand wash fades continuously into paper and is semantically ambiguous."
+    },
+    {
+      "id": "review-cut00-pale-branches",
+      "kind": "bbox",
+      "bbox": [445, 780, 520, 1010],
+      "backgrounds": ["white", "gray", "black", "magenta"],
+      "required": true,
+      "why": "This is the user's largest known wrong-cutout zone."
+    },
+    {
+      "id": "review-enclosed-triangle",
+      "kind": "bbox",
+      "bbox": [774, 676, 822, 724],
+      "backgrounds": ["white", "gray", "black", "magenta"],
+      "required": true,
+      "why": "This is the user's known enclosed-paper failure zone."
+    }
+  ]
+}

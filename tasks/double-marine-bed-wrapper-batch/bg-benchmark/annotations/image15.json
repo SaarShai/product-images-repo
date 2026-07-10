@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "case_id": "image15",
+  "coordinate_space": {
+    "reference": "original",
+    "width": 1536,
+    "height": 1024,
+    "origin": "top_left",
+    "units": "pixels"
+  },
+  "paper_rgb": [250, 246, 241],
+  "provenance": {
+    "method": "manual_visual_selection",
+    "candidate_independent": true,
+    "source": "Original RGB source, inspected at native resolution.",
+    "prior_feedback_evidence": [
+      "PLAN-bg-complete-solution.md",
+      "wiki/concepts/double-marine-bed-wrapper-background-removal-fusion-pipeline.md"
+    ],
+    "decision_contract": {
+      "authored_base_wash": "The visible sand and watercolor wash at the base is foreground and must be retained.",
+      "uniform_paper": "Uniform cream paper beyond the visibly authored fade is background and must be transparent.",
+      "terminal_fade": "The exact terminal transition from authored wash to cream paper is not machine-labelled and remains mandatory human review."
+    },
+    "annotation_quality_audit": {
+      "method": "source_only_semantic_boundary_review",
+      "rule": "At least 75 percent of each intended boundary must genuinely be pigment-colored at RGB distance 80 or more from paper; intentional white or cream subject highlights are foreground and cannot be treated as contamination.",
+      "correction": "Replaced edge-left-pale-bubbles with edge-left-salmon-coral-outer. The bubble crop contains intentional white and cream highlights and therefore could not satisfy the rule independently of a candidate. The replacement has a continuous salmon-pigment silhouette; its white highlights are internal, not boundary truth.",
+      "enclosed_background_result": "PASS: all five centers are visibly blank cream paper, not pale paint; their source RGB distance from white is at most 17.4, consistent with this source's cream paper."
+    },
+    "paper_contract_audit": {
+      "method": "combined_pixels_from_six_frozen_exterior_background_disks_on_original_source",
+      "sample_count": 486,
+      "representative_rgb": [250, 246, 241],
+      "channel_p05": [249, 245, 240],
+      "channel_p95": [251, 247, 243],
+      "channel_mad": [0, 0, 1],
+      "euclidean_distance_from_global_white": 17.38,
+      "decision": "Materially cream rather than white; freeze a case-level paper_rgb for reconstruction and edge-distance checks."
+    },
+    "note": "All guards and edge boxes were selected from the original source before any candidate was inspected. Sure-FG points avoid the unresolved terminal fade while explicitly protecting pale bubbles, kelp, shells, coral, and interior base wash. Sure-BG points lie in visually blank exterior or interior paper."
+  },
+  "sure_foreground": [
+    {
+      "id": "fg-top-blue-bubble-rim",
+      "center": [1015, 70],
+      "radius": 2,
+      "alpha_min": 48,
+      "min_fraction": 0.55,
+      "median_min": 80,
+      "why": "Pale blue paint on the upper bubble is authored illustration."
+    },
+    {
+      "id": "fg-upper-pale-bubble-body",
+      "center": [950, 150],
+      "radius": 2,
+      "alpha_min": 32,
+      "min_fraction": 0.5,
+      "median_min": 64,
+      "why": "Very pale blue bubble body must not be mistaken for cream paper."
+    },
+    {
+      "id": "fg-left-small-bubble-rim",
+      "center": [175, 210],
+      "radius": 2,
+      "alpha_min": 32,
+      "min_fraction": 0.5,
+      "median_min": 64,
+      "why": "Small translucent bubble at upper left is foreground."
+    },
+    {
+      "id": "fg-kelp-yellow-tip",
+      "center": [275, 145],
+      "radius": 2,
+      "alpha_min": 64,
+      "min_fraction": 0.65,
+      "median_min": 96,
+      "why": "Pale yellow kelp tip is painted art."
+    },
+    {
+      "id": "fg-kelp-pale-green-blade",
+      "center": [305, 300],
+      "radius": 2,
+      "alpha_min": 64,
+      "min_fraction": 0.65,
+      "median_min": 96,
+      "why": "Thin pale green kelp blade must remain."
+    },
+    {
+      "id": "fg-seahorse-pale-belly",
+      "center": [402, 350],
+      "radius": 2,
+      "alpha_min": 96,
+      "min_fraction": 0.75,
+      "median_min": 128,
+      "why": "Cream seahorse belly is foreground despite its paper-like value."
+    },
+    {
+      "id": "fg-fish-pale-body",
+      "center": [652, 430],
+      "radius": 2,
+      "alpha_min": 64,
+      "min_fraction": 0.65,
+      "median_min": 96,
+      "why": "Pale peach fish body is illustration."
+    },
+    {
+      "id": "fg-central-pink-pale-tip",
+      "center": [445, 470],
+      "radius": 2,
+      "alpha_min": 48,
+      "min_fraction": 0.55,
+      "median_min": 80,
+      "why": "Light pink coral tip in sparse central paper must remain."
+    },
+    {
+      "id": "fg-right-pale-blue-fan",
+      "center": [1050, 560],
+      "radius": 2,
+      "alpha_min": 48,
+      "min_fraction": 0.55,
+      "median_min": 80,
+      "why": "Pale blue fan behind the orange coral is foreground."
+    },
+    {
+      "id": "fg-right-pink-coral-tip",
+      "center": [1280, 170],
+      "radius": 2,
+      "alpha_min": 64,
+      "min_fraction": 0.65,
+      "median_min": 96,
+      "why": "Pale upper coral tip is painted art."
+    },
+    {
+      "id": "fg-shell-pale-cream",
+      "center": [360, 810],
+      "radius": 2,
+      "alpha_min": 64,
+      "min_fraction": 0.65,
+      "median_min": 96,
+      "why": "Cream shell surface at the base is foreground."
+    },
+    {
+      "id": "fg-starfish-pale-arm",
+      "center": [620, 850],
+      "radius": 2,
+      "alpha_min": 96,
+      "min_fraction": 0.75,
+      "median_min": 128,
+      "why": "Pale orange starfish arm is illustration."
+    },
+    {
+      "id": "fg-left-base-watercolor",
+      "center": [220, 940],
+      "radius": 2,
+      "alpha_min": 32,
+      "min_fraction": 0.5,
+      "median_min": 64,
+      "why": "Left authored base wash is foreground, not cream paper."
+    },
+    {
+      "id": "fg-center-sand-watercolor",
+      "center": [760, 935],
+      "radius": 2,
+      "alpha_min": 32,
+      "min_fraction": 0.5,
+      "median_min": 64,
+      "why": "Central pale sand wash lies safely inside the authored base."
+    },
+    {
+      "id": "fg-right-sand-watercolor",
+      "center": [1250, 940],
+      "radius": 2,
+      "alpha_min": 32,
+      "min_fraction": 0.5,
+      "median_min": 64,
+      "why": "Right pale sand wash lies inside the visibly authored base."
+    }
+  ],
+  "sure_background_exterior": [
+    {"id": "bg-ext-top-left", "center": [25, 25], "radius": 5, "alpha_max": 16, "min_fraction": 0.95},
+    {"id": "bg-ext-top-right", "center": [1510, 25], "radius": 5, "alpha_max": 16, "min_fraction": 0.95},
+    {"id": "bg-ext-upper-left", "center": [500, 80], "radius": 5, "alpha_max": 16, "min_fraction": 0.95},
+    {"id": "bg-ext-upper-center", "center": [750, 120], "radius": 5, "alpha_max": 16, "min_fraction": 0.95},
+    {"id": "bg-ext-upper-right", "center": [1200, 80], "radius": 5, "alpha_max": 16, "min_fraction": 0.95},
+    {"id": "bg-ext-mid-open-paper", "center": [600, 250], "radius": 5, "alpha_max": 16, "min_fraction": 0.95}
+  ],
+  "sure_background_enclosed": [
+    {
+      "id": "bg-interior-left-coral-fork-a",
+      "center": [128, 370],
+      "radius": 2,
+      "alpha_max": 16,
+      "min_fraction": 0.9,
+      "why": "Blank cream paper between the left coral trunk and branch."
+    },
+    {
+      "id": "bg-interior-left-coral-fork-b",
+      "center": [145, 455],
+      "radius": 2,
+      "alpha_max": 16,
+      "min_fraction": 0.9,
+      "why": "Second blank paper pocket between left coral branches."
+    },
+    {
+      "id": "bg-interior-right-pink-loop-upper",
+      "center": [1290, 300],
+      "radius": 2,
+      "alpha_max": 16,
+      "min_fraction": 0.9,
+      "why": "Blank paper pocket among upper right pink branches."
+    },
+    {
+      "id": "bg-interior-center-kelp-gap",
+      "center": [900, 360],
+      "radius": 2,
+      "alpha_max": 16,
+      "min_fraction": 0.9,
+      "why": "Blank paper in the narrow central kelp gap."
+    },
+    {
+      "id": "bg-interior-right-pink-loop-lower",
+      "center": [1338, 420],
+      "radius": 2,
+      "alpha_max": 16,
+      "min_fraction": 0.9,
+      "why": "Blank paper enclosed by a lower right coral fork."
+    }
+  ],
+  "edge_probes": [
+    {
+      "id": "edge-left-salmon-coral-outer",
+      "bbox": [30, 240, 205, 610],
+      "band_width": 2,
+      "paper_distance_min": 80,
+      "max_white_fraction": 0.25,
+      "min_boundary_pixels_per_scale": 10,
+      "why": "The left salmon coral has a visibly pigment-lined outer silhouette; intentional cream highlights lie inside the subject and are not boundary truth.",
+      "source_semantic_audit": "PASS: visibly more than three quarters of the intended outer contour is salmon or pink pigment at the frozen paper-distance premise."
+    },
+    {
+      "id": "edge-upper-kelp-ribbons",
+      "bbox": [245, 130, 340, 445],
+      "band_width": 2,
+      "paper_distance_min": 80,
+      "max_white_fraction": 0.25,
+      "min_boundary_pixels_per_scale": 10,
+      "why": "Thin yellow-green ribbons require colored, not paper-white, boundary pixels.",
+      "source_semantic_audit": "PASS: the intended outer ribbon contours are continuously outlined in yellow-green pigment; white strokes are internal highlights."
+    },
+    {
+      "id": "edge-right-pink-coral-tips",
+      "bbox": [1240, 120, 1500, 390],
+      "band_width": 2,
+      "paper_distance_min": 80,
+      "max_white_fraction": 0.25,
+      "min_boundary_pixels_per_scale": 10,
+      "why": "Pale pink upper coral tips are a high-risk fringe region.",
+      "source_semantic_audit": "PASS: the intended coral silhouette is bounded by pink or salmon pigment around well over three quarters of its perimeter; white dots and streaks are internal highlights."
+    }
+  ],
+  "human_review": [
+    {
+      "id": "review-native-multibg-all-edge-probes",
+      "kind": "edge_probes",
+      "backgrounds": ["white", "gray", "black", "magenta"],
+      "required": true,
+      "why": "Pixel metrics cannot decide whether every translucent watercolor edge looks natural."
+    },
+    {
+      "id": "review-terminal-base-fade",
+      "kind": "bbox",
+      "bbox": [0, 865, 1536, 990],
+      "backgrounds": ["white", "gray", "black", "magenta"],
+      "required": true,
+      "why": "The exact terminal transition from authored sand wash to uniform cream paper is intentionally not machine-labelled."
+    },
+    {
+      "id": "review-left-pale-bubble-wash",
+      "kind": "bbox",
+      "bbox": [130, 140, 240, 390],
+      "backgrounds": ["white", "gray", "black", "magenta"],
+      "required": true,
+      "why": "Extremely pale bubbles and splash marks need direct visual confirmation."
+    },
+    {
+      "id": "review-right-coral-paper-pockets",
+      "kind": "bbox",
+      "bbox": [1070, 120, 1510, 720],
+      "backgrounds": ["white", "gray", "black", "magenta"],
+      "required": true,
+      "why": "Dense coral forks combine pale paint with several true paper pockets."
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "t1_layerdiffuse_sdxl_attn_fullscene": {
+    "workflow": "workflow_t1_layerdiffuse_sdxl.json",
+    "output": "outputs/t1-layerdiffuse/marine_layerdiffuse_00001.png",
+    "mode": "RGBA",
+    "size": [832, 1216],
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "opaque_fraction_gt200": 0.9966,
+    "transparent_fraction_lt20": 0.0000642,
+    "opaque_components_gt127": 3,
+    "opaque_component_sizes_top": [1010847, 8, 5],
+    "stray_small_components_lt200px": 2,
+    "enclosed_bg_holes": 35,
+    "verdict": "real per-pixel RGBA produced end-to-end, but alpha does NOT separate background: 99.66% of pixels are near-opaque (alpha>200); background renders as opaque white, not transparent. Transparency generation effectively failed for this config."
+  },
+  "t1_layerdiffuse_sdxl_attn_turtle_single": {
+    "workflow": "workflow_t1_layerdiffuse_sdxl_turtle_single.json",
+    "output": "outputs/t1-layerdiffuse-turtle-single/marine_layerdiffuse_turtle_00001.png",
+    "mode": "RGBA",
+    "size": [1024, 1024],
+    "alpha_min": 145,
+    "alpha_max": 255,
+    "alpha_mean": 254.86,
+    "opaque_fraction_gt200": 0.9997,
+    "transparent_fraction_lt20": 0.0,
+    "opaque_components_gt127": 1,
+    "stray_small_components_lt200px": 0,
+    "enclosed_bg_holes": 0,
+    "verdict": "Single-object retest per coordinator ask: alpha does NOT track the subject either. Worse than full-scene: zero transparent pixels at all (min alpha 145, mean 254.86). Confirms the SDXL Attention-Injection LayerDiffuse path is unreliable on this ComfyUI core (0.25.0) regardless of prompt composition."
+  },
+  "t2_birefnet_hr_image14": {
+    "workflow": "workflow_t2_birefnet_hr_image14.json",
+    "output": "outputs/t2-birefnet-hr/image14_birefnet_hr.png",
+    "mode": "RGBA",
+    "size": [941, 1672],
+    "alpha_min": 0,
+    "alpha_max": 254,
+    "alpha_mean": 103.84,
+    "opaque_fraction_gt200": 0.3799,
+    "transparent_fraction_lt20": 0.5372,
+    "opaque_components_gt127": 47,
+    "stray_small_components_lt200px": 37,
+    "enclosed_bg_holes": 201,
+    "gate_result": "FAIL (machine_pass=false)",
+    "gate_failures": [
+      "rgb_reconstruction: mae=2.667 (max 1.5), p99=39 (max 8)",
+      "white_edge_contamination: edge-fish-translucent-fin white_fraction=0.70 (max 0.25)",
+      "white_edge_contamination: edge-known-fringe-pink white_fraction=0.73 (max 0.25)",
+      "white_edge_contamination: edge-right-pale-seaweed white_fraction=0.62 (max 0.25)"
+    ],
+    "gate_report_path_scratch": "/private/tmp/claude-501/-Users-za-Documents-product-images-repo/1a6615eb-64fa-4a9d-8e12-f20fce37c4c6/scratchpad/gate_report_birefnet_hr.json",
+    "verdict": "All sure_foreground and sure_background guard probes pass (correct subject coverage, no leaks on core probes). But straight-RGBA reconstruction and 3 of the edge-hygiene probes fail: BiRefNet-HR leaves a bright/paper-colored halo on soft translucent watercolor edges (fish fin, pink fringe, pale seaweed). This matches prior project finding (wiki: 'White-key beats birefnet (flat art)') that flat watercolor art on pure white needs scripts/white_key.py (flood-fill) rather than ML matting for edge-clean results. BiRefNet-HR is a legitimate general-purpose baseline but is NOT gate-clean on this asset class out of the box."
+  }
+}
