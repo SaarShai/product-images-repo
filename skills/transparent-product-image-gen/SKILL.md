@@ -1,6 +1,6 @@
 ---
 name: transparent-product-image-gen
-description: Use when a product needs a NEW transparent-background (RGBA) illustration generated from scratch, or an EXISTING finished illustration needs its white/paper background removed, for Screenery/Wanderland product images. Also use when a downstream tool cannot accept an alpha channel and needs a flat keyable background color instead. Do NOT use for style edits of existing art via images/edits (composition drifts — see Rejected routes), and do NOT reach for luma/flood "punch" background removal on watercolor art (deletes real pale paint).
+description: Use when a product needs a NEW transparent-background (RGBA) illustration, an EXISTING illustration may be semantically regenerated with native alpha, or an existing raster must keep its exact pixels while its white/paper background is removed. Also use when a downstream tool needs a flat keyable background instead of alpha. Do NOT use luma/flood "punch" removal on watercolor art (it deletes real pale paint).
 status: proposed
 disable-model-invocation: true
 auto-install: false
@@ -40,22 +40,25 @@ you can re-verify instead of trusting this doc blindly.
 ## Procedure — decision tree
 
 ```
-Do you have a NEW image to create (no existing finished art to preserve)?
-├── YES → does the downstream consumer need a flat KEY COLOR instead of alpha
-│         (e.g. a compositor that can't read PNG alpha)?
-│         ├── NO  → ROUTE A (native transparent generation) + ROUTE B (upscale)
-│         └── YES → ROUTE C (keyable magenta generation), same model
+Must the output preserve the EXISTING raster's exact content and pixels?
+├── YES → ROUTE E (correction-led matting + frozen gate + MANDATORY user review)
+│         Do not regenerate: every generative route redraws some content.
 │
-└── NO, I have an EXISTING finished illustration and need its background removed
-          → ROUTE E (Adobe-assisted matting + frozen gate + MANDATORY user review)
-          Do NOT use images/edits or a chroma regeneration to "remove" an existing
-          image's background — both are REJECTED routes (see table below).
+└── NO → is a semantic redraw acceptable?
+          ├── YES, based on an existing illustration → ROUTE A2 (ChatGPT Images
+          │   native-alpha regeneration) + ROUTE B (split RGB/alpha upscale)
+          └── This is a genuinely new illustration → ROUTE A1 (API-native alpha)
+              + ROUTE B. Use ROUTE C only when the consumer needs a flat key
+              color, OR when the art must be rendered by `gpt-image-2`
+              specifically (which refuses `background=transparent` outright)
+              → use ROUTE C-green, the verified default for that case.
 ```
 
 STOP-and-ask-user points (do not proceed past these without explicit approval):
 1. **After the first ROUTE A/C generation** — show the raw RGBA (composited on
-   white/gray/black/magenta) to the user before spending more generations or
-   upscaling. Style/composition approval happens here, not after upscaling.
+   white/gray/black/magenta) to the user before spending more generations,
+   batching, or promoting it. If an end-to-end proof was explicitly requested,
+   one candidate-only upscale may run, but that does not approve the art.
 2. **Before promoting any ROUTE E candidate out of `Images/candidates/`** — a
    machine `machine_pass=true` is `PENDING_HUMAN_REVIEW`, never final. The user
    has previously rejected a machine-passing candidate on native 1:1 review
@@ -64,16 +67,28 @@ STOP-and-ask-user points (do not proceed past these without explicit approval):
 
 ---
 
-## ROUTE A — Native transparent generation (WINNER, new images)
+## ROUTE A — Native transparent generation or semantic regeneration
+
+Do not conflate these two OpenAI surfaces:
+
+- **A1, predictable API-native alpha for a new motif:** `gpt-image-1` with an
+  explicit `background=transparent` parameter.
+- **A2, best measured semantic regeneration of existing art:** ChatGPT Images
+  2.0 in a signed-in browser, prompted for transparency. OpenAI documents that
+  ChatGPT Images can make a background transparent. The successful PNG proves
+  that the product returned genuine RGBA; neither its metadata nor the UI
+  proves that the backend model ID was specifically `gpt-image-2`.
+
+### ROUTE A1 — API-native alpha for a new image
 
 **Model:** OpenAI `gpt-image-1`, `POST https://api.openai.com/v1/images/generations`,
 `background=transparent`, `quality=high`, `size` matched to the image's aspect
 (portrait product art used `1024x1536`). Returns a **real RGBA** image (not a
-fake checkerboard — see Rejected routes for the subscription-path failure).
+fake checkerboard).
 Key: `.secrets/openai.env` (`OPENAI_API_KEY=...`), loaded the same way
 `scripts/openai_edit.py` already does it (`scripts/_falcommon.py::load_openai_key()`).
 
-### Mandatory edge-hygiene prompt block (verbatim — append to every generation prompt)
+### Mandatory edge-hygiene prompt block (verbatim — append to every A1/A2 prompt)
 
 ```
 every object has clearly defined, fully closed outlines; no shape fades into
@@ -89,7 +104,30 @@ essentially a clean alpha boundary. Semi-alpha (soft/antialiased) pixels also
 dropped to roughly 0.3% of the frame in the clean run. This is the single
 biggest lever found this session — never omit it.
 
-### Exact runnable command
+### New defect class — painted aura/glow (alpha gates miss it)
+
+Native-transparent gens (both this API route and the A2 browser route) can
+paint an **opaque glow/wash band** around the subject — a real halo of pigment
+in the RGB, not a soft-alpha fringe — so alpha is near-binary and every alpha
+check above (histogram, enclosed-pocket) passes clean while the glow is still
+there. Gate it separately: `scripts/aura_gate.py`.
+Append this anti-aura tail to any transparent-gen prompt (on top of the
+edge-hygiene block, not instead of it):
+```
+isolated cutout on true transparency; transparent pixels begin immediately
+outside the outermost painted or inked subject contour; all pigment and
+paper-grain texture remain inside the subject silhouette only; no surrounding
+watercolor wash, color bloom, glow, aura, halo, rim light, backlight, mist,
+vignette, drop shadow, ambient color spill, or diffuse silhouette expansion;
+flat ambient lighting; preserve soft watercolor texture inside the forms, but
+no pigment outside them; only a 1-2 pixel antialiased transition at the
+actual art edge.
+```
+Proved: eliminated the glow in the browser-lane run
+`REVIEW/marine-bed-transparent/browser-lane/marine_browser_antiaura_s1.png`
+vs earlier browser gens that had it.
+
+### Exact runnable A1 command
 
 There is no checked-in wrapper for `images/generations` yet (only
 `scripts/openai_edit.py` wraps `images/edits`). Run this self-contained
@@ -145,8 +183,63 @@ roughly the same per-image token cost either way; the hygiene block is free
 quality, not an extra-cost option.
 
 **STOP:** after this call, composite the RGBA on white/gray/black/magenta
-(see Verification) and get user sign-off on style/composition before doing
-anything else (upscaling, more generations).
+(see Verification) and get user sign-off on style/composition before more
+generations, batch work, or production promotion. A single reversible upscale
+may remain in `Images/candidates/` only when the user explicitly requested an
+end-to-end engineering proof; it is not approval of the art.
+
+### ROUTE A2 — ChatGPT Images transparent semantic regeneration
+
+Use a signed-in ChatGPT Images browser surface when retaining the subject,
+style, and approximate composition matters more than pixel identity. Upload
+the source (an ordinary RGB/white-background upload is sufficient) and use:
+
+```text
+Re-create the attached watercolor illustration as a NEW image in exactly the
+same art style: loose watercolor with soft pigment blooms, delicate ink-line
+detail, pastel palette. Reproduce ALL of the content, keeping composition,
+colors and arrangement as close to the reference as possible. IMPORTANT:
+generate it with a fully TRANSPARENT background (true alpha PNG) — no white,
+no paper texture, nothing behind the subjects. The entire composition must sit
+fully inside the canvas with a clear margin on all four sides; nothing may
+touch or be cut off by any edge. Every object keeps clearly defined, fully
+closed outlines.
+```
+
+The one-image fish/coral probe is at
+`REVIEW/marine-bg-complete/fish-regen/fish_APP_s1.png`. Fresh verification:
+
+- 1024×1536 RGBA, alpha 0–255 with all 256 values; exact A=0 is 66.7557%.
+- No foreground touches the outer three-pixel canvas strips.
+- Layout-mask IoU 0.8427 and global SSIM 0.7491 against the resized source;
+  both beat the strongest API-native-alpha comparison candidates.
+- It is still a redraw: branch, fish, bubble, and lower-coral details changed,
+  and object saturation rose from 0.198 to 0.244.
+
+OpenAI's product documentation calls this **ChatGPT Images 2.0** and says it
+can make backgrounds transparent. Do not relabel an app result as the API
+model ID `gpt-image-2`: direct API requests with that ID and
+`background=transparent` returned HTTP 400.
+
+**Extraction (solved this session):** in Claude Desktop's built-in browser,
+fetch the asset blob in-page then trigger an `a[download]` click — the file
+lands directly in `~/Downloads`; no base64-chunking workaround is needed.
+Original asset URLs come from the backend's `backend-api/my/recent/image_gen`
+(estuary content URLs; the same response carries `conversation_id`,
+`message_id`, `model_slug` metadata). Verify alpha in-page via
+`OffscreenCanvas` before downloading, so a bad gen is caught before it ever
+touches disk.
+
+**Model routing is UNSTABLE — treat every session as unverified until
+re-checked.** The web app's host-model slug determines which image backend
+you actually get, and it silently varies: a `gpt-5-6-pro` chat produced
+style-degraded output the user rejected, while the good exemplars from
+2026-07-07 ran under `gpt-5-4-thinking` (a model that retires 2026-07-23) and
+the user's true-transparency exemplar ran under `gpt-5-3`. Pin the chat's
+model via `?model=` and re-validate per session — do not assume today's
+session uses the same backend as last week's. Because of this instability,
+the API chroma route (Route C-green) is the more stable default whenever the
+art must come from a specific, pinnable model.
 
 ---
 
@@ -183,6 +276,10 @@ Notes:
 - Verified this session: alpha MAE 0 / max error 0 vs the prescribed Lanczos
   reference, source SHA-256 unchanged before/after (the script checks this
   itself and raises if the source file was touched).
+- Verified on the A2 fish result at full scale: 1024×1536 → 8192×12288 RGBA;
+  alpha MAE 0 / max error 0 and source SHA-256 unchanged. Evidence and the
+  four-background review board are under the product's
+  `Images/candidates/bg-gen-fish-regen-v1/x8-split/` folder.
 - `--review-board` auto-generates the four-background (white/gray/black/magenta)
   composite for the next verification step — always pass it.
 
@@ -208,6 +305,77 @@ afterward," not a one-shot perfect key.
 
 **Cost:** usage `{input_tokens: 103, output_tokens: 6240, total: 6343}`
 (48.5s, n=1).
+
+### ROUTE C-green — chroma-key regeneration (VERIFIED default when gpt-image-2 must render the art)
+
+`gpt-image-2` refuses `background=transparent` (HTTP 400, re-confirmed this
+session). When the art must be rendered by `gpt-image-2` specifically, key
+against **green (`#00FF00`)**, not magenta — measured bg↔art separation is
+roughly **2x** magenta's (ΔE 11.5 vs 6.8) and 5.9-9 for azure variants; the
+green background stays near-flat (94.6-97.2% of pixels within ΔE<3 of the
+sampled fill) under every prompt style tested — prompt phrasing barely moves
+uniformity (`REVIEW/marine-bed-transparent/chroma-lane/chroma_gates.json`).
+
+**Gen:** OpenAI Responses API, async **background job** (not the sync
+`images/generations` call) — sync connection dies at ~75s for
+`quality=high` `1024x1536`; there is no `input_fidelity` param for this
+surface (adding one is a 400). Attach the reference image. Prompt is the
+minimal P1 style, verbatim:
+```
+solid flat uniform background exactly #00FF00, every background pixel
+identical, no gradient, no vignette, no texture, no shadow, no glow; nothing
+cropped at the edges
+```
+Full prompt variants tried:
+`REVIEW/marine-bed-transparent/chroma-lane/PROMPTS.md`. Generator:
+`REVIEW/marine-bed-transparent/chroma-lane/chroma_gen.py`.
+
+**Key:** `scripts/chroma_key.py` — a
+global Lab ΔE two-threshold alpha (enclosed pockets die by construction since
+alpha is global, not flood-fill). Use `DE_OPAQUE=11`, **not 8** — 8 leaves a
+visible green rim. Boundary unmix + despill are confined to the dilated
+transition band only; interior bubbles/translucent regions are left
+untouched.
+
+**Upscale:** `scripts/chroma_key_upscale.py`
+— nearest-RGB refill under `alpha=0` (so RealESRGAN never sees green), then
+Real-ESRGAN x4 on RGB, Lanczos on alpha, recombine. Final proof:
+`REVIEW/marine-bed-transparent/chroma-lane/final-candidate/marine_green_P1_keyed_x4.png`
+(4096x6144).
+
+**Verification:** the uniform frozen-source-mask harness at
+`REVIEW/marine-bed-transparent/verify-matrix/verify_all.py`
+(`verdict.json`/`VERDICT.md`) is the arbiter for any removal-method
+comparison, not a one-off eyeball. In that harness, `chroma_key.py` was the
+**only** method with 0 residual green pockets AND 0 deleted art pixels;
+ImageMagick/ffmpeg naive chroma-key left 864-1559 green pockets; plain
+BRIA/BiRefNet ML matting on the flat-green source deleted up to 18.7% of the
+art (thin branches) — see Rejected routes below.
+
+**Known bug to fix before relying on this at scale:**
+`tasks/double-marine-bed-wrapper-batch/alpha_aware_upscale.py`'s donor
+threshold of `1/255` lets unstable low-alpha RGB poison the refill during
+upscale — use `chroma_key_upscale.py`'s dedicated refill instead of the
+generic upscaler for chroma-keyed sources.
+
+**Better unmix/despill formulas (advisor-reviewed, not yet implemented in the
+checked-in script — apply by hand or patch `chroma_key.py` before the next
+use):**
+- Donor-regularized unmix instead of naive unmix:
+  `F = (α·D + λ·F0) / (α² + λ)`, with `λ = [0.1·(1-α)]²` (D = donor/neighbor
+  color, F0 = observed foreground-adjacent color). Naive per-pixel unmix is
+  unstable as α→0; this regularizes toward the donor.
+- Despill only in **OKLab chroma**, never a global green-channel clamp — a
+  flat `G` clamp visibly damages true yellows in the art.
+- Treat any painted-in color spill as a **bounded proposal**, not ground
+  truth, when deciding how far to unmix.
+- Gates worth keeping for any future chroma-key harness: recomposition error,
+  bubble ring-vs-center alpha (checks despill didn't eat translucency),
+  stratified deleted-art recall (by feature thinness, not just aggregate),
+  and an x4-upscale hidden-RGB poison test.
+  (Source: GPT-5.6 Sol Ultra advisor review, session scratchpad
+  `advisor2_reply.md` — cite as advisor guidance, not yet measured in this
+  repo's own harness.)
 
 ---
 
@@ -344,10 +512,13 @@ without that explicit sign-off.
 | **Recraft V4** (fal) | Rejected, probed live | `background_color` param is unreliable: requested magenta `#FF00FF`, actually rendered solid **crimson** (`RGB(255,2,48)`, 0.0% ΔE<5 to the request). Even against its own actual color, 1063 enclosed background pockets from coral-gap topology. |
 | **Flux/dev keyable** (fal, prompt-hack) | Rejected, probed live | Total failure to follow the background-color instruction — sampled corner `RGB(253,238,235)` (pale blush), 0.0% match at any ΔE tolerance to magenta. |
 | **LayerDiffuse** (local ComfyUI 0.25.0, SDXL attn-injection) | Rejected, probed live | Produces a REAL per-pixel alpha channel, but the mask does not track the subject: opacity concentrated in scattered blotches near canvas edges/corners while the actual illustrated subject rendered mostly transparent (training assumes single-object-floating-in-void prompts, not full-scene prompts). |
-| **Subscription-path image gen** (ChatGPT UI / non-API "native transparency") | Rejected, probed live | Both allowed subscription calls returned **opaque RGB PNGs depicting a fake checkerboard pattern** (not a real alpha channel) and changed composition details — not a dependable transparency source. |
+| **ChatGPT Images 2.0 in a signed-in browser** | **Accepted candidate for semantic regeneration; user review still required** | `fish_APP_s1.png` is genuine RGBA and the best measured regeneration-fidelity result. Model metadata is absent, so call it a ChatGPT Images result, not proven API `gpt-image-2`. |
+| **Codex CLI/subgen subscription path** | Rejected for this task, probed live | Three transparent-edit canaries returned `no valid image`; two earlier renders were opaque checkerboards. The wrapper cannot pin the image model or `background` parameter. This does not invalidate the separate ChatGPT Images browser route. |
 | **images/edits on existing art** (gpt-image-1, to reproduce/preserve an existing illustration on transparent bg) | Rejected, probed live | Hard server-side ~61.2s timeout (`RemoteDisconnected`, not a client timeout) at `quality=high` or `input_fidelity=high`, reproduced 100% of trials. Only `quality=medium` completes, and even then composition drifts — mean-abs-diff-RGB over the opaque region was **44.3–46.0/255** vs the source (a regeneration, not a pixel-preserving cutout), with inconsistent small-bubble survival (5–6 of 7 across 2 samples). |
 | **Pure-luma flood/punch removal** (white-key style) | Rejected, real-world failure across multiple attempts | The "flood FG ∧ restore" family (and its `--pure-luma` threshold variants) repeatedly deleted real pale painted content — ultra-pale ghosts and residual fringe — while a proxy metric (`white_rim=0`) reported success; **the proxy metric directly contradicted user inspection** (`PLAN-bg-complete-solution.md`, "Known from prior work"). `assisted_bg_remove.py`'s production core deliberately contains **no** white/luma punch or edge-deletion step for this reason. |
-| **Chroma REGEN of existing images** (generate a new image on a keyable background instead of matting the existing one) | Rejected as a complete solution | Regeneration changes composition and still retains key-color contamination — it is a segmentation-reference experiment, not a source-preserving background-removal solution (`PLAN-bg-complete-solution.md`: "Reject every chroma candidate as a complete solution; retain the generated plate only as a possible topology proposal"). |
+| **Chroma REGEN of existing images, magenta/blue key** (generate on a keyable background, then key) | Inferior fallback vs A2 when A2 is available | It redraws content like A2 but additionally leaves key-color contamination and needs despill. In the fish comparison, native-alpha ChatGPT Images had cleaner edges and substantially closer composition than `gpt-image-2` + blue key. **Superseded for the `gpt-image-2`-forced case by Route C-green** — green, not magenta/blue, is the verified key color (see Route C-green). |
+| **ImageMagick/ffmpeg naive chroma-key** on a `#00FF00` source | Rejected, measured | Left 864-1559 residual green pockets in the uniform frozen-source-mask harness (`REVIEW/marine-bed-transparent/verify-matrix/verdict.json`); `scripts/chroma_key.py`'s global Lab ΔE two-threshold method was the only one with 0 residual green and 0 deleted art. |
+| **BRIA / BiRefNet ML matting** on a flat-green source | Rejected for this art class, measured | Deleted up to **18.7%** of the art (thin coral/branch detail) in the same harness — ML segmentation trained for natural-photo subjects treats thin painted branches as background. See `REVIEW/marine-bed-transparent/verify-matrix/VERDICT.md`. |
 
 ---
 
@@ -362,13 +533,41 @@ without that explicit sign-off.
   around a correction stroke can silently re-break an already-correct nearby
   region. Start narrow (R≈24), widen only if needed, and re-run the gate after
   every radius change.
-- **Using `images/edits` (or any regeneration) to "clean up" an existing
-  finished illustration's background.** Both are rejected routes — matting
-  the existing pixels (Route E) is the only source-preserving path.
+- **Calling semantic regeneration "background removal."** A2 is allowed only
+  when redrawing is acceptable. Route E is the source-preserving path when
+  exact existing content and pixels matter.
 - **Claim drift between summaries.** A route's status must cite primary
   evidence (an actual API response, a measured metric), never a prior summary —
   the gpt-image-2 row above flipped twice in one session until the raw API
   error was cited directly.
+- **Alpha checks alone miss painted aura/glow.** Because the alpha channel on
+  a native-transparent gen is near-binary, an opaque glow band painted in the
+  RGB passes every alpha check clean. Run `aura_gate.py` separately; don't
+  assume "alpha looks fine" means "no visible defect."
+- **Trusting web-app model routing to stay put.** The ChatGPT Images backend
+  behind a given chat is not fixed — it silently varies by host-model slug and
+  has degraded style quality mid-session. Pin `?model=` and re-verify per
+  session; treat the API chroma route (C-green) as the stable default when the
+  model matters.
+- **`chroma_key.py` at `DE_OPAQUE=8`.** Leaves a visible green rim; the
+  measured-good value is `DE_OPAQUE=11`.
+
+## Process laws (re-affirm on every route)
+- **One candidate → user visual gate → only then batch.** Never generate a
+  batch before a single representative candidate has explicit user sign-off
+  (this session's rediscovery: `tasks/double-marine-bed-wrapper-batch/WIKI-DRAFT-generation-first-transparency.md`,
+  "Approve one before scaling").
+- **Pixel-verify alpha immediately after every gen** (histogram + enclosed-
+  pocket checks above) before doing anything else with the file.
+- **Machine gates are proxies, not the arbiter.** A `machine_pass=true` or a
+  clean chroma-key metric is necessary, never sufficient; user review at
+  native resolution on white/gray/black/magenta decides.
+- **Use a uniform frozen-source-mask verifier for any removal-method
+  comparison** — comparing methods on different source images (or without a
+  shared ground-truth mask) produces incomparable numbers. See
+  `REVIEW/marine-bed-transparent/verify-matrix/verify_all.py`.
+- **Generator ≠ verifier.** The model/script that produced a candidate must
+  not be the same one that grades it as passing.
 
 ## Verification of this skill file itself
 ```bash

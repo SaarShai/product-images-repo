@@ -1,0 +1,545 @@
+{
+  "source_raw": "REVIEW/marine-bed-transparent/chroma-lane/raws/raw_green_P1.png",
+  "deltaE_impl": "skimage.color.deltaE_cie76",
+  "thresholds": {
+    "bg_deltaE_max": 3.0,
+    "art_deltaE_min": 15.0,
+    "green_dominance": 30.0,
+    "alpha_residual_thresh": 0.5,
+    "alpha_deleted_thresh": 0.5,
+    "band_px": 3,
+    "border_strip_px": 3,
+    "border_alpha_thresh": 0.1,
+    "recomp_alpha_leak_thresh": 0.02,
+    "erosion_interior_px": 6
+  },
+  "source_masks": {
+    "n_art_px": 494871,
+    "n_bg_px": 1020446,
+    "n_band_px": 144005,
+    "n_interior_px": 349157,
+    "n_yellow_stratum_px": 12760,
+    "n_warm_pale_stratum_px": 56141,
+    "n_bubbles_detected": 3,
+    "bubble_regions": [
+      {
+        "center": [
+          715.6113681427627,
+          416.4703679224499
+        ],
+        "radius_est": 38.01063763459153,
+        "size_px": 4539
+      },
+      {
+        "center": [
+          152.4980713596914,
+          402.64995178399226
+        ],
+        "radius_est": 25.69386510327284,
+        "size_px": 2074
+      },
+      {
+        "center": [
+          628.4693366708385,
+          633.5832290362954
+        ],
+        "radius_est": 15.947714540361222,
+        "size_px": 799
+      }
+    ]
+  },
+  "candidates": {
+    "A_keyed-v3": {
+      "residual_green": {
+        "count_px": 0,
+        "max_component_px": 0,
+        "target": 0,
+        "pass": true
+      },
+      "deleted_art": {
+        "count_px": 0,
+        "max_component_px": 0,
+        "pct_of_art_px": 0.0,
+        "target_pct": 0.1,
+        "pass": true
+      },
+      "rim": {
+        "band_greenness_mean": -11.484379014617549,
+        "interior_greenness_mean": -53.07025779233984,
+        "rim_greenness_delta": 41.585878777722286,
+        "band_deltaE_vs_source_mean": 78.05175467583136,
+        "pass": false
+      },
+      "despill_confinement": {
+        "interior_deltaE_mean": 0.0,
+        "yellow_stratum_deltaE_mean": 0.0,
+        "yellow_stratum_px": 12760,
+        "warm_pale_stratum_deltaE_mean": 0.0,
+        "warm_pale_stratum_px": 56141,
+        "pass": true
+      },
+      "recomposition": {
+        "bg_alpha_leak_pct": 0.0,
+        "band_recomp_p95_abs_err": 174.0,
+        "pass": true
+      },
+      "bubbles": {
+        "regions": [
+          {
+            "index": 0,
+            "center_yx": [
+              715.6113681427627,
+              416.4703679224499
+            ],
+            "radius_est_px": 38.01063763459153,
+            "core_alpha_mean": 0.797286329767486,
+            "ring_alpha_mean": 0.6297999374718138,
+            "core_minus_ring_alpha": 0.1674863922956722,
+            "greenish_tint_px_in_core": 5
+          },
+          {
+            "index": 1,
+            "center_yx": [
+              152.4980713596914,
+              402.64995178399226
+            ],
+            "radius_est_px": 25.69386510327284,
+            "core_alpha_mean": 1.0,
+            "ring_alpha_mean": 0.20687275219397996,
+            "core_minus_ring_alpha": 0.7931272478060201,
+            "greenish_tint_px_in_core": 0
+          },
+          {
+            "index": 2,
+            "center_yx": [
+              628.4693366708385,
+              633.5832290362954
+            ],
+            "radius_est_px": 15.947714540361222,
+            "core_alpha_mean": 0.6829047932996362,
+            "ring_alpha_mean": 0.802917418986981,
+            "core_minus_ring_alpha": -0.12001262568734483,
+            "greenish_tint_px_in_core": 1
+          }
+        ],
+        "n_bubbles_detected": 3,
+        "pass": false
+      },
+      "border_occupancy": {
+        "pct": 2.3492560689115116,
+        "target_pct": 2.0,
+        "pass": false
+      }
+    },
+    "B_classic": {
+      "residual_green": {
+        "count_px": 0,
+        "max_component_px": 0,
+        "target": 0,
+        "pass": true
+      },
+      "deleted_art": {
+        "count_px": 9537,
+        "max_component_px": 26,
+        "pct_of_art_px": 1.9271688985614432,
+        "target_pct": 0.1,
+        "pass": false
+      },
+      "rim": {
+        "band_greenness_mean": -2.0618311864171384,
+        "interior_greenness_mean": -53.12953198704308,
+        "rim_greenness_delta": 51.06770080062594,
+        "band_deltaE_vs_source_mean": 73.97368688699909,
+        "pass": false
+      },
+      "despill_confinement": {
+        "interior_deltaE_mean": 0.04017137687271173,
+        "yellow_stratum_deltaE_mean": 0.0,
+        "yellow_stratum_px": 12760,
+        "warm_pale_stratum_deltaE_mean": 0.0,
+        "warm_pale_stratum_px": 56141,
+        "pass": true
+      },
+      "recomposition": {
+        "bg_alpha_leak_pct": 2.5654468732299405,
+        "band_recomp_p95_abs_err": 58.03921568627452,
+        "pass": false
+      },
+      "bubbles": {
+        "regions": [
+          {
+            "index": 0,
+            "center_yx": [
+              715.6113681427627,
+              416.4703679224499
+            ],
+            "radius_est_px": 38.01063763459153,
+            "core_alpha_mean": 0.7449737094309323,
+            "ring_alpha_mean": 0.5770615625959711,
+            "core_minus_ring_alpha": 0.16791214683496125,
+            "greenish_tint_px_in_core": 54
+          },
+          {
+            "index": 1,
+            "center_yx": [
+              152.4980713596914,
+              402.64995178399226
+            ],
+            "radius_est_px": 25.69386510327284,
+            "core_alpha_mean": 0.9965778142107397,
+            "ring_alpha_mean": 0.16383010983545912,
+            "core_minus_ring_alpha": 0.8327477043752806,
+            "greenish_tint_px_in_core": 0
+          },
+          {
+            "index": 2,
+            "center_yx": [
+              628.4693366708385,
+              633.5832290362954
+            ],
+            "radius_est_px": 15.947714540361222,
+            "core_alpha_mean": 0.583683735013308,
+            "ring_alpha_mean": 0.703490766258038,
+            "core_minus_ring_alpha": -0.11980703124473002,
+            "greenish_tint_px_in_core": 21
+          }
+        ],
+        "n_bubbles_detected": 3,
+        "pass": false
+      },
+      "border_occupancy": {
+        "pct": 1.4682850430696945,
+        "target_pct": 2.0,
+        "pass": true
+      }
+    },
+    "C_vitmatte": {
+      "residual_green": {
+        "count_px": 0,
+        "max_component_px": 0,
+        "target": 0,
+        "pass": true
+      },
+      "deleted_art": {
+        "count_px": 14130,
+        "max_component_px": 25,
+        "pct_of_art_px": 2.8552895603096564,
+        "target_pct": 0.1,
+        "pass": false
+      },
+      "rim": {
+        "band_greenness_mean": -34.800493038436166,
+        "interior_greenness_mean": -53.07025779233984,
+        "rim_greenness_delta": 18.269764753903672,
+        "band_deltaE_vs_source_mean": 72.21670852635962,
+        "pass": false
+      },
+      "despill_confinement": {
+        "interior_deltaE_mean": 0.0,
+        "yellow_stratum_deltaE_mean": 0.0,
+        "yellow_stratum_px": 12760,
+        "warm_pale_stratum_deltaE_mean": 0.0,
+        "warm_pale_stratum_px": 56141,
+        "pass": true
+      },
+      "recomposition": {
+        "bg_alpha_leak_pct": 0.988881332280199,
+        "band_recomp_p95_abs_err": 13.662745098039213,
+        "pass": true
+      },
+      "bubbles": {
+        "regions": [
+          {
+            "index": 0,
+            "center_yx": [
+              715.6113681427627,
+              416.4703679224499
+            ],
+            "radius_est_px": 38.01063763459153,
+            "core_alpha_mean": 0.739887412472695,
+            "ring_alpha_mean": 0.5705398174508974,
+            "core_minus_ring_alpha": 0.16934759502179753,
+            "greenish_tint_px_in_core": 23
+          },
+          {
+            "index": 1,
+            "center_yx": [
+              152.4980713596914,
+              402.64995178399226
+            ],
+            "radius_est_px": 25.69386510327284,
+            "core_alpha_mean": 0.9994893103805674,
+            "ring_alpha_mean": 0.1558292850081573,
+            "core_minus_ring_alpha": 0.8436600253724101,
+            "greenish_tint_px_in_core": 0
+          },
+          {
+            "index": 2,
+            "center_yx": [
+              628.4693366708385,
+              633.5832290362954
+            ],
+            "radius_est_px": 15.947714540361222,
+            "core_alpha_mean": 0.5853148731472664,
+            "ring_alpha_mean": 0.7137539991764074,
+            "core_minus_ring_alpha": -0.12843912602914098,
+            "greenish_tint_px_in_core": 11
+          }
+        ],
+        "n_bubbles_detected": 3,
+        "pass": false
+      },
+      "border_occupancy": {
+        "pct": 0.9658052727747325,
+        "target_pct": 2.0,
+        "pass": true
+      }
+    },
+    "D1_bria-rmbg": {
+      "residual_green": {
+        "count_px": 162,
+        "max_component_px": 37,
+        "target": 0,
+        "pass": false
+      },
+      "deleted_art": {
+        "count_px": 92748,
+        "max_component_px": 46500,
+        "pct_of_art_px": 18.741853937692852,
+        "target_pct": 0.1,
+        "pass": false
+      },
+      "rim": {
+        "band_greenness_mean": 0.40368737196625115,
+        "interior_greenness_mean": -52.86965462528318,
+        "rim_greenness_delta": 53.27334199724943,
+        "band_deltaE_vs_source_mean": 79.62306987870028,
+        "pass": false
+      },
+      "despill_confinement": {
+        "interior_deltaE_mean": 0.48475169591443723,
+        "yellow_stratum_deltaE_mean": 0.48512727773709785,
+        "yellow_stratum_px": 12760,
+        "warm_pale_stratum_deltaE_mean": 0.381668191424609,
+        "warm_pale_stratum_px": 56141,
+        "pass": true
+      },
+      "recomposition": {
+        "bg_alpha_leak_pct": 0.039198546517895116,
+        "band_recomp_p95_abs_err": 213.22980392156853,
+        "pass": true
+      },
+      "bubbles": {
+        "regions": [
+          {
+            "index": 0,
+            "center_yx": [
+              715.6113681427627,
+              416.4703679224499
+            ],
+            "radius_est_px": 38.01063763459153,
+            "core_alpha_mean": 0.5758351248909956,
+            "ring_alpha_mean": 0.3958371721766172,
+            "core_minus_ring_alpha": 0.17999795271437846,
+            "greenish_tint_px_in_core": 0
+          },
+          {
+            "index": 1,
+            "center_yx": [
+              152.4980713596914,
+              402.64995178399226
+            ],
+            "radius_est_px": 25.69386510327284,
+            "core_alpha_mean": 0.9312792680743609,
+            "ring_alpha_mean": 0.04310086546217621,
+            "core_minus_ring_alpha": 0.8881784026121847,
+            "greenish_tint_px_in_core": 0
+          },
+          {
+            "index": 2,
+            "center_yx": [
+              628.4693366708385,
+              633.5832290362954
+            ],
+            "radius_est_px": 15.947714540361222,
+            "core_alpha_mean": 0.2502087759138525,
+            "ring_alpha_mean": 0.4118438974943774,
+            "core_minus_ring_alpha": -0.1616351215805249,
+            "greenish_tint_px_in_core": 0
+          }
+        ],
+        "n_bubbles_detected": 3,
+        "pass": true
+      },
+      "border_occupancy": {
+        "pct": 0.52858261550509,
+        "target_pct": 2.0,
+        "pass": true
+      }
+    },
+    "D2_birefnet": {
+      "residual_green": {
+        "count_px": 105,
+        "max_component_px": 37,
+        "target": 0,
+        "pass": false
+      },
+      "deleted_art": {
+        "count_px": 83408,
+        "max_component_px": 26315,
+        "pct_of_art_px": 16.854493393227727,
+        "target_pct": 0.1,
+        "pass": false
+      },
+      "rim": {
+        "band_greenness_mean": 4.059490989896184,
+        "interior_greenness_mean": -52.90028554489814,
+        "rim_greenness_delta": 56.95977653479432,
+        "band_deltaE_vs_source_mean": 74.8084101751566,
+        "pass": false
+      },
+      "despill_confinement": {
+        "interior_deltaE_mean": 0.37207727156863113,
+        "yellow_stratum_deltaE_mean": 0.3865798925800893,
+        "yellow_stratum_px": 12760,
+        "warm_pale_stratum_deltaE_mean": 0.302872230326108,
+        "warm_pale_stratum_px": 56141,
+        "pass": true
+      },
+      "recomposition": {
+        "bg_alpha_leak_pct": 0.03184881904578978,
+        "band_recomp_p95_abs_err": 206.50823529411755,
+        "pass": true
+      },
+      "bubbles": {
+        "regions": [
+          {
+            "index": 0,
+            "center_yx": [
+              715.6113681427627,
+              416.4703679224499
+            ],
+            "radius_est_px": 38.01063763459153,
+            "core_alpha_mean": 0.5944811389989725,
+            "ring_alpha_mean": 0.4151130072460761,
+            "core_minus_ring_alpha": 0.1793681317528964,
+            "greenish_tint_px_in_core": 0
+          },
+          {
+            "index": 1,
+            "center_yx": [
+              152.4980713596914,
+              402.64995178399226
+            ],
+            "radius_est_px": 25.69386510327284,
+            "core_alpha_mean": 0.9563388642338243,
+            "ring_alpha_mean": 0.04867694061849918,
+            "core_minus_ring_alpha": 0.9076619236153252,
+            "greenish_tint_px_in_core": 0
+          },
+          {
+            "index": 2,
+            "center_yx": [
+              628.4693366708385,
+              633.5832290362954
+            ],
+            "radius_est_px": 15.947714540361222,
+            "core_alpha_mean": 0.30604351329572926,
+            "ring_alpha_mean": 0.4527574519306915,
+            "core_minus_ring_alpha": -0.14671393863496224,
+            "greenish_tint_px_in_core": 2
+          }
+        ],
+        "n_bubbles_detected": 3,
+        "pass": false
+      },
+      "border_occupancy": {
+        "pct": 0.548159749412686,
+        "target_pct": 2.0,
+        "pass": true
+      }
+    },
+    "E_ffmpeg-chroma": {
+      "residual_green": {
+        "count_px": 1804,
+        "max_component_px": 7,
+        "target": 0,
+        "pass": false
+      },
+      "deleted_art": {
+        "count_px": 10,
+        "max_component_px": 5,
+        "pct_of_art_px": 0.002020728634330967,
+        "target_pct": 0.1,
+        "pass": true
+      },
+      "rim": {
+        "band_greenness_mean": 119.23455435575154,
+        "interior_greenness_mean": -53.07686227112732,
+        "rim_greenness_delta": 172.31141662687887,
+        "band_deltaE_vs_source_mean": 0.3199450796713466,
+        "pass": false
+      },
+      "despill_confinement": {
+        "interior_deltaE_mean": 0.49470557215753247,
+        "yellow_stratum_deltaE_mean": 0.4868277838229078,
+        "yellow_stratum_px": 12760,
+        "warm_pale_stratum_deltaE_mean": 0.47916367951659594,
+        "warm_pale_stratum_px": 56141,
+        "pass": true
+      },
+      "recomposition": {
+        "bg_alpha_leak_pct": 0.724291143284407,
+        "band_recomp_p95_abs_err": 11.0,
+        "pass": true
+      },
+      "bubbles": {
+        "regions": [
+          {
+            "index": 0,
+            "center_yx": [
+              715.6113681427627,
+              416.4703679224499
+            ],
+            "radius_est_px": 38.01063763459153,
+            "core_alpha_mean": 0.7939346059868245,
+            "ring_alpha_mean": 0.6318794146697766,
+            "core_minus_ring_alpha": 0.16205519131704793,
+            "greenish_tint_px_in_core": 378
+          },
+          {
+            "index": 1,
+            "center_yx": [
+              152.4980713596914,
+              402.64995178399226
+            ],
+            "radius_est_px": 25.69386510327284,
+            "core_alpha_mean": 1.0,
+            "ring_alpha_mean": 0.21605987275825891,
+            "core_minus_ring_alpha": 0.7839401272417411,
+            "greenish_tint_px_in_core": 0
+          },
+          {
+            "index": 2,
+            "center_yx": [
+              628.4693366708385,
+              633.5832290362954
+            ],
+            "radius_est_px": 15.947714540361222,
+            "core_alpha_mean": 0.6945864771811588,
+            "ring_alpha_mean": 0.7952801799233424,
+            "core_minus_ring_alpha": -0.10069370274218359,
+            "greenish_tint_px_in_core": 164
+          }
+        ],
+        "n_bubbles_detected": 3,
+        "pass": false
+      },
+      "border_occupancy": {
+        "pct": 1.3377708170190552,
+        "target_pct": 2.0,
+        "pass": true
+      }
+    }
+  }
+}
