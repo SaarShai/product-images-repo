@@ -1,0 +1,21 @@
+{
+  "paper_mean_rgb": [
+    255.0,
+    255.0,
+    255.0
+  ],
+  "flood_bg_px": 13024821,
+  "fg_px": 12032981,
+  "opaque_pct": 47.799940032491136,
+  "transparent_pct": 52.200059967508864,
+  "semi_pct": 0.0,
+  "enclosed_holes_punched": 0,
+  "params": {
+    "paper_chroma_max": 6.0,
+    "paper_luma_min": 247.0,
+    "paper_dist_max": 10.0,
+    "hard_erode_px": 1,
+    "soft_band_px": 0,
+    "small_fg_min_area": 16
+  }
+}

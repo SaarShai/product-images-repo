@@ -1,0 +1,36 @@
+{
+  "codex_erase_change_mean": 41.90901947751362,
+  "codex_results": {
+    "3": {
+      "opaque_pct": 49.63619075705881,
+      "paintish_trans": 1379
+    },
+    "5": {
+      "opaque_pct": 45.98144598284427,
+      "paintish_trans": 19063
+    },
+    "8": {
+      "opaque_pct": 40.59225144786418,
+      "paintish_trans": 75032
+    },
+    "12": {
+      "opaque_pct": 35.20381961569947,
+      "paintish_trans": 151071
+    },
+    "16": {
+      "opaque_pct": 31.243231012513412,
+      "paintish_trans": 210970
+    },
+    "20": {
+      "opaque_pct": 28.199601869130365,
+      "paintish_trans": 256862
+    },
+    "30": {
+      "opaque_pct": 22.79019570954243,
+      "paintish_trans": 338587
+    }
+  },
+  "cv_chosen": 5,
+  "cv_opaque": 43.78038099547972,
+  "note": "Codex masked erase failed to blank art; CV locked inpaint used as fallback delta source"
+}

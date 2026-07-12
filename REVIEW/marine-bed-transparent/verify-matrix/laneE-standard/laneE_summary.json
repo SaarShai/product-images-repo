@@ -1,0 +1,102 @@
+{
+  "test_id": "lane-E-standard",
+  "description": "Standard tool baselines: ImageMagick -fuzz and ffmpeg chromakey+despill",
+  "input_file": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/chroma-lane/raws/raw_green_P1.png",
+  "results": [
+    {
+      "tool": "ffmpeg",
+      "label": "ffmpeg_chroma_0x00FF00_0.10_0.05",
+      "parameters": {
+        "fuzz": "chromakey=0x00FF00:0.10|0.15:0.05"
+      },
+      "metrics": {
+        "pct_alpha_near_transparent": 66.87,
+        "pct_alpha_near_opaque": 31.97,
+        "enclosed_green_pockets": 864,
+        "border_occupancy_pct": 1.12
+      },
+      "files": {
+        "keyed_rgba": "ffmpeg_chroma_0x00FF00_0.10_0.05.png",
+        "over_magenta": "ffmpeg_chroma_0x00FF00_0.10_0.05_over_magenta.png",
+        "over_white": "ffmpeg_chroma_0x00FF00_0.10_0.05_over_white.png",
+        "metrics_json": "ffmpeg_chroma_0x00FF00_0.10_0.05_metrics.json"
+      }
+    },
+    {
+      "tool": "ffmpeg",
+      "label": "ffmpeg_chroma_0x00FF00_0.15_0.05",
+      "parameters": {
+        "fuzz": "chromakey=0x00FF00:0.10|0.15:0.05"
+      },
+      "metrics": {
+        "pct_alpha_near_transparent": 68.07,
+        "pct_alpha_near_opaque": 31.1,
+        "enclosed_green_pockets": 1204,
+        "border_occupancy_pct": 0.95
+      },
+      "files": {
+        "keyed_rgba": "ffmpeg_chroma_0x00FF00_0.15_0.05.png",
+        "over_magenta": "ffmpeg_chroma_0x00FF00_0.15_0.05_over_magenta.png",
+        "over_white": "ffmpeg_chroma_0x00FF00_0.15_0.05_over_white.png",
+        "metrics_json": "ffmpeg_chroma_0x00FF00_0.15_0.05_metrics.json"
+      }
+    },
+    {
+      "tool": "ImageMagick",
+      "label": "magick_fuzz10",
+      "parameters": {
+        "fuzz": "10%"
+      },
+      "metrics": {
+        "pct_alpha_near_transparent": 68.06,
+        "pct_alpha_near_opaque": 31.94,
+        "enclosed_green_pockets": 1559,
+        "border_occupancy_pct": 1.21
+      },
+      "files": {
+        "keyed_rgba": "magick_fuzz10.png",
+        "over_magenta": "magick_fuzz10_over_magenta.png",
+        "over_white": "magick_fuzz10_over_white.png",
+        "metrics_json": "magick_fuzz10_metrics.json"
+      }
+    },
+    {
+      "tool": "ImageMagick",
+      "label": "magick_fuzz12",
+      "parameters": {
+        "fuzz": "12%"
+      },
+      "metrics": {
+        "pct_alpha_near_transparent": 68.32,
+        "pct_alpha_near_opaque": 31.68,
+        "enclosed_green_pockets": 1371,
+        "border_occupancy_pct": 1.13
+      },
+      "files": {
+        "keyed_rgba": "magick_fuzz12.png",
+        "over_magenta": "magick_fuzz12_over_magenta.png",
+        "over_white": "magick_fuzz12_over_white.png",
+        "metrics_json": "magick_fuzz12_metrics.json"
+      }
+    },
+    {
+      "tool": "ImageMagick",
+      "label": "magick_fuzz15",
+      "parameters": {
+        "fuzz": "15%"
+      },
+      "metrics": {
+        "pct_alpha_near_transparent": 68.61,
+        "pct_alpha_near_opaque": 31.39,
+        "enclosed_green_pockets": 1004,
+        "border_occupancy_pct": 0.95
+      },
+      "files": {
+        "keyed_rgba": "magick_fuzz15.png",
+        "over_magenta": "magick_fuzz15_over_magenta.png",
+        "over_white": "magick_fuzz15_over_white.png",
+        "metrics_json": "magick_fuzz15_metrics.json"
+      }
+    }
+  ]
+}

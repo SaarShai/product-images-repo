@@ -1,0 +1,6 @@
+Create a new tall portrait illustration using the attached image as the visual reference for content, composition family, palette, and illustration style. Make a dense but airy tower-shaped coral reef: layered branching corals in pastel pink, coral, orange, purple, blue, and sage green; a small friendly pale-yellow seahorse among the coral on the left; scattered translucent blue bubbles; sea grass, tube sponges, shells, one orange starfish, and a soft sandy base. Keep the whole composition fully inside the canvas with clear margin on every side.
+
+Style: professional children's picture-book watercolor, delicate controlled ink-and-wash detail, translucent pigment, gentle granulation, pastel but lively color, soft ambient light, rounded organic forms, dense decorative detail. Use the attached reference as an image input; do not infer the style from prose alone.
+
+Background: perfectly uniform solid pure white #FFFFFF, every background pixel the same, no paper texture, no wash, no gradient, no vignette, no shadow, no glow, no aura, no halo, no mist, and no color spill. The white background must begin immediately outside the painted subject. Keep watercolor pigment and paper-grain texture inside the illustrated forms only. No text, no checkerboard, no photorealism, no 3D render, no felt/fabric/fiber texture, no cropped objects.
+

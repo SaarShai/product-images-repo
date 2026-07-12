@@ -1,0 +1,436 @@
+{
+  "schema_version": 1,
+  "manifest": "/Users/za/Documents/product images repo/tasks/double-marine-bed-wrapper-batch/bg-benchmark/manifest.json",
+  "machine_pass": true,
+  "reports": [
+    {
+      "case_id": "image14",
+      "candidate": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/image14/assisted-r110-vitmatte-decontam/image14-assisted-r110-decontam-rgba.png",
+      "machine_pass": true,
+      "final_verdict": "PENDING_HUMAN_REVIEW",
+      "failures": [],
+      "annotations": "/Users/za/Documents/product images repo/tasks/double-marine-bed-wrapper-batch/bg-benchmark/annotations/image14.json",
+      "candidate_sha256": "e73c654cd1e9973f2353e6041185af4a025e0896a76ae9690316a055bdf2d742",
+      "candidate_format": "PNG",
+      "candidate_mode": "RGBA",
+      "candidate_dimensions": [
+        941,
+        1672
+      ],
+      "reference": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/ChatGPT Image Jul 7, 2026, 11_22_35 AM.png",
+      "scale": 1.0,
+      "alpha": {
+        "background_fraction": 0.5263030777600943,
+        "foreground_fraction": 0.43294634639928004,
+        "semitransparent_fraction": 0.27828864742282716,
+        "unique_values": 256
+      },
+      "straight_rgb_reconstruction": {
+        "mae": 0.8711439016825224,
+        "p95": 3,
+        "p99": 6,
+        "max": 186
+      },
+      "composites": {
+        "white": {
+          "sha256_rgb_bytes": "d40e39221ccc06bc3e6ecb0cede03119d6be2e453f19109b186e34e3287f480e",
+          "mean_rgb": [
+            234.5094371761691,
+            221.37024963263147,
+            219.07421543303724
+          ],
+          "width": 941,
+          "height": 1672
+        },
+        "gray": {
+          "sha256_rgb_bytes": "46680995206a7f8d0e4bce54d758b3916125ab424288cdbf908e2fa3690b1ab0",
+          "mean_rgb": [
+            167.5586868037159,
+            154.4171863638906,
+            152.1213027981024
+          ],
+          "width": 941,
+          "height": 1672
+        },
+        "black": {
+          "sha256_rgb_bytes": "55a8eab1e491879112c8d26147bedd185978a743359748f5c8441d40b18b3bae",
+          "mean_rgb": [
+            86.04523653956647,
+            72.90604899602886,
+            70.61001479643461
+          ],
+          "width": 941,
+          "height": 1672
+        },
+        "magenta": {
+          "sha256_rgb_bytes": "e7b339afe8316b076f16f188a2f208064fd674b0164d7ab3dea66bac27fca123",
+          "mean_rgb": [
+            234.5094371761691,
+            72.90604899602886,
+            219.07421543303724
+          ],
+          "width": 941,
+          "height": 1672
+        }
+      },
+      "guard_metrics": [
+        {
+          "id": "fg-fish-translucent-tail",
+          "group": "sure_foreground",
+          "alpha_threshold": 64,
+          "fraction_meeting_threshold": 0.9230769230769231,
+          "required_fraction": 0.6,
+          "median_alpha": 254.0,
+          "required_median": 96.0,
+          "passed": true
+        },
+        {
+          "id": "fg-fish-lower-fin",
+          "group": "sure_foreground",
+          "alpha_threshold": 64,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.6,
+          "median_alpha": 255.0,
+          "required_median": 96.0,
+          "passed": true
+        },
+        {
+          "id": "fg-upper-purple-pale-tip",
+          "group": "sure_foreground",
+          "alpha_threshold": 64,
+          "fraction_meeting_threshold": 0.8461538461538461,
+          "required_fraction": 0.65,
+          "median_alpha": 245.0,
+          "required_median": 96.0,
+          "passed": true
+        },
+        {
+          "id": "fg-cut00-main-pink",
+          "group": "sure_foreground",
+          "alpha_threshold": 128,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.8,
+          "median_alpha": 255.0,
+          "required_median": 180.0,
+          "passed": true
+        },
+        {
+          "id": "fg-cut00-pale-brown-branch",
+          "group": "sure_foreground",
+          "alpha_threshold": 64,
+          "fraction_meeting_threshold": 0.6923076923076923,
+          "required_fraction": 0.65,
+          "median_alpha": 165.0,
+          "required_median": 96.0,
+          "passed": true
+        },
+        {
+          "id": "fg-cut00-gray-branch",
+          "group": "sure_foreground",
+          "alpha_threshold": 64,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.65,
+          "median_alpha": 255.0,
+          "required_median": 96.0,
+          "passed": true
+        },
+        {
+          "id": "fg-cut01-pale-tube",
+          "group": "sure_foreground",
+          "alpha_threshold": 64,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.65,
+          "median_alpha": 255.0,
+          "required_median": 96.0,
+          "passed": true
+        },
+        {
+          "id": "fg-cut01-orange-paint",
+          "group": "sure_foreground",
+          "alpha_threshold": 96,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.75,
+          "median_alpha": 255.0,
+          "required_median": 128.0,
+          "passed": true
+        },
+        {
+          "id": "fg-cut02-green-branch",
+          "group": "sure_foreground",
+          "alpha_threshold": 96,
+          "fraction_meeting_threshold": 0.7692307692307693,
+          "required_fraction": 0.75,
+          "median_alpha": 229.0,
+          "required_median": 128.0,
+          "passed": true
+        },
+        {
+          "id": "fg-cut02-pale-green-tip",
+          "group": "sure_foreground",
+          "alpha_threshold": 64,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.65,
+          "median_alpha": 255.0,
+          "required_median": 96.0,
+          "passed": true
+        },
+        {
+          "id": "fg-known-fringe-pink-branch",
+          "group": "sure_foreground",
+          "alpha_threshold": 64,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.6,
+          "median_alpha": 255.0,
+          "required_median": 96.0,
+          "passed": true
+        },
+        {
+          "id": "fg-right-seaweed-pale-edge",
+          "group": "sure_foreground",
+          "alpha_threshold": 48,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.55,
+          "median_alpha": 254.0,
+          "required_median": 80.0,
+          "passed": true
+        },
+        {
+          "id": "fg-right-seaweed-lower-edge",
+          "group": "sure_foreground",
+          "alpha_threshold": 48,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.55,
+          "median_alpha": 254.0,
+          "required_median": 80.0,
+          "passed": true
+        },
+        {
+          "id": "fg-seastar-pale-arm",
+          "group": "sure_foreground",
+          "alpha_threshold": 48,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.55,
+          "median_alpha": 210.0,
+          "required_median": 80.0,
+          "passed": true
+        },
+        {
+          "id": "fg-sand-watercolor-wash",
+          "group": "sure_foreground",
+          "alpha_threshold": 32,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.5,
+          "median_alpha": 168.0,
+          "required_median": 64.0,
+          "passed": true
+        },
+        {
+          "id": "bg-ext-top-left",
+          "group": "sure_background_exterior",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.95,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-ext-top-right",
+          "group": "sure_background_exterior",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.95,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-ext-upper-left",
+          "group": "sure_background_exterior",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.95,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-ext-upper-right",
+          "group": "sure_background_exterior",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.95,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-ext-mid-left",
+          "group": "sure_background_exterior",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.95,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-ext-mid-right",
+          "group": "sure_background_exterior",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.95,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-enclosed-triangle-a",
+          "group": "sure_background_enclosed",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.9,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-enclosed-triangle-b",
+          "group": "sure_background_enclosed",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.9,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-enclosed-triangle-c",
+          "group": "sure_background_enclosed",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.9,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-interior-gap-cut00",
+          "group": "sure_background_enclosed",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.85,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-interior-gap-cut02",
+          "group": "sure_background_enclosed",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.85,
+          "p90_alpha": 0.0,
+          "passed": true
+        }
+      ],
+      "edge_metrics": [
+        {
+          "id": "edge-fish-translucent-fin",
+          "boundary_pixels": 544,
+          "paper_distance_min": 80.0,
+          "near_paper_boundary_pixels": 43,
+          "white_fraction": 0.07904411764705882,
+          "max_white_fraction": 0.25,
+          "passed": true
+        },
+        {
+          "id": "edge-known-fringe-pink",
+          "boundary_pixels": 193,
+          "paper_distance_min": 80.0,
+          "near_paper_boundary_pixels": 39,
+          "white_fraction": 0.20207253886010362,
+          "max_white_fraction": 0.25,
+          "passed": true
+        },
+        {
+          "id": "edge-right-pale-seaweed",
+          "boundary_pixels": 721,
+          "paper_distance_min": 80.0,
+          "near_paper_boundary_pixels": 161,
+          "white_fraction": 0.22330097087378642,
+          "max_white_fraction": 0.25,
+          "passed": true
+        }
+      ],
+      "human_review_required": true,
+      "human_review": [
+        {
+          "id": "review-native-multibg-all-edge-probes",
+          "kind": "edge_probes",
+          "backgrounds": [
+            "white",
+            "gray",
+            "black",
+            "magenta"
+          ],
+          "required": true,
+          "why": "A conservative pixel metric cannot decide whether every translucent watercolor edge looks natural."
+        },
+        {
+          "id": "review-pale-sand-boundary",
+          "kind": "bbox",
+          "bbox": [
+            210,
+            1480,
+            720,
+            1640
+          ],
+          "backgrounds": [
+            "white",
+            "gray",
+            "black",
+            "magenta"
+          ],
+          "required": true,
+          "why": "Sand wash fades continuously into paper and is semantically ambiguous."
+        },
+        {
+          "id": "review-cut00-pale-branches",
+          "kind": "bbox",
+          "bbox": [
+            445,
+            780,
+            520,
+            1010
+          ],
+          "backgrounds": [
+            "white",
+            "gray",
+            "black",
+            "magenta"
+          ],
+          "required": true,
+          "why": "This is the user's largest known wrong-cutout zone."
+        },
+        {
+          "id": "review-enclosed-triangle",
+          "kind": "bbox",
+          "bbox": [
+            774,
+            676,
+            822,
+            724
+          ],
+          "backgrounds": [
+            "white",
+            "gray",
+            "black",
+            "magenta"
+          ],
+          "required": true,
+          "why": "This is the user's known enclosed-paper failure zone."
+        }
+      ],
+      "review_artifacts": [
+        "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/image14/assisted-r110-vitmatte-decontam/benchmark-review/image14/image14--source-annotation-overlay.png",
+        "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/image14/assisted-r110-vitmatte-decontam/benchmark-review/image14/image14--edge-fish-translucent-fin--white-gray-black-magenta.png",
+        "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/image14/assisted-r110-vitmatte-decontam/benchmark-review/image14/image14--edge-known-fringe-pink--white-gray-black-magenta.png",
+        "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/image14/assisted-r110-vitmatte-decontam/benchmark-review/image14/image14--edge-right-pale-seaweed--white-gray-black-magenta.png",
+        "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/image14/assisted-r110-vitmatte-decontam/benchmark-review/image14/image14--review-cut00-pale-branches--white-gray-black-magenta.png",
+        "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/image14/assisted-r110-vitmatte-decontam/benchmark-review/image14/image14--review-enclosed-triangle--white-gray-black-magenta.png",
+        "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/image14/assisted-r110-vitmatte-decontam/benchmark-review/image14/image14--review-pale-sand-boundary--white-gray-black-magenta.png"
+      ]
+    }
+  ]
+}

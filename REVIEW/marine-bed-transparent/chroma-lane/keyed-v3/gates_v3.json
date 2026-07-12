@@ -1,0 +1,145 @@
+{
+  "entries": [
+    {
+      "raw": "REVIEW/marine-bed-transparent/chroma-lane/raws/raw_green_P1.png",
+      "keyed_rgba": "REVIEW/marine-bed-transparent/chroma-lane/keyed-v3/keyed_green_P1.png",
+      "keyed_on_magenta": "REVIEW/marine-bed-transparent/chroma-lane/keyed-v3/keyed_green_P1_on_magenta.png",
+      "keyed_on_white": "REVIEW/marine-bed-transparent/chroma-lane/keyed-v3/keyed_green_P1_on_white.png",
+      "key_rgb": [
+        2,
+        240,
+        8
+      ],
+      "despill": {
+        "band_pixel_count": 38211,
+        "band_frac_of_image": 0.02429,
+        "despill_changed_pixel_count": 168567,
+        "despill_mean_reduction_on_changed": 188.9,
+        "despill_max_reduction": 255.0
+      },
+      "enclosed_key_pockets": {
+        "noise_pocket_count": 20,
+        "noise_pocket_max_area": 50,
+        "legit_hole_count": 42,
+        "legit_hole_max_area": 4619,
+        "total_component_count": 62
+      },
+      "rim_greenness": {
+        "rim_a_delta": -20.809,
+        "band_a_mean": -2.546,
+        "interior_a_mean": 18.264,
+        "band_pixel_count": 3824,
+        "interior_pixel_count": 366256
+      },
+      "border_occupancy_pct": 1.2334,
+      "aura_gate": {
+        "path": "REVIEW/marine-bed-transparent/chroma-lane/keyed-v3/keyed_green_P1.png",
+        "mode_used": "alpha",
+        "boundary_px": 25886,
+        "aura_index": 0.0322,
+        "mean_band_width": 2.061,
+        "median_band_width": 1.0,
+        "hit_rate": 0.9844,
+        "verdict": "PASS"
+      },
+      "verdict": {
+        "noise_pockets_ok": false,
+        "border_ok": true
+      }
+    },
+    {
+      "raw": "REVIEW/marine-bed-transparent/chroma-lane/raws/raw_green_P2.png",
+      "keyed_rgba": "REVIEW/marine-bed-transparent/chroma-lane/keyed-v3/keyed_green_P2.png",
+      "keyed_on_magenta": "REVIEW/marine-bed-transparent/chroma-lane/keyed-v3/keyed_green_P2_on_magenta.png",
+      "keyed_on_white": "REVIEW/marine-bed-transparent/chroma-lane/keyed-v3/keyed_green_P2_on_white.png",
+      "key_rgb": [
+        8,
+        238,
+        12
+      ],
+      "despill": {
+        "band_pixel_count": 32195,
+        "band_frac_of_image": 0.02047,
+        "despill_changed_pixel_count": 160602,
+        "despill_mean_reduction_on_changed": 179.25,
+        "despill_max_reduction": 255.0
+      },
+      "enclosed_key_pockets": {
+        "noise_pocket_count": 52,
+        "noise_pocket_max_area": 50,
+        "legit_hole_count": 60,
+        "legit_hole_max_area": 3596,
+        "total_component_count": 112
+      },
+      "rim_greenness": {
+        "rim_a_delta": -21.454,
+        "band_a_mean": -2.473,
+        "interior_a_mean": 18.981,
+        "band_pixel_count": 4511,
+        "interior_pixel_count": 328066
+      },
+      "border_occupancy_pct": 12.1117,
+      "aura_gate": {
+        "path": "REVIEW/marine-bed-transparent/chroma-lane/keyed-v3/keyed_green_P2.png",
+        "mode_used": "alpha",
+        "boundary_px": 25361,
+        "aura_index": 0.0422,
+        "mean_band_width": 2.357,
+        "median_band_width": 1.0,
+        "hit_rate": 0.9749,
+        "verdict": "PASS"
+      },
+      "verdict": {
+        "noise_pockets_ok": false,
+        "border_ok": false
+      }
+    },
+    {
+      "raw": "REVIEW/marine-bed-transparent/chroma-lane/raws/raw_green_P3.png",
+      "keyed_rgba": "REVIEW/marine-bed-transparent/chroma-lane/keyed-v3/keyed_green_P3.png",
+      "keyed_on_magenta": "REVIEW/marine-bed-transparent/chroma-lane/keyed-v3/keyed_green_P3_on_magenta.png",
+      "keyed_on_white": "REVIEW/marine-bed-transparent/chroma-lane/keyed-v3/keyed_green_P3_on_white.png",
+      "key_rgb": [
+        4,
+        244,
+        8
+      ],
+      "despill": {
+        "band_pixel_count": 31699,
+        "band_frac_of_image": 0.02015,
+        "despill_changed_pixel_count": 169143,
+        "despill_mean_reduction_on_changed": 186.93,
+        "despill_max_reduction": 255.0
+      },
+      "enclosed_key_pockets": {
+        "noise_pocket_count": 33,
+        "noise_pocket_max_area": 50,
+        "legit_hole_count": 56,
+        "legit_hole_max_area": 4455,
+        "total_component_count": 89
+      },
+      "rim_greenness": {
+        "rim_a_delta": -22.797,
+        "band_a_mean": -2.374,
+        "interior_a_mean": 20.423,
+        "band_pixel_count": 4869,
+        "interior_pixel_count": 356169
+      },
+      "border_occupancy_pct": 13.3516,
+      "aura_gate": {
+        "path": "REVIEW/marine-bed-transparent/chroma-lane/keyed-v3/keyed_green_P3.png",
+        "mode_used": "alpha",
+        "boundary_px": 28653,
+        "aura_index": 0.0403,
+        "mean_band_width": 2.333,
+        "median_band_width": 1.0,
+        "hit_rate": 0.9754,
+        "verdict": "PASS"
+      },
+      "verdict": {
+        "noise_pockets_ok": false,
+        "border_ok": false
+      }
+    }
+  ]
+}

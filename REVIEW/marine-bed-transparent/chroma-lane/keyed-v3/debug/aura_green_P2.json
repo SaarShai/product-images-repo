@@ -1,0 +1,12 @@
+[
+  {
+    "path": "REVIEW/marine-bed-transparent/chroma-lane/keyed-v3/keyed_green_P2.png",
+    "mode_used": "alpha",
+    "boundary_px": 25361,
+    "aura_index": 0.0422,
+    "mean_band_width": 2.357,
+    "median_band_width": 1.0,
+    "hit_rate": 0.9749,
+    "verdict": "PASS"
+  }
+]

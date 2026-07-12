@@ -1,0 +1,50 @@
+{
+  "paper_mean_rgb": [
+    255.0,
+    255.0,
+    255.0
+  ],
+  "trimap_fg_pct": 43.825730033711466,
+  "trimap_bg_pct": 56.08409624801062,
+  "trimap_unk_pct": 0.09017371827791874,
+  "soft_before_flatten_pct": 1.9396088732845544,
+  "opaque_pct": 44.765193198979,
+  "transparent_pct": 55.23480680102101,
+  "semi_pct": 0.0,
+  "seed_stats": {
+    "auto_fg_px": 2739673,
+    "flood_bg_px": 3206622,
+    "enclosed_bg_px": 322979,
+    "user_fg_px": 0,
+    "user_bg_px": 0,
+    "grown_fg_px": 2758163
+  },
+  "timing_s": {
+    "seeds": 0.4682629108428955,
+    "cf": 0.6960241794586182
+  },
+  "params": {
+    "chroma_fg_min": 14.0,
+    "dark_luma_max": 210.0,
+    "fg_dilate_px": 2,
+    "bria_fg_min": 200,
+    "bria_erode_px": 8,
+    "use_bria": true,
+    "grow_fg": true,
+    "paper_luma_min": 250.0,
+    "paper_chroma_max": 3.0,
+    "enclosed_min_area": 80,
+    "seed_red_r_min": 160,
+    "seed_red_gb_max": 100,
+    "seed_blue_b_min": 160,
+    "seed_blue_rg_max": 100,
+    "seeds_only": false,
+    "flatten_alpha_min": 0.18,
+    "keep_soft_paint": true,
+    "soft_paint_chroma_min": 6.0,
+    "soft_paint_luma_max": 245.0,
+    "cg_maxiter": 250,
+    "half_res": true,
+    "small_noise_area": 24
+  }
+}

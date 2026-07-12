@@ -123,8 +123,10 @@ improvise a hand-rolled equivalent:
 
 - `/baton` — Drop/grab a verified session-handoff file — pass in-progress work to the next agent (future session, another window, codex) via .brainer/baton/
 - `/brainer-audit` — Use when the user explicitly activates Brainer audit mode, asks to audit this session, audit Brainer use, or track Brainer skill usage
+- `/styled-candidate-proof-gate` — Gate styled generated image claims
 - `/task-retrospective` — Use only when the user explicitly arms task audit mode: /retro, asks for task-retrospective, says this task will repeat and should be learned from, or requests an after-the-fact task learning audit
 - `/think` — How an agent should think and approach problems — first-principles, reduce/simplify before adding, research-and-borrow before building, experiment-and-falsify, never hallucinate or flatter
+- `/transparent-product-image-gen` — Use when a product needs a NEW transparent-background (RGBA) illustration, an EXISTING illustration may be semantically regenerated with native alpha, or an existing raster must keep its exact pixels while its white/paper background is removed
 
 ### Model-invokable (host fires on matching context)
 
@@ -139,7 +141,7 @@ context match (e.g. `wiki-memory` for "have we done X").
 - `element-edit` — Use when editing ONE element of a finished illustration while keeping the rest byte-identical — redraw / remove / restyle / reshape / move a single element inside finished watercolor+ink art (or any fixed image)
 - `eval-gate` — Score AI output against a written rubric before it ships — an LLM-as-judge quality gate for content output (drafts, posts, answers) and product output (an agent's reply, an extraction, a generated payload)
 - `fable-mode` — Use PROACTIVELY the moment you notice a task has many layers - multiple dependent steps, unknowns that could change the approach, debugging where the first theory might be wrong, or anything that needs verification before handoff
-- `impact-of-change` — Use before committing or claiming work done to map a code edit to its blast radius — which symbols depend on the changed ones, plus a LOW/MEDIUM/HIGH risk score
+- `impact-of-change` — Use before committing or claiming work done to map a code edit to its blast radius — which symbols depend on the changed ones, plus a LOW/MEDIUM/HIGH/UNKNOWN risk score
 - `index-first` — Prefer pre-built indexes over chains of grep/read/scan
 - `lean-execution` — Prune plans, process, context, and delegation to the smallest safe path
 - `learn-skill` — Turn a pointed-at source (local dir, doc URL, a workflow you just did, or pasted notes) into a reusable Brainer skill
@@ -150,11 +152,13 @@ context match (e.g. `wiki-memory` for "have we done X").
 - `prompt-triage` — Use on every UserPromptSubmit (pre-model hook) to classify the prompt and emit a directive telling the main model which subagent/model should handle it
 - `propagate` — Use when the user asks to propagate, sync, roll out, or push Brainer skill changes to the sibling/consumer repos (screenery-lean, product images repo, farey-hecke, PROMPTER, …) after work in the canonical Brainer repo, or asks to harvest lessons, reap lessons, or bring learnings back from a sibling
 - `reference-style-packet` — Use when reference images must be turned into a visual style packet for image-generation agents, especially when previous outputs matched geometry but missed the actual art style.
+- `region-map-guide` — Use when a generation must place several distinct elements in specific zones of a fixed die-cut/template panel, when per-element proportions keep coming back wrong (repeated regen/registration mismatch, art stretching, elements drifting), or when the user gives zone requirements ("door here, lamps there, nothing near the knobs") — build a semantic color-region map PNG (each flat color = one element's placement, avoid-zones as prohibitions) plus its auto-matched color→meaning legend prompt, feed map as image-1 + style ref + legend to the generator
 - `requirements-ledger` — Use whenever the user states anything carrying intent — an ask, a question, a constraint, a preference, a compound "do X, Y, and Z" (one row per conjunct), or an implicit ask embedded in prose
 - `result-vision-judge` — Use whenever judging/reviewing a generated illustration against a geometry template — by YOU or a sub-agent
 - `security-oversight` — Use before committing or claiming work done to triage a code edit for INTRODUCED security risk — leaked secrets, dangerous sinks, untrusted deps, risky auth logic
 - `semantic-diff` — AST-node-level diff for file re-reads
 - `skyline-template-illustration` — Use when generating Screenery skyline or city-scape collections for the three-panel skyline template, including landmark allocation, saloon-door arch planning, run-through elements, top-contour adaptation, and vision review.
+- `standing-orders` — Auto-arm standing directives on matching prompts — ORCH tier (goal, lanes, cheapest delegation, other-vendor advisor, end-to-end) on decomposable work; DEEP tier (blindspot pass, lesson capture) on high-level tasks
 - `style-prompt-engineer` — Turn a requested art style (named by the user, or embodied in a reference image) into the best generation prompt sections + the right reference-image inputs
 - `svg-geometry-style-illustration` — Use when an agent must produce an SVG-template-constrained illustration that both fits exact contour/cutout geometry and adapts to the actual attached reference image style
 - `svg-template-illustration` — Use when a user gives an SVG template, dieline, contour, cutout layout, or Screenery panel plus style/color references and wants generated artwork to fit exactly inside the SVG contour while avoiding internal cutouts and keep-clear areas.

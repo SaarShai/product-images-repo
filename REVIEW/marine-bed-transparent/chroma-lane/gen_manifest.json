@@ -1,0 +1,107 @@
+{
+  "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/ChatGPT Image Jul 7, 2026, 11_20_05 AM.png",
+  "model": "gpt-image-2",
+  "size": "1024x1536",
+  "quality": "high",
+  "entries": [
+    {
+      "color": "green",
+      "hex": "#00FF00",
+      "style": "P1",
+      "resp_id": "resp_04d1dd516f9e3047006a532f20e52881929bbbbbabe83835d0",
+      "duration_s": 137.2,
+      "status": "completed",
+      "prompt": "Keep this illustration's artwork completely unchanged \u2014 same subject, composition, colors, and detail \u2014 and repaint ONLY the background to be completely solid, flat, uniform color #00FF00. Every single background pixel must be the identical RGB value #00FF00. No gradient, no vignette, no texture, no shadow, no glow.",
+      "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/chroma-lane/raws/raw_green_P1.png",
+      "error": null
+    },
+    {
+      "color": "green",
+      "hex": "#00FF00",
+      "style": "P2",
+      "resp_id": "resp_07f02bd39774900b006a532f2d9a5c8191b7e2a0994813d8de",
+      "duration_s": 131.9,
+      "status": "completed",
+      "prompt": "Keep this illustration's artwork completely unchanged \u2014 same subject, composition, colors, and detail \u2014 and repaint ONLY the background to be completely solid, flat, uniform color #00FF00. Every single background pixel must be the identical RGB value #00FF00. No gradient, no vignette, no texture, no shadow, no glow. Professional chroma-key studio backdrop, as used for green-screen compositing; the artwork floats on the flat key color; no reflection or color spill onto the artwork.",
+      "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/chroma-lane/raws/raw_green_P2.png",
+      "error": null
+    },
+    {
+      "color": "green",
+      "hex": "#00FF00",
+      "style": "P3",
+      "resp_id": "resp_0ea3a5c18df0d3bc006a532f3a1338819c81f81c6f11e0ad63",
+      "duration_s": 132.3,
+      "status": "completed",
+      "prompt": "Keep this illustration's artwork completely unchanged \u2014 same subject, composition, colors, and detail \u2014 and repaint ONLY the background to be completely solid, flat, uniform color #00FF00. Every single background pixel must be the identical RGB value #00FF00. No gradient, no vignette, no texture, no shadow, no glow. Professional chroma-key studio backdrop, as used for green-screen compositing; the artwork floats on the flat key color; no reflection or color spill onto the artwork. every object has clearly defined, fully closed outlines; no shape fades into the background; edges crisp; interior highlights enclosed by visible outlines. No glow, aura, halo, soft wash, or gradient bloom around the artwork; background color runs right up to the crisp painted edge of every element. The entire illustration fits fully inside the frame with clear margins on all sides; nothing cropped at any edge.",
+      "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/chroma-lane/raws/raw_green_P3.png",
+      "error": null
+    },
+    {
+      "color": "magenta",
+      "hex": "#FF00FF",
+      "style": "P1",
+      "resp_id": "resp_09d87df1e326251e006a532f4e66fc81a089eba99acc5d56a1",
+      "duration_s": 150.8,
+      "status": "completed",
+      "prompt": "Keep this illustration's artwork completely unchanged \u2014 same subject, composition, colors, and detail \u2014 and repaint ONLY the background to be completely solid, flat, uniform color #FF00FF. Every single background pixel must be the identical RGB value #FF00FF. No gradient, no vignette, no texture, no shadow, no glow.",
+      "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/chroma-lane/raws/raw_magenta_P1.png",
+      "error": null
+    },
+    {
+      "color": "magenta",
+      "hex": "#FF00FF",
+      "style": "P2",
+      "resp_id": "resp_091edd7b3fd3dc9a006a532f5588b881a3849ea8ccd46efa2b",
+      "duration_s": 131.9,
+      "status": "completed",
+      "prompt": "Keep this illustration's artwork completely unchanged \u2014 same subject, composition, colors, and detail \u2014 and repaint ONLY the background to be completely solid, flat, uniform color #FF00FF. Every single background pixel must be the identical RGB value #FF00FF. No gradient, no vignette, no texture, no shadow, no glow. Professional chroma-key studio backdrop, as used for green-screen compositing; the artwork floats on the flat key color; no reflection or color spill onto the artwork.",
+      "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/chroma-lane/raws/raw_magenta_P2.png",
+      "error": null
+    },
+    {
+      "color": "magenta",
+      "hex": "#FF00FF",
+      "style": "P3",
+      "resp_id": "resp_02f23392027bf966006a532f6185b881a1ae14651fd30dacf4",
+      "duration_s": 144.0,
+      "status": "completed",
+      "prompt": "Keep this illustration's artwork completely unchanged \u2014 same subject, composition, colors, and detail \u2014 and repaint ONLY the background to be completely solid, flat, uniform color #FF00FF. Every single background pixel must be the identical RGB value #FF00FF. No gradient, no vignette, no texture, no shadow, no glow. Professional chroma-key studio backdrop, as used for green-screen compositing; the artwork floats on the flat key color; no reflection or color spill onto the artwork. every object has clearly defined, fully closed outlines; no shape fades into the background; edges crisp; interior highlights enclosed by visible outlines. No glow, aura, halo, soft wash, or gradient bloom around the artwork; background color runs right up to the crisp painted edge of every element. The entire illustration fits fully inside the frame with clear margins on all sides; nothing cropped at any edge.",
+      "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/chroma-lane/raws/raw_magenta_P3.png",
+      "error": null
+    },
+    {
+      "color": "azure",
+      "hex": "#00A0FF",
+      "style": "P1",
+      "resp_id": "resp_02048956e26131d5006a532f6f87a881a3816ef48ece535a72",
+      "duration_s": 162.1,
+      "status": "completed",
+      "prompt": "Keep this illustration's artwork completely unchanged \u2014 same subject, composition, colors, and detail \u2014 and repaint ONLY the background to be completely solid, flat, uniform color #00A0FF. Every single background pixel must be the identical RGB value #00A0FF. No gradient, no vignette, no texture, no shadow, no glow.",
+      "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/chroma-lane/raws/raw_azure_P1.png",
+      "error": null
+    },
+    {
+      "color": "azure",
+      "hex": "#00A0FF",
+      "style": "P2",
+      "resp_id": "resp_0901f2e28c99acc2006a532f79e8ac819da0dbbb3499a3d71b",
+      "duration_s": 150.3,
+      "status": "completed",
+      "prompt": "Keep this illustration's artwork completely unchanged \u2014 same subject, composition, colors, and detail \u2014 and repaint ONLY the background to be completely solid, flat, uniform color #00A0FF. Every single background pixel must be the identical RGB value #00A0FF. No gradient, no vignette, no texture, no shadow, no glow. Professional chroma-key studio backdrop, as used for green-screen compositing; the artwork floats on the flat key color; no reflection or color spill onto the artwork.",
+      "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/chroma-lane/raws/raw_azure_P2.png",
+      "error": null
+    },
+    {
+      "color": "azure",
+      "hex": "#00A0FF",
+      "style": "P3",
+      "resp_id": "resp_0a478e0cff89689f006a532f859490819d977c7c0a4da95820",
+      "duration_s": 142.2,
+      "status": "completed",
+      "prompt": "Keep this illustration's artwork completely unchanged \u2014 same subject, composition, colors, and detail \u2014 and repaint ONLY the background to be completely solid, flat, uniform color #00A0FF. Every single background pixel must be the identical RGB value #00A0FF. No gradient, no vignette, no texture, no shadow, no glow. Professional chroma-key studio backdrop, as used for green-screen compositing; the artwork floats on the flat key color; no reflection or color spill onto the artwork. every object has clearly defined, fully closed outlines; no shape fades into the background; edges crisp; interior highlights enclosed by visible outlines. No glow, aura, halo, soft wash, or gradient bloom around the artwork; background color runs right up to the crisp painted edge of every element. The entire illustration fits fully inside the frame with clear margins on all sides; nothing cropped at any edge.",
+      "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/chroma-lane/raws/raw_azure_P3.png",
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "opaque_pct": 44.117495639882236,
+  "transparent_pct": 55.88250436011776,
+  "semi_pct": 0.0,
+  "trimap_unk_pct_half": 0.12069772053551907,
+  "note": "half-res CF then upsample"
+}

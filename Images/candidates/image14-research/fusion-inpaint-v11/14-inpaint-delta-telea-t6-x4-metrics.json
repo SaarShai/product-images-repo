@@ -1,0 +1,78 @@
+{
+  "results_half": {
+    "telea_t4": {
+      "opaque_pct": 43.707050297708335,
+      "paintish_trans_px": 80,
+      "delta_mean_on_erase": 77.55696744508043,
+      "delta_mean_on_paper": 0.09003652762725525
+    },
+    "telea_t6": {
+      "opaque_pct": 43.37948532814018,
+      "paintish_trans_px": 84,
+      "delta_mean_on_erase": 77.55696744508043,
+      "delta_mean_on_paper": 0.09003652762725525
+    },
+    "telea_t8": {
+      "opaque_pct": 43.16640522909051,
+      "paintish_trans_px": 551,
+      "delta_mean_on_erase": 77.55696744508043,
+      "delta_mean_on_paper": 0.09003652762725525
+    },
+    "telea_t12": {
+      "opaque_pct": 42.849597547147745,
+      "paintish_trans_px": 5904,
+      "delta_mean_on_erase": 77.55696744508043,
+      "delta_mean_on_paper": 0.09003652762725525
+    },
+    "ns_t4": {
+      "opaque_pct": 43.64059981491745,
+      "paintish_trans_px": 79,
+      "delta_mean_on_erase": 77.21176897997496,
+      "delta_mean_on_paper": 0.08690898777848921
+    },
+    "ns_t6": {
+      "opaque_pct": 43.315322953795466,
+      "paintish_trans_px": 118,
+      "delta_mean_on_erase": 77.21176897997496,
+      "delta_mean_on_paper": 0.08690898777848921
+    },
+    "ns_t8": {
+      "opaque_pct": 43.12310595467511,
+      "paintish_trans_px": 756,
+      "delta_mean_on_erase": 77.21176897997496,
+      "delta_mean_on_paper": 0.08690898777848921
+    },
+    "ns_t12": {
+      "opaque_pct": 42.8166265400241,
+      "paintish_trans_px": 6507,
+      "delta_mean_on_erase": 77.21176897997496,
+      "delta_mean_on_paper": 0.08690898777848921
+    },
+    "const_t4": {
+      "opaque_pct": 43.588005099939494,
+      "paintish_trans_px": 77,
+      "delta_mean_on_erase": 77.11746121834202,
+      "delta_mean_on_paper": 0.1503990825957769
+    },
+    "const_t6": {
+      "opaque_pct": 43.30469278330596,
+      "paintish_trans_px": 92,
+      "delta_mean_on_erase": 77.11746121834202,
+      "delta_mean_on_paper": 0.1503990825957769
+    },
+    "const_t8": {
+      "opaque_pct": 43.10378415001856,
+      "paintish_trans_px": 1224,
+      "delta_mean_on_erase": 77.11746121834202,
+      "delta_mean_on_paper": 0.1503990825957769
+    },
+    "const_t12": {
+      "opaque_pct": 42.797908541763064,
+      "paintish_trans_px": 7315,
+      "delta_mean_on_erase": 77.11746121834202,
+      "delta_mean_on_paper": 0.1503990825957769
+    }
+  },
+  "chosen": "telea_t6",
+  "opaque_pct": 43.37948532814018
+}

@@ -1,0 +1,12 @@
+{
+  "t0": 60.0,
+  "t1": 200.0,
+  "despill_k": 10.0,
+  "feather_sigma": 1.2,
+  "enclosed_green_pockets_gt4px": 69,
+  "rim_greenness_mean_boundary_band": -24.600236892700195,
+  "rim_greenness_mean_interior": -53.26530456542969,
+  "border_occupancy_pct": 0.8613938919342208,
+  "pct_alpha_0": 63.797950744628906,
+  "pct_alpha_1": 25.160598754882812
+}

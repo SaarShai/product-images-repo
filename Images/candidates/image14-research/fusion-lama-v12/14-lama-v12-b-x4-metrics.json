@@ -1,0 +1,33 @@
+{
+  "paper_mean_rgb": [
+    255.0,
+    255.0,
+    255.0
+  ],
+  "paper_std_rgb": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "outer_paper_px": 13114006,
+  "erase_px": 12059626,
+  "erase_pct": 47.90578491017904,
+  "delta_mean_erase": 70.82421112060547,
+  "delta_p50_erase": 69.0,
+  "delta_p90_erase": 129.0,
+  "opaque_pct": 36.85537708662778,
+  "transparent_pct": 59.57163034718233,
+  "semi_pct": 3.572992566189893,
+  "fg_px": 10177289,
+  "near_paper_killed_px": 14427507,
+  "params": {
+    "soft_lo": 10.0,
+    "soft_hi": 32.0,
+    "delta_thr": 12.0,
+    "note": "reuse tag-a LaMa paper; stronger near-paper + rim kill"
+  },
+  "tag": "b",
+  "reused_paper": "/Users/za/Documents/product images repo/Images/candidates/image14-research/fusion-lama-v12/14-lama-v12-a-x4-paper-estimate.png",
+  "lama_seconds": 0.0,
+  "device": "reuse"
+}

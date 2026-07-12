@@ -1,0 +1,28 @@
+{
+  "paper_mean_rgb": [
+    255.0,
+    255.0,
+    255.0
+  ],
+  "flood_bg_px": 12872501,
+  "paintish_restored_px": 47465,
+  "true_bg_px": 12862121,
+  "fg_px": 12311511,
+  "opaque_pct": 48.906375528171694,
+  "transparent_pct": 51.093624471828306,
+  "semi_pct": 0.0,
+  "enclosed_holes_punched": 0,
+  "params": {
+    "paper_chroma_max": 3.0,
+    "paper_luma_min": 252.0,
+    "paper_dist_max": 6.0,
+    "restore_chroma_min": 2.5,
+    "restore_luma_max": 251.0,
+    "restore_dist_min": 4.0,
+    "paper_erode_px": 1,
+    "fringe_ring_px": 2,
+    "fringe_luma_min": 235.0,
+    "fringe_chroma_max": 18.0,
+    "small_fg_min_area": 16
+  }
+}

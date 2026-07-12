@@ -579,18 +579,36 @@ def decontaminate_boundary_rgb(
             "skipped_reason": "no eligible boundary or high-alpha interior",
         }
 
-    component_labels, _ = ndi.label(foreground_support, structure=square)
-    distance, indices = ndi.distance_transform_edt(
-        ~interior, return_indices=True
-    )
-    target = foreground[indices[0], indices[1]]
-    same_component = (component_labels != 0) & (
-        component_labels == component_labels[indices[0], indices[1]]
-    )
-
     current_paper_distance = np.linalg.norm(
         (foreground - paper[None, None, :]) * 255.0, axis=2
     )
+    eligible_donors = interior & (current_paper_distance >= paper_distance_8bit)
+    component_labels, _ = ndi.label(foreground_support, structure=square)
+    distance = np.full(a.shape, np.inf, dtype=np.float32)
+    indices = np.indices(a.shape, dtype=np.intp)
+    for component_id, component_slice in enumerate(
+        ndi.find_objects(component_labels), start=1
+    ):
+        if component_slice is None:
+            continue
+        in_component = component_labels[component_slice] == component_id
+        component_targets = boundary[component_slice] & in_component
+        component_donors = eligible_donors[component_slice] & in_component
+        if not np.any(component_targets) or not np.any(component_donors):
+            continue
+        component_distance, component_indices = ndi.distance_transform_edt(
+            ~component_donors, return_indices=True
+        )
+        distance_view = distance[component_slice]
+        distance_view[component_targets] = component_distance[component_targets]
+        for axis in range(2):
+            indices_view = indices[axis][component_slice]
+            offset = component_slice[axis].start or 0
+            indices_view[component_targets] = (
+                component_indices[axis][component_targets] + offset
+            )
+
+    target = foreground[indices[0], indices[1]]
     target_paper_distance = np.linalg.norm(
         (target - paper[None, None, :]) * 255.0, axis=2
     )
@@ -613,7 +631,6 @@ def decontaminate_boundary_rgb(
     changed = (
         boundary
         & ~protected
-        & same_component
         & (distance <= target_radius_px)
         & (current_paper_distance < paper_distance_8bit)
         & (target_paper_distance >= paper_distance_8bit)

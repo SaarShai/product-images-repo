@@ -269,15 +269,42 @@ def test_joint_edge_decontamination_removes_paper_rgb_without_deleting_edge():
     assert float(after_black[changed].mean()) < float(before_black[changed].mean())
 
 
+def test_edge_decontamination_skips_pale_nearest_donor_for_valid_farther_donor():
+    paper = np.ones(3, dtype=np.float32)
+    true_color = np.array((0.1, 0.3, 0.8), dtype=np.float32)
+    alpha = np.zeros((15, 15), dtype=np.float32)
+    alpha[4:9, 1:14] = 1.0
+    alpha[6, 1] = 0.5
+    foreground = np.ones((15, 15, 3), dtype=np.float32) * 0.99
+    foreground[4:9, 7:14] = true_color
+    source_image = alpha[:, :, None] * foreground + (1.0 - alpha[:, :, None]) * paper
+    source_image[6, 1] = 0.2 * true_color + 0.8 * paper
+
+    cleaned_rgb, cleaned_alpha, metrics = bg.decontaminate_boundary_rgb(
+        source_image,
+        foreground,
+        alpha,
+        paper,
+        boundary_width_px=1,
+        target_radius_px=12,
+    )
+
+    assert metrics["changed_pixels"] == 1
+    np.testing.assert_allclose(cleaned_rgb[6, 1], true_color)
+    assert cleaned_alpha[6, 1] == pytest.approx(0.2)
+
+
 def test_edge_decontamination_never_changes_protected_sure_labels():
     paper = np.ones(3, dtype=np.float32)
-    foreground = np.ones((9, 9, 3), dtype=np.float32) * 0.99
-    foreground[3:6, 3:6] = (0.1, 0.4, 0.8)
-    alpha = np.zeros((9, 9), dtype=np.float32)
-    alpha[1:8, 1:8] = 0.7
-    alpha[3:6, 3:6] = 1.0
+    true_color = np.array((0.1, 0.4, 0.8), dtype=np.float32)
+    foreground = np.ones((11, 11, 3), dtype=np.float32) * 0.99
+    foreground[3:8, 3:8] = true_color
+    alpha = np.zeros((11, 11), dtype=np.float32)
+    alpha[1:10, 1:10] = 0.7
+    alpha[3:8, 3:8] = 1.0
     source_image = alpha[:, :, None] * foreground + (1.0 - alpha[:, :, None]) * paper
-    protected = np.zeros((9, 9), dtype=bool)
+    source_image[1, 4:6] = 0.2 * true_color + 0.8 * paper
+    protected = np.zeros((11, 11), dtype=bool)
     protected[1, 4] = True
 
     cleaned_rgb, cleaned_alpha, _ = bg.decontaminate_boundary_rgb(
@@ -286,6 +313,8 @@ def test_edge_decontamination_never_changes_protected_sure_labels():
 
     np.testing.assert_array_equal(cleaned_rgb[1, 4], foreground[1, 4])
     assert cleaned_alpha[1, 4] == alpha[1, 4]
+    np.testing.assert_allclose(cleaned_rgb[1, 5], true_color)
+    assert cleaned_alpha[1, 5] == pytest.approx(0.2)
 
 
 def test_edge_decontamination_does_not_borrow_color_across_components():
@@ -294,8 +323,10 @@ def test_edge_decontamination_does_not_borrow_color_across_components():
     alpha = np.zeros((13, 13), dtype=np.float32)
     alpha[2:5, 2:5] = 0.5  # pale component has no high-alpha interior
     alpha[7:12, 7:12] = 1.0
-    foreground[7:12, 7:12] = (0.1, 0.3, 0.8)
+    donor_color = np.array((0.1, 0.3, 0.8), dtype=np.float32)
+    foreground[7:12, 7:12] = donor_color
     source_image = alpha[:, :, None] * foreground + (1.0 - alpha[:, :, None]) * paper
+    source_image[2:5, 2:5] = 0.2 * donor_color + 0.8 * paper
 
     cleaned_rgb, cleaned_alpha, metrics = bg.decontaminate_boundary_rgb(
         source_image, foreground, alpha, paper
@@ -304,6 +335,45 @@ def test_edge_decontamination_does_not_borrow_color_across_components():
     np.testing.assert_array_equal(cleaned_rgb[2:5, 2:5], foreground[2:5, 2:5])
     np.testing.assert_array_equal(cleaned_alpha[2:5, 2:5], alpha[2:5, 2:5])
     assert metrics["changed_pixels"] == 0
+
+
+def test_edge_decontamination_is_finite_and_bounds_changed_recomposition():
+    paper = np.ones(3, dtype=np.float32)
+    true_color = np.array((0.1, 0.3, 0.8), dtype=np.float32)
+    alpha = np.zeros((15, 15), dtype=np.float32)
+    alpha[4:9, 1:14] = 1.0
+    alpha[6, 1] = 0.5
+    alpha[0, 0] = np.nan
+    foreground = np.ones((15, 15, 3), dtype=np.float32) * 0.99
+    foreground[4:9, 7:14] = true_color
+    foreground[0, 0] = (np.nan, np.inf, -np.inf)
+    source_image = np.ones_like(foreground)
+    finite_alpha = np.nan_to_num(alpha, nan=0.0)
+    source_image = (
+        finite_alpha[:, :, None]
+        * np.nan_to_num(foreground, nan=0.0, posinf=1.0, neginf=0.0)
+        + (1.0 - finite_alpha[:, :, None]) * paper
+    )
+    source_image[6, 1] = 0.2 * true_color + 0.8 * paper
+
+    cleaned_rgb, cleaned_alpha, metrics = bg.decontaminate_boundary_rgb(
+        source_image,
+        foreground,
+        alpha,
+        paper,
+        boundary_width_px=1,
+        target_radius_px=12,
+    )
+
+    assert np.all(np.isfinite(cleaned_rgb))
+    assert np.all(np.isfinite(cleaned_alpha))
+    sanitized_foreground = np.nan_to_num(
+        foreground, nan=0.0, posinf=1.0, neginf=0.0
+    )
+    changed = np.any(cleaned_rgb != sanitized_foreground, axis=2)
+    recomposed = bg.composite(cleaned_rgb, cleaned_alpha, paper)
+    assert float(np.max(np.abs(recomposed[changed] - source_image[changed]) * 255.0)) <= 8.0
+    assert metrics["changed_recomposition_error_max_8bit"] <= 8.0
 
 
 def test_binary_pipeline_skips_joint_soft_edge_decontamination():

@@ -1,0 +1,44 @@
+{
+  "paper_mean_rgb": [
+    255.0,
+    255.0,
+    255.0
+  ],
+  "paper_std_rgb": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "outer_paper_px": 13114006,
+  "erase_px": 12059626,
+  "erase_pct": 47.90578491017904,
+  "lama_scale": 0.3062200956937799,
+  "lama_wh": [
+    1152,
+    2048
+  ],
+  "lama_seconds": 1.6772022247314453,
+  "device": "mps",
+  "delta_mean_erase": 70.82421112060547,
+  "delta_p50_erase": 69.0,
+  "delta_p90_erase": 129.0,
+  "opaque_pct": 40.725259668529354,
+  "transparent_pct": 57.22797171262375,
+  "semi_pct": 2.046768618846895,
+  "fg_px": 10767273,
+  "params": {
+    "paper_chroma_max": 8.0,
+    "paper_luma_min": 242.0,
+    "paper_dist_max": 14.0,
+    "erase_dilate": 3,
+    "lama_max_side": 2048,
+    "delta_thr": 10.0,
+    "soft_lo": 6.0,
+    "soft_hi": 22.0,
+    "paper_sub_rim": 2,
+    "paper_sub_thr": 8.0,
+    "small_noise_area": 40
+  },
+  "tag": "a",
+  "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/batch-x8-hard180/x4-rgb/14-ChatGPT_Image_Jul_7_2026_11_22_35_AM@x4-rgb.png"
+}

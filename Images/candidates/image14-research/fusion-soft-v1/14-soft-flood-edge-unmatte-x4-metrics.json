@@ -1,0 +1,24 @@
+{
+  "paper_mean_rgb": [
+    255.0,
+    255.0,
+    255.0
+  ],
+  "flood_bg_px": 12950423,
+  "hole_px": 1361753,
+  "soft_band_px": 1124170,
+  "opaque_pct": 38.68049711698336,
+  "transparent_pct": 56.86177902338447,
+  "semi_pct": 4.457723859632174,
+  "params": {
+    "paper_chroma_max": 5.0,
+    "paper_luma_min": 248.0,
+    "paper_dist_max": 8.0,
+    "hole_chroma_max": 10.0,
+    "hole_luma_min": 246.0,
+    "hole_min_area": 8,
+    "soft_band_px": 6,
+    "soft_alpha_gamma": 1.0,
+    "small_fg_min_area": 8
+  }
+}

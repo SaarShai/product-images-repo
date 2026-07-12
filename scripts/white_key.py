@@ -1,10 +1,52 @@
 #!/usr/bin/env python3
 """Remove a PURE-WHITE background from a flat illustration without the ML-matting
 halo. Border-connected near-white flood -> transparent; interior whites kept;
-erode the fringe ring + feather for clean AA. Deterministic, no model."""
+erode the fringe ring + feather for clean AA. Deterministic, no model.
+
+--reopen-interior additionally reopens *trapped* background: enclosed near-white
+regions that the border flood can't reach (gaps between coral branches, holes in
+the composition). A region is reopened only if it is (a) big enough and (b) made
+of the same flat PURE white as the background; tinted interior whites (cream/blush
+art highlights) lack a pure-white core and are protected."""
 import argparse, numpy as np
 from PIL import Image, ImageFilter
 from collections import deque
+
+def _label_components(mask):
+    """4-connected component labels over a boolean mask (no scipy). Returns
+    (labels int32 array, count). Same BFS idiom as the border flood; only the
+    True pixels are visited, so it is cheap on the sparse interior-white mask."""
+    h,w=mask.shape
+    labels=np.zeros((h,w),np.int32); cur=0
+    ys,xs=np.where(mask)
+    for y0,x0 in zip(ys.tolist(),xs.tolist()):
+        if labels[y0,x0]: continue
+        cur+=1; labels[y0,x0]=cur; dq=deque([(y0,x0)])
+        while dq:
+            y,x=dq.popleft()
+            for dy,dx in ((1,0),(-1,0),(0,1),(0,-1)):
+                ny,nx=y+dy,x+dx
+                if 0<=ny<h and 0<=nx<w and mask[ny,nx] and not labels[ny,nx]:
+                    labels[ny,nx]=cur; dq.append((ny,nx))
+    return labels,cur
+
+def reopen_interior(arr,whiteish,bg,ithresh,isat,min_area_frac,purity):
+    """Return (interior_bg mask, stats). interior_bg = trapped-background regions
+    that should join the transparent background."""
+    h,w,_=arr.shape
+    mx=arr.max(2); mn=arr.min(2)
+    strict=(mn>=ithresh)&((mx-mn)<=isat)          # unmistakably the flat bg white
+    loose=whiteish&~bg                            # near-white but not border-reached
+    labels,n=_label_components(loose)
+    if n==0: return np.zeros((h,w),bool),[]
+    sizes=np.bincount(labels.ravel(),minlength=n+1)
+    pure=np.bincount(labels.ravel(),weights=strict.ravel().astype(np.int64),minlength=n+1)
+    min_area=max(1,int(round(min_area_frac*h*w)))
+    qual=[c for c in range(1,n+1) if sizes[c]>=min_area and pure[c]/sizes[c]>=purity]
+    if not qual: return np.zeros((h,w),bool),[]
+    interior=np.isin(labels,np.array(qual,dtype=np.int32))
+    stats=[(int(sizes[c]),pure[c]/sizes[c]) for c in qual]
+    return interior,stats
 
 def main():
     ap=argparse.ArgumentParser()
@@ -13,6 +55,11 @@ def main():
     ap.add_argument("--sat",type=int,default=18,help="max (max-min) channel spread for white")
     ap.add_argument("--erode",type=int,default=2,help="px to erode fg to kill bright fringe")
     ap.add_argument("--feather",type=float,default=0.8)
+    ap.add_argument("--reopen-interior",action="store_true",help="also reopen trapped (enclosed) near-white background regions")
+    ap.add_argument("--interior-thresh",type=int,default=250,help="min RGB for a pixel to count as flat PURE background white (reopen seed)")
+    ap.add_argument("--interior-sat",type=int,default=8,help="max channel spread for flat PURE white (reopen seed)")
+    ap.add_argument("--interior-min-area",type=float,default=0.0001,help="min trapped-region area as a FRACTION of image to reopen (protects tiny glints)")
+    ap.add_argument("--interior-purity",type=float,default=0.35,help="min fraction of a trapped region that is flat pure white (protects tinted cream/blush highlights)")
     ap.add_argument("--check",action="store_true")
     a=ap.parse_args()
     im=Image.open(a.image).convert("RGB"); arr=np.asarray(im); h,w,_=arr.shape
@@ -32,6 +79,10 @@ def main():
             ny,nx=y+dy,x+dx
             if 0<=ny<h and 0<=nx<w and not seen[ny,nx] and whiteish[ny,nx]:
                 seen[ny,nx]=True; dq.append((ny,nx))
+    if a.reopen_interior:
+        interior,stats=reopen_interior(arr,whiteish,bg,a.interior_thresh,a.interior_sat,a.interior_min_area,a.interior_purity)
+        bg=bg|interior
+        print(f"[white_key] reopened {len(stats)} interior region(s), {int(interior.sum())} px")
     fg=~bg
     alpha=Image.fromarray((fg*255).astype("uint8"),"L")
     if a.erode>0:

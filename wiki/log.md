@@ -1,5 +1,16 @@
 # Wiki Log
 
+## [2026-07-12] add | Three gotcha lessons from transparent-clear-edge session
+
+Added three fact entries from verified 2026-07-12 session:
+- [[concepts/codex-exec-needs-stdin-closed]]: `codex exec` backgrounded without stdin closes hangs forever; fix: `</dev/null` redirect.
+- [[concepts/gate-metrics-on-keyed-deliverable-not-raw-render]]: aura_index measured 3-4× different on raw vs. keyed output; gate the shipped artifact, not intermediates.
+- [[concepts/dont-derive-runner-scripts-via-sed]]: sed-derived runner chains break silently (blank-line-after-backslash corruption); write fresh or parametrize ONE template.
+
+## [2026-07-12] create | Transparent-Clear-Edge Prompt Recipe
+
+Created `concepts/transparent-clear-edge-prompt-recipe.md` from verified 4-round experiment (26 generations, user-judged each round). Recorded winning prompt structure for gpt-image generation with clean closed contours and tinted interior highlights, keyability modules (AVOID / KEYABLE-FINE), critical conflict-resolution rule for thin features (deviation-authorization sentence = 3/3 compliance), and white_key.py `--reopen-interior` upgrade (verified 4/4 tests, 48 regions reopened on real candidate).
+
 ## [2026-07-06] create | Marriott Hospital T2 Method-Matrix
 
 Created `concepts/marriott-hospital-t2-method-matrix.md` from user-confirmed t2 finalist verdict: gpt-image (codex free) wins; nano-banana killed from die-cut pipeline due to aspect recompose. Recorded new style-bible axis (intentional-complete-building; slight-overhang OK), method scorecard, open items (emblem discipline, artifact logging, panel coverage), and next-phase direction.

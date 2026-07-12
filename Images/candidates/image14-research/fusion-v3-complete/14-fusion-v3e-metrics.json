@@ -1,0 +1,20 @@
+{
+  "rois": {
+    "cut00": {
+      "wrong": 325,
+      "paper": 9
+    },
+    "enclosed_tri": {
+      "wrong": 154,
+      "paper": 1
+    },
+    "fringe_pink": {
+      "wrong": 270,
+      "paper": 0
+    },
+    "cut02": {
+      "wrong": 168,
+      "paper": 0
+    }
+  }
+}

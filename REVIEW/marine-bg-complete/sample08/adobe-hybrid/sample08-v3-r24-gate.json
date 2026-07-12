@@ -1,0 +1,433 @@
+{
+  "schema_version": 1,
+  "manifest": "/Users/za/Documents/product images repo/tasks/double-marine-bed-wrapper-batch/bg-benchmark/manifest.json",
+  "machine_pass": true,
+  "reports": [
+    {
+      "case_id": "sample08",
+      "candidate": "/private/tmp/claude-501/-Users-za-Documents-product-images-repo/1a6615eb-64fa-4a9d-8e12-f20fce37c4c6/scratchpad/sample08-v3/sample08-v3-r24-rgba.png",
+      "machine_pass": true,
+      "final_verdict": "PENDING_HUMAN_REVIEW",
+      "failures": [],
+      "annotations": "/Users/za/Documents/product images repo/tasks/double-marine-bed-wrapper-batch/bg-benchmark/annotations/sample08.json",
+      "paper_rgb": [
+        255,
+        255,
+        255
+      ],
+      "paper_rgb_source": "contract",
+      "candidate_sha256": "6c11328277726847196d465dd6582e350257421b6895e4490d4edfbc238748d5",
+      "candidate_format": "PNG",
+      "candidate_mode": "RGBA",
+      "candidate_dimensions": [
+        1634,
+        962
+      ],
+      "reference": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/ChatGPT Image Jul 7, 2026, 11_09_25 AM.png",
+      "scale": 1.0,
+      "alpha": {
+        "background_fraction": 0.49865640991711985,
+        "foreground_fraction": 0.4908620606295025,
+        "semitransparent_fraction": 0.0729164811172155,
+        "unique_values": 256
+      },
+      "straight_rgb_reconstruction": {
+        "mae": 0.7471359647002241,
+        "p95": 2,
+        "p99": 4,
+        "max": 209
+      },
+      "composites": {
+        "white": {
+          "sha256_rgb_bytes": "7d3006da01689076355a5e0f73c0f5c2ec6c359bd1e8f59271f7670925ef7e36",
+          "mean_rgb": [
+            228.4538153632401,
+            219.91953091402297,
+            214.43674566195986
+          ],
+          "width": 1634,
+          "height": 962
+        },
+        "gray": {
+          "sha256_rgb_bytes": "8847971307e10487883c4bf4a134b9ba5aace33b14c55a3289f0f141b4e57fc8",
+          "mean_rgb": [
+            169.60287752209416,
+            161.0687190344473,
+            155.58596304618337
+          ],
+          "width": 1634,
+          "height": 962
+        },
+        "black": {
+          "sha256_rgb_bytes": "d2208a1f3f80fe8c4f7848c67587c09c1598aea35ca529d6d2b6a65ee863ecb1",
+          "mean_rgb": [
+            97.96214791196431,
+            89.42786346274718,
+            83.94507821068409
+          ],
+          "width": 1634,
+          "height": 962
+        },
+        "magenta": {
+          "sha256_rgb_bytes": "6166053e2348c5941bbf64798f82608525a7fe101b45a0acdd744ef31ca3f420",
+          "mean_rgb": [
+            228.4538153632401,
+            89.42786346274718,
+            214.43674566195986
+          ],
+          "width": 1634,
+          "height": 962
+        }
+      },
+      "guard_metrics": [
+        {
+          "id": "fg-top-blue-bubble-rim",
+          "group": "sure_foreground",
+          "alpha_threshold": 32,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.5,
+          "median_alpha": 255.0,
+          "required_median": 64.0,
+          "passed": true
+        },
+        {
+          "id": "fg-left-bubble-pale-blue",
+          "group": "sure_foreground",
+          "alpha_threshold": 32,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.5,
+          "median_alpha": 255.0,
+          "required_median": 64.0,
+          "passed": true
+        },
+        {
+          "id": "fg-left-orange-coral-tip",
+          "group": "sure_foreground",
+          "alpha_threshold": 64,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.65,
+          "median_alpha": 255.0,
+          "required_median": 96.0,
+          "passed": true
+        },
+        {
+          "id": "fg-center-green-seaweed-tip",
+          "group": "sure_foreground",
+          "alpha_threshold": 48,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.55,
+          "median_alpha": 255.0,
+          "required_median": 80.0,
+          "passed": true
+        },
+        {
+          "id": "fg-center-yellow-seaweed-tip",
+          "group": "sure_foreground",
+          "alpha_threshold": 48,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.55,
+          "median_alpha": 235.0,
+          "required_median": 80.0,
+          "passed": true
+        },
+        {
+          "id": "fg-right-orange-coral-tip",
+          "group": "sure_foreground",
+          "alpha_threshold": 64,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.65,
+          "median_alpha": 255.0,
+          "required_median": 96.0,
+          "passed": true
+        },
+        {
+          "id": "fg-right-pink-coral-tip",
+          "group": "sure_foreground",
+          "alpha_threshold": 48,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.55,
+          "median_alpha": 255.0,
+          "required_median": 80.0,
+          "passed": true
+        },
+        {
+          "id": "fg-left-pale-blue-coral",
+          "group": "sure_foreground",
+          "alpha_threshold": 48,
+          "fraction_meeting_threshold": 0.9230769230769231,
+          "required_fraction": 0.55,
+          "median_alpha": 254.0,
+          "required_median": 80.0,
+          "passed": true
+        },
+        {
+          "id": "fg-right-shell-pale-stripe",
+          "group": "sure_foreground",
+          "alpha_threshold": 64,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.65,
+          "median_alpha": 255.0,
+          "required_median": 96.0,
+          "passed": true
+        },
+        {
+          "id": "fg-left-base-blue-wash",
+          "group": "sure_foreground",
+          "alpha_threshold": 32,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.5,
+          "median_alpha": 255.0,
+          "required_median": 64.0,
+          "passed": true
+        },
+        {
+          "id": "fg-center-terminal-sand-wash",
+          "group": "sure_foreground",
+          "alpha_threshold": 24,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.5,
+          "median_alpha": 255.0,
+          "required_median": 48.0,
+          "passed": true
+        },
+        {
+          "id": "fg-right-terminal-blue-wash",
+          "group": "sure_foreground",
+          "alpha_threshold": 24,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.5,
+          "median_alpha": 255.0,
+          "required_median": 48.0,
+          "passed": true
+        },
+        {
+          "id": "fg-left-starfish-pale-arm",
+          "group": "sure_foreground",
+          "alpha_threshold": 64,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.65,
+          "median_alpha": 255.0,
+          "required_median": 96.0,
+          "passed": true
+        },
+        {
+          "id": "fg-center-green-seaweed",
+          "group": "sure_foreground",
+          "alpha_threshold": 64,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.65,
+          "median_alpha": 255.0,
+          "required_median": 96.0,
+          "passed": true
+        },
+        {
+          "id": "fg-left-pink-coral-pale-edge",
+          "group": "sure_foreground",
+          "alpha_threshold": 48,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.55,
+          "median_alpha": 255.0,
+          "required_median": 80.0,
+          "passed": true
+        },
+        {
+          "id": "bg-ext-top-left",
+          "group": "sure_background_exterior",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.95,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-ext-top-right",
+          "group": "sure_background_exterior",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.95,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-ext-upper-left",
+          "group": "sure_background_exterior",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.95,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-ext-upper-center",
+          "group": "sure_background_exterior",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.95,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-ext-upper-right",
+          "group": "sure_background_exterior",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.95,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-ext-far-right",
+          "group": "sure_background_exterior",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.95,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-interior-left-orange-fork",
+          "group": "sure_background_enclosed",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.9,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-interior-center-green-gap",
+          "group": "sure_background_enclosed",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.9,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-interior-center-yellow-gap",
+          "group": "sure_background_enclosed",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.9,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-interior-right-pink-fork",
+          "group": "sure_background_enclosed",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.9,
+          "p90_alpha": 0.0,
+          "passed": true
+        }
+      ],
+      "edge_metrics": [
+        {
+          "id": "edge-left-pale-blue-blades",
+          "boundary_pixels": 3089,
+          "paper_distance_min": 80.0,
+          "near_paper_boundary_pixels": 219,
+          "white_fraction": 0.07089673033344124,
+          "max_white_fraction": 0.25,
+          "passed": true
+        },
+        {
+          "id": "edge-central-kelp-tips",
+          "boundary_pixels": 7616,
+          "paper_distance_min": 80.0,
+          "near_paper_boundary_pixels": 808,
+          "white_fraction": 0.10609243697478991,
+          "max_white_fraction": 0.25,
+          "passed": true
+        },
+        {
+          "id": "edge-right-pale-coral-tips",
+          "boundary_pixels": 11893,
+          "paper_distance_min": 80.0,
+          "near_paper_boundary_pixels": 1012,
+          "white_fraction": 0.08509207096611453,
+          "max_white_fraction": 0.25,
+          "passed": true
+        }
+      ],
+      "human_review_required": true,
+      "human_review": [
+        {
+          "id": "review-native-multibg-all-edge-probes",
+          "kind": "edge_probes",
+          "backgrounds": [
+            "white",
+            "gray",
+            "black",
+            "magenta"
+          ],
+          "required": true,
+          "why": "Watercolor translucency and fringe quality still require direct visual judgment."
+        },
+        {
+          "id": "review-terminal-base-fade",
+          "kind": "bbox",
+          "bbox": [
+            150,
+            850,
+            1450,
+            955
+          ],
+          "backgrounds": [
+            "white",
+            "gray",
+            "black",
+            "magenta"
+          ],
+          "required": true,
+          "why": "The irregular watercolor footprint fades continuously toward paper at the lower edge."
+        },
+        {
+          "id": "review-left-coral-paper-pockets",
+          "kind": "bbox",
+          "bbox": [
+            150,
+            250,
+            600,
+            700
+          ],
+          "backgrounds": [
+            "white",
+            "gray",
+            "black",
+            "magenta"
+          ],
+          "required": true,
+          "why": "Crowded pale coral branches contain both painted highlights and true paper gaps."
+        },
+        {
+          "id": "review-right-coral-paper-pockets",
+          "kind": "bbox",
+          "bbox": [
+            1180,
+            250,
+            1580,
+            640
+          ],
+          "backgrounds": [
+            "white",
+            "gray",
+            "black",
+            "magenta"
+          ],
+          "required": true,
+          "why": "Dense right coral forks need visual confirmation that paper holes open without deleting pale paint."
+        }
+      ],
+      "review_artifacts": [
+        "/private/tmp/claude-501/-Users-za-Documents-product-images-repo/1a6615eb-64fa-4a9d-8e12-f20fce37c4c6/scratchpad/sample08-v3/sample08-v3-r24-review-dir/sample08/sample08--source-annotation-overlay.png",
+        "/private/tmp/claude-501/-Users-za-Documents-product-images-repo/1a6615eb-64fa-4a9d-8e12-f20fce37c4c6/scratchpad/sample08-v3/sample08-v3-r24-review-dir/sample08/sample08--edge-central-kelp-tips--white-gray-black-magenta.png",
+        "/private/tmp/claude-501/-Users-za-Documents-product-images-repo/1a6615eb-64fa-4a9d-8e12-f20fce37c4c6/scratchpad/sample08-v3/sample08-v3-r24-review-dir/sample08/sample08--edge-left-pale-blue-blades--white-gray-black-magenta.png",
+        "/private/tmp/claude-501/-Users-za-Documents-product-images-repo/1a6615eb-64fa-4a9d-8e12-f20fce37c4c6/scratchpad/sample08-v3/sample08-v3-r24-review-dir/sample08/sample08--edge-right-pale-coral-tips--white-gray-black-magenta.png",
+        "/private/tmp/claude-501/-Users-za-Documents-product-images-repo/1a6615eb-64fa-4a9d-8e12-f20fce37c4c6/scratchpad/sample08-v3/sample08-v3-r24-review-dir/sample08/sample08--review-left-coral-paper-pockets--white-gray-black-magenta.png",
+        "/private/tmp/claude-501/-Users-za-Documents-product-images-repo/1a6615eb-64fa-4a9d-8e12-f20fce37c4c6/scratchpad/sample08-v3/sample08-v3-r24-review-dir/sample08/sample08--review-right-coral-paper-pockets--white-gray-black-magenta.png",
+        "/private/tmp/claude-501/-Users-za-Documents-product-images-repo/1a6615eb-64fa-4a9d-8e12-f20fce37c4c6/scratchpad/sample08-v3/sample08-v3-r24-review-dir/sample08/sample08--review-terminal-base-fade--white-gray-black-magenta.png"
+      ]
+    }
+  ]
+}

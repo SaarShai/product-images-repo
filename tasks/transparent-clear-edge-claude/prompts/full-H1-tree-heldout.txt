@@ -1,0 +1,17 @@
+[REFERENCE AUTHORITY]
+Use the attached image as the authoritative reference for both subject and style. Recreate the same single autumn tree, preserving its silhouette, composition, proportions, motifs, palette relationships, lighting, detail density, and paint handling. Do not redesign, embellish, or add objects — with ONE exception: wherever the reference shows hair-thin twigs, filaments, or wispy strands, replace that element with a sturdier, rounder branch or foliage cluster of the same color and position. Keyability overrides reference fidelity for thin features only.
+
+[STYLE — HOLD CONSTANT]
+Soft professional children's-book watercolor: airy pastel-warm color, translucent washes, gentle pigment variation and granulation, rounded organic forms, and soft ambient light. Match the reference's softness, simplicity, and saturation; the reference overrides any conflicting wording.
+
+[BACKGROUND — HOLD CONSTANT]
+Isolate the complete tree on an opaque, perfectly uniform solid pure-white background, RGB 255,255,255 (#FFFFFF). No background paper texture, wash, gradient, vignette, cast shadow, glow, aura, halo, mist, or color spill. Pure white begins immediately outside the painted subject.
+
+[EDGE + WHITE SEPARATION]
+Every painted shape has a continuous, fully closed contour with no gaps or fade-outs, using a slightly darker or more saturated version of the adjacent local fill—never black and never white. Only the background may be pure #FFFFFF; every white-looking subject detail or highlight is a visibly tinted off-white, fully enclosed by its contour.
+
+[KEYABILITY]
+Design every element for clean background removal: no hair-thin twigs, filaments, tendrils, or wispy strands anywhere in the composition. Every branch and leaf cluster is drawn with substantial width — at least as thick as a finger relative to the subject — tapering to soft rounded tips, never to a hairline. Render fine texture (leaf veins, bark lines, speckles) as interior detail inside solid shapes, never as thin protrusions into the background. Group foliage into connected masses sharing one continuous silhouette.
+
+[EXCLUSIONS]
+No text, border, cut line, sticker rim, checkerboard, transparency-preview pattern, extra objects, or ground shadow.

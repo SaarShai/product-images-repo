@@ -1,0 +1,26 @@
+{
+  "paper_mean_rgb": [
+    255.0,
+    255.0,
+    255.0
+  ],
+  "paper_px": 14339126,
+  "paper_open_px": 14298625,
+  "true_bg_px": 12910690,
+  "fg_px": 12262942,
+  "opaque_pct": 48.71343952275142,
+  "transparent_pct": 51.28656047724858,
+  "semi_pct": 0.0,
+  "enclosed_holes_punched": 0,
+  "params": {
+    "paper_chroma_max": 5.0,
+    "paper_luma_min": 248.0,
+    "paper_dist_max": 10.0,
+    "open_px": 4,
+    "white_rim_cut_px": 1,
+    "fringe_ring_px": 4,
+    "fringe_luma_min": 225.0,
+    "fringe_chroma_max": 28.0,
+    "small_noise_area": 32
+  }
+}

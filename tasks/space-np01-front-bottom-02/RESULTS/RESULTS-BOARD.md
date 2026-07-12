@@ -254,7 +254,7 @@
 
 ### GROUP F: Orphan raw model outputs (inputs unrecoverable)
 
-Every gen image on disk is cataloged so none is dropped. Total **530** orphans (raw model gens + renders NOT already tied to an experiment dir, deduped by content hash). By model: gpt-image-2=429, nano-banana=101.
+Every gen image on disk is cataloged so none is dropped. Total **605** orphans (raw model gens + renders NOT already tied to an experiment dir, deduped by content hash). By model: gpt-image-2=492, nano-banana=113.
 Per-image records (path + mtime) are in `results.jsonl` under id prefix `orphan-`. Listed as counts here to keep the board readable.
 
 ### GROUP X: unknown
@@ -337,10 +337,10 @@ Per-image records (path + mtime) are in `results.jsonl` under id prefix `orphan-
 
 ## SUMMARY: WHERE WE STAND
 
-- Total records: **693**
+- Total records: **768**
 - PASS (region-IoU >= 0.85 or procedural): **41**
 - FAIL: **107**
-- Unknown / stub: **545**
+- Unknown / stub: **620**
 
 **Top-5 by region-IoU:**
 - FINAL-exact-frame: region-IoU=0.980 (PASS)

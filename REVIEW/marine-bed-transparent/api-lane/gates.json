@@ -1,0 +1,237 @@
+{
+  "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/ChatGPT Image Jul 7, 2026, 11_20_05 AM.png",
+  "size": "1024x1536",
+  "quality": "high",
+  "entries": [
+    {
+      "model": "gpt-image-1.5",
+      "seed_idx": 1,
+      "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/api-lane/api-gpt-image-1_5-seed1.png",
+      "endpoint_tried": [
+        "edits"
+      ],
+      "endpoint_used": "edits",
+      "duration_s": 60.8,
+      "usage": {
+        "input_tokens": 976,
+        "input_tokens_details": {
+          "image_tokens": 452,
+          "text_tokens": 524
+        },
+        "output_tokens": 6607,
+        "output_tokens_details": {
+          "image_tokens": 6240,
+          "text_tokens": 367
+        },
+        "total_tokens": 7583
+      },
+      "analysis": {
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 1536,
+        "is_rgba": true,
+        "transparent_pct": 69.5,
+        "checker": {
+          "checker_detected": false,
+          "sampled_px": 75025,
+          "frac_near_white_in_opaque_border": 0.0044,
+          "graylevel_std": 3.881,
+          "graylevel_range": 17.667
+        },
+        "border_occupancy_pct": 11.518
+      }
+    },
+    {
+      "model": "gpt-image-1.5",
+      "seed_idx": 2,
+      "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/api-lane/api-gpt-image-1_5-seed2.png",
+      "endpoint_tried": [
+        "edits"
+      ],
+      "endpoint_used": "edits",
+      "duration_s": 61.3,
+      "usage": {
+        "input_tokens": 976,
+        "input_tokens_details": {
+          "image_tokens": 452,
+          "text_tokens": 524
+        },
+        "output_tokens": 6587,
+        "output_tokens_details": {
+          "image_tokens": 6240,
+          "text_tokens": 347
+        },
+        "total_tokens": 7563
+      },
+      "analysis": {
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 1536,
+        "is_rgba": true,
+        "transparent_pct": 68.01,
+        "checker": {
+          "checker_detected": false,
+          "sampled_px": 77605,
+          "frac_near_white_in_opaque_border": 0.0016,
+          "graylevel_std": 3.356,
+          "graylevel_range": 16.0
+        },
+        "border_occupancy_pct": 12.118
+      }
+    },
+    {
+      "model": "chatgpt-image-latest",
+      "seed_idx": 1,
+      "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/api-lane/api-chatgpt-image-latest-seed1.png",
+      "endpoint_tried": [
+        "edits"
+      ],
+      "endpoint_used": "edits",
+      "duration_s": 57.6,
+      "usage": {
+        "input_tokens": 976,
+        "input_tokens_details": {
+          "image_tokens": 452,
+          "text_tokens": 524
+        },
+        "output_tokens": 7263,
+        "output_tokens_details": {
+          "image_tokens": 6240,
+          "text_tokens": 1023
+        },
+        "total_tokens": 8239
+      },
+      "analysis": {
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 1536,
+        "is_rgba": true,
+        "transparent_pct": 67.44,
+        "checker": {
+          "checker_detected": false,
+          "sampled_px": 43669,
+          "frac_near_white_in_opaque_border": 0.0155,
+          "graylevel_std": 3.816,
+          "graylevel_range": 19.0
+        },
+        "border_occupancy_pct": 0.0
+      }
+    },
+    {
+      "model": "chatgpt-image-latest",
+      "seed_idx": 2,
+      "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/api-lane/api-chatgpt-image-latest-seed2.png",
+      "endpoint_tried": [
+        "edits"
+      ],
+      "endpoint_used": "edits",
+      "duration_s": 54.8,
+      "usage": {
+        "input_tokens": 976,
+        "input_tokens_details": {
+          "image_tokens": 452,
+          "text_tokens": 524
+        },
+        "output_tokens": 7309,
+        "output_tokens_details": {
+          "image_tokens": 6240,
+          "text_tokens": 1069
+        },
+        "total_tokens": 8285
+      },
+      "analysis": {
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 1536,
+        "is_rgba": true,
+        "transparent_pct": 68.63,
+        "checker": {
+          "checker_detected": false,
+          "sampled_px": 49249,
+          "frac_near_white_in_opaque_border": 0.0082,
+          "graylevel_std": 2.725,
+          "graylevel_range": 16.0
+        },
+        "border_occupancy_pct": 0.0
+      }
+    },
+    {
+      "model": "chatgpt-image-latest",
+      "variant": "antiglow",
+      "seed_idx": 1,
+      "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/api-lane/api-chatgpt-image-latest-antiglow1.png",
+      "endpoint_tried": [
+        "edits"
+      ],
+      "endpoint_used": "edits",
+      "duration_s": 76.5,
+      "usage": {
+        "input_tokens": 1070,
+        "input_tokens_details": {
+          "image_tokens": 452,
+          "text_tokens": 618
+        },
+        "output_tokens": 7052,
+        "output_tokens_details": {
+          "image_tokens": 6240,
+          "text_tokens": 812
+        },
+        "total_tokens": 8122
+      },
+      "analysis": {
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 1536,
+        "is_rgba": true,
+        "transparent_pct": 63.79,
+        "checker": {
+          "checker_detected": false,
+          "sampled_px": 93476,
+          "frac_near_white_in_opaque_border": 0.0152,
+          "graylevel_std": 3.968,
+          "graylevel_range": 19.333
+        },
+        "border_occupancy_pct": 9.306
+      }
+    },
+    {
+      "model": "chatgpt-image-latest",
+      "variant": "antiglow",
+      "seed_idx": 2,
+      "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/api-lane/api-chatgpt-image-latest-antiglow2.png",
+      "endpoint_tried": [
+        "edits"
+      ],
+      "endpoint_used": "edits",
+      "duration_s": 66.9,
+      "usage": {
+        "input_tokens": 1070,
+        "input_tokens_details": {
+          "image_tokens": 452,
+          "text_tokens": 618
+        },
+        "output_tokens": 7228,
+        "output_tokens_details": {
+          "image_tokens": 6240,
+          "text_tokens": 988
+        },
+        "total_tokens": 8298
+      },
+      "analysis": {
+        "mode": "RGBA",
+        "width": 1024,
+        "height": 1536,
+        "is_rgba": true,
+        "transparent_pct": 67.97,
+        "checker": {
+          "checker_detected": false,
+          "sampled_px": 75266,
+          "frac_near_white_in_opaque_border": 0.0103,
+          "graylevel_std": 3.472,
+          "graylevel_range": 18.333
+        },
+        "border_occupancy_pct": 8.797
+      }
+    }
+  ]
+}

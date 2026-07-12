@@ -1,0 +1,138 @@
+{
+  "blue_omission_reason": "No visually certain broad blank-background region was retained by Photoshop; tiny retained near-white loci touch painted structures/highlights and remain unknown.",
+  "blue_strokes": [],
+  "checks": {
+    "allowed_colors_rgba": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        255,
+        0,
+        0,
+        255
+      ],
+      [
+        0,
+        0,
+        255,
+        255
+      ]
+    ],
+    "blue_pixels": 0,
+    "blue_stroke_count": 0,
+    "dimensions": [
+      941,
+      1672
+    ],
+    "labeled_fraction": 0.0020434079595665813,
+    "labeled_percent": 0.20434079595665813,
+    "labeled_pixels": 3215,
+    "mode": "RGBA",
+    "observed_color_counts": {
+      "0,0,0,0": 1570137,
+      "255,0,0,255": 3215
+    },
+    "red_blue_overlap_pixels": 0,
+    "red_pixels": 3215,
+    "red_pixels_on_proposal_alpha_zero": 3215,
+    "red_pixels_on_pure_red_diagnostic": 3215,
+    "red_stroke_count": 5,
+    "stroke_width_pixels": [
+      13
+    ],
+    "total_pixels": 1573352,
+    "unknown_transparent_pixels": 1570137
+  },
+  "coordinate_convention": "inclusive pixel centers; origin upper-left; x then y",
+  "diagnostic_path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/image14-research/photoshop-scout/diagnostic-high-confidence-deletion-overlay-red.png",
+  "generation_method": "Explicit hand-selected polylines drawn on an empty RGBA canvas; no source-color thresholding and no candidate-alpha copying",
+  "input_sha256": {
+    "diagnostic": "36025cabdc707039d12c32769014265a749855f19c4217b2c01a4c34c46a62aa",
+    "photoshop_alpha": "7401e09a30114df78af20ba92b8634860c1b1fc367df0064ec6cd819f51a972c",
+    "source": "925c34a39a0e2b5a09ad92ba39dace87f652bcc90ff8e063e2a6f644e735df9d"
+  },
+  "photoshop_alpha_path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/image14-research/photoshop-scout/image14-photoshop-auto-mask-alpha.png",
+  "red_strokes": [
+    {
+      "id": "R1",
+      "points": [
+        [
+          58,
+          1503
+        ],
+        [
+          105,
+          1525
+        ]
+      ],
+      "reason": "left sandy wash immediately outside the reef base",
+      "width": 13
+    },
+    {
+      "id": "R2",
+      "points": [
+        [
+          568,
+          1509
+        ],
+        [
+          529,
+          1537
+        ]
+      ],
+      "reason": "painted sand between the central shell and front wash",
+      "width": 13
+    },
+    {
+      "id": "R3",
+      "points": [
+        [
+          628,
+          1552
+        ],
+        [
+          679,
+          1561
+        ]
+      ],
+      "reason": "right-center sandy watercolor footprint below shell details",
+      "width": 13
+    },
+    {
+      "id": "R4",
+      "points": [
+        [
+          262,
+          1595
+        ],
+        [
+          325,
+          1595
+        ]
+      ],
+      "reason": "lower-left painted wash beneath the starfish",
+      "width": 13
+    },
+    {
+      "id": "R5",
+      "points": [
+        [
+          874,
+          1534
+        ],
+        [
+          834,
+          1538
+        ]
+      ],
+      "reason": "right sandy wash immediately outside the reef base",
+      "width": 13
+    }
+  ],
+  "schema_version": 1,
+  "source_path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/ChatGPT Image Jul 7, 2026, 11_22_35 AM.png"
+}

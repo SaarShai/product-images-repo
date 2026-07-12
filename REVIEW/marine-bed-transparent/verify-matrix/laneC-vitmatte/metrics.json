@@ -1,0 +1,115 @@
+{
+  "schema": "laneC-vitmatte-verify-metrics/v1",
+  "source": "REVIEW/marine-bed-transparent/chroma-lane/raws/raw_green_P1.png",
+  "trimap_method": "Lab deltaE to modal border key color; deltaE<3.0 -> sure BG, deltaE>8.0 -> sure FG, else unknown (no human strokes)",
+  "modal_key_rgb": [
+    5,
+    242,
+    8
+  ],
+  "backend": "vitmatte (hustvl/vitmatte-small-composition-1k), device=mps",
+  "enclosed_green_pockets_gt4px": {
+    "count": 51,
+    "pockets": [
+      {
+        "label": 8,
+        "size_px": 5718
+      },
+      {
+        "label": 2,
+        "size_px": 3035
+      },
+      {
+        "label": 30,
+        "size_px": 2060
+      },
+      {
+        "label": 40,
+        "size_px": 1391
+      },
+      {
+        "label": 27,
+        "size_px": 1157
+      },
+      {
+        "label": 22,
+        "size_px": 1137
+      },
+      {
+        "label": 11,
+        "size_px": 1131
+      },
+      {
+        "label": 33,
+        "size_px": 1054
+      },
+      {
+        "label": 7,
+        "size_px": 980
+      },
+      {
+        "label": 23,
+        "size_px": 931
+      },
+      {
+        "label": 24,
+        "size_px": 920
+      },
+      {
+        "label": 42,
+        "size_px": 897
+      },
+      {
+        "label": 44,
+        "size_px": 866
+      },
+      {
+        "label": 4,
+        "size_px": 761
+      },
+      {
+        "label": 37,
+        "size_px": 761
+      },
+      {
+        "label": 3,
+        "size_px": 729
+      },
+      {
+        "label": 5,
+        "size_px": 507
+      },
+      {
+        "label": 10,
+        "size_px": 501
+      },
+      {
+        "label": 19,
+        "size_px": 498
+      },
+      {
+        "label": 38,
+        "size_px": 365
+      }
+    ]
+  },
+  "rim_greenness": {
+    "boundary_band_mean_G_minus_maxRB": -38.03697967529297,
+    "interior_mean_G_minus_maxRB": -53.12849044799805,
+    "boundary_minus_interior": 15.091510772705078,
+    "boundary_definition": "FG alpha>0.5 pixels within 3px dilation of a BG pixel",
+    "interior_definition": "FG alpha>0.5 pixels eroded by 6px"
+  },
+  "border_occupancy_pct": 3.2432785173583922,
+  "alpha_summary": {
+    "pct_alpha_exactly_0": 63.62024943033854,
+    "pct_alpha_exactly_1": 28.260548909505207,
+    "pct_soft": 8.119201660156254
+  },
+  "crops": [
+    "bubble",
+    "coral_tip",
+    "seahorse",
+    "sand_edge"
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "fish_L1_s1.png": {
+    "file": "/private/tmp/claude-501/-Users-za-Documents-product-images-repo/1a6615eb-64fa-4a9d-8e12-f20fce37c4c6/scratchpad/fish-regen/fish_L1_s1.png",
+    "key_rgb": [
+      255.0,
+      0.0,
+      255.0
+    ],
+    "key_is_estimated": false,
+    "rim_band_pct": 0.0,
+    "rim_interior_pct": 0.0,
+    "rim_index": 0.0,
+    "rim_fail": false,
+    "edge_touch_pct": {
+      "L": 0.0,
+      "R": 0.0,
+      "T": 0.0,
+      "B": 0.0
+    },
+    "edge_fail": false,
+    "retained_bg_pct": 0.0,
+    "retained_fail": false,
+    "band_px": 64081,
+    "interior_px": 244193,
+    "opaque_px": 306025
+  },
+  "fish_L1_s2.png": {
+    "file": "/private/tmp/claude-501/-Users-za-Documents-product-images-repo/1a6615eb-64fa-4a9d-8e12-f20fce37c4c6/scratchpad/fish-regen/fish_L1_s2.png",
+    "key_rgb": [
+      255.0,
+      0.0,
+      255.0
+    ],
+    "key_is_estimated": false,
+    "rim_band_pct": 0.0,
+    "rim_interior_pct": 0.0,
+    "rim_index": 0.0,
+    "rim_fail": false,
+    "edge_touch_pct": {
+      "L": 0.0,
+      "R": 0.0,
+      "T": 0.0,
+      "B": 0.0
+    },
+    "edge_fail": false,
+    "retained_bg_pct": 0.0,
+    "retained_fail": false,
+    "band_px": 70222,
+    "interior_px": 283939,
+    "opaque_px": 352101
+  },
+  "fish_L1b_s1.png": {
+    "file": "/private/tmp/claude-501/-Users-za-Documents-product-images-repo/1a6615eb-64fa-4a9d-8e12-f20fce37c4c6/scratchpad/fish-regen/fish_L1b_s1.png",
+    "key_rgb": [
+      255.0,
+      0.0,
+      255.0
+    ],
+    "key_is_estimated": false,
+    "rim_band_pct": 0.0,
+    "rim_interior_pct": 0.014,
+    "rim_index": 0.0,
+    "rim_fail": false,
+    "edge_touch_pct": {
+      "L": 0.0,
+      "R": 0.0,
+      "T": 0.0,
+      "B": 0.0
+    },
+    "edge_fail": false,
+    "retained_bg_pct": 0.0,
+    "retained_fail": false,
+    "band_px": 184811,
+    "interior_px": 294075,
+    "opaque_px": 474104
+  },
+  "fish_L1b_s2.png": {
+    "file": "/private/tmp/claude-501/-Users-za-Documents-product-images-repo/1a6615eb-64fa-4a9d-8e12-f20fce37c4c6/scratchpad/fish-regen/fish_L1b_s2.png",
+    "key_rgb": [
+      255.0,
+      0.0,
+      255.0
+    ],
+    "key_is_estimated": false,
+    "rim_band_pct": 0.0,
+    "rim_interior_pct": 0.01,
+    "rim_index": 0.0,
+    "rim_fail": false,
+    "edge_touch_pct": {
+      "L": 0.0,
+      "R": 0.0,
+      "T": 0.0,
+      "B": 0.098
+    },
+    "edge_fail": false,
+    "retained_bg_pct": 0.0,
+    "retained_fail": false,
+    "band_px": 197222,
+    "interior_px": 334518,
+    "opaque_px": 515721
+  },
+  "fish_L2_s1_keyed.png": {
+    "file": "/private/tmp/claude-501/-Users-za-Documents-product-images-repo/1a6615eb-64fa-4a9d-8e12-f20fce37c4c6/scratchpad/fish-regen/fish_L2_s1_keyed.png",
+    "key_rgb": [
+      0.0,
+      0.0,
+      255.0
+    ],
+    "key_is_estimated": false,
+    "rim_band_pct": 5.928,
+    "rim_interior_pct": 4.3,
+    "rim_index": 1.378,
+    "rim_fail": false,
+    "edge_touch_pct": {
+      "L": 0.0,
+      "R": 0.0,
+      "T": 0.0,
+      "B": 0.0
+    },
+    "edge_fail": false,
+    "retained_bg_pct": 0.0,
+    "retained_fail": false,
+    "band_px": 197418,
+    "interior_px": 413258,
+    "opaque_px": 611175
+  },
+  "fish_L2_s2_keyed.png": {
+    "file": "/private/tmp/claude-501/-Users-za-Documents-product-images-repo/1a6615eb-64fa-4a9d-8e12-f20fce37c4c6/scratchpad/fish-regen/fish_L2_s2_keyed.png",
+    "key_rgb": [
+      0.0,
+      0.0,
+      255.0
+    ],
+    "key_is_estimated": false,
+    "rim_band_pct": 5.502,
+    "rim_interior_pct": 2.365,
+    "rim_index": 2.327,
+    "rim_fail": false,
+    "edge_touch_pct": {
+      "L": 0.0,
+      "R": 0.0,
+      "T": 0.0,
+      "B": 0.0
+    },
+    "edge_fail": false,
+    "retained_bg_pct": 0.0,
+    "retained_fail": false,
+    "band_px": 179361,
+    "interior_px": 307496,
+    "opaque_px": 484519
+  }
+}

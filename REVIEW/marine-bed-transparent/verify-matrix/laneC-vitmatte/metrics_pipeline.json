@@ -1,0 +1,154 @@
+{
+  "backend": {
+    "backend_requested": "vitmatte",
+    "backend_used": "vitmatte",
+    "device_requested": "auto",
+    "device_used": "mps",
+    "model": "hustvl/vitmatte-small-composition-1k",
+    "processor_shape": [
+      1,
+      4,
+      1536,
+      1024
+    ],
+    "revision": "6a58ad7646403c1df626fbd746900aec7361ea1d",
+    "seconds": 4.424121040999999
+  },
+  "config": {
+    "binary": false,
+    "binary_threshold": 0.5,
+    "closed_form_maxiter": 1000,
+    "correction_other_max": 64,
+    "correction_primary_min": 200,
+    "correction_unlock_radius_px": 6,
+    "decontam_paper_distance_8bit": 80.0,
+    "device": "auto",
+    "edge_decontamination": true,
+    "inner_distance_px": 3,
+    "outer_distance_px": 3,
+    "proposal_bg_threshold": 0.05,
+    "proposal_fg_threshold": 0.95,
+    "residual_alpha_floor": 0.2,
+    "residual_max_adjustment": 0.35,
+    "vitmatte_model": "hustvl/vitmatte-small-composition-1k",
+    "vitmatte_revision": "6a58ad7646403c1df626fbd746900aec7361ea1d"
+  },
+  "elapsed_seconds": 10.976331583,
+  "generated_at_utc": "2026-07-12T06:30:38.567840+00:00",
+  "inputs": {
+    "corrections": null,
+    "proposal": {
+      "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/verify-matrix/laneC-vitmatte/trimap_proposal.png",
+      "sha256": "b8b8bc862d4306098c242248743d4b8391c002a22be95c8a8211af3eedad01ef",
+      "size_wh": [
+        1024,
+        1536
+      ]
+    },
+    "source": {
+      "mode": "RGB",
+      "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/chroma-lane/raws/raw_green_P1.png",
+      "sha256": "a9028550e65d055e9eff0efc1af799cf2585907ddba60ece0f750ab895d312ff",
+      "size_wh": [
+        1024,
+        1536
+      ]
+    }
+  },
+  "outputs": {
+    "review_board": {
+      "backgrounds": [
+        "white",
+        "gray",
+        "black",
+        "magenta"
+      ],
+      "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/verify-matrix/laneC-vitmatte/review_board.png",
+      "sha256": "d63ea977f44fc20a83c6a2e804297ab5c52a6f322e47f02e3bc71d4f4393b2d7"
+    },
+    "rgba": {
+      "mode": "RGBA-straight",
+      "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/verify-matrix/laneC-vitmatte/keyed_rgba.png",
+      "sha256": "b0c64877d41e45420157a22bfba1f7b46227e5fccaa1646b91a4240c6b372238",
+      "size_wh": [
+        1024,
+        1536
+      ]
+    }
+  },
+  "pipeline": {
+    "alpha": {
+      "exact_one_pixels": 428759,
+      "exact_zero_pixels": 933882,
+      "max": 1.0,
+      "mean": 0.3070509731769562,
+      "min": 0.0,
+      "percentiles": {
+        "0": 0.0,
+        "1": 0.0,
+        "100": 1.0,
+        "5": 0.0,
+        "50": 0.0,
+        "95": 1.0,
+        "99": 1.0
+      },
+      "soft_pixels": 210223
+    },
+    "alpha_mode": "soft-straight-default",
+    "corrections": {
+      "labels_clamped_after_solver": true,
+      "sure_bg_pixels": 0,
+      "sure_fg_pixels": 0,
+      "unlock_radius_px": 6
+    },
+    "foreground_rgb": {
+      "background_rgb_0_1": [
+        0.0117647061124444,
+        0.9450980424880981,
+        0.03921568766236305
+      ],
+      "edge_decontamination": {
+        "boundary_pixels": 64494,
+        "boundary_width_px": 2,
+        "changed_pixels": 3,
+        "changed_recomposition_error_max_8bit": 6.225312232971191,
+        "changed_recomposition_error_p95_8bit": 6.195910930633545,
+        "enabled": true,
+        "foreground_alpha": 0.06274509803921569,
+        "interior_alpha": 0.98,
+        "max_recomposition_error_8bit": 8.0,
+        "method": "same-component-color-plus-least-squares-alpha",
+        "minimum_new_alpha": 0.06666666666666667,
+        "paper_distance_8bit": 80.0,
+        "protected_pixels": 1362641,
+        "target_radius_px": 8
+      },
+      "representation": "straight/unassociated",
+      "residual_correction": {
+        "alpha_floor": 0.2,
+        "eligible_pixels": 497049,
+        "eligible_recomposition_mae_after": 3.158676190651022e-05,
+        "eligible_recomposition_mae_before": 0.0038931129965931177,
+        "eligible_recomposition_p95_after": 0.0,
+        "eligible_recomposition_p95_before": 0.029377594590187073,
+        "max_adjustment": 0.35
+      }
+    },
+    "native_resolution_preserved": true,
+    "proposal": {
+      "sure_bg_pixels_before_corrections": 933882,
+      "sure_fg_pixels_before_corrections": 428759
+    },
+    "source_size_wh": [
+      1024,
+      1536
+    ],
+    "trimap": {
+      "sure_bg_pixels": 933882,
+      "sure_fg_pixels": 428759,
+      "unknown_pixels": 210223
+    }
+  },
+  "schema": "assisted-bg-metrics/v1",
+  "status": "candidate-unapproved"
+}

@@ -1,0 +1,560 @@
+{
+  "schema_version": 1,
+  "manifest": "/Users/za/Documents/product images repo/tasks/double-marine-bed-wrapper-batch/bg-benchmark/manifest.json",
+  "machine_pass": false,
+  "reports": [
+    {
+      "case_id": "image15",
+      "candidate": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/image15/assisted-r110-vitmatte-decontam/image15-assisted-r110-decontam-rgba.png",
+      "machine_pass": false,
+      "final_verdict": "FAIL",
+      "failures": [
+        {
+          "code": "deleted_foreground",
+          "message": "guard fg-left-small-bubble-rim failed",
+          "details": {
+            "guard": "fg-left-small-bubble-rim",
+            "group": "sure_foreground",
+            "metric": {
+              "id": "fg-left-small-bubble-rim",
+              "group": "sure_foreground",
+              "alpha_threshold": 32,
+              "fraction_meeting_threshold": 0.0,
+              "required_fraction": 0.5,
+              "median_alpha": 2.0,
+              "required_median": 64.0,
+              "passed": false
+            }
+          }
+        },
+        {
+          "code": "enclosed_background_retained",
+          "message": "guard bg-interior-left-coral-fork-b failed",
+          "details": {
+            "guard": "bg-interior-left-coral-fork-b",
+            "group": "sure_background_enclosed",
+            "metric": {
+              "id": "bg-interior-left-coral-fork-b",
+              "group": "sure_background_enclosed",
+              "alpha_threshold": 16,
+              "fraction_meeting_threshold": 0.0,
+              "required_fraction": 0.9,
+              "p90_alpha": 46.0,
+              "passed": false
+            }
+          }
+        },
+        {
+          "code": "enclosed_background_retained",
+          "message": "guard bg-interior-right-pink-loop-upper failed",
+          "details": {
+            "guard": "bg-interior-right-pink-loop-upper",
+            "group": "sure_background_enclosed",
+            "metric": {
+              "id": "bg-interior-right-pink-loop-upper",
+              "group": "sure_background_enclosed",
+              "alpha_threshold": 16,
+              "fraction_meeting_threshold": 0.6923076923076923,
+              "required_fraction": 0.9,
+              "p90_alpha": 24.000000000000004,
+              "passed": false
+            }
+          }
+        },
+        {
+          "code": "enclosed_background_retained",
+          "message": "guard bg-interior-right-pink-loop-lower failed",
+          "details": {
+            "guard": "bg-interior-right-pink-loop-lower",
+            "group": "sure_background_enclosed",
+            "metric": {
+              "id": "bg-interior-right-pink-loop-lower",
+              "group": "sure_background_enclosed",
+              "alpha_threshold": 16,
+              "fraction_meeting_threshold": 0.46153846153846156,
+              "required_fraction": 0.9,
+              "p90_alpha": 178.40000000000006,
+              "passed": false
+            }
+          }
+        },
+        {
+          "code": "white_edge_contamination",
+          "message": "edge probe edge-left-salmon-coral-outer contains too many paper-colored boundary pixels",
+          "details": {
+            "probe": "edge-left-salmon-coral-outer",
+            "metric": {
+              "id": "edge-left-salmon-coral-outer",
+              "boundary_pixels": 2813,
+              "paper_distance_min": 80.0,
+              "near_paper_boundary_pixels": 1278,
+              "white_fraction": 0.45431923213650904,
+              "max_white_fraction": 0.25,
+              "passed": false
+            }
+          }
+        },
+        {
+          "code": "white_edge_contamination",
+          "message": "edge probe edge-upper-kelp-ribbons contains too many paper-colored boundary pixels",
+          "details": {
+            "probe": "edge-upper-kelp-ribbons",
+            "metric": {
+              "id": "edge-upper-kelp-ribbons",
+              "boundary_pixels": 1150,
+              "paper_distance_min": 80.0,
+              "near_paper_boundary_pixels": 415,
+              "white_fraction": 0.36086956521739133,
+              "max_white_fraction": 0.25,
+              "passed": false
+            }
+          }
+        },
+        {
+          "code": "white_edge_contamination",
+          "message": "edge probe edge-right-pink-coral-tips contains too many paper-colored boundary pixels",
+          "details": {
+            "probe": "edge-right-pink-coral-tips",
+            "metric": {
+              "id": "edge-right-pink-coral-tips",
+              "boundary_pixels": 4344,
+              "paper_distance_min": 80.0,
+              "near_paper_boundary_pixels": 1604,
+              "white_fraction": 0.3692449355432781,
+              "max_white_fraction": 0.25,
+              "passed": false
+            }
+          }
+        }
+      ],
+      "annotations": "/Users/za/Documents/product images repo/tasks/double-marine-bed-wrapper-batch/bg-benchmark/annotations/image15.json",
+      "paper_rgb": [
+        250,
+        246,
+        241
+      ],
+      "paper_rgb_source": "case",
+      "candidate_sha256": "36d44140beaf19ca91d11fd4132fdfb34b7ab87a6b892636fd4d695b97da5c1d",
+      "candidate_format": "PNG",
+      "candidate_mode": "RGBA",
+      "candidate_dimensions": [
+        1536,
+        1024
+      ],
+      "reference": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/ChatGPT Image Jul 7, 2026, 11_34_15 AM.png",
+      "scale": 1.0,
+      "alpha": {
+        "background_fraction": 0.36028480529785156,
+        "foreground_fraction": 0.5700352986653646,
+        "semitransparent_fraction": 0.3431142171223958,
+        "unique_values": 256
+      },
+      "straight_rgb_reconstruction": {
+        "mae": 0.43995094299316406,
+        "p95": 2,
+        "p99": 6,
+        "max": 48
+      },
+      "composites": {
+        "white": {
+          "sha256_rgb_bytes": "a0be9c1692ce1876109bf3ad10ceb5ed70b1d5c163a1ef600a196af0f0cec640",
+          "mean_rgb": [
+            234.26830863952637,
+            218.9760710398356,
+            216.08600934346518
+          ],
+          "width": 1536,
+          "height": 1024
+        },
+        "gray": {
+          "sha256_rgb_bytes": "e5f09455320b5ac6ca7f02055db3ec64dbe0ebd3c3bff63c6dddabbcaa1e68f5",
+          "mean_rgb": [
+            183.3878657023112,
+            168.0949796040853,
+            165.20621299743652
+          ],
+          "width": 1536,
+          "height": 1024
+        },
+        "black": {
+          "sha256_rgb_bytes": "b8d2545706dfed0fab04fbbca11cf9615b1a706abcd271a285e941cd06c74c77",
+          "mean_rgb": [
+            121.43350474039714,
+            106.14126714070638,
+            103.25120544433594
+          ],
+          "width": 1536,
+          "height": 1024
+        },
+        "magenta": {
+          "sha256_rgb_bytes": "56de061f0c2e06a83bb5e7ed4603eead4b892e1e61763b4a5925498e1a9b1b7a",
+          "mean_rgb": [
+            234.26830863952637,
+            106.14126714070638,
+            216.08600934346518
+          ],
+          "width": 1536,
+          "height": 1024
+        }
+      },
+      "guard_metrics": [
+        {
+          "id": "fg-top-blue-bubble-rim",
+          "group": "sure_foreground",
+          "alpha_threshold": 48,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.55,
+          "median_alpha": 255.0,
+          "required_median": 80.0,
+          "passed": true
+        },
+        {
+          "id": "fg-upper-pale-bubble-body",
+          "group": "sure_foreground",
+          "alpha_threshold": 32,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.5,
+          "median_alpha": 255.0,
+          "required_median": 64.0,
+          "passed": true
+        },
+        {
+          "id": "fg-left-small-bubble-rim",
+          "group": "sure_foreground",
+          "alpha_threshold": 32,
+          "fraction_meeting_threshold": 0.0,
+          "required_fraction": 0.5,
+          "median_alpha": 2.0,
+          "required_median": 64.0,
+          "passed": false
+        },
+        {
+          "id": "fg-kelp-yellow-tip",
+          "group": "sure_foreground",
+          "alpha_threshold": 64,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.65,
+          "median_alpha": 252.0,
+          "required_median": 96.0,
+          "passed": true
+        },
+        {
+          "id": "fg-kelp-pale-green-blade",
+          "group": "sure_foreground",
+          "alpha_threshold": 64,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.65,
+          "median_alpha": 255.0,
+          "required_median": 96.0,
+          "passed": true
+        },
+        {
+          "id": "fg-seahorse-pale-belly",
+          "group": "sure_foreground",
+          "alpha_threshold": 96,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.75,
+          "median_alpha": 255.0,
+          "required_median": 128.0,
+          "passed": true
+        },
+        {
+          "id": "fg-fish-pale-body",
+          "group": "sure_foreground",
+          "alpha_threshold": 64,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.65,
+          "median_alpha": 255.0,
+          "required_median": 96.0,
+          "passed": true
+        },
+        {
+          "id": "fg-central-pink-pale-tip",
+          "group": "sure_foreground",
+          "alpha_threshold": 48,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.55,
+          "median_alpha": 255.0,
+          "required_median": 80.0,
+          "passed": true
+        },
+        {
+          "id": "fg-right-pale-blue-fan",
+          "group": "sure_foreground",
+          "alpha_threshold": 48,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.55,
+          "median_alpha": 255.0,
+          "required_median": 80.0,
+          "passed": true
+        },
+        {
+          "id": "fg-right-pink-coral-tip",
+          "group": "sure_foreground",
+          "alpha_threshold": 64,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.65,
+          "median_alpha": 255.0,
+          "required_median": 96.0,
+          "passed": true
+        },
+        {
+          "id": "fg-shell-pale-cream",
+          "group": "sure_foreground",
+          "alpha_threshold": 64,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.65,
+          "median_alpha": 255.0,
+          "required_median": 96.0,
+          "passed": true
+        },
+        {
+          "id": "fg-starfish-pale-arm",
+          "group": "sure_foreground",
+          "alpha_threshold": 96,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.75,
+          "median_alpha": 255.0,
+          "required_median": 128.0,
+          "passed": true
+        },
+        {
+          "id": "fg-left-base-watercolor",
+          "group": "sure_foreground",
+          "alpha_threshold": 32,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.5,
+          "median_alpha": 254.0,
+          "required_median": 64.0,
+          "passed": true
+        },
+        {
+          "id": "fg-center-sand-watercolor",
+          "group": "sure_foreground",
+          "alpha_threshold": 32,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.5,
+          "median_alpha": 254.0,
+          "required_median": 64.0,
+          "passed": true
+        },
+        {
+          "id": "fg-right-sand-watercolor",
+          "group": "sure_foreground",
+          "alpha_threshold": 32,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.5,
+          "median_alpha": 154.0,
+          "required_median": 64.0,
+          "passed": true
+        },
+        {
+          "id": "bg-ext-top-left",
+          "group": "sure_background_exterior",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.95,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-ext-top-right",
+          "group": "sure_background_exterior",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.95,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-ext-upper-left",
+          "group": "sure_background_exterior",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.95,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-ext-upper-center",
+          "group": "sure_background_exterior",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.95,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-ext-upper-right",
+          "group": "sure_background_exterior",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.95,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-ext-mid-open-paper",
+          "group": "sure_background_exterior",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.95,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-interior-left-coral-fork-a",
+          "group": "sure_background_enclosed",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.9,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-interior-left-coral-fork-b",
+          "group": "sure_background_enclosed",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 0.0,
+          "required_fraction": 0.9,
+          "p90_alpha": 46.0,
+          "passed": false
+        },
+        {
+          "id": "bg-interior-right-pink-loop-upper",
+          "group": "sure_background_enclosed",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 0.6923076923076923,
+          "required_fraction": 0.9,
+          "p90_alpha": 24.000000000000004,
+          "passed": false
+        },
+        {
+          "id": "bg-interior-center-kelp-gap",
+          "group": "sure_background_enclosed",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 1.0,
+          "required_fraction": 0.9,
+          "p90_alpha": 0.0,
+          "passed": true
+        },
+        {
+          "id": "bg-interior-right-pink-loop-lower",
+          "group": "sure_background_enclosed",
+          "alpha_threshold": 16,
+          "fraction_meeting_threshold": 0.46153846153846156,
+          "required_fraction": 0.9,
+          "p90_alpha": 178.40000000000006,
+          "passed": false
+        }
+      ],
+      "edge_metrics": [
+        {
+          "id": "edge-left-salmon-coral-outer",
+          "boundary_pixels": 2813,
+          "paper_distance_min": 80.0,
+          "near_paper_boundary_pixels": 1278,
+          "white_fraction": 0.45431923213650904,
+          "max_white_fraction": 0.25,
+          "passed": false
+        },
+        {
+          "id": "edge-upper-kelp-ribbons",
+          "boundary_pixels": 1150,
+          "paper_distance_min": 80.0,
+          "near_paper_boundary_pixels": 415,
+          "white_fraction": 0.36086956521739133,
+          "max_white_fraction": 0.25,
+          "passed": false
+        },
+        {
+          "id": "edge-right-pink-coral-tips",
+          "boundary_pixels": 4344,
+          "paper_distance_min": 80.0,
+          "near_paper_boundary_pixels": 1604,
+          "white_fraction": 0.3692449355432781,
+          "max_white_fraction": 0.25,
+          "passed": false
+        }
+      ],
+      "human_review_required": true,
+      "human_review": [
+        {
+          "id": "review-native-multibg-all-edge-probes",
+          "kind": "edge_probes",
+          "backgrounds": [
+            "white",
+            "gray",
+            "black",
+            "magenta"
+          ],
+          "required": true,
+          "why": "Pixel metrics cannot decide whether every translucent watercolor edge looks natural."
+        },
+        {
+          "id": "review-terminal-base-fade",
+          "kind": "bbox",
+          "bbox": [
+            0,
+            865,
+            1536,
+            990
+          ],
+          "backgrounds": [
+            "white",
+            "gray",
+            "black",
+            "magenta"
+          ],
+          "required": true,
+          "why": "The exact terminal transition from authored sand wash to uniform cream paper is intentionally not machine-labelled."
+        },
+        {
+          "id": "review-left-pale-bubble-wash",
+          "kind": "bbox",
+          "bbox": [
+            130,
+            140,
+            240,
+            390
+          ],
+          "backgrounds": [
+            "white",
+            "gray",
+            "black",
+            "magenta"
+          ],
+          "required": true,
+          "why": "Extremely pale bubbles and splash marks need direct visual confirmation."
+        },
+        {
+          "id": "review-right-coral-paper-pockets",
+          "kind": "bbox",
+          "bbox": [
+            1070,
+            120,
+            1510,
+            720
+          ],
+          "backgrounds": [
+            "white",
+            "gray",
+            "black",
+            "magenta"
+          ],
+          "required": true,
+          "why": "Dense coral forks combine pale paint with several true paper pockets."
+        }
+      ],
+      "review_artifacts": [
+        "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/image15/assisted-r110-vitmatte-decontam/benchmark-review/image15/image15--source-annotation-overlay.png",
+        "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/image15/assisted-r110-vitmatte-decontam/benchmark-review/image15/image15--edge-left-salmon-coral-outer--white-gray-black-magenta.png",
+        "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/image15/assisted-r110-vitmatte-decontam/benchmark-review/image15/image15--edge-right-pink-coral-tips--white-gray-black-magenta.png",
+        "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/image15/assisted-r110-vitmatte-decontam/benchmark-review/image15/image15--edge-upper-kelp-ribbons--white-gray-black-magenta.png",
+        "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/image15/assisted-r110-vitmatte-decontam/benchmark-review/image15/image15--review-left-pale-bubble-wash--white-gray-black-magenta.png",
+        "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/image15/assisted-r110-vitmatte-decontam/benchmark-review/image15/image15--review-right-coral-paper-pockets--white-gray-black-magenta.png",
+        "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/image15/assisted-r110-vitmatte-decontam/benchmark-review/image15/image15--review-terminal-base-fade--white-gray-black-magenta.png"
+      ]
+    }
+  ]
+}

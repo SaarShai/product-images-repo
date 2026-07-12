@@ -1,0 +1,10 @@
+{
+  "pct_alpha_near_transparent": 66.87,
+  "pct_alpha_near_opaque": 31.97,
+  "enclosed_green_pockets": 864,
+  "border_occupancy_pct": 1.12,
+  "label": "ffmpeg_chroma_0x00FF00_0.10_0.05",
+  "input_file": "ffmpeg_chroma_0x00FF00_0.10_0.05.png",
+  "magenta_composite": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/verify-matrix/laneE-standard/ffmpeg_chroma_0x00FF00_0.10_0.05_over_magenta.png",
+  "white_composite": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/verify-matrix/laneE-standard/ffmpeg_chroma_0x00FF00_0.10_0.05_over_white.png"
+}

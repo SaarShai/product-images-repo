@@ -1,0 +1,24 @@
+[
+  {
+    "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/white-outline-ab/arm-a-white-control.png",
+    "mode_used": "nonwhite",
+    "boundary_px": 29845,
+    "aura_index": 0.1316,
+    "mean_band_width": 4.018,
+    "median_band_width": 1.0,
+    "hit_rate": 0.9593,
+    "verdict": "PASS",
+    "overlay": "tasks/transparent-background-workflow-v2/aura-overlays/arm-a-white-control-aura-overlay.png"
+  },
+  {
+    "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/white-outline-ab/arm-b-colored-outlines.png",
+    "mode_used": "nonwhite",
+    "boundary_px": 31276,
+    "aura_index": 0.08,
+    "mean_band_width": 2.854,
+    "median_band_width": 1.0,
+    "hit_rate": 0.9792,
+    "verdict": "PASS",
+    "overlay": "tasks/transparent-background-workflow-v2/aura-overlays/arm-b-colored-outlines-aura-overlay.png"
+  }
+]

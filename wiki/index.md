@@ -31,3 +31,17 @@ Compact catalog. Update after material wiki changes.
   v1 works but fails on ultra-pale ghost layers; v2 spec tightens flood (chroma≤5)
   + adaptive boundary erode. Gate: defect_scan_v2.py hi-DPI tiles vs. original-source
   BG model.
+
+## Gotchas & Procedures
+
+- [[concepts/codex-exec-needs-stdin-closed]] - backgrounded `codex exec` blocks
+  forever on stdin unless redirected; always use `</dev/null` to close stdin
+  before launching in background.
+
+- [[concepts/gate-metrics-on-keyed-deliverable-not-raw-render]] - quality metrics
+  (aura_index, etc.) can drift 3-4× between pre-pipeline and post-pipeline stages;
+  gate on the shipped artifact, not intermediates.
+
+- [[concepts/dont-derive-runner-scripts-via-sed]] - deriving runner scripts via sed
+  chains breaks silently on continuation-line corruption; write fresh or keep one
+  parametrized template.

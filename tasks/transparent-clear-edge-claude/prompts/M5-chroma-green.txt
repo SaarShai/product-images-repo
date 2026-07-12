@@ -1,0 +1,3 @@
+Edges: every shape ends in a fully closed outline drawn in a deeper shade of its own color (a color hold) — never black, never white, no gaps; nothing fades into the background.
+
+Background: solid flat uniform background exactly #00FF00, every background pixel identical, no gradient, no vignette, no texture, no shadow, no glow, and strictly no green cast, green reflection, or green spill on the subject; the flat green starts immediately outside the painted subject. Nothing cropped at the edges.

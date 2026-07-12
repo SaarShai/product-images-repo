@@ -1,0 +1,10 @@
+{
+  "pct_alpha_near_transparent": 68.06,
+  "pct_alpha_near_opaque": 31.94,
+  "enclosed_green_pockets": 1559,
+  "border_occupancy_pct": 1.21,
+  "label": "magick_fuzz10",
+  "input_file": "magick_fuzz10.png",
+  "magenta_composite": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/verify-matrix/laneE-standard/magick_fuzz10_over_magenta.png",
+  "white_composite": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/verify-matrix/laneE-standard/magick_fuzz10_over_white.png"
+}

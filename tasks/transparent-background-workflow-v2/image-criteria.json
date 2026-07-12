@@ -1,0 +1,35 @@
+{
+  "source": "frozen-before-generation",
+  "criteria": [
+    {
+      "id": "solid_background",
+      "description": "Required: the requested solid background is visually uniform, texture-free, and clearly separated from the illustration.",
+      "weight": 2,
+      "required": true
+    },
+    {
+      "id": "closed_colored_contours",
+      "description": "Required: object contours are continuous and visually closed; outline hues match their local objects rather than using one generic black contour.",
+      "weight": 2,
+      "required": true
+    },
+    {
+      "id": "interior_light_separation",
+      "description": "Required: intentional light object regions are visibly distinct from the solid background and remain enclosed by their object contours.",
+      "weight": 1,
+      "required": true
+    },
+    {
+      "id": "no_aura_or_fade",
+      "description": "Required: no painted aura, halo, diffuse shadow, or watercolor fade weakens the contrast between the subject edge and solid background.",
+      "weight": 2,
+      "required": true
+    },
+    {
+      "id": "style_similarity",
+      "description": "Required: coral content, pastel watercolor medium, delicate linework, decorative density, and playful marine character are recognizably similar to the uploaded reference.",
+      "weight": 2,
+      "required": true
+    }
+  ]
+}

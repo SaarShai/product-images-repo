@@ -1,0 +1,68 @@
+{
+  "backend": {
+    "backend_requested": "vitmatte",
+    "backend_used": "vitmatte",
+    "device_requested": "auto",
+    "device_used": "mps",
+    "model": "hustvl/vitmatte-small-composition-1k",
+    "processor_shape": [
+      1,
+      4,
+      1536,
+      1024
+    ],
+    "revision": "6a58ad7646403c1df626fbd746900aec7361ea1d",
+    "seconds": 4.424121040999999
+  },
+  "candidate": {
+    "mode": "RGBA-straight",
+    "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/verify-matrix/laneC-vitmatte/keyed_rgba.png",
+    "sha256": "b0c64877d41e45420157a22bfba1f7b46227e5fccaa1646b91a4240c6b372238",
+    "size_wh": [
+      1024,
+      1536
+    ]
+  },
+  "inputs": {
+    "corrections": null,
+    "proposal": {
+      "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/verify-matrix/laneC-vitmatte/trimap_proposal.png",
+      "sha256": "b8b8bc862d4306098c242248743d4b8391c002a22be95c8a8211af3eedad01ef",
+      "size_wh": [
+        1024,
+        1536
+      ]
+    },
+    "source": {
+      "mode": "RGB",
+      "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/chroma-lane/raws/raw_green_P1.png",
+      "sha256": "a9028550e65d055e9eff0efc1af799cf2585907ddba60ece0f750ab895d312ff",
+      "size_wh": [
+        1024,
+        1536
+      ]
+    }
+  },
+  "metrics": {
+    "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/verify-matrix/laneC-vitmatte/metrics_pipeline.json",
+    "sha256": "0ab9788c4e727ae96fc35f1822c494d8a1a747d40cdc49e219cf18c7e2e18577"
+  },
+  "production_ready": false,
+  "promotion_blocked_until": [
+    "independent benchmark verifier passes",
+    "native-resolution visual review passes on white/gray/black/magenta",
+    "user approval"
+  ],
+  "review_board": {
+    "backgrounds": [
+      "white",
+      "gray",
+      "black",
+      "magenta"
+    ],
+    "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/verify-matrix/laneC-vitmatte/review_board.png",
+    "sha256": "d63ea977f44fc20a83c6a2e804297ab5c52a6f322e47f02e3bc71d4f4393b2d7"
+  },
+  "schema": "assisted-bg-candidate-manifest/v1",
+  "status": "candidate-unapproved"
+}

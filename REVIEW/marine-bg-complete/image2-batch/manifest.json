@@ -1,0 +1,128 @@
+[
+  {
+    "tag": "02_Jul_7_2026_10_47_28_AM",
+    "status": "ok",
+    "transp": 73.1,
+    "edge": 0.82,
+    "dt": 139
+  },
+  {
+    "tag": "01_41b95e75-99cf-4002-916f-0bf390d0c256",
+    "status": "ok",
+    "transp": 70.2,
+    "edge": 0.69,
+    "dt": 140
+  },
+  {
+    "tag": "03_Jul_7_2026_10_48_33_AM",
+    "status": "ok",
+    "transp": 79.4,
+    "edge": 0.6,
+    "dt": 158
+  },
+  {
+    "tag": "04_Jul_7_2026_10_54_39_AM",
+    "status": "ok",
+    "transp": 79.8,
+    "edge": 0.61,
+    "dt": 166
+  },
+  {
+    "tag": "05_Jul_7_2026_10_54_48_AM",
+    "status": "ok",
+    "transp": 80.8,
+    "edge": 0.61,
+    "dt": 126
+  },
+  {
+    "tag": "07_Jul_7_2026_11_09_25_AM",
+    "status": "ok",
+    "transp": 73.6,
+    "edge": 0.56,
+    "dt": 133
+  },
+  {
+    "tag": "06_Jul_7_2026_11_05_55_AM",
+    "status": "ok",
+    "transp": 66.3,
+    "edge": 0.7,
+    "dt": 152
+  },
+  {
+    "tag": "08_Jul_7_2026_11_13_45_AM",
+    "status": "ok",
+    "transp": 68.7,
+    "edge": 0.73,
+    "dt": 132
+  },
+  {
+    "tag": "09_Jul_7_2026_11_14_14_AM",
+    "status": "ok",
+    "transp": 72.0,
+    "edge": 1.05,
+    "dt": 142
+  },
+  {
+    "tag": "11_Jul_7_2026_11_20_05_AM",
+    "status": "ok",
+    "transp": 69.4,
+    "edge": 1.32,
+    "dt": 139
+  },
+  {
+    "tag": "10_Jul_7_2026_11_17_21_AM",
+    "status": "ok",
+    "transp": 48.7,
+    "edge": 0.61,
+    "dt": 145
+  },
+  {
+    "tag": "12_Jul_7_2026_11_21_15_AM",
+    "status": "ok",
+    "transp": 48.1,
+    "edge": 0.68,
+    "dt": 141
+  },
+  {
+    "tag": "14_Jul_7_2026_11_34_15_AM",
+    "status": "ok",
+    "transp": 70.8,
+    "edge": 0.7,
+    "dt": 138
+  },
+  {
+    "tag": "17_Jul_7_2026_11_39_53_AM",
+    "status": "ok",
+    "transp": 45.6,
+    "edge": 0.5,
+    "dt": 138
+  },
+  {
+    "tag": "16_Jul_7_2026_11_36_44_AM",
+    "status": "ok",
+    "transp": 56.3,
+    "edge": 0.79,
+    "dt": 143
+  },
+  {
+    "tag": "15_Jul_7_2026_11_36_20_AM",
+    "status": "ok",
+    "transp": 68.8,
+    "edge": 0.84,
+    "dt": 154
+  },
+  {
+    "tag": "18_Jul_7_2026_11_44_05_AM",
+    "status": "ok",
+    "transp": 52.9,
+    "edge": 1.21,
+    "dt": 144
+  },
+  {
+    "tag": "19_c7d6956e-97e6-40cd-8859-bced1156f66e",
+    "status": "ok",
+    "transp": 58.0,
+    "edge": 0.83,
+    "dt": 126
+  }
+]

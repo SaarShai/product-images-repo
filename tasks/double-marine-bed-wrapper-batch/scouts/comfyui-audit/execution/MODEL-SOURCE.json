@@ -1,0 +1,60 @@
+{
+  "schema": "comfyui-sam31-model-source/v2",
+  "recorded_at_utc": "2026-07-10T11:54:09Z",
+  "model": {
+    "name": "sam3.1_multiplex_fp16.safetensors",
+    "destination": "/Users/za/ComfyUI/models/checkpoints/sam3.1_multiplex_fp16.safetensors",
+    "source_url": "https://huggingface.co/Comfy-Org/sam3.1/resolve/main/checkpoints/sam3.1_multiplex_fp16.safetensors",
+    "metadata_url": "https://huggingface.co/Comfy-Org/sam3.1/blob/main/checkpoints/sam3.1_multiplex_fp16.safetensors",
+    "expected_bytes": 1745546848,
+    "expected_file_sha256": "9ba99c92703c2e8b4f47de2d34a539bb8e18923049e238b780d70dbe6368eb03",
+    "xet_storage_hash": "f28913d2d02668c8bef2025d1d213008200379b72f483f98301be6ce6c77df60"
+  },
+  "license": {
+    "name": "SAM License",
+    "url": "https://github.com/facebookresearch/sam3/blob/main/LICENSE",
+    "authorization_note": "The user's continuation authorized the official checkpoint transfer; the parent loop later authorized exactly one transport retry after the initial zero-byte timeout."
+  },
+  "attempt_count": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "kind": "initial_transfer",
+      "started_at_utc": "2026-07-10T11:37:35Z",
+      "finished_at_utc": "2026-07-10T11:38:05Z",
+      "curl_exit": 28,
+      "http_code": "000",
+      "bytes_downloaded": 0,
+      "seconds": 30.002198,
+      "error": "SSL connection timeout",
+      "raw_log": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/comfyui-sam31-image14/model-download.log",
+      "raw_log_sha256": "eeac87d7e252af3496017d20031af74a36b05df81ab108984cece6b13e24504b"
+    },
+    {
+      "attempt": 2,
+      "kind": "parent_authorized_transport_retry",
+      "started_at_utc": "2026-07-10T11:48:10Z",
+      "finished_at_utc": "2026-07-10T11:53:07Z",
+      "connect_timeout_seconds": 300,
+      "curl_internal_retry_flag": false,
+      "curl_exit": 56,
+      "http_code": "200",
+      "bytes_downloaded": 1305342008,
+      "seconds": 293.998603,
+      "error": "Recv failure: Connection reset by peer",
+      "partial_bytes_before_cleanup": 1305342008,
+      "partial_sha256_before_cleanup": "60768dcf617df8c5355b6568c5883c5024cadf78ffc30e008877382f303ecbbe",
+      "partial_cleanup": "PASS_absent",
+      "raw_log": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/comfyui-sam31-image14/model-download-retry.log",
+      "raw_log_sha256": "6361fd7bfbb74830368cbe8ee18ff12bb307397bb6c055fc5e78ca335487173e"
+    }
+  ],
+  "final_state": {
+    "final_checkpoint_exists": false,
+    "partial_checkpoint_exists": false,
+    "comfy_server_started": false,
+    "graph_submitted": false,
+    "candidate_generated": false
+  },
+  "verdict": "FINAL_NETWORK_BLOCKER_SECOND_TRANSFER_FAILED_NO_RESIDUE"
+}

@@ -28,4 +28,8 @@ Compact pointers. Fetch details on demand.
 - concepts/semantic-color-region-map-locks-proportions (concept tags=region-map,geometry-guide,chatgpt,dieline,wanderland,gen-guide) -> `concepts/semantic-color-region-map-locks-proportions.md`
 - concepts/svg-template-whole-redraw-from-roughs (concept tags=pattern:svg-template-whole-redraw-from-roughs,svg-template,image-generation,screenery) -> `concepts/svg-template-whole-redraw-from-roughs.md`
 - concepts/trained-lora-registry-pattern (fact tags=lora,style-transfer,registry,flux,training,collection) -> `concepts/trained-lora-registry-pattern.md`
+- concepts/transparent-clear-edge-prompt-recipe (concept tags=image-generation,prompt-recipe,gpt-image,clean-edge,keyability,chroma-key,white-key,watercolor,transparent-generation,background-removal,user-verified) -> `concepts/transparent-clear-edge-prompt-recipe.md`
 - concepts/two-gate-acceptance-silhouette-iou-plus-vision-judge (fact tags=gates,silhouette-iou,vision-judge,quality-assurance,marriott) -> `concepts/two-gate-acceptance-silhouette-iou-plus-vision-judge.md`
+- concepts/codex-exec-needs-stdin-closed (fact tags=codex,cli,backgrounded-process,stdin,process-management) -> `concepts/codex-exec-needs-stdin-closed.md`
+- concepts/gate-metrics-on-keyed-deliverable-not-raw-render (fact tags=image-generation,quality-assurance,gates,metrics,chroma-key,background-removal,transparency,pipeline) -> `concepts/gate-metrics-on-keyed-deliverable-not-raw-render.md`
+- concepts/dont-derive-runner-scripts-via-sed (fact tags=dev-ops,scripting,shell,maintenance,anti-pattern) -> `concepts/dont-derive-runner-scripts-via-sed.md`

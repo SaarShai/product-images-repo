@@ -1,0 +1,462 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-09",
+  "status": "audit-complete-scout-not-run",
+  "scope": {
+    "writes_allowed": "/Users/za/Documents/product images repo/tasks/double-marine-bed-wrapper-batch/scouts/comfyui-audit/**",
+    "mutations_performed_outside_scope": [],
+    "installs_performed": [],
+    "model_downloads_performed": [],
+    "paid_calls_performed": [],
+    "commits_performed": []
+  },
+  "discovery": {
+    "install_matches": [
+      "/Users/za/ComfyUI"
+    ],
+    "app_bundle_matches": [],
+    "other_manager_roots_found": [],
+    "bounded_search_note": "Covered indexed/signature-name matches under /Users/za, expected app/Application Support/Pinokio/Stability Matrix roots, the full known checkout, repo-local Comfy files, and relevant model caches. Cannot disprove an arbitrarily renamed unindexed copy outside those bounds."
+  },
+  "install": {
+    "root": "/Users/za/ComfyUI",
+    "kind": "local-git",
+    "git_branch": "master",
+    "git_upstream": "origin/master",
+    "git_clean_after_audit": true,
+    "git_commit": "a590d60bb1d7d47c1cdb49fc8116b0e919fc4bd1",
+    "git_commit_date": "2026-06-17T16:21:23+03:00",
+    "git_commit_subject": "feat: SCAIL-2 multireference (CORE-310) (#14509)",
+    "origin": "https://github.com/comfyanonymous/ComfyUI.git",
+    "versions": {
+      "comfyui": "0.25.0",
+      "frontend": "1.45.15",
+      "workflow_templates": "0.10.0",
+      "embedded_docs": "0.5.4"
+    },
+    "launchers": [
+      "/Users/za/ComfyUI/main.py"
+    ],
+    "server_module": "/Users/za/ComfyUI/server.py",
+    "repo_helpers": [
+      "/Users/za/Documents/product images repo/scripts/comfy_build_workflow.py",
+      "/Users/za/Documents/product images repo/scripts/comfy_run.py"
+    ]
+  },
+  "environments": [
+    {
+      "path": "/Users/za/ComfyUI/venv",
+      "role": "active-comfy-runtime",
+      "python": "3.12.13",
+      "architecture": "arm64",
+      "include_system_site_packages": false,
+      "packages_present": {
+        "torch": "2.12.1",
+        "torchvision": "0.27.1",
+        "torchaudio": "2.11.0",
+        "transformers": "5.13.0",
+        "huggingface_hub": "1.22.0",
+        "onnxruntime": "1.27.0",
+        "opencv_python": "5.0.0.93",
+        "opencv_contrib_python": "5.0.0.93",
+        "scikit_image": "0.26.0",
+        "pillow": "12.3.0",
+        "safetensors": "0.8.0"
+      },
+      "packages_absent": [
+        "diffusers",
+        "pymatting",
+        "rembg",
+        "transparent-background",
+        "ben2",
+        "timm",
+        "segment-anything",
+        "sam2"
+      ],
+      "torch_backends": {
+        "mps_built": true,
+        "mps_available": true,
+        "cuda_available": false
+      }
+    },
+    {
+      "path": "/Users/za/ComfyUI/venv.py39.bak",
+      "role": "inactive-backup",
+      "python": "3.9.6",
+      "include_system_site_packages": true
+    },
+    {
+      "path": "/Users/za/Documents/product images repo/.venv-gen",
+      "role": "separate-repo-image-runtime-not-used-by-comfy-main",
+      "packages_present": {
+        "torch": "2.12.1",
+        "torchvision": "0.27.1",
+        "transformers": "5.12.1",
+        "diffusers": "0.38.0",
+        "pymatting": "1.1.15",
+        "ben2": "0.0.1",
+        "transparent-background": "1.3.4",
+        "timm": "1.0.27",
+        "huggingface_hub": "1.20.1"
+      }
+    }
+  ],
+  "server": {
+    "current_state_after_audit": {
+      "main_py_processes": 0,
+      "listeners_8188_8199_8198": 0
+    },
+    "fresh_isolated_launch": {
+      "attempts": 1,
+      "port": 8198,
+      "result": "success",
+      "evidence_retention": "transcript-observed; intentionally ephemeral launch retained no raw response file",
+      "custom_nodes_disabled": true,
+      "api_nodes_disabled": true,
+      "database": "sqlite:///:memory:",
+      "device": "mps",
+      "registered_core_node_count": 556,
+      "system_ram_bytes": 51539607552,
+      "system_vram_bytes": 51539607552,
+      "object_info_probes": [
+        "LoadBackgroundRemovalModel",
+        "RemoveBackground",
+        "SAM3_Detect",
+        "JoinImageWithAlpha"
+      ],
+      "files_left_in_isolated_write_roots": 0,
+      "shutdown": "clean-ctrl-c",
+      "warnings": [
+        "comfy_kitchen absent; fp8/fp4 unavailable",
+        "duplicate AVFoundation classes from cv2 and av"
+      ]
+    },
+    "historical_full_node_evidence": {
+      "ports": [
+        8188,
+        8199
+      ],
+      "device": "mps",
+      "completed_prompts_observed": true,
+      "prompt_time_range_seconds": [
+        38.61,
+        598.85
+      ],
+      "logs": [
+        "/Users/za/ComfyUI/server.log",
+        "/Users/za/ComfyUI/user/comfyui_8188.log",
+        "/Users/za/ComfyUI/user/comfyui_8188.prev.log",
+        "/Users/za/ComfyUI/user/comfyui_8188.prev2.log",
+        "/Users/za/ComfyUI/user/comfyui_8199.log",
+        "/Users/za/ComfyUI/user/comfyui_8199.prev.log",
+        "/Users/za/ComfyUI/user/comfyui_8199.prev2.log"
+      ]
+    }
+  },
+  "custom_nodes": [
+    {
+      "path": "/Users/za/ComfyUI/custom_nodes/ComfyUI-Manager",
+      "commit": "2e93040db50ea96e7655e90c1ddbadcfa9a67811",
+      "origin": "https://github.com/ltdrdata/ComfyUI-Manager.git",
+      "import_state": "success"
+    },
+    {
+      "path": "/Users/za/ComfyUI/custom_nodes/ComfyUI-layerdiffuse",
+      "commit": "b4f6a9e024064a4489f774a8b91049ce0b606ea3",
+      "origin": "https://github.com/huchenlei/ComfyUI-layerdiffuse.git",
+      "import_state": "failed",
+      "error": "ModuleNotFoundError: No module named 'diffusers'",
+      "background_suitability": "transparent diffusion generation/decoding, not removal from an existing watercolor"
+    },
+    {
+      "path": "/Users/za/ComfyUI/custom_nodes/ComfyUI_IPAdapter_plus",
+      "commit": "a0f451a5113cf9becb0847b92884cb10cbdec0ef",
+      "origin": "https://github.com/cubiq/ComfyUI_IPAdapter_plus.git",
+      "import_state": "success"
+    },
+    {
+      "path": "/Users/za/ComfyUI/custom_nodes/comfyui_controlnet_aux",
+      "commit": "e8b689a513c3e6b63edc44066560ca5919c0576e",
+      "version": "1.1.5",
+      "origin": "https://github.com/Fannovel16/comfyui_controlnet_aux.git",
+      "import_state": "success",
+      "relevant_nodes": [
+        "SAMPreprocessor",
+        "OneFormer-COCO-SemSegPreprocessor",
+        "OneFormer-ADE20K-SemSegPreprocessor",
+        "UniformerPreprocessor",
+        "AnimeFace_SemSegPreprocessor",
+        "BinaryPreprocessor",
+        "ColorPreprocessor",
+        "InpaintPreprocessor"
+      ],
+      "relevant_weight_state": "ckpts directory absent; Facebook SAM cache absent",
+      "background_suitability": "control-preprocessor IMAGE maps, not a complete alpha/matting pipeline"
+    },
+    {
+      "path": "/Users/za/ComfyUI/custom_nodes/websocket_image_save.py",
+      "kind": "loose-file",
+      "import_state": "success"
+    }
+  ],
+  "core_capabilities": {
+    "background_removal": [
+      "LoadBackgroundRemovalModel",
+      "RemoveBackground"
+    ],
+    "promptable_segmentation": [
+      "SAM3_Detect",
+      "SAM3_VideoTrack",
+      "SAM3_TrackPreview",
+      "SAM3_TrackToMask"
+    ],
+    "mask_refinement": [
+      "MaskToImage",
+      "ImageToMask",
+      "ImageColorToMask",
+      "SolidMask",
+      "InvertMask",
+      "CropMask",
+      "MaskComposite",
+      "FeatherMask",
+      "GrowMask",
+      "ThresholdMask",
+      "MaskPreview"
+    ],
+    "alpha_composite_save": [
+      "PorterDuffImageComposite",
+      "SplitImageWithAlpha",
+      "JoinImageWithAlpha",
+      "SaveImage",
+      "SaveImageAdvanced"
+    ],
+    "upscaling": [
+      "UpscaleModelLoader",
+      "ImageUpscaleWithModel",
+      "ImageScale",
+      "ImageScaleBy"
+    ],
+    "missing_categories": [
+      "trimap builder",
+      "ViTMatte node",
+      "paper-color foreground decontamination",
+      "professional chroma key/despill",
+      "true alpha-aware super-resolution"
+    ]
+  },
+  "models": {
+    "comfy_models_total_disk": "9.9G",
+    "regular_files_in_models": 42,
+    "symlinks_in_models": 4,
+    "relevant_local": [
+      {
+        "path": "/Users/za/ComfyUI/models/background_removal/put_background_removal_models_here",
+        "bytes": 0,
+        "role": "placeholder"
+      },
+      {
+        "path": "/Users/za/ComfyUI/models/upscale_models/RealESRGAN_x4plus.safetensors",
+        "bytes": 66857836,
+        "role": "RGB x4 upscaler"
+      }
+    ],
+    "required_but_absent": [
+      {
+        "name": "birefnet.safetensors",
+        "expected_path": "/Users/za/ComfyUI/models/background_removal/birefnet.safetensors",
+        "bytes_remote": 444473596,
+        "url": "https://huggingface.co/Comfy-Org/BiRefNet/resolve/main/background_removal/birefnet.safetensors",
+        "license": "MIT"
+      },
+      {
+        "name": "sam3.1_multiplex_fp16.safetensors",
+      "expected_path": "/Users/za/ComfyUI/models/checkpoints/sam3.1_multiplex_fp16.safetensors",
+      "bytes_remote": 1745546848,
+      "file_sha256": "9ba99c92703c2e8b4f47de2d34a539bb8e18923049e238b780d70dbe6368eb03",
+      "xet_hash": "f28913d2d02668c8bef2025d1d213008200379b72f483f98301be6ce6c77df60",
+      "url": "https://huggingface.co/Comfy-Org/sam3.1/resolve/main/checkpoints/sam3.1_multiplex_fp16.safetensors",
+        "license": "SAM License"
+      }
+    ],
+    "external_relevant_caches": [
+      {
+        "model": "BEN2 Base",
+        "path": "/Users/za/.cache/huggingface/hub/models--PramaLLC--BEN2/snapshots/e48a20765fb421d19dcdb0bf3cc61e802ca5ec8f/model.safetensors",
+        "bytes": 380577976,
+        "license": "MIT",
+        "wired_to_active_comfy": false
+      },
+      {
+        "model": "ViTMatte-S Composition-1k",
+        "path": "/Users/za/.cache/huggingface/hub/models--hustvl--vitmatte-small-composition-1k/snapshots/6a58ad7646403c1df626fbd746900aec7361ea1d/model.safetensors",
+        "bytes": 103294572,
+        "sha256": "bda9289db1bb6762d978b42d1c62ae3f34daf7497171a347a1d09657efd788cb",
+        "license": "Apache-2.0",
+        "wired_to_active_comfy": false,
+        "usable_in_repo_venv_gen": true
+      },
+      {
+        "model": "isnet-anime ONNX",
+        "path": "/Users/za/.u2net/isnet-anime.onnx",
+        "bytes": 176069933,
+        "wired_to_active_comfy": false
+      },
+      {
+        "model": "u2net ONNX",
+        "path": "/Users/za/.u2net/u2net.onnx",
+        "bytes": 175997641,
+        "wired_to_active_comfy": false
+      },
+      {
+        "model": "BiRefNet HRSOD ONNX",
+        "path": "/Users/za/.u2net/birefnet-hrsod.onnx",
+        "bytes": 972666916,
+        "wired_to_active_comfy": false
+      },
+      {
+        "model": "u2net human segmentation ONNX",
+        "path": "/Users/za/.u2net/u2net_human_seg.onnx",
+        "bytes": 175997641,
+        "wired_to_active_comfy": false
+      },
+      {
+        "model": "BRIA RMBG ONNX",
+        "path": "/Users/za/.u2net/bria-rmbg.onnx",
+        "bytes": 1024331469,
+        "wired_to_active_comfy": false,
+        "license_note": "cache provenance must be rechecked; official RMBG-2.0 weights are non-commercial without agreement"
+      },
+      {
+        "model": "BiRefNet general ONNX",
+        "path": "/Users/za/.u2net/birefnet-general.onnx",
+        "bytes": 972666916,
+        "wired_to_active_comfy": false
+      }
+    ],
+    "non_background_symlinks": [
+      "models/clip_vision/CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors",
+      "models/controlnet/xinsir-controlnet-canny-sdxl-1.0.safetensors",
+      "models/controlnet/xinsir_canny_sdxl.safetensors",
+      "models/ipadapter/ip-adapter-plus_sdxl_vit-h.safetensors"
+    ]
+  },
+  "workflows_and_logs": {
+    "core_blueprints_json": 89,
+    "layerdiffuse_examples_json": 10,
+    "ipadapter_examples_json": 21,
+    "repo_task_api_workflows": 23,
+    "repo_task_api_workflow_glob": "tasks/workflow-rebuild/comfy/**/wf-*.json",
+    "repo_task_non_workflow_jsons": 9,
+    "output_pngs": 59,
+    "output_pngs_with_prompt_graph": 59,
+    "output_pngs_with_ui_workflow_metadata": 0,
+    "unique_output_prompt_node_types": [
+      "CLIPTextEncode",
+      "CLIPVisionLoader",
+      "CheckpointLoaderSimple",
+      "ControlNetApplyAdvanced",
+      "ControlNetLoader",
+      "EmptyLatentImage",
+      "IPAdapterAdvanced",
+      "IPAdapterModelLoader",
+      "ImageBatch",
+      "ImageToMask",
+      "KSampler",
+      "LoadImage",
+      "SaveImage",
+      "SetLatentNoiseMask",
+      "VAEDecode",
+      "VAEEncode"
+    ],
+    "background_route_hits_in_prior_prompt_graphs": [],
+    "saved_user_workflow_jsons": 0,
+    "notes": [
+      "Prior task workflows are generation/ControlNet/IPAdapter/inpainting graphs, not background-removal workflows.",
+      "A stale task-local bind failure is superseded by later successful home logs and the fresh isolated audit launch.",
+      "LayerDiffuse import failure is consistent across historical full-node logs."
+    ]
+  },
+  "route_readiness": [
+    {
+      "route": "core-birefnet",
+      "framework": "ComfyUI core",
+      "node_state": "installed",
+      "weight_state": "missing",
+      "ready": false,
+      "image14_differentiation": "low"
+    },
+    {
+      "route": "sam31-point-topology",
+      "framework": "ComfyUI core",
+      "node_state": "installed",
+      "weight_state": "missing",
+      "ready": false,
+      "image14_differentiation": "high",
+      "prior_external_text_only_scout": {
+        "path": "/Users/za/Documents/product images repo/tasks/double-marine-bed-wrapper-batch/scouts/sam3/EVALUATION.md",
+        "result": "failed-complete-route",
+        "returned_masks": 1,
+        "mask_kind": "hard-binary",
+        "failure_classes": [
+          "enclosed paper retained",
+          "bubbles fish and tips missed",
+          "no matting or foreground color recovery"
+        ],
+        "implication": "do not union text conditioning into the point-only local scout"
+      }
+    },
+    {
+      "route": "vitmatte-s",
+      "framework": "repo .venv-gen",
+      "node_state": "not in active Comfy",
+      "weight_state": "cached",
+      "ready": true,
+      "prior_result": "MPS feasible; incomplete without correct semantic trimap"
+    },
+    {
+      "route": "ben2",
+      "framework": "external cache only",
+      "node_state": "not installed",
+      "weight_state": "cached",
+      "ready": false,
+      "image14_differentiation": "medium-low"
+    },
+    {
+      "route": "inspyrenet",
+      "framework": "third-party node or repo .venv-gen",
+      "node_state": "not installed in Comfy",
+      "weight_state": "no Comfy weight",
+      "ready": false,
+      "prior_image14_evidence": true
+    },
+    {
+      "route": "chroma-key-despill",
+      "framework": "third-party pack",
+      "node_state": "not installed",
+      "weight_state": "not applicable",
+      "ready": false,
+      "image14_suitability": "poor"
+    },
+    {
+      "route": "alpha-aware-upscale",
+      "framework": "core split/recombine only",
+      "node_state": "partial",
+      "weight_state": "RGB RealESRGAN present",
+      "ready": false,
+      "risk": "separate RGB/mask scaling is not true premultiplied alpha-aware super-resolution"
+    }
+  ],
+  "recommended_scout": {
+    "name": "image14-comfy-sam31-vitmatte-one-pass",
+    "status": "specified-not-authorized-not-run",
+    "new_node_packs": 0,
+    "new_models": 1,
+    "new_model_bytes": 1745546848,
+    "budget": {
+      "max_iterations": 1
+    },
+    "generator": "Comfy core SAM3.1 point-only positive/negative mask plus existing correction-led ViTMatte CLI",
+    "verifier": "frozen bg-benchmark verifier plus separate native multi-background human review",
+    "why_different": "tests the native point decoder with explicit negative interior-paper points and no text-mask union after a concurrent text-only SAM3 scout failed; reuses the already-proven soft-alpha/decontamination stage"
+  }
+}

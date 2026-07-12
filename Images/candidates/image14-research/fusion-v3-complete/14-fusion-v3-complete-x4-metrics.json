@@ -1,0 +1,94 @@
+{
+  "paper_mean_rgb": [
+    255.0,
+    255.0,
+    255.0
+  ],
+  "paper_std_rgb": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "paper_px": 14327018,
+  "flood_bg_px": 12950423,
+  "enclosed_paper_px": 1376595,
+  "bria_fg_px": 9893789,
+  "final_fg_px": 10658770,
+  "removed_small_fg_px": 1138,
+  "adaptive_erode_iters": 1,
+  "unmatte_px": 185809,
+  "decontam_px": 225315,
+  "luma_cap_px": 52274,
+  "extra_bria_hole_px": 12418,
+  "hole_components_opened": 321,
+  "hole_px_opened": 1373305,
+  "restore_components": 119,
+  "restore_px": 10866,
+  "candidate_components": 210,
+  "params": {
+    "paper_chroma_max": 5.0,
+    "paper_luma_min": 248.0,
+    "paper_dist_max": 8.0,
+    "restore_min_chroma": 4.0,
+    "restore_max_luma": 248.0,
+    "restore_min_dist": 3.5,
+    "restore_min_area": 16,
+    "restore_max_area": 200000,
+    "hole_min_area": 32,
+    "adaptive_erode_cap": 4,
+    "adaptive_erode_luma": 245.0,
+    "defringe_width": 6,
+    "luma_cap": 235.0,
+    "small_fg_min_area": 12,
+    "forced_erode": 1
+  },
+  "alpha": {
+    "opaque_pct": 42.34100983123929,
+    "transparent_pct": 57.65899016876071,
+    "semi_pct": 0.0
+  },
+  "roi_scores": {
+    "cut00": {
+      "wrong_cut_px": 283,
+      "opaque_paperish_px": 20,
+      "fringe_score": 0.05515151515151515,
+      "trans_pct": 17.50625
+    },
+    "cut01": {
+      "wrong_cut_px": 216,
+      "opaque_paperish_px": 0,
+      "fringe_score": 0.05137289636846767,
+      "trans_pct": 63.724137931034484
+    },
+    "cut02": {
+      "wrong_cut_px": 107,
+      "opaque_paperish_px": 3,
+      "fringe_score": 0.0781456953642384,
+      "trans_pct": 45.86666666666667
+    },
+    "enclosed_tri": {
+      "wrong_cut_px": 132,
+      "opaque_paperish_px": 11,
+      "fringe_score": 0.07710280373831775,
+      "trans_pct": 38.970947265625
+    },
+    "fringe_purple": {
+      "wrong_cut_px": 54,
+      "opaque_paperish_px": 0,
+      "fringe_score": 0.0,
+      "trans_pct": 94.329833984375
+    },
+    "fringe_pink": {
+      "wrong_cut_px": 270,
+      "opaque_paperish_px": 0,
+      "fringe_score": 0.003616636528028933,
+      "trans_pct": 56.94580078125
+    }
+  },
+  "bria_source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/batch-x8-hard180/x4-hard180/14-ChatGPT_Image_Jul_7_2026_11_22_35_AM@x4-hard180-colorrestore.png",
+  "rgb_shape": [
+    6688,
+    3764,
+    3
+  ]
+}

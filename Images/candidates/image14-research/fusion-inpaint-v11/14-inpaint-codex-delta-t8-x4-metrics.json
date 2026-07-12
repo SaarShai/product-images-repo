@@ -1,0 +1,30 @@
+{
+  "thr_sweep": {
+    "3": {
+      "opaque_pct": 98.96138944114222,
+      "paintish_trans": 2
+    },
+    "5": {
+      "opaque_pct": 90.21839995118702,
+      "paintish_trans": 404
+    },
+    "8": {
+      "opaque_pct": 66.34910687500319,
+      "paintish_trans": 3743
+    },
+    "12": {
+      "opaque_pct": 44.78705337394302,
+      "paintish_trans": 11962
+    },
+    "16": {
+      "opaque_pct": 42.734556539159705,
+      "paintish_trans": 20683
+    },
+    "20": {
+      "opaque_pct": 42.00592111619015,
+      "paintish_trans": 29821
+    }
+  },
+  "chosen": 8,
+  "opaque_pct": 68.40215587484555
+}

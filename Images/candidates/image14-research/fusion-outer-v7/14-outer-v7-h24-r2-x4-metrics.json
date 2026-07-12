@@ -1,0 +1,27 @@
+{
+  "paper_mean_rgb": [
+    255.0,
+    255.0,
+    255.0
+  ],
+  "seed_px": 10848484,
+  "grown_px": 11007586,
+  "outer_bg_px": 12830512,
+  "hole_components": 0,
+  "hole_px": 0,
+  "fg_px": 10924588,
+  "opaque_pct": 43.396948044684216,
+  "transparent_pct": 56.603051955315784,
+  "semi_pct": 0.0,
+  "params": {
+    "seed_chroma_min": 5.0,
+    "seed_luma_max": 240.0,
+    "pure_chroma_max": 2.5,
+    "pure_luma_min": 251.0,
+    "hole_min_area": 24,
+    "white_rim_cut_px": 2,
+    "defringe_width": 5,
+    "luma_cap": 232.0,
+    "small_noise_area": 48
+  }
+}

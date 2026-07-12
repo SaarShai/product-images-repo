@@ -1,0 +1,34 @@
+{
+  "paper_mean_rgb": [
+    255.0,
+    255.0,
+    255.0
+  ],
+  "trimap_fg_pct": 42.9439820205523,
+  "trimap_bg_pct": 51.463499585598136,
+  "trimap_unk_pct": 5.592518393849565,
+  "soft_before_flatten_pct": 0.1521751013123573,
+  "opaque_pct": 48.5139371227799,
+  "transparent_pct": 51.48606287722009,
+  "semi_pct": 0.0,
+  "cf_seconds": 2.6135549545288086,
+  "trimap_seconds": 0.2914011478424072,
+  "params": {
+    "chroma_fg_min": 14.0,
+    "chroma_dilate_px": 2,
+    "paper_luma_min": 248.0,
+    "paper_chroma_max": 4.0,
+    "enclosed_paper_clearance_px": 0,
+    "bria_fg_min": 200,
+    "bria_erode_px": 3,
+    "use_bria": true,
+    "flatten_alpha_min": 0.15,
+    "cg_maxiter": 300,
+    "half_res": true
+  },
+  "half_res": true,
+  "work_size": [
+    1882,
+    3344
+  ]
+}

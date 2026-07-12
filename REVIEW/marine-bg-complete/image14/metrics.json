@@ -1,0 +1,161 @@
+{
+  "backend": {
+    "backend_requested": "vitmatte",
+    "backend_used": "vitmatte",
+    "device_requested": "mps",
+    "device_used": "mps",
+    "model": "hustvl/vitmatte-small-composition-1k",
+    "processor_shape": [
+      1,
+      4,
+      1696,
+      960
+    ],
+    "revision": "6a58ad7646403c1df626fbd746900aec7361ea1d",
+    "seconds": 1.1820389580000001
+  },
+  "config": {
+    "binary": false,
+    "binary_threshold": 0.5,
+    "closed_form_maxiter": 1000,
+    "correction_other_max": 64,
+    "correction_primary_min": 200,
+    "correction_unlock_radius_px": 110,
+    "device": "mps",
+    "edge_decontamination": true,
+    "inner_distance_px": 3,
+    "outer_distance_px": 3,
+    "proposal_bg_threshold": 0.05,
+    "proposal_fg_threshold": 0.95,
+    "residual_alpha_floor": 0.2,
+    "residual_max_adjustment": 0.35,
+    "vitmatte_model": "hustvl/vitmatte-small-composition-1k",
+    "vitmatte_revision": "6a58ad7646403c1df626fbd746900aec7361ea1d"
+  },
+  "elapsed_seconds": 5.101980999999999,
+  "generated_at_utc": "2026-07-10T12:02:41.713640+00:00",
+  "inputs": {
+    "corrections": {
+      "mode": "RGBA",
+      "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v1/image14-labels/image14-correction-labels-rgba.png",
+      "sha256": "18d695a2cada3a2e1fb9a7c72f2ec04ed90a9e89d6dfc1d8d96a73bd47ab6a61",
+      "size_wh": [
+        941,
+        1672
+      ]
+    },
+    "proposal": {
+      "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/image14-research/photoshop-scout/image14-photoshop-auto-mask-alpha.png",
+      "sha256": "7401e09a30114df78af20ba92b8634860c1b1fc367df0064ec6cd819f51a972c",
+      "size_wh": [
+        941,
+        1672
+      ]
+    },
+    "source": {
+      "mode": "RGB",
+      "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/ChatGPT Image Jul 7, 2026, 11_22_35 AM.png",
+      "sha256": "925c34a39a0e2b5a09ad92ba39dace87f652bcc90ff8e063e2a6f644e735df9d",
+      "size_wh": [
+        941,
+        1672
+      ]
+    }
+  },
+  "outputs": {
+    "review_board": {
+      "backgrounds": [
+        "white",
+        "gray",
+        "black",
+        "magenta"
+      ],
+      "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/image14/assisted-r110-vitmatte-decontam/review-full-four-backgrounds.png",
+      "sha256": "a445c175ea3119c368cbfbe0e8d70ffd7538ed9340d43d337c791d20758d61d0"
+    },
+    "rgba": {
+      "mode": "RGBA-straight",
+      "path": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/double Marine Bed Wrapper/images/Images/candidates/bg-assisted-v2/image14/assisted-r110-vitmatte-decontam/image14-assisted-r110-decontam-rgba.png",
+      "sha256": "e73c654cd1e9973f2353e6041185af4a025e0896a76ae9690316a055bdf2d742",
+      "size_wh": [
+        941,
+        1672
+      ]
+    }
+  },
+  "pipeline": {
+    "alpha": {
+      "exact_one_pixels": 403071,
+      "exact_zero_pixels": 671379,
+      "max": 1.0,
+      "mean": 0.4177842438220978,
+      "min": 0.0,
+      "percentiles": {
+        "0": 0.0,
+        "1": 0.0,
+        "100": 1.0,
+        "5": 0.0,
+        "50": 0.02801523171365261,
+        "95": 1.0,
+        "99": 1.0
+      },
+      "soft_pixels": 498902
+    },
+    "alpha_mode": "soft-straight-default",
+    "corrections": {
+      "labels_clamped_after_solver": true,
+      "sure_bg_pixels": 0,
+      "sure_fg_pixels": 3215,
+      "unlock_radius_px": 110
+    },
+    "foreground_rgb": {
+      "background_rgb_0_1": [
+        0.9960784316062927,
+        0.9960784316062927,
+        0.9960784316062927
+      ],
+      "edge_decontamination": {
+        "boundary_pixels": 105218,
+        "boundary_width_px": 2,
+        "changed_pixels": 4836,
+        "changed_recomposition_error_max_8bit": 7.999999523162842,
+        "changed_recomposition_error_p95_8bit": 6.212613582611084,
+        "enabled": true,
+        "foreground_alpha": 0.06274509803921569,
+        "interior_alpha": 0.98,
+        "max_recomposition_error_8bit": 8.0,
+        "method": "same-component-color-plus-least-squares-alpha",
+        "minimum_new_alpha": 0.06666666666666667,
+        "paper_distance_8bit": 80.0,
+        "protected_pixels": 1074450,
+        "target_radius_px": 8
+      },
+      "representation": "straight/unassociated",
+      "residual_correction": {
+        "alpha_floor": 0.2,
+        "eligible_pixels": 702123,
+        "eligible_recomposition_mae_after": 0.00041853709262795746,
+        "eligible_recomposition_mae_before": 0.0063337357714772224,
+        "eligible_recomposition_p95_after": 5.960464477539063e-08,
+        "eligible_recomposition_p95_before": 0.03473770618438721,
+        "max_adjustment": 0.35
+      }
+    },
+    "native_resolution_preserved": true,
+    "proposal": {
+      "sure_bg_pixels_before_corrections": 781797,
+      "sure_fg_pixels_before_corrections": 470541
+    },
+    "source_size_wh": [
+      941,
+      1672
+    ],
+    "trimap": {
+      "sure_bg_pixels": 671379,
+      "sure_fg_pixels": 403071,
+      "unknown_pixels": 498902
+    }
+  },
+  "schema": "assisted-bg-metrics/v1",
+  "status": "candidate-unapproved"
+}

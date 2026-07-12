@@ -1,0 +1,3 @@
+Edges: every shape ends in a fully closed outline drawn in a deeper shade of its own color (a color hold) — never black, never white, no gaps; nothing fades into the background. Any light area inside the illustration is a tinted off-white (cream, blush, pale blue), never the background's pure white.
+
+Background: perfectly uniform solid pure white #FFFFFF with no texture, shadow, glow, or color spill, starting immediately outside the painted subject.
