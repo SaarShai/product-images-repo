@@ -16,7 +16,8 @@ per service are safe. Resolution priority (per call):
       exists. This is the strongest signal because it is emitted by the very
       process we launched.
         * codex prints `session id: <uuid>` on stderr; its image lands in
-          `~/.codex/generated_images/<uuid>/ig_*.png` — a per-call unique dir.
+          `~/.codex/generated_images/<uuid>/` — a per-call unique dir
+          (filename patterns live in scripts/codex_images.py).
         * agy prints the exact brain-dir source path in stdout (our prompt asks
           it to).
   (b) SET DIFFERENCE: files present AFTER the call minus files present BEFORE.
@@ -29,7 +30,7 @@ Both functions mirror the signatures/semantics of `geom_adherence_test.py`'s
 
 Empirical evidence captured 2026-06-17 (real runs on this machine):
   codex stderr: `session id: 019ed673-f927-7fe1-8407-840bf77b1641`
-                -> ~/.codex/generated_images/019ed673-.../ig_*.png  (existed)
+                -> an image in ~/.codex/generated_images/019ed673-.../  (existed)
   agy stdout:   `.../antigravity-cli/brain/3d6dba54-.../blue_circle_1781714453127.jpg`
 """
 
@@ -39,10 +40,13 @@ import glob
 import os
 import re
 import subprocess
+import sys
 import time
 from pathlib import Path
 
-CODEX_GLOB = os.path.expanduser("~/.codex/generated_images/*/ig_*.png")
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import codex_images  # noqa: E402 — single source of truth for codex output discovery
+
 AGY_BRAIN = os.path.expanduser("~/.gemini/antigravity-cli/brain")
 AGY_EXTS = ("jpg", "jpeg", "png")
 
@@ -57,11 +61,6 @@ _AGY_PATH_RE = re.compile(
 # --------------------------------------------------------------------------- #
 # generic helpers
 # --------------------------------------------------------------------------- #
-def _snapshot(pattern: str) -> set[str]:
-    """Set of files matching a glob — the BEFORE/AFTER snapshot."""
-    return set(glob.glob(pattern))
-
-
 def _newest(files) -> str | None:
     files = [f for f in files if os.path.exists(f)]
     return max(files, key=os.path.getmtime) if files else None
@@ -72,10 +71,7 @@ def _newest(files) -> str | None:
 # --------------------------------------------------------------------------- #
 def _codex_image_for_session(sid: str) -> str | None:
     """The image written under the per-call session dir, if any."""
-    hits = glob.glob(
-        os.path.expanduser(f"~/.codex/generated_images/{sid}/ig_*.png")
-    )
-    return _newest(hits)
+    return _newest(codex_images.session_images(codex_images.CODEX_DIR / sid))
 
 
 def gen_codex_safe(prompt: str, images: list[Path], timeout: int) -> str | None:
@@ -85,7 +81,7 @@ def gen_codex_safe(prompt: str, images: list[Path], timeout: int) -> str | None:
     None. Safe to run concurrently against codex because resolution keys off
     the per-call session id printed to stderr.
     """
-    before = _snapshot(CODEX_GLOB)
+    before = set(codex_images.all_images())
     t0 = time.time() - 1  # epsilon so a same-second write isn't missed
     cmd = ["codex", "exec", "--skip-git-repo-check", "-",
            "-i", *[str(i) for i in images]]
@@ -100,7 +96,7 @@ def gen_codex_safe(prompt: str, images: list[Path], timeout: int) -> str | None:
         if hit:
             return hit
 
-    after = _snapshot(CODEX_GLOB)
+    after = set(codex_images.all_images())
 
     # (b) set difference: exactly one new image file.
     new = after - before

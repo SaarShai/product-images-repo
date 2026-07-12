@@ -32,7 +32,9 @@ from __future__ import annotations
 import argparse, glob, os, re, shutil, signal, subprocess, sys, time
 from pathlib import Path
 
-CODEX_DIR = Path.home() / ".codex" / "generated_images"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import codex_images  # single source of truth for codex output-file discovery
+
 AGY_BRAIN = Path.home() / ".gemini" / "antigravity-cli" / "brain"
 _PATH_RE = re.compile(r"(/[^\s`'\"]+\.(?:jpg|jpeg|png))", re.I)
 _SID_RE = re.compile(r"session id:\s*([0-9a-fA-F-]{36})")
@@ -99,13 +101,14 @@ def _discover_codex(stdout, stderr, before):
     for txt in (stderr, stdout):
         m = _SID_RE.search(txt or "")
         if m:
-            d = CODEX_DIR / m.group(1)
+            d = codex_images.CODEX_DIR / m.group(1)
             if d.is_dir():
-                pngs = sorted(d.glob("ig_*.png"), key=os.path.getmtime, reverse=True)
+                pngs = sorted(codex_images.session_images(d),
+                              key=os.path.getmtime, reverse=True)
                 if pngs:
-                    return str(pngs[0])
+                    return pngs[0]
     # 2. set-diff (one new file)
-    after = set(glob.glob(str(CODEX_DIR / "*" / "ig_*.png")))
+    after = set(codex_images.all_images())
     new = sorted(after - before, key=os.path.getmtime, reverse=True)
     if new:
         return new[0]
@@ -123,7 +126,7 @@ def gen_openai(prompt, images, out, timeout=300, retries=3, model=None) -> Path:
         base += ["-i", str(img if Path(img).is_absolute() else Path.cwd() / img)]
     base += ["-"]
     for attempt in range(1, retries + 1):
-        before = set(glob.glob(str(CODEX_DIR / "*" / "ig_*.png")))
+        before = set(codex_images.all_images())
         rc, o, e, to = _run(base, force + prompt, timeout)
         cand = _discover_codex(o, e, before)
         if _valid_image(cand):

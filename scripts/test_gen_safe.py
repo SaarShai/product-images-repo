@@ -9,7 +9,8 @@ How "correct attribution" is proven per service:
   * codex — resolution keys off the per-call `session id` printed on stderr,
     and the image lives in `~/.codex/generated_images/<session_id>/`. We assert
     (i) the two codex calls resolved files in DIFFERENT session dirs, and
-    (ii) each resolved path is the only ig_*.png in its own session dir. The
+    (ii) each resolved path is the only codex-generated image (per
+    codex_images.CODEX_IMAGE_PATTERNS) in its own session dir. The
     session id is minted by codex per invocation, so a swap is structurally
     impossible — this is a stronger check than model-rendered colour (gpt-image
     does not reliably honour "make it solid red" for trivial swatch prompts).
@@ -35,6 +36,7 @@ import numpy as np
 from PIL import Image
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import codex_images  # noqa: E402
 from gen_safe import gen_agy_safe, gen_codex_safe  # noqa: E402
 
 TIMEOUT = 360
@@ -113,7 +115,7 @@ def main() -> int:
         p = results.get(label)
         if not p:
             continue
-        siblings = list(Path(p).parent.glob("ig_*.png"))
+        siblings = [Path(s) for s in codex_images.session_images(Path(p).parent)]
         if siblings != [Path(p)]:
             print(f"FAIL: {label} session dir holds {len(siblings)} images, "
                   f"resolution ambiguous -> {siblings}")

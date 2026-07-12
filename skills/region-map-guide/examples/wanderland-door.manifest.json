@@ -1,0 +1,47 @@
+{
+  "canvas": {"width": 1243, "height": 1776, "background": "white"},
+  "silhouette": {
+    "source": "skills/region-map-guide/examples/wanderland-door-silhouette.png",
+    "color": "pink",
+    "means": "the stone facade and gabled roof of the fire station, red roof tiles on the gable edges"
+  },
+  "regions": [
+    {
+      "name": "door-leaf",
+      "means": "the recessed arched door leaf",
+      "color": "grey",
+      "shape": {"type": "arch", "x": 327, "y": 712, "w": 576, "h": 1058}
+    },
+    {
+      "name": "door-frame",
+      "means": "the decorative arched door frame/trim",
+      "color": "orange",
+      "shape": {"type": "band", "around": "door-leaf", "thickness": 70}
+    },
+    {
+      "name": "lamp-left",
+      "means": "a wall-mounted lamp fixture",
+      "color": "blue",
+      "shape": {"type": "rect", "x": 50, "y": 933, "w": 111, "h": 283}
+    },
+    {
+      "name": "lamp-right",
+      "means": "a wall-mounted lamp fixture",
+      "color": "blue",
+      "shape": {"type": "rect", "x": 1072, "y": 933, "w": 111, "h": 283}
+    },
+    {
+      "name": "gable-logo",
+      "means": "the round gable emblem/logo",
+      "color": "green",
+      "shape": {"type": "circle", "cx": 616.5, "cy": 436, "r": 121.5}
+    },
+    {
+      "name": "door-knobs",
+      "means": "door-knob zone — do NOT place door windows or glazing in this area",
+      "color": "black",
+      "avoid": true,
+      "shape": {"type": "dots", "points": [[568, 1158], [667, 1158]], "r": 22}
+    }
+  ]
+}

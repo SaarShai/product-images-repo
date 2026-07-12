@@ -10,15 +10,25 @@ real block:
      `tasks/space-np01-front-bottom-02/RESULTS/Images/` once silently dropped 8 files
      (`$n__raw` expanded empty). BLOCK it; require the verified
      `scripts/sync_results_images.py` instead.
-  2. edit-without-read — Edit/Write to an EXISTING file with no fresh Read of that
-     path this session (since the file's last modification). The native guard catches
-     the never-read case; this also catches stale-read and bash-cat-then-edit.
+  2. edit-without-read — Edit/Write to an EXISTING file with no fresh knowledge of
+     its CURRENT content this session. Two freshness sources satisfy the gate:
+       a. a Read of the path newer than the file's last modification
+          (state: .claude/state/read_paths.json, stamped below), or
+       b. a SUCCESSFUL Edit/Write of the path by THIS session whose post-write
+          st_mtime_ns still equals the file's current st_mtime_ns
+          (state: .claude/state/write_stamps.json, stamped by the companion
+          PostToolUse hook artifact_guard_post.py — never at PreToolUse approval,
+          so a failed write grants nothing and ANY external mutation afterward,
+          however quick, invalidates the stamp exactly).
 
 Mechanism: PreToolUse hook. exit 0 = allow; exit 2 + stderr = BLOCK (stderr shown to
-the model). State for read-tracking lives in .claude/state/read_paths.json.
+the model).
 
-Wire (in .claude/settings.json PreToolUse, matcher "*"):
-  python3 ./.claude/hooks/artifact_guard.py
+Wire (in .claude/settings.json):
+  PreToolUse,  matcher "*":
+    python3 "${CLAUDE_PROJECT_DIR:-$PWD}/.claude/hooks/artifact_guard.py"
+  PostToolUse, matcher "Edit|MultiEdit|Write|NotebookEdit":
+    python3 "${CLAUDE_PROJECT_DIR:-$PWD}/.claude/hooks/artifact_guard_post.py"
 """
 from __future__ import annotations
 import json
@@ -30,7 +40,10 @@ import time
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
-STATE = REPO / ".claude/state/read_paths.json"
+# env override exists for the test harness only — real hooks use the repo default
+STATE_DIR = Path(os.environ.get("ARTIFACT_GUARD_STATE_DIR") or (REPO / ".claude/state"))
+STATE = STATE_DIR / "read_paths.json"
+WRITE_STAMPS = STATE_DIR / "write_stamps.json"
 IMAGES = "tasks/space-np01-front-bottom-02/RESULTS/Images"
 SYNC = "scripts/sync_results_images.py"
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp", ".tif", ".tiff"}
@@ -115,6 +128,37 @@ def save_state(s: dict) -> None:
     STATE.write_text(json.dumps(s))
 
 
+def load_write_stamps() -> dict:
+    try:
+        d = json.loads(WRITE_STAMPS.read_text())
+        return d if isinstance(d, dict) else {}
+    except Exception:
+        return {}
+
+
+def save_write_stamps(d: dict) -> None:
+    WRITE_STAMPS.parent.mkdir(parents=True, exist_ok=True)
+    tmp = WRITE_STAMPS.with_suffix(".json.tmp")
+    tmp.write_text(json.dumps(d))
+    tmp.replace(WRITE_STAMPS)  # atomic: a concurrent reader never sees torn JSON
+
+
+def fresh_write_stamp(session_id: str, path: str, mtime_ns) -> bool:
+    """True iff THIS session's last successful write of `path` left exactly the
+    bytes now on disk (post-write st_mtime_ns recorded by artifact_guard_post.py).
+    Exact-match on mtime_ns: an external mutation after our write — even within
+    the same second — breaks equality and the stamp no longer counts."""
+    if mtime_ns is None:
+        return False
+    try:
+        sess = load_write_stamps().get("sessions", {}).get(session_id or "")
+        if not isinstance(sess, dict):
+            return False
+        return sess.get("paths", {}).get(path) == mtime_ns
+    except Exception:
+        return False
+
+
 def norm(p: str) -> str:
     try:
         return str(Path(p).resolve())
@@ -193,14 +237,16 @@ def main() -> int:
             )
         return 0
 
-    # --- gate 2: edit/write to an existing file with no fresh read ---
+    # --- gate 2: edit/write to an existing file with no fresh read/write ---
     if tool in ("Edit", "MultiEdit", "Write", "NotebookEdit"):
         fp = ti.get("file_path") or ti.get("notebook_path")
         if not fp:
             return 0
         p = Path(fp)
         if not p.exists():
-            return 0  # creating a new file is fine
+            # creating a new file is fine; freshness for the follow-up Edit is
+            # stamped by artifact_guard_post.py only AFTER the Write succeeds
+            return 0
         if _is_existing_raw(p):
             block(
                 "BLOCKED (artifact_guard: raw-overwrite).\n"
@@ -211,19 +257,25 @@ def main() -> int:
         s = load_state()
         last_read = s.get(norm(fp), 0)
         try:
-            mtime = p.stat().st_mtime
+            st = p.stat()
+            mtime, mtime_ns = st.st_mtime, st.st_mtime_ns
         except Exception:
-            mtime = 0
-        if last_read <= mtime:
-            block(
-                "BLOCKED (artifact_guard: edit-without-read).\n"
-                f"You are about to {tool} {fp} but have no Read of it newer than its "
-                "last modification this session.\n"
-                "Read the file with the Read tool FIRST (a bash cat/sed/head does NOT count), "
-                "then Edit. Editing on a stale/absent read is how wrong-line edits and "
-                "clobbers happen."
-            )
-        return 0
+            mtime, mtime_ns = 0, None
+        if last_read > mtime:
+            return 0  # fresh Read since the file's last modification
+        sid = payload.get("session_id") or payload.get("sessionId") or ""
+        if fresh_write_stamp(sid, norm(fp), mtime_ns):
+            return 0  # this session's own successful write is still what's on disk
+        block(
+            "BLOCKED (artifact_guard: edit-without-read).\n"
+            f"You are about to {tool} {fp} but have no fresh knowledge of its "
+            "current content this session: no Read newer than its last "
+            "modification, and no successful Edit/Write of yours that still "
+            "matches what is on disk (an external change invalidates that).\n"
+            "Read the file with the Read tool FIRST (a bash cat/sed/head does NOT count), "
+            "then Edit. Editing on a stale/absent read is how wrong-line edits and "
+            "clobbers happen."
+        )
 
     return 0
 

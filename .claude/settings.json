@@ -15,6 +15,15 @@
       {
         "hooks": [
           {
+            "command": "python3 \"${CLAUDE_PROJECT_DIR:-$PWD}/.claude/hooks/artifact_guard_post.py\"",
+            "type": "command"
+          }
+        ],
+        "matcher": "Edit|MultiEdit|Write|NotebookEdit"
+      },
+      {
+        "hooks": [
+          {
             "command": "python3 \"${CLAUDE_PROJECT_DIR:-$PWD}/skills/brainer-audit/tools/hook.py\" --host claude --event PostToolUse",
             "type": "command"
           }

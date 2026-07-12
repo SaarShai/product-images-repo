@@ -25,6 +25,9 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import codex_images  # noqa: E402 — single source of truth for codex output discovery
+
 ROOT = Path(__file__).resolve().parents[1]
 TASK = ROOT / "tasks" / "space-np01-front-bottom-02"
 BATCH_TASK = ROOT / "tasks" / "space-svg-exports-batch"
@@ -744,7 +747,8 @@ ORPHAN_METHOD = "raw-model-output-uncataloged"
 
 # (base_dir, glob, model, platform) — raw subscription image sinks live OUTSIDE the repo
 RAW_SINKS = [
-    (Path.home() / ".codex" / "generated_images", "*/ig_*.png", "gpt-image-2", "codex"),
+    *[(codex_images.CODEX_DIR, f"*/{pat}", "gpt-image-2", "codex")
+      for pat in codex_images.CODEX_IMAGE_PATTERNS],
     (Path.home() / ".gemini" / "antigravity-cli" / "brain", "*/*.jpg", "nano-banana", "agy"),
     (Path.home() / ".gemini" / "antigravity-cli" / "brain", "*/*.jpeg", "nano-banana", "agy"),
     (Path.home() / ".gemini" / "antigravity-cli" / "brain", "*/*.png", "nano-banana", "agy"),

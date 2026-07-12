@@ -297,3 +297,15 @@ Generalized [[concepts/gingerbread-panel-cutouts-decoration-slots]] and
 design-specific standing rules. Product details such as festive chimney texture,
 candy motifs, candidate names, and task recipes remain only as labeled exemplars
 or task-local notes.
+
+## 2026-07-12 — Wanderland packet retrospective (task-retrospective)
+Harvested 3 lessons from the external successful session packet
+/Users/za/Downloads/Wanderland-Packet-2026-07-11 (fire-station door panel):
+[[concepts/fixed-cut-composite-flexible-cut-art-derived]] (composite-to-cut for
+fixed die openings, art-derived contour for flexible ones, + Illustrator-JSX
+gotchas), [[concepts/semantic-color-region-map-locks-proportions]] (user-invented
+color-zone guide that ended the regen mismatch loop), and
+[[concepts/playwright-cdp-real-chrome-chatgpt-web-gen]] (bot-block-proof scripted
+ChatGPT-web gen; reference only — subgen.py stays the single path). Dropped as
+already-banked: incremental result gating, reference-beats-prose, white-bg
+prompt discipline.

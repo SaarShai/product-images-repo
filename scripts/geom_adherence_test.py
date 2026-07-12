@@ -28,11 +28,12 @@ import numpy as np
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import codex_images  # noqa: E402 — single source of truth for codex output discovery
 
 
 def newest_codex_image() -> str | None:
-    files = glob.glob(os.path.expanduser("~/.codex/generated_images/*/ig_*.png"))
-    return max(files, key=os.path.getmtime) if files else None
+    return codex_images.newest_image()
 
 
 def _killpg_quiet(pgid: int, sig: int) -> None:
