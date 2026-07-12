@@ -113,6 +113,18 @@ Prompt modules are probabilistic steering, not geometry guarantees. **Never rely
 - Real candidate: 48 regions / 33k px reopened
 - Tinted highlights: untouched
 
+### SAFETY PAIRING (calibrated 2026-07-12 — this flag is only safe WITH the prompt recipe)
+
+The reopen flag cannot distinguish trapped background from PAINTED flat-white openings
+(e.g. pale tube-coral tops): a purity/area sweep on known-bad (Codex round-2 arms, no
+interior-white discipline: 49 reopens incl. tube tops) vs known-good (R2a-r2: 48 true
+gaps) kills both proportionally — no threshold separates them (0.35→0.8 purity: bad
+49→4, good 48→10). The discriminator is UPSTREAM: this recipe's interior-white rule
+("every white-looking subject detail is a visibly tinted off-white") makes painted
+openings non-pure-white, so the purity guard protects them. Rule: `--reopen-interior`
+is safe on art generated with this recipe; on foreign art, inspect the magenta keycheck
+for punched-out painted openings before shipping, or key without the flag.
+
 ### Use Pattern
 
 ```bash
