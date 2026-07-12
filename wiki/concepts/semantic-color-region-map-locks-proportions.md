@@ -48,7 +48,8 @@ Direction pattern worth copying: the user supplied the missing reference as an A
 ## Reproductions
 
 - 2026-07-12, marine bedwrapper reef (this repo, live): map built by skills/region-map-guide, generated via subgen --provider openai (codex/gpt-image) — both candidates zone-adherent, left-right height delta +728/+905pt as specified, user accepted v1. Closes the OpenAI-provider question and shows the pattern transfers from architectural (door facade) to organic (coral reef) content. Fixture: skills/region-map-guide/examples/marine-reef.manifest.json.
+- 2026-07-12, SAME reef map, provider probe: `subgen --provider nano` (Gemini/Nano Banana) — REJECTED on two axes. (1) GEOMETRY: nano treated the map+legend as loose inspiration — painted a full-frame reef, put the tallest element (seaweed) dead CENTER (map placed it left/orange), filled the black-dot keep-clear band where the turtle+star cutouts live, and did NOT lock the map aspect (output 1376x768 = 1.792 vs map 1.500). Overlay (nano vs map) shows art through the whole top ~60% keep-clear zone. (2) STYLE: output did NOT match the reference image's style (user verdict, 2026-07-12) — nano may simply be unable to reproduce that specific watercolor style. openai adhered on both axes on the same inputs. One run, but corroborates the prior banked pattern (openai > nano on hole/geom discipline; nano too loose). Conclusion: region maps need an aspect-locking, style-AND-geometry-disciplined provider — use openai/gpt-image, not nano.
 
 ## Open Questions
 
-- nano (Gemini) provider still untested with region maps.
+- (none outstanding) — nano tested 2026-07-12 and rejected on geometry AND style-match (see Reproductions); openai/gpt-image is the supported provider for region maps.
