@@ -5,6 +5,7 @@ from pathlib import Path
 import subprocess
 import sys
 
+import numpy as np
 from PIL import Image, ImageDraw
 
 
@@ -63,7 +64,23 @@ def test_white_halo_ring_fails_d1(tmp_path):
     assert result["verdict"] == "FAIL"
     assert result["gates"]["D1_halo_gate"]["pass"] is False
     assert result["gates"]["D1_halo_gate"]["verdict"] == "FAIL"
+    assert result["gates"]["D1_halo_gate"]["metric_values"]["H_L"] >= gate.CALIBRATION["D1_halo_gate"]["h_l_fail_min"]
+    assert result["gates"]["D1_halo_gate"]["metric_values"]["H_area_mm2"] >= gate.CALIBRATION["D1_halo_gate"]["h_area_fail_min_mm2"]
     assert result["gates"]["D1_halo_gate"]["crop_paths"]
+
+
+def test_scattered_single_pixel_d1_deltas_do_not_fail_on_total_area(tmp_path):
+    gate = load_gate_battery()
+    path = tmp_path / "scattered-single-px.png"
+    save_soft_edge_disc(path, edge_rgb=(255, 255, 255))
+
+    result = gate.d1_halo_gate(np.array(Image.open(path).convert("RGBA")), tmp_path / "out", 25.4 / 254.0, [], None)
+    metrics = result["metric_values"]
+
+    assert metrics["H_L"] < gate.CALIBRATION["D1_halo_gate"]["h_l_fail_min"]
+    assert metrics["H_total_area_mm2"] > gate.CALIBRATION["D1_halo_gate"]["h_area_fail_min_mm2"]
+    assert metrics["H_area_mm2"] < gate.CALIBRATION["D1_halo_gate"]["h_area_fail_min_mm2"]
+    assert result["verdict"] != "FAIL"
 
 
 def test_bright_colored_soft_aa_edge_passes_donor_referenced_d1(tmp_path):
@@ -77,15 +94,18 @@ def test_bright_colored_soft_aa_edge_passes_donor_referenced_d1(tmp_path):
     assert result["gates"]["D1_halo_gate"]["metric_values"]["H_L"] <= 2.0
 
 
-def test_white_contaminated_soft_edge_fails_donor_referenced_d1(tmp_path):
+def test_white_contaminated_scattered_soft_edge_does_not_fail_d1(tmp_path):
     gate = load_gate_battery()
     path = tmp_path / "white-contaminated-aa.png"
     save_soft_edge_disc(path, edge_rgb=(255, 255, 255))
 
     result = gate.run_battery(path, None, None, None, "soft", tmp_path / "out", ppi=254)
+    metrics = result["gates"]["D1_halo_gate"]["metric_values"]
 
-    assert result["gates"]["D1_halo_gate"]["verdict"] == "FAIL"
-    assert result["gates"]["D1_halo_gate"]["metric_values"]["H_area_mm2"] >= 0.10
+    assert result["gates"]["D1_halo_gate"]["verdict"] != "FAIL"
+    assert metrics["H_L"] < gate.CALIBRATION["D1_halo_gate"]["h_l_fail_min"]
+    assert metrics["H_total_area_mm2"] >= 0.10
+    assert metrics["H_area_mm2"] < 0.10
 
 
 def test_many_enclosed_alpha_pockets_are_d3a_review_only(tmp_path):

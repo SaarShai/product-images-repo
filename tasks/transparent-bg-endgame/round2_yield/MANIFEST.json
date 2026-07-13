@@ -1,0 +1,61 @@
+[
+ {
+  "id": "H-O1-AA-y1",
+  "http": 200,
+  "secs": 56.4,
+  "file": "tasks/transparent-bg-endgame/round2_yield/raws/H-O1-AA-y1.png"
+ },
+ {
+  "id": "H-O1-AA-y2",
+  "http": 200,
+  "secs": 61.5,
+  "file": "tasks/transparent-bg-endgame/round2_yield/raws/H-O1-AA-y2.png"
+ },
+ {
+  "id": "H-O1-AA-y3",
+  "http": 200,
+  "secs": 61.1,
+  "file": "tasks/transparent-bg-endgame/round2_yield/raws/H-O1-AA-y3.png"
+ },
+ {
+  "id": "H-O1-AA-y4",
+  "http": 200,
+  "secs": 54.3,
+  "file": "tasks/transparent-bg-endgame/round2_yield/raws/H-O1-AA-y4.png"
+ },
+ {
+  "id": "H-O1-AA-y5",
+  "error": "ConnectionError(ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))",
+  "secs": 62.2
+ },
+ {
+  "id": "H-O1-AA-y6",
+  "http": 200,
+  "secs": 62.9,
+  "file": "tasks/transparent-bg-endgame/round2_yield/raws/H-O1-AA-y6.png"
+ },
+ {
+  "id": "W-O1-AA-y1",
+  "http": 200,
+  "secs": 57.4,
+  "file": "tasks/transparent-bg-endgame/round2_yield/raws/W-O1-AA-y1.png"
+ },
+ {
+  "id": "W-O1-AA-y2",
+  "http": 200,
+  "secs": 58.6,
+  "file": "tasks/transparent-bg-endgame/round2_yield/raws/W-O1-AA-y2.png"
+ },
+ {
+  "id": "W-O1-HARD-y1",
+  "http": 200,
+  "secs": 54.5,
+  "file": "tasks/transparent-bg-endgame/round2_yield/raws/W-O1-HARD-y1.png"
+ },
+ {
+  "id": "W-O1-HARD-y2",
+  "http": 200,
+  "secs": 58.2,
+  "file": "tasks/transparent-bg-endgame/round2_yield/raws/W-O1-HARD-y2.png"
+ }
+]

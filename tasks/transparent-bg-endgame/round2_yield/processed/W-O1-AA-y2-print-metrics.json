@@ -1,0 +1,52 @@
+{
+  "alpha": {
+    "alpha_thresh": 128,
+    "components_before_erode": 1,
+    "post_erode_mask_px": 375054,
+    "pre_erode_mask_px": 386654,
+    "restored_thin_components": 0
+  },
+  "bg_color": null,
+  "core_px": 370989,
+  "despill": {
+    "changed_px": 0,
+    "enabled": false
+  },
+  "donor": {
+    "components": 150,
+    "donor_max_px": 4.0,
+    "donor_min_px": 2.0,
+    "donor_ring_px": 23190,
+    "fallback_components": 149
+  },
+  "donor_valid_px": 1572864,
+  "final_rgb_extension": {
+    "conflict_px": 0,
+    "extension_px": 46727
+  },
+  "input_size": [
+    1024,
+    1536
+  ],
+  "output_size": [
+    1024,
+    1536
+  ],
+  "ppi": null,
+  "pre_upscale_rgb_extension": {
+    "conflict_px": 0,
+    "extension_px": 46261
+  },
+  "ridge_unmix": {
+    "pre_gamut_above_channel_count": 0,
+    "pre_gamut_below_channel_count": 0,
+    "transition_px": 17795
+  },
+  "transition_px": 17795,
+  "transparent_px": 1176231,
+  "upscale": {
+    "alpha_method": "none",
+    "enabled": false,
+    "rgb_method": "none"
+  }
+}

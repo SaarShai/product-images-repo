@@ -67,6 +67,21 @@ STOP-and-ask-user points (do not proceed past these without explicit approval):
 
 ---
 
+## ROUTE P — PRINT-READY binary-alpha pipeline (VALIDATED 2026-07-13, preferred for Illustrator print layers)
+
+For art destined for print on colored panels (spot-white underlay): run the
+gated pipeline in `tasks/transparent-bg-endgame/PIPELINE.md` — gpt-image-1
+`background=transparent` with the R4 recipe + anti-aura + anti-ground +
+anti-backdrop blocks → `scripts/decontam_binarize.py` (unmix → donor pad →
+upscale → threshold LAST → erode; writes soft-alpha sidecar) →
+`scripts/gates/gate_battery.py --profile print` (tri-state: exit 0 ship /
+3 human review / 2 regen). Measured yield ≈ 1/3 auto-PASS per gen: budget 3-4
+gens per asset and reject rather than repair. Never key/matte art with
+thin/pale features — regenerate natively instead. Empirical canaries
+(`tasks/transparent-bg-endgame/CANARIES.md`): gpt-image-1, gpt-image-1.5,
+chatgpt-image-latest all return real alpha via API; gpt-image-2 refuses;
+Flux.2 has no alpha param.
+
 ## ROUTE A — Native transparent generation or semantic regeneration
 
 Do not conflate these two OpenAI surfaces:

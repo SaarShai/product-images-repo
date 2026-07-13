@@ -28,6 +28,7 @@ Compact pointers. Fetch details on demand.
 - concepts/no-painted-text-vector-layer-or-omit (fact tags=text,signage,image-generation,diffusion,vector,prompt-clause) -> `concepts/no-painted-text-vector-layer-or-omit.md`
 - concepts/onepass-geometry-style-route-flux-control-lora (fact tags=image-generation,flux,lora,control-lora,geometry,style,onepass,cap-juluca,marriott) -> `concepts/onepass-geometry-style-route-flux-control-lora.md`
 - concepts/playwright-cdp-real-chrome-chatgpt-web-gen (concept tags=chatgpt-web,playwright,cdp,subscription-gen,browser-automation) -> `concepts/playwright-cdp-real-chrome-chatgpt-web-gen.md`
+- concepts/print-ready-transparent-pipeline (concept tags=transparent-generation,background-removal,print,binary-alpha,gate-battery,gpt-image,native-alpha,decontamination) -> `concepts/print-ready-transparent-pipeline.md`
 - concepts/screenery-socket-polyline-svg-geometry (page) -> `concepts/screenery-socket-polyline-svg-geometry.md`
 - concepts/semantic-color-region-map-locks-proportions (concept tags=region-map,geometry-guide,chatgpt,dieline,wanderland,gen-guide) -> `concepts/semantic-color-region-map-locks-proportions.md`
 - concepts/svg-template-whole-redraw-from-roughs (concept tags=pattern:svg-template-whole-redraw-from-roughs,svg-template,image-generation,screenery) -> `concepts/svg-template-whole-redraw-from-roughs.md`

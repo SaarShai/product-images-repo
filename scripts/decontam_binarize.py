@@ -8,6 +8,9 @@ from __future__ import annotations
 
 import argparse
 import json
+import subprocess
+import sys
+import tempfile
 from pathlib import Path
 from typing import Any
 
@@ -16,6 +19,11 @@ from PIL import Image
 from scipy import ndimage as ndi
 
 Image.MAX_IMAGE_PIXELS = None
+REPO = Path(__file__).resolve().parents[1]
+DEFAULT_REALESRGAN_BIN = REPO / "tasks/marine-pod-upscale/tools/realesrgan-full/realesrgan-ncnn-vulkan"
+DEFAULT_REALESRGAN_MODELS = REPO / "tasks/marine-pod-upscale/tools/realesrgan-full/models"
+DEFAULT_VENV_GEN_PYTHON = REPO / ".venv-gen/bin/python"
+ESRGAN_UPSCALE_SCRIPT = REPO / "scripts/esrgan_upscale.py"
 
 
 def srgb_to_linear(rgb: np.ndarray) -> np.ndarray:
@@ -261,16 +269,104 @@ def extend_rgb_outside_mask(rgb: np.ndarray, mask: np.ndarray, px: int = 3) -> t
     return out, {"extension_px": int(extension.sum()), "conflict_px": int(conflict_total)}
 
 
-def esrgan_rgb_if_available(rgb_u8: np.ndarray, scale: float, device: str, tile: int) -> tuple[np.ndarray | None, str]:
+def ncnn_realesrgan_rgb_if_available(rgb_u8: np.ndarray, tile: int) -> tuple[np.ndarray | None, str]:
+    binary = DEFAULT_REALESRGAN_BIN
+    models = DEFAULT_REALESRGAN_MODELS
+    if not binary.is_file():
+        return None, "lanczos_fallback_missing_realesrgan_ncnn_binary"
+    if not models.is_dir():
+        return None, "lanczos_fallback_missing_realesrgan_ncnn_models"
+    with tempfile.TemporaryDirectory(prefix="decontam-realesrgan-") as tmp:
+        tmp_dir = Path(tmp)
+        input_path = tmp_dir / "rgb-input.png"
+        output_path = tmp_dir / "rgb-x4.png"
+        Image.fromarray(rgb_u8, "RGB").save(input_path)
+        command = [
+            str(binary),
+            "-i",
+            str(input_path),
+            "-o",
+            str(output_path),
+            "-n",
+            "realesrgan-x4plus",
+            "-m",
+            str(models),
+            "-s",
+            "4",
+            "-t",
+            str(tile),
+            "-f",
+            "png",
+        ]
+        completed = subprocess.run(command, capture_output=True, text=True, check=False)
+        if completed.returncode != 0 or not output_path.is_file():
+            stderr_tail = (completed.stderr or completed.stdout or "")[-500:].replace("\n", " ")
+            return None, f"lanczos_fallback_realesrgan_ncnn_error:rc={completed.returncode}:{stderr_tail}"
+        out = np.array(Image.open(output_path).convert("RGB"))
+        expected = (rgb_u8.shape[1] * 4, rgb_u8.shape[0] * 4)
+        if out.shape[1] != expected[0] or out.shape[0] != expected[1]:
+            return None, f"lanczos_fallback_realesrgan_ncnn_bad_size:{out.shape[1]}x{out.shape[0]}"
+        return out, "realesrgan_ncnn_x4plus"
+
+
+def venv_realesrgan_rgb_if_available(rgb_u8: np.ndarray, scale: float, device: str, tile: int) -> tuple[np.ndarray | None, str]:
+    python = DEFAULT_VENV_GEN_PYTHON
+    script = ESRGAN_UPSCALE_SCRIPT
     model_path = Path.home() / "models-gen" / "esrgan" / "RealESRGAN_x4plus.pth"
+    if not python.is_file():
+        return None, "lanczos_fallback_missing_venv_gen_python"
+    if not script.is_file():
+        return None, "lanczos_fallback_missing_esrgan_upscale_script"
     if not model_path.exists():
         return None, "lanczos_fallback_missing_realesrgan_model"
+    with tempfile.TemporaryDirectory(prefix="decontam-realesrgan-venv-") as tmp:
+        tmp_dir = Path(tmp)
+        input_path = tmp_dir / "rgb-input.png"
+        output_path = tmp_dir / "rgb-x4.png"
+        Image.fromarray(rgb_u8, "RGB").save(input_path)
+        command = [
+            str(python),
+            str(script),
+            "--image",
+            str(input_path),
+            "--out",
+            str(output_path),
+            "--scale",
+            str(scale),
+            "--tile",
+            str(tile),
+            "--device",
+            device,
+        ]
+        completed = subprocess.run(command, cwd=REPO, capture_output=True, text=True, check=False)
+        if completed.returncode != 0 or not output_path.is_file():
+            stderr_tail = (completed.stderr or completed.stdout or "")[-500:].replace("\n", " ")
+            return None, f"lanczos_fallback_realesrgan_venv_error:rc={completed.returncode}:{stderr_tail}"
+        out = np.array(Image.open(output_path).convert("RGB"))
+        expected = (int(round(rgb_u8.shape[1] * scale)), int(round(rgb_u8.shape[0] * scale)))
+        if out.shape[1] != expected[0] or out.shape[0] != expected[1]:
+            return None, f"lanczos_fallback_realesrgan_venv_bad_size:{out.shape[1]}x{out.shape[0]}"
+        return out, "realesrgan_x4plus_venv_gen"
+
+
+def esrgan_rgb_if_available(rgb_u8: np.ndarray, scale: float, device: str, tile: int) -> tuple[np.ndarray | None, str]:
+    out, method = ncnn_realesrgan_rgb_if_available(rgb_u8, tile)
+    if out is not None:
+        return out, method
+    ncnn_reason = method
+    out, method = venv_realesrgan_rgb_if_available(rgb_u8, scale, device, tile)
+    if out is not None:
+        return out, method
+    venv_reason = method
+    model_path = Path.home() / "models-gen" / "esrgan" / "RealESRGAN_x4plus.pth"
+    if not model_path.exists():
+        return None, f"{ncnn_reason};{venv_reason};lanczos_fallback_missing_realesrgan_model"
     try:
         import torch
         from basicsr.archs.rrdbnet_arch import RRDBNet
         from realesrgan import RealESRGANer
     except Exception as exc:  # pragma: no cover - depends on optional local install
-        return None, f"lanczos_fallback_import_error:{type(exc).__name__}"
+        return None, f"{ncnn_reason};{venv_reason};lanczos_fallback_import_error:{type(exc).__name__}"
     try:  # pragma: no cover - depends on optional local install/hardware
         model = RRDBNet(num_in_ch=3, num_out_ch=3, num_feat=64, num_block=23, num_grow_ch=32, scale=4)
         up = RealESRGANer(
@@ -286,7 +382,7 @@ def esrgan_rgb_if_available(rgb_u8: np.ndarray, scale: float, device: str, tile:
         out, _ = up.enhance(rgb_u8[:, :, ::-1], outscale=scale)
         return out[:, :, ::-1], "realesrgan_x4plus_local"
     except Exception as exc:
-        return None, f"lanczos_fallback_runtime_error:{type(exc).__name__}"
+        return None, f"{ncnn_reason};{venv_reason};lanczos_fallback_runtime_error:{type(exc).__name__}"
 
 
 def resize_lanczos(arr: np.ndarray, size: tuple[int, int], mode: str) -> np.ndarray:
@@ -307,7 +403,10 @@ def upscale_cleaned_rgba(
 
     scale = 4.0
     up_rgb, method = esrgan_rgb_if_available(rgb_u8, scale=scale, device=device, tile=tile)
+    fallback_warning = None
     if up_rgb is None:
+        fallback_warning = f"WARNING: Real-ESRGAN unavailable; using Lanczos RGB fallback ({method})"
+        print(f"[decontam_binarize] {fallback_warning}", file=sys.stderr)
         size = (rgb_u8.shape[1] * 4, rgb_u8.shape[0] * 4)
         up_rgb = resize_lanczos(rgb_u8, size, "RGB")
     out_size = (up_rgb.shape[1], up_rgb.shape[0])
@@ -316,6 +415,7 @@ def upscale_cleaned_rgba(
         "enabled": True,
         "scale": 4,
         "rgb_method": method,
+        "rgb_fallback_warning": fallback_warning,
         "alpha_method": "lanczos_clamped_u8",
         "out_size": [int(out_size[0]), int(out_size[1])],
     }

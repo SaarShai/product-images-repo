@@ -1,0 +1,58 @@
+{
+  "alpha": {
+    "alpha_thresh": 128,
+    "components_before_erode": 2,
+    "post_erode_mask_px": 6744174,
+    "pre_erode_mask_px": 6802800,
+    "restored_thin_components": 0
+  },
+  "bg_color": null,
+  "core_px": 406740,
+  "despill": {
+    "changed_px": 0,
+    "enabled": false
+  },
+  "donor": {
+    "components": 75,
+    "donor_max_px": 4.0,
+    "donor_min_px": 2.0,
+    "donor_ring_px": 30380,
+    "fallback_components": 75
+  },
+  "donor_valid_px": 1572864,
+  "final_rgb_extension": {
+    "conflict_px": 0,
+    "extension_px": 240676
+  },
+  "input_size": [
+    1024,
+    1536
+  ],
+  "output_size": [
+    4096,
+    6144
+  ],
+  "ppi": null,
+  "pre_upscale_rgb_extension": {
+    "conflict_px": 20,
+    "extension_px": 59244
+  },
+  "ridge_unmix": {
+    "pre_gamut_above_channel_count": 0,
+    "pre_gamut_below_channel_count": 0,
+    "transition_px": 27165
+  },
+  "transition_px": 27165,
+  "transparent_px": 1128485,
+  "upscale": {
+    "alpha_method": "lanczos_clamped_u8",
+    "enabled": true,
+    "out_size": [
+      4096,
+      6144
+    ],
+    "rgb_fallback_warning": null,
+    "rgb_method": "realesrgan_x4plus_venv_gen",
+    "scale": 4
+  }
+}

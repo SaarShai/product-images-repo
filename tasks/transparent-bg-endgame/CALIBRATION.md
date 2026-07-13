@@ -90,3 +90,42 @@ MPLCONFIGDIR=/tmp/mpl PYTHONPYCACHEPREFIX=/tmp/pyc python3 scripts/gates/gate_ba
 # D3b_retained_background PASS/skipped: --bg-color not provided
 # D7_border_gate REVIEW: border_policy=auto, border_alpha_occupancy=0.04810762
 ```
+
+## v4 D1 Contiguous-Halo Notes
+
+Implemented in `scripts/gates/gate_battery.py` v4 after
+`round2_yield/processed/H-O1-AA-y2-print-x4.png` showed a false D1 hard fail:
+`H_L=0.0` while scattered single-pixel exceedances inflated total hot area.
+
+- D1 now gates `H_area` on the largest contiguous 8-connected exceedance
+  component. The previous summed hot-pixel area remains as informational
+  `H_total_area`.
+- D1 hard `FAIL` requires the lightness signal to cross `h_l_fail_min`.
+  If only area crosses the fail threshold while `H_L` is below the fail
+  threshold, the verdict is capped at `REVIEW`.
+- `scripts/decontam_binarize.py --upscale x4` now tries the bundled
+  `realesrgan-ncnn-vulkan` route first, then the repo-local `.venv-gen`
+  Real-ESRGAN script, then the current-interpreter Python Real-ESRGAN import.
+  Lanczos remains the last fallback and is reported in both metrics and stderr.
+
+Regression evidence:
+
+```bash
+MPLCONFIGDIR=/tmp/mpl PYTHONPYCACHEPREFIX=/tmp/pyc python3 -m pytest -q \
+  tests/test_decontam_binarize.py tests/test_gate_battery.py
+# 16 passed
+
+python3 scripts/decontam_binarize.py \
+  --rgba tasks/transparent-bg-endgame/round2_yield/raws/H-O1-AA-y2.png \
+  --upscale x4 --erode 1 \
+  --out tasks/transparent-bg-endgame/round2_yield/processed/H-O1-AA-y2-print-x4.png
+# upscale.rgb_method = realesrgan_x4plus_venv_gen
+# upscale.rgb_fallback_warning = null
+
+python3 scripts/gates/gate_battery.py \
+  --rgba tasks/transparent-bg-endgame/round2_yield/processed/H-O1-AA-y2-print-x4.png \
+  --profile print --border-policy auto --ppi 300 \
+  --out-dir tasks/transparent-bg-endgame/round2_yield/gates/H-O1-AA-y2-x4
+# verdict REVIEW, exit_code 3
+# D1_halo_gate REVIEW: H_L=0.0, H_area_mm2=0.301075, H_total_area_mm2=18.050143
+```

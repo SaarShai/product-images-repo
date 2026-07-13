@@ -1,5 +1,6 @@
 import importlib.util
 from pathlib import Path
+from types import SimpleNamespace
 
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
@@ -73,3 +74,77 @@ def test_thin_two_pixel_stroke_survives_erode_without_component_loss():
     assert n_after == 1
     assert out[..., 3].sum() > 0
     assert metrics["alpha"]["restored_thin_components"] == 1
+
+
+def test_ncnn_realesrgan_subprocess_route_returns_x4_rgb(tmp_path, monkeypatch):
+    mod = load_module()
+    binary = tmp_path / "realesrgan-ncnn-vulkan"
+    models = tmp_path / "models"
+    binary.write_text("#!/bin/sh\n")
+    models.mkdir()
+    monkeypatch.setattr(mod, "DEFAULT_REALESRGAN_BIN", binary)
+    monkeypatch.setattr(mod, "DEFAULT_REALESRGAN_MODELS", models)
+
+    def fake_run(command, capture_output, text, check):
+        input_path = Path(command[command.index("-i") + 1])
+        output_path = Path(command[command.index("-o") + 1])
+        image = Image.open(input_path).convert("RGB")
+        image.resize((image.width * 4, image.height * 4), Image.Resampling.NEAREST).save(output_path)
+        return SimpleNamespace(returncode=0, stderr="", stdout="")
+
+    monkeypatch.setattr(mod.subprocess, "run", fake_run)
+    rgb = np.full((3, 5, 3), [80, 40, 20], dtype=np.uint8)
+
+    out, method = mod.ncnn_realesrgan_rgb_if_available(rgb, tile=128)
+
+    assert method == "realesrgan_ncnn_x4plus"
+    assert out.shape == (12, 20, 3)
+
+
+def test_venv_realesrgan_subprocess_route_returns_x4_rgb(tmp_path, monkeypatch):
+    mod = load_module()
+    python = tmp_path / "python"
+    model = tmp_path / "RealESRGAN_x4plus.pth"
+    python.write_text("#!/bin/sh\n")
+    model.write_text("model")
+    monkeypatch.setattr(mod, "DEFAULT_VENV_GEN_PYTHON", python)
+    monkeypatch.setattr(mod, "ESRGAN_UPSCALE_SCRIPT", tmp_path / "esrgan_upscale.py")
+    monkeypatch.setattr(mod.Path, "home", lambda: tmp_path)
+    mod.ESRGAN_UPSCALE_SCRIPT.write_text("#!/usr/bin/env python\n")
+    (tmp_path / "models-gen/esrgan").mkdir(parents=True)
+    model.rename(tmp_path / "models-gen/esrgan/RealESRGAN_x4plus.pth")
+
+    def fake_run(command, cwd, capture_output, text, check):
+        input_path = Path(command[command.index("--image") + 1])
+        output_path = Path(command[command.index("--out") + 1])
+        image = Image.open(input_path).convert("RGB")
+        image.resize((image.width * 4, image.height * 4), Image.Resampling.NEAREST).save(output_path)
+        return SimpleNamespace(returncode=0, stderr="", stdout="")
+
+    monkeypatch.setattr(mod.subprocess, "run", fake_run)
+    rgb = np.full((2, 4, 3), [80, 40, 20], dtype=np.uint8)
+
+    out, method = mod.venv_realesrgan_rgb_if_available(rgb, scale=4.0, device="cpu", tile=128)
+
+    assert method == "realesrgan_x4plus_venv_gen"
+    assert out.shape == (8, 16, 3)
+
+
+def test_lanczos_fallback_is_loud_in_metrics_and_stderr(capsys, monkeypatch):
+    mod = load_module()
+
+    def fake_esrgan(_rgb_u8, scale, device, tile):
+        return None, "lanczos_fallback_import_error:ModuleNotFoundError"
+
+    monkeypatch.setattr(mod, "esrgan_rgb_if_available", fake_esrgan)
+    rgb = np.full((4, 4, 3), [10, 20, 30], dtype=np.uint8)
+    alpha = np.full((4, 4), 255, dtype=np.uint8)
+
+    up_rgb, up_alpha, metrics = mod.upscale_cleaned_rgba(rgb, alpha, "x4", "cpu", 128)
+    err = capsys.readouterr().err
+
+    assert up_rgb.shape == (16, 16, 3)
+    assert up_alpha.shape == (16, 16)
+    assert metrics["rgb_method"] == "lanczos_fallback_import_error:ModuleNotFoundError"
+    assert metrics["rgb_fallback_warning"]
+    assert "WARNING: Real-ESRGAN unavailable; using Lanczos RGB fallback" in err

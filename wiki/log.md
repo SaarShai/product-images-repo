@@ -1,5 +1,9 @@
 # Wiki Log
 
+## [2026-07-13] create | Print-Ready Transparent Pipeline
+
+Created `concepts/print-ready-transparent-pipeline.md` from verified 2026-07-13 generation canaries. Recorded native-alpha generation route (gpt-image-1/1.5/chatgpt-image-latest with `background=transparent` param; gpt-image-2 returns HTTP 400, Flux.2 exposes no alpha param), complete pipeline (R4 clean-edge recipe + decontam_binarize linear-light ridge unmix + gate_battery print-profile tri-state classification), measured yield (3/9 auto-PASS; residual defects = stochastic pale patches, donor-referenced halo gates), route comparison (gpt-image-1 best style+cut, white_key floods thin strokes, chroma-green wins metrics but visual rejection), detector lesson (absolute edge-brightness false-positives on honest AA; working metric = donor-referenced p95-delta-L* in linear light), and banked advisor corrections (threshold LAST never before unmix; binary alpha print-invisible at ≥300ppi opaque-edge only; rank worst image not mean).
+
 ## [2026-07-12] update | Transparent-clear-edge prompt recipe — dehalo_edge + halo-gate steps
 
 Updated [[concepts/transparent-clear-edge-prompt-recipe]] recommended pipeline: added mandatory `scripts/dehalo_edge.py` edge-decontamination step (fixes white-halo that white_key binary alpha produces on darker backgrounds; nearest-interior RGB extension + distance-floor alpha re-solve) + MANDATORY visual gate before delivery (composite edge-crop over #111111, verify no white rim). Recorded v1/v2 calibration lessons: per-pixel error-rejection creates speckled rims (coherence beats accuracy); alpha re-solve without distance-floor punches pale-art holes.

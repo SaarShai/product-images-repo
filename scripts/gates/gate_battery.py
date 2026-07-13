@@ -466,7 +466,8 @@ def d1_halo_gate(
 
     panel_metrics: list[dict[str, Any]] = []
     worst_h_l = 0.0
-    worst_area_px = 0
+    worst_component_area_px = 0
+    worst_total_area_px = 0
     offender = np.zeros(alpha.shape, dtype=bool)
     all_panels = list(DEFAULT_PANELS) + list(panels)
     for panel in all_panels:
@@ -478,22 +479,35 @@ def d1_halo_gate(
         w_vals = weights[edge_band]
         h_l = weighted_percentile(h_vals, w_vals, 95.0)
         hot = edge_band & (h > 3.0)
-        area_px = int(hot.sum())
+        total_area_px = int(hot.sum())
+        labels, n_labels = ndi.label(hot, structure=np.ones((3, 3), dtype=bool))
+        if n_labels:
+            component_sizes = np.bincount(labels.ravel())[1:]
+            component_area_px = int(component_sizes.max(initial=0))
+            component_label = int(component_sizes.argmax() + 1) if component_area_px else 0
+        else:
+            component_area_px = 0
+            component_label = 0
         if h_l > worst_h_l:
             worst_h_l = h_l
-        if area_px > worst_area_px:
-            worst_area_px = area_px
-            offender = hot
+        if component_area_px > worst_component_area_px:
+            worst_component_area_px = component_area_px
+            offender = labels == component_label if component_label else hot
+        if total_area_px > worst_total_area_px:
+            worst_total_area_px = total_area_px
         panel_metrics.append(
             {
                 "panel": f"#{panel[0]:02X}{panel[1]:02X}{panel[2]:02X}",
                 "weighted_p95_delta_l": round(h_l, 4),
-                "area_px_delta_l_gt_3": area_px,
-                "area_mm2_delta_l_gt_3": None if mm_per_px is None else round(float(area_px * mm_per_px * mm_per_px), 6),
+                "component_area_px_delta_l_gt_3": component_area_px,
+                "component_area_mm2_delta_l_gt_3": None if mm_per_px is None else round(float(component_area_px * mm_per_px * mm_per_px), 6),
+                "total_area_px_delta_l_gt_3": total_area_px,
+                "total_area_mm2_delta_l_gt_3": None if mm_per_px is None else round(float(total_area_px * mm_per_px * mm_per_px), 6),
             }
         )
 
-    h_area_mm2 = px_area_to_mm2(worst_area_px, mm_per_px)
+    h_area_mm2 = px_area_to_mm2(worst_component_area_px, mm_per_px)
+    h_total_area_mm2 = px_area_to_mm2(worst_total_area_px, mm_per_px)
     h_key = None
     if bg_color is not None:
         bg_linear = srgb_to_linear(np.array(bg_color, dtype=np.uint8).reshape(1, 1, 3))[0, 0]
@@ -504,10 +518,11 @@ def d1_halo_gate(
     if mm_per_px is None:
         verdict = "REVIEW" if worst_h_l > cfg["h_l_pass_max"] else "PASS"
     else:
-        verdicts = [
-            decide_three_zone(float(worst_h_l), float(cfg["h_l_pass_max"]), float(cfg["h_l_fail_min"])),
-            decide_three_zone(float(h_area_mm2 or 0.0), float(cfg["h_area_pass_max_mm2"]), float(cfg["h_area_fail_min_mm2"])),
-        ]
+        l_verdict = decide_three_zone(float(worst_h_l), float(cfg["h_l_pass_max"]), float(cfg["h_l_fail_min"]))
+        area_verdict = decide_three_zone(float(h_area_mm2 or 0.0), float(cfg["h_area_pass_max_mm2"]), float(cfg["h_area_fail_min_mm2"]))
+        if area_verdict == "FAIL" and worst_h_l < float(cfg["h_l_fail_min"]):
+            area_verdict = "REVIEW"
+        verdicts = [l_verdict, area_verdict]
         if h_key is not None:
             verdicts.append(decide_three_zone(float(h_key), float(cfg["h_key_pass_max"]), float(cfg["h_key_fail_min"])))
         verdict = worst_verdict(verdicts)
@@ -520,8 +535,10 @@ def d1_halo_gate(
         "donor_inward_mm": [cfg["donor_min_mm"], cfg["donor_max_mm"]] if mm_per_px is not None else None,
         "donor_inward_px": [round(float(donor_min_px), 3), round(float(donor_max_px), 3)],
         "H_L": round(float(worst_h_l), 4),
-        "H_area_px": int(worst_area_px),
+        "H_area_px": int(worst_component_area_px),
         "H_area_mm2": None if h_area_mm2 is None else round(float(h_area_mm2), 6),
+        "H_total_area_px": int(worst_total_area_px),
+        "H_total_area_mm2": None if h_total_area_mm2 is None else round(float(h_total_area_mm2), 6),
         "H_key": None if h_key is None else round(float(h_key), 4),
         "panels": panel_metrics,
         "physical_units": bool(mm_per_px is not None),
