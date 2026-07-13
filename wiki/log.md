@@ -1,5 +1,13 @@
 # Wiki Log
 
+## [2026-07-13] create | Mandatory Ink Outline Edge Defense
+
+Created `concepts/mandatory-ink-outline-edge-defense.md` from verified transparent-bg-endgame rounds 6–7. Recorded durable lesson: diffusion always blends at edges (cannot be solved by prompt hardening alone); working defense is mandatory visible dark ink contour on every silhouette, so blend pixels land on dark ink where they are invisible. Evidence: round-6 (no outlines) = 604 band-green defects + user-circled artifacts; round-7 (mandatory contour) = 110/15 px, passed all hard gates. Phrasing rule: enforcement language required ("outline every contour"); permissive language silently dropped by gpt-image-2.
+
+## [2026-07-13] create | Key-Colored Art vs Trapped Background
+
+Created `concepts/key-colored-art-vs-trapped-background.md` from verified transparent-bg-endgame rounds 4–5. Recorded durable lesson: legit artwork can be literally near-pure key-hue (seaweed [1,137,0] vs background #00FF00), so hue-distance gates cannot separate them. Two working resolutions: (a) prompt-side palette ban ("no bright green anywhere"), enabling unconditional key removal; or (b) shape-based protection (max inscribed radius ≥7px + area ≥300px for solid blobs). Recorded failed approach: hue-snapping edge pixels causes garish saturation banding. Resolution B fails on wavy/feathered shapes (bbox-fill solidity <0.3); validated on solid subjects only.
+
 ## [2026-07-13] create | Print-Ready Transparent Pipeline
 
 Created `concepts/print-ready-transparent-pipeline.md` from verified 2026-07-13 generation canaries. Recorded native-alpha generation route (gpt-image-1/1.5/chatgpt-image-latest with `background=transparent` param; gpt-image-2 returns HTTP 400, Flux.2 exposes no alpha param), complete pipeline (R4 clean-edge recipe + decontam_binarize linear-light ridge unmix + gate_battery print-profile tri-state classification), measured yield (3/9 auto-PASS; residual defects = stochastic pale patches, donor-referenced halo gates), route comparison (gpt-image-1 best style+cut, white_key floods thin strokes, chroma-green wins metrics but visual rejection), detector lesson (absolute edge-brightness false-positives on honest AA; working metric = donor-referenced p95-delta-L* in linear light), and banked advisor corrections (threshold LAST never before unmix; binary alpha print-invisible at ≥300ppi opaque-edge only; rank worst image not mean).

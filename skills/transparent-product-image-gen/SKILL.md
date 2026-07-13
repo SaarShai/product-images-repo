@@ -392,6 +392,55 @@ use):**
   `advisor2_reply.md` — cite as advisor guidance, not yet measured in this
   repo's own harness.)
 
+### ROUTE C-green v2 — USER-VALIDATED recipe (2026-07-13, rounds 4-7, "best yet — bank it")
+
+Full end-to-end recipe for NEW art from a model that lacks native alpha
+(`gpt-image-2`). Iterated over 4 user-feedback rounds; every element below
+exists because a defect forced it. Runners:
+`tasks/transparent-bg-endgame/round7_outline/gen_round7.py` (prompt blocks
+importable from rounds 3/4/6 files alongside it).
+
+**Prompt — all five blocks are load-bearing:**
+1. `SIGNIFICANT_CONTOUR_BLOCK` — "clearly VISIBLE, continuous, fully closed
+   dark ink contour, slim (fine felt-tip), never chunky; lineless edges =
+   wrong image". THE decisive element: models CANNOT paint true non-AA
+   edges — boundary pixels are always painted as opaque art+key blends; a
+   dark ink contour makes those blends land on ink where they are invisible.
+   Round 6 proved the medium-strength phrasing gets silently dropped —
+   MANDATORY/non-negotiable framing sticks. Thick "3x pencil" outlines were
+   user-rejected (round 4); slim-but-dark is the target.
+2. `NO_FILAMENT_BLOCK` — no feather-fans/hair-thin strand sprays; branch
+   junctions merge into solid painted joints. Isolated thin strands trap key
+   color at crossings; nothing downstream can cleanly remove it.
+3. `NO_GREEN_ART_BLOCK` — no bright/pure/saturated green anywhere in the
+   subject; plants in olive/sage/teal. Color alone CANNOT separate pure-green
+   art from trapped key background (seaweed can literally be [1,137,0]) —
+   ban it at the source so the purge can kill all key-hue green blindly.
+4. Flat key background block (`key_bg_block`, `#00FF00`) + `HARD_EDGE_BLOCK`.
+5. Rich-style block as usual.
+
+**Pipeline:** `chroma_key.py key` → `decontam_binarize.py --bg-color #00FF00`
+→ `green_purge.py IN.png OUT.png --no-green-art --erode 2 --band 6` →
+`gate_battery.py --profile print`. `green_purge.py` (v3) passes: 2px erode,
+band green repaint, band-wide green declamp + global +8 green cap,
+geometry-restricted olive-notch kill (concave-notch mask via morphological
+closing; sage seaweed protected by inscribed-radius shape test), near-black
+khaki neutralize, near-key deltaE kill + speck kill + trapped-background
+removal, converging final sweep.
+
+**Measured result (round 7):** all hard gates PASS both candidates incl. the
+halo gate (H_L 0.0 on r2); band-green contamination collapsed vs round 6
+(110/15 px vs 604); 12x nearest-neighbor junction zooms clean; user verdict
+"best yet".
+
+**Judging rule:** review zooms at 4x LANCZOS AND 12x NEAREST on junction
+notches — board-scale and even 4x hide the artifacts the user WILL find.
+
+**Do not re-try (failed in-session):** hue-snap (force band pixels to interior
+hue at own luminance) — kills green but causes garish banding; luminance
+rescale saturates. Bbox-fill solidity for leaf protection — wavy leaves score
+<0.3, use max inscribed radius (>=7px at area>=300) instead.
+
 ---
 
 ## ROUTE E — Existing image, background removal (Adobe-assisted, user-gated)
