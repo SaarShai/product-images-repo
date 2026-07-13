@@ -1,0 +1,42 @@
+[
+ {
+  "id": "H-O1-AA-r2",
+  "http": 200,
+  "secs": 50.7,
+  "prompt_sha256": "3dcd60e93d912b6e6c0c395379d7062e58862a7212dc0a5e85cfad8a773e675a",
+  "file": "tasks/transparent-bg-endgame/round1_5/raws/H_O1_AA_r2.png",
+  "usage": {
+   "input_tokens": 515,
+   "input_tokens_details": {
+    "image_tokens": 0,
+    "text_tokens": 515
+   },
+   "output_tokens": 6240,
+   "output_tokens_details": {
+    "image_tokens": 6240,
+    "text_tokens": 0
+   },
+   "total_tokens": 6755
+  }
+ },
+ {
+  "id": "H-O1-HARD-r2",
+  "http": 200,
+  "secs": 51.0,
+  "prompt_sha256": "84acb1de9fb85907c115239230e140f89acd3d3dac8fa98904ad2736b102b26f",
+  "file": "tasks/transparent-bg-endgame/round1_5/raws/H_O1_HARD_r2.png",
+  "usage": {
+   "input_tokens": 595,
+   "input_tokens_details": {
+    "image_tokens": 0,
+    "text_tokens": 595
+   },
+   "output_tokens": 6240,
+   "output_tokens_details": {
+    "image_tokens": 6240,
+    "text_tokens": 0
+   },
+   "total_tokens": 6835
+  }
+ }
+]
