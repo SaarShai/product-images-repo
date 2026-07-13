@@ -1,0 +1,55 @@
+{
+  "experiment": "round3_rich",
+  "size": "1024x1536",
+  "quality": "high",
+  "entries": [
+    {
+      "id": "H-O1-RICH-AA",
+      "model": "gpt-image-1",
+      "level": "AA",
+      "status": "ok",
+      "wall_secs": 64.3,
+      "alpha_ok": true
+    },
+    {
+      "id": "H-O15-RICH-AA",
+      "model": "gpt-image-1.5",
+      "level": "AA",
+      "status": "ok",
+      "wall_secs": 48.3,
+      "alpha_ok": true
+    },
+    {
+      "id": "H-O2-RICH-AA",
+      "model": "chatgpt-image-latest",
+      "level": "AA",
+      "status": "ok",
+      "wall_secs": 51.6,
+      "alpha_ok": true
+    },
+    {
+      "id": "H-O1-RICH-HARD",
+      "model": "gpt-image-1",
+      "level": "HARD",
+      "status": "ok",
+      "wall_secs": 59.2,
+      "alpha_ok": true
+    },
+    {
+      "id": "H-O15-RICH-HARD",
+      "model": "gpt-image-1.5",
+      "level": "HARD",
+      "status": "ok",
+      "wall_secs": 51.2,
+      "alpha_ok": true
+    },
+    {
+      "id": "H-O2-RICH-HARD",
+      "model": "chatgpt-image-latest",
+      "level": "HARD",
+      "status": "ok",
+      "wall_secs": 48.9,
+      "alpha_ok": true
+    }
+  ]
+}
