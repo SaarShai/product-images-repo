@@ -1,0 +1,15 @@
+{
+  "eroded_px": 12096,
+  "band_green_px": 86,
+  "global_kill_px": 29,
+  "protected_components": 0,
+  "speck_kill_px": 859,
+  "speck_protected_px": 4085,
+  "verify_iterations": 1,
+  "trapped_kept_near_art_px": 1638,
+  "trapped_bg_px": 2024,
+  "trapped_protected_px": 15381,
+  "final_sweep_iterations": 1,
+  "final_sweep_px": 0,
+  "converged": true
+}

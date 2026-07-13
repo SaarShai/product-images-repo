@@ -1,0 +1,21 @@
+[SUBJECT H]
+Create a single watercolor coral cluster with closed ink contours. The cluster must contain ALL of these visible elements: one legitimate green seaweed sprig, pale tinted off-white barnacle details, several deliberately thin fronds or antennae, and intentional negative-space gaps between branches. Nothing touches the canvas edges; keep a clear margin on all four sides.
+
+[STYLE]
+Highly detailed professional storybook watercolor-and-ink illustration, gallery quality: layered translucent glazes with rich pigment depth, visible granulation and wet-on-wet blooms INSIDE the shapes, subtle color-temperature shifts across each form, intricate fine ink work for interior texture (polyp dots, ridge hatching, barnacle rings, vein lines), a sophisticated harmonious palette with deep saturated accents as well as pastels, and confident hand-drawn line quality. Maximum interior detail and painterly richness; the complexity lives INSIDE the contours, never outside them.
+
+[EDGE CONTOUR - MEDIUM]
+Every painted shape is enclosed by a continuous, fully closed ink contour with no gaps or fade-outs - a clean, confident outline of MEDIUM weight, about the width of a fine felt-tip pen: clearly visible and crisp, but slender and elegant, never chunky or heavy. The contour color is a clearly darker, more saturated version of the adjacent local fill - never pure black and never white. The outermost silhouette outline may be slightly firmer than interior lines, but stays a slim, refined line. Every white-looking subject detail or highlight is a visibly tinted pastel off-white, fully enclosed by its contour.
+
+[KEYABLE-FINE]
+Fine detail is essential and must remain keyable: all thin fronds and antennae use full pigment strength, non-white mid-tones; every thinnest element has a closed contour; the minimum stroke is about a thick pencil line relative to the canvas; filaments are grouped into connected fans sharing one silhouette; no isolated strands over open background.
+Keyability overrides naturalism for thin features only: thin fronds and antennae may be slightly sturdier, rounder, and grouped while keeping their intended color, position, and role.
+
+[EXCLUSIONS]
+No text, border, cut line, sticker rim, checkerboard, transparency-preview pattern, extra objects, or ground shadow.
+
+[BACKGROUND - FLAT KEY]
+The entire background is a single perfectly flat, uniform field of pure bright chroma green (#00FF00) - one exact solid color across every background pixel. Absolutely no gradient, vignette, texture, paper grain, noise, lighting variation, or shadow anywhere in the background. The background color must never appear inside the subject: no colored reflections, color spill, rim light, or ambient tint from the background onto the artwork. The subject's outermost bold ink contour meets the flat background color abruptly, with no glow, halo, aura, wash, bloom, mist, drop shadow, contact shadow, ground plane, or soft transition band around the silhouette. No sand, seabed, rock base, or any surface; the subject floats on the flat color field. Gaps between branches show only the flat background color, never pale paint.
+
+[FACTUAL HARD EDGE]
+the outer silhouette boundary is a crisp hard step; nothing feathers, fades, or blends outside the contour; no semi-transparent outer transition band; no anti-aliasing at the outermost edge; transparency meets art color abruptly

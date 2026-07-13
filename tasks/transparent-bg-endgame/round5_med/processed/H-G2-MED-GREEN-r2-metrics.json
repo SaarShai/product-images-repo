@@ -1,0 +1,57 @@
+{
+  "alpha": {
+    "alpha_thresh": 128,
+    "components_before_erode": 13,
+    "post_erode_mask_px": 613050,
+    "pre_erode_mask_px": 613050,
+    "restored_thin_components": 0
+  },
+  "bg_color": "#00FF00",
+  "core_px": 609129,
+  "despill": {
+    "changed_px": 28,
+    "enabled": true,
+    "max_remove": 0.02341674,
+    "mean_remove": 0.00542826,
+    "tau": 0.01
+  },
+  "donor": {
+    "components": 57,
+    "donor_max_px": 4.0,
+    "donor_min_px": 2.0,
+    "donor_ring_px": 51513,
+    "fallback_components": 56
+  },
+  "donor_valid_px": 1572864,
+  "final_rgb_extension": {
+    "conflict_px": 259,
+    "extension_px": 75406
+  },
+  "input_size": [
+    1024,
+    1536
+  ],
+  "output_size": [
+    1024,
+    1536
+  ],
+  "ppi": null,
+  "pre_upscale_rgb_extension": {
+    "conflict_px": 259,
+    "extension_px": 75406
+  },
+  "ridge_unmix": {
+    "pre_gamut_above_channel_count": 2398,
+    "pre_gamut_below_channel_count": 12299,
+    "recomposition_linear_mae": 0.2683033,
+    "recomposition_linear_p95": 0.72804934,
+    "transition_px": 12391
+  },
+  "transition_px": 12391,
+  "transparent_px": 950995,
+  "upscale": {
+    "alpha_method": "none",
+    "enabled": false,
+    "rgb_method": "none"
+  }
+}
