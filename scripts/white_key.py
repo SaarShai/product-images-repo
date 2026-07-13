@@ -54,6 +54,8 @@ def main():
     ap.add_argument("--thresh",type=int,default=238,help="min RGB to count as background-white")
     ap.add_argument("--sat",type=int,default=18,help="max (max-min) channel spread for white")
     ap.add_argument("--erode",type=int,default=2,help="px to erode fg to kill bright fringe")
+    ap.add_argument("--preset",choices=["gi2"],default=None,
+                     help="named parameter set; gi2 = thresh=246 erode=0 (gpt-image-2 art: erode>0 at thresh<248 eats pure-white rim highlights)")
     ap.add_argument("--feather",type=float,default=0.8)
     ap.add_argument("--reopen-interior",action="store_true",help="also reopen trapped (enclosed) near-white background regions")
     ap.add_argument("--interior-thresh",type=int,default=250,help="min RGB for a pixel to count as flat PURE background white (reopen seed)")
@@ -62,6 +64,11 @@ def main():
     ap.add_argument("--interior-purity",type=float,default=0.35,help="min fraction of a trapped region that is flat pure white (protects tinted cream/blush highlights)")
     ap.add_argument("--check",action="store_true")
     a=ap.parse_args()
+    if a.preset=="gi2":
+        a.thresh=246; a.erode=0
+    if a.erode>0 and a.thresh<248:
+        print(f"[white_key] WARNING: erode={a.erode} with thresh={a.thresh} (<248) can eat pure-white "
+              f"rim/highlight pixels on gpt-image-2 art; consider --preset gi2 (thresh=246 erode=0)")
     im=Image.open(a.image).convert("RGB"); arr=np.asarray(im); h,w,_=arr.shape
     mx=arr.max(2); mn=arr.min(2)
     whiteish=(mn>=a.thresh)&((mx-mn)<=a.sat)           # near-pure-white pixels

@@ -136,8 +136,15 @@ scripts/white_key.py <input.png> --output <output.png> --reopen-interior
 1. Generate with final recipe (`full-R4-deviation-authorized.txt`)
 2. If native alpha needed: direct alpha output (if model supports `background=transparent`)
 3. If white-key extraction: `scripts/white_key.py` (standard mode)
-4. If interior-trapped voids: add `--reopen-interior` after reviewing purity/area settings
-5. If fine-detail preservation critical: separate layer + trimap matting (do not rely on prompt module alone)
+4. Edge decontamination: `scripts/dehalo_edge.py --image keyed.png --out keyed-dehalo.png --check` — white_key produces BINARY alpha that keeps the white-contaminated anti-aliased edge ring fully opaque, which renders as a white HALO over any darker background; dehalo_edge fixes it deterministically (nearest-interior donor-field RGB extension, smoothed; alpha re-solved from whiteness vs donor with a distance-based monotonic floor; interior byte-identical).
+5. MANDATORY GATE: before delivering any keyed RGBA, composite an edge-dense crop over #111111 and visually verify no white rim (halo was shipped 2026-07-12 because only transparency%/wrongly-removed/trapped-pocket were gated, never a dark-background composite; user hard rule: never ship halo).
+6. If interior-trapped voids: add `--reopen-interior` after reviewing purity/area settings
+7. If fine-detail preservation critical: separate layer + trimap matting (do not rely on prompt module alone)
+
+### Calibration Notes (v1/v2 Iterations)
+
+- Per-pixel error-rejection creates speckled patchwork rims (reject rejection — coherence beats accuracy).
+- Alpha re-solve without a distance floor punches speckle holes in pale art.
 
 ## Evidence & Testing
 

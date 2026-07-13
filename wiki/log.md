@@ -1,5 +1,13 @@
 # Wiki Log
 
+## [2026-07-12] update | Transparent-clear-edge prompt recipe — dehalo_edge + halo-gate steps
+
+Updated [[concepts/transparent-clear-edge-prompt-recipe]] recommended pipeline: added mandatory `scripts/dehalo_edge.py` edge-decontamination step (fixes white-halo that white_key binary alpha produces on darker backgrounds; nearest-interior RGB extension + distance-floor alpha re-solve) + MANDATORY visual gate before delivery (composite edge-crop over #111111, verify no white rim). Recorded v1/v2 calibration lessons: per-pixel error-rejection creates speckled rims (coherence beats accuracy); alpha re-solve without distance-floor punches pale-art holes.
+
+## [2026-07-12] create | Band-Panel Workflow SOP
+
+Created `concepts/band-panel-workflow-sop.md` from verified single-run workflow (tasks/marine-coral-panels, 2026-07-12; 60% rework avoided via pre-flight checklist). Recorded pre-flight checklist (ref provenance/model pinning, 3 user questions, memory grep for precedents, exemplar calibration), generation discipline (placement not prompting, batch-parallel not sequential), hard gates (fit_gate.py overlap check, white_key.py gi2 preset with regression fixture, alpha-aware upscale validation), and delivery checklist (Images/ casing verification). Single-run evidence; thresholds provisional; deferring band_pipeline.py orchestrator + /learn skill promotion until 2nd conforming run.
+
 ## [2026-07-12] add | Three gotcha lessons from transparent-clear-edge session
 
 Added three fact entries from verified 2026-07-12 session:

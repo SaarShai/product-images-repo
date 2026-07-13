@@ -2,9 +2,22 @@
 """subgen.py — THE single, always-working way to generate images on the user's
 SUBSCRIPTION (no API keys). Use this everywhere; do not drive codex/agy ad-hoc.
 
-Providers (both already authenticated on this machine):
-  openai : OpenAI gpt-image via `codex exec`
+Providers:
+  openai : OpenAI gpt-image via `codex exec` — the codex AGENT picks the actual
+           image model itself (UNPINNED). WARNING: do not use this provider when
+           output must style-match art produced by a specific model — an
+           unpinned-model switch mid-project caused a documented style-drift
+           failure (~33min lost). Use `--provider api` instead when the model
+           must be pinned/reproducible.
   nano   : Google Nano Banana via `agy`
+  api / openai-api / gi2 : direct OpenAI Images API (/v1/images/edits), model
+           PINNED explicitly (default gpt-image-2, override with --model).
+           Requires an API key in .secrets/openai.env (OPENAI_API_KEY=...).
+           For reproducibility prefer a DATED SNAPSHOT model name (e.g.
+           gpt-image-2-2026-04-21) over the floating alias — verify available
+           snapshots with `client.models.list()` when a key + network are
+           available; otherwise just pin the alias and record it in the
+           provenance manifest written alongside the output.
 
 Why this exists / what it fixes (every flaky failure mode we hit):
   * TIMEOUT ORPHANS — codex's node wrapper, on timeout, left the native binary
@@ -24,6 +37,7 @@ CLI:
   python3 scripts/subgen.py --health
   python3 scripts/subgen.py --provider openai --prompt-file P.md --out O.png -i a.png b.png
   python3 scripts/subgen.py --provider nano   --prompt "..."      --out O.png -i a.png
+  python3 scripts/subgen.py --provider api --model gpt-image-2 --prompt "..." --out O.png -i a.png
 Library:
   from subgen import generate, health
   generate("openai", prompt, [imgs], out, timeout=300, retries=3) -> Path
@@ -173,11 +187,99 @@ def gen_nano(prompt, images, out, timeout=300, retries=3) -> Path:
     raise RuntimeError(f"nano gen failed after {retries} attempts -> {out}")
 
 
+_OPENAI_KEY_PATH = Path(__file__).resolve().parent.parent / ".secrets" / "openai.env"
+
+
+def _load_api_key():
+    """Read OPENAI_API_KEY from .secrets/openai.env, falling back to env var."""
+    if _OPENAI_KEY_PATH.exists():
+        for ln in _OPENAI_KEY_PATH.read_text().splitlines():
+            if ln.strip().startswith("OPENAI_API_KEY"):
+                return ln.split("=", 1)[1].strip().strip('"').strip("'")
+    return os.environ.get("OPENAI_API_KEY")
+
+
+_TRANSIENT_STATUS = {429, 500, 502, 503, 504}
+
+
+def gen_api(prompt, images, out, timeout=300, retries=3, model=None,
+            size="1536x1024", quality="high") -> Path:
+    """Direct OpenAI Images API (/v1/images/edits), model PINNED explicitly
+    (no agent picks it). Prefer a dated snapshot model name for reproducibility.
+    Retries ONLY on clearly transient errors (ConnectionError, 429, 5xx) — an
+    ambiguous post-submit timeout may have already generated the image server-side,
+    so it is surfaced as an error rather than retried."""
+    import base64, hashlib, io, json, requests
+    from PIL import Image
+
+    out = Path(out); out.parent.mkdir(parents=True, exist_ok=True)
+    model = model or "gpt-image-2"
+    key = _load_api_key()
+    if not key:
+        raise RuntimeError("gen_api: no OPENAI_API_KEY (.secrets/openai.env or env var)")
+
+    ref_sha256s = []
+    files = []
+    for p in images:
+        data_bytes = Path(p).read_bytes()
+        ref_sha256s.append(hashlib.sha256(data_bytes).hexdigest())
+        im = Image.open(p).convert("RGB")
+        s = 1536 / max(im.size)
+        if s < 1:
+            im = im.resize((int(im.width * s), int(im.height * s)), Image.LANCZOS)
+        b = io.BytesIO(); im.save(b, format="PNG"); b.seek(0)
+        files.append(("image[]", (f"ref{len(files)}.png", b, "image/png")))
+    data = {"model": model, "prompt": prompt, "n": "1", "size": size, "quality": quality}
+    prompt_sha256 = hashlib.sha256(prompt.encode("utf-8")).hexdigest()
+
+    last_exc = None
+    for attempt in range(1, retries + 1):
+        try:
+            r = requests.post("https://api.openai.com/v1/images/edits",
+                               headers={"Authorization": "Bearer " + key},
+                               data=data, files=files, timeout=timeout)
+        except requests.exceptions.ConnectionError as ex:
+            last_exc = ex
+            print(f"[subgen api] attempt {attempt}/{retries} connection error: {ex}", file=sys.stderr)
+            time.sleep(2 ** attempt)
+            continue
+        if r.status_code != 200:
+            if r.status_code in _TRANSIENT_STATUS and attempt < retries:
+                print(f"[subgen api] attempt {attempt}/{retries} transient HTTP {r.status_code}: "
+                      f"{r.text[:300]}", file=sys.stderr)
+                time.sleep(2 ** attempt)
+                continue
+            raise RuntimeError(f"gen_api HTTP {r.status_code}: {r.text[:500]}")
+        j = r.json()
+        b64 = j["data"][0]["b64_json"]
+        out.write_bytes(base64.b64decode(b64))
+        if not _valid_image(str(out)):
+            raise RuntimeError(f"gen_api: response decoded but not a valid image -> {out}")
+        prov = {
+            "model_requested": model,
+            "model_in_response": j.get("model") or (j["data"][0].get("model")
+                                                       if isinstance(j["data"][0], dict) else None),
+            "size": size,
+            "quality": quality,
+            "prompt_sha256": prompt_sha256,
+            "ref_sha256s": ref_sha256s,
+            "attempts": attempt,
+            "request_id": r.headers.get("x-request-id") or r.headers.get("openai-request-id"),
+            "timestamp_from_response": r.headers.get("date"),
+        }
+        Path(str(out) + ".provenance.json").write_text(json.dumps(prov, indent=2))
+        print(f"[subgen api] OK attempt {attempt} -> {out} model={model}", file=sys.stderr)
+        return out
+    raise RuntimeError(f"api gen failed after {retries} attempts -> {out}: {last_exc}")
+
+
 def generate(provider, prompt, images, out, timeout=300, retries=3, model=None) -> Path:
     if provider in ("openai", "codex", "gpt-image"):
         return gen_openai(prompt, images, out, timeout, retries, model)
     if provider in ("nano", "nanobanana", "agy", "gemini"):
         return gen_nano(prompt, images, out, timeout, retries)
+    if provider in ("api", "openai-api", "gi2"):
+        return gen_api(prompt, images, out, timeout, retries, model)
     raise ValueError(f"unknown provider {provider}")
 
 
@@ -189,12 +291,28 @@ def health() -> dict:
     rc, o, e, to = _run(["agy", "--dangerously-skip-permissions", "--print",
                         "Reply with the single word OK and nothing else."], None, 60)
     res["nano"] = "ok" if (not to and "OK" in (o or "").upper()) else f"FAIL(timeout={to})"
+    res["api"] = _health_api()
     return res
+
+
+def _health_api() -> str:
+    key = _load_api_key()
+    if not key:
+        return "skip(no key)"
+    try:
+        import requests
+        r = requests.get("https://api.openai.com/v1/models",
+                          headers={"Authorization": "Bearer " + key}, timeout=15)
+        if r.status_code == 200:
+            return "ok"
+        return f"FAIL(HTTP {r.status_code})"
+    except Exception as ex:
+        return f"skip(offline: {ex.__class__.__name__})"
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--provider", choices=["openai", "nano"])
+    ap.add_argument("--provider", choices=["openai", "nano", "api", "openai-api", "gi2"])
     ap.add_argument("--prompt"); ap.add_argument("--prompt-file", type=Path)
     ap.add_argument("--out", type=Path)
     ap.add_argument("-i", "--image", nargs="*", default=[])
