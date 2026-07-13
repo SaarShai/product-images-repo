@@ -1,0 +1,167 @@
+{
+  "rgba": "/Users/za/Documents/product images repo/tasks/double-marine-bed-wrapper-batch/bg-benchmark/fixtures/generated/candidates/negative-premultiplied-rgb.png",
+  "source": null,
+  "bg_color": null,
+  "profile": "soft",
+  "pass": false,
+  "gates": {
+    "D1_halo_gate": {
+      "metric_values": {
+        "edge_band_px": 442,
+        "edge_l_mean": 0.0,
+        "edge_l_p99": 0.0,
+        "inner_l_mean": 33.7189,
+        "bright_run_max": 0
+      },
+      "threshold": {
+        "edge_l99_max": 16.0,
+        "edge_l_mean_max": 3.5,
+        "bright_run_l_min": 20.0,
+        "advisory": false
+      },
+      "pass": true,
+      "advisory": false,
+      "crop_paths": []
+    },
+    "D2_soft_alpha_fringe": {
+      "metric_values": {
+        "soft_px": 376,
+        "fg_nonzero_px": 823,
+        "boundary_perimeter_px": 195,
+        "soft_perimeter_ratio": 1.9282,
+        "transition_width_p95": 4.0,
+        "transition_width_max": 5.0,
+        "profile": "soft"
+      },
+      "threshold": {
+        "soft_perimeter_ratio_max_soft": 2.75,
+        "soft_perimeter_ratio_max_print": 0.0,
+        "transition_width_p95_max": 4.0,
+        "advisory": false,
+        "active_soft_perimeter_ratio_max": 2.75
+      },
+      "pass": true,
+      "advisory": false,
+      "crop_paths": []
+    },
+    "D3_pocket_gate": {
+      "metric_values": {
+        "component_count": 1,
+        "total_area_px": 81,
+        "max_area_px": 81,
+        "total_area_frac": 0.019775,
+        "max_area_frac": 0.019775
+      },
+      "threshold": {
+        "max_count": 4,
+        "max_total_area_frac": 0.0025,
+        "max_component_area_frac": 0.0015,
+        "min_component_area": 4,
+        "advisory": false
+      },
+      "pass": false,
+      "advisory": false,
+      "crop_paths": [
+        "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/fixture_negative-premultiplied-rgb/D3_pocket_gate-component-1.png"
+      ]
+    },
+    "D4_aura_gate": {
+      "metric_values": {
+        "path": "/Users/za/Documents/product images repo/tasks/double-marine-bed-wrapper-batch/bg-benchmark/fixtures/generated/candidates/negative-premultiplied-rgb.png",
+        "mode_used": "alpha",
+        "boundary_px": 99,
+        "aura_index": 0.6768,
+        "mean_band_width": 20.263,
+        "median_band_width": 30.0,
+        "hit_rate": 0.3838,
+        "verdict": "FAIL",
+        "overlay": "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/fixture_negative-premultiplied-rgb/D4_aura_gate-overlay.png"
+      },
+      "threshold": {
+        "aura_index_max": 0.2,
+        "advisory": false
+      },
+      "pass": false,
+      "advisory": false,
+      "crop_paths": [
+        "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/fixture_negative-premultiplied-rgb/D4_aura_gate-overlay.png"
+      ]
+    },
+    "D5_hole_gate": {
+      "metric_values": {},
+      "threshold": {
+        "expected_fg_delta_e_min": 8.0,
+        "deleted_area_frac_max": 0.002,
+        "deleted_component_area_max": 64,
+        "advisory": true
+      },
+      "pass": true,
+      "advisory": true,
+      "crop_paths": [],
+      "skipped": true,
+      "skip_reason": "--source not provided"
+    },
+    "D6_spill_gate": {
+      "metric_values": {},
+      "threshold": {
+        "oklab_delta_chroma_max": 0.055,
+        "bg_projection_max": 0.04,
+        "advisory": true
+      },
+      "pass": true,
+      "advisory": true,
+      "crop_paths": [],
+      "skipped": true,
+      "skip_reason": "--bg-color not provided"
+    },
+    "D7_border_gate": {
+      "metric_values": {
+        "strip_px": 3,
+        "border_px": 732,
+        "occupied_px": 0,
+        "border_alpha_occupancy": 0.0
+      },
+      "threshold": {
+        "border_alpha_occupancy_max": 0.0,
+        "strip_px": 3,
+        "advisory": false
+      },
+      "pass": true,
+      "advisory": false,
+      "crop_paths": []
+    },
+    "D8_alpha_sanity": {
+      "metric_values": {
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "alpha_unique_count": 4,
+        "alpha_unique_sample": [
+          0,
+          128,
+          180,
+          255
+        ],
+        "zero_px": 3273,
+        "soft_px": 376,
+        "opaque_px": 447,
+        "zero_frac": 0.799072,
+        "soft_frac": 0.091797,
+        "opaque_frac": 0.109131,
+        "flat_alpha": false,
+        "lacks_transparency": false,
+        "lacks_foreground": false,
+        "checker_ratio": 0.0,
+        "checker_2x2_blocks": 372,
+        "checker_fail": false
+      },
+      "threshold": {
+        "checker_ratio_max": 0.25,
+        "checker_delta_min": 20.0,
+        "advisory": false
+      },
+      "pass": true,
+      "advisory": false,
+      "crop_paths": []
+    }
+  }
+}

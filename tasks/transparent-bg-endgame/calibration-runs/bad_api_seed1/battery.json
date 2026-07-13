@@ -1,0 +1,189 @@
+{
+  "rgba": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/api-lane/api-chatgpt-image-latest-seed1.png",
+  "source": null,
+  "bg_color": null,
+  "profile": "soft",
+  "pass": false,
+  "gates": {
+    "D1_halo_gate": {
+      "metric_values": {
+        "edge_band_px": 59684,
+        "edge_l_mean": 4.6876,
+        "edge_l_p99": 38.5462,
+        "inner_l_mean": 73.5813,
+        "bright_run_max": 14
+      },
+      "threshold": {
+        "edge_l99_max": 16.0,
+        "edge_l_mean_max": 3.5,
+        "bright_run_l_min": 20.0,
+        "advisory": false
+      },
+      "pass": false,
+      "advisory": false,
+      "crop_paths": [
+        "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/bad_api_seed1/D1_halo_gate-edge-band.png"
+      ]
+    },
+    "D2_soft_alpha_fringe": {
+      "metric_values": {
+        "soft_px": 365138,
+        "fg_nonzero_px": 529783,
+        "boundary_perimeter_px": 28703,
+        "soft_perimeter_ratio": 12.7212,
+        "transition_width_p95": 3.0,
+        "transition_width_max": 8.0623,
+        "profile": "soft"
+      },
+      "threshold": {
+        "soft_perimeter_ratio_max_soft": 2.75,
+        "soft_perimeter_ratio_max_print": 0.0,
+        "transition_width_p95_max": 4.0,
+        "advisory": false,
+        "active_soft_perimeter_ratio_max": 2.75
+      },
+      "pass": false,
+      "advisory": false,
+      "crop_paths": [
+        "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/bad_api_seed1/D2_soft_alpha_fringe-soft-alpha.png"
+      ]
+    },
+    "D3_pocket_gate": {
+      "metric_values": {
+        "component_count": 84,
+        "total_area_px": 7576,
+        "max_area_px": 1079,
+        "total_area_frac": 0.004817,
+        "max_area_frac": 0.000686
+      },
+      "threshold": {
+        "max_count": 4,
+        "max_total_area_frac": 1.0,
+        "max_component_area_frac": 1.0,
+        "min_component_area": 4,
+        "advisory": false
+      },
+      "pass": false,
+      "advisory": false,
+      "crop_paths": [
+        "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/bad_api_seed1/D3_pocket_gate-component-1.png",
+        "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/bad_api_seed1/D3_pocket_gate-component-2.png",
+        "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/bad_api_seed1/D3_pocket_gate-component-3.png",
+        "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/bad_api_seed1/D3_pocket_gate-component-4.png",
+        "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/bad_api_seed1/D3_pocket_gate-component-5.png"
+      ]
+    },
+    "D4_aura_gate": {
+      "metric_values": {
+        "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/api-lane/api-chatgpt-image-latest-seed1.png",
+        "mode_used": "alpha",
+        "boundary_px": 34102,
+        "aura_index": 0.3666,
+        "mean_band_width": 8.917,
+        "median_band_width": 4.0,
+        "hit_rate": 0.8556,
+        "verdict": "FAIL",
+        "overlay": "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/bad_api_seed1/D4_aura_gate-overlay.png"
+      },
+      "threshold": {
+        "aura_index_max": 0.2,
+        "advisory": false
+      },
+      "pass": false,
+      "advisory": false,
+      "crop_paths": [
+        "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/bad_api_seed1/D4_aura_gate-overlay.png"
+      ]
+    },
+    "D5_hole_gate": {
+      "metric_values": {},
+      "threshold": {
+        "expected_fg_delta_e_min": 8.0,
+        "deleted_area_frac_max": 0.002,
+        "deleted_component_area_max": 64,
+        "advisory": true
+      },
+      "pass": true,
+      "advisory": true,
+      "crop_paths": [],
+      "skipped": true,
+      "skip_reason": "--source not provided"
+    },
+    "D6_spill_gate": {
+      "metric_values": {},
+      "threshold": {
+        "oklab_delta_chroma_max": 0.055,
+        "bg_projection_max": 0.04,
+        "advisory": true
+      },
+      "pass": true,
+      "advisory": true,
+      "crop_paths": [],
+      "skipped": true,
+      "skip_reason": "--bg-color not provided"
+    },
+    "D7_border_gate": {
+      "metric_values": {
+        "strip_px": 3,
+        "border_px": 15324,
+        "occupied_px": 3,
+        "border_alpha_occupancy": 0.00019577
+      },
+      "threshold": {
+        "border_alpha_occupancy_max": 0.0,
+        "strip_px": 3,
+        "advisory": false
+      },
+      "pass": false,
+      "advisory": false,
+      "crop_paths": [
+        "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/bad_api_seed1/D7_border_gate-occupied-border.png"
+      ]
+    },
+    "D8_alpha_sanity": {
+      "metric_values": {
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "alpha_unique_count": 256,
+        "alpha_unique_sample": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "zero_px": 1043081,
+        "soft_px": 365138,
+        "opaque_px": 164645,
+        "zero_frac": 0.663173,
+        "soft_frac": 0.232148,
+        "opaque_frac": 0.104678,
+        "flat_alpha": false,
+        "lacks_transparency": false,
+        "lacks_foreground": false,
+        "checker_ratio": 0.001516,
+        "checker_2x2_blocks": 29692,
+        "checker_fail": false
+      },
+      "threshold": {
+        "checker_ratio_max": 0.25,
+        "checker_delta_min": 20.0,
+        "advisory": false
+      },
+      "pass": true,
+      "advisory": false,
+      "crop_paths": []
+    }
+  }
+}

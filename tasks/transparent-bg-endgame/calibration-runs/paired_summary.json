@@ -1,0 +1,53 @@
+[
+  {
+    "label": "paired_green_P1",
+    "path": "REVIEW/marine-bed-transparent/chroma-lane/keyed-v3/keyed_green_P1.png",
+    "source": "REVIEW/marine-bed-transparent/chroma-lane/raws/raw_green_P1.png",
+    "D5_deleted_frac": 0.08326,
+    "D5_max_area": 592,
+    "D5_pass": false,
+    "D6_delta": 0.048096,
+    "D6_proj": 0.044673,
+    "D6_pass": false,
+    "failed": [
+      "D3_pocket_gate",
+      "D5_hole_gate",
+      "D6_spill_gate",
+      "D7_border_gate"
+    ]
+  },
+  {
+    "label": "paired_green_P2",
+    "path": "REVIEW/marine-bed-transparent/chroma-lane/keyed-v3/keyed_green_P2.png",
+    "source": "REVIEW/marine-bed-transparent/chroma-lane/raws/raw_green_P2.png",
+    "D5_deleted_frac": 0.668486,
+    "D5_max_area": 935286,
+    "D5_pass": false,
+    "D6_delta": 0.049694,
+    "D6_proj": 0.045357,
+    "D6_pass": false,
+    "failed": [
+      "D3_pocket_gate",
+      "D5_hole_gate",
+      "D6_spill_gate",
+      "D7_border_gate"
+    ]
+  },
+  {
+    "label": "paired_green_P3",
+    "path": "REVIEW/marine-bed-transparent/chroma-lane/keyed-v3/keyed_green_P3.png",
+    "source": "REVIEW/marine-bed-transparent/chroma-lane/raws/raw_green_P3.png",
+    "D5_deleted_frac": 0.017242,
+    "D5_max_area": 42,
+    "D5_pass": false,
+    "D6_delta": 0.052613,
+    "D6_proj": 0.047001,
+    "D6_pass": false,
+    "failed": [
+      "D3_pocket_gate",
+      "D5_hole_gate",
+      "D6_spill_gate",
+      "D7_border_gate"
+    ]
+  }
+]

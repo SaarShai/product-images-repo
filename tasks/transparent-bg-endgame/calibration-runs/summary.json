@@ -1,0 +1,192 @@
+[
+  {
+    "label": "bad_api_seed1",
+    "path": "REVIEW/marine-bed-transparent/api-lane/api-chatgpt-image-latest-seed1.png",
+    "pass": false,
+    "D1_l99": 38.5462,
+    "D1_lmean": 4.6876,
+    "D2_ratio": 12.7212,
+    "D2_width95": 3.0,
+    "D3_count": 84,
+    "D3_total_frac": 0.004817,
+    "D4_aura": 0.3666,
+    "D7_occ": 0.00019577,
+    "D8_unique": 256,
+    "failed": [
+      "D1_halo_gate",
+      "D2_soft_alpha_fringe",
+      "D3_pocket_gate",
+      "D4_aura_gate",
+      "D7_border_gate"
+    ]
+  },
+  {
+    "label": "bad_api_seed2",
+    "path": "REVIEW/marine-bed-transparent/api-lane/api-chatgpt-image-latest-seed2.png",
+    "pass": false,
+    "D1_l99": 38.6544,
+    "D1_lmean": 5.0991,
+    "D2_ratio": 12.5935,
+    "D2_width95": 2.8284,
+    "D3_count": 77,
+    "D3_total_frac": 0.00502,
+    "D4_aura": 0.3561,
+    "D7_occ": 0.00013051,
+    "D8_unique": 256,
+    "failed": [
+      "D1_halo_gate",
+      "D2_soft_alpha_fringe",
+      "D3_pocket_gate",
+      "D4_aura_gate",
+      "D7_border_gate"
+    ]
+  },
+  {
+    "label": "bad_api_gpt15_seed1",
+    "path": "REVIEW/marine-bed-transparent/api-lane/api-gpt-image-1_5-seed1.png",
+    "pass": false,
+    "D1_l99": 38.2267,
+    "D1_lmean": 4.7037,
+    "D2_ratio": 11.7486,
+    "D2_width95": 3.0,
+    "D3_count": 57,
+    "D3_total_frac": 0.00635,
+    "D4_aura": 0.5186,
+    "D7_occ": 0.11687549,
+    "D8_unique": 256,
+    "failed": [
+      "D1_halo_gate",
+      "D2_soft_alpha_fringe",
+      "D3_pocket_gate",
+      "D4_aura_gate",
+      "D7_border_gate"
+    ]
+  },
+  {
+    "label": "bad_api_gpt15_seed2",
+    "path": "REVIEW/marine-bed-transparent/api-lane/api-gpt-image-1_5-seed2.png",
+    "pass": false,
+    "D1_l99": 35.8256,
+    "D1_lmean": 4.1119,
+    "D2_ratio": 12.3235,
+    "D2_width95": 3.0,
+    "D3_count": 72,
+    "D3_total_frac": 0.006791,
+    "D4_aura": 0.4531,
+    "D7_occ": 0.12216132,
+    "D8_unique": 256,
+    "failed": [
+      "D1_halo_gate",
+      "D2_soft_alpha_fringe",
+      "D3_pocket_gate",
+      "D4_aura_gate",
+      "D7_border_gate"
+    ]
+  },
+  {
+    "label": "good_keyed_green_p1",
+    "path": "REVIEW/marine-bed-transparent/chroma-lane/keyed-v3/keyed_green_P1.png",
+    "pass": false,
+    "D1_l99": 8.6862,
+    "D1_lmean": 0.6111,
+    "D2_ratio": 1.4332,
+    "D2_width95": 2.8284,
+    "D3_count": 276,
+    "D3_total_frac": 0.024207,
+    "D4_aura": 0.0322,
+    "D7_occ": 0.04515792,
+    "D8_unique": 256,
+    "failed": [
+      "D3_pocket_gate",
+      "D7_border_gate"
+    ]
+  },
+  {
+    "label": "good_keyed_green_p2",
+    "path": "REVIEW/marine-bed-transparent/chroma-lane/keyed-v3/keyed_green_P2.png",
+    "pass": false,
+    "D1_l99": 9.0956,
+    "D1_lmean": 0.654,
+    "D2_ratio": 1.1802,
+    "D2_width95": 2.2361,
+    "D3_count": 244,
+    "D3_total_frac": 0.021828,
+    "D4_aura": 0.0422,
+    "D7_occ": 0.12163926,
+    "D8_unique": 256,
+    "failed": [
+      "D3_pocket_gate",
+      "D7_border_gate"
+    ]
+  },
+  {
+    "label": "good_keyed_green_p3",
+    "path": "REVIEW/marine-bed-transparent/chroma-lane/keyed-v3/keyed_green_P3.png",
+    "pass": false,
+    "D1_l99": 8.4261,
+    "D1_lmean": 0.5518,
+    "D2_ratio": 1.1299,
+    "D2_width95": 2.2361,
+    "D3_count": 224,
+    "D3_total_frac": 0.025017,
+    "D4_aura": 0.0403,
+    "D7_occ": 0.13397285,
+    "D8_unique": 256,
+    "failed": [
+      "D3_pocket_gate",
+      "D7_border_gate"
+    ]
+  },
+  {
+    "label": "synthetic_good_fixture",
+    "path": "tasks/double-marine-bed-wrapper-batch/bg-benchmark/fixtures/generated/candidates/good.png",
+    "pass": false,
+    "D1_l99": 0.0,
+    "D1_lmean": 0.0,
+    "D2_ratio": 1.9282,
+    "D2_width95": 4.0,
+    "D3_count": 1,
+    "D3_total_frac": 0.019775,
+    "D4_aura": 0.9091,
+    "D7_occ": 0.0,
+    "D8_unique": 4,
+    "failed": [
+      "D4_aura_gate"
+    ]
+  },
+  {
+    "label": "synthetic_negative_white_fringe",
+    "path": "tasks/double-marine-bed-wrapper-batch/bg-benchmark/fixtures/generated/candidates/negative-white-fringe.png",
+    "pass": false,
+    "D1_l99": 0.0,
+    "D1_lmean": 0.0,
+    "D2_ratio": 1.8164,
+    "D2_width95": 4.0,
+    "D3_count": 1,
+    "D3_total_frac": 0.019775,
+    "D4_aura": 0.9693,
+    "D7_occ": 0.0,
+    "D8_unique": 4,
+    "failed": [
+      "D4_aura_gate"
+    ]
+  },
+  {
+    "label": "synthetic_negative_degenerate_alpha",
+    "path": "tasks/double-marine-bed-wrapper-batch/bg-benchmark/fixtures/generated/candidates/negative-degenerate-alpha.png",
+    "pass": false,
+    "D1_l99": 0.0,
+    "D1_lmean": 0.0,
+    "D2_ratio": 0.0,
+    "D2_width95": 0.0,
+    "D3_count": 0,
+    "D3_total_frac": 0.0,
+    "D4_aura": 0.068,
+    "D7_occ": 1.0,
+    "D8_unique": 1,
+    "failed": [
+      "D7_border_gate",
+      "D8_alpha_sanity"
+    ]
+  }
+]

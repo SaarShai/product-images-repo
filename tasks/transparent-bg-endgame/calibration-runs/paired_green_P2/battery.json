@@ -1,0 +1,262 @@
+{
+  "rgba": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/chroma-lane/keyed-v3/keyed_green_P2.png",
+  "source": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/chroma-lane/raws/raw_green_P2.png",
+  "bg_color": "#00FF00",
+  "profile": "soft",
+  "pass": false,
+  "gates": {
+    "D1_halo_gate": {
+      "metric_values": {
+        "edge_band_px": 69878,
+        "edge_l_mean": 0.654,
+        "edge_l_p99": 9.0956,
+        "inner_l_mean": 57.2676,
+        "bright_run_max": 0
+      },
+      "threshold": {
+        "edge_l99_max": 16.0,
+        "edge_l_mean_max": 3.5,
+        "bright_run_l_min": 20.0,
+        "advisory": false
+      },
+      "pass": true,
+      "advisory": false,
+      "crop_paths": []
+    },
+    "D2_soft_alpha_fringe": {
+      "metric_values": {
+        "soft_px": 41750,
+        "fg_nonzero_px": 505013,
+        "boundary_perimeter_px": 35376,
+        "soft_perimeter_ratio": 1.1802,
+        "transition_width_p95": 2.2361,
+        "transition_width_max": 4.4721,
+        "profile": "soft"
+      },
+      "threshold": {
+        "soft_perimeter_ratio_max_soft": 2.75,
+        "soft_perimeter_ratio_max_print": 0.0,
+        "transition_width_p95_max": 4.0,
+        "advisory": false,
+        "active_soft_perimeter_ratio_max": 2.75
+      },
+      "pass": true,
+      "advisory": false,
+      "crop_paths": []
+    },
+    "D3_pocket_gate": {
+      "metric_values": {
+        "component_count": 244,
+        "total_area_px": 34333,
+        "max_area_px": 3363,
+        "total_area_frac": 0.021828,
+        "max_area_frac": 0.002138
+      },
+      "threshold": {
+        "max_count": 4,
+        "max_total_area_frac": 1.0,
+        "max_component_area_frac": 1.0,
+        "min_component_area": 4,
+        "advisory": false
+      },
+      "pass": false,
+      "advisory": false,
+      "crop_paths": [
+        "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/paired_green_P2/D3_pocket_gate-component-1.png",
+        "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/paired_green_P2/D3_pocket_gate-component-2.png",
+        "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/paired_green_P2/D3_pocket_gate-component-3.png",
+        "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/paired_green_P2/D3_pocket_gate-component-4.png",
+        "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/paired_green_P2/D3_pocket_gate-component-5.png"
+      ]
+    },
+    "D4_aura_gate": {
+      "metric_values": {
+        "path": "/Users/za/Documents/product images repo/REVIEW/marine-bed-transparent/chroma-lane/keyed-v3/keyed_green_P2.png",
+        "mode_used": "alpha",
+        "boundary_px": 25361,
+        "aura_index": 0.0422,
+        "mean_band_width": 2.357,
+        "median_band_width": 1.0,
+        "hit_rate": 0.9749,
+        "verdict": "PASS",
+        "overlay": "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/paired_green_P2/D4_aura_gate-overlay.png"
+      },
+      "threshold": {
+        "aura_index_max": 0.2,
+        "advisory": false
+      },
+      "pass": true,
+      "advisory": false,
+      "crop_paths": []
+    },
+    "D5_hole_gate": {
+      "metric_values": {
+        "background_rgb": [
+          0,
+          255,
+          0
+        ],
+        "expected_fg_px": 1475246,
+        "deleted_art_px": 986181,
+        "deleted_area_frac_of_expected": 0.668486,
+        "deleted_component_count": 2347,
+        "deleted_component_max_area_px": 935286,
+        "strata": {
+          "thin": {
+            "count": 2106,
+            "area_px": 10570
+          },
+          "medium": {
+            "count": 225,
+            "area_px": 31283
+          },
+          "thick": {
+            "count": 16,
+            "area_px": 944328
+          }
+        },
+        "worst_components": [
+          {
+            "label": 1,
+            "area_px": 935286,
+            "distance_transform_max": 170.426,
+            "bucket": "thick"
+          },
+          {
+            "label": 1500,
+            "area_px": 2077,
+            "distance_transform_max": 7.81,
+            "bucket": "thick"
+          },
+          {
+            "label": 1357,
+            "area_px": 1309,
+            "distance_transform_max": 5.385,
+            "bucket": "thick"
+          },
+          {
+            "label": 1625,
+            "area_px": 796,
+            "distance_transform_max": 6.0,
+            "bucket": "thick"
+          },
+          {
+            "label": 872,
+            "area_px": 780,
+            "distance_transform_max": 5.385,
+            "bucket": "thick"
+          }
+        ]
+      },
+      "threshold": {
+        "expected_fg_delta_e_min": 8.0,
+        "deleted_area_frac_max": 0.002,
+        "deleted_component_area_max": 64,
+        "advisory": true
+      },
+      "pass": false,
+      "advisory": true,
+      "crop_paths": [
+        "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/paired_green_P2/D5_hole_gate-component-1.png",
+        "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/paired_green_P2/D5_hole_gate-component-2.png",
+        "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/paired_green_P2/D5_hole_gate-component-3.png",
+        "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/paired_green_P2/D5_hole_gate-component-4.png",
+        "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/paired_green_P2/D5_hole_gate-component-5.png"
+      ]
+    },
+    "D6_spill_gate": {
+      "metric_values": {
+        "background_rgb": [
+          0,
+          255,
+          0
+        ],
+        "edge_px": 119940,
+        "interior_px": 256653,
+        "edge_oklab_ab_mean": [
+          0.00952,
+          0.019111
+        ],
+        "interior_oklab_ab_mean": [
+          0.057863,
+          0.007603
+        ],
+        "oklab_delta_chroma": 0.049694,
+        "bg_chroma_projection": 0.045357
+      },
+      "threshold": {
+        "oklab_delta_chroma_max": 0.055,
+        "bg_projection_max": 0.04,
+        "advisory": true
+      },
+      "pass": false,
+      "advisory": true,
+      "crop_paths": [
+        "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/paired_green_P2/D6_spill_gate-edge-band.png"
+      ]
+    },
+    "D7_border_gate": {
+      "metric_values": {
+        "strip_px": 3,
+        "border_px": 15324,
+        "occupied_px": 1864,
+        "border_alpha_occupancy": 0.12163926
+      },
+      "threshold": {
+        "border_alpha_occupancy_max": 0.0,
+        "strip_px": 3,
+        "advisory": false
+      },
+      "pass": false,
+      "advisory": false,
+      "crop_paths": [
+        "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/calibration-runs/paired_green_P2/D7_border_gate-occupied-border.png"
+      ]
+    },
+    "D8_alpha_sanity": {
+      "metric_values": {
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "alpha_unique_count": 256,
+        "alpha_unique_sample": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "zero_px": 1067851,
+        "soft_px": 41750,
+        "opaque_px": 463263,
+        "zero_frac": 0.678921,
+        "soft_frac": 0.026544,
+        "opaque_frac": 0.294535,
+        "flat_alpha": false,
+        "lacks_transparency": false,
+        "lacks_foreground": false,
+        "checker_ratio": 0.000334,
+        "checker_2x2_blocks": 445608,
+        "checker_fail": false
+      },
+      "threshold": {
+        "checker_ratio_max": 0.25,
+        "checker_delta_min": 20.0,
+        "advisory": false
+      },
+      "pass": true,
+      "advisory": false,
+      "crop_paths": []
+    }
+  }
+}
