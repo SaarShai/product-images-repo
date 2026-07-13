@@ -1,0 +1,56 @@
+{
+  "experiment": "round4_key",
+  "model": "gpt-image-2",
+  "size": "1024x1536",
+  "quality": "high",
+  "entries": [
+    {
+      "id": "H-G2-GREEN-r1",
+      "bg": "GREEN",
+      "key_hex": "#00FF00",
+      "status": "ok",
+      "response_id": "resp_0035a4ee427f8292006a54fc4058f881a08190fa89241c7b75",
+      "wall_secs": 153.2,
+      "bg_flatness": {
+        "border_within_30": 0.9998,
+        "border_median_dist": 10
+      }
+    },
+    {
+      "id": "H-G2-GREEN-r2",
+      "bg": "GREEN",
+      "key_hex": "#00FF00",
+      "status": "ok",
+      "response_id": "resp_0497b597859cd3cd006a54fcd8aad4819f86514d32aab40ba8",
+      "wall_secs": 157.9,
+      "bg_flatness": {
+        "border_within_30": 0.9997,
+        "border_median_dist": 16
+      }
+    },
+    {
+      "id": "H-G2-MAGENTA-r1",
+      "bg": "MAGENTA",
+      "key_hex": "#FF00FF",
+      "status": "ok",
+      "response_id": "resp_0d58dc6fda02bf9d006a54fd76a744819f8631e29e571e4fcf",
+      "wall_secs": 162.1,
+      "bg_flatness": {
+        "border_within_30": 0.8062,
+        "border_median_dist": 28
+      }
+    },
+    {
+      "id": "H-G2-MAGENTA-r2",
+      "bg": "MAGENTA",
+      "key_hex": "#FF00FF",
+      "status": "ok",
+      "response_id": "resp_0ae8f514bf0b7cca006a54fe18aef8819cb5cf42cf3ab06897",
+      "wall_secs": 147.5,
+      "bg_flatness": {
+        "border_within_30": 0.9289,
+        "border_median_dist": 26
+      }
+    }
+  ]
+}
