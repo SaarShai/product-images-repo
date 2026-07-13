@@ -1,0 +1,23 @@
+[SUBJECT H]
+Create a single watercolor coral cluster with closed ink contours. The cluster must contain ALL of these visible elements: one seaweed sprig in muted OLIVE or SAGE green (never bright pure green), pale tinted off-white barnacle details, several slender coral branches, and intentional negative-space gaps between branches. Nothing touches the canvas edges; keep a clear margin on all four sides.
+
+[STYLE]
+Highly detailed professional storybook watercolor-and-ink illustration, gallery quality: layered translucent glazes with rich pigment depth, visible granulation and wet-on-wet blooms INSIDE the shapes, subtle color-temperature shifts across each form, intricate fine ink work for interior texture (polyp dots, ridge hatching, barnacle rings, vein lines), a sophisticated harmonious palette with deep saturated accents as well as pastels, and confident hand-drawn line quality. Maximum interior detail and painterly richness; the complexity lives INSIDE the contours, never outside them.
+
+[EDGE CONTOUR - SIGNIFICANT, MANDATORY]
+This is a NON-NEGOTIABLE style requirement: every shape in the artwork is enclosed by a clearly VISIBLE, continuous, fully closed dark ink contour line - like classic pen-and-ink illustration with watercolor fill. The line is slim and elegant (fine felt-tip weight, never chunky), but it must be DARK and OBVIOUS at a glance: a deep, saturated, darker shade of the adjacent fill color, never faded, never soft, never blended away. The outermost silhouette of the whole subject carries the most defined, unbroken line in the image; if any part of the silhouette lacks a visible dark contour line the image is wrong. No open, soft, or lineless watercolor edges anywhere.
+
+[STRUCTURE - NO LOOSE FILAMENTS]
+Absolutely no feather-duster fans, hair-thin tentacle sprays, or clusters of individual wispy strands radiating over open background. Every branch, frond, and antenna is a SOLID painted shape at least as wide as a fine felt-tip line, with its own closed contour, and branch junctions merge smoothly into solid painted joints - no lattice of crossing hairlines with background showing through the crossings. Delicacy comes from interior brushwork and color, not from strand thinness.
+
+[PALETTE CONSTRAINT - NO PURE GREEN]
+Because the background is pure chroma green, NO part of the subject may use bright, pure, or saturated green. Any plant or seaweed element uses muted olive, sage, sea-teal, or yellow-green earth tones clearly distinct from the background green. No green highlights, no green reflections, no grass-green accents anywhere in the artwork.
+
+[EXCLUSIONS]
+No text, border, cut line, sticker rim, checkerboard, transparency-preview pattern, extra objects, or ground shadow.
+
+[BACKGROUND - FLAT KEY]
+The entire background is a single perfectly flat, uniform field of pure bright chroma green (#00FF00) - one exact solid color across every background pixel. Absolutely no gradient, vignette, texture, paper grain, noise, lighting variation, or shadow anywhere in the background. The background color must never appear inside the subject: no colored reflections, color spill, rim light, or ambient tint from the background onto the artwork. The subject's outermost bold ink contour meets the flat background color abruptly, with no glow, halo, aura, wash, bloom, mist, drop shadow, contact shadow, ground plane, or soft transition band around the silhouette. No sand, seabed, rock base, or any surface; the subject floats on the flat color field. Gaps between branches show only the flat background color, never pale paint.
+
+[FACTUAL HARD EDGE]
+the outer silhouette boundary is a crisp hard step; nothing feathers, fades, or blends outside the contour; no semi-transparent outer transition band; no anti-aliasing at the outermost edge; transparency meets art color abruptly

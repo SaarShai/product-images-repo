@@ -1,0 +1,396 @@
+{
+  "version": 3,
+  "rgba": "processed/H-G2-OUT-GREEN-r2-purged.png",
+  "source": "raws/H-G2-OUT-GREEN-r2.png",
+  "truth": null,
+  "bg_color": "#00FF00",
+  "profile": "print",
+  "border_policy": "auto",
+  "units": {
+    "physical_units": false,
+    "units_advisory": "ppi/px-per-mm missing; mm thresholds reported as REVIEW-only fallbacks where needed"
+  },
+  "panels": [
+    "#000000",
+    "#111111",
+    "#00113A",
+    "#FF00FF"
+  ],
+  "verdict": "REVIEW",
+  "exit_code": 3,
+  "pass": false,
+  "gates": {
+    "D1_halo_gate": {
+      "metric_values": {
+        "support_px": 611598,
+        "edge_band_px": 81177,
+        "band_mm": null,
+        "band_px": 3.0,
+        "donor_inward_mm": null,
+        "donor_inward_px": [
+          2.0,
+          5.0
+        ],
+        "H_L": 0.0,
+        "H_area_px": 3,
+        "H_area_mm2": null,
+        "H_total_area_px": 29,
+        "H_total_area_mm2": null,
+        "H_key": 0.2963,
+        "panels": [
+          {
+            "panel": "#000000",
+            "weighted_p95_delta_l": 0.0,
+            "component_area_px_delta_l_gt_3": 3,
+            "component_area_mm2_delta_l_gt_3": null,
+            "total_area_px_delta_l_gt_3": 29,
+            "total_area_mm2_delta_l_gt_3": null
+          },
+          {
+            "panel": "#111111",
+            "weighted_p95_delta_l": 0.0,
+            "component_area_px_delta_l_gt_3": 3,
+            "component_area_mm2_delta_l_gt_3": null,
+            "total_area_px_delta_l_gt_3": 29,
+            "total_area_mm2_delta_l_gt_3": null
+          },
+          {
+            "panel": "#00113A",
+            "weighted_p95_delta_l": 0.0,
+            "component_area_px_delta_l_gt_3": 3,
+            "component_area_mm2_delta_l_gt_3": null,
+            "total_area_px_delta_l_gt_3": 29,
+            "total_area_mm2_delta_l_gt_3": null
+          },
+          {
+            "panel": "#FF00FF",
+            "weighted_p95_delta_l": 0.0,
+            "component_area_px_delta_l_gt_3": 3,
+            "component_area_mm2_delta_l_gt_3": null,
+            "total_area_px_delta_l_gt_3": 29,
+            "total_area_mm2_delta_l_gt_3": null
+          }
+        ],
+        "physical_units": false,
+        "units_advisory": "ppi/px-per-mm missing; D1 mm thresholds downgraded to REVIEW fallback"
+      },
+      "threshold": {
+        "band_mm": 0.3,
+        "donor_min_mm": 0.15,
+        "donor_max_mm": 0.35,
+        "h_l_pass_max": 2.0,
+        "h_l_fail_min": 6.0,
+        "h_area_pass_max_mm2": 0.02,
+        "h_area_fail_min_mm2": 0.1,
+        "h_key_pass_max": 0.15,
+        "h_key_fail_min": 0.35,
+        "px_edge_l99_fail_min": 16.0,
+        "px_edge_l_mean_fail_min": 3.5,
+        "advisory": false
+      },
+      "verdict": "PASS",
+      "pass": true,
+      "advisory": false,
+      "crop_paths": []
+    },
+    "D2_soft_alpha_fringe": {
+      "metric_values": {
+        "soft_px": 0,
+        "fg_nonzero_px": 611598,
+        "boundary_perimeter_px": 18126,
+        "soft_perimeter_ratio": 0.0,
+        "transition_width_p95_px": 0.0,
+        "transition_width_max_px": 0.0,
+        "transition_width_p95_mm": null,
+        "transition_width_max_mm": null,
+        "contour_displacement_p95_px": 0.0,
+        "contour_displacement_p95_mm": null,
+        "perimeter_raw_px": 18126.8284,
+        "perimeter_smooth_px": 18126.8284,
+        "perimeter_smooth_radius_px": 2,
+        "perimeter_excess_ratio": 0.0,
+        "profile": "print",
+        "physical_units": false,
+        "units_advisory": "ppi/px-per-mm missing; D2 mm thresholds downgraded to REVIEW fallback"
+      },
+      "threshold": {
+        "w10_90_p95_pass_max_mm": 0.2,
+        "w10_90_p95_fail_min_mm": 0.4,
+        "contour_disp_p95_pass_max_mm": 0.08,
+        "contour_disp_p95_fail_min_mm": 0.18,
+        "perimeter_excess_pass_max": 0.2,
+        "perimeter_excess_fail_min": 0.6,
+        "smooth_mm": 0.15,
+        "soft_perimeter_ratio_max_soft": 2.75,
+        "soft_perimeter_ratio_max_print": 0.0,
+        "transition_width_p95_max": 4.0,
+        "advisory": false,
+        "active_soft_perimeter_ratio_max": 0.0
+      },
+      "verdict": "PASS",
+      "pass": true,
+      "advisory": false,
+      "crop_paths": []
+    },
+    "D3a_alpha_pockets": {
+      "metric_values": {
+        "component_count": 1,
+        "component_count_per_mpx": 0.6358,
+        "total_area_px": 2189,
+        "max_area_px": 2189,
+        "total_area_frac": 0.001392,
+        "max_area_frac": 0.001392,
+        "min_component_area_px": 9,
+        "min_component_area_mm2": null,
+        "calibration_note": "alpha-zero pockets are advisory topology evidence; they never hard-fail approved art"
+      },
+      "threshold": {
+        "review_count_per_mpx_min": 1000.0,
+        "max_total_area_frac": 1.0,
+        "max_component_area_frac": 1.0,
+        "min_component_area_px": 9,
+        "min_component_area_mm2": 0.02,
+        "advisory": true
+      },
+      "verdict": "PASS",
+      "pass": true,
+      "advisory": true,
+      "crop_paths": []
+    },
+    "D3b_retained_background": {
+      "metric_values": {
+        "background_rgb": [
+          0,
+          255,
+          0
+        ],
+        "tau_b_delta_e00": 6.0,
+        "component_count": 0,
+        "total_area_px": 0,
+        "max_area_px": 0,
+        "total_area_frac": 0.0,
+        "max_area_frac": 0.0
+      },
+      "threshold": {
+        "tau_b_delta_e00": 6.0,
+        "max_count": 0,
+        "max_total_area_frac": 0.0,
+        "max_component_area_frac": 0.0,
+        "advisory": false
+      },
+      "verdict": "PASS",
+      "pass": true,
+      "advisory": false,
+      "crop_paths": []
+    },
+    "D4_aura_gate": {
+      "metric_values": {
+        "shell_geometry": {
+          "shell_px": 0,
+          "shell_area_mm2": null,
+          "wrap_fraction": 0.0,
+          "shell_width_median_px": 0.0,
+          "shell_width_p95_px": 0.0,
+          "shell_width_median_mm": null,
+          "shell_width_p95_mm": null,
+          "shell_range_px": [
+            1.0,
+            10.0
+          ],
+          "physical_units": false,
+          "units_advisory": "ppi/px-per-mm missing; D4 shell-width mm thresholds downgraded to REVIEW fallback"
+        },
+        "aura_gate_secondary": {
+          "path": "processed/H-G2-OUT-GREEN-r2-purged.png",
+          "mode_used": "alpha",
+          "boundary_px": 17855,
+          "aura_index": 0.0129,
+          "mean_band_width": 1.69,
+          "median_band_width": 1.0,
+          "hit_rate": 0.9919,
+          "verdict": "PASS",
+          "overlay": "gates/H-G2-OUT-GREEN-r2-final/D4_aura_gate-overlay.png"
+        }
+      },
+      "threshold": {
+        "aura_index_max": 0.2,
+        "shell_min_mm": 0.1,
+        "shell_max_mm": 1.0,
+        "shell_l_min": 85.0,
+        "shell_chroma_max": 8.0,
+        "shell_texture_std_max": 2.0,
+        "wrap_fraction_review_min": 0.15,
+        "wrap_fraction_fail_min": 0.3,
+        "median_width_review_min_mm": 0.1,
+        "median_width_fail_min_mm": 0.2,
+        "advisory": false
+      },
+      "verdict": "PASS",
+      "pass": true,
+      "advisory": false,
+      "crop_paths": []
+    },
+    "D5_hole_gate": {
+      "metric_values": {
+        "mode": "source_heuristic",
+        "background_rgb": [
+          0,
+          255,
+          0
+        ],
+        "expected_fg_px": 642426,
+        "deleted_art_px": 30828,
+        "deleted_area_frac_of_expected": 0.047987,
+        "deleted_component_count": 57,
+        "deleted_component_max_area_px": 30269,
+        "strata": {
+          "thin": {
+            "count": 55,
+            "area_px": 114
+          },
+          "medium": {
+            "count": 2,
+            "area_px": 30714
+          },
+          "thick": {
+            "count": 0,
+            "area_px": 0
+          }
+        },
+        "worst_components": [
+          {
+            "label": 4,
+            "area_px": 30269,
+            "distance_transform_max": 5.0,
+            "bucket": "medium"
+          },
+          {
+            "label": 48,
+            "area_px": 445,
+            "distance_transform_max": 2.236,
+            "bucket": "medium"
+          },
+          {
+            "label": 49,
+            "area_px": 11,
+            "distance_transform_max": 1.0,
+            "bucket": "thin"
+          },
+          {
+            "label": 8,
+            "area_px": 8,
+            "distance_transform_max": 1.414,
+            "bucket": "thin"
+          },
+          {
+            "label": 13,
+            "area_px": 6,
+            "distance_transform_max": 1.0,
+            "bucket": "thin"
+          }
+        ],
+        "calibration_note": "source/background heuristic is REVIEW-only; use --truth for blocking recall"
+      },
+      "threshold": {
+        "truth_recall_pass_min": 0.98,
+        "truth_recall_fail_below": 0.9,
+        "truth_component_survival_pass_min": 1.0,
+        "truth_component_survival_fail_below": 0.98,
+        "truth_skeleton_breaks_pass_max": 0,
+        "thin_bin_max_mm": 0.2,
+        "medium_bin_max_mm": 0.5,
+        "expected_fg_delta_e_min": 8.0,
+        "deleted_area_frac_max": 0.002,
+        "deleted_component_area_max": 64,
+        "advisory": true
+      },
+      "verdict": "REVIEW",
+      "pass": false,
+      "advisory": true,
+      "crop_paths": [
+        "gates/H-G2-OUT-GREEN-r2-final/D5_hole_gate-component-1.png",
+        "gates/H-G2-OUT-GREEN-r2-final/D5_hole_gate-component-2.png",
+        "gates/H-G2-OUT-GREEN-r2-final/D5_hole_gate-component-3.png",
+        "gates/H-G2-OUT-GREEN-r2-final/D5_hole_gate-component-4.png",
+        "gates/H-G2-OUT-GREEN-r2-final/D5_hole_gate-component-5.png"
+      ]
+    },
+    "D6_spill_gate": {
+      "metric_values": {},
+      "threshold": {
+        "band_mm": 0.3,
+        "tau_clean": 0.01,
+        "spill_p95_pass_max": 0.01,
+        "spill_review_min": 0.01,
+        "spill_area_review_min_mm2": 0.02,
+        "advisory": true
+      },
+      "verdict": "PASS",
+      "pass": true,
+      "advisory": true,
+      "crop_paths": [],
+      "skipped": true,
+      "skip_reason": "insufficient transition-band pixels"
+    },
+    "D7_border_gate": {
+      "metric_values": {
+        "border_policy": "auto",
+        "strip_px": 3,
+        "border_px": 15324,
+        "occupied_px": 0,
+        "border_alpha_occupancy": 0.0,
+        "calibration_note": "auto reviews edge occupancy for full-bleed wrapper art; forbid hard-fails isolated-subject edge crops"
+      },
+      "threshold": {
+        "border_alpha_occupancy_max": 0.0,
+        "strip_px": 3,
+        "advisory": false,
+        "border_policy": "auto"
+      },
+      "verdict": "PASS",
+      "pass": true,
+      "advisory": false,
+      "crop_paths": []
+    },
+    "D8_alpha_sanity": {
+      "metric_values": {
+        "alpha_min": 0,
+        "alpha_max": 255,
+        "alpha_unique_count": 2,
+        "alpha_unique_sample": [
+          0,
+          255
+        ],
+        "zero_px": 961266,
+        "soft_px": 0,
+        "opaque_px": 611598,
+        "zero_frac": 0.611156,
+        "soft_frac": 0.0,
+        "opaque_frac": 0.388844,
+        "flat_alpha": false,
+        "lacks_transparency": false,
+        "lacks_foreground": false,
+        "checker_ratio": 0.003074,
+        "checker_2x2_blocks": 602533,
+        "checker_fail": false
+      },
+      "threshold": {
+        "checker_ratio_max": 0.25,
+        "checker_delta_min": 20.0,
+        "advisory": false
+      },
+      "verdict": "PASS",
+      "pass": true,
+      "advisory": false,
+      "crop_paths": []
+    }
+  },
+  "weak_agent_report": [
+    {
+      "gate": "D5_hole_gate",
+      "verdict": "REVIEW",
+      "prescribed_action": "hole -> reject/alternate extraction",
+      "agent_instruction": "Do not reinterpret raw metrics; follow the prescribed action for this defect class."
+    }
+  ]
+}
