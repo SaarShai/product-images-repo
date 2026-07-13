@@ -46,3 +46,47 @@ Paired runs against `raw_green_P1/P2/P3` plus `keyed_green_P1/P2/P3` showed that
 | paired_green_P3 | 0.017242 | 42 | 0.052613 | 0.047001 | fail/fail |
 
 Those results are useful warnings, but not enough to promote D5/D6 to blocking because source/delivered art mismatch and known green-tint review findings confound the calibration set.
+
+## v2 Detector Battery Notes
+
+Implemented in `scripts/gates/gate_battery.py` v2 from `advisor-sol-ultra.md` section 4.
+
+- Overall verdict is now tri-state: `PASS`, `FAIL`, or `REVIEW`. CLI exits are `0` for all pass, `2` for any hard fail, and `3` for review-only failures.
+- D1 halo is donor-referenced: it builds a component-constrained inward donor field from the 0.15-0.35 mm band, composites observed and donor colors in linear light over black, `#111111`, dark navy, magenta, and any user-supplied panels, then reports `H_L`, `H_area`, and optional matte-pull `H_key`.
+- Missing `--ppi` / `--px-per-mm` keeps px fallback metrics with an advisory flag. D1 does not hard-evaluate mm area without physical scale; `H_area_px` remains reported.
+- D2 reports transition width, trusted-contour displacement when `--truth` is supplied, and perimeter-excess ratio against a 0.15 mm smoothed contour.
+- D4 reports shell geometry around the material core: boundary wrap fraction plus median/p95 shell width. The legacy `aura_gate.py` result is preserved as a secondary signal.
+- D5 adds `--truth <rgba>` recall mode by component and thickness/pale strata. Source/background heuristic mode remains REVIEW-only evidence.
+- D6 is donor-relative OKLab key-direction excess in the transition band and remains REVIEW-only pending clean-edge calibration.
+
+Regression evidence:
+
+```bash
+PYTHONPYCACHEPREFIX=/tmp/pyc python3 -m pytest -q tests/test_gate_battery.py
+# 6 passed
+
+MPLCONFIGDIR=/tmp/mpl PYTHONPYCACHEPREFIX=/tmp/pyc python3 scripts/gates/gate_battery.py \
+  --rgba REVIEW/marine-bed-transparent/chroma-lane/final-candidate/marine_green_P1_keyed_x4.png \
+  --profile soft --out-dir /tmp/gate-battery-marine-v2
+# overall FAIL from non-D1 gates; D1_halo_gate PASS, H_L=0.0, H_area_px=13293
+```
+
+## v3 Detector Battery Notes
+
+Implemented in `scripts/gates/gate_battery.py` v3 after the approved marine-bed calibration failure.
+
+- D3 is split into two sub-checks. `D3a_alpha_pockets` reports enclosed `alpha==0` topology pockets as advisory-only evidence with a minimum area filter of `max(9px, 0.02mm^2)` when scale is known and a count-per-megapixel metric. It never emits `FAIL`; above the high seed threshold it emits `REVIEW`.
+- `D3b_retained_background` is the blocking trapped-background detector. It requires `--bg-color`, finds enclosed foreground pixels with `alpha>0.5` and `deltaE00(fg,bg)<tau_B`, and reports count, max area, total area, and crops. Without `--bg-color`, it is skipped with an advisory note and does not block.
+- D7 now accepts `--border-policy {forbid,allow,auto}` with default `auto`. `auto` emits `REVIEW` for nonzero border occupancy because full-bleed wrapper art can legitimately touch the canvas edge. `forbid` preserves the previous hard-fail behavior for isolated-subject generations.
+
+Regression evidence:
+
+```bash
+MPLCONFIGDIR=/tmp/mpl PYTHONPYCACHEPREFIX=/tmp/pyc python3 scripts/gates/gate_battery.py \
+  --rgba REVIEW/marine-bed-transparent/chroma-lane/final-candidate/marine_green_P1_keyed_x4.png \
+  --profile soft --out-dir /tmp/gate-battery-marine-v3
+# verdict REVIEW, exit_code 3
+# D3a_alpha_pockets PASS: component_count=3143, component_count_per_mpx=124.8916
+# D3b_retained_background PASS/skipped: --bg-color not provided
+# D7_border_gate REVIEW: border_policy=auto, border_alpha_occupancy=0.04810762
+```

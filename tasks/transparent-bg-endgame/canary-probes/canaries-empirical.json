@@ -1,0 +1,101 @@
+[
+ {
+  "model": "gpt-image-1",
+  "endpoint": "images/generations",
+  "params": "background=transparent,quality=low,1024x1024",
+  "http": 200,
+  "mode": "RGBA",
+  "alpha": {
+   "min": 0,
+   "max": 255,
+   "unique": 256,
+   "zero_pct": 61.53,
+   "soft_pct": 13.41
+  },
+  "verdict": "ROUTE_OK",
+  "file": "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/canary-probes/canary_gpt-image-1.png",
+  "usage": {
+   "input_tokens": 42,
+   "input_tokens_details": {
+    "image_tokens": 0,
+    "text_tokens": 42
+   },
+   "output_tokens": 272,
+   "output_tokens_details": {
+    "image_tokens": 272,
+    "text_tokens": 0
+   },
+   "total_tokens": 314
+  },
+  "secs": 18.1
+ },
+ {
+  "model": "gpt-image-1.5",
+  "endpoint": "images/generations",
+  "params": "background=transparent,quality=low,1024x1024",
+  "http": 200,
+  "mode": "RGBA",
+  "alpha": {
+   "min": 0,
+   "max": 255,
+   "unique": 256,
+   "zero_pct": 70.28,
+   "soft_pct": 10.01
+  },
+  "verdict": "ROUTE_OK",
+  "file": "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/canary-probes/canary_gpt-image-1_5.png",
+  "usage": {
+   "input_tokens": 42,
+   "input_tokens_details": {
+    "image_tokens": 0,
+    "text_tokens": 42
+   },
+   "output_tokens": 478,
+   "output_tokens_details": {
+    "image_tokens": 272,
+    "text_tokens": 206
+   },
+   "total_tokens": 520
+  },
+  "secs": 13.8
+ },
+ {
+  "model": "chatgpt-image-latest",
+  "endpoint": "images/generations",
+  "params": "background=transparent,quality=low,1024x1024",
+  "http": 200,
+  "mode": "RGBA",
+  "alpha": {
+   "min": 0,
+   "max": 255,
+   "unique": 256,
+   "zero_pct": 68.76,
+   "soft_pct": 11.36
+  },
+  "verdict": "ROUTE_OK",
+  "file": "/Users/za/Documents/product images repo/tasks/transparent-bg-endgame/canary-probes/canary_chatgpt-image-latest.png",
+  "usage": {
+   "input_tokens": 42,
+   "input_tokens_details": {
+    "image_tokens": 0,
+    "text_tokens": 42
+   },
+   "output_tokens": 577,
+   "output_tokens_details": {
+    "image_tokens": 272,
+    "text_tokens": 305
+   },
+   "total_tokens": 619
+  },
+  "secs": 18.8
+ },
+ {
+  "model": "gpt-image-2",
+  "endpoint": "images/generations",
+  "params": "background=transparent,quality=low,1024x1024",
+  "http": 400,
+  "error": "{\n  \"error\": {\n    \"message\": \"Transparent background is not supported for this model.\",\n    \"type\": \"image_generation_user_error\",\n    \"param\": \"background\",\n    \"code\": \"invalid_value\"\n  }\n}",
+  "verdict": "ROUTE_UNAVAILABLE(http)",
+  "secs": 0.6
+ }
+]

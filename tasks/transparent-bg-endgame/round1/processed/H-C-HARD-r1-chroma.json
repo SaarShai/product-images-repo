@@ -1,0 +1,14 @@
+{
+  "key_rgb": [
+    2,
+    248,
+    6
+  ],
+  "despill_metrics": {
+    "band_pixel_count": 8111,
+    "band_frac_of_image": 0.00516,
+    "despill_changed_pixel_count": 95106,
+    "despill_mean_reduction_on_changed": 189.49,
+    "despill_max_reduction": 254.0
+  }
+}
