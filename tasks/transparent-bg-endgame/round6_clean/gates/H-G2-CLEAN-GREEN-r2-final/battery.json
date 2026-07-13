@@ -22,8 +22,8 @@
   "gates": {
     "D1_halo_gate": {
       "metric_values": {
-        "support_px": 522851,
-        "edge_band_px": 94319,
+        "support_px": 507996,
+        "edge_band_px": 94410,
         "band_mm": null,
         "band_px": 3.0,
         "donor_inward_mm": null,
@@ -32,42 +32,42 @@
           5.0
         ],
         "H_L": 0.0,
-        "H_area_px": 7,
+        "H_area_px": 10,
         "H_area_mm2": null,
-        "H_total_area_px": 331,
+        "H_total_area_px": 1117,
         "H_total_area_mm2": null,
-        "H_key": 0.2643,
+        "H_key": 0.5931,
         "panels": [
           {
             "panel": "#000000",
             "weighted_p95_delta_l": 0.0,
-            "component_area_px_delta_l_gt_3": 7,
+            "component_area_px_delta_l_gt_3": 10,
             "component_area_mm2_delta_l_gt_3": null,
-            "total_area_px_delta_l_gt_3": 331,
+            "total_area_px_delta_l_gt_3": 1117,
             "total_area_mm2_delta_l_gt_3": null
           },
           {
             "panel": "#111111",
             "weighted_p95_delta_l": 0.0,
-            "component_area_px_delta_l_gt_3": 7,
+            "component_area_px_delta_l_gt_3": 10,
             "component_area_mm2_delta_l_gt_3": null,
-            "total_area_px_delta_l_gt_3": 331,
+            "total_area_px_delta_l_gt_3": 1117,
             "total_area_mm2_delta_l_gt_3": null
           },
           {
             "panel": "#00113A",
             "weighted_p95_delta_l": 0.0,
-            "component_area_px_delta_l_gt_3": 7,
+            "component_area_px_delta_l_gt_3": 10,
             "component_area_mm2_delta_l_gt_3": null,
-            "total_area_px_delta_l_gt_3": 331,
+            "total_area_px_delta_l_gt_3": 1117,
             "total_area_mm2_delta_l_gt_3": null
           },
           {
             "panel": "#FF00FF",
             "weighted_p95_delta_l": 0.0,
-            "component_area_px_delta_l_gt_3": 7,
+            "component_area_px_delta_l_gt_3": 10,
             "component_area_mm2_delta_l_gt_3": null,
-            "total_area_px_delta_l_gt_3": 331,
+            "total_area_px_delta_l_gt_3": 1117,
             "total_area_mm2_delta_l_gt_3": null
           }
         ],
@@ -96,8 +96,8 @@
     "D2_soft_alpha_fringe": {
       "metric_values": {
         "soft_px": 0,
-        "fg_nonzero_px": 522851,
-        "boundary_perimeter_px": 21115,
+        "fg_nonzero_px": 507996,
+        "boundary_perimeter_px": 21100,
         "soft_perimeter_ratio": 0.0,
         "transition_width_p95_px": 0.0,
         "transition_width_max_px": 0.0,
@@ -105,10 +105,10 @@
         "transition_width_max_mm": null,
         "contour_displacement_p95_px": 0.0,
         "contour_displacement_p95_mm": null,
-        "perimeter_raw_px": 21114.5208,
-        "perimeter_smooth_px": 21043.3137,
+        "perimeter_raw_px": 21103.3137,
+        "perimeter_smooth_px": 21102.1066,
         "perimeter_smooth_radius_px": 2,
-        "perimeter_excess_ratio": 0.003384,
+        "perimeter_excess_ratio": 5.7e-05,
         "profile": "print",
         "physical_units": false,
         "units_advisory": "ppi/px-per-mm missing; D2 mm thresholds downgraded to REVIEW fallback"
@@ -134,12 +134,12 @@
     },
     "D3a_alpha_pockets": {
       "metric_values": {
-        "component_count": 6,
-        "component_count_per_mpx": 3.8147,
-        "total_area_px": 8852,
-        "max_area_px": 4018,
-        "total_area_frac": 0.005628,
-        "max_area_frac": 0.002555,
+        "component_count": 5,
+        "component_count_per_mpx": 3.1789,
+        "total_area_px": 9902,
+        "max_area_px": 4360,
+        "total_area_frac": 0.006296,
+        "max_area_frac": 0.002772,
         "min_component_area_px": 9,
         "min_component_area_mm2": null,
         "calibration_note": "alpha-zero pockets are advisory topology evidence; they never hard-fail approved art"
@@ -188,7 +188,7 @@
         "shell_geometry": {
           "shell_px": 115,
           "shell_area_mm2": null,
-          "wrap_fraction": 0.012835,
+          "wrap_fraction": 0.012937,
           "shell_width_median_px": 1.0,
           "shell_width_p95_px": 2.0,
           "shell_width_median_mm": null,
@@ -203,9 +203,9 @@
         "aura_gate_secondary": {
           "path": "processed/H-G2-CLEAN-GREEN-r2-purged.png",
           "mode_used": "alpha",
-          "boundary_px": 19535,
-          "aura_index": 0.0159,
-          "mean_band_width": 1.727,
+          "boundary_px": 19508,
+          "aura_index": 0.0163,
+          "mean_band_width": 1.817,
           "median_band_width": 1.0,
           "hit_rate": 0.9911,
           "verdict": "PASS",
@@ -239,18 +239,18 @@
           0
         ],
         "expected_fg_px": 543580,
-        "deleted_art_px": 20729,
-        "deleted_area_frac_of_expected": 0.038134,
-        "deleted_component_count": 79,
-        "deleted_component_max_area_px": 19031,
+        "deleted_art_px": 35584,
+        "deleted_area_frac_of_expected": 0.065462,
+        "deleted_component_count": 77,
+        "deleted_component_max_area_px": 32837,
         "strata": {
           "thin": {
-            "count": 76,
-            "area_px": 1057
+            "count": 74,
+            "area_px": 1649
           },
           "medium": {
             "count": 3,
-            "area_px": 19672
+            "area_px": 33935
           },
           "thick": {
             "count": 0,
@@ -260,32 +260,32 @@
         "worst_components": [
           {
             "label": 3,
-            "area_px": 19031,
+            "area_px": 32837,
+            "distance_transform_max": 3.162,
+            "bucket": "medium"
+          },
+          {
+            "label": 64,
+            "area_px": 825,
             "distance_transform_max": 3.0,
             "bucket": "medium"
           },
           {
-            "label": 65,
-            "area_px": 483,
-            "distance_transform_max": 2.236,
-            "bucket": "medium"
-          },
-          {
             "label": 56,
-            "area_px": 356,
+            "area_px": 621,
             "distance_transform_max": 2.0,
             "bucket": "thin"
           },
           {
             "label": 51,
-            "area_px": 274,
+            "area_px": 474,
             "distance_transform_max": 2.0,
             "bucket": "thin"
           },
           {
-            "label": 70,
-            "area_px": 195,
-            "distance_transform_max": 1.414,
+            "label": 68,
+            "area_px": 333,
+            "distance_transform_max": 2.0,
             "bucket": "thin"
           }
         ],
@@ -361,17 +361,17 @@
           0,
           255
         ],
-        "zero_px": 1050013,
+        "zero_px": 1064868,
         "soft_px": 0,
-        "opaque_px": 522851,
-        "zero_frac": 0.66758,
+        "opaque_px": 507996,
+        "zero_frac": 0.677025,
         "soft_frac": 0.0,
-        "opaque_frac": 0.33242,
+        "opaque_frac": 0.322975,
         "flat_alpha": false,
         "lacks_transparency": false,
         "lacks_foreground": false,
-        "checker_ratio": 0.003545,
-        "checker_2x2_blocks": 512290,
+        "checker_ratio": 0.003621,
+        "checker_2x2_blocks": 497442,
         "checker_fail": false
       },
       "threshold": {

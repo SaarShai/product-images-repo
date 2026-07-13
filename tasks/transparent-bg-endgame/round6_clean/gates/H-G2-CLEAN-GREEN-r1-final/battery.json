@@ -22,8 +22,8 @@
   "gates": {
     "D1_halo_gate": {
       "metric_values": {
-        "support_px": 638776,
-        "edge_band_px": 106497,
+        "support_px": 622461,
+        "edge_band_px": 105816,
         "band_mm": null,
         "band_px": 3.0,
         "donor_inward_mm": null,
@@ -31,43 +31,43 @@
           2.0,
           5.0
         ],
-        "H_L": 0.0,
-        "H_area_px": 8,
+        "H_L": 9.2621,
+        "H_area_px": 59,
         "H_area_mm2": null,
-        "H_total_area_px": 878,
+        "H_total_area_px": 8751,
         "H_total_area_mm2": null,
-        "H_key": 0.559,
+        "H_key": 0.5024,
         "panels": [
           {
             "panel": "#000000",
-            "weighted_p95_delta_l": 0.0,
-            "component_area_px_delta_l_gt_3": 8,
+            "weighted_p95_delta_l": 9.2621,
+            "component_area_px_delta_l_gt_3": 59,
             "component_area_mm2_delta_l_gt_3": null,
-            "total_area_px_delta_l_gt_3": 878,
+            "total_area_px_delta_l_gt_3": 8751,
             "total_area_mm2_delta_l_gt_3": null
           },
           {
             "panel": "#111111",
-            "weighted_p95_delta_l": 0.0,
-            "component_area_px_delta_l_gt_3": 8,
+            "weighted_p95_delta_l": 9.2621,
+            "component_area_px_delta_l_gt_3": 59,
             "component_area_mm2_delta_l_gt_3": null,
-            "total_area_px_delta_l_gt_3": 878,
+            "total_area_px_delta_l_gt_3": 8751,
             "total_area_mm2_delta_l_gt_3": null
           },
           {
             "panel": "#00113A",
-            "weighted_p95_delta_l": 0.0,
-            "component_area_px_delta_l_gt_3": 8,
+            "weighted_p95_delta_l": 9.2621,
+            "component_area_px_delta_l_gt_3": 59,
             "component_area_mm2_delta_l_gt_3": null,
-            "total_area_px_delta_l_gt_3": 878,
+            "total_area_px_delta_l_gt_3": 8751,
             "total_area_mm2_delta_l_gt_3": null
           },
           {
             "panel": "#FF00FF",
-            "weighted_p95_delta_l": 0.0,
-            "component_area_px_delta_l_gt_3": 8,
+            "weighted_p95_delta_l": 9.2621,
+            "component_area_px_delta_l_gt_3": 59,
             "component_area_mm2_delta_l_gt_3": null,
-            "total_area_px_delta_l_gt_3": 878,
+            "total_area_px_delta_l_gt_3": 8751,
             "total_area_mm2_delta_l_gt_3": null
           }
         ],
@@ -88,16 +88,18 @@
         "px_edge_l_mean_fail_min": 3.5,
         "advisory": false
       },
-      "verdict": "PASS",
-      "pass": true,
+      "verdict": "REVIEW",
+      "pass": false,
       "advisory": false,
-      "crop_paths": []
+      "crop_paths": [
+        "gates/H-G2-CLEAN-GREEN-r1-final/D1_halo_gate-edge-band.png"
+      ]
     },
     "D2_soft_alpha_fringe": {
       "metric_values": {
         "soft_px": 0,
-        "fg_nonzero_px": 638776,
-        "boundary_perimeter_px": 23834,
+        "fg_nonzero_px": 622461,
+        "boundary_perimeter_px": 23435,
         "soft_perimeter_ratio": 0.0,
         "transition_width_p95_px": 0.0,
         "transition_width_max_px": 0.0,
@@ -105,10 +107,10 @@
         "transition_width_max_mm": null,
         "contour_displacement_p95_px": 0.0,
         "contour_displacement_p95_mm": null,
-        "perimeter_raw_px": 23809.3848,
-        "perimeter_smooth_px": 23203.7279,
+        "perimeter_raw_px": 23430.6569,
+        "perimeter_smooth_px": 23432.864,
         "perimeter_smooth_radius_px": 2,
-        "perimeter_excess_ratio": 0.026102,
+        "perimeter_excess_ratio": 0.0,
         "profile": "print",
         "physical_units": false,
         "units_advisory": "ppi/px-per-mm missing; D2 mm thresholds downgraded to REVIEW fallback"
@@ -134,12 +136,12 @@
     },
     "D3a_alpha_pockets": {
       "metric_values": {
-        "component_count": 25,
-        "component_count_per_mpx": 15.8946,
-        "total_area_px": 21749,
-        "max_area_px": 6441,
-        "total_area_frac": 0.013828,
-        "max_area_frac": 0.004095,
+        "component_count": 16,
+        "component_count_per_mpx": 10.1725,
+        "total_area_px": 24416,
+        "max_area_px": 7029,
+        "total_area_frac": 0.015523,
+        "max_area_frac": 0.004469,
         "min_component_area_px": 9,
         "min_component_area_mm2": null,
         "calibration_note": "alpha-zero pockets are advisory topology evidence; they never hard-fail approved art"
@@ -188,7 +190,7 @@
         "shell_geometry": {
           "shell_px": 8,
           "shell_area_mm2": null,
-          "wrap_fraction": 0.003669,
+          "wrap_fraction": 0.003986,
           "shell_width_median_px": 1.0,
           "shell_width_p95_px": 1.0,
           "shell_width_median_mm": null,
@@ -203,11 +205,11 @@
         "aura_gate_secondary": {
           "path": "processed/H-G2-CLEAN-GREEN-r1-purged.png",
           "mode_used": "alpha",
-          "boundary_px": 19417,
-          "aura_index": 0.0196,
-          "mean_band_width": 1.803,
+          "boundary_px": 19341,
+          "aura_index": 0.0354,
+          "mean_band_width": 2.169,
           "median_band_width": 1.0,
-          "hit_rate": 0.9926,
+          "hit_rate": 0.9924,
           "verdict": "PASS",
           "overlay": "gates/H-G2-CLEAN-GREEN-r1-final/D4_aura_gate-overlay.png"
         }
@@ -239,18 +241,18 @@
           0
         ],
         "expected_fg_px": 658840,
-        "deleted_art_px": 20064,
-        "deleted_area_frac_of_expected": 0.030454,
-        "deleted_component_count": 50,
-        "deleted_component_max_area_px": 16390,
+        "deleted_art_px": 36379,
+        "deleted_area_frac_of_expected": 0.055217,
+        "deleted_component_count": 23,
+        "deleted_component_max_area_px": 30087,
         "strata": {
           "thin": {
-            "count": 46,
-            "area_px": 2999
+            "count": 17,
+            "area_px": 4350
           },
           "medium": {
-            "count": 4,
-            "area_px": 17065
+            "count": 6,
+            "area_px": 32029
           },
           "thick": {
             "count": 0,
@@ -260,31 +262,31 @@
         "worst_components": [
           {
             "label": 1,
-            "area_px": 16390,
-            "distance_transform_max": 2.828,
+            "area_px": 30087,
+            "distance_transform_max": 3.0,
             "bucket": "medium"
           },
           {
             "label": 2,
-            "area_px": 693,
-            "distance_transform_max": 1.414,
-            "bucket": "thin"
-          },
-          {
-            "label": 28,
-            "area_px": 491,
+            "area_px": 1281,
             "distance_transform_max": 2.0,
             "bucket": "thin"
           },
           {
-            "label": 39,
-            "area_px": 408,
-            "distance_transform_max": 1.0,
+            "label": 15,
+            "area_px": 898,
+            "distance_transform_max": 2.0,
             "bucket": "thin"
           },
           {
-            "label": 24,
-            "area_px": 310,
+            "label": 18,
+            "area_px": 743,
+            "distance_transform_max": 2.0,
+            "bucket": "thin"
+          },
+          {
+            "label": 13,
+            "area_px": 543,
             "distance_transform_max": 2.236,
             "bucket": "medium"
           }
@@ -361,17 +363,17 @@
           0,
           255
         ],
-        "zero_px": 934088,
+        "zero_px": 950403,
         "soft_px": 0,
-        "opaque_px": 638776,
-        "zero_frac": 0.593877,
+        "opaque_px": 622461,
+        "zero_frac": 0.60425,
         "soft_frac": 0.0,
-        "opaque_frac": 0.406123,
+        "opaque_frac": 0.39575,
         "flat_alpha": false,
         "lacks_transparency": false,
         "lacks_foreground": false,
-        "checker_ratio": 0.00276,
-        "checker_2x2_blocks": 626885,
+        "checker_ratio": 0.00277,
+        "checker_2x2_blocks": 610754,
         "checker_fail": false
       },
       "threshold": {
@@ -386,6 +388,12 @@
     }
   },
   "weak_agent_report": [
+    {
+      "gate": "D1_halo_gate",
+      "verdict": "REVIEW",
+      "prescribed_action": "halo -> decontaminate from stored soft alpha",
+      "agent_instruction": "Do not reinterpret raw metrics; follow the prescribed action for this defect class."
+    },
     {
       "gate": "D5_hole_gate",
       "verdict": "REVIEW",

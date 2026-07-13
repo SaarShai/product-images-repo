@@ -81,6 +81,64 @@ def main() -> int:
     stats["band_green_px"] = int(band_green.sum())
     repaint(img, band_green)
 
+    # with no green art guaranteed, no edge pixel may lean green AT ALL:
+    # clamp g <= max(r,b) across the whole edge band (kills the dark olive
+    # fringe at junction notches that survives every threshold pass)
+    if args.no_green_art:
+        rgb = img[..., :3].astype(np.int16)
+        g = rgb[..., 1]
+        other = np.maximum(rgb[..., 0], rgb[..., 2])
+        # edge band: no green lean at all; interior: cap the lean at +8 so
+        # neutral washes keep their grain but nothing reads green anywhere
+        cap = np.where(band, other, other + 8)
+        tinge = (img[..., 3] > 0) & (g > cap)
+        stats["band_declamp_px"] = int((tinge & band).sum())
+        stats["global_declamp_px"] = int((tinge & ~band).sum())
+        rgb[..., 1] = np.minimum(g, np.where(img[..., 3] > 0, cap, g))
+        img[..., :3] = np.clip(rgb, 0, 255).astype(np.uint8)
+
+        # dark-olive notch kill: deep concave junctions hold dark key blends
+        # that read khaki (g ~ r, low blue) — legit dark ink is warm (r > g).
+        # repaint them from neighboring art
+        rgb = img[..., :3].astype(np.int16)
+        r_, g_, b_ = rgb[..., 0], rgb[..., 1], rgb[..., 2]
+        olive = (
+            band
+            & (g_ > b_ + 20)
+            & (g_ > r_ - 12)
+            & (g_ < 140)
+            & (img[..., 3] > 0)
+        )
+        # geometry restriction: only inside concave notches (regions the
+        # background swallows under morphological closing), and never near a
+        # thick olive mass (sage seaweed edges are legitimately this color)
+        fgm = img[..., 3] > 127
+        notch = ndi.binary_closing(~fgm, structure=np.ones((9, 9), bool)) & fgm
+        olive_mass = (img[..., 3] > 0) & (g_ > b_ + 20) & (g_ > r_ - 12)
+        inscribed = ndi.distance_transform_edt(olive_mass)
+        thick_olive = inscribed >= 6
+        near_seaweed = ndi.distance_transform_edt(~thick_olive) <= 12
+        olive &= notch & ~near_seaweed
+        stats["olive_notch_px"] = int(olive.sum())
+        repaint(img, olive)
+
+        # near-black khaki neutralize: notch shadows like (44,44,3) read dark
+        # olive; raising blue toward green at this darkness is invisible but
+        # kills the green cast. Pure color-space fix, band-wide, no repaint.
+        rgb = img[..., :3].astype(np.int16)
+        r_, g_, b_ = rgb[..., 0], rgb[..., 1], rgb[..., 2]
+        dark_khaki = (
+            band
+            & (img[..., 3] > 0)
+            & (np.maximum(r_, g_) < 95)
+            & (g_ > b_ + 15)
+            & (g_ >= r_ - 12)
+        )
+        stats["dark_khaki_px"] = int(dark_khaki.sum())
+        rgb[..., 2] = np.where(dark_khaki, np.maximum(b_, g_ - 8), b_)
+        rgb[..., 1] = np.where(dark_khaki, np.minimum(g_, r_ + 4), rgb[..., 1])
+        img[..., :3] = np.clip(rgb, 0, 255).astype(np.uint8)
+
     # 3. global near-key kill, small components only
     lab = rgb2lab(img[..., :3].astype(np.float32) / 255.0)
     de = deltaE_ciede2000(lab, key_lab)
