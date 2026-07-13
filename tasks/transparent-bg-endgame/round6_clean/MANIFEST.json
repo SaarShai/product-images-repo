@@ -1,0 +1,26 @@
+{
+  "experiment": "round6_clean",
+  "model": "gpt-image-2",
+  "entries": [
+    {
+      "id": "H-G2-CLEAN-GREEN-r1",
+      "key_hex": "#00FF00",
+      "status": "ok",
+      "wall_secs": 156.2,
+      "bg_flatness": {
+        "border_within_30": 0.9997,
+        "border_median_dist": 16
+      }
+    },
+    {
+      "id": "H-G2-CLEAN-GREEN-r2",
+      "key_hex": "#00FF00",
+      "status": "ok",
+      "wall_secs": 131.9,
+      "bg_flatness": {
+        "border_within_30": 0.9145,
+        "border_median_dist": 28
+      }
+    }
+  ]
+}

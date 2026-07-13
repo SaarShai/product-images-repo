@@ -50,6 +50,12 @@ def main() -> int:
     ap.add_argument("--tau", type=float, default=10.0, help="global near-key deltaE00 kill")
     ap.add_argument("--max-comp", type=int, default=200, help="component cap for global kill")
     ap.add_argument("--json", dest="json_out")
+    ap.add_argument(
+        "--no-green-art",
+        action="store_true",
+        help="the prompt guaranteed no bright pure-green art: remove ALL "
+        "key-hue green unconditionally (no shape-based protection)",
+    )
     args = ap.parse_args()
 
     key_rgb = hex_rgb(args.key)
@@ -151,6 +157,9 @@ def main() -> int:
     lbl, n = ndi.label(keyhue, structure=np.ones((3, 3), bool))
     trapped = np.zeros_like(keyhue)
     solid = np.zeros_like(keyhue)
+    if args.no_green_art:
+        trapped = keyhue.copy()
+        n = 0
     if n:
         # solidity via max inscribed radius: leaves/blobs are thick (>=7 px
         # radius somewhere), trapped lattice strips between filaments are thin
@@ -177,10 +186,14 @@ def main() -> int:
     # 5. final sweep — repaint passes copy colors and can themselves deposit
     # green; dull (never copy) any remaining strong-green outside the legit
     # mass until none is left
+    sweep_dom = 30 if args.no_green_art else 45
+    sweep_g = 110 if args.no_green_art else 150
     for it in range(10):
         rgb = img[..., :3].astype(np.int16)
         dom = rgb[..., 1] - np.maximum(rgb[..., 0], rgb[..., 2])
-        resid = (img[..., 3] > 0) & (dom > 45) & (rgb[..., 1] > 150) & ~legit
+        resid = (img[..., 3] > 0) & (dom > sweep_dom) & (rgb[..., 1] > sweep_g)
+        if not args.no_green_art:
+            resid &= ~legit
         if not resid.any():
             stats["final_sweep_iterations"] = it
             break

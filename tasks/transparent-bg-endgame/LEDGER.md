@@ -19,7 +19,7 @@ Atomic rows; never delete, only re-status. Mirrored to .brainer/ledger/9e28116f�
 | R13 | Compose with geometry-adherence workflow | deferred — open item in PIPELINE.md; own round after style lanes picked |
 | R14 | Include user for image review/feedback | doing — round-1 verdict received + round-3 boards delivered, awaiting verdict |
 | R15 | End-to-end to done: implement, verify, review, commit, final summary | doing |
-| R16 | Economy: minimal Fable; Sol advisor; Luna/ollama mechanical | doing — labor delegated |
+| R16 | Economy: minimal Fable; Sol advisor; Luna/ollama mechanical | doing — user re-affirmed turn 29 (drift): Fable = judgment only; pipelines/boards → builder; Sol = decision partner; Luna/ollama = mechanical |
 | R17 | Imperfect solutions acceptable if print use-case satisfied | noted |
 | R18 | Bank durable knowledge (skill/wiki/memory) | doing — SKILL.md Route P; wiki concepts/print-ready-transparent-pipeline.md; auto-memory banked |
 | R19 | Round-1 feedback: same O-route edges but richer/higher-detail style (which models + can quality go up) | doing — round3 DONE: 6/6 gens; O15+O2 rich & clean (REVIEW), O1 FAILed D1 on real defect; awaiting user verdict |
@@ -27,3 +27,5 @@ Atomic rows; never delete, only re-status. Mirrored to .brainer/ledger/9e28116f�
 | R21 | Even models without transparent-bg support (gpt-image-2 proper) must be usable: hard non-AA outlined gens on solid bg + reliable pixel removal | doing — round4 verdict: improvement, two fixes ordered (R22, R23); green key + thick outline route validated in principle |
 | R22 | Round-4 feedback: outline thickness excessive — reduce | doing — round5 DONE: MEDIUM contour block, 2 gens clean; REVIEW/round5, awaiting verdict |
 | R23 | Round-4 feedback: stray green px survive keying — key more aggressively (outline leeway allows edge erosion) | doing — round5 DONE: scripts/green_purge.py (erode+band+speck+trapped-bg w/ shape-protect); all 4 candidates 0 strays, battery clean; faint olive fan residue flagged |
+| R24 | Round-5 feedback: thin-branch corals show artifacts at branch intersections/points | doing — round6 DONE: NO-FILAMENT prompt block; both gens solid junctions, zooms clean; awaiting verdict |
+| R25 | Round-5 feedback: non-thin edges improved but still a few stray pixels | doing — round6 DONE: NO-GREEN-ART prompt + purge --no-green-art (unconditional kill); 0 residual, battery all-PASS; awaiting verdict |
