@@ -36,7 +36,7 @@ Stray background-colored pixels survive keying at edges and branch junctions eve
 
 ## Root Cause
 
-Diffusion and autoregressive image renderers mathematically blend at all boundaries during the denoising process. Prompt-side instructions like "hard edge / no anti-aliasing" reduce but cannot eliminate blend pixels because the underlying rendering pipeline produces semi-transparent intermediate states that resolve to opaque contaminated colors at edges.
+Diffusion and autoregressive image renderers mathematically blend at all boundaries during the denoising process. Prompt-side instructions like "hard edge / no anti-aliasing" reduce but cannot eliminate blend pixels because the underlying rendering pipeline produces semi-transparent intermediate states that resolve to opaque contaminated colors at edges. Observed consistently on tested gpt-image-2 outputs in rounds 4–7; the precise renderer mechanism is unverified.
 
 **Key fact:** You cannot prompt a diffusion model into pixel-perfect edge separation. The architectural constraints of the model make some blending inevitable.
 
@@ -52,12 +52,23 @@ Add a **slim, dark ink contour on every silhouette**. The contour frames all edg
 
 ### Prompt Phrasing (Calibrated for GPT-Image)
 
-Use medium-strength, specific framing:
+Use mandatory, non-negotiable framing — medium-strength wording was
+under-painted (round 5) and silently dropped by the model. Verbatim
+`SIGNIFICANT_CONTOUR_BLOCK` from
+`tasks/transparent-bg-endgame/round7_outline/gen_round7.py` (~line 34):
 
 ```
-Outline every contour with a slim dark outline (ink line, sketch stroke).
-Define all branch junctions and silhouette edges with a visible dark line.
-Do NOT omit outlines; every shape has a drawn border.
+[EDGE CONTOUR - SIGNIFICANT, MANDATORY]
+This is a NON-NEGOTIABLE style requirement: every shape in the artwork
+is enclosed by a clearly VISIBLE, continuous, fully closed dark ink
+contour line - like classic pen-and-ink illustration with watercolor
+fill. The line is slim and elegant (fine felt-tip weight, never chunky),
+but it must be DARK and OBVIOUS at a glance: a deep, saturated, darker
+shade of the adjacent fill color, never faded, never soft, never
+blended away. The outermost silhouette of the whole subject carries the
+most defined, unbroken line in the image; if any part of the silhouette
+lacks a visible dark contour line the image is wrong. No open, soft, or
+lineless watercolor edges anywhere.
 ```
 
 **Critical:** Do not rely on weaker phrasing like "prefer outlines" or "may have outlines" — such language is silently dropped by gpt-image-2. Enforcement language works; permissive language does not.

@@ -43,7 +43,7 @@ This session's main product. Validated on gpt-image-2 via Responses API async jo
 | 5 | MEDIUM contour + new `scripts/green_purge.py` (erode, edge-band suppression, speck kill, shape-protected trapped-bg removal) | Good except thin-branch coral junction artifacts; still a few strays |
 | 6 | `NO_FILAMENT_BLOCK` (bans hair-thin strand fans) + `NO_GREEN_ART_BLOCK` (bans pure-green art) + purge `--no-green-art` | User zoomed further: dark-green fringe at junctions/notches persists |
 | 6b | purge v3: `--erode 2 --band 6`, band declamp, global green cap, olive-notch kill, dark-khaki neutralize | Still stray greenish px; user challenged: "why any strays if edges are non-AA?" |
-| 7 | `SIGNIFICANT_CONTOUR_BLOCK` — mandatory, non-negotiable visible slim dark ink contour on every silhouette | **"best yet! bank it"** |
+| 7 | `SIGNIFICANT_CONTOUR_BLOCK` — mandatory, non-negotiable visible slim dark ink contour on every silhouette | **"best yet! bank it"** — all non-advisory gates PASS; D5 advisory REVIEW; overall battery verdict REVIEW/exit 3; user accepted both candidates after reviewing D5 crops and 12× junction crops. |
 
 ## 5. Root causes discovered (the durable knowledge)
 
@@ -54,7 +54,7 @@ This session's main product. Validated on gpt-image-2 via Responses API async jo
 ## 6. Tools built/hardened this session
 
 - `scripts/green_purge.py` (NEW): post-key stray-pixel eliminator. Passes: alpha erode → edge-band green-dominance repaint → (`--no-green-art`: band declamp, global green cap, geometry-restricted olive-notch kill, dark-khaki neutralize) → small-component near-key ΔE00 kill → strong-green speck kill (inscribed-radius-protected) → trapped-bg removal → converging dulling sweep. Validated flags: `--no-green-art --erode 2 --band 6`.
-- `scripts/gates/gate_battery.py` (v4): D1 halo, D2 soft alpha, D3 pockets/retained bg, D4 aura, D5 holes (advisory), D6 spill, D7 border, D8 alpha sanity. Exit 0/3/2 = PASS/REVIEW/FAIL. Calibrated on known-good art (no false FAIL); caught a real ground-tuft defect in round 3. 209 tests pass.
+- `scripts/gates/gate_battery.py` (v4): D1 halo, D2 soft alpha, D3 pockets/retained bg, D4 aura, D5 holes (advisory), D6 spill, D7 border, D8 alpha sanity. Exit 0/3/2 = PASS/REVIEW/FAIL. Calibrated on known-good art (no false FAIL); caught a real ground-tuft defect in round 3. 209 repo tests pass (this covers the gate battery and other scripts collectively; `scripts/green_purge.py` itself has no dedicated/focused test file).
 - `scripts/dehalo_edge.py`: recovered from orphaned branch (R12), committed 1e3c438.
 - Prompt block library (`tasks/transparent-bg-endgame/round*/gen_round*.py`): SUBJECT_V2, RICH_STYLE, SIGNIFICANT_CONTOUR, NO_FILAMENT, NO_GREEN_ART, EXCLUSIONS, key_bg_block(), HARD_EDGE, ANTI_AURA.
 
@@ -83,7 +83,7 @@ This session's main product. Validated on gpt-image-2 via Responses API async jo
 - Wiki: `wiki/concepts/mandatory-ink-outline-edge-defense.md`, `wiki/concepts/key-colored-art-vs-trapped-background.md` (+ L1 index, log).
 - Auto-memory: `chroma-green-transparency-workflow` (UPGRADE paragraph → v2).
 - Ledgers: `tasks/transparent-bg-endgame/LEDGER.md` R1–R28 (mirror in `.brainer/ledger/`).
-- Commits: `337fdf4` (round7), `d5b8e30` (banking), this report.
+- Commits: `074543a` (round7), `d5b8e30` (banking), this report.
 
 ## 10. Open items / remaining risks
 

@@ -381,7 +381,10 @@ use):**
   color, F0 = observed foreground-adjacent color). Naive per-pixel unmix is
   unstable as α→0; this regularizes toward the donor.
 - Despill only in **OKLab chroma**, never a global green-channel clamp — a
-  flat `G` clamp visibly damages true yellows in the art.
+  flat `G` clamp visibly damages true yellows in the art. (v2's global +8
+  green cap below, under `--no-green-art`, is a deliberate destructive
+  exception, allowed ONLY after `NO_GREEN_ART_BLOCK` prompt exclusion is
+  verified in the raw — i.e. no essential green content to damage.)
 - Treat any painted-in color spill as a **bounded proposal**, not ground
   truth, when deciding how far to unmix.
 - Gates worth keeping for any future chroma-key harness: recomposition error,
@@ -419,9 +422,11 @@ importable from rounds 3/4/6 files alongside it).
 4. Flat key background block (`key_bg_block`, `#00FF00`) + `HARD_EDGE_BLOCK`.
 5. Rich-style block as usual.
 
-**Pipeline:** `chroma_key.py key` → `decontam_binarize.py --bg-color #00FF00`
-→ `green_purge.py IN.png OUT.png --no-green-art --erode 2 --band 6` →
-`gate_battery.py --profile print`. `green_purge.py` (v3) passes: 2px erode,
+**Pipeline:** `/usr/bin/python3 scripts/chroma_key.py key` →
+`/usr/bin/python3 scripts/decontam_binarize.py --bg-color #00FF00` →
+`/usr/bin/python3 scripts/green_purge.py IN.png OUT.png --no-green-art --erode 2 --band 6` →
+`/usr/bin/python3 scripts/gates/gate_battery.py --profile print`.
+`green_purge.py` (v3) passes: 2px erode,
 band green repaint, band-wide green declamp + global +8 green cap,
 geometry-restricted olive-notch kill (concave-notch mask via morphological
 closing; sage seaweed protected by inscribed-radius shape test), near-black

@@ -59,7 +59,8 @@ or forest-green shades. Avoid neon green, lime, or bright kelly green.
 ```
 
 **Advantages:**
-- Allows unconditional chroma-key removal (e.g., `scripts/green_purge.py --aggressive --no-green-art`).
+- Allows unconditional chroma-key removal (e.g.,
+  `/usr/bin/python3 scripts/green_purge.py IN.png OUT.png --no-green-art --erode 2 --band 6 --json purge.json`).
 - Eliminates the false-positive dilemma entirely.
 - Ensures legit art is never near the key-hue by generation time.
 
