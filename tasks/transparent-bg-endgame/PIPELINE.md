@@ -62,6 +62,10 @@ this file to match.
 
 ## Route C-green v2 — USER-VALIDATED recipe (2026-07-13, rounds 4-7)
 
+**Canonical entry point: `scripts/run_c_green_v2.py` — one command runs the
+full recipe below (prompt assemble → gen → key → decontam → purge → gate →
+review-pack) and writes a manifest.json per run.**
+
 Full end-to-end recipe for NEW art from a model that lacks native alpha
 (`gpt-image-2`). Iterated over 4 user-feedback rounds; every element exists
 because a defect forced it. Canonical detail + rationale:

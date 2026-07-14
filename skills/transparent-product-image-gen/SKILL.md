@@ -397,6 +397,11 @@ use):**
 
 ### ROUTE C-green v2 — USER-VALIDATED recipe (2026-07-13, rounds 4-7, "best yet — bank it")
 
+**Canonical entry point: `scripts/run_c_green_v2.py` — one command runs the
+full recipe below (prompt assemble → gen → key → decontam → purge → gate →
+review-pack) and writes a manifest.json per run; frozen prompt blocks live in
+`scripts/prompt_blocks_c_green_v2.py`.**
+
 Full end-to-end recipe for NEW art from a model that lacks native alpha
 (`gpt-image-2`). Iterated over 4 user-feedback rounds; every element below
 exists because a defect forced it. Runners:

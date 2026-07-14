@@ -19,6 +19,14 @@ API keys and no metered API calls.** Two providers:
 Confirmed working 2026-06-17 by live tests. Commands assume `codex` and `agy` are
 on `PATH` (the other device has Codex + Antigravity installed); `~` = home dir.
 
+> **Authorized exception:** Route C-green v2 (`scripts/run_c_green_v2.py`) and
+> Route P (native alpha) call the OpenAI API directly with `OPENAI_API_KEY`
+> instead of a subscription CLI — user-approved exception, 2026-07-13, scoped
+> to transparent-background product art (`gpt-image-2` refuses
+> `background=transparent` outright, and neither subscription CLI exposes a
+> pinnable model + `background` param). The subscription-only rule above
+> stands for everything else.
+
 ---
 
 ## Prerequisites / verify login

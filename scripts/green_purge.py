@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 
 import numpy as np
@@ -25,18 +26,58 @@ from PIL import Image
 from scipy import ndimage as ndi
 from skimage.color import deltaE_ciede2000, rgb2lab
 
+DONOR_ALPHA_THRESH = 127
+DONOR_DOMINANCE_MAX = 18
+DONOR_KEY_DE_MIN = 10.0
+DONOR_SEARCH_RADIUS = 60
+# convergence-loop caps (constants, not CLI flags, so tests can shrink them
+# deterministically to exercise the fail-closed non-convergence path without
+# changing default behavior on the validated pipeline)
+VERIFY_MAX_ITERATIONS = 8
+FINAL_SWEEP_MAX_ITERATIONS = 10
+
 
 def hex_rgb(s: str) -> tuple[int, int, int]:
     s = s.lstrip("#")
     return tuple(int(s[i : i + 2], 16) for i in (0, 2, 4))
 
 
-def repaint(img: np.ndarray, bad: np.ndarray) -> None:
-    """Replace bad px RGB with nearest non-bad pixel's RGB."""
+def repaint(
+    img: np.ndarray,
+    bad: np.ndarray,
+    key_lab: np.ndarray | None = None,
+    search_radius: int = DONOR_SEARCH_RADIUS,
+) -> int:
+    """Replace bad px RGB with the nearest SAFE donor pixel's RGB.
+
+    A safe donor is: opaque (alpha >= DONOR_ALPHA_THRESH), not green-dominant
+    (g - max(r,b) <= DONOR_DOMINANCE_MAX), and (if key_lab given) not near the
+    key color (deltaE00 >= DONOR_KEY_DE_MIN). This prevents a bad pixel from
+    donor-copying a transparent/key-green neighbor's RGB into opaque
+    foreground (the round-7 audit's synthetic repro).
+
+    Bad pixels with no safe donor within search_radius are left unchanged
+    (their RGB is never invented) and counted in the returned unfilled total.
+    """
     if not bad.any():
-        return
-    _, (iy, ix) = ndi.distance_transform_edt(bad, return_indices=True)
-    img[..., :3][bad] = img[..., :3][iy[bad], ix[bad]]
+        return 0
+    alpha = img[..., 3]
+    rgb = img[..., :3].astype(np.int16)
+    dominance = rgb[..., 1] - np.maximum(rgb[..., 0], rgb[..., 2])
+    safe = (alpha >= DONOR_ALPHA_THRESH) & (dominance <= DONOR_DOMINANCE_MAX)
+    if key_lab is not None:
+        lab = rgb2lab(img[..., :3].astype(np.float32) / 255.0)
+        de = deltaE_ciede2000(lab, key_lab)
+        safe &= de >= DONOR_KEY_DE_MIN
+    if not safe.any():
+        return int(bad.sum())
+    unsafe = ~safe
+    dist, (iy, ix) = ndi.distance_transform_edt(
+        unsafe, return_distances=True, return_indices=True
+    )
+    fillable = bad & (dist <= search_radius)
+    img[..., :3][fillable] = img[..., :3][iy[fillable], ix[fillable]]
+    return int((bad & ~fillable).sum())
 
 
 def main() -> int:
@@ -57,6 +98,14 @@ def main() -> int:
         "key-hue green unconditionally (no shape-based protection)",
     )
     args = ap.parse_args()
+
+    if os.path.abspath(args.rgba) == os.path.abspath(args.out):
+        err = {"error": "in_place_operation_rejected", "rgba": args.rgba, "out": args.out}
+        print(json.dumps(err))
+        if args.json_out:
+            with open(args.json_out, "w") as fh:
+                json.dump(err, fh, indent=2)
+        return 2
 
     key_rgb = hex_rgb(args.key)
     key_lab = rgb2lab((np.array(key_rgb, dtype=np.float32).reshape(1, 1, 3) / 255.0))
@@ -79,7 +128,7 @@ def main() -> int:
     dominance = rgb[..., 1] - np.maximum(rgb[..., 0], rgb[..., 2])
     band_green = band & (dominance > args.dominance)
     stats["band_green_px"] = int(band_green.sum())
-    repaint(img, band_green)
+    stats["band_green_unfilled_px"] = repaint(img, band_green, key_lab)
 
     # with no green art guaranteed, no edge pixel may lean green AT ALL:
     # clamp g <= max(r,b) across the whole edge band (kills the dark olive
@@ -120,7 +169,7 @@ def main() -> int:
         near_seaweed = ndi.distance_transform_edt(~thick_olive) <= 12
         olive &= notch & ~near_seaweed
         stats["olive_notch_px"] = int(olive.sum())
-        repaint(img, olive)
+        stats["olive_notch_unfilled_px"] = repaint(img, olive, key_lab)
 
         # near-black khaki neutralize: notch shadows like (44,44,3) read dark
         # olive; raising blue toward green at this darkness is invisible but
@@ -149,7 +198,7 @@ def main() -> int:
         kill = np.isin(lbl, [i + 1 for i, s in enumerate(sizes) if s <= args.max_comp])
         stats["global_kill_px"] = int(kill.sum())
         stats["protected_components"] = int((sizes > args.max_comp).sum())
-        repaint(img, kill)
+        stats["global_kill_unfilled_px"] = repaint(img, kill, key_lab)
     else:
         stats["global_kill_px"] = 0
         stats["protected_components"] = 0
@@ -174,13 +223,13 @@ def main() -> int:
     speck = strong & ~legit
     stats["speck_kill_px"] = int(speck.sum())
     stats["speck_protected_px"] = int((strong & legit).sum())
-    repaint(img, speck)
+    stats["speck_kill_unfilled_px"] = repaint(img, speck, key_lab)
 
     # 4. verify loop on exact D3b criterion, with margin. Repainting from
     # neighbors copies adjacent greens and can loop forever on legit bright-
     # green art (seaweed highlights), so instead dull the pixel itself:
     # reduce green dominance until it leaves the key neighborhood.
-    for it in range(8):
+    for it in range(VERIFY_MAX_ITERATIONS):
         lab = rgb2lab(img[..., :3].astype(np.float32) / 255.0)
         de = deltaE_ciede2000(lab, key_lab)
         bad = (img[..., 3].astype(np.float32) / 255.0 > 0.5) & (de < 7.0)
@@ -246,7 +295,7 @@ def main() -> int:
     # mass until none is left
     sweep_dom = 30 if args.no_green_art else 45
     sweep_g = 110 if args.no_green_art else 150
-    for it in range(10):
+    for it in range(FINAL_SWEEP_MAX_ITERATIONS):
         rgb = img[..., :3].astype(np.int16)
         dom = rgb[..., 1] - np.maximum(rgb[..., 0], rgb[..., 2])
         resid = (img[..., 3] > 0) & (dom > sweep_dom) & (rgb[..., 1] > sweep_g)
@@ -260,8 +309,23 @@ def main() -> int:
         img[..., :3] = np.clip(rgb, 0, 255).astype(np.uint8)
     stats["final_sweep_px"] = int(resid.sum()) if "final_sweep_iterations" not in stats else 0
 
+    # fail-closed final verdict: success requires every terminal criterion to
+    # hold, not just the pass-4 verify loop. Re-measure the exact D3b
+    # criterion (deltaE00 < 6, fg alpha > 0.5) on the final pixels — this is
+    # what actually ships, independent of any single pass's internal state.
+    lab = rgb2lab(img[..., :3].astype(np.float32) / 255.0)
+    de = deltaE_ciede2000(lab, key_lab)
+    residual_strong_key = (img[..., 3].astype(np.float32) / 255.0 > 0.5) & (de < 6.0)
+    stats["residual_strong_key_px"] = int(residual_strong_key.sum())
+    stats["verify_converged"] = stats.get("verify_iterations", -1) >= 0
+    stats["final_sweep_converged"] = "final_sweep_iterations" in stats
+    stats["converged"] = bool(
+        stats["verify_converged"]
+        and stats["final_sweep_converged"]
+        and stats["residual_strong_key_px"] == 0
+    )
+
     Image.fromarray(img).save(args.out)
-    stats["converged"] = stats.get("verify_iterations", -1) >= 0
     print(json.dumps(stats))
     if args.json_out:
         with open(args.json_out, "w") as fh:
