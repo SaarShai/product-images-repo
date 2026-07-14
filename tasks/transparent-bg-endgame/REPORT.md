@@ -89,7 +89,7 @@ This session's main product. Validated on gpt-image-2 via Responses API async jo
 
 - Recipe validated on ONE subject class (coral cluster). First run on a new product class must keep the 12× junction check and expect prompt-block tuning.
 - D5 hole gate stays advisory under `--no-green-art` (intentional green removal reads as holes).
-- x4 print upscale of round-7 finals not yet run (`chroma_key_upscale.py` / alpha-aware path; never write into finals/ per guard).
+- x4 print upscale VALIDATED (2026-07-13): `chroma_key_upscale.py --binary-alpha` required for print (plain Lanczos alpha reintroduces soft px → D2 FAIL); round-7 x4 outputs gate REVIEW (advisory D5 only), alpha strictly {0,255}.
 - `/usr/bin/python3` requirement is convention, not enforced — scripts have no interpreter guard.
 - Geometry-adherence composition (R13) deferred — own round.
 - Native-alpha Route P yield ~1/3 — acceptable, but batch accordingly.

@@ -11,6 +11,14 @@ channel is recombined, since the alpha near the edge is soft, not binary).
 
 Usage:
   .venv-gen/bin/python -B scripts/chroma_key_upscale.py IN.png OUT.png [--scale 4]
+
+  --binary-alpha: after the Lanczos alpha resize, threshold back to a hard
+  binary mask (>=128 -> 255 else 0). Required for print-profile inputs whose
+  source alpha is already binary (e.g. chroma-key/green-purge outputs) —
+  Lanczos resampling reintroduces soft/AA alpha values that fail the print
+  profile's D2_soft_alpha_fringe gate (soft_perimeter_ratio_max_print = 0.0).
+  Default OFF, preserving existing (soft-alpha-preserving) behavior for
+  non-print callers.
 """
 from __future__ import annotations
 
@@ -62,14 +70,23 @@ def esrgan_rgb(rgb: np.ndarray, scale: float, device: str, tile: int) -> np.ndar
     return out[:, :, ::-1]
 
 
-def upscale_rgba(rgba: np.ndarray, scale: float, device: str, tile: int) -> tuple[np.ndarray, dict]:
+def resize_alpha(alpha: np.ndarray, out_w: int, out_h: int, binary: bool = False) -> np.ndarray:
+    """Lanczos-resize an alpha channel to (out_w, out_h); optionally threshold
+    the result back to a hard binary mask (>=128 -> 255 else 0)."""
+    alpha_img = Image.fromarray(alpha, mode="L")
+    up_alpha = np.array(alpha_img.resize((out_w, out_h), Image.Resampling.LANCZOS))
+    if binary:
+        up_alpha = np.where(up_alpha >= 128, 255, 0).astype(np.uint8)
+    return up_alpha
+
+
+def upscale_rgba(rgba: np.ndarray, scale: float, device: str, tile: int, binary_alpha: bool = False) -> tuple[np.ndarray, dict]:
     h, w = rgba.shape[:2]
     filled_rgb = refill_transparent_rgb(rgba)
     up_rgb = esrgan_rgb(filled_rgb, scale, device, tile)
     out_h, out_w = up_rgb.shape[:2]
 
-    alpha_img = Image.fromarray(rgba[..., 3], mode="L")
-    up_alpha = np.array(alpha_img.resize((out_w, out_h), Image.Resampling.LANCZOS))
+    up_alpha = resize_alpha(rgba[..., 3], out_w, out_h, binary=binary_alpha)
 
     out = np.dstack([up_rgb, up_alpha])
     metrics = {
@@ -77,7 +94,7 @@ def upscale_rgba(rgba: np.ndarray, scale: float, device: str, tile: int) -> tupl
         "out_size": [out_w, out_h],
         "scale_x": round(out_w / w, 4),
         "scale_y": round(out_h / h, 4),
-        "alpha_method": "lanczos_independent_resize",
+        "alpha_method": "lanczos_independent_resize" + ("_binary_threshold" if binary_alpha else ""),
         "rgb_method": "realesrgan_x4plus_on_nn_refilled_rgb",
     }
     return out, metrics
@@ -90,10 +107,11 @@ def main():
     ap.add_argument("--scale", type=float, default=4.0)
     ap.add_argument("--device", default="cpu", choices=["cpu", "mps"])
     ap.add_argument("--tile", type=int, default=512)
+    ap.add_argument("--binary-alpha", action="store_true", help="threshold resized alpha back to {0,255} (required for print-profile binary-alpha inputs)")
     args = ap.parse_args()
 
     rgba = np.array(Image.open(args.image).convert("RGBA"))
-    out, metrics = upscale_rgba(rgba, args.scale, args.device, args.tile)
+    out, metrics = upscale_rgba(rgba, args.scale, args.device, args.tile, binary_alpha=args.binary_alpha)
     Image.fromarray(out, mode="RGBA").save(args.out)
     print(f"[chroma_key_upscale] {args.image} -> {args.out}  {metrics}")
 
