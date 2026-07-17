@@ -210,11 +210,19 @@ def main() -> int:
         shutil.copy(produced, raw)
     bbox = a.bbox or ",".join(str(v) for v in auto_bbox(raw))
 
-    subprocess.run(
-        ["python3", "scripts/svg_geometry_check.py", str(raw), "--svg", str(a.svg),
+    check = subprocess.run(
+        [sys.executable, "scripts/svg_geometry_check.py", str(raw), "--svg", str(a.svg),
          "--bbox", bbox, "--out-overlay", str(exp / "overlay.png"), "--json-out", str(exp / "metrics.json")],
         cwd=ROOT, capture_output=True, text=True,
     )
+    if check.returncode != 0:
+        # Surface the guard message instead of letting it be swallowed by
+        # capture_output — a bare crash here previously masked itself as a
+        # downstream FileNotFoundError when metrics.json was never written
+        # (geometry-evidentiary-princess-n02 Finding A).
+        raise SystemExit(
+            f"{a.id}: svg_geometry_check.py failed (exit {check.returncode}):\n{check.stderr}"
+        )
     m = json.loads((exp / "metrics.json").read_text())
     m.update({"id": a.id, "model": a.model, "bbox": bbox, "secs": round(time.time() - t0, 1),
               "map": str(a.map), "prompt": str(a.prompt)})

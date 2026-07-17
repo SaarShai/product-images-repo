@@ -21,6 +21,14 @@ from pathlib import Path
 
 import numpy as np
 from PIL import Image, ImageChops, ImageDraw, ImageFilter
+try:
+    import shapely  # noqa: F401  (imported transitively via svg_classify; fail fast with a clear hint)
+except ImportError:
+    print("This script requires /usr/bin/python3 (PATH python3 lacks shapely). Re-run with /usr/bin/python3.", file=sys.stderr)
+    sys.exit(2)
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import svg_classify  # noqa: E402 — authoritative cutout-vs-paintable classifier, reused by read_template()
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -208,6 +216,36 @@ def tag_name(element: ET.Element) -> str:
 
 
 def read_template(svg_path: Path) -> TemplateGeometry:
+    """Read panel (paintable) + cutout (hole) geometry from a template SVG.
+
+    Classifies every shape (<path>, <polygon>, <rect>, ...) the same way
+    scripts/svg_classify.py does for the template-manifest gate (contained-by
+    or bitten-into a larger contour => internal_cutout hole; the largest
+    contour and any other large standalone contour => paintable), instead of
+    treating every <path>/<polygon> element as paintable. Reusing that
+    classifier — rather than this file's older path/polygon-only,
+    classification-blind reader — fixes two structural blind spots found on
+    the princess narrow panel 02 template (geometry-evidentiary-princess-n02
+    Finding B): (a) <rect> cutouts were ignored entirely, and (b) internal
+    cutout <path> elements were unioned INTO the paintable panel mask instead
+    of being excluded as holes.
+
+    Transform note: svg_classify.extract_shapes applies each element's full
+    CTM (ancestor <g transform="..."> chains) via svg_geometry.iter_with_ctm,
+    so the returned coordinates — for <path>, <polygon>, AND <rect> alike —
+    are already transform-correct. That is a strict improvement over this
+    file's OTHER parser (parse_path_d(), still used directly by callers/tests
+    below), which never applied transforms at all.
+
+    <rect> caveat: svg_classify.classify() treats bare <rect> elements as
+    annotation overlays (keep_clear_zone / no_focal_motif_zone), which is
+    correct for the Screenery skyline/door templates it was built for, but
+    wrong here — this template's <rect> elements ARE real die-cut cutouts
+    (Finding B(a)). We relabel rect shapes to kind="polygon" before handing
+    them to classify() so they go through the SAME contained-by/bitten-into
+    contour-containment test a cutout <path>/<polygon> gets, rather than
+    reimplementing that geometric test locally.
+    """
     tree = ET.parse(svg_path)
     root = tree.getroot()
     viewbox_text = root.attrib.get("viewBox")
@@ -221,14 +259,22 @@ def read_template(svg_path: Path) -> TemplateGeometry:
             raise ValueError(f"Unexpected viewBox: {viewbox_text}")
         viewbox = tuple(parts)  # type: ignore[assignment]
 
+    _, shapes = svg_classify.extract_shapes(svg_path)
+    for shape in shapes:
+        if shape.kind == "rect" and shape.polygon is not None:
+            shape.kind = "polygon"
+    shapes = svg_classify.classify(shapes)
+
     paths: list[list[Point]] = []
     polygons: list[list[Point]] = []
-    for element in root.iter():
-        name = tag_name(element)
-        if name == "path" and element.attrib.get("d"):
-            paths.extend(parse_path_d(element.attrib["d"]))
-        elif name == "polygon" and element.attrib.get("points"):
-            polygons.append(parse_points(element.attrib["points"]))
+    for shape in shapes:
+        if shape.polygon is None:
+            continue  # lines/guides carry no fill area, not panel geometry
+        points = list(shape.polygon.exterior.coords)
+        if shape.role == "internal_cutout":
+            polygons.append(points)
+        elif shape.role in ("outer_contour", "paintable_region"):
+            paths.append(points)
 
     if not paths:
         raise ValueError(f"No path panels found in {svg_path}")
@@ -489,7 +535,14 @@ def export_svg_template_fit(
     clean = clipped.copy()
     clean.alpha_composite(lines)
     debug = build_debug(clipped, artwork_mask, hole_mask, lines, gap)
-    metrics = compute_metrics(clipped, artwork_mask, hole_mask, geometry, clear_px)
+    # Measure the RAW placed candidate, not `clipped` — `clipped` has already
+    # had the hole/gap regions force-painted white (it's the clean deliverable
+    # export), so checking it for hole/outside violations is a structural
+    # no-op: it can never see what the candidate actually painted there. This
+    # was the second half of Finding B's false PASS (0 violations even once
+    # cutouts are classified correctly) — the gate must see the candidate
+    # BEFORE this file launders it, or "holes that must stay clear" has no teeth.
+    metrics = compute_metrics(placed, artwork_mask, hole_mask, geometry, clear_px)
 
     out_dir.mkdir(parents=True, exist_ok=True)
     artwork_path = out_dir / f"{prefix}-artwork-only.png"
