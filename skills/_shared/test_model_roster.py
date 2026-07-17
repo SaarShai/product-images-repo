@@ -632,9 +632,10 @@ def test_run_dispatch_trace_enabled_by_default():
     try:
         mr.run_dispatch(_b(mr.LANE_GPT, invocation="cat"), "advisor", "unstick me", "b", timeout=5)
         correlation_id = calls[0]["correlation_id"] if calls else ""
-        return (len(calls) == 1 and calls[0]["lane"] == mr.LANE_GPT
-                and correlation_id.startswith("run:") and len(correlation_id) == 36
-                and "unstick me" not in correlation_id)
+        assert len(calls) == 1 and calls[0]["lane"] == mr.LANE_GPT
+        assert correlation_id.startswith("run:") and len(correlation_id) == 36
+        assert "unstick me" not in correlation_id
+        return True
     finally:
         mr._record_lane_event = orig
         if prev is not None:
@@ -655,8 +656,10 @@ def test_run_dispatch_correlation_id_is_unique_by_default_and_caller_stable():
         mr.run_dispatch(backend, "verifier", "different task", "b", timeout=5,
                         correlation_id="run:caller-stable")
         ids = [call["correlation_id"] for call in calls]
-        return (ids[0] != ids[1] and ids[2:] == ["run:caller-stable"] * 2
-                and all(1 <= len(value) <= 128 for value in ids))
+        assert ids[0] != ids[1]
+        assert ids[2:] == ["run:caller-stable"] * 2
+        assert all(1 <= len(value) <= 128 for value in ids)
+        return True
     finally:
         mr._record_lane_event = orig
         if prev is not None:
@@ -680,11 +683,11 @@ def test_run_dispatch_correlation_id_rejects_unbounded_or_illegal_values():
         mr.run_dispatch(backend, "advisor", "t", "b", timeout=5,
                         correlation_id=illegal)
         ids = [call["correlation_id"] for call in calls]
-        return (ids[0] == valid
-                and all(value.startswith("run:") and len(value) == 36
-                        for value in ids[1:])
-                and ids[1] != ids[2]
-                and oversized not in ids and illegal not in ids)
+        assert ids[0] == valid
+        assert all(value.startswith("run:") and len(value) == 36 for value in ids[1:])
+        assert ids[1] != ids[2]
+        assert oversized not in ids and illegal not in ids
+        return True
     finally:
         mr._record_lane_event = orig
         if prev is not None:
@@ -701,7 +704,10 @@ def test_run_panel_shares_one_correlation_id_across_lanes():
                   _b(mr.LANE_GEMINI, invocation="cat")]
         mr.run_panel(roster, 2, "advisor", "same panel task", "b", timeout=5)
         ids = [call["correlation_id"] for call in calls]
-        return len(ids) == 2 and ids[0] == ids[1] and ids[0].startswith("run:")
+        assert len(ids) == 2
+        assert ids[0] == ids[1]
+        assert ids[0].startswith("run:")
+        return True
     finally:
         mr._record_lane_event = orig
         if prev is not None:

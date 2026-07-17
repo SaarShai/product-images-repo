@@ -74,8 +74,9 @@ def test_record_lane_event_redacts_correlation_id():
         ot.record_lane_event(str(path), {"lane": "gpt", "ok": True,
                                          "correlation_id": "key=sk-proj-abcdef0123456789abcdef"})
         row = json.loads(path.read_text(encoding="utf-8").splitlines()[0])
-        return ("sk-proj-abcdef" not in (row["correlation_id"] or "")
-                and "[REDACTED]" in row["correlation_id"])
+        assert "sk-proj-abcdef" not in (row["correlation_id"] or "")
+        assert "[REDACTED]" in row["correlation_id"]
+        return True
 
 
 def test_record_lane_event_drops_entirely_when_redactor_missing():

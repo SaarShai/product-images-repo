@@ -12,7 +12,7 @@ For measured per-skill deltas and the live A/B table see [`eval/FINDINGS.md`](..
 |---|---|
 | [caveman-ultra](caveman-ultra/SKILL.md) | Terse output style. Drops filler; preserves code/numbers/errors verbatim. |
 | [plan-first-execute](plan-first-execute/SKILL.md) | Plan before non-trivial/spec-worthy tasks: separate WHAT from HOW, clarify load-bearing unknowns, derive tasks from acceptance criteria, then execute. |
-| [wayfinder](wayfinder/SKILL.md) | Pre-spec map for multi-session work: resolve precise decision tickets while preserving unformulated fog. **Model-invokable** from `plan-first-execute` and `/think`, and directly invokable as `/wayfinder`. |
+| [wayfinder](wayfinder/SKILL.md) | Pre-spec map for multi-session work: resolve precise decision tickets while preserving unformulated fog. **Model-invokable** (`trigger_type: model`) — fires on context match, including hand-off from `plan-first-execute` and `/think`; not a slash command. |
 | [think](think/SKILL.md) | How an agent should think: first-principles, reduce/simplify, research & borrow, experiment-to-falsify; ideation + 5-whys + pre-mortem/inversion. **Slash-only** (`/think`). |
 | [lean-execution](lean-execution/SKILL.md) | Prune plans/scope to the smallest safe path. |
 | [verify-before-completion](verify-before-completion/SKILL.md) | Run fresh verification before claiming done. |

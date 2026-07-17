@@ -73,6 +73,82 @@ def test_transparent_key_pixel_never_becomes_a_donor():
     assert result_rgb == (40, 30, 20)
 
 
+def test_repaint_never_self_donates_a_bad_pixel_that_would_pass_the_hardcoded_safe_thresholds():
+    """Round-7/round-8 audit repro: DONOR_DOMINANCE_MAX=18 and a bad pixel of
+    dominance=15 independently satisfies repaint()'s own safe-donor
+    predicate (opaque, dominance<=18, deltaE>=10 to key). Pre-fix, `safe`
+    never excluded `bad`, so this pixel's own array location counted as its
+    own nearest safe donor at distance 0 -- it "donated" to itself, stayed
+    (100,115,100) unchanged, and was counted as filled (unfilled=0). A real,
+    differently-colored safe donor surrounds it here; post-fix the probe
+    pixel must actually take on the real donor's RGB, not keep its own."""
+    mod = load_module()
+    size = 16
+    img = np.zeros((size, size, 4), dtype=np.uint8)
+    img[..., 0] = 40
+    img[..., 1] = 30
+    img[..., 2] = 20
+    img[..., 3] = 255
+    probe = (8, 8)
+    img[probe][:3] = [100, 115, 100]  # dominance = 115 - 100 = 15 (<= 18)
+    img[probe][3] = 255
+
+    bad = np.zeros((size, size), dtype=bool)
+    bad[probe] = True
+
+    unfilled = mod.repaint(img, bad, key_lab=KEY_LAB)
+
+    result_rgb = tuple(int(v) for v in img[probe][:3])
+    assert unfilled == 0, "a genuine safe donor exists nearby; must be counted as filled"
+    assert result_rgb != (100, 115, 100), "probe must not keep its own RGB via self-donation"
+    assert result_rgb == (40, 30, 20), "probe must take the real surrounding donor's RGB"
+
+
+def test_no_self_donation_and_unfilled_counted_at_nondefault_dominance_and_tau_flags(tmp_path):
+    """(brief item 9, exact repro condition) A uniform dominance=15 image has
+    NO genuine safe donor anywhere -- every candidate donor pixel is itself
+    equally "bad". With default --dominance 18 (== DONOR_DOMINANCE_MAX) this
+    dominance=15 fixture would never even be flagged bad by the CLI's band
+    pass; --dominance 10 (non-default, looser than the hardcoded donor
+    threshold) is what actually exercises the coincidence-closed hole, along
+    with a non-default --tau 20. Pre-fix, self-donation would leave the
+    pixels unchanged while wrongly reporting band_green_unfilled_px == 0.
+    Post-fix, since no real donor exists, they must be correctly reported
+    unfilled (not silently "fixed") and the pixels must be left untouched
+    (never an invented RGB), which now also fails the run via the item-10
+    fail-closed fix."""
+    size = 20
+    img = np.zeros((size, size, 4), dtype=np.uint8)
+    img[..., 0] = 100
+    img[..., 1] = 115
+    img[..., 2] = 100
+    img[..., 3] = 255
+
+    src = tmp_path / "in.png"
+    out = tmp_path / "out.png"
+    save_rgba(src, img)
+
+    # --band 100 on a 20x20 image erodes the "inner" region to nothing, so
+    # the entire foreground counts as "band" -- there is no non-band pixel
+    # left over to serve as a real donor either.
+    proc = run_cli(src, out, "--dominance", "10", "--tau", "20", "--band", "100")
+    stats = json.loads(proc.stdout)
+
+    assert stats["band_green_px"] > 0
+    assert stats["band_green_unfilled_px"] == stats["band_green_px"], (
+        "no genuine safe donor exists anywhere in this uniform fixture; "
+        "self-donation would wrongly report these as filled (unfilled=0)"
+    )
+    assert stats["total_unfilled_px"] > 0
+    assert stats["residual_strong_key_px"] == 0, "D3b alone does not see this class of leftover"
+    assert stats["converged"] is False
+    assert proc.returncode == 2
+
+    result = np.asarray(Image.open(out).convert("RGBA"))
+    # never invented: with no real donor, RGB must be left exactly as-is
+    assert np.array_equal(result[..., :3], img[..., :3])
+
+
 def test_repaint_leaves_pixel_unchanged_when_no_safe_donor_exists():
     mod = load_module()
     size = 10
@@ -133,12 +209,60 @@ def test_residual_strong_green_forces_failure_exit(tmp_path, monkeypatch, capsys
     assert rc == 2
 
 
+def test_any_nonzero_unfilled_counter_alone_forces_non_convergence(tmp_path, monkeypatch, capsys):
+    """(brief item 10) The fail-closed verdict must react to EVERY repaint()
+    unfilled counter (band_green/olive_notch/global_kill/speck_kill), not
+    just the separate D3b residual re-measurement -- those counters record
+    pixels repaint() explicitly could NOT fix, which is a different (and, on
+    a dominance-15 fixture like this, non-overlapping) failure class than a
+    literal deltaE<6 residual. Force every repaint() call to report 5 px
+    unfilled (isolated from the donor-exclusion fix under test elsewhere in
+    this file) and confirm converged flips to False / exit 2 even though the
+    D3b residual check and both convergence loops are clean on this
+    non-green fixture."""
+    mod = load_module()
+
+    def fake_repaint(img, bad, key_lab=None, search_radius=mod.DONOR_SEARCH_RADIUS):
+        return 5
+
+    monkeypatch.setattr(mod, "repaint", fake_repaint)
+
+    size = 30
+    img = np.zeros((size, size, 4), dtype=np.uint8)
+    img[..., :3] = [180, 60, 40]  # solid warm ink, nowhere near key green
+    img[..., 3] = 255
+    src = tmp_path / "in.png"
+    out = tmp_path / "out.png"
+    save_rgba(src, img)
+
+    monkeypatch.setattr(sys, "argv", [str(SCRIPT), str(src), str(out), "--no-green-art"])
+    rc = mod.main()
+    stats = json.loads(capsys.readouterr().out)
+
+    assert stats["total_unfilled_px"] > 0
+    assert stats["residual_strong_key_px"] == 0, "this fixture has no real key-adjacent pixels"
+    assert stats["verify_converged"] is True
+    assert stats["final_sweep_converged"] is True
+    assert stats["converged"] is False
+    assert rc == 2
+
+
 # ---------------------------------------------------------------------------
-# 3. thin 2px-wide branch survives --erode 2 (contract, calibrated)
+# 3. thin 2px-wide branch is fully eroded by --erode 2, trunk survives
+#    (contract, calibrated against MEASURED behavior, not assumed)
 # ---------------------------------------------------------------------------
 
 
-def test_thin_two_px_branch_under_erode_2(tmp_path):
+def test_thin_two_px_branch_is_fully_eroded_by_erode_2_trunk_survives(tmp_path):
+    """Measured (not assumed) behavior: a 2px-wide branch is narrower than
+    2x the erode radius, so --erode 2 erases it completely (every pixel in
+    its region drops to alpha 0); only the solid trunk survives, as a single
+    connected component. This replaces a prior version of this test whose
+    name claimed the branch "survives" while its assertions (`sum() >= 0`,
+    `n_after in (0, 1, 2)`) could not fail regardless of what the script
+    did -- including if the branch-erosion behavior were silently deleted.
+    If this measured contract ever changes, re-measure and re-assert; do not
+    loosen these assertions to make a code regression pass."""
     size = 40
     img = np.zeros((size, size, 4), dtype=np.uint8)
     # a solid trunk plus a thin 2px-wide branch off it, ink-colored, opaque
@@ -152,7 +276,7 @@ def test_thin_two_px_branch_under_erode_2(tmp_path):
     save_rgba(src, img)
 
     proc = run_cli(src, out, "--erode", "2")
-    assert proc.returncode in (0, 2)
+    assert proc.returncode == 0
 
     result = np.asarray(Image.open(out).convert("RGBA"))
     from scipy import ndimage as ndi
@@ -160,16 +284,20 @@ def test_thin_two_px_branch_under_erode_2(tmp_path):
     labels_before, n_before = ndi.label(img[..., 3] > 127, structure=np.ones((3, 3), bool))
     labels_after, n_after = ndi.label(result[..., 3] > 127, structure=np.ones((3, 3), bool))
     assert n_before == 1
-    # contract: --erode 2 on a 2px-wide branch may sever it from the trunk
-    # (2px minus 2px erode on each side <= 0 width) -- document, don't hide.
-    # We only assert it does not vanish outright (some alpha must remain
-    # from the branch region) and that the component count is 1 or 2.
-    assert result[18:20, 20:36, 3].sum() >= 0  # never negative; sanity
-    assert n_after in (0, 1, 2)
-    if n_after == 0:
-        # fully eroded away - documented known behavior for 2px width vs
-        # erode=2, not silently masked
-        assert result[..., 3].sum() == 0 or result[10:30, 10:20, 3].sum() > 0
+
+    # the branch is fully severed: every pixel in its region is now fully
+    # transparent (a real measurement, not a "never negative" sanity no-op)
+    assert result[18:20, 20:36, 3].sum() == 0
+
+    # the trunk survives with the bulk of its area intact -- the 2px rim
+    # erosion trims its border but the branch's disappearance is the only
+    # thing that can sever it into a separate component
+    trunk_before = int(img[10:30, 10:20, 3].sum())
+    trunk_after = int(result[10:30, 10:20, 3].sum())
+    assert trunk_after > trunk_before * 0.4, "trunk must survive erode 2, not just 'not go negative'"
+
+    # exactly one component remains after the branch vanishes: the trunk
+    assert n_after == 1
 
 
 # ---------------------------------------------------------------------------

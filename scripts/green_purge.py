@@ -56,6 +56,14 @@ def repaint(
     donor-copying a transparent/key-green neighbor's RGB into opaque
     foreground (the round-7 audit's synthetic repro).
 
+    Bad pixels are NEVER eligible as their own (or each other's) donor, even
+    when they otherwise satisfy the safe-donor predicates above -- a bad
+    pixel that happens to be opaque/non-dominant/non-key-adjacent would
+    otherwise have distance 0 to itself and "donate" its own unchanged RGB
+    to itself, leaving it untouched while being counted as filled (the
+    self-donation hole; reproduced at non-default --dominance/--tau values
+    where a bad pixel can slip under the safe-donor thresholds).
+
     Bad pixels with no safe donor within search_radius are left unchanged
     (their RGB is never invented) and counted in the returned unfilled total.
     """
@@ -64,7 +72,7 @@ def repaint(
     alpha = img[..., 3]
     rgb = img[..., :3].astype(np.int16)
     dominance = rgb[..., 1] - np.maximum(rgb[..., 0], rgb[..., 2])
-    safe = (alpha >= DONOR_ALPHA_THRESH) & (dominance <= DONOR_DOMINANCE_MAX)
+    safe = (alpha >= DONOR_ALPHA_THRESH) & (dominance <= DONOR_DOMINANCE_MAX) & ~bad
     if key_lab is not None:
         lab = rgb2lab(img[..., :3].astype(np.float32) / 255.0)
         de = deltaE_ciede2000(lab, key_lab)
@@ -319,10 +327,26 @@ def main() -> int:
     stats["residual_strong_key_px"] = int(residual_strong_key.sum())
     stats["verify_converged"] = stats.get("verify_iterations", -1) >= 0
     stats["final_sweep_converged"] = "final_sweep_iterations" in stats
+
+    # every repaint() call above returns an "unfilled" count for bad pixels
+    # that had no safe donor within radius -- these are NOT fixed, they were
+    # only ever recorded. "Fail-closed" must mean exactly that: any of them
+    # remaining nonzero blocks convergence, not just the separate residual
+    # D3b re-measurement below.
+    unfilled_keys = (
+        "band_green_unfilled_px",
+        "olive_notch_unfilled_px",
+        "global_kill_unfilled_px",
+        "speck_kill_unfilled_px",
+    )
+    total_unfilled = sum(stats.get(k, 0) for k in unfilled_keys)
+    stats["total_unfilled_px"] = total_unfilled
+
     stats["converged"] = bool(
         stats["verify_converged"]
         and stats["final_sweep_converged"]
         and stats["residual_strong_key_px"] == 0
+        and total_unfilled == 0
     )
 
     Image.fromarray(img).save(args.out)

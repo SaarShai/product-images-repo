@@ -14,7 +14,11 @@ is used as a doc example. (user rule, 2026-06-24)
 [`docs/image-generation.md`](docs/image-generation.md): subscription-only routes,
 no API keys — OpenAI "image 2" via the Codex CLI (`codex exec`, priority) and
 Nano Banana via the Antigravity `agy` CLI. The plain `gemini` CLI cannot generate
-images.
+images. **Authorized exception:** Route C-green v2 (`scripts/run_c_green_v2.py`)
+and Route P (native alpha) call the OpenAI API directly with `OPENAI_API_KEY`
+instead of a subscription CLI — user-approved exception, 2026-07-13, scoped to
+transparent-background product art; see `docs/image-generation.md` for scope.
+The subscription-only rule above stands for everything else.
 
 When a result is imperfect or needs improving, do not assume the next step
 should be another edit or repair pass on that same result. Treat the latest
