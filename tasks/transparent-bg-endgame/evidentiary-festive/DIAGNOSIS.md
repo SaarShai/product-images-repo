@@ -35,3 +35,11 @@ C. (Follow-up lane, banked): palette-preservation gate — pre-vs-post purge ΔE
    protected components.
 D. Re-run phase 2 on the same frozen raw with preserve-green purge; compare sage/teal
    deltas + full gates.
+
+## Outcome (2026-07-17) — see VERDICT.md
+
+Patches A+B landed+tested. Preserve-mode re-run ALSO failed (real D1 halo
+H_L=19.7 + D5 anchor erosion 0.758, holly cluster visibly damaged). Destructive
+output re-gated post-patch: all blocking gates PASS, D1 REVIEW sub-visible
+(H_L=0.0, 5.1mm²). User verdict: destructive final "looks perfect", preserve
+rejected (holes). Run CLOSED with accepted final = destructive purged.png.
