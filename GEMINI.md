@@ -71,6 +71,7 @@ context match (e.g. `wiki-memory` for "have we done X").
 - `svg-template-style-agent` — Use for agents that generate or transform visual elements from a reference-style packet before SVG geometry placement
 - `team-lead` — Use when the user says lead, orchestrate, use your team, use builders — or marks a task important/challenging while the session model is ANY top-tier frontier model (Fable-class, Opus-class, GPT-5.x/Codex, or peer)
 - `verify-before-completion` — Use before claiming work is done, fixed, passing, committed, or ready
+- `wayfinder` — Use when multi-session decisions are foggy before planning.
 - `wiki-memory` — Repo-local markdown wiki with progressive retrieval (search → timeline → fetch) and gated writes (verified facts only)
 - `wiki-refresh` — Reconcile wiki-memory pages against the current codebase — Keep / Update / Consolidate / Replace / Delete drifted ones
 - `write-gate` — Decide whether a candidate fact deserves persistent memory
