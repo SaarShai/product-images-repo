@@ -1,5 +1,9 @@
 # Wiki Log
 
+## [2026-07-17] bank | green-art subjects: run BOTH purge modes on Route C-green v2
+
+Added [[concepts/green-art-subjects-run-both-purge-modes]] from festive holly evidentiary run (VERDICT.md, human arbiter 2026-07-17). Route C-green v2 fails differently in each purge mode: destructive mode risks sub-perceptual recolor (mean ΔE≈12 on protected green, user-accepted); preserve mode risks structural erosion/holes (min_anchor_component_recall=0.758, user-rejected). Finding: erosion is perceptually worse than sub-perceptual palette shift. Routing: run BOTH modes on same frozen raw, gate both, let human pick. Never hard-code destructive-wins — recolor magnitude subject-dependent (one calibration anchor).
+
 ## [2026-07-16] bank | Audited lessons (certification integrity + gates + removal-steps + human verdict + prompt constraints + doc-fix + deferral + auditability + background jobs)
 
 Banked 9 audited lessons from 2026-07-16 dual-audit + Kimi K3 session-mining:

@@ -376,8 +376,19 @@ preserve-green mode end-to-end: `green_purge.py` runs WITHOUT
 (not `no-green-art`), and the phase-1 `NO_GREEN_ART` palette precheck is
 skipped (it would false-positive on the declared green art). Both the
 confirmation and the green-art-present answer are always recorded in
-`manifest.json["eligibility"]`. **Never run the bare `--no-green-art`
-default against a subject with essential green.**
+`manifest.json["eligibility"]`.
+
+**Green-art subjects: run BOTH purge modes, human picks (2026-07-17,
+evidentiary festive verdict).** On the first real green-art subject the two
+modes failed DIFFERENTLY: destructive (`--no-green-art`) recolored protected
+sage/teal art (29,692 px, mean Δ11.8 — sub-perceptual; user accepted the
+result as "perfect"), while preserve mode eroded structure (deleted a 4,048px
+holly cluster, min_anchor_component_recall 0.758, real halo H_L=19.7 — user
+rejected: "holes cut out of the illustration"). Structural damage reads worse
+than sub-perceptual recoloring. So: purge the SAME frozen raw both ways
+(purge is cheap/local), gate both, present both finals to the human. Do NOT
+hard-code destructive-wins — recolor magnitude is subject-dependent. Evidence:
+`tasks/transparent-bg-endgame/evidentiary-festive/VERDICT.md`.
 
 Full end-to-end recipe for NEW art from a model that lacks native alpha
 (`gpt-image-2`). Iterated over 4 user-feedback rounds; every element below

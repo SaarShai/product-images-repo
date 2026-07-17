@@ -166,6 +166,13 @@ backward compat = all-clear):
 - Both the confirmation and the green-art-present answer are recorded
   unconditionally in `manifest.json["eligibility"]` (forensic record, not
   just when True).
+- **Green-art subjects: run BOTH purge modes on the same frozen raw and let
+  the human pick** (2026-07-17 festive verdict,
+  `tasks/transparent-bg-endgame/evidentiary-festive/VERDICT.md`): destructive
+  mode recolored protected green art sub-perceptually (mean Δ11.8 — user
+  accepted); preserve mode eroded structure (holly cluster deleted,
+  anchor recall 0.758 — user rejected). The trade-off is subject-dependent;
+  neither mode is safe to auto-ship on green-art subjects.
 
 `--policy cgreen-v2-print-binary-v1` bundles the print-route contract
 (requires `--ppi`, no silent physical-units fallback; `--profile print` +
