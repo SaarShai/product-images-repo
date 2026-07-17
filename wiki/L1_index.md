@@ -40,6 +40,7 @@ Compact pointers. Fetch details on demand.
 - concepts/onepass-geometry-style-route-flux-control-lora (fact tags=image-generation,flux,lora,control-lora,geometry,style,onepass,cap-juluca,marriott) -> `concepts/onepass-geometry-style-route-flux-control-lora.md`
 - concepts/playwright-cdp-real-chrome-chatgpt-web-gen (concept tags=chatgpt-web,playwright,cdp,subscription-gen,browser-automation) -> `concepts/playwright-cdp-real-chrome-chatgpt-web-gen.md`
 - concepts/print-ready-transparent-pipeline (concept tags=transparent-generation,background-removal,print,binary-alpha,gate-battery,gpt-image,native-alpha,decontamination) -> `concepts/print-ready-transparent-pipeline.md`
+- concepts/regate-failed-artifacts-after-gate-patch (fact tags=gates,quality-assurance,re-gating,gate-patch,transparent-generation) -> `concepts/regate-failed-artifacts-after-gate-patch.md`
 - concepts/removal-step-invariant-truth-backed-preservation-proof (fact tags=image-processing,background-removal,gates,ml-matting,quality-assurance,removal-pipeline,preservation) -> `concepts/removal-step-invariant-truth-backed-preservation-proof.md`
 - concepts/screenery-socket-polyline-svg-geometry (page) -> `concepts/screenery-socket-polyline-svg-geometry.md`
 - concepts/semantic-color-region-map-locks-proportions (concept tags=region-map,geometry-guide,chatgpt,dieline,wanderland,gen-guide) -> `concepts/semantic-color-region-map-locks-proportions.md`

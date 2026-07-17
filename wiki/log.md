@@ -1,5 +1,9 @@
 # Wiki Log
 
+## [2026-07-17] bank | Re-gate previously-FAILed artifacts after any gate patch
+
+Added [[concepts/regate-failed-artifacts-after-gate-patch]]. Verified lesson: after a gate patch, re-run previously-FAILed artifacts before diagnosing anything new because the patch changes the meaning of past verdicts. The festive destructive-mode purge artifact changed from `gate_battery` FAIL (D1 yellow false-positive) to all blocking gates PASS after the D1 `h_key` green-sector fix, with only sub-visible D1 REVIEW.
+
 ## [2026-07-17] bank | green-art subjects: run BOTH purge modes on Route C-green v2
 
 Added [[concepts/green-art-subjects-run-both-purge-modes]] from festive holly evidentiary run (VERDICT.md, human arbiter 2026-07-17). Route C-green v2 fails differently in each purge mode: destructive mode risks sub-perceptual recolor (mean ΔE≈12 on protected green, user-accepted); preserve mode risks structural erosion/holes (min_anchor_component_recall=0.758, user-rejected). Finding: erosion is perceptually worse than sub-perceptual palette shift. Routing: run BOTH modes on same frozen raw, gate both, let human pick. Never hard-code destructive-wins — recolor magnitude subject-dependent (one calibration anchor).

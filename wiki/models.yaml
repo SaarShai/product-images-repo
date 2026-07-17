@@ -20,3 +20,9 @@ probes:
   - date: 2026-07-16
     models: gpt-image-1, gpt-image-1.5, chatgpt-image-latest
     background_transparent: accepts
+  - date: 2026-07-17
+    model: kimi-k3
+    provider: pi CLI (`pi --provider moonshotai --model kimi-k3 --api-key $MOONSHOT_API_KEY -p --no-session`)
+    context: 1M (131K out)
+    result: catalog VALID; runtime flaky — HTTP 429 engine_overloaded on first probe (also hard 429 quota on direct API 2026-07-16)
+    note: user directive — Kimi K3 via pi only, never substitute another model; report model+fallback
