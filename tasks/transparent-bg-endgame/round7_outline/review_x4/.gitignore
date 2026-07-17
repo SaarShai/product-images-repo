@@ -1,0 +1,16 @@
+# Keep review manifests, gate crops, and junction crops; ignore fullres/composite rasters.
+*.png
+*.jpg
+*.jpeg
+*.webp
+!*/gate_d5_crops/D5_hole_gate-component-2.png
+!*/gate_d5_crops/D5_hole_gate-component-3.png
+!*/gate_d5_crops/D5_hole_gate-component-4.png
+!*/gate_d5_crops/D5_hole_gate-component-5.png
+!*/junction_crops/*.png
+!H-G2-OUT-GREEN-r2-x4/gate_d5_crops/D5_hole_gate-component-2.png
+!*.md
+!*.json
+!*.py
+!*.txt
+!*.sh

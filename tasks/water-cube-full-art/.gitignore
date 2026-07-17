@@ -1,0 +1,15 @@
+# Compact review/style-packet boards and crops may be tracked; future large rasters stay ignored.
+*.png
+*.jpg
+*.jpeg
+*.webp
+!crop-*.png
+!upscaled-100pct-crops.jpg
+!upscaled-full-review.jpg
+!style-packet/*.png
+!style-packet/crops/*.png
+!*.md
+!*.json
+!*.py
+!*.txt
+!*.sh

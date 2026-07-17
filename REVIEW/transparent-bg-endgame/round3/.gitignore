@@ -1,0 +1,11 @@
+# Review boards/crops are compact evidence; full-resolution rasters are regenerable.
+*.png
+*.jpg
+*.jpeg
+*.webp
+!boards/*.png
+!*.md
+!*.json
+!*.py
+!*.txt
+!*.sh

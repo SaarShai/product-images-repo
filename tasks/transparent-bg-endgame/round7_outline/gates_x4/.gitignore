@@ -1,0 +1,15 @@
+# Keep gate JSON proof and only small diagnostic gate crops; ignore large overlays.
+*.png
+*.jpg
+*.jpeg
+*.webp
+!*/D5_hole_gate-component-2.png
+!*/D5_hole_gate-component-3.png
+!*/D5_hole_gate-component-4.png
+!*/D5_hole_gate-component-5.png
+!H-G2-OUT-GREEN-r2-x4/D5_hole_gate-component-2.png
+!*.md
+!*.json
+!*.py
+!*.txt
+!*.sh

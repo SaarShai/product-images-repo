@@ -1,0 +1,72 @@
+{
+  "stats": {
+    "tag": "r2",
+    "changed_px": 5,
+    "alpha_changed_px": 0,
+    "n_clusters": 5,
+    "mean_delta_over_changed_px": 12.2,
+    "max_delta_over_changed_px": 46
+  },
+  "clusters": [
+    {
+      "label": 1,
+      "px": 1,
+      "bbox": [
+        563,
+        563,
+        601,
+        601
+      ],
+      "max_delta": 8,
+      "mean_delta": 5.33
+    },
+    {
+      "label": 2,
+      "px": 1,
+      "bbox": [
+        624,
+        624,
+        289,
+        289
+      ],
+      "max_delta": 9,
+      "mean_delta": 7.0
+    },
+    {
+      "label": 3,
+      "px": 1,
+      "bbox": [
+        920,
+        920,
+        271,
+        271
+      ],
+      "max_delta": 5,
+      "mean_delta": 3.33
+    },
+    {
+      "label": 4,
+      "px": 1,
+      "bbox": [
+        1053,
+        1053,
+        368,
+        368
+      ],
+      "max_delta": 46,
+      "mean_delta": 45.0
+    },
+    {
+      "label": 5,
+      "px": 1,
+      "bbox": [
+        1203,
+        1203,
+        310,
+        310
+      ],
+      "max_delta": 1,
+      "mean_delta": 0.33
+    }
+  ]
+}

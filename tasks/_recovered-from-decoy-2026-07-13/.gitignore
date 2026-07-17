@@ -1,0 +1,10 @@
+# Preserve durable research formats; future regenerable image outputs stay out of git.
+*.png
+*.jpg
+*.jpeg
+*.webp
+!*.md
+!*.json
+!*.py
+!*.txt
+!*.sh

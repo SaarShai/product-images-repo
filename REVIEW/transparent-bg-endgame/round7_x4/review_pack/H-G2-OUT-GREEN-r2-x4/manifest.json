@@ -1,0 +1,123 @@
+{
+  "final_source": "tasks/transparent-bg-endgame/round7_outline/x4/H-G2-OUT-GREEN-r2-x4.png",
+  "raw_source": "tasks/transparent-bg-endgame/round7_outline/x4/H-G2-OUT-GREEN-r2-raw-x4-for-gate.png",
+  "gate_dir_source": "tasks/transparent-bg-endgame/round7_outline/gates_x4/H-G2-OUT-GREEN-r2-x4",
+  "files": [
+    {
+      "kind": "fullres_final",
+      "path": "tasks/transparent-bg-endgame/round7_outline/review_x4/H-G2-OUT-GREEN-r2-x4/fullres/final.png"
+    },
+    {
+      "kind": "fullres_raw",
+      "path": "tasks/transparent-bg-endgame/round7_outline/review_x4/H-G2-OUT-GREEN-r2-x4/fullres/raw.png"
+    },
+    {
+      "kind": "composite",
+      "path": "tasks/transparent-bg-endgame/round7_outline/review_x4/H-G2-OUT-GREEN-r2-x4/composites/composite_dark.png",
+      "background": "dark"
+    },
+    {
+      "kind": "composite",
+      "path": "tasks/transparent-bg-endgame/round7_outline/review_x4/H-G2-OUT-GREEN-r2-x4/composites/composite_white.png",
+      "background": "white"
+    },
+    {
+      "kind": "composite",
+      "path": "tasks/transparent-bg-endgame/round7_outline/review_x4/H-G2-OUT-GREEN-r2-x4/composites/composite_magenta.png",
+      "background": "magenta"
+    },
+    {
+      "kind": "gate_d5_crop",
+      "path": "tasks/transparent-bg-endgame/round7_outline/review_x4/H-G2-OUT-GREEN-r2-x4/gate_d5_crops/D5_hole_gate-component-1.png"
+    },
+    {
+      "kind": "gate_d5_crop",
+      "path": "tasks/transparent-bg-endgame/round7_outline/review_x4/H-G2-OUT-GREEN-r2-x4/gate_d5_crops/D5_hole_gate-component-2.png"
+    },
+    {
+      "kind": "gate_d5_crop",
+      "path": "tasks/transparent-bg-endgame/round7_outline/review_x4/H-G2-OUT-GREEN-r2-x4/gate_d5_crops/D5_hole_gate-component-3.png"
+    },
+    {
+      "kind": "gate_d5_crop",
+      "path": "tasks/transparent-bg-endgame/round7_outline/review_x4/H-G2-OUT-GREEN-r2-x4/gate_d5_crops/D5_hole_gate-component-4.png"
+    },
+    {
+      "kind": "gate_d5_crop",
+      "path": "tasks/transparent-bg-endgame/round7_outline/review_x4/H-G2-OUT-GREEN-r2-x4/gate_d5_crops/D5_hole_gate-component-5.png"
+    },
+    {
+      "kind": "junction_crop_4x_lanczos",
+      "path": "tasks/transparent-bg-endgame/round7_outline/review_x4/H-G2-OUT-GREEN-r2-x4/junction_crops/junction_00_x2063_y1318_4x_lanczos.png",
+      "center_x": 2063,
+      "center_y": 1318
+    },
+    {
+      "kind": "junction_crop_12x_nearest",
+      "path": "tasks/transparent-bg-endgame/round7_outline/review_x4/H-G2-OUT-GREEN-r2-x4/junction_crops/junction_00_x2063_y1318_12x_nearest.png",
+      "center_x": 2063,
+      "center_y": 1318
+    },
+    {
+      "kind": "junction_crop_4x_lanczos",
+      "path": "tasks/transparent-bg-endgame/round7_outline/review_x4/H-G2-OUT-GREEN-r2-x4/junction_crops/junction_01_x2787_y2262_4x_lanczos.png",
+      "center_x": 2787,
+      "center_y": 2262
+    },
+    {
+      "kind": "junction_crop_12x_nearest",
+      "path": "tasks/transparent-bg-endgame/round7_outline/review_x4/H-G2-OUT-GREEN-r2-x4/junction_crops/junction_01_x2787_y2262_12x_nearest.png",
+      "center_x": 2787,
+      "center_y": 2262
+    },
+    {
+      "kind": "junction_crop_4x_lanczos",
+      "path": "tasks/transparent-bg-endgame/round7_outline/review_x4/H-G2-OUT-GREEN-r2-x4/junction_crops/junction_02_x2885_y3741_4x_lanczos.png",
+      "center_x": 2885,
+      "center_y": 3741
+    },
+    {
+      "kind": "junction_crop_12x_nearest",
+      "path": "tasks/transparent-bg-endgame/round7_outline/review_x4/H-G2-OUT-GREEN-r2-x4/junction_crops/junction_02_x2885_y3741_12x_nearest.png",
+      "center_x": 2885,
+      "center_y": 3741
+    },
+    {
+      "kind": "junction_crop_4x_lanczos",
+      "path": "tasks/transparent-bg-endgame/round7_outline/review_x4/H-G2-OUT-GREEN-r2-x4/junction_crops/junction_03_x2392_y1062_4x_lanczos.png",
+      "center_x": 2392,
+      "center_y": 1062
+    },
+    {
+      "kind": "junction_crop_12x_nearest",
+      "path": "tasks/transparent-bg-endgame/round7_outline/review_x4/H-G2-OUT-GREEN-r2-x4/junction_crops/junction_03_x2392_y1062_12x_nearest.png",
+      "center_x": 2392,
+      "center_y": 1062
+    },
+    {
+      "kind": "junction_crop_4x_lanczos",
+      "path": "tasks/transparent-bg-endgame/round7_outline/review_x4/H-G2-OUT-GREEN-r2-x4/junction_crops/junction_04_x3352_y1838_4x_lanczos.png",
+      "center_x": 3352,
+      "center_y": 1838
+    },
+    {
+      "kind": "junction_crop_12x_nearest",
+      "path": "tasks/transparent-bg-endgame/round7_outline/review_x4/H-G2-OUT-GREEN-r2-x4/junction_crops/junction_04_x3352_y1838_12x_nearest.png",
+      "center_x": 3352,
+      "center_y": 1838
+    },
+    {
+      "kind": "junction_crop_4x_lanczos",
+      "path": "tasks/transparent-bg-endgame/round7_outline/review_x4/H-G2-OUT-GREEN-r2-x4/junction_crops/junction_05_x2984_y1858_4x_lanczos.png",
+      "center_x": 2984,
+      "center_y": 1858
+    },
+    {
+      "kind": "junction_crop_12x_nearest",
+      "path": "tasks/transparent-bg-endgame/round7_outline/review_x4/H-G2-OUT-GREEN-r2-x4/junction_crops/junction_05_x2984_y1858_12x_nearest.png",
+      "center_x": 2984,
+      "center_y": 1858
+    }
+  ],
+  "n_junction_points": 6
+}

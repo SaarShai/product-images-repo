@@ -1,0 +1,14 @@
+# Compact review boards/crops may be tracked; future images over the size policy require review.
+*.png
+*.jpg
+*.jpeg
+*.webp
+!candidate-v1-review.jpg
+!crop-*.png
+!upscaled-100pct-crops.jpg
+!upscaled-full-review.jpg
+!*.md
+!*.json
+!*.py
+!*.txt
+!*.sh

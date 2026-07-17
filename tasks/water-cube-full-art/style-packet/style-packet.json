@@ -1,0 +1,485 @@
+{
+  "created_at": "2026-07-15T17:34:12Z",
+  "task": "water-cube-full-art",
+  "purpose": "visual style packet for image-generation/style agents",
+  "source_refs": [
+    "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+  ],
+  "contact_sheets": {
+    "reference_contact_sheet": "tasks/water-cube-full-art/style-packet/reference-contact-sheet.png",
+    "style_exemplar_sheet": "tasks/water-cube-full-art/style-packet/style-exemplar-sheet.png"
+  },
+  "palette_hex": [
+    "#6a9bc8",
+    "#5589bd",
+    "#89b0d1",
+    "#72879d",
+    "#b1b5bb",
+    "#949ba6",
+    "#4674a4",
+    "#435f6b",
+    "#5b7282",
+    "#cbccce",
+    "#efeef0",
+    "#30494e"
+  ],
+  "crops": [
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-full-panel.png",
+      "bbox": [
+        0,
+        149,
+        1448,
+        942
+      ],
+      "size": [
+        1448,
+        793
+      ],
+      "label": "ref 1 full panel",
+      "type": "full-panel",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-left-region.png",
+      "bbox": [
+        0,
+        141,
+        558,
+        950
+      ],
+      "size": [
+        558,
+        809
+      ],
+      "label": "ref 1 left-region",
+      "type": "left-region",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-center-region.png",
+      "bbox": [
+        440,
+        141,
+        1021,
+        950
+      ],
+      "size": [
+        581,
+        809
+      ],
+      "label": "ref 1 center-region",
+      "type": "center-region",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-right-region.png",
+      "bbox": [
+        889,
+        141,
+        1448,
+        950
+      ],
+      "size": [
+        559,
+        809
+      ],
+      "label": "ref 1 right-region",
+      "type": "right-region",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-body-texture.png",
+      "bbox": [
+        571,
+        363,
+        905,
+        727
+      ],
+      "size": [
+        334,
+        364
+      ],
+      "label": "ref 1 body-texture",
+      "type": "body-texture",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-edge-treatment.png",
+      "bbox": [
+        0,
+        141,
+        355,
+        490
+      ],
+      "size": [
+        355,
+        349
+      ],
+      "label": "ref 1 edge-treatment",
+      "type": "edge-treatment",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-accent-component-01.png",
+      "bbox": [
+        0,
+        512,
+        730,
+        813
+      ],
+      "size": [
+        730,
+        301
+      ],
+      "label": "ref 1 accent component 01",
+      "type": "accent-component",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-accent-component-02.png",
+      "bbox": [
+        0,
+        186,
+        346,
+        606
+      ],
+      "size": [
+        346,
+        420
+      ],
+      "label": "ref 1 accent component 02",
+      "type": "accent-component",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-accent-component-03.png",
+      "bbox": [
+        1206,
+        634,
+        1448,
+        961
+      ],
+      "size": [
+        242,
+        327
+      ],
+      "label": "ref 1 accent component 03",
+      "type": "accent-component",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-accent-component-04.png",
+      "bbox": [
+        994,
+        533,
+        1266,
+        739
+      ],
+      "size": [
+        272,
+        206
+      ],
+      "label": "ref 1 accent component 04",
+      "type": "accent-component",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-accent-component-05.png",
+      "bbox": [
+        1242,
+        505,
+        1448,
+        740
+      ],
+      "size": [
+        206,
+        235
+      ],
+      "label": "ref 1 accent component 05",
+      "type": "accent-component",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-accent-component-06.png",
+      "bbox": [
+        624,
+        576,
+        840,
+        783
+      ],
+      "size": [
+        216,
+        207
+      ],
+      "label": "ref 1 accent component 06",
+      "type": "accent-component",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-accent-component-07.png",
+      "bbox": [
+        0,
+        519,
+        178,
+        712
+      ],
+      "size": [
+        178,
+        193
+      ],
+      "label": "ref 1 accent component 07",
+      "type": "accent-component",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-accent-component-08.png",
+      "bbox": [
+        995,
+        631,
+        1285,
+        791
+      ],
+      "size": [
+        290,
+        160
+      ],
+      "label": "ref 1 accent component 08",
+      "type": "accent-component",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    }
+  ],
+  "agent_attachments": [
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-full-panel.png",
+      "bbox": [
+        0,
+        149,
+        1448,
+        942
+      ],
+      "size": [
+        1448,
+        793
+      ],
+      "label": "ref 1 full panel",
+      "type": "full-panel",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-center-region.png",
+      "bbox": [
+        440,
+        141,
+        1021,
+        950
+      ],
+      "size": [
+        581,
+        809
+      ],
+      "label": "ref 1 center-region",
+      "type": "center-region",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-left-region.png",
+      "bbox": [
+        0,
+        141,
+        558,
+        950
+      ],
+      "size": [
+        558,
+        809
+      ],
+      "label": "ref 1 left-region",
+      "type": "left-region",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-right-region.png",
+      "bbox": [
+        889,
+        141,
+        1448,
+        950
+      ],
+      "size": [
+        559,
+        809
+      ],
+      "label": "ref 1 right-region",
+      "type": "right-region",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-body-texture.png",
+      "bbox": [
+        571,
+        363,
+        905,
+        727
+      ],
+      "size": [
+        334,
+        364
+      ],
+      "label": "ref 1 body-texture",
+      "type": "body-texture",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-edge-treatment.png",
+      "bbox": [
+        0,
+        141,
+        355,
+        490
+      ],
+      "size": [
+        355,
+        349
+      ],
+      "label": "ref 1 edge-treatment",
+      "type": "edge-treatment",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-accent-component-01.png",
+      "bbox": [
+        0,
+        512,
+        730,
+        813
+      ],
+      "size": [
+        730,
+        301
+      ],
+      "label": "ref 1 accent component 01",
+      "type": "accent-component",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-accent-component-02.png",
+      "bbox": [
+        0,
+        186,
+        346,
+        606
+      ],
+      "size": [
+        346,
+        420
+      ],
+      "label": "ref 1 accent component 02",
+      "type": "accent-component",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-accent-component-03.png",
+      "bbox": [
+        1206,
+        634,
+        1448,
+        961
+      ],
+      "size": [
+        242,
+        327
+      ],
+      "label": "ref 1 accent component 03",
+      "type": "accent-component",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-accent-component-04.png",
+      "bbox": [
+        994,
+        533,
+        1266,
+        739
+      ],
+      "size": [
+        272,
+        206
+      ],
+      "label": "ref 1 accent component 04",
+      "type": "accent-component",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-accent-component-05.png",
+      "bbox": [
+        1242,
+        505,
+        1448,
+        740
+      ],
+      "size": [
+        206,
+        235
+      ],
+      "label": "ref 1 accent component 05",
+      "type": "accent-component",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-accent-component-06.png",
+      "bbox": [
+        624,
+        576,
+        840,
+        783
+      ],
+      "size": [
+        216,
+        207
+      ],
+      "label": "ref 1 accent component 06",
+      "type": "accent-component",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-accent-component-07.png",
+      "bbox": [
+        0,
+        519,
+        178,
+        712
+      ],
+      "size": [
+        178,
+        193
+      ],
+      "label": "ref 1 accent component 07",
+      "type": "accent-component",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    },
+    {
+      "path": "tasks/water-cube-full-art/style-packet/crops/ref01-water-cube-accent-component-08.png",
+      "bbox": [
+        995,
+        631,
+        1285,
+        791
+      ],
+      "size": [
+        290,
+        160
+      ],
+      "label": "ref 1 accent component 08",
+      "type": "accent-component",
+      "source": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/Marriott China/Water Cube/Water Cube.png"
+    }
+  ],
+  "agent_contract": [
+    "Attach packet images when asking a style agent to generate elements.",
+    "Generate style-matched element sheets before geometry placement.",
+    "Reject outputs that only match palette while missing watercolor edge, line, lighting, and object vocabulary.",
+    "Geometry agents place accepted elements into SVG safe pockets after style generation."
+  ],
+  "prompt": "tasks/water-cube-full-art/prompts/prompt-v2-style-packet-elements-first.md"
+}

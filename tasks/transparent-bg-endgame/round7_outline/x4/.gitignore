@@ -1,0 +1,10 @@
+# Regenerable x4 source/final rasters; durable proof is in sibling battery/manifest JSON.
+*.png
+*.jpg
+*.jpeg
+*.webp
+!*.md
+!*.json
+!*.py
+!*.txt
+!*.sh

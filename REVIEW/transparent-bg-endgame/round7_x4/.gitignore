@@ -1,0 +1,19 @@
+# Keep compact gate/junction crops; ignore regenerable fullres and composite rasters.
+*.png
+*.jpg
+*.jpeg
+*.webp
+!gates/*/D5_hole_gate-component-2.png
+!gates/*/D5_hole_gate-component-3.png
+!gates/*/D5_hole_gate-component-4.png
+!gates/*/D5_hole_gate-component-5.png
+!review_pack/*/gate_d5_crops/D5_hole_gate-component-2.png
+!review_pack/*/gate_d5_crops/D5_hole_gate-component-3.png
+!review_pack/*/gate_d5_crops/D5_hole_gate-component-4.png
+!review_pack/*/gate_d5_crops/D5_hole_gate-component-5.png
+!review_pack/*/junction_crops/*.png
+!*.md
+!*.json
+!*.py
+!*.txt
+!*.sh
