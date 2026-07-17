@@ -1,0 +1,29 @@
+{
+  "arm": "P2",
+  "seed": 21,
+  "steps": 30,
+  "guidance": 5.5,
+  "strength": 1.0,
+  "controlnet_conditioning_scale": 0.7,
+  "control_guidance_start": 0.0,
+  "control_guidance_end": 0.8,
+  "lora_scale": 0.75,
+  "ip_adapter_scale": {
+    "up": {
+      "block_0": [
+        0.0,
+        0.55,
+        0.0
+      ]
+    }
+  },
+  "size": [
+    640,
+    1544
+  ],
+  "pipeline_load_s": 10.8,
+  "gen_s": 101.6,
+  "nan_or_black": false,
+  "raw": "tasks/geometry-adherence-solutions/experiment-1/runs/A-P2-s21/raw.png",
+  "gen": "tasks/geometry-adherence-solutions/experiment-1/runs/A-P2-s21/gen.png"
+}

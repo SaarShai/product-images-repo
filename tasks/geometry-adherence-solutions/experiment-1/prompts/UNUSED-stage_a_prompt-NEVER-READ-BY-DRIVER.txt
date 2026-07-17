@@ -1,0 +1,4 @@
+# NOTE (2026-07-17): stray artifact from run_matrix placeholder era.
+# The scored Stage-A runs used the hardcoded card-verbatim prompt in
+# scripts/gen_stage_a.py (POSITIVE, line ~52). Verified via code path.
+a hand-painted watercolor fairytale cottage facade illustration, aged stone and timber wall texture, warm earthy palette, soft visible ink outlines, gentle painterly shading, children's book style

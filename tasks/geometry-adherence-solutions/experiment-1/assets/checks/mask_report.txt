@@ -1,0 +1,35 @@
+# experiment-1 asset mask pixel-count report
+
+SVG: tasks/geometry-evidentiary-princess-n02/source/template.svg
+viewBox: (0.0, 0.0, 1874.73, 4213.29)
+src_rect (SVG units): (103.37999999999998, 179.07999999999993, 1644.1, 3981.6800000000003)
+working resolution: 1024x2480  (aspect 0.4129)
+
+| asset | px count | % of canvas |
+|---|---|---|
+| silhouette_mask | 2373343 | 93.46% |
+| holes_mask (excl st1) | 33896 | 1.33% |
+| socket_mask (arch footprint +1px, Amendment 1) | 139921 | 5.51% |
+| st1_zone_mask | 313986 | 12.36% |
+| paintable_P1 | 2208274 | 86.96% |
+| paintable_P2 | 2233422 | 87.95% |
+
+## per-shape SVG-unit areas (svg_classify, cross-check vs tasks/geometry-evidentiary-princess-n02/svg-geometry-report.md)
+
+| role | ref | area (svg units^2) | bbox |
+|---|---|---|---|
+| paintable_region | narrow_panel_01__x3E__top_subpanel__x3E__front_layer__x3E__outer_contour | 4310652.3 | (103.38, 1538.46, 1747.48, 4160.76) |
+| internal_cutout | st4 | 10775.3 | (103.38, 769.27, 131.85, 1538.46) |
+| internal_cutout | st4 | 10775.3 | (1719.01, 769.27, 1747.48, 1538.46) |
+| internal_cutout | st1 | 844312.4 | (103.38, 105.25, 1747.48, 759.27) |
+| outer_contour | st5 | 5352605.4 | (163.32, 179.08, 1687.54, 4092.71) |
+| internal_cutout | st2 | 31589.3 | (131.83, 1452.44, 866.39, 1538.46) |
+| internal_cutout | st2 | 31586.5 | (984.48, 1538.46, 1719.04, 1624.46) |
+| no_focal_motif_zone | st3 | 296675.4 | (875.39, 1052.38, 972.97, 4092.71) |
+| keep_clear_zone | st0 | 47789.5 | (1200.9, 4022.69, 1707.95, 4116.94) |
+
+## discrepancy: st1 vs embedded-raster placement
+- st1_zone bbox (SVG units): [103.38, 105.25, 1747.48, 759.27]
+- door raster placement (SVG units): [122.83, 1572.21, 875.37, 2378.14]
+- overlap area (SVG units^2): 0.0
+-> zero/near-zero overlap confirmed; socket_mask.png uses the raster's own placement, not st1. See build_assets.py module docstring.

@@ -1,0 +1,33 @@
+{
+  "arm": "P1",
+  "seed": 21,
+  "steps": 50,
+  "guidance": 5.5,
+  "strength": 0.35,
+  "controlnet_conditioning_scale": 0.55,
+  "control_guidance_start": 0.0,
+  "control_guidance_end": 0.65,
+  "control_image": "control_composition.png",
+  "init_image": "tasks/geometry-adherence-solutions/experiment-1/runs/R2-P1-s21/gen.png",
+  "lora_scale": 0.75,
+  "ip_adapter_scale": {
+    "up": {
+      "block_0": [
+        0.0,
+        0.55,
+        0.0
+      ]
+    }
+  },
+  "positive_prompt": "watercolor children's book illustration of a fairytale princess castle, soft pastel washes on textured paper, gentle ink outlines, tall narrow vertical composition, airy, delicate, hand-painted",
+  "negative_prompt": "photo, realistic, 3d render, glossy, text, words, signage, watermark, frame, border, clutter, people, oversaturated, heavy black outlines, vector, flat color blocks, sideways architecture, cropped main towers, floating fragments, duplicated buildings",
+  "size": [
+    640,
+    1544
+  ],
+  "pipeline_load_s": 10.8,
+  "gen_s": 58.1,
+  "nan_or_black": false,
+  "raw": "tasks/geometry-adherence-solutions/experiment-1/runs/B-s21-d035/raw.png",
+  "gen": "tasks/geometry-adherence-solutions/experiment-1/runs/B-s21-d035/gen.png"
+}

@@ -1,0 +1,178 @@
+[
+  {
+    "run_id": "A-P1-s7",
+    "arm": "P1",
+    "seed": 7,
+    "size": [
+      640,
+      1544
+    ],
+    "steps": 30,
+    "gen_s": 95.6,
+    "pipeline_load_s": 11.0,
+    "nan_or_black": false,
+    "outside_silhouette_painted_px": 0,
+    "hole_paint_pct": [
+      {
+        "ref": "st4",
+        "index": 0,
+        "area_px": 1924,
+        "painted_pct": 0.0
+      },
+      {
+        "ref": "st4",
+        "index": 1,
+        "area_px": 1774,
+        "painted_pct": 0.0
+      },
+      {
+        "ref": "st2",
+        "index": 2,
+        "area_px": 5070,
+        "painted_pct": 0.0
+      },
+      {
+        "ref": "st2",
+        "index": 3,
+        "area_px": 4867,
+        "painted_pct": 0.0
+      }
+    ],
+    "socket_zone_px": 54805,
+    "socket_zone_painted_px": 54805,
+    "socket_zone_painted_pct": 100.0,
+    "paint_region_coverage_pct": 99.981
+  },
+  {
+    "run_id": "A-P1-s21",
+    "arm": "P1",
+    "seed": 21,
+    "size": [
+      640,
+      1544
+    ],
+    "steps": 30,
+    "gen_s": 102.4,
+    "pipeline_load_s": 11.3,
+    "nan_or_black": false,
+    "outside_silhouette_painted_px": 0,
+    "hole_paint_pct": [
+      {
+        "ref": "st4",
+        "index": 0,
+        "area_px": 1924,
+        "painted_pct": 0.0
+      },
+      {
+        "ref": "st4",
+        "index": 1,
+        "area_px": 1774,
+        "painted_pct": 0.0
+      },
+      {
+        "ref": "st2",
+        "index": 2,
+        "area_px": 5070,
+        "painted_pct": 0.0
+      },
+      {
+        "ref": "st2",
+        "index": 3,
+        "area_px": 4867,
+        "painted_pct": 0.0
+      }
+    ],
+    "socket_zone_px": 54805,
+    "socket_zone_painted_px": 54805,
+    "socket_zone_painted_pct": 100.0,
+    "paint_region_coverage_pct": 99.962
+  },
+  {
+    "run_id": "A-P2-s7",
+    "arm": "P2",
+    "seed": 7,
+    "size": [
+      640,
+      1544
+    ],
+    "steps": 30,
+    "gen_s": 94.4,
+    "pipeline_load_s": 11.3,
+    "nan_or_black": false,
+    "outside_silhouette_painted_px": 0,
+    "hole_paint_pct": [
+      {
+        "ref": "st4",
+        "index": 0,
+        "area_px": 1924,
+        "painted_pct": 0.156
+      },
+      {
+        "ref": "st4",
+        "index": 1,
+        "area_px": 1774,
+        "painted_pct": 0.169
+      },
+      {
+        "ref": "st2",
+        "index": 2,
+        "area_px": 5070,
+        "painted_pct": 100.0
+      },
+      {
+        "ref": "st2",
+        "index": 3,
+        "area_px": 4867,
+        "painted_pct": 100.0
+      }
+    ],
+    "socket_zone_px": 54805,
+    "socket_zone_painted_px": 54805,
+    "socket_zone_painted_pct": 100.0,
+    "paint_region_coverage_pct": 99.991
+  },
+  {
+    "run_id": "A-P2-s21",
+    "arm": "P2",
+    "seed": 21,
+    "size": [
+      640,
+      1544
+    ],
+    "steps": 30,
+    "gen_s": 101.6,
+    "pipeline_load_s": 10.8,
+    "nan_or_black": false,
+    "outside_silhouette_painted_px": 0,
+    "hole_paint_pct": [
+      {
+        "ref": "st4",
+        "index": 0,
+        "area_px": 1924,
+        "painted_pct": 0.156
+      },
+      {
+        "ref": "st4",
+        "index": 1,
+        "area_px": 1774,
+        "painted_pct": 0.169
+      },
+      {
+        "ref": "st2",
+        "index": 2,
+        "area_px": 5070,
+        "painted_pct": 100.0
+      },
+      {
+        "ref": "st2",
+        "index": 3,
+        "area_px": 4867,
+        "painted_pct": 100.0
+      }
+    ],
+    "socket_zone_px": 54805,
+    "socket_zone_painted_px": 54805,
+    "socket_zone_painted_pct": 100.0,
+    "paint_region_coverage_pct": 99.922
+  }
+]

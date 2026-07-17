@@ -1,0 +1,79 @@
+{
+  "candidate": "tasks/geometry-adherence-solutions/experiment-1/assets/checks/synthetic_candidate.png",
+  "out": "tasks/geometry-adherence-solutions/experiment-1/assets/checks/synthetic_composited.png",
+  "candidate_size": [
+    1024,
+    2480
+  ],
+  "registration": {
+    "expected_socket_rect_px": [
+      12.11,
+      867.71,
+      480.82,
+      1369.69
+    ],
+    "actual_neutral_bbox_px": [
+      12,
+      867,
+      481,
+      1370
+    ],
+    "offset_px": 0.713,
+    "tol_px": 1.5,
+    "status": "pass"
+  },
+  "socket_interior_max_abs_delta": 0,
+  "outside_silhouette_painted_px": 0,
+  "hole_paint_pct_pre_punch": [
+    {
+      "ref": "st4",
+      "index": 0,
+      "area_px": 4498,
+      "painted_pct": 0.089
+    },
+    {
+      "ref": "st4",
+      "index": 1,
+      "area_px": 4258,
+      "painted_pct": 0.094
+    },
+    {
+      "ref": "st2",
+      "index": 2,
+      "area_px": 12494,
+      "painted_pct": 100.0
+    },
+    {
+      "ref": "st2",
+      "index": 3,
+      "area_px": 12648,
+      "painted_pct": 100.0
+    }
+  ],
+  "hole_paint_pct_post_punch": [
+    {
+      "ref": "st4",
+      "index": 0,
+      "area_px": 4498,
+      "painted_pct": 23.01
+    },
+    {
+      "ref": "st4",
+      "index": 1,
+      "area_px": 4258,
+      "painted_pct": 23.391
+    },
+    {
+      "ref": "st2",
+      "index": 2,
+      "area_px": 12494,
+      "painted_pct": 14.711
+    },
+    {
+      "ref": "st2",
+      "index": 3,
+      "area_px": 12648,
+      "painted_pct": 14.564
+    }
+  ]
+}

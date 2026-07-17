@@ -1,0 +1,48 @@
+{
+  "svg_viewbox": [
+    0.0,
+    0.0,
+    1874.73,
+    4213.29
+  ],
+  "src_rect_svg_units": [
+    103.37999999999998,
+    179.07999999999993,
+    1644.1,
+    3981.6800000000003
+  ],
+  "working_resolution": [
+    640,
+    1544
+  ],
+  "transform": {
+    "note": "px = (svg_x - src_rect.min_x) * (W/box_w), (svg_y - src_rect.min_y) * (H/box_h)",
+    "sx": 0.389270725624962,
+    "sy": 0.3877760141447831,
+    "min_x": 103.37999999999998,
+    "min_y": 179.07999999999993
+  },
+  "placement_svg_units": [
+    122.8306,
+    1572.2065,
+    875.3692,
+    2378.1403
+  ],
+  "placement_px": [
+    7.57,
+    540.22,
+    300.51,
+    852.74
+  ],
+  "native_raster_size_px": [
+    902,
+    966
+  ],
+  "source_element": {
+    "width": 902,
+    "height": 966,
+    "format": "png"
+  },
+  "note": "rect derived directly from the <image> element's own transform=translate()+scale() and width/height attributes -- independent of svg_classify() role assignment. Does NOT match st1's bbox (103.38,105.25 -> 1747.48,759.27 SVG units, the top arch/dome); see build_assets.py module docstring / builder report.",
+  "amendment_1": "this rect is now a SIZING/SEARCH-WINDOW reference only. The actual socket_mask.png / paintable exclusion / init-canvas neutral fill is the ARCH-shaped frozen matte alpha footprint (door_socket_rgba.png, built by build_socket_matte.py) projected through this same rect + dilated +1px, NOT this rectangle -- see PARAMS.md Amendment 1."
+}

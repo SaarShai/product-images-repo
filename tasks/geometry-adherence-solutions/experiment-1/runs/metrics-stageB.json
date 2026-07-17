@@ -1,0 +1,44 @@
+[
+  {
+    "run_id": "B-s21-d035",
+    "arm": "P1",
+    "seed": 21,
+    "strength": 0.35,
+    "steps": 50,
+    "size": [
+      640,
+      1544
+    ],
+    "pipeline_load_s": 10.8,
+    "gen_s": 58.1,
+    "nan_or_black": false,
+    "silhouette_drift_iou_vs_base_precomposite": 0.9891,
+    "silhouette_drift_gate_0.97": true,
+    "hole_paint_pct_precomposite": 1.071,
+    "hole_paint_gate_2pct": true,
+    "outside_silhouette_painted_px_postcomposite": 0,
+    "paint_region_coverage_pct_postcomposite": 99.963,
+    "mean_abs_rgb_diff_vs_base_in_body": 13.681
+  },
+  {
+    "run_id": "B-s21-d050",
+    "arm": "P1",
+    "seed": 21,
+    "strength": 0.5,
+    "steps": 50,
+    "size": [
+      640,
+      1544
+    ],
+    "pipeline_load_s": 14.3,
+    "gen_s": 84.6,
+    "nan_or_black": false,
+    "silhouette_drift_iou_vs_base_precomposite": 0.9891,
+    "silhouette_drift_gate_0.97": null,
+    "hole_paint_pct_precomposite": 1.137,
+    "hole_paint_gate_2pct": true,
+    "outside_silhouette_painted_px_postcomposite": 0,
+    "paint_region_coverage_pct_postcomposite": 99.952,
+    "mean_abs_rgb_diff_vs_base_in_body": 17.028
+  }
+]

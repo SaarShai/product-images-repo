@@ -1,0 +1,88 @@
+{
+  "candidate": "runs/B-s21-d050/gen.png",
+  "out": "runs/B-s21-d050/final.png",
+  "candidate_size": [
+    640,
+    1544
+  ],
+  "registration": {
+    "status": "fail",
+    "max_boundary_offset_px": 123.81,
+    "area_actual_px": 109238,
+    "area_expected_px": 54805,
+    "area_ratio": 1.9932,
+    "tol_px": 1.5,
+    "area_ratio_tol": [
+      0.98,
+      1.02
+    ]
+  },
+  "corner_integration": {
+    "zone_px": 36904,
+    "painted_px": 36899,
+    "painted_pct": 99.986,
+    "status": "pass"
+  },
+  "socket_gates": {
+    "opaque_px": 52089,
+    "opaque_max_abs_delta": 0,
+    "opaque_byte_exact": true,
+    "feather_ring_px": 3362,
+    "feather_ring_max_abs_delta_vs_expected_blend": 0,
+    "feather_ring_blend_exact": true,
+    "alpha_exact_vs_frozen_matte": true
+  },
+  "outside_silhouette_painted_px": 0,
+  "hole_paint_pct_pre_punch": [
+    {
+      "ref": "st4",
+      "index": 0,
+      "area_px": 1924,
+      "painted_pct": 0.0
+    },
+    {
+      "ref": "st4",
+      "index": 1,
+      "area_px": 1774,
+      "painted_pct": 0.0
+    },
+    {
+      "ref": "st2",
+      "index": 2,
+      "area_px": 5070,
+      "painted_pct": 0.0
+    },
+    {
+      "ref": "st2",
+      "index": 3,
+      "area_px": 4867,
+      "painted_pct": 0.0
+    }
+  ],
+  "hole_paint_pct_post_punch": [
+    {
+      "ref": "st4",
+      "index": 0,
+      "area_px": 1924,
+      "painted_pct": 33.212
+    },
+    {
+      "ref": "st4",
+      "index": 1,
+      "area_px": 1774,
+      "painted_pct": 33.935
+    },
+    {
+      "ref": "st2",
+      "index": 2,
+      "area_px": 5070,
+      "painted_pct": 22.189
+    },
+    {
+      "ref": "st2",
+      "index": 3,
+      "area_px": 4867,
+      "painted_pct": 22.416
+    }
+  ]
+}

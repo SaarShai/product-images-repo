@@ -1,0 +1,28 @@
+{
+  "svg_source": "tasks/geometry-evidentiary-princess-n02/source/template.svg",
+  "svg_viewbox": [
+    0.0,
+    0.0,
+    1874.73,
+    4213.29
+  ],
+  "src_rect_svg_units": {
+    "min_x": 103.37999999999998,
+    "min_y": 179.07999999999993,
+    "box_w": 1644.1,
+    "box_h": 3981.6800000000003
+  },
+  "src_rect_derivation": "bbox union of shapes whose svg_classify role is outer_contour|paintable_region (mirrors controlnet_sdxl_gen.py main() with no --bbox given)",
+  "working_resolution": {
+    "W": 1024,
+    "H": 2480
+  },
+  "mapping": "px_x = (svg_x - src_rect.min_x) * (W / src_rect.box_w); px_y = (svg_y - src_rect.min_y) * (H / src_rect.box_h)",
+  "sx": 0.6228331609999392,
+  "sy": 0.6228526652066464,
+  "stroke_px": 4,
+  "notes": [
+    "st5 (yellow #ffdb55, classify role=outer_contour) is used for the silhouette top edge per controlnet_sdxl_gen.py convention; the TRUE physical arch peak is st1 (green #39b54a, classify role=internal_cutout) which pokes ~74 SVG units (~1.9% of panel height) above st5's top -- see assets/checks/overlay_silhouette.png for the visible crop.",
+    "socket_mask.png / paintable_P1 / paintable_P2 / init_canvas / control_canny's socket outline are keyed to the embedded raster's OWN measured placement (door_socket_placement.json) for SIZING, not to st1's polygon -- but Amendment 1 (see PARAMS.md) supersedes the earlier full-rect socket shape: the actual exclusion is the ARCH-shaped frozen matte alpha footprint (door_socket_rgba.png) projected through that rect + dilated +1px. st1_zone_mask.png is the literal st1 rasterization, kept for traceability; it does not overlap the raster placement."
+  ]
+}

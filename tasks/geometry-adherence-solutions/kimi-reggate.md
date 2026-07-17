@@ -1,0 +1,11 @@
+# Reg-gate consult: replace vs recalibrate
+
+**(1) Yes — replace the hard gate with transform-provenance verification; demote appearance detection to advisory on painterly candidates.** The paste is already deterministic: `rasterize_geometry()` re-derives `socket_rect_px` from the SVG at compose time and `composite_socket_arch()` blends at `round(rect_px)`; the byte-exact/feather/alpha gates verify the result against that same deterministic expectation. So registration-by-appearance adds no information about where the paste landed — only about candidate drift, which `corner_integration` (≥95% painted in rect-minus-arch; measured 99.99%) already bounds. On Stage B the detector's precondition (low-texture ⇒ neutral socket) is false: flat-wash walls merge, yielding 120px offsets and area_ratio 1.84–1.99 — 100% false-positive on an entire candidate class while every paste-measuring gate passes. A gate that always cries wolf must not hard-block (exit 3).
+
+Provenance must be genuinely independent: re-parse the SVG via a second code path and assert equality with the footprint, plus assert `door_socket_rgba.png`'s hash against build provenance — not the same function called twice. Emit a junction crop (arch boundary ring ±8px of `final.png`) for human review; per repo rule, a metric PASS is a rejection gate, not approval.
+
+*False-negative risk of demotion:* a candidate whose neutral region genuinely drifted leaves a neutral crescent outside the footprint — caught by `corner_integration`; overpaint inside the footprint is hidden under the opaque (alpha=255, byte-exact) paste. Residual coverage is adequate.
+
+**(2) If appearance detection stays for Stage A: reg-tol = 5.0px, keep area_ratio ±2%.** Measured floor 3.0–3.16px (n=4, ground-truth-aligned) ⇒ tol must clear 3.16 with real margin; 5.0 gives 58% headroom vs 1.5's impossible position. Keep the 15px shifted fixture (reads 21.9px ≫ 5) and add a 6px-shift fixture to prove the new floor.
+
+*False-negative analysis:* shifts ≥5px are always caught; measured ≈ shift + softening, so ≥2px shifts are caught in practice; 1–4px shifts may pass but sit below the VAE edge-softening scale and are concealed by the paste + feather ring, with `corner_integration` as backstop. 3.16-aligned gens read area_ratio 0.989–0.993, retaining the full ±2% budget for real area anomalies.
