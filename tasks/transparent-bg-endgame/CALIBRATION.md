@@ -33,9 +33,86 @@ Evidence JSON and failed-gate crops are under `tasks/transparent-bg-endgame/cali
 | synthetic_good_fixture | synthetic good pocket baseline | 0.0 | 1.9282 | 1 | 0.9091 | 0.0 | D4 |
 | synthetic_negative_degenerate_alpha | synthetic bad alpha | 0.0 | 0.0 | 0 | 0.068 | 1.0 | D7, D8 |
 
+## v5 D5 Blocking-Contract Notes (2026-07-16)
+
+**D5 is now blocking.** `scripts/gates/d5_preservation.py` is the real
+implementation (pure masks, component scoring, the pre-purge `NO_GREEN_ART`
+palette precheck, and preservation-recall verdict logic);
+`scripts/gates/gate_battery.py`'s `D5_hole_gate` delegates to it whenever
+`--truth` or `--d5-policy` is supplied. Three modes, strongest first:
+
+- `truth` — an exact RGBA truth mask (`--truth`). `advisory:false`.
+- `baseline` — a human-approved pre-purge raster (`--d5-baseline`)
+  intersected with source-color evidence (`--source` + `--d5-policy`).
+  `advisory:false`.
+- `source_only` — source-color component evidence alone, no baseline
+  (`--source` + `--d5-policy`, no `--d5-baseline`). `advisory:false`.
+- `legacy_source_heuristic` — bare `--source` without `--d5-policy`/`--truth`.
+  Old deleted-area-fraction heuristic, kept for backward compatibility.
+  `advisory:true`, capped at `REVIEW`, never `FAIL`.
+
+Any real D5 `FAIL` in a blocking mode makes `gate_battery` exit `2`; there is
+no aggregation-level exemption for `advisory:false` gates (the battery's
+overall verdict is always the worst of every gate's verdict).
+
+**Truth construction** (see `scripts/gates/d5_preservation.py` docstrings
+for the full algorithm): border-connected `ΔE00(key) ≤ 11` models the paper
+background; a policy-driven exclusion mask (`no-green-art`: also excludes
+any green-dominant hue) removes pixels the destructive route is allowed to
+purge unconditionally; surviving components are filtered by
+`area ≥ 16·scale²`, `median ΔE00(key) ≥ 18`, `p10 ΔE00(key) ≥ 14`; each is
+classified `anchor` (max inscribed radius `> boundary_budget_px + scale`),
+`fine` (area qualifies, radius doesn't — capped at `REVIEW`, never `FAIL`),
+or `speck` (below minimum area, ignored). A `--d5-baseline` intersects
+these components with its alpha as an independent second view.
+
+**Pre-purge palette stop.** `NO_GREEN_ART` is verified on the decontaminated
+pre-purge raster, not trusted from the prompt, ignoring a `6·scale` px band
+around the alpha boundary (edge spill there is exactly what `green_purge`
+exists to remove) and flagging interior prohibited-green components. `PASS`
+≤`16·scale²` area & `≤1·scale` radius; `FAIL` ≥`64·scale²` area or `≥3·scale`
+radius; otherwise `REVIEW`. A palette `FAIL` means regenerate; never purge.
+
+**Preservation thresholds** (after removing the permitted
+`boundary_budget_px` band, which is exactly the erosion `green_purge --erode`
+is allowed to spend): aggregate protected-core recall PASS `≥0.9995` / FAIL
+`<0.995`; per-anchor-component recall PASS `≥0.995` / FAIL `<0.98`; deleted-
+core island area PASS `0` / FAIL `≥16·scale²`; deleted-core inscribed radius
+PASS `0` / FAIL `≥2·scale`; missing skeleton run PASS `0` / FAIL `≥3·scale`;
+any anchor component entirely lost is always `FAIL`. Everything else falls
+to `REVIEW`.
+
+**Scale/boundary metadata is load-bearing, not inferred from PPI.** Round-7
+1x purge: `scale=1, boundary_budget_px=2`. Existing post-purge x4 evidence
+(the purge's 2px erosion happened before the x4 upscale): `scale=4,
+boundary_budget_px=8`. Using `budget=2` on the x4 files falsely reports
+~0.78-0.86% recall loss — see `tasks/transparent-bg-endgame/d5-preservation-corpus.json`.
+
+**Calibration procedure**: freeze accepted pairs +
+scale/boundary metadata (`d5-preservation-corpus.json`); emit raw component
+metrics before choosing thresholds; set thresholds no tighter than the worst
+accepted result plus margin; require every synthetic deletion mutation to
+exit non-PASS; refuse threshold changes unless accepted outputs remain
+non-FAIL and all blocking mutations still FAIL.
+
+Regression evidence:
+
+```bash
+PYTHONPYCACHEPREFIX=/tmp/pyc /usr/bin/python3 -m pytest -q tests/test_d5_preservation.py tests/test_run_c_green_v2.py
+# 17 passed (test_d5_preservation.py), 7 passed (test_run_c_green_v2.py)
+
+MPLCONFIGDIR=/tmp/mpl PYTHONPYCACHEPREFIX=/tmp/pyc /usr/bin/python3 scripts/gates/gate_battery.py \
+  --rgba tasks/transparent-bg-endgame/round7_outline/processed/H-G2-OUT-GREEN-r1-purged.png \
+  --source tasks/transparent-bg-endgame/round7_outline/raws/H-G2-OUT-GREEN-r1.png \
+  --d5-baseline tasks/transparent-bg-endgame/round7_outline/processed/H-G2-OUT-GREEN-r1.png \
+  --d5-policy no-green-art --d5-analysis-scale 1 --d5-boundary-budget-px 2 \
+  --bg-color '#00FF00' --profile print --out-dir /tmp/gb_d5_r1_1x
+# D5_hole_gate PASS, advisory:false, aggregate_core_recall=1.0
+```
+
 ## Advisory Gates
 
-D5 `hole_gate` and D6 `spill_gate` are implemented but remain `advisory=true` in `CALIBRATION`.
+D6 `spill_gate` is implemented but remains `advisory=true` in `CALIBRATION`.
 
 Paired runs against `raw_green_P1/P2/P3` plus `keyed_green_P1/P2/P3` showed that the available paired data is not clean calibration ground truth for blocking thresholds:
 
@@ -45,7 +122,7 @@ Paired runs against `raw_green_P1/P2/P3` plus `keyed_green_P1/P2/P3` showed that
 | paired_green_P2 | 0.668486 | 935286 | 0.049694 | 0.045357 | fail/fail |
 | paired_green_P3 | 0.017242 | 42 | 0.052613 | 0.047001 | fail/fail |
 
-Those results are useful warnings, but not enough to promote D5/D6 to blocking because source/delivered art mismatch and known green-tint review findings confound the calibration set.
+Those results are useful warnings, but not enough to promote D5/D6 to blocking because source/delivered art mismatch and known green-tint review findings confound the calibration set. **Historical note:** this table predates the v5 D5 blocking contract above; it justified why the OLD `D5_hole_gate` heuristic couldn't be trusted as blocking, not the new `d5_preservation.py` module, which was calibrated separately against the round-7 accepted corpus (see v5 section). D6 remains advisory.
 
 ## v2 Detector Battery Notes
 

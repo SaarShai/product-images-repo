@@ -7,16 +7,47 @@ user-validated 2026-07-13, "best yet — bank it"). See
 `skills/transparent-product-image-gen/SKILL.md` (same section) for the full
 recipe and rationale this runner encodes.
 
+**Two-phase, blocking, art-deletion-safe.** `green_purge.py` unconditionally
+destroys every key-hue pixel; the only thing standing between that and a
+silent art loss is a human looking at the pre-purge raster BEFORE it runs.
+This runner never invokes `green_purge.py` in the same process invocation
+that generated/keyed the art — it always stops first.
+
+Phase 1 (default; no `--approve-prepurge-sha256`):
+    preflight -> prompt assemble+lint -> generate (or `--skip-gen` reuse) ->
+    chroma_key -> decontam_binarize -> D5 NO_GREEN_ART palette precheck ->
+    D5 source->baseline preservation precheck (has keying/decontam ALREADY
+    deleted real protected art, independent of the not-yet-run purge?) ->
+    pre-purge review pack -> record `prepurge_sha256` (sha256 of decontam.png)
+    -> STOP. `green_purge.py` is never invoked in this phase.
+
+Phase 2 (`--skip-gen RAW --approve-prepurge-sha256 HASH`): re-derive
+chroma_key + decontam_binarize from the SAME raw (both are deterministic, no
+RNG, so this reproduces the exact bytes a human already reviewed), refuse a
+hash mismatch, then `green_purge --no-green-art --erode 2 --band 6` ->
+`gate_battery.py` with the new blocking D5 flags (`--d5-baseline
+--d5-policy no-green-art --d5-analysis-scale 1 --d5-boundary-budget-px 2`,
+this runner's fixed 1x defaults -- x4 upscale integration is a later lane,
+see `tasks/transparent-bg-endgame/d5-preservation-corpus.json`) ->
+post-purge review pack.
+
+`--approve-prepurge-sha256` REQUIRES `--skip-gen`: finalize always
+re-derives from a stored raw file, never a fresh generation (a fresh
+generation cannot reproduce the exact bytes a human already reviewed). A
+single approval hash can only finalize exactly one candidate -- `--skip-gen`
+already clamps `--n` to 1.
+
 Usage:
+    # Phase 1 -- stop, review PACK_DIR/prepurge_review_pack/, note the sha256
     /usr/bin/python3 scripts/run_c_green_v2.py \\
       --subject "a single watercolor coral cluster ..." \\
-      --out-root /path/to/out --eligibility-confirmed \\
-      [--n 1] [--size 1024x1536] [--skip-gen raw.png] [--ppi 300]
+      --out-root /path/to/out --eligibility-confirmed --ppi 300
 
-Stages: preflight -> prompt assemble+lint -> generate (Responses API async
-job, gpt-image-2, or --skip-gen to reuse a stored raw) -> chroma_key ->
-decontam_binarize -> green_purge --no-green-art --erode 2 --band 6 ->
-gate_battery --profile print [--ppi PPI] -> review_pack.
+    # Phase 2 -- finalize the exact reviewed bytes
+    /usr/bin/python3 scripts/run_c_green_v2.py \\
+      --subject "..." --out-root /path/to/out --eligibility-confirmed \\
+      --ppi 300 --skip-gen /path/to/out/RUN/candidate_1/raw... \\
+      --approve-prepurge-sha256 <the prepurge_sha256 from the phase-1 manifest>
 
 --n defaults to 1, per SKILL.md's "One candidate -> user visual gate -> only
 then batch" process law (skills/transparent-product-image-gen/SKILL.md,
@@ -28,19 +59,35 @@ once a candidate is approved.
 to 1 with a loud stderr WARNING (not silently accepted).
 --ppi passes panel pixels-per-inch through to gate_battery so D1/D2/D4 mm
 thresholds are calibrated; without it, --profile print degrades to pixel
-fallbacks and manifest.json records physical_units:false with a WARNING.
+fallbacks and manifest.json records physical_units:false with a WARNING --
+UNLESS `--policy cgreen-v2-print-binary-v1` is set, in which case a missing
+--ppi is a hard exit-2 config error (no silent physical-units fallback).
+
+`--policy cgreen-v2-print-binary-v1` bundles the print-route contract into
+one flag instead of independent ones a caller could half-set: requires
+--ppi; keeps this runner's already-hardcoded --profile print and
+--border-policy auto; binds the D5 scale=1/boundary=2 (1x) defaults; and
+relies on --profile print's existing D2 hard-fail-on-any-soft-alpha-pixel
+rule to enforce the binary-alpha delivery expectation.
 
 Exit codes preserve gate_battery's own tri-state contract verbatim, worst-of
 across all candidates -- REVIEW is NEVER silently promoted to PASS:
-  0 (PASS)   — every candidate's gate verdict is PASS.
-  3 (REVIEW) — at least one candidate is REVIEW (advisory or not) and none is
-               FAIL; manifest.json sets human_review_required:true. A human
-               must approve before this counts as shipped.
-  2 (FAIL)   — any hard failure: preflight, gen/poll error, a pipeline stage
-               subprocess failing, a candidate gate verdict of FAIL, a
-               gate_battery crash (any exit code other than 0/3/2), or zero
-               candidates processed. manifest.json is still written (with the
-               failure recorded) before returning, even on gen/poll failure.
+  0 (PASS)   — every candidate's gate verdict is PASS (finalize phase only).
+  3 (REVIEW) — pre-purge human stop (phase 1, the default/normal case), OR a
+               finalized candidate's gate verdict is REVIEW. manifest.json
+               sets human_review_required:true. A human must approve before
+               this counts as shipped, and before finalizing a phase-1 stop.
+  2 (FAIL)   — any hard failure: preflight, config error (bad --policy/--ppi
+               pairing, --approve-prepurge-sha256 without --skip-gen),
+               gen/poll error, a pipeline stage subprocess failing, the D5
+               NO_GREEN_ART palette precheck FAILING pre-purge (regenerate,
+               never purge), the D5 source->baseline preservation precheck
+               FAILING pre-purge, an approval-hash mismatch, a finalized
+               candidate's gate verdict of FAIL (including a real D5
+               protected-art-deletion FAIL), a gate_battery crash (any exit
+               code other than 0/3/2), or zero candidates processed.
+               manifest.json is still written (with the failure recorded)
+               before returning, even on gen/poll failure.
 """
 from __future__ import annotations
 
@@ -59,9 +106,10 @@ PY = "/usr/bin/python3"
 
 sys.path.insert(0, str(SCRIPTS))
 import prompt_blocks_c_green_v2 as blocks  # noqa: E402
-# review_pack pulls in numpy/PIL/scipy at import time; deferred to a lazy
-# import inside run_one_candidate() so `--help` and preflight() can run (and
-# emit a friendly dependency error) on a bare python3 without those installed.
+# review_pack and d5_preservation pull in numpy/PIL/scipy at import time;
+# deferred to lazy imports inside the phase functions below so `--help` and
+# preflight() can run (and emit a friendly dependency error) on a bare
+# python3 without those installed.
 
 ELIGIBILITY_CHECKLIST = """\
 Route C-green v2 eligibility checklist (answer honestly before spending a
@@ -82,8 +130,17 @@ subject.
 """
 
 GREEN_HEX = blocks.GREEN_HEX
+KEY_RGB = tuple(int(GREEN_HEX.lstrip("#")[i : i + 2], 16) for i in (0, 2, 4))
 RESPONSES_ENDPOINT = "https://api.openai.com/v1/responses"
 GEN_MODEL = "gpt-image-2"
+
+# This runner's fixed 1x D5 blocking-contract defaults (round-7 calibration,
+# tasks/transparent-bg-endgame/d5-preservation-corpus.json). x4 upscale
+# integration (worst-of 1x/4x re-gating) is a later lane -- not wired here.
+D5_ANALYSIS_SCALE = 1.0
+D5_BOUNDARY_BUDGET_PX = 2.0
+
+NAMED_POLICIES = ("cgreen-v2-print-binary-v1",)
 
 
 def sha256_file(path: Path) -> str:
@@ -110,6 +167,19 @@ def fail(msg: str) -> int:
     return 2
 
 
+def _import_review_pack():
+    import review_pack  # lazy: pulls in numpy/PIL/scipy, see import-site note above
+
+    return review_pack
+
+
+def _import_d5_module():
+    sys.path.insert(0, str(SCRIPTS / "gates"))
+    import d5_preservation  # lazy: pulls in numpy/scipy/skimage
+
+    return d5_preservation
+
+
 # ---------------------------------------------------------------------------
 # Preflight
 # ---------------------------------------------------------------------------
@@ -128,6 +198,7 @@ def preflight(need_gen: bool) -> list[str]:
         "scripts/decontam_binarize.py",
         "scripts/green_purge.py",
         "scripts/gates/gate_battery.py",
+        "scripts/gates/d5_preservation.py",
         "scripts/prompt_blocks_c_green_v2.py",
         "scripts/review_pack.py",
         "scripts/_falcommon.py",
@@ -220,17 +291,113 @@ def run_cmd(cmd: list[str]) -> subprocess.CompletedProcess:
 GATE_RC_TO_VERDICT = {0: "PASS", 3: "REVIEW", 2: "FAIL"}
 
 
-def run_one_candidate(
+def run_prepurge_phase(
     cand_dir: Path,
     raw_path: Path,
-    manifest_entry: dict,
-    ppi: float | None = None,
+    d5_analysis_scale: float = D5_ANALYSIS_SCALE,
+    d5_boundary_budget_px: float = D5_BOUNDARY_BUDGET_PX,
 ) -> dict:
-    """Run chroma_key -> decontam_binarize -> green_purge -> gate_battery ->
-    review_pack on one raw. Returns {"stage_results":..., "verdict":..., "ok":bool}.
+    """Phase 1: chroma_key -> decontam_binarize -> D5 NO_GREEN_ART palette
+    precheck -> D5 source->baseline preservation precheck -> pre-purge review
+    pack -> record prepurge_sha256. NEVER invokes green_purge.
 
-    verdict is one of PASS/REVIEW/FAIL, taken from gate_battery's own exit
-    code (0/3/2) faithfully -- REVIEW is never silently promoted to "ok"."""
+    Returns {"stage_results":..., "verdict": "FAIL"|"REVIEW", "phase":
+    "prepurge_stop", "ok": False, "prepurge_sha256": str|None}. "FAIL" means
+    a hard block (palette violation or protected-art already deleted by
+    keying/decontam) -- regenerate, do not proceed to phase 2. "REVIEW"
+    always means "human must review the pack, then finalize" (never PASS in
+    this phase -- purge, and therefore the real blocking gate, has not run
+    yet)."""
+    cand_dir.mkdir(parents=True, exist_ok=True)
+    keyed = cand_dir / "keyed.png"
+    key_json = cand_dir / "keyed.json"
+    decontam = cand_dir / "decontam.png"
+    pack_dir = cand_dir / "prepurge_review_pack"
+
+    stages = []
+
+    r = run_cmd([PY, str(SCRIPTS / "chroma_key.py"), "key", str(raw_path), str(keyed), "--json", str(key_json)])
+    stages.append({"stage": "chroma_key", "returncode": r.returncode, "stderr": r.stderr[-2000:]})
+    if r.returncode != 0:
+        return {"stage_results": stages, "verdict": "FAIL", "phase": "prepurge_stop", "ok": False, "prepurge_sha256": None}
+
+    r = run_cmd(
+        [PY, str(SCRIPTS / "decontam_binarize.py"), "--rgba", str(keyed), "--out", str(decontam), "--bg-color", GREEN_HEX]
+    )
+    stages.append({"stage": "decontam_binarize", "returncode": r.returncode, "stderr": r.stderr[-2000:]})
+    if r.returncode != 0:
+        return {"stage_results": stages, "verdict": "FAIL", "phase": "prepurge_stop", "ok": False, "prepurge_sha256": None}
+
+    prepurge_sha = sha256_file(decontam)
+
+    import numpy as np
+    from PIL import Image
+
+    d5mod = _import_d5_module()
+    source_rgb = np.asarray(Image.open(raw_path).convert("RGB"))
+    baseline_rgba = np.asarray(Image.open(decontam).convert("RGBA"))
+
+    palette_cfg = d5mod.D5Thresholds(analysis_scale=d5_analysis_scale, boundary_budget_px=0.0, palette_policy="no-green-art")
+    palette_result = d5mod.score_no_green_art(baseline_rgba, cfg=palette_cfg)
+    stages.append({"stage": "d5_no_green_art_palette_precheck", "verdict": palette_result.verdict, "metric": palette_result.metric})
+
+    if palette_result.verdict == "FAIL":
+        return {
+            "stage_results": stages, "verdict": "FAIL", "phase": "prepurge_stop", "ok": False,
+            "prepurge_sha256": prepurge_sha, "decontam_path": str(decontam),
+            "note": "NO_GREEN_ART palette precheck FAILED before purge -- regenerate; never purge this raw.",
+        }
+
+    # source -> baseline preservation sanity check: has keying/decontam
+    # ITSELF already deleted real protected art, independent of the
+    # not-yet-run purge step? budget=0 -- no purge erosion has happened yet.
+    preservation_cfg = d5mod.D5Thresholds(analysis_scale=d5_analysis_scale, boundary_budget_px=0.0, palette_policy="no-green-art")
+    reference = d5mod.build_d5_reference(source_rgb, None, truth_rgba=None, key_rgb=KEY_RGB, cfg=preservation_cfg)
+    preservation_result = d5mod.score_preservation(baseline_rgba, reference, cfg=preservation_cfg)
+    stages.append(
+        {"stage": "d5_source_baseline_preservation_precheck", "verdict": preservation_result.verdict, "metric": preservation_result.metric}
+    )
+
+    if preservation_result.verdict == "FAIL":
+        return {
+            "stage_results": stages, "verdict": "FAIL", "phase": "prepurge_stop", "ok": False,
+            "prepurge_sha256": prepurge_sha, "decontam_path": str(decontam),
+            "note": "keying/decontam already deleted real protected art before purge even ran -- regenerate.",
+        }
+
+    review_pack = _import_review_pack()
+    pack_manifest = review_pack.build_review_pack(final_path=decontam, raw_path=raw_path, out_dir=pack_dir, gate_dir=None)
+    stages.append({"stage": "prepurge_review_pack", "n_files": len(pack_manifest["files"])})
+
+    return {
+        "stage_results": stages,
+        "verdict": "REVIEW",  # always requires human approval -- maps to exit 3
+        "phase": "prepurge_stop",
+        "ok": False,
+        "prepurge_sha256": prepurge_sha,
+        "decontam_path": str(decontam),
+        "keyed_path": str(keyed),
+        "note": (
+            f"Pre-purge human stop. Review {pack_dir}/, then finalize with "
+            f"--skip-gen {raw_path} --approve-prepurge-sha256 {prepurge_sha}"
+        ),
+    }
+
+
+def finalize_candidate(
+    cand_dir: Path,
+    raw_path: Path,
+    approve_sha: str,
+    ppi: float | None = None,
+    d5_analysis_scale: float = D5_ANALYSIS_SCALE,
+    d5_boundary_budget_px: float = D5_BOUNDARY_BUDGET_PX,
+) -> dict:
+    """Phase 2: re-derive chroma_key + decontam_binarize deterministically
+    from raw_path, refuse a prepurge_sha256 mismatch, then green_purge ->
+    gate_battery (blocking D5 flags) -> post-purge review pack.
+
+    Returns {"stage_results":..., "verdict": "PASS"|"REVIEW"|"FAIL",
+    "phase": "finalize", "ok": bool}."""
     cand_dir.mkdir(parents=True, exist_ok=True)
     keyed = cand_dir / "keyed.png"
     key_json = cand_dir / "keyed.json"
@@ -245,17 +412,26 @@ def run_one_candidate(
     r = run_cmd([PY, str(SCRIPTS / "chroma_key.py"), "key", str(raw_path), str(keyed), "--json", str(key_json)])
     stages.append({"stage": "chroma_key", "returncode": r.returncode, "stderr": r.stderr[-2000:]})
     if r.returncode != 0:
-        return {"stage_results": stages, "verdict": "FAIL", "ok": False}
+        return {"stage_results": stages, "verdict": "FAIL", "phase": "finalize", "ok": False}
 
     r = run_cmd(
-        [
-            PY, str(SCRIPTS / "decontam_binarize.py"),
-            "--rgba", str(keyed), "--out", str(decontam), "--bg-color", GREEN_HEX,
-        ]
+        [PY, str(SCRIPTS / "decontam_binarize.py"), "--rgba", str(keyed), "--out", str(decontam), "--bg-color", GREEN_HEX]
     )
     stages.append({"stage": "decontam_binarize", "returncode": r.returncode, "stderr": r.stderr[-2000:]})
     if r.returncode != 0:
-        return {"stage_results": stages, "verdict": "FAIL", "ok": False}
+        return {"stage_results": stages, "verdict": "FAIL", "phase": "finalize", "ok": False}
+
+    actual_sha = sha256_file(decontam)
+    sha_match = actual_sha == approve_sha
+    stages.append({"stage": "approval_sha_check", "approved": approve_sha, "recomputed": actual_sha, "match": sha_match})
+    if not sha_match:
+        return {
+            "stage_results": stages, "verdict": "FAIL", "phase": "finalize", "ok": False,
+            "note": (
+                f"approval-hash mismatch: --approve-prepurge-sha256 {approve_sha} != recomputed {actual_sha}. "
+                "The raw/keying/decontam bytes reviewed no longer match what was just re-derived. Refusing to purge."
+            ),
+        }
 
     r = run_cmd(
         [
@@ -265,12 +441,14 @@ def run_one_candidate(
     )
     stages.append({"stage": "green_purge", "returncode": r.returncode, "stderr": r.stderr[-2000:]})
     if r.returncode != 0:
-        return {"stage_results": stages, "verdict": "FAIL", "ok": False}
+        return {"stage_results": stages, "verdict": "FAIL", "phase": "finalize", "ok": False}
 
     gate_cmd = [
         PY, str(SCRIPTS / "gates" / "gate_battery.py"),
         "--rgba", str(purged), "--source", str(raw_path), "--bg-color", GREEN_HEX,
-        "--profile", "print", "--out-dir", str(gates_dir),
+        "--d5-baseline", str(decontam), "--d5-policy", "no-green-art",
+        "--d5-analysis-scale", str(d5_analysis_scale), "--d5-boundary-budget-px", str(d5_boundary_budget_px),
+        "--profile", "print", "--border-policy", "auto", "--out-dir", str(gates_dir),
     ]
     if ppi is not None:
         gate_cmd += ["--ppi", str(ppi)]
@@ -300,23 +478,22 @@ def run_one_candidate(
         non_pass = [g for g in battery["gates"].values() if g["verdict"] != "PASS"]
         advisory_only = all(g.get("advisory") for g in non_pass)
 
-    manifest_entry["final_sha256"] = sha256_file(purged) if purged.exists() else None
-    # record the battery's own verdict verbatim (never an invented approval)
-    manifest_entry["gate_verdict"] = battery["verdict"] if battery else verdict
-    manifest_entry["gate_advisory_only"] = advisory_only
-
-    # review pack — build regardless of verdict so REVIEW candidates get eyes
-    import review_pack  # lazy: pulls in numpy/PIL/scipy, see import-site note above
-
-    pack_manifest = review_pack.build_review_pack(
-        final_path=purged, raw_path=raw_path, out_dir=pack_dir, gate_dir=gates_dir,
-    )
+    review_pack = _import_review_pack()
+    pack_manifest = review_pack.build_review_pack(final_path=purged, raw_path=raw_path, out_dir=pack_dir, gate_dir=gates_dir)
     stages.append({"stage": "review_pack", "n_files": len(pack_manifest["files"])})
 
     # ok means TRUE PASS only. REVIEW is never auto-promoted to success --
     # it always requires a human, recorded via manifest["human_review_required"].
     ok = verdict == "PASS"
-    return {"stage_results": stages, "verdict": verdict, "advisory_only": advisory_only, "ok": ok}
+    return {
+        "stage_results": stages,
+        "verdict": verdict,
+        "phase": "finalize",
+        "advisory_only": advisory_only,
+        "ok": ok,
+        "final_sha256": sha256_file(purged) if purged.exists() else None,
+        "gate_verdict": battery["verdict"] if battery else verdict,
+    }
 
 
 # ---------------------------------------------------------------------------
@@ -343,7 +520,7 @@ def _fail_run(manifest: dict, run_dir: Path, error: str) -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
-    ap = argparse.ArgumentParser(description=__doc__)
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--subject", required=True)
     ap.add_argument("--out-root", required=True, type=Path)
     ap.add_argument(
@@ -358,7 +535,23 @@ def main(argv: list[str] | None = None) -> int:
         "--ppi", type=float, default=None,
         help="panel pixels-per-inch for physical-unit gate thresholds (D1/D2/D4); "
         "passed through to gate_battery.py --ppi. Without it, --profile print "
-        "gates degrade to pixel fallbacks (physical_units:false in manifest.json).",
+        "gates degrade to pixel fallbacks (physical_units:false in manifest.json), "
+        "UNLESS --policy cgreen-v2-print-binary-v1 is set, which hard-requires it.",
+    )
+    ap.add_argument(
+        "--policy", choices=NAMED_POLICIES, default=None,
+        help="Named gate-policy bundle. cgreen-v2-print-binary-v1: requires --ppi "
+        "(no silent physical-units fallback); binds print profile + auto border "
+        "policy (this runner's existing defaults) and the D5 scale=1/budget=2 "
+        "1x defaults; relies on print profile's existing hard-fail-on-soft-alpha "
+        "rule for the binary-alpha delivery expectation.",
+    )
+    ap.add_argument(
+        "--approve-prepurge-sha256", default=None,
+        help="Finalize a previously-stopped pre-purge candidate: recompute "
+        "chroma_key+decontam_binarize from --skip-gen's raw (both are "
+        "deterministic), refuse a hash mismatch against this value, then "
+        "green_purge -> gate_battery -> review_pack. REQUIRES --skip-gen.",
     )
     args = ap.parse_args(argv)
 
@@ -374,6 +567,24 @@ def main(argv: list[str] | None = None) -> int:
             "and clamped to 1 candidate.",
             file=sys.stderr,
         )
+
+    if args.approve_prepurge_sha256 is not None and args.skip_gen is None:
+        print(
+            "FAIL: --approve-prepurge-sha256 requires --skip-gen RAW -- finalize "
+            "always re-derives from a stored raw file, never a fresh generation "
+            "(a fresh generation cannot reproduce the exact bytes a human already "
+            "reviewed).",
+            file=sys.stderr,
+        )
+        return 2
+
+    if args.policy == "cgreen-v2-print-binary-v1" and args.ppi is None:
+        print(
+            "FAIL: --policy cgreen-v2-print-binary-v1 requires --ppi (no silent "
+            "physical-units fallback under this named policy).",
+            file=sys.stderr,
+        )
+        return 2
 
     if not args.eligibility_confirmed:
         print(ELIGIBILITY_CHECKLIST)
@@ -406,8 +617,11 @@ def main(argv: list[str] | None = None) -> int:
             file=sys.stderr,
         )
 
+    finalize_mode = args.approve_prepurge_sha256 is not None
+
     manifest: dict = {
         "run_id": run_id,
+        "mode": "finalize" if finalize_mode else "prepurge_stop",
         "started_at": now_iso(),
         "args": {
             "subject": args.subject,
@@ -416,11 +630,15 @@ def main(argv: list[str] | None = None) -> int:
             "size": args.size,
             "skip_gen": str(args.skip_gen) if args.skip_gen else None,
             "ppi": args.ppi,
+            "policy": args.policy,
+            "approve_prepurge_sha256": args.approve_prepurge_sha256,
         },
         "prompt_sha256": prompt_sha,
         "model": GEN_MODEL,
         "script_git_commit": git_commit(),
         "physical_units": physical_units,
+        "d5_analysis_scale": D5_ANALYSIS_SCALE,
+        "d5_boundary_budget_px": D5_BOUNDARY_BUDGET_PX,
         "candidates": [],
     }
 
@@ -475,13 +693,23 @@ def main(argv: list[str] | None = None) -> int:
 
     for i, (raw_path, entry) in enumerate(raws, start=1):
         cand_dir = run_dir / f"candidate_{i}"
-        result = run_one_candidate(cand_dir, raw_path, entry, ppi=args.ppi)
+        if finalize_mode:
+            result = finalize_candidate(
+                cand_dir, raw_path, args.approve_prepurge_sha256, ppi=args.ppi,
+                d5_analysis_scale=D5_ANALYSIS_SCALE, d5_boundary_budget_px=D5_BOUNDARY_BUDGET_PX,
+            )
+        else:
+            result = run_prepurge_phase(
+                cand_dir, raw_path,
+                d5_analysis_scale=D5_ANALYSIS_SCALE, d5_boundary_budget_px=D5_BOUNDARY_BUDGET_PX,
+            )
         entry["cand_dir"] = str(cand_dir)
         entry["pipeline"] = result
         manifest["candidates"].append(entry)
 
     # tri-state overall verdict, worst-of across candidates. REVIEW is never
-    # silently promoted to success -- it always exits 3 and requires a human.
+    # silently promoted to success -- it always exits 3 and requires a human
+    # (this covers both the phase-1 pre-purge stop and a phase-2 REVIEW gate).
     overall_verdict = "PASS"
     for entry in manifest["candidates"]:
         v = entry["pipeline"]["verdict"]
@@ -498,6 +726,7 @@ def main(argv: list[str] | None = None) -> int:
 
     print(json.dumps({
         "run_dir": str(run_dir),
+        "mode": manifest["mode"],
         "overall_verdict": overall_verdict,
         "overall_ok": manifest["overall_ok"],
         "human_review_required": manifest["human_review_required"],

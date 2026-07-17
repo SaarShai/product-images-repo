@@ -302,98 +302,16 @@ Notes:
 
 ## ROUTE C — Keyable fallback (same model, when alpha is not usable downstream)
 
-Same `gpt-image-1` `images/generations` call as Route A, but:
-- `background: "opaque"` (not `"transparent"`)
-- Append to the prompt (after the edge-hygiene block):
-  `"background: perfectly uniform solid pure magenta #FF00FF, flat solid fill, no watercolor texture in background, zero gradient, no magenta anywhere on the subject"`
-- **Pick the key color per image** — it must be absent from the art's own
-  palette (magenta was safe for the coral/turtle/teal palette tested; a
-  coral-pink product would need a different key color).
-
-Measured result (`REVIEW/marine-bg-complete/gen-model-matrix/INDEX.md`, Arm 3):
-the model never renders a colorimetrically pure `#FF00FF` (0% ΔE<5 to the
-literal target), but measured against its *own* actual sampled fill color:
-**68.8% of pixels ΔE<5, 0% edge-band spill, only 4 enclosed pockets** (best of
-the 3 keyable arms tested — Recraft V4 and Flux/dev were both worse, see
-Rejected routes). Treat this as "requires a real despill/key algorithm
-afterward," not a one-shot perfect key.
-
-**Cost:** usage `{input_tokens: 103, output_tokens: 6240, total: 6343}`
-(48.5s, n=1).
-
-### ROUTE C-green — chroma-key regeneration (VERIFIED default when gpt-image-2 must render the art)
-
-`gpt-image-2` refuses `background=transparent` (HTTP 400, re-confirmed this
-session). When the art must be rendered by `gpt-image-2` specifically, key
-against **green (`#00FF00`)**, not magenta — measured bg↔art separation is
-roughly **2x** magenta's (ΔE 11.5 vs 6.8) and 5.9-9 for azure variants; the
-green background stays near-flat (94.6-97.2% of pixels within ΔE<3 of the
-sampled fill) under every prompt style tested — prompt phrasing barely moves
-uniformity (`REVIEW/marine-bed-transparent/chroma-lane/chroma_gates.json`).
-
-**Gen:** OpenAI Responses API, async **background job** (not the sync
-`images/generations` call) — sync connection dies at ~75s for
-`quality=high` `1024x1536`; there is no `input_fidelity` param for this
-surface (adding one is a 400). Attach the reference image. Prompt is the
-minimal P1 style, verbatim:
-```
-solid flat uniform background exactly #00FF00, every background pixel
-identical, no gradient, no vignette, no texture, no shadow, no glow; nothing
-cropped at the edges
-```
-Full prompt variants tried:
-`REVIEW/marine-bed-transparent/chroma-lane/PROMPTS.md`. Generator:
-`REVIEW/marine-bed-transparent/chroma-lane/chroma_gen.py`.
-
-**Key:** `scripts/chroma_key.py` — a
-global Lab ΔE two-threshold alpha (enclosed pockets die by construction since
-alpha is global, not flood-fill). Use `DE_OPAQUE=11`, **not 8** — 8 leaves a
-visible green rim. Boundary unmix + despill are confined to the dilated
-transition band only; interior bubbles/translucent regions are left
-untouched.
-
-**Upscale:** `scripts/chroma_key_upscale.py`
-— nearest-RGB refill under `alpha=0` (so RealESRGAN never sees green), then
-Real-ESRGAN x4 on RGB, Lanczos on alpha, recombine. Final proof:
-`REVIEW/marine-bed-transparent/chroma-lane/final-candidate/marine_green_P1_keyed_x4.png`
-(4096x6144).
-
-**Verification:** the uniform frozen-source-mask harness at
-`REVIEW/marine-bed-transparent/verify-matrix/verify_all.py`
-(`verdict.json`/`VERDICT.md`) is the arbiter for any removal-method
-comparison, not a one-off eyeball. In that harness, `chroma_key.py` was the
-**only** method with 0 residual green pockets AND 0 deleted art pixels;
-ImageMagick/ffmpeg naive chroma-key left 864-1559 green pockets; plain
-BRIA/BiRefNet ML matting on the flat-green source deleted up to 18.7% of the
-art (thin branches) — see Rejected routes below.
-
-**Known bug to fix before relying on this at scale:**
-`tasks/double-marine-bed-wrapper-batch/alpha_aware_upscale.py`'s donor
-threshold of `1/255` lets unstable low-alpha RGB poison the refill during
-upscale — use `chroma_key_upscale.py`'s dedicated refill instead of the
-generic upscaler for chroma-keyed sources.
-
-**Better unmix/despill formulas (advisor-reviewed, not yet implemented in the
-checked-in script — apply by hand or patch `chroma_key.py` before the next
-use):**
-- Donor-regularized unmix instead of naive unmix:
-  `F = (α·D + λ·F0) / (α² + λ)`, with `λ = [0.1·(1-α)]²` (D = donor/neighbor
-  color, F0 = observed foreground-adjacent color). Naive per-pixel unmix is
-  unstable as α→0; this regularizes toward the donor.
-- Despill only in **OKLab chroma**, never a global green-channel clamp — a
-  flat `G` clamp visibly damages true yellows in the art. (v2's global +8
-  green cap below, under `--no-green-art`, is a deliberate destructive
-  exception, allowed ONLY after `NO_GREEN_ART_BLOCK` prompt exclusion is
-  verified in the raw — i.e. no essential green content to damage.)
-- Treat any painted-in color spill as a **bounded proposal**, not ground
-  truth, when deciding how far to unmix.
-- Gates worth keeping for any future chroma-key harness: recomposition error,
-  bubble ring-vs-center alpha (checks despill didn't eat translucency),
-  stratified deleted-art recall (by feature thinness, not just aggregate),
-  and an x4-upscale hidden-RGB poison test.
-  (Source: GPT-5.6 Sol Ultra advisor review, session scratchpad
-  `advisor2_reply.md` — cite as advisor guidance, not yet measured in this
-  repo's own harness.)
+Use ROUTE C only when the consumer needs a flat key color, OR when the art
+must be rendered by `gpt-image-2` specifically (which refuses
+`background=transparent` outright). The main, current path is **ROUTE
+C-green v2** directly below — it supersedes the generic magenta keying and
+the C-green v1 recipe that came before it. Those two earlier
+attempts are NOT deleted (they're real evidence, e.g. the magenta-vs-green
+separation measurement v2 depends on), but they are no longer the
+recommended path for a new task; see "Superseded experiments (historical)"
+near the end of this file if you need their detail (unmix formulas, cost
+figures, the magenta arm's measured pocket count, etc.).
 
 ### ROUTE C-green v2 — USER-VALIDATED recipe (2026-07-13, rounds 4-7, "best yet — bank it")
 
@@ -401,6 +319,50 @@ use):**
 full recipe below (prompt assemble → gen → key → decontam → purge → gate →
 review-pack) and writes a manifest.json per run; frozen prompt blocks live in
 `scripts/prompt_blocks_c_green_v2.py`.**
+
+**BLOCKING two-phase contract (mandatory — `green_purge.py` unconditionally
+destroys every key-hue pixel, so a human must look at the pre-purge raster
+before it runs; see `tasks/transparent-bg-endgame/PIPELINE.md` "D5
+blocking-contract" and `CALIBRATION.md` D5 section for the full spec):**
+
+1. Phase 1 (default, no approval flag) — generate/key/decontaminate, run
+   the `NO_GREEN_ART` palette precheck and a source→baseline D5 preservation
+   precheck, build a pre-purge review pack, and STOP at exit `3`.
+   `green_purge.py` is never invoked in this phase.
+   ```
+   /usr/bin/python3 scripts/run_c_green_v2.py --subject "..." \
+     --out-root OUT --eligibility-confirmed --ppi <panel ppi>
+   ```
+2. Human reviews `RUN/candidate_N/prepurge_review_pack/` and notes the
+   `prepurge_sha256` printed in `manifest.json`.
+3. Phase 2 (finalize) — rerun with the SAME raw and the approved hash;
+   the runner recomputes key+decontam deterministically and refuses a
+   mismatch, then runs `green_purge` → `gate_battery` (with the new D5
+   flags) → a post-purge review pack:
+   ```
+   /usr/bin/python3 scripts/run_c_green_v2.py --subject "..." \
+     --out-root OUT --eligibility-confirmed --ppi <panel ppi> \
+     --skip-gen RUN/candidate_N/raw_N.png \
+     --approve-prepurge-sha256 <the recorded prepurge_sha256>
+   ```
+4. Exit codes: `0` PASS (ship), `3` REVIEW (human must approve — this
+   includes every phase-1 stop), `2` FAIL (config error, palette violation,
+   approval-hash mismatch, or a real D5 protected-art-deletion FAIL).
+
+`--policy cgreen-v2-print-binary-v1` bundles the print-route contract into
+one flag: requires `--ppi` (hard exit-2 config error without it, no silent
+physical-units fallback), keeps `--profile print` + `--border-policy auto`,
+and binds the D5 `scale=1 / boundary_budget_px=2` 1x defaults (x4 upscale
+integration is a later lane — score the shipped x4 bytes with
+`--d5-analysis-scale 4 --d5-boundary-budget-px 8` via `gate_battery.py`
+directly, per `tasks/transparent-bg-endgame/d5-preservation-corpus.json`).
+
+D5 itself lives in `scripts/gates/d5_preservation.py` (pure masks/scoring,
+delegated to by `scripts/gates/gate_battery.py`'s `--d5-baseline
+--d5-policy --d5-analysis-scale --d5-boundary-budget-px` flags). Any real D5
+FAIL makes `gate_battery` exit `2`; a bare `--source` invocation without the
+new flags stays on the legacy advisory-only (max REVIEW) heuristic for
+backward compatibility.
 
 Full end-to-end recipe for NEW art from a model that lacks native alpha
 (`gpt-image-2`). Iterated over 4 user-feedback rounds; every element below
@@ -593,6 +555,114 @@ without that explicit sign-off.
 | **Chroma REGEN of existing images, magenta/blue key** (generate on a keyable background, then key) | Inferior fallback vs A2 when A2 is available | It redraws content like A2 but additionally leaves key-color contamination and needs despill. In the fish comparison, native-alpha ChatGPT Images had cleaner edges and substantially closer composition than `gpt-image-2` + blue key. **Superseded for the `gpt-image-2`-forced case by Route C-green** — green, not magenta/blue, is the verified key color (see Route C-green). |
 | **ImageMagick/ffmpeg naive chroma-key** on a `#00FF00` source | Rejected, measured | Left 864-1559 residual green pockets in the uniform frozen-source-mask harness (`REVIEW/marine-bed-transparent/verify-matrix/verdict.json`); `scripts/chroma_key.py`'s global Lab ΔE two-threshold method was the only one with 0 residual green and 0 deleted art. |
 | **BRIA / BiRefNet ML matting** on a flat-green source | Rejected for this art class, measured | Deleted up to **18.7%** of the art (thin coral/branch detail) in the same harness — ML segmentation trained for natural-photo subjects treats thin painted branches as background. See `REVIEW/marine-bed-transparent/verify-matrix/VERDICT.md`. |
+
+---
+
+## Superseded experiments (historical)
+
+Not rejected outright (the measurements below are real, cited evidence — the
+green-vs-magenta separation numbers ROUTE C-green v2 relies on come from
+here) but superseded as the recommended path. A rushed agent should read
+ROUTE C-green v2 above and stop there; this appendix exists so the earlier
+evidence isn't lost, not as a second route to pick from.
+
+### Generic magenta keying (superseded by ROUTE C-green)
+
+Same `gpt-image-1` `images/generations` call as Route A, but:
+- `background: "opaque"` (not `"transparent"`)
+- Append to the prompt (after the edge-hygiene block):
+  `"background: perfectly uniform solid pure magenta #FF00FF, flat solid fill, no watercolor texture in background, zero gradient, no magenta anywhere on the subject"`
+- **Pick the key color per image** — it must be absent from the art's own
+  palette (magenta was safe for the coral/turtle/teal palette tested; a
+  coral-pink product would need a different key color).
+
+Measured result (`REVIEW/marine-bg-complete/gen-model-matrix/INDEX.md`, Arm 3):
+the model never renders a colorimetrically pure `#FF00FF` (0% ΔE<5 to the
+literal target), but measured against its *own* actual sampled fill color:
+**68.8% of pixels ΔE<5, 0% edge-band spill, only 4 enclosed pockets** (best of
+the 3 keyable arms tested — Recraft V4 and Flux/dev were both worse, see
+Rejected routes above). Treat this as "requires a real despill/key algorithm
+afterward," not a one-shot perfect key.
+
+**Cost:** usage `{input_tokens: 103, output_tokens: 6240, total: 6343}`
+(48.5s, n=1).
+
+### ROUTE C-green v1 — chroma-key regeneration (superseded by ROUTE C-green v2 above)
+
+`gpt-image-2` refuses `background=transparent` (HTTP 400, re-confirmed this
+session). When the art must be rendered by `gpt-image-2` specifically, key
+against **green (`#00FF00`)**, not magenta — measured bg↔art separation is
+roughly **2x** magenta's (ΔE 11.5 vs 6.8) and 5.9-9 for azure variants; the
+green background stays near-flat (94.6-97.2% of pixels within ΔE<3 of the
+sampled fill) under every prompt style tested — prompt phrasing barely moves
+uniformity (`REVIEW/marine-bed-transparent/chroma-lane/chroma_gates.json`).
+v2 above kept the green key and `chroma_key.py`, and added the mandatory
+contour/no-filament/no-green-art prompt blocks plus `green_purge.py` and the
+D5 blocking gate; that combination is now the recommended path.
+
+**Gen:** OpenAI Responses API, async **background job** (not the sync
+`images/generations` call) — sync connection dies at ~75s for
+`quality=high` `1024x1536`; there is no `input_fidelity` param for this
+surface (adding one is a 400). Attach the reference image. Prompt is the
+minimal P1 style, verbatim:
+```
+solid flat uniform background exactly #00FF00, every background pixel
+identical, no gradient, no vignette, no texture, no shadow, no glow; nothing
+cropped at the edges
+```
+Full prompt variants tried:
+`REVIEW/marine-bed-transparent/chroma-lane/PROMPTS.md`. Generator:
+`REVIEW/marine-bed-transparent/chroma-lane/chroma_gen.py`.
+
+**Key:** `scripts/chroma_key.py` — a
+global Lab ΔE two-threshold alpha (enclosed pockets die by construction since
+alpha is global, not flood-fill). Use `DE_OPAQUE=11`, **not 8** — 8 leaves a
+visible green rim. Boundary unmix + despill are confined to the dilated
+transition band only; interior bubbles/translucent regions are left
+untouched.
+
+**Upscale:** `scripts/chroma_key_upscale.py`
+— nearest-RGB refill under `alpha=0` (so RealESRGAN never sees green), then
+Real-ESRGAN x4 on RGB, Lanczos on alpha, recombine. Final proof:
+`REVIEW/marine-bed-transparent/chroma-lane/final-candidate/marine_green_P1_keyed_x4.png`
+(4096x6144).
+
+**Verification:** the uniform frozen-source-mask harness at
+`REVIEW/marine-bed-transparent/verify-matrix/verify_all.py`
+(`verdict.json`/`VERDICT.md`) is the arbiter for any removal-method
+comparison, not a one-off eyeball. In that harness, `chroma_key.py` was the
+**only** method with 0 residual green pockets AND 0 deleted art pixels;
+ImageMagick/ffmpeg naive chroma-key left 864-1559 green pockets; plain
+BRIA/BiRefNet ML matting on the flat-green source deleted up to 18.7% of the
+art (thin branches) — see Rejected routes above.
+
+**Known bug to fix before relying on this at scale:**
+`tasks/double-marine-bed-wrapper-batch/alpha_aware_upscale.py`'s donor
+threshold of `1/255` lets unstable low-alpha RGB poison the refill during
+upscale — use `chroma_key_upscale.py`'s dedicated refill instead of the
+generic upscaler for chroma-keyed sources.
+
+**Better unmix/despill formulas (advisor-reviewed, not yet implemented in the
+checked-in script — apply by hand or patch `chroma_key.py` before the next
+use):**
+- Donor-regularized unmix instead of naive unmix:
+  `F = (α·D + λ·F0) / (α² + λ)`, with `λ = [0.1·(1-α)]²` (D = donor/neighbor
+  color, F0 = observed foreground-adjacent color). Naive per-pixel unmix is
+  unstable as α→0; this regularizes toward the donor.
+- Despill only in **OKLab chroma**, never a global green-channel clamp — a
+  flat `G` clamp visibly damages true yellows in the art. (v2's global +8
+  green cap, under `--no-green-art`, is a deliberate destructive
+  exception, allowed ONLY after `NO_GREEN_ART_BLOCK` prompt exclusion is
+  verified in the raw — i.e. no essential green content to damage.)
+- Treat any painted-in color spill as a **bounded proposal**, not ground
+  truth, when deciding how far to unmix.
+- Gates worth keeping for any future chroma-key harness: recomposition error,
+  bubble ring-vs-center alpha (checks despill didn't eat translucency),
+  stratified deleted-art recall (by feature thinness, not just aggregate),
+  and an x4-upscale hidden-RGB poison test.
+  (Source: GPT-5.6 Sol Ultra advisor review, session scratchpad
+  `advisor2_reply.md` — cite as advisor guidance, not yet measured in this
+  repo's own harness.)
 
 ---
 

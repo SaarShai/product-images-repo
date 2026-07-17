@@ -13,15 +13,20 @@ from __future__ import annotations
 import argparse
 import importlib.util
 import json
+import sys
 from pathlib import Path
 from typing import Any
 
-import numpy as np
-from PIL import Image
+try:
+    import numpy as np
+    from PIL import Image
+except ImportError:
+    print("This script requires /usr/bin/python3 (PATH python3 lacks numpy/PIL). Re-run with /usr/bin/python3.", file=sys.stderr)
+    sys.exit(2)
+
 from scipy import ndimage as ndi
 from skimage.color import deltaE_ciede2000, rgb2lab
 from skimage.measure import perimeter as measure_perimeter
-from skimage.morphology import skeletonize
 
 
 REPO = Path(__file__).resolve().parents[2]
@@ -206,6 +211,7 @@ def verdict_gate(
     crop_paths: list[str] | None = None,
     threshold: dict[str, Any] | None = None,
     skipped_reason: str | None = None,
+    advisory: bool | None = None,
 ) -> dict[str, Any]:
     if verdict not in {"PASS", "FAIL", "REVIEW"}:
         raise ValueError(f"invalid gate verdict {verdict!r}")
@@ -214,7 +220,11 @@ def verdict_gate(
         "threshold": threshold if threshold is not None else CALIBRATION[name].copy(),
         "verdict": verdict,
         "pass": verdict == "PASS",
-        "advisory": bool(CALIBRATION[name].get("advisory", False)),
+        # advisory is normally fixed per-gate (CALIBRATION[name]), but D5 is
+        # mode-dependent: blocking (advisory:false) in truth/approved-
+        # baseline/source-component modes, advisory-only in legacy
+        # source-only mode. Callers that know their mode pass it explicitly.
+        "advisory": bool(CALIBRATION[name].get("advisory", False)) if advisory is None else bool(advisory),
         "crop_paths": crop_paths or [],
     }
     if skipped_reason:
@@ -749,6 +759,28 @@ def load_aura_module():
     return module
 
 
+_D5_MODULE = None
+
+
+def load_d5_module():
+    """Load scripts/gates/d5_preservation.py (D5's real implementation --
+    this file only wires it into the CLI/battery surface)."""
+    global _D5_MODULE
+    if _D5_MODULE is not None:
+        return _D5_MODULE
+    d5_path = REPO / "scripts" / "gates" / "d5_preservation.py"
+    spec = importlib.util.spec_from_file_location("d5_preservation", d5_path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"could not load {d5_path}")
+    module = importlib.util.module_from_spec(spec)
+    # register before exec: the module's dataclasses + `from __future__
+    # import annotations` need cls.__module__ to resolve via sys.modules.
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    _D5_MODULE = module
+    return module
+
+
 def d4_aura_gate(rgba_path: Path, rgba: np.ndarray, out_dir: Path, mm_per_px: float | None) -> dict[str, Any]:
     cfg = CALIBRATION["D4_aura_gate"]
     overlay_path = out_dir / "D4_aura_gate-overlay.png"
@@ -825,107 +857,21 @@ def d4_aura_gate(rgba_path: Path, rgba: np.ndarray, out_dir: Path, mm_per_px: fl
         return verdict_gate("D4_aura_gate", worst_verdict([shell_verdict, "REVIEW"]), metric)
 
 
-def d5_hole_gate(
+def _d5_legacy_source_heuristic(
     rgba: np.ndarray,
     source_path: Path | None,
-    truth_path: Path | None,
     bg: tuple[int, int, int] | None,
     out_dir: Path,
-    mm_per_px: float | None,
 ) -> dict[str, Any]:
+    """Old (pre-D5-blocking-contract) deleted-area-fraction heuristic.
+    Advisory-only, capped at REVIEW -- kept for backward compatibility with
+    callers that pass bare `--source` without opting into the new
+    `--d5-policy`/`--d5-baseline`/`--truth` blocking surface (see
+    `d5_hole_gate` dispatcher below, which delegates the real, calibrated
+    contract to `scripts/gates/d5_preservation.py`)."""
     cfg = CALIBRATION["D5_hole_gate"]
-    if truth_path is not None:
-        truth = np.asarray(Image.open(truth_path).convert("RGBA"))
-        if truth.shape[:2] != rgba.shape[:2]:
-            raise ValueError(f"--truth size {truth.shape[:2]} does not match --rgba size {rgba.shape[:2]}")
-        pred_a = rgba[..., 3].astype(np.float32) / 255.0
-        truth_a = truth[..., 3].astype(np.float32) / 255.0
-        truth_support = truth_a > 0.01
-        labels, n = ndi.label(truth_support, structure=np.ones((3, 3), dtype=bool))
-        if n == 0:
-            return verdict_gate("D5_hole_gate", "PASS", {"mode": "truth", "truth_components": 0})
-        edt_px = ndi.distance_transform_edt(truth_support)
-        mm_scale = mm_per_px if mm_per_px is not None else 1.0
-        thickness = 2.0 * edt_px * mm_scale
-        lab = rgb2lab(truth[..., :3].astype(np.float32) / 255.0)
-        chroma = np.sqrt(lab[..., 1] ** 2 + lab[..., 2] ** 2)
-        pale = (lab[..., 0] > 85.0) & (chroma < 10.0)
-        bins = {
-            "lt_0_20mm": truth_support & (thickness < cfg["thin_bin_max_mm"]),
-            "0_20_0_50mm": truth_support & (thickness >= cfg["thin_bin_max_mm"]) & (thickness <= cfg["medium_bin_max_mm"]),
-            "gt_0_50mm": truth_support & (thickness > cfg["medium_bin_max_mm"]),
-            "pale_l_gt_85_c_lt_10": truth_support & pale,
-        }
-        recalls: list[float] = []
-        component_metrics: list[dict[str, Any]] = []
-        skeleton_breaks = 0
-        survived = 0
-        for lbl in range(1, n + 1):
-            comp = labels == lbl
-            if not comp.any():
-                continue
-            comp_survives = bool(np.max(pred_a[comp]) > 0.05)
-            survived += int(comp_survives)
-            skel = skeletonize(comp)
-            breaks = int((skel & (pred_a < 0.05)).sum())
-            skeleton_breaks += breaks
-            per_bin: dict[str, float | None] = {}
-            for name, bin_mask in bins.items():
-                q = comp & bin_mask
-                denom = float(truth_a[q].sum())
-                if denom <= 0.0:
-                    per_bin[name] = None
-                    continue
-                recall = float(np.minimum(pred_a[q], truth_a[q]).sum() / denom)
-                per_bin[name] = round(recall, 6)
-                recalls.append(recall)
-            denom_all = float(truth_a[comp].sum())
-            recall_all = float(np.minimum(pred_a[comp], truth_a[comp]).sum() / max(denom_all, 1e-6))
-            recalls.append(recall_all)
-            component_metrics.append(
-                {
-                    "label": lbl,
-                    "area_px": int(comp.sum()),
-                    "recall_all": round(recall_all, 6),
-                    "recall_by_stratum": per_bin,
-                    "survived": comp_survives,
-                    "skeleton_break_px": breaks,
-                }
-            )
-        recalls_arr = np.array(recalls, dtype=np.float32) if recalls else np.array([1.0], dtype=np.float32)
-        min_recall = float(np.min(recalls_arr))
-        p5_recall = float(np.percentile(recalls_arr, 5))
-        survival = float(survived / max(n, 1))
-        verdicts = [
-            decide_three_zone(min_recall, float(cfg["truth_recall_pass_min"]), float(cfg["truth_recall_fail_below"]), higher_is_bad=False),
-            decide_three_zone(survival, float(cfg["truth_component_survival_pass_min"]), float(cfg["truth_component_survival_fail_below"]), higher_is_bad=False),
-            "PASS" if skeleton_breaks <= cfg["truth_skeleton_breaks_pass_max"] else "FAIL",
-        ]
-        verdict = worst_verdict(verdicts)
-        deleted = truth_support & (pred_a < np.minimum(0.05, truth_a * 0.25))
-        crop_paths = component_crops(rgba, labels, [(item["label"], item["area_px"]) for item in component_metrics if not item["survived"]], out_dir, "D5_hole_gate")
-        if verdict != "PASS" and not crop_paths:
-            crop = save_crop(rgba, deleted if deleted.any() else truth_support, out_dir, "D5_hole_gate", "truth-recall")
-            if crop:
-                crop_paths.append(crop)
-        metric = {
-            "mode": "truth",
-            "truth_components": int(n),
-            "component_survival": round(survival, 6),
-            "recall_min": round(min_recall, 6),
-            "recall_p5": round(p5_recall, 6),
-            "skeleton_break_px": skeleton_breaks,
-            "thickness_units": "mm" if mm_per_px is not None else "px_fallback",
-            "physical_units": bool(mm_per_px is not None),
-            "worst_components": sorted(component_metrics, key=lambda item: item["recall_all"])[:5],
-        }
-        if mm_per_px is None:
-            metric["units_advisory"] = "ppi/px-per-mm missing; thickness bins are px fallback and D5 truth verdict is conservative"
-            verdict = worst_verdict([verdict, "REVIEW"]) if verdict == "PASS" else verdict
-        return verdict_gate("D5_hole_gate", verdict, metric, crop_paths)
-
     if source_path is None:
-        return empty_gate("D5_hole_gate", "--truth/--source not provided")
+        return empty_gate("D5_hole_gate", "--truth/--source/--d5-policy not provided")
     src = np.asarray(Image.open(source_path).convert("RGB"))
     if src.shape[:2] != rgba.shape[:2]:
         raise ValueError(f"--source size {src.shape[:2]} does not match --rgba size {rgba.shape[:2]}")
@@ -955,7 +901,7 @@ def d5_hole_gate(
     max_area = areas[0][1] if areas else 0
     suspicious = deleted_frac > cfg["deleted_area_frac_max"] or max_area > cfg["deleted_component_area_max"]
     metric = {
-        "mode": "source_heuristic",
+        "mode": "legacy_source_heuristic",
         "background_rgb": [int(x) for x in bg_rgb],
         "expected_fg_px": expected_area,
         "deleted_art_px": deleted_area,
@@ -964,11 +910,96 @@ def d5_hole_gate(
         "deleted_component_max_area_px": max_area,
         "strata": strata,
         "worst_components": comp_metrics[:5],
-        "calibration_note": "source/background heuristic is REVIEW-only; use --truth for blocking recall",
+        "calibration_note": "legacy source/background heuristic is REVIEW-only; pass --d5-policy (+ optional --d5-baseline) or --truth for the blocking D5 preservation contract",
     }
     verdict = "REVIEW" if suspicious else "PASS"
     crop_paths = component_crops(rgba, labels, areas, out_dir, "D5_hole_gate") if suspicious else []
-    return verdict_gate("D5_hole_gate", verdict, metric, crop_paths)
+    return verdict_gate("D5_hole_gate", verdict, metric, crop_paths, advisory=True)
+
+
+def _d5_blocking_gate(
+    rgba: np.ndarray,
+    source_path: Path | None,
+    truth_path: Path | None,
+    d5_baseline_path: Path | None,
+    d5_policy: str | None,
+    d5_analysis_scale: float | None,
+    d5_boundary_budget_px: float | None,
+    bg: tuple[int, int, int] | None,
+    out_dir: Path,
+) -> dict[str, Any]:
+    """Blocking D5 preservation contract -- delegates truth-oracle,
+    approved-baseline, and source-component reference construction plus
+    recall scoring entirely to `scripts/gates/d5_preservation.py`. A real
+    FAIL here always makes the battery exit 2 (advisory:false)."""
+    mod = load_d5_module()
+    key_rgb = bg if bg is not None else (0, 255, 0)
+    scale = float(d5_analysis_scale) if d5_analysis_scale is not None else 1.0
+    budget = float(d5_boundary_budget_px) if d5_boundary_budget_px is not None else 0.0
+    policy = d5_policy or "no-green-art"
+    cfg = mod.D5Thresholds(analysis_scale=scale, boundary_budget_px=budget, palette_policy=policy)
+
+    if truth_path is not None:
+        truth_rgba = load_rgba(truth_path)
+        if truth_rgba.shape[:2] != rgba.shape[:2]:
+            raise ValueError(f"--truth size {truth_rgba.shape[:2]} does not match --rgba size {rgba.shape[:2]}")
+        reference = mod.build_d5_reference(rgba[..., :3], None, truth_rgba=truth_rgba, key_rgb=key_rgb, cfg=cfg)
+    else:
+        if source_path is None:
+            raise ValueError("D5 blocking mode (--d5-policy) requires --source (--d5-baseline is optional)")
+        source_rgb = np.asarray(Image.open(source_path).convert("RGB"))
+        if source_rgb.shape[:2] != rgba.shape[:2]:
+            raise ValueError(f"--source size {source_rgb.shape[:2]} does not match --rgba size {rgba.shape[:2]}")
+        baseline_rgba = None
+        if d5_baseline_path is not None:
+            baseline_rgba = load_rgba(d5_baseline_path)
+            if baseline_rgba.shape[:2] != rgba.shape[:2]:
+                raise ValueError(f"--d5-baseline size {baseline_rgba.shape[:2]} does not match --rgba size {rgba.shape[:2]}")
+        reference = mod.build_d5_reference(source_rgb, baseline_rgba, truth_rgba=None, key_rgb=key_rgb, cfg=cfg)
+
+    result = mod.score_preservation(rgba, reference, cfg=cfg)
+    crop_paths: list[str] = []
+    if result.mask is not None and result.mask.any():
+        crop = save_crop(rgba, result.mask, out_dir, "D5_hole_gate", "deleted-core")
+        if crop:
+            crop_paths.append(crop)
+    threshold = {
+        "mode": reference.mode,
+        "analysis_scale": scale,
+        "boundary_budget_px": budget,
+        "palette_policy": policy,
+        "note": "blocking (advisory:false) -- delegated to scripts/gates/d5_preservation.py",
+    }
+    return verdict_gate("D5_hole_gate", result.verdict, result.metric, crop_paths, threshold=threshold, advisory=False)
+
+
+def d5_hole_gate(
+    rgba: np.ndarray,
+    source_path: Path | None,
+    truth_path: Path | None,
+    bg: tuple[int, int, int] | None,
+    out_dir: Path,
+    mm_per_px: float | None,
+    d5_baseline_path: Path | None = None,
+    d5_policy: str | None = None,
+    d5_analysis_scale: float | None = None,
+    d5_boundary_budget_px: float | None = None,
+) -> dict[str, Any]:
+    """D5 dispatcher. `mm_per_px` is accepted for call-site compatibility but
+    unused -- D5's scale/boundary metadata is explicit (`--d5-analysis-scale`
+    / `--d5-boundary-budget-px`), never inferred from PPI.
+
+    Blocking (advisory:false): `--truth` (exact oracle) or `--d5-policy`
+    (approved-baseline via `--d5-baseline`, or source-component mode without
+    a baseline). Advisory-only, max REVIEW: legacy bare `--source` with
+    neither of the above."""
+    del mm_per_px
+    if truth_path is not None or d5_policy is not None:
+        return _d5_blocking_gate(
+            rgba, source_path, truth_path, d5_baseline_path, d5_policy,
+            d5_analysis_scale, d5_boundary_budget_px, bg, out_dir,
+        )
+    return _d5_legacy_source_heuristic(rgba, source_path, bg, out_dir)
 
 
 def d6_spill_gate(rgba: np.ndarray, bg: tuple[int, int, int] | None, out_dir: Path, mm_per_px: float | None) -> dict[str, Any]:
@@ -1144,6 +1175,10 @@ def run_battery(
     px_per_mm: float | None = None,
     panels: list[tuple[int, int, int]] | None = None,
     border_policy: str = "auto",
+    d5_baseline_path: Path | None = None,
+    d5_policy: str | None = None,
+    d5_analysis_scale: float | None = None,
+    d5_boundary_budget_px: float | None = None,
 ) -> dict[str, Any]:
     out_dir.mkdir(parents=True, exist_ok=True)
     rgba = load_rgba(rgba_path)
@@ -1155,7 +1190,11 @@ def run_battery(
         "D3a_alpha_pockets": d3a_alpha_pockets(rgba, out_dir, mm_per_px),
         "D3b_retained_background": d3b_retained_background(rgba, out_dir, bg_color),
         "D4_aura_gate": d4_aura_gate(rgba_path, rgba, out_dir, mm_per_px),
-        "D5_hole_gate": d5_hole_gate(rgba, source_path, truth_path, bg_color, out_dir, mm_per_px),
+        "D5_hole_gate": d5_hole_gate(
+            rgba, source_path, truth_path, bg_color, out_dir, mm_per_px,
+            d5_baseline_path=d5_baseline_path, d5_policy=d5_policy,
+            d5_analysis_scale=d5_analysis_scale, d5_boundary_budget_px=d5_boundary_budget_px,
+        ),
         "D6_spill_gate": d6_spill_gate(rgba, bg_color, out_dir, mm_per_px),
         "D7_border_gate": d7_border_gate(rgba, out_dir, border_policy),
         "D8_alpha_sanity": d8_alpha_sanity(rgba, out_dir),
@@ -1204,7 +1243,37 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--profile", choices=("print", "soft"), default="soft")
     ap.add_argument("--border-policy", choices=("forbid", "allow", "auto"), default="auto")
     ap.add_argument("--out-dir", required=True, type=Path)
+    ap.add_argument(
+        "--d5-baseline", type=Path, default=None,
+        help="Human-approved pre-purge RGBA (e.g. decontam.png). Optional -- enables D5 approved-baseline mode "
+        "(intersects source-color evidence with this baseline's alpha as an independent second view). "
+        "Requires --d5-policy; ignored if --truth is given (truth is the stronger oracle).",
+    )
+    ap.add_argument(
+        "--d5-policy", choices=("preserve-all", "no-green-art"), default=None,
+        help="Enables the blocking D5 preservation contract (advisory:false) in source-component or "
+        "approved-baseline mode (delegated to scripts/gates/d5_preservation.py). Requires --source, "
+        "--d5-analysis-scale and --d5-boundary-budget-px (never inferred from PPI). Without this flag and "
+        "without --truth, D5 falls back to the legacy advisory-only (max REVIEW) source heuristic.",
+    )
+    ap.add_argument(
+        "--d5-analysis-scale", type=float, default=None,
+        help="D5 pixel-space scale multiplier (1 for 1x delivery, 4 for a 4x upscale). Explicit, never inferred.",
+    )
+    ap.add_argument(
+        "--d5-boundary-budget-px", type=float, default=None,
+        help="D5 permitted boundary erosion in this image's own pixel space (e.g. 2 for a 1x --erode 2 purge, "
+        "8 for that same purge's 4x upscale). Explicit, never inferred from PPI.",
+    )
     args = ap.parse_args(argv)
+
+    if args.d5_policy is not None and (args.d5_analysis_scale is None or args.d5_boundary_budget_px is None):
+        print(
+            "FAIL: --d5-policy requires --d5-analysis-scale and --d5-boundary-budget-px "
+            "(D5's scale/boundary metadata is explicit, never inferred from PPI).",
+            file=sys.stderr,
+        )
+        return 2
 
     battery = run_battery(
         args.rgba,
@@ -1217,6 +1286,10 @@ def main(argv: list[str] | None = None) -> int:
         px_per_mm=args.px_per_mm,
         panels=args.panels or [],
         border_policy=args.border_policy,
+        d5_baseline_path=args.d5_baseline,
+        d5_policy=args.d5_policy,
+        d5_analysis_scale=args.d5_analysis_scale,
+        d5_boundary_budget_px=args.d5_boundary_budget_px,
     )
     print(
         json.dumps(

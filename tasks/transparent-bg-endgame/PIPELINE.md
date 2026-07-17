@@ -62,9 +62,11 @@ this file to match.
 
 ## Route C-green v2 — USER-VALIDATED recipe (2026-07-13, rounds 4-7)
 
-**Canonical entry point: `scripts/run_c_green_v2.py` — one command runs the
-full recipe below (prompt assemble → gen → key → decontam → purge → gate →
-review-pack) and writes a manifest.json per run.**
+**Canonical entry point: `scripts/run_c_green_v2.py` — runs the full recipe
+below in TWO blocking phases (prompt assemble → gen → key → decontam →
+D5 prechecks → STOP for human sha256 approval, THEN purge → gate →
+review-pack) and writes a manifest.json per run. See "D5 blocking contract"
+below for the exact two-phase commands.**
 
 Full end-to-end recipe for NEW art from a model that lacks native alpha
 (`gpt-image-2`). Iterated over 4 user-feedback rounds; every element exists
@@ -73,7 +75,9 @@ because a defect forced it. Canonical detail + rationale:
 Runners: `tasks/transparent-bg-endgame/round7_outline/gen_round7.py` (prompt
 blocks importable from rounds 3/4/6 files alongside it).
 
-**7-step pipeline** (`REPORT.md` §7):
+**7-step pipeline** (`REPORT.md` §7), now split BLOCKING two-phase by
+`scripts/run_c_green_v2.py` (see "D5 blocking contract" below — steps 5-6
+never run until a human has approved the pre-purge bytes by hash):
 1. Compose prompt: SUBJECT + RICH_STYLE + **SIGNIFICANT_CONTOUR_BLOCK**
    (mandatory, non-negotiable framing — "clearly VISIBLE, continuous, fully
    closed dark ink contour, slim, never chunky; lineless edges = wrong
@@ -91,17 +95,59 @@ blocks importable from rounds 3/4/6 files alongside it).
    only; do not run or edit it for a new product.)
 3. `/usr/bin/python3 scripts/chroma_key.py key in.png out.png --json k.json`
 4. `/usr/bin/python3 scripts/decontam_binarize.py --rgba out.png --out d.png --bg-color '#00FF00'`
-5. `/usr/bin/python3 scripts/green_purge.py d.png p.png --no-green-art --erode 2 --band 6 --json g.json`
+   — **PHASE 1 STOP here.** `d.png` is scored by `d5_preservation.py`'s
+   `NO_GREEN_ART` palette precheck and a source→baseline preservation
+   precheck; a pre-purge review pack is built; `prepurge_sha256 =
+   sha256(d.png)` is recorded; the runner exits `3`. `green_purge.py` is
+   never invoked in this phase.
+5. **PHASE 2**, only after a human reviews the pack and re-runs with
+   `--skip-gen raw.png --approve-prepurge-sha256 <the recorded hash>`
+   (the runner recomputes steps 3-4 deterministically and refuses a
+   mismatch): `/usr/bin/python3 scripts/green_purge.py d.png p.png --no-green-art --erode 2 --band 6 --json g.json`
    — v3 passes: alpha erode → edge-band green-dominance repaint → (under
    `--no-green-art`: band declamp, global +8 green cap, geometry-restricted
    olive-notch kill via concave-notch morphological-closing mask, dark-khaki
    neutralize) → small-component near-key ΔE00 kill → strong-green speck
    kill (inscribed-radius-protected so sage seaweed survives) → trapped-bg
    removal → converging dulling sweep.
-6. `/usr/bin/python3 scripts/gates/gate_battery.py --rgba p.png --source raw.png --bg-color '#00FF00' --profile print --out-dir gates/`
+6. `/usr/bin/python3 scripts/gates/gate_battery.py --rgba p.png --source raw.png --bg-color '#00FF00' --d5-baseline d.png --d5-policy no-green-art --d5-analysis-scale 1 --d5-boundary-budget-px 2 --profile print --out-dir gates/`
+   — D5 is now BLOCKING (`advisory:false`): any real protected-art deletion
+   makes this exit `2`.
 7. Judge crops at **4× LANCZOS AND 12× NEAREST** on junction/notch pixels —
    board-scale and even 4× hide the artifacts the user will find. Show boards
    + fullres in `REVIEW/<task>/`.
+
+### D5 blocking contract (mandatory, 2026-07-16)
+
+`green_purge.py` unconditionally destroys every key-hue pixel — the only
+safeguard against silent art loss is a human looking at the pre-purge
+raster BEFORE it runs, bound by a SHA-256 the runner refuses to accept a
+mismatch on. `scripts/run_c_green_v2.py` enforces this as two phases:
+
+```bash
+# Phase 1 — stop, review candidate_N/prepurge_review_pack/
+/usr/bin/python3 scripts/run_c_green_v2.py --subject "..." \
+  --out-root OUT --eligibility-confirmed --ppi <panel ppi>
+# exit 3; manifest.json candidates[0].pipeline.prepurge_sha256 is the hash
+
+# Phase 2 — finalize the EXACT reviewed bytes (never a fresh generation)
+/usr/bin/python3 scripts/run_c_green_v2.py --subject "..." \
+  --out-root OUT --eligibility-confirmed --ppi <panel ppi> \
+  --skip-gen OUT/RUN/candidate_N/raw_N.png \
+  --approve-prepurge-sha256 <the recorded prepurge_sha256>
+# exit 0 PASS / 3 REVIEW (human approves) / 2 FAIL (mismatch, palette
+# violation, or a real D5 protected-art-deletion FAIL)
+```
+
+`--policy cgreen-v2-print-binary-v1` bundles the print-route contract
+(requires `--ppi`, no silent physical-units fallback; `--profile print` +
+`--border-policy auto`; D5 `scale=1/budget=2` 1x defaults) into one flag.
+Full algorithm, thresholds, and calibration evidence:
+`tasks/transparent-bg-endgame/CALIBRATION.md` ("v5 D5 Blocking-Contract
+Notes") and `tasks/transparent-bg-endgame/d5-preservation-corpus.json`
+(frozen accepted-artifact hashes + scale/boundary metadata). D5's real
+implementation is `scripts/gates/d5_preservation.py`; `gate_battery.py`
+delegates to it.
 
 **Measured result (round 7):** both candidates PASS all hard gates incl. the
 halo gate (H_L 0.0 on r2); band-green contamination collapsed vs round 6

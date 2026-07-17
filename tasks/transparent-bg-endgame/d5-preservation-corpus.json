@@ -1,0 +1,74 @@
+{
+  "$schema_note": "Frozen accepted-artifact paths + scale/boundary metadata for the D5 preservation calibration procedure (scripts/gates/d5_preservation.py). Calibration rule: accepted pairs listed here must never FAIL D5 (score_preservation); tests/test_d5_preservation.py::test_round7_accepted_corpus_passes asserts PASS + aggregate_core_recall >= 0.9995 for every entry. sha256 pins the exact bytes these thresholds were validated against -- if a file's hash drifts, re-run the calibration procedure before trusting the entry again.",
+  "key_rgb": [0, 255, 0],
+  "policy": "no-green-art",
+  "pairs": [
+    {
+      "id": "H-G2-OUT-GREEN-r1-1x",
+      "scale": 1,
+      "boundary_budget_px": 2,
+      "source": "tasks/transparent-bg-endgame/round7_outline/raws/H-G2-OUT-GREEN-r1.png",
+      "baseline": "tasks/transparent-bg-endgame/round7_outline/processed/H-G2-OUT-GREEN-r1.png",
+      "final": "tasks/transparent-bg-endgame/round7_outline/processed/H-G2-OUT-GREEN-r1-purged.png",
+      "sha256": {
+        "source": "ae4a79b09b811e6c7936b566c6631cd3dccf6c373b6f9316372f6ffea1c7d6d7",
+        "baseline": "9c47030ee7bb7e2f65d5a10cb4e78a00fc48cff7e68c125f8a4fb5b03fda50c0",
+        "final": "abbd49289d6fc6b4194567d688c5a348245f5650b46a402b945e05e58ea46384"
+      },
+      "measured_aggregate_core_recall": 1.0,
+      "note": "1x purged output, budget=2 -- green_purge --erode 2 default. Baseline = pre-purge decontam.png (human-approved second view)."
+    },
+    {
+      "id": "H-G2-OUT-GREEN-r2-1x",
+      "scale": 1,
+      "boundary_budget_px": 2,
+      "source": "tasks/transparent-bg-endgame/round7_outline/raws/H-G2-OUT-GREEN-r2.png",
+      "baseline": "tasks/transparent-bg-endgame/round7_outline/processed/H-G2-OUT-GREEN-r2.png",
+      "final": "tasks/transparent-bg-endgame/round7_outline/processed/H-G2-OUT-GREEN-r2-purged.png",
+      "sha256": {
+        "source": "b6cd7e4757c861575c687c89c2f198d7ee17044bcb8f384d3ad5d586d3bb8651",
+        "baseline": "dfdc8ff999f1d48a1e7c718e65934b694cac7b5f7b7f12c8e2d944fd62c1a7e0",
+        "final": "fc9db8d641bfcd0bac21fb587d8256526f4c5dc6d41d34d0241733b65918d2f8"
+      },
+      "measured_aggregate_core_recall": 1.0,
+      "note": "1x purged output, budget=2."
+    },
+    {
+      "id": "H-G2-OUT-GREEN-r1-x4",
+      "scale": 4,
+      "boundary_budget_px": 8,
+      "source": "tasks/transparent-bg-endgame/round7_outline/x4/H-G2-OUT-GREEN-r1-raw-x4-for-gate.png",
+      "baseline": null,
+      "final": "tasks/transparent-bg-endgame/round7_outline/x4/H-G2-OUT-GREEN-r1-x4.png",
+      "sha256": {
+        "source": "5598408e13c5aa65557ea95ed28bce9056c6fc72cf66852d09f9a8d72923923e",
+        "baseline": null,
+        "final": "178ce5cef4fdd7f0fae2280644deda878e79e0f26ded3dcc14507e3484ab1fe9"
+      },
+      "measured_aggregate_core_recall": 1.0,
+      "note": "Existing POST-PURGE x4 evidence (chroma_key_upscale.py on the already-purged 1x art). Because the purge's 2px erosion happened BEFORE the x4 upscale, the equivalent erosion budget in x4 pixel space is 2*4=8, not 2. Using budget=2 here falsely reports ~0.78-0.86% recall loss -- the scale metadata is load-bearing. Source-only mode (no independent baseline at x4)."
+    },
+    {
+      "id": "H-G2-OUT-GREEN-r2-x4",
+      "scale": 4,
+      "boundary_budget_px": 8,
+      "source": "tasks/transparent-bg-endgame/round7_outline/x4/H-G2-OUT-GREEN-r2-raw-x4-for-gate.png",
+      "baseline": null,
+      "final": "tasks/transparent-bg-endgame/round7_outline/x4/H-G2-OUT-GREEN-r2-x4.png",
+      "sha256": {
+        "source": "d6f50866db6204f5941806bbdca00a3c15f3dce842f5711bd2f24ce7bd9287d1",
+        "baseline": null,
+        "final": "21a0c959b9ab995a81ff158d3ba9366d4c9542faa670da0552389e5c7e82c769"
+      },
+      "measured_aggregate_core_recall": 1.0,
+      "note": "Existing post-purge x4 evidence, budget=8. See r1-x4 note for why budget must scale with the upscale factor."
+    }
+  ],
+  "calibration_procedure": [
+    "1. Freeze the accepted pairs and their scale/boundary metadata above.",
+    "2. Emit all raw component metrics before choosing thresholds (score_preservation's metric dict).",
+    "3. Set thresholds no tighter than the worst accepted result plus margin (see D5Thresholds defaults in scripts/gates/d5_preservation.py and the PASS/FAIL table in tasks/transparent-bg-endgame/CALIBRATION.md).",
+    "4. Require every synthetic deletion mutation in tests/test_d5_preservation.py to exit non-PASS (REVIEW for fine components, FAIL for anchor/skeleton/island violations).",
+    "5. Refuse threshold changes unless accepted outputs above remain non-FAIL and all blocking mutations still FAIL."
+  ]
+}
