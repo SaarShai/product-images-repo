@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-07-17T08:46:48Z",
+  "task": "geometry-evidentiary-princess-n02",
+  "title": "Princess narrow panel 02 evidentiary run",
+  "copy_assets": true,
+  "source_svg_original": "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/princess/princess narrow panel 02 with window.svg",
+  "task_svg": "tasks/geometry-evidentiary-princess-n02/source/template.svg",
+  "style_references_original": [
+    "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/princess/Images/princess style 01.png",
+    "/Users/za/Library/CloudStorage/GoogleDrive-saar.shai@gmail.com/My Drive/Wanderland Folder/Files/Products/Screenery/production files/princess/Images/princess style 02.png"
+  ],
+  "task_style_references": [
+    "tasks/geometry-evidentiary-princess-n02/refs/princess style 01.png",
+    "tasks/geometry-evidentiary-princess-n02/refs/princess style 02.png"
+  ],
+  "workflow": "docs/svg-template-illustration-workflow.md",
+  "base_workflow": "docs/svg-template-illustration-workflow.md",
+  "skill": ".codex/skills/svg-geometry-style-illustration/SKILL.md",
+  "review_checklist": "docs/review-judge-checklist.md"
+}

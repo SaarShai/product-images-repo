@@ -1,0 +1,19 @@
+{
+  "template_svg": "tasks/geometry-evidentiary-princess-n02/source/template.svg",
+  "geometry_report": "svg-geometry-report.md",
+  "status": "draft-fill-before-generation",
+  "geometry_roles": {
+    "outer_contours": [],
+    "paintable_regions": [],
+    "internal_cutouts": [],
+    "keep_clear_zones": [],
+    "visual_guides": []
+  },
+  "safe_pockets": [],
+  "quiet_background_zones": [],
+  "no_focal_motif_zones": [],
+  "notes": [
+    "Fill this from the SVG geometry report before prompting or generating.",
+    "Stop and inspect the SVG directly if element roles are ambiguous."
+  ]
+}

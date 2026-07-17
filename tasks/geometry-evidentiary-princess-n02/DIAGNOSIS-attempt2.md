@@ -26,3 +26,9 @@ Next-lane candidates (not started): fix A (sys.executable + check returncode),
 fix B (parse <rect>, exclude internal_cutout paths from paintable union) each
 with fail-pre-fix fixtures; contract/workflow: socket zones must be masked out
 of gen + composited after (region-map/aperture-lock precedent).
+
+## Outcome (2026-07-17)
+
+A+B fixed and cold-verified at 40cbd70. C open. Run CLOSED as negative result
+by user verdict — see VERDICT.md (4 circled defects: overlay red-line error,
+bird over border, window in slot keep-clear, truncated spires).
