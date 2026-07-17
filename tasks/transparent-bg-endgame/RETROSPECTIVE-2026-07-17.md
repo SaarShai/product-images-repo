@@ -41,6 +41,8 @@ DIAGNOSIS.md, VERDICT.md, battery JSONs, git history).
   entries; also served as the cold weakest-executor for the skill test.
 
 ## Remaining risks
-- `evidentiary-run` is proposed/slash-only: it must be invoked as
-  `/evidentiary-run` until telemetry promotes it (3 consecutive hits).
+- `evidentiary-run` is proposed (model-invocation off until 3 telemetry hits),
+  but AGENT-triggered via the boot-resident CLAUDE.md/AGENTS.md/GEMINI.md
+  "Pipeline validation = evidentiary run" rule — the user never types it
+  (user correction 2026-07-17). Agents record each use via telemetry.
 - Kimi K3 unavailability is provider-side; retry on next task, don't assume.
