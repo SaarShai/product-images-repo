@@ -8,7 +8,7 @@ emits additionalContext only on a real index hit; every other path is a clean
 no-op (exit 0, no stdout).
 
 Cases:
-  0. skill metadata opts out       -> auto-install: false
+  0. skill metadata is opt-in      -> auto-install: false
   1. valid token + index hit      -> additionalContext on stdout, exit 0
   2. Read tool                    -> no stdout, exit 0 (never gate Read)
   3. <4-char pattern              -> no stdout, exit 0
