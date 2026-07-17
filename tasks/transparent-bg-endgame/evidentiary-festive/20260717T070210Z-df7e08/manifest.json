@@ -1,0 +1,84 @@
+{
+  "run_id": "20260717T070210Z-df7e08",
+  "mode": "finalize",
+  "started_at": "2026-07-17T07:02:10.962941+00:00",
+  "args": {
+    "subject": "hand-painted festive ornament elements as separate scattered pieces: glass ornament baubles with speckled glazes, holly leaves with clustered red berries, cream icing swirls and dots \u2014 watercolor and ink, storybook style",
+    "out_root": "tasks/transparent-bg-endgame/evidentiary-festive",
+    "n": 1,
+    "size": "1024x1536",
+    "skip_gen": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T062245Z-a9ee32/raw_1.png",
+    "ppi": 260.0,
+    "policy": "cgreen-v2-print-binary-v1",
+    "approve_prepurge_sha256": "b4187db11cbb21578daa4a875dd0d07c8b32fbe9c24c641f114fa204f4347baa",
+    "green_art_present": true
+  },
+  "prompt_sha256": "282beaa67baa43f454e3007ff8294adfc690ffa4267ae884f5b8ba0e141cee07",
+  "model": "gpt-image-2",
+  "script_git_commit": "f57bc1a76f01c0f80a44f82648689e91d59849f5",
+  "physical_units": true,
+  "d5_analysis_scale": 1.0,
+  "d5_boundary_budget_px": 2.0,
+  "eligibility": {
+    "eligibility_confirmed": true,
+    "green_art_present": true,
+    "d5_palette_policy": "preserve-all"
+  },
+  "candidates": [
+    {
+      "id": "skip-gen-1",
+      "source": "skip-gen",
+      "raw_path": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T062245Z-a9ee32/raw_1.png",
+      "raw_sha256": "a9a856f4d652f108aa331e8ff31caea43a73975fd5ac1ad593187b5d0da8b7f1",
+      "prompt_sha256_at_gen": null,
+      "note": "reused an existing raw; stored prompt-hash not verified because none was recorded for this file",
+      "cand_dir": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T070210Z-df7e08/candidate_1",
+      "pipeline": {
+        "stage_results": [
+          {
+            "stage": "chroma_key",
+            "returncode": 0,
+            "stderr": "/Users/za/Documents/product images repo/scripts/chroma_key.py:375: DeprecationWarning: 'mode' parameter is deprecated and will be removed in Pillow 13 (2026-10-15)\n  Image.fromarray(result[\"rgba\"], mode=\"RGBA\").save(args.out)\n"
+          },
+          {
+            "stage": "decontam_binarize",
+            "returncode": 0,
+            "stderr": "/Users/za/Documents/product images repo/scripts/decontam_binarize.py:541: DeprecationWarning: 'mode' parameter is deprecated and will be removed in Pillow 13 (2026-10-15)\n  Image.fromarray(out, \"RGBA\").save(args.out)\n/Users/za/Documents/product images repo/scripts/decontam_binarize.py:542: DeprecationWarning: 'mode' parameter is deprecated and will be removed in Pillow 13 (2026-10-15)\n  Image.fromarray(soft_alpha, \"L\").save(softalpha_path(args.out))\n"
+          },
+          {
+            "stage": "approval_sha_check",
+            "approved": "b4187db11cbb21578daa4a875dd0d07c8b32fbe9c24c641f114fa204f4347baa",
+            "recomputed": "b4187db11cbb21578daa4a875dd0d07c8b32fbe9c24c641f114fa204f4347baa",
+            "match": true
+          },
+          {
+            "stage": "green_purge",
+            "returncode": 0,
+            "stderr": "",
+            "green_art_present": true
+          },
+          {
+            "stage": "gate_battery",
+            "returncode": 2,
+            "stdout": "{\n  \"verdict\": \"FAIL\",\n  \"pass\": false,\n  \"exit_code\": 2,\n  \"battery_json\": \"tasks/transparent-bg-endgame/evidentiary-festive/20260717T070210Z-df7e08/candidate_1/gates/battery.json\"\n}\n",
+            "stderr": ""
+          },
+          {
+            "stage": "review_pack",
+            "n_files": 18
+          }
+        ],
+        "verdict": "FAIL",
+        "phase": "finalize",
+        "advisory_only": false,
+        "ok": false,
+        "final_sha256": "0acb6358ebc29e34c132711939a674f88079fb98c61cd7eb2f634a39f7709064",
+        "gate_verdict": "FAIL"
+      }
+    }
+  ],
+  "finished_at": "2026-07-17T07:02:25.460307+00:00",
+  "overall_verdict": "FAIL",
+  "overall_ok": false,
+  "human_review_required": false
+}

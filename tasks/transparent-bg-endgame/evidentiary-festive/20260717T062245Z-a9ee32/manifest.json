@@ -1,0 +1,193 @@
+{
+  "run_id": "20260717T062245Z-a9ee32",
+  "mode": "prepurge_stop",
+  "started_at": "2026-07-17T06:22:45.273030+00:00",
+  "args": {
+    "subject": "hand-painted festive ornament elements as separate scattered pieces: glass ornament baubles with speckled glazes, holly leaves with clustered red berries, cream icing swirls and dots \u2014 watercolor and ink, storybook style",
+    "out_root": "tasks/transparent-bg-endgame/evidentiary-festive",
+    "n": 1,
+    "size": "1024x1536",
+    "skip_gen": null,
+    "ppi": 260.0,
+    "policy": "cgreen-v2-print-binary-v1",
+    "approve_prepurge_sha256": null
+  },
+  "prompt_sha256": "282beaa67baa43f454e3007ff8294adfc690ffa4267ae884f5b8ba0e141cee07",
+  "model": "gpt-image-2",
+  "script_git_commit": "f57bc1a76f01c0f80a44f82648689e91d59849f5",
+  "physical_units": true,
+  "d5_analysis_scale": 1.0,
+  "d5_boundary_budget_px": 2.0,
+  "candidates": [
+    {
+      "id": "gen-1",
+      "source": "generated",
+      "response_id": "resp_066bbe91c83b3aba006a59ca36c95c819fb996f3f1c20f05e8",
+      "raw_path": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T062245Z-a9ee32/raw_1.png",
+      "raw_sha256": "a9a856f4d652f108aa331e8ff31caea43a73975fd5ac1ad593187b5d0da8b7f1",
+      "prompt_sha256_at_gen": "282beaa67baa43f454e3007ff8294adfc690ffa4267ae884f5b8ba0e141cee07",
+      "cand_dir": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T062245Z-a9ee32/candidate_1",
+      "pipeline": {
+        "stage_results": [
+          {
+            "stage": "chroma_key",
+            "returncode": 0,
+            "stderr": "/Users/za/Documents/product images repo/scripts/chroma_key.py:375: DeprecationWarning: 'mode' parameter is deprecated and will be removed in Pillow 13 (2026-10-15)\n  Image.fromarray(result[\"rgba\"], mode=\"RGBA\").save(args.out)\n"
+          },
+          {
+            "stage": "decontam_binarize",
+            "returncode": 0,
+            "stderr": "/Users/za/Documents/product images repo/scripts/decontam_binarize.py:541: DeprecationWarning: 'mode' parameter is deprecated and will be removed in Pillow 13 (2026-10-15)\n  Image.fromarray(out, \"RGBA\").save(args.out)\n/Users/za/Documents/product images repo/scripts/decontam_binarize.py:542: DeprecationWarning: 'mode' parameter is deprecated and will be removed in Pillow 13 (2026-10-15)\n  Image.fromarray(soft_alpha, \"L\").save(softalpha_path(args.out))\n"
+          },
+          {
+            "stage": "d5_no_green_art_palette_precheck",
+            "verdict": "PASS",
+            "metric": {
+              "scale": 1.0,
+              "edge_band_px": 6.0,
+              "interior_px": 579772,
+              "prohibited_green_px": 469,
+              "max_component_area_px": 13,
+              "max_component_radius_px": 1.0,
+              "thresholds": {
+                "pass_area_max_px": 16.0,
+                "pass_radius_max_px": 1.0,
+                "fail_area_min_px": 64.0,
+                "fail_radius_min_px": 3.0
+              },
+              "components": [
+                {
+                  "label": 208,
+                  "area_px": 13,
+                  "radius_px": 1.0
+                },
+                {
+                  "label": 13,
+                  "area_px": 10,
+                  "radius_px": 1.0
+                },
+                {
+                  "label": 17,
+                  "area_px": 10,
+                  "radius_px": 1.0
+                },
+                {
+                  "label": 35,
+                  "area_px": 10,
+                  "radius_px": 1.0
+                },
+                {
+                  "label": 63,
+                  "area_px": 6,
+                  "radius_px": 1.0
+                },
+                {
+                  "label": 193,
+                  "area_px": 6,
+                  "radius_px": 1.0
+                },
+                {
+                  "label": 207,
+                  "area_px": 5,
+                  "radius_px": 1.0
+                },
+                {
+                  "label": 268,
+                  "area_px": 5,
+                  "radius_px": 1.0
+                }
+              ]
+            }
+          },
+          {
+            "stage": "d5_source_baseline_preservation_precheck",
+            "verdict": "PASS",
+            "metric": {
+              "mode": "source_only",
+              "scale": 1.0,
+              "boundary_budget_px": 0.0,
+              "reference_support_px": 635941,
+              "core_px": 635941,
+              "aggregate_core_recall": 1.0,
+              "aggregate_verdict": "PASS",
+              "min_anchor_component_recall": 1.0,
+              "anchor_verdict": "PASS",
+              "anchor_components": [
+                {
+                  "label": 1,
+                  "area_px": 66669,
+                  "radius_px": 49.041,
+                  "recall": 1.0
+                },
+                {
+                  "label": 2,
+                  "area_px": 60363,
+                  "radius_px": 133.843,
+                  "recall": 1.0
+                },
+                {
+                  "label": 3,
+                  "area_px": 32902,
+                  "radius_px": 95.016,
+                  "recall": 1.0
+                },
+                {
+                  "label": 4,
+                  "area_px": 53628,
+                  "radius_px": 126.052,
+                  "recall": 1.0
+                },
+                {
+                  "label": 5,
+                  "area_px": 23697,
+                  "radius_px": 41.34,
+                  "recall": 1.0
+                },
+                {
+                  "label": 6,
+                  "area_px": 12611,
+                  "radius_px": 35.44,
+                  "recall": 1.0
+                },
+                {
+                  "label": 7,
+                  "area_px": 4152,
+                  "radius_px": 35.735,
+                  "recall": 1.0
+                },
+                {
+                  "label": 8,
+                  "area_px": 55510,
+                  "radius_px": 110.535,
+                  "recall": 1.0
+                }
+              ],
+              "any_anchor_component_entirely_lost": false,
+              "fine_components_lossy": [],
+              "deleted_core_max_island_area_px": 0,
+              "deleted_core_max_island_radius_px": 0.0,
+              "missing_skeleton_run_px": 0,
+              "n_anchor_components": 27,
+              "n_fine_components": 4
+            }
+          },
+          {
+            "stage": "prepurge_review_pack",
+            "n_files": 17
+          }
+        ],
+        "verdict": "REVIEW",
+        "phase": "prepurge_stop",
+        "ok": false,
+        "prepurge_sha256": "b4187db11cbb21578daa4a875dd0d07c8b32fbe9c24c641f114fa204f4347baa",
+        "decontam_path": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T062245Z-a9ee32/candidate_1/decontam.png",
+        "keyed_path": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T062245Z-a9ee32/candidate_1/keyed.png",
+        "note": "Pre-purge human stop. Review tasks/transparent-bg-endgame/evidentiary-festive/20260717T062245Z-a9ee32/candidate_1/prepurge_review_pack/, then finalize with --skip-gen tasks/transparent-bg-endgame/evidentiary-festive/20260717T062245Z-a9ee32/raw_1.png --approve-prepurge-sha256 b4187db11cbb21578daa4a875dd0d07c8b32fbe9c24c641f114fa204f4347baa"
+      }
+    }
+  ],
+  "finished_at": "2026-07-17T06:25:46.453863+00:00",
+  "overall_verdict": "REVIEW",
+  "overall_ok": false,
+  "human_review_required": true
+}

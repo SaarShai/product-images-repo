@@ -109,10 +109,16 @@ never run until a human has approved the pre-purge bytes by hash):
    olive-notch kill via concave-notch morphological-closing mask, dark-khaki
    neutralize) → small-component near-key ΔE00 kill → strong-green speck
    kill (inscribed-radius-protected so sage seaweed survives) → trapped-bg
-   removal → converging dulling sweep.
+   removal → converging dulling sweep. **`--no-green-art` is palette-destructive
+   BY DESIGN and only correct when the subject truly has no green art** — if
+   the subject has essential green/teal content (holly, a teal bauble, a
+   green product), pass `--green-art-present` to `run_c_green_v2.py` instead
+   of confirming the "no essential green content" eligibility box; never run
+   the bare `--no-green-art` default against such a subject (see "Eligibility
+   is BINDING" below).
 6. `/usr/bin/python3 scripts/gates/gate_battery.py --rgba p.png --source raw.png --bg-color '#00FF00' --d5-baseline d.png --d5-policy no-green-art --d5-analysis-scale 1 --d5-boundary-budget-px 2 --profile print --out-dir gates/`
    — D5 is now BLOCKING (`advisory:false`): any real protected-art deletion
-   makes this exit `2`.
+   makes this exit `2`. (`--d5-policy preserve-all` under `--green-art-present`.)
 7. Judge crops at **4× LANCZOS AND 12× NEAREST** on junction/notch pixels —
    board-scale and even 4× hide the artifacts the user will find. Show boards
    + fullres in `REVIEW/<task>/`.
@@ -138,6 +144,28 @@ mismatch on. `scripts/run_c_green_v2.py` enforces this as two phases:
 # exit 0 PASS / 3 REVIEW (human approves) / 2 FAIL (mismatch, palette
 # violation, or a real D5 protected-art-deletion FAIL)
 ```
+
+### Eligibility is BINDING: `--green-art-present` (2026-07-17)
+
+The eligibility checklist's "no essential green content?" question used to be
+advisory only — nothing enforced the answer, and a subject with real green art
+(confirmed anyway) got silently damaged by the default `--no-green-art` purge
+(observed-failure: `tasks/transparent-bg-endgame/evidentiary-festive/DIAGNOSIS.md`
+finding 3, holly/teal on the festive subject). `run_c_green_v2.py` now takes a
+`--green-art-present` flag (in addition to `--eligibility-confirmed`, kept for
+backward compat = all-clear):
+- **Set** it for any subject with essential green/teal content. This switches
+  the runner to preserve-green mode end-to-end: the phase-1 NO_GREEN_ART
+  palette precheck is skipped (it would false-positive on legitimate green),
+  the source→baseline preservation precheck runs under `preserve-all` policy,
+  `green_purge.py` runs WITHOUT `--no-green-art` (only literal near-key pixels
+  are removed), and `gate_battery.py` is gated with `--d5-policy preserve-all`
+  instead of `no-green-art`.
+- **Leave it unset** for subjects with no green content — unchanged
+  destructive `--no-green-art` behavior (backward compatible default).
+- Both the confirmation and the green-art-present answer are recorded
+  unconditionally in `manifest.json["eligibility"]` (forensic record, not
+  just when True).
 
 `--policy cgreen-v2-print-binary-v1` bundles the print-route contract
 (requires `--ppi`, no silent physical-units fallback; `--profile print` +

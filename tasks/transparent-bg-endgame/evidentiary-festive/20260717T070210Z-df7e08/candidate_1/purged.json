@@ -1,0 +1,21 @@
+{
+  "eroded_px": 28862,
+  "band_green_px": 1016,
+  "band_green_unfilled_px": 0,
+  "global_kill_px": 0,
+  "protected_components": 0,
+  "speck_kill_px": 32,
+  "speck_protected_px": 3,
+  "speck_kill_unfilled_px": 0,
+  "verify_iterations": 0,
+  "trapped_kept_near_art_px": 584,
+  "trapped_bg_px": 13888,
+  "trapped_protected_px": 3375,
+  "final_sweep_iterations": 0,
+  "final_sweep_px": 0,
+  "residual_strong_key_px": 0,
+  "verify_converged": true,
+  "final_sweep_converged": true,
+  "total_unfilled_px": 0,
+  "converged": true
+}

@@ -140,6 +140,11 @@ DEFAULT_PANELS: tuple[tuple[int, int, int], ...] = (
     (255, 0, 255),
 )
 
+# D1 h_key green-sector gate: a pixel's raw sRGB channel margin (0-255 scale)
+# required for it to be counted as contributing key-color pull. Prevents
+# warm-yellow (G≈R) gradients from false-positiving as green-key spill.
+H_KEY_GREEN_MARGIN = 10
+
 PRESCRIBED_ACTIONS = {
     "D1_halo_gate": "halo -> decontaminate from stored soft alpha",
     "D2_soft_alpha_fringe": "edge damage -> recover from stored soft alpha or alternate extraction",
@@ -523,7 +528,18 @@ def d1_halo_gate(
         bg_linear = srgb_to_linear(np.array(bg_color, dtype=np.uint8).reshape(1, 1, 3))[0, 0]
         denom = np.sum((bg_linear - donor_linear) ** 2, axis=2) + 1e-6
         pull = np.sum((fg_linear - donor_linear) * (bg_linear - donor_linear), axis=2) / denom
-        h_key = weighted_percentile(np.maximum(0.0, pull)[edge_band], weights[edge_band], 95.0)
+        # Only count pull for pixels whose own hue lies in the green sector
+        # (G > R + margin AND G > B + margin). Warm-yellow gradients (G≈R,
+        # e.g. gold icing edges) read as movement toward a green key color
+        # under the raw dot-product but show zero visible green; gating on
+        # green sector membership removes that false positive while still
+        # catching real green-tinted key spill.
+        fg_srgb = rgba[..., :3].astype(np.int16)
+        green_sector = (fg_srgb[..., 1] > fg_srgb[..., 0] + H_KEY_GREEN_MARGIN) & (
+            fg_srgb[..., 1] > fg_srgb[..., 2] + H_KEY_GREEN_MARGIN
+        )
+        pull_green = np.where(green_sector, pull, 0.0)
+        h_key = weighted_percentile(np.maximum(0.0, pull_green)[edge_band], weights[edge_band], 95.0)
 
     if mm_per_px is None:
         verdict = "REVIEW" if worst_h_l > cfg["h_l_pass_max"] else "PASS"

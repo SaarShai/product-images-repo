@@ -117,16 +117,22 @@ generation):
   [ ] Ink outlines acceptable? — the recipe MANDATES a visible dark ink
       contour around every shape (SIGNIFICANT_CONTOUR_BLOCK). If the product
       needs lineless/soft watercolor edges, this route is the wrong tool.
-  [ ] No essential green content? — NO_GREEN_ART_BLOCK bans bright/pure green
-      anywhere in the subject (green_purge --no-green-art then destroys ALL
-      key-hue green unconditionally). If the subject NEEDS true green
-      (e.g. a green product), this route will damage it.
+  [ ] No essential green content, OR --green-art-present passed? — by
+      default green_purge --no-green-art destroys ALL key-hue green
+      unconditionally, and the D5 palette precheck hard-fails on any
+      interior green. If the subject NEEDS true green (e.g. a green
+      product, holly, a teal bauble), do NOT confirm this box silently --
+      pass --green-art-present instead: it switches the runner to
+      preserve-green mode (green_purge WITHOUT --no-green-art, --d5-policy
+      preserve-all, NO_GREEN_ART palette precheck skipped) and records the
+      answer in manifest.json. Never run the destructive --no-green-art
+      default against a subject with essential green.
   [ ] Filaments simplifiable? — NO_FILAMENT_BLOCK requires thin
       fronds/antennae/hairlines to merge into solid painted joints. If the
       subject's identity depends on isolated hair-thin strands, this route
       will alter that geometry.
 Re-run with --eligibility-confirmed once you have verified all three for this
-subject.
+subject (add --green-art-present too if the subject has essential green).
 """
 
 GREEN_HEX = blocks.GREEN_HEX
@@ -296,10 +302,19 @@ def run_prepurge_phase(
     raw_path: Path,
     d5_analysis_scale: float = D5_ANALYSIS_SCALE,
     d5_boundary_budget_px: float = D5_BOUNDARY_BUDGET_PX,
+    green_art_present: bool = False,
 ) -> dict:
     """Phase 1: chroma_key -> decontam_binarize -> D5 NO_GREEN_ART palette
     precheck -> D5 source->baseline preservation precheck -> pre-purge review
     pack -> record prepurge_sha256. NEVER invokes green_purge.
+
+    `green_art_present=True` (BINDING eligibility mode, see --green-art-present
+    on the CLI) switches the D5 palette policy to "preserve-all" for the
+    source->baseline preservation precheck, and SKIPS the NO_GREEN_ART
+    palette precheck entirely -- that precheck exists to catch essential
+    green content before it reaches the destructive --no-green-art purge, so
+    running it against a subject the operator has declared to legitimately
+    contain green would just false-positive-FAIL every such subject.
 
     Returns {"stage_results":..., "verdict": "FAIL"|"REVIEW", "phase":
     "prepurge_stop", "ok": False, "prepurge_sha256": str|None}. "FAIL" means
@@ -337,21 +352,31 @@ def run_prepurge_phase(
     source_rgb = np.asarray(Image.open(raw_path).convert("RGB"))
     baseline_rgba = np.asarray(Image.open(decontam).convert("RGBA"))
 
-    palette_cfg = d5mod.D5Thresholds(analysis_scale=d5_analysis_scale, boundary_budget_px=0.0, palette_policy="no-green-art")
-    palette_result = d5mod.score_no_green_art(baseline_rgba, cfg=palette_cfg)
-    stages.append({"stage": "d5_no_green_art_palette_precheck", "verdict": palette_result.verdict, "metric": palette_result.metric})
+    palette_policy = "preserve-all" if green_art_present else "no-green-art"
 
-    if palette_result.verdict == "FAIL":
-        return {
-            "stage_results": stages, "verdict": "FAIL", "phase": "prepurge_stop", "ok": False,
-            "prepurge_sha256": prepurge_sha, "decontam_path": str(decontam),
-            "note": "NO_GREEN_ART palette precheck FAILED before purge -- regenerate; never purge this raw.",
-        }
+    if green_art_present:
+        stages.append({
+            "stage": "d5_no_green_art_palette_precheck",
+            "skipped": True,
+            "reason": "green-art-present: subject declared to legitimately contain green art; "
+                      "this precheck would false-positive-FAIL on it.",
+        })
+    else:
+        palette_cfg = d5mod.D5Thresholds(analysis_scale=d5_analysis_scale, boundary_budget_px=0.0, palette_policy=palette_policy)
+        palette_result = d5mod.score_no_green_art(baseline_rgba, cfg=palette_cfg)
+        stages.append({"stage": "d5_no_green_art_palette_precheck", "verdict": palette_result.verdict, "metric": palette_result.metric})
+
+        if palette_result.verdict == "FAIL":
+            return {
+                "stage_results": stages, "verdict": "FAIL", "phase": "prepurge_stop", "ok": False,
+                "prepurge_sha256": prepurge_sha, "decontam_path": str(decontam),
+                "note": "NO_GREEN_ART palette precheck FAILED before purge -- regenerate; never purge this raw.",
+            }
 
     # source -> baseline preservation sanity check: has keying/decontam
     # ITSELF already deleted real protected art, independent of the
     # not-yet-run purge step? budget=0 -- no purge erosion has happened yet.
-    preservation_cfg = d5mod.D5Thresholds(analysis_scale=d5_analysis_scale, boundary_budget_px=0.0, palette_policy="no-green-art")
+    preservation_cfg = d5mod.D5Thresholds(analysis_scale=d5_analysis_scale, boundary_budget_px=0.0, palette_policy=palette_policy)
     reference = d5mod.build_d5_reference(source_rgb, None, truth_rgba=None, key_rgb=KEY_RGB, cfg=preservation_cfg)
     preservation_result = d5mod.score_preservation(baseline_rgba, reference, cfg=preservation_cfg)
     stages.append(
@@ -391,10 +416,16 @@ def finalize_candidate(
     ppi: float | None = None,
     d5_analysis_scale: float = D5_ANALYSIS_SCALE,
     d5_boundary_budget_px: float = D5_BOUNDARY_BUDGET_PX,
+    green_art_present: bool = False,
 ) -> dict:
     """Phase 2: re-derive chroma_key + decontam_binarize deterministically
     from raw_path, refuse a prepurge_sha256 mismatch, then green_purge ->
     gate_battery (blocking D5 flags) -> post-purge review pack.
+
+    `green_art_present=True` runs `green_purge.py` WITHOUT `--no-green-art`
+    (preserve mode: only literal near-key pixels are purged, real green art
+    is left alone) and gates `gate_battery.py` with `--d5-policy
+    preserve-all` instead of `no-green-art`.
 
     Returns {"stage_results":..., "verdict": "PASS"|"REVIEW"|"FAIL",
     "phase": "finalize", "ok": bool}."""
@@ -433,20 +464,19 @@ def finalize_candidate(
             ),
         }
 
-    r = run_cmd(
-        [
-            PY, str(SCRIPTS / "green_purge.py"), str(decontam), str(purged),
-            "--no-green-art", "--erode", "2", "--band", "6", "--json", str(purge_json),
-        ]
-    )
-    stages.append({"stage": "green_purge", "returncode": r.returncode, "stderr": r.stderr[-2000:]})
+    purge_cmd = [PY, str(SCRIPTS / "green_purge.py"), str(decontam), str(purged), "--erode", "2", "--band", "6", "--json", str(purge_json)]
+    if not green_art_present:
+        purge_cmd.append("--no-green-art")
+    r = run_cmd(purge_cmd)
+    stages.append({"stage": "green_purge", "returncode": r.returncode, "stderr": r.stderr[-2000:], "green_art_present": green_art_present})
     if r.returncode != 0:
         return {"stage_results": stages, "verdict": "FAIL", "phase": "finalize", "ok": False}
 
+    d5_policy = "preserve-all" if green_art_present else "no-green-art"
     gate_cmd = [
         PY, str(SCRIPTS / "gates" / "gate_battery.py"),
         "--rgba", str(purged), "--source", str(raw_path), "--bg-color", GREEN_HEX,
-        "--d5-baseline", str(decontam), "--d5-policy", "no-green-art",
+        "--d5-baseline", str(decontam), "--d5-policy", d5_policy,
         "--d5-analysis-scale", str(d5_analysis_scale), "--d5-boundary-budget-px", str(d5_boundary_budget_px),
         "--profile", "print", "--border-policy", "auto", "--out-dir", str(gates_dir),
     ]
@@ -531,6 +561,15 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--size", default="1024x1536")
     ap.add_argument("--skip-gen", type=Path, default=None, help="reuse an existing raw instead of generating")
     ap.add_argument("--eligibility-confirmed", action="store_true")
+    ap.add_argument(
+        "--green-art-present", action="store_true",
+        help="BINDING eligibility answer: the subject legitimately has essential green/teal "
+        "content. Switches the pipeline to preserve-green mode -- green_purge runs WITHOUT "
+        "--no-green-art, gate_battery is gated with --d5-policy preserve-all (instead of "
+        "no-green-art), and the phase-1 NO_GREEN_ART palette precheck is skipped (it would "
+        "false-positive-FAIL on the declared green art). Requires --eligibility-confirmed. "
+        "The answer (True or False) is always recorded in manifest.json.",
+    )
     ap.add_argument(
         "--ppi", type=float, default=None,
         help="panel pixels-per-inch for physical-unit gate thresholds (D1/D2/D4); "
@@ -632,6 +671,7 @@ def main(argv: list[str] | None = None) -> int:
             "ppi": args.ppi,
             "policy": args.policy,
             "approve_prepurge_sha256": args.approve_prepurge_sha256,
+            "green_art_present": args.green_art_present,
         },
         "prompt_sha256": prompt_sha,
         "model": GEN_MODEL,
@@ -639,6 +679,14 @@ def main(argv: list[str] | None = None) -> int:
         "physical_units": physical_units,
         "d5_analysis_scale": D5_ANALYSIS_SCALE,
         "d5_boundary_budget_px": D5_BOUNDARY_BUDGET_PX,
+        # BINDING eligibility answers (see ELIGIBILITY_CHECKLIST / --green-art-present):
+        # recorded unconditionally, whether or not green art was declared present,
+        # so the manifest is a forensic record of what the operator answered.
+        "eligibility": {
+            "eligibility_confirmed": args.eligibility_confirmed,
+            "green_art_present": args.green_art_present,
+            "d5_palette_policy": "preserve-all" if args.green_art_present else "no-green-art",
+        },
         "candidates": [],
     }
 
@@ -697,11 +745,13 @@ def main(argv: list[str] | None = None) -> int:
             result = finalize_candidate(
                 cand_dir, raw_path, args.approve_prepurge_sha256, ppi=args.ppi,
                 d5_analysis_scale=D5_ANALYSIS_SCALE, d5_boundary_budget_px=D5_BOUNDARY_BUDGET_PX,
+                green_art_present=args.green_art_present,
             )
         else:
             result = run_prepurge_phase(
                 cand_dir, raw_path,
                 d5_analysis_scale=D5_ANALYSIS_SCALE, d5_boundary_budget_px=D5_BOUNDARY_BUDGET_PX,
+                green_art_present=args.green_art_present,
             )
         entry["cand_dir"] = str(cand_dir)
         entry["pipeline"] = result

@@ -108,6 +108,51 @@ def test_white_contaminated_scattered_soft_edge_does_not_fail_d1(tmp_path):
     assert metrics["H_area_mm2"] < 0.10
 
 
+def make_square_fringe(fill_rgb, edge_rgb, size=60, half=20):
+    """Solid square (fill_rgb, alpha=255) with a 3px ramping-alpha fringe band
+    (edge_rgb, unpremultiplied) just outside the boundary on all 4 sides —
+    models a real edge fringe/halo where near-zero-alpha pixels retain a
+    residual spill color."""
+    arr = np.zeros((size, size, 4), dtype=np.uint8)
+    c = size // 2
+    arr[c - half : c + half, c - half : c + half, :3] = fill_rgb
+    arr[c - half : c + half, c - half : c + half, 3] = 255
+    ramp = [170, 100, 40]
+    for i, a in enumerate(ramp, start=1):
+        arr[c - half - i, c - half - i : c + half + i, :3] = edge_rgb
+        arr[c - half - i, c - half - i : c + half + i, 3] = a
+        arr[c + half + i - 1, c - half - i : c + half + i, :3] = edge_rgb
+        arr[c + half + i - 1, c - half - i : c + half + i, 3] = a
+        arr[c - half - i : c + half + i, c - half - i, :3] = edge_rgb
+        arr[c - half - i : c + half + i, c - half - i, 3] = a
+        arr[c - half - i : c + half + i, c + half + i - 1, :3] = edge_rgb
+        arr[c - half - i : c + half + i, c + half + i - 1, 3] = a
+    return arr
+
+
+def test_d1_h_key_yellow_gradient_edge_is_not_a_false_positive(tmp_path):
+    # Warm-yellow gold-icing gradient (G approx R, no green in it): the raw
+    # donor->key dot-product used to read this as key-pull >= 0.5 with zero
+    # visible green. Green-sector gating must zero it out.
+    gate = load_gate_battery()
+    rgba = make_square_fringe(fill_rgb=(225, 150, 70), edge_rgb=(255, 235, 60))
+
+    result = gate.d1_halo_gate(rgba, tmp_path / "out-yellow", 25.4 / 254.0, [], (0, 255, 0))
+
+    assert result["metric_values"]["H_key"] <= gate.CALIBRATION["D1_halo_gate"]["h_key_pass_max"]
+
+
+def test_d1_h_key_actual_green_tint_edge_still_caught(tmp_path):
+    # Real green-tinted spill (G clearly above both R and B) must still push
+    # h_key into the fail zone despite the new green-sector gate.
+    gate = load_gate_battery()
+    rgba = make_square_fringe(fill_rgb=(225, 150, 70), edge_rgb=(140, 210, 130))
+
+    result = gate.d1_halo_gate(rgba, tmp_path / "out-green", 25.4 / 254.0, [], (0, 255, 0))
+
+    assert result["metric_values"]["H_key"] >= gate.CALIBRATION["D1_halo_gate"]["h_key_fail_min"]
+
+
 def test_many_enclosed_alpha_pockets_are_d3a_review_only(tmp_path):
     gate = load_gate_battery()
     path = tmp_path / "pockets.png"

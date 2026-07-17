@@ -1,0 +1,103 @@
+{
+  "final_source": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T070145Z-2a8628/candidate_1/decontam.png",
+  "raw_source": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T062245Z-a9ee32/raw_1.png",
+  "gate_dir_source": null,
+  "files": [
+    {
+      "kind": "fullres_final",
+      "path": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T070145Z-2a8628/candidate_1/prepurge_review_pack/fullres/final.png"
+    },
+    {
+      "kind": "fullres_raw",
+      "path": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T070145Z-2a8628/candidate_1/prepurge_review_pack/fullres/raw.png"
+    },
+    {
+      "kind": "composite",
+      "path": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T070145Z-2a8628/candidate_1/prepurge_review_pack/composites/composite_dark.png",
+      "background": "dark"
+    },
+    {
+      "kind": "composite",
+      "path": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T070145Z-2a8628/candidate_1/prepurge_review_pack/composites/composite_white.png",
+      "background": "white"
+    },
+    {
+      "kind": "composite",
+      "path": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T070145Z-2a8628/candidate_1/prepurge_review_pack/composites/composite_magenta.png",
+      "background": "magenta"
+    },
+    {
+      "kind": "junction_crop_4x_lanczos",
+      "path": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T070145Z-2a8628/candidate_1/prepurge_review_pack/junction_crops/junction_00_x210_y1277_4x_lanczos.png",
+      "center_x": 210,
+      "center_y": 1277
+    },
+    {
+      "kind": "junction_crop_12x_nearest",
+      "path": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T070145Z-2a8628/candidate_1/prepurge_review_pack/junction_crops/junction_00_x210_y1277_12x_nearest.png",
+      "center_x": 210,
+      "center_y": 1277
+    },
+    {
+      "kind": "junction_crop_4x_lanczos",
+      "path": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T070145Z-2a8628/candidate_1/prepurge_review_pack/junction_crops/junction_01_x891_y235_4x_lanczos.png",
+      "center_x": 891,
+      "center_y": 235
+    },
+    {
+      "kind": "junction_crop_12x_nearest",
+      "path": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T070145Z-2a8628/candidate_1/prepurge_review_pack/junction_crops/junction_01_x891_y235_12x_nearest.png",
+      "center_x": 891,
+      "center_y": 235
+    },
+    {
+      "kind": "junction_crop_4x_lanczos",
+      "path": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T070145Z-2a8628/candidate_1/prepurge_review_pack/junction_crops/junction_02_x826_y294_4x_lanczos.png",
+      "center_x": 826,
+      "center_y": 294
+    },
+    {
+      "kind": "junction_crop_12x_nearest",
+      "path": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T070145Z-2a8628/candidate_1/prepurge_review_pack/junction_crops/junction_02_x826_y294_12x_nearest.png",
+      "center_x": 826,
+      "center_y": 294
+    },
+    {
+      "kind": "junction_crop_4x_lanczos",
+      "path": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T070145Z-2a8628/candidate_1/prepurge_review_pack/junction_crops/junction_03_x600_y360_4x_lanczos.png",
+      "center_x": 600,
+      "center_y": 360
+    },
+    {
+      "kind": "junction_crop_12x_nearest",
+      "path": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T070145Z-2a8628/candidate_1/prepurge_review_pack/junction_crops/junction_03_x600_y360_12x_nearest.png",
+      "center_x": 600,
+      "center_y": 360
+    },
+    {
+      "kind": "junction_crop_4x_lanczos",
+      "path": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T070145Z-2a8628/candidate_1/prepurge_review_pack/junction_crops/junction_04_x210_y1360_4x_lanczos.png",
+      "center_x": 210,
+      "center_y": 1360
+    },
+    {
+      "kind": "junction_crop_12x_nearest",
+      "path": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T070145Z-2a8628/candidate_1/prepurge_review_pack/junction_crops/junction_04_x210_y1360_12x_nearest.png",
+      "center_x": 210,
+      "center_y": 1360
+    },
+    {
+      "kind": "junction_crop_4x_lanczos",
+      "path": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T070145Z-2a8628/candidate_1/prepurge_review_pack/junction_crops/junction_05_x133_y1317_4x_lanczos.png",
+      "center_x": 133,
+      "center_y": 1317
+    },
+    {
+      "kind": "junction_crop_12x_nearest",
+      "path": "tasks/transparent-bg-endgame/evidentiary-festive/20260717T070145Z-2a8628/candidate_1/prepurge_review_pack/junction_crops/junction_05_x133_y1317_12x_nearest.png",
+      "center_x": 133,
+      "center_y": 1317
+    }
+  ],
+  "n_junction_points": 6
+}

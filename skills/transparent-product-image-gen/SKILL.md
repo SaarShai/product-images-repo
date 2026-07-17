@@ -364,6 +364,21 @@ FAIL makes `gate_battery` exit `2`; a bare `--source` invocation without the
 new flags stays on the legacy advisory-only (max REVIEW) heuristic for
 backward compatibility.
 
+**Eligibility is BINDING — `--green-art-present` (2026-07-17).** The
+checklist's "no essential green content?" question used to be advisory only;
+confirming it anyway on a subject with real green/teal art (holly, a teal
+bauble) let the default purge silently damage that art (observed-failure:
+`tasks/transparent-bg-endgame/evidentiary-festive/DIAGNOSIS.md`). If the
+subject has essential green content, pass `--green-art-present` instead of
+silently confirming the checklist box — it switches `run_c_green_v2.py` to
+preserve-green mode end-to-end: `green_purge.py` runs WITHOUT
+`--no-green-art`, `gate_battery.py` is gated with `--d5-policy preserve-all`
+(not `no-green-art`), and the phase-1 `NO_GREEN_ART` palette precheck is
+skipped (it would false-positive on the declared green art). Both the
+confirmation and the green-art-present answer are always recorded in
+`manifest.json["eligibility"]`. **Never run the bare `--no-green-art`
+default against a subject with essential green.**
+
 Full end-to-end recipe for NEW art from a model that lacks native alpha
 (`gpt-image-2`). Iterated over 4 user-feedback rounds; every element below
 exists because a defect forced it. Runners:
@@ -385,7 +400,9 @@ importable from rounds 3/4/6 files alongside it).
 3. `NO_GREEN_ART_BLOCK` — no bright/pure/saturated green anywhere in the
    subject; plants in olive/sage/teal. Color alone CANNOT separate pure-green
    art from trapped key background (seaweed can literally be [1,137,0]) —
-   ban it at the source so the purge can kill all key-hue green blindly.
+   ban it at the source so the purge can kill all key-hue green blindly. If
+   the subject NEEDS essential green/teal content, use `--green-art-present`
+   (preserve-green mode, see below) instead of relying on this block.
 4. Flat key background block (`key_bg_block`, `#00FF00`) + `HARD_EDGE_BLOCK`.
 5. Rich-style block as usual.
 
@@ -393,6 +410,9 @@ importable from rounds 3/4/6 files alongside it).
 `/usr/bin/python3 scripts/decontam_binarize.py --bg-color #00FF00` →
 `/usr/bin/python3 scripts/green_purge.py IN.png OUT.png --no-green-art --erode 2 --band 6` →
 `/usr/bin/python3 scripts/gates/gate_battery.py --profile print`.
+(`--no-green-art` only — green-art subjects go through `run_c_green_v2.py
+--green-art-present`, which omits `--no-green-art` and gates with
+`--d5-policy preserve-all` instead; see "Eligibility is BINDING" above.)
 `green_purge.py` (v3) passes: 2px erode,
 band green repaint, band-wide green declamp + global +8 green cap,
 geometry-restricted olive-notch kill (concave-notch mask via morphological

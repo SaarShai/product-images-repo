@@ -10,6 +10,7 @@ import subprocess
 import sys
 from pathlib import Path
 
+import numpy as np
 from PIL import Image, ImageDraw
 
 REPO = Path(__file__).resolve().parents[1]
@@ -29,6 +30,23 @@ def make_raw_disc(path: Path, size: int = 240) -> None:
     r = int(size * scale * 0.29)
     draw.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(225, 120, 80))
     draw.ellipse([cx - r, cy - r, cx + r, cy + r], outline=(25, 20, 15), width=6 * scale)
+    big.resize((size, size), Image.LANCZOS).save(path)
+
+
+def make_raw_with_green_leaf(path: Path, size: int = 240) -> None:
+    """Same coral disc as `make_raw_disc`, plus an interior sage/olive-green
+    leaf patch -- essential green content the default --no-green-art
+    palette precheck must FAIL on, and --green-art-present must let through."""
+    scale = 4
+    big = Image.new("RGB", (size * scale, size * scale), (0, 255, 0))
+    draw = ImageDraw.Draw(big)
+    cx = cy = size * scale // 2
+    r = int(size * scale * 0.29)
+    draw.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(225, 120, 80))
+    draw.ellipse([cx - r, cy - r, cx + r, cy + r], outline=(25, 20, 15), width=6 * scale)
+    leaf_cx, leaf_cy = cx - r // 3, cy
+    lr = int(r * 0.35)
+    draw.ellipse([leaf_cx - lr, leaf_cy - lr // 2, leaf_cx + lr, leaf_cy + lr // 2], fill=(70, 150, 60))
     big.resize((size, size), Image.LANCZOS).save(path)
 
 
@@ -206,3 +224,152 @@ def test_manifest_written_even_on_hard_fail(tmp_path):
     )
     run_dir = find_run_dir(out_root)
     assert (run_dir / "manifest.json").exists()
+
+
+# ---------------------------------------------------------------------------
+# Eligibility becomes BINDING: --green-art-present preserve-green mode
+# ---------------------------------------------------------------------------
+
+# Pixel coordinates of the leaf patch baked into make_raw_with_green_leaf's
+# 240x240 canvas: cx=cy=120, r=int(240*0.29)=69, leaf_cx=cx-r//3=97, leaf_cy=120.
+LEAF_PX = (97, 120)  # (x, y)
+LEAF_RAW_RGB = (70, 150, 60)
+
+
+def test_eligibility_answers_recorded_in_manifest_default_mode(tmp_path):
+    """Both the confirmation and the (unset) green-art-present answer are
+    recorded, not just the True case."""
+    raw = tmp_path / "raw.png"
+    make_raw_disc(raw)
+    out_root = tmp_path / "out"
+
+    r = run_cli(["--subject", "test coral", "--out-root", str(out_root), "--eligibility-confirmed", "--ppi", "300", "--skip-gen", str(raw)])
+    assert r.returncode == 3, r.stdout + r.stderr
+
+    manifest = find_manifest(out_root)
+    assert manifest["eligibility"] == {
+        "eligibility_confirmed": True,
+        "green_art_present": False,
+        "d5_palette_policy": "no-green-art",
+    }
+    assert manifest["args"]["green_art_present"] is False
+
+
+def test_essential_green_content_without_flag_fails_no_green_art_precheck(tmp_path):
+    """The observed-failure regression from evidentiary-festive: a subject
+    with real interior green art, run through default (destructive) mode,
+    must hard-FAIL the pre-purge NO_GREEN_ART palette precheck -- not silently
+    proceed to a purge that will recolor it."""
+    raw = tmp_path / "raw-leaf.png"
+    make_raw_with_green_leaf(raw)
+    out_root = tmp_path / "out"
+
+    r = run_cli(["--subject", "test leaf", "--out-root", str(out_root), "--eligibility-confirmed", "--ppi", "300", "--skip-gen", str(raw)])
+    assert r.returncode == 2, r.stdout + r.stderr
+
+    manifest = find_manifest(out_root)
+    assert manifest["overall_verdict"] == "FAIL"
+    pipeline = manifest["candidates"][0]["pipeline"]
+    assert pipeline["verdict"] == "FAIL"
+    precheck = next(s for s in pipeline["stage_results"] if s.get("stage") == "d5_no_green_art_palette_precheck")
+    assert precheck["verdict"] == "FAIL"
+    assert "NO_GREEN_ART palette precheck FAILED" in pipeline["note"]
+
+
+def test_green_art_present_flag_skips_precheck_and_reaches_review(tmp_path):
+    """The BINDING fix: --green-art-present on the SAME green-leaf subject
+    skips the precheck (which would otherwise false-positive-FAIL it) and
+    reaches the normal pre-purge human-review stop instead."""
+    raw = tmp_path / "raw-leaf.png"
+    make_raw_with_green_leaf(raw)
+    out_root = tmp_path / "out"
+
+    r = run_cli(
+        ["--subject", "test leaf", "--out-root", str(out_root), "--eligibility-confirmed", "--green-art-present", "--ppi", "300", "--skip-gen", str(raw)]
+    )
+    assert r.returncode == 3, r.stdout + r.stderr
+
+    manifest = find_manifest(out_root)
+    assert manifest["overall_verdict"] == "REVIEW"
+    assert manifest["eligibility"] == {
+        "eligibility_confirmed": True,
+        "green_art_present": True,
+        "d5_palette_policy": "preserve-all",
+    }
+    pipeline = manifest["candidates"][0]["pipeline"]
+    precheck = next(s for s in pipeline["stage_results"] if s.get("stage") == "d5_no_green_art_palette_precheck")
+    assert precheck.get("skipped") is True
+
+
+def test_green_art_present_finalize_uses_preserve_purge_and_preserve_all_d5_policy(tmp_path):
+    """Finalize phase: green_purge must run WITHOUT --no-green-art, and
+    gate_battery must be gated with --d5-policy preserve-all -- both wired
+    through from --green-art-present. Verified by (1) the printed subprocess
+    command lines and (2) a measured pixel check that the leaf color survives
+    the purge essentially untouched."""
+    raw = tmp_path / "raw-leaf.png"
+    make_raw_with_green_leaf(raw)
+    out_root_1 = tmp_path / "out1"
+    out_root_2 = tmp_path / "out2"
+
+    r1 = run_cli(
+        ["--subject", "test leaf", "--out-root", str(out_root_1), "--eligibility-confirmed", "--green-art-present", "--ppi", "300", "--skip-gen", str(raw)]
+    )
+    assert r1.returncode == 3, r1.stdout + r1.stderr
+    prepurge_sha = find_manifest(out_root_1)["candidates"][0]["pipeline"]["prepurge_sha256"]
+
+    r2 = run_cli(
+        [
+            "--subject", "test leaf", "--out-root", str(out_root_2), "--eligibility-confirmed", "--green-art-present", "--ppi", "300",
+            "--skip-gen", str(raw), "--approve-prepurge-sha256", prepurge_sha,
+        ]
+    )
+    assert r2.returncode in (0, 3), r2.stdout + r2.stderr
+
+    purge_lines = [line for line in r2.stdout.splitlines() if "green_purge.py" in line and line.startswith("+")]
+    assert purge_lines, r2.stdout
+    assert "--no-green-art" not in purge_lines[0]
+
+    gate_lines = [line for line in r2.stdout.splitlines() if "gate_battery.py" in line and line.startswith("+")]
+    assert gate_lines, r2.stdout
+    assert "--d5-policy preserve-all" in gate_lines[0]
+
+    manifest2 = find_manifest(out_root_2)
+    cand_dir = Path(manifest2["candidates"][0]["cand_dir"])
+    purged = np.array(Image.open(cand_dir / "purged.png").convert("RGBA"))
+    x, y = LEAF_PX
+    r, g, b, a = [int(v) for v in purged[y, x]]
+    assert a == 255
+    # preserve mode: leaf green survives essentially untouched (small
+    # tolerance for despill/AA, not a full recolor).
+    assert abs(g - LEAF_RAW_RGB[1]) <= 15, purged[y, x]
+
+
+def test_default_destructive_purge_recolors_green_leaf_control(tmp_path):
+    """Negative control proving the positive test above isn't vacuous: the
+    SAME leaf subject, purged in default (--no-green-art) mode, really does
+    get its green channel damaged -- this is the exact defect Patch B exists
+    to make opt-out-able via --green-art-present."""
+    raw = tmp_path / "raw-leaf.png"
+    make_raw_with_green_leaf(raw)
+    out_root = tmp_path / "out"
+
+    r = run_cli(["--subject", "test leaf", "--out-root", str(out_root), "--eligibility-confirmed", "--ppi", "300", "--skip-gen", str(raw)])
+    assert r.returncode == 2, r.stdout + r.stderr
+    prepurge_sha = find_manifest(out_root)["candidates"][0]["pipeline"]["prepurge_sha256"]
+
+    out_root_2 = tmp_path / "out2"
+    r2 = run_cli(
+        [
+            "--subject", "test leaf", "--out-root", str(out_root_2), "--eligibility-confirmed", "--ppi", "300",
+            "--skip-gen", str(raw), "--approve-prepurge-sha256", prepurge_sha,
+        ]
+    )
+    assert r2.returncode in (0, 2, 3), r2.stdout + r2.stderr
+
+    manifest2 = find_manifest(out_root_2)
+    cand_dir = Path(manifest2["candidates"][0]["cand_dir"])
+    purged = np.array(Image.open(cand_dir / "purged.png").convert("RGBA"))
+    x, y = LEAF_PX
+    r_, g, b, a = [int(v) for v in purged[y, x]]
+    assert g < LEAF_RAW_RGB[1] - 30, purged[y, x]
