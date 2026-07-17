@@ -22,7 +22,11 @@ from pathlib import Path
 
 import numpy as np
 from PIL import Image, ImageDraw
-from shapely.geometry import Polygon
+try:
+    from shapely.geometry import Polygon
+except ImportError:
+    print("This script requires /usr/bin/python3 (PATH python3 lacks shapely). Re-run with /usr/bin/python3.", file=sys.stderr)
+    sys.exit(2)
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import svg_classify as C  # noqa: E402

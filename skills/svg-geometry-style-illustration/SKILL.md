@@ -67,15 +67,15 @@ Steps (scripts are in `scripts/`, run from repo root; `T=tasks/<task>`):
 
 1. **Scaffold + geometry report.** Copy the source SVG to `$T/source/template.svg`
    and the style references to `$T/refs/`. Run
-   `python3 scripts/svg_geometry_report.py $T/source/template.svg --out $T/svg-geometry-report.md`
+   `/usr/bin/python3 scripts/svg_geometry_report.py $T/source/template.svg --out $T/svg-geometry-report.md`
    and confirm the opening count/kinds.
 2. **Outset the cutouts** (drift safety — Validated Lesson B):
-   `python3 scripts/outset_cutouts.py $T/source/template.svg --out $T/source/template-outset30.svg --outset 30`
+   `/usr/bin/python3 scripts/outset_cutouts.py $T/source/template.svg --out $T/source/template-outset30.svg --outset 30`
    Buffers every internal cutout outward by `N` user-units (default **30**), outer
    contour verbatim. The real die-cut always uses the ORIGINAL SVG; the outset only
    enlarges the empty keep-clear zone so a drifted painted hole still encloses the cut.
 3. **Build the contract base from the OUTSET SVG** (this image is "image 1", the
-   layout law): `python3 scripts/build_trueaspect_base.py --svg $T/source/template-outset30.svg --out $T/outputs/generated/<task>-base-outset30-1440x2560.png`.
+   layout law): `/usr/bin/python3 scripts/build_trueaspect_base.py --svg $T/source/template-outset30.svg --out $T/outputs/generated/<task>-base-outset30-1440x2560.png`.
    Open it: enlarged holes at the report's positions.
 4. **Write the layout-contract prompt** describing the silhouette + each opening's
    position/shape, plus the STYLE block (bright palette, colorful tick-marked
@@ -94,8 +94,8 @@ Steps (scripts are in `scripts/`, run from repo root; `T=tasks/<task>`):
 7. **Deliver the chosen raw + sync ALL results (HARD RULE).** Promote the pick to
    `$T/RESULTS/`. Then copy EVERY result image (all raws/exacts/overlays, not just
    the pick) into the central library by running
-   `python3 scripts/sync_results_images.py` followed by
-   `python3 scripts/sync_results_images.py --check` to VERIFY none are missing.
+   `/usr/bin/python3 scripts/sync_results_images.py` followed by
+   `/usr/bin/python3 scripts/sync_results_images.py --check` to VERIFY none are missing.
    Never hand-roll a `cp` loop for this — a silent shell-glob bug once collapsed 8
    variants into one overwritten file and dropped them. No re-seat / `exact.png` in
    the deliverable path.
@@ -133,7 +133,7 @@ the EMPTY keep-clear area LARGER than the cutout.
 
 The outset must arrive as PIXELS in the contract base, not as prose. Tested both:
 
-- **Adapt the SVG (correct):** `python3 scripts/outset_cutouts.py SRC.svg --out
+- **Adapt the SVG (correct):** `/usr/bin/python3 scripts/outset_cutouts.py SRC.svg --out
   OUT.svg --outset N` buffers every internal cutout outward by `N` user-units
   (shapely), outer contour verbatim; rebuild the true-aspect base from `OUT.svg`
   so the layout-contract image shows the enlarged holes. Consistent, controlled,
@@ -209,13 +209,13 @@ Run:
 
 ```bash
 git status --short
-python3 scripts/asset_report.py
+/usr/bin/python3 scripts/asset_report.py
 ```
 
 If the task folder does not exist:
 
 ```bash
-python3 scripts/scaffold_template_task.py <task> --svg <svg> --refs <refs...>
+/usr/bin/python3 scripts/scaffold_template_task.py <task> --svg <svg> --refs <refs...>
 ```
 
 Record the task folder, source SVG, style references, and latest user feedback
@@ -255,7 +255,7 @@ Geometry check:
 Build the packet:
 
 ```bash
-python3 scripts/build_reference_style_packet.py tasks/<task>
+/usr/bin/python3 scripts/build_reference_style_packet.py tasks/<task>
 ```
 
 Assign a style-packet/style agent this goal shape:
@@ -360,7 +360,7 @@ whether defects are bounded enough for local patch or require prompt restart.
 Use available task-specific exporters, for example:
 
 ```bash
-python3 scripts/export_svg_template_fit.py <candidate.png> \
+/usr/bin/python3 scripts/export_svg_template_fit.py <candidate.png> \
   --template-svg tasks/<task>/source/template.svg \
   --out-dir tasks/<task>/outputs/final \
   --prefix <candidate-prefix> \

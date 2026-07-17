@@ -18,7 +18,11 @@ from PIL import Image, ImageDraw
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-import svg_classify as C  # noqa: E402
+try:
+    import svg_classify as C  # noqa: E402
+except ImportError:
+    print("This script requires /usr/bin/python3 (PATH python3 lacks shapely). Re-run with /usr/bin/python3.", file=sys.stderr)
+    sys.exit(2)
 
 
 def main() -> int:

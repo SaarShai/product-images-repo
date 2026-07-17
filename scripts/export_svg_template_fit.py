@@ -2,7 +2,7 @@
 """Clip generated artwork into simple SVG template paths and verify fit.
 
 This is intentionally small and dependency-light. It supports the path commands
-used by the Screenery door SVGs seen in this repo: M/L/H/V/C/Z, absolute or
+used by the Screenery door SVGs seen in this repo: M/L/H/V/C/S/Z, absolute or
 relative, plus polygon cutouts.
 """
 
@@ -24,7 +24,7 @@ from PIL import Image, ImageChops, ImageDraw, ImageFilter
 
 
 ROOT = Path(__file__).resolve().parents[1]
-COMMAND_RE = re.compile(r"[MmLlHhVvCcZz]|[-+]?(?:\d*\.\d+|\d+\.?)(?:[eE][-+]?\d+)?")
+COMMAND_RE = re.compile(r"[MmLlHhVvCcSsZz]|[-+]?(?:\d*\.\d+|\d+\.?)(?:[eE][-+]?\d+)?")
 NUMBER_RE = re.compile(r"[-+]?(?:\d*\.\d+|\d+\.?)(?:[eE][-+]?\d+)?")
 
 
@@ -102,6 +102,7 @@ def parse_path_d(data: str, curve_steps: int = 28) -> list[list[Point]]:
     start: Point = (0.0, 0.0)
     current_poly: list[Point] = []
     subpaths: list[list[Point]] = []
+    last_control: Point | None = None  # reflected control point, C/S chains only
 
     def finish_poly() -> None:
         nonlocal current_poly
@@ -131,21 +132,25 @@ def parse_path_d(data: str, curve_steps: int = 28) -> list[list[Point]]:
                 current = apply_relative(point, current, relative)
                 current_poly.append(current)
             command = implicit
+            last_control = None
         elif upper == "L":
             while index < len(tokens) and not is_command(tokens[index]):
                 point, index = read_pair(tokens, index)
                 current = apply_relative(point, current, relative)
                 current_poly.append(current)
+            last_control = None
         elif upper == "H":
             while index < len(tokens) and not is_command(tokens[index]):
                 x, index = read_number(tokens, index)
                 current = (current[0] + x, current[1]) if relative else (x, current[1])
                 current_poly.append(current)
+            last_control = None
         elif upper == "V":
             while index < len(tokens) and not is_command(tokens[index]):
                 y, index = read_number(tokens, index)
                 current = (current[0], current[1] + y) if relative else (current[0], y)
                 current_poly.append(current)
+            last_control = None
         elif upper == "C":
             while index < len(tokens) and not is_command(tokens[index]):
                 control_1, index = read_pair(tokens, index)
@@ -158,12 +163,32 @@ def parse_path_d(data: str, curve_steps: int = 28) -> list[list[Point]]:
                 for step in range(1, curve_steps + 1):
                     current_poly.append(cubic_point(p0, p1, p2, p3, step / curve_steps))
                 current = p3
+                last_control = p2
+        elif upper == "S":
+            # smooth cubic curveto: first control point is the reflection of
+            # the previous C/S control point through the current point (or
+            # the current point itself if the previous command wasn't C/S).
+            while index < len(tokens) and not is_command(tokens[index]):
+                control_2, index = read_pair(tokens, index)
+                end, index = read_pair(tokens, index)
+                p0 = current
+                if last_control is not None:
+                    p1 = (2 * p0[0] - last_control[0], 2 * p0[1] - last_control[1])
+                else:
+                    p1 = p0
+                p2 = apply_relative(control_2, current, relative)
+                p3 = apply_relative(end, current, relative)
+                for step in range(1, curve_steps + 1):
+                    current_poly.append(cubic_point(p0, p1, p2, p3, step / curve_steps))
+                current = p3
+                last_control = p2
         elif upper == "Z":
             if current_poly and current_poly[-1] != start:
                 current_poly.append(start)
             current = start
             finish_poly()
             command = None
+            last_control = None
         else:
             raise ValueError(f"Unsupported SVG path command {command!r}")
 

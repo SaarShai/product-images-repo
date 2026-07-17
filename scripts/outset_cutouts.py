@@ -23,7 +23,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import svg_geometry as G  # noqa: E402
-from shapely.geometry import Polygon  # noqa: E402
+try:
+    from shapely.geometry import Polygon  # noqa: E402
+except ImportError:
+    print("This script requires /usr/bin/python3 (PATH python3 lacks shapely). Re-run with /usr/bin/python3.", file=sys.stderr)
+    sys.exit(2)
 
 STROKE = ('style="fill:none;stroke:#FFDB55;stroke-width:10;stroke-miterlimit:10;'
           'stroke-dasharray:24;"')

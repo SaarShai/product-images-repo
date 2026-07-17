@@ -57,7 +57,10 @@ def is_skyline_task(task_slug: str, source_svg: Path, title: str = "") -> bool:
     return any(term in haystack for term in ["skyline", "cityscape", "city-scape", "city-skyline"])
 
 
-def write(path: Path, content: str, dry_run: bool) -> None:
+def write(path: Path, content: str, dry_run: bool, skip_existing: bool = False) -> None:
+    if skip_existing and path.exists():
+        print(f"{'would keep' if dry_run else 'kept'} existing {rel_or_abs(path)}")
+        return
     if dry_run:
         print(f"would write {rel_or_abs(path)}")
         return
@@ -73,12 +76,18 @@ def main() -> int:
     parser.add_argument("--title", help="Human-readable task title")
     parser.add_argument("--no-copy", action="store_true", help="Record source paths without copying assets into the task")
     parser.add_argument("--dry-run", action="store_true", help="Show planned writes without touching files")
+    parser.add_argument(
+        "--allow-existing", action="store_true",
+        help="Allow scaffolding into a task dir that already exists (e.g. a "
+             "pre-authored contract file); scaffolds only the MISSING pieces "
+             "and never overwrites files already present",
+    )
     args = parser.parse_args()
 
     task_slug = slugify(args.task)
     title = args.title or task_slug.replace("-", " ").title()
     task_dir = ROOT / "tasks" / task_slug
-    if task_dir.exists() and not args.dry_run:
+    if task_dir.exists() and not args.dry_run and not args.allow_existing:
         raise SystemExit(f"Task already exists: {rel_or_abs(task_dir)}")
 
     source_svg = args.svg.expanduser().resolve()
@@ -108,7 +117,9 @@ def main() -> int:
         task_refs = refs
     else:
         task_svg = task_dir / "source" / "template.svg"
-        if args.dry_run:
+        if args.allow_existing and task_svg.exists():
+            print(f"{'would keep' if args.dry_run else 'kept'} existing {rel_or_abs(task_svg)}")
+        elif args.dry_run:
             print(f"would copy {source_svg} -> {rel_or_abs(task_svg)}")
         else:
             shutil.copy2(source_svg, task_svg)
@@ -153,20 +164,20 @@ def main() -> int:
     if is_skyline:
         manifest["asset_map"] = "assets/skyline/README.md"
 
-    write(task_dir / "asset-manifest.json", json.dumps(manifest, indent=2) + "\n", args.dry_run)
-    write(task_dir / "template-manifest.json", render_template(TEMPLATE_DIR / "template-manifest.json", values), args.dry_run)
-    write(task_dir / "session-brief.md", render_template(TEMPLATE_DIR / "session-brief.md", values), args.dry_run)
-    write(task_dir / "review-judge.md", render_template(TEMPLATE_DIR / "review-judge.md", values), args.dry_run)
+    write(task_dir / "asset-manifest.json", json.dumps(manifest, indent=2) + "\n", args.dry_run, args.allow_existing)
+    write(task_dir / "template-manifest.json", render_template(TEMPLATE_DIR / "template-manifest.json", values), args.dry_run, args.allow_existing)
+    write(task_dir / "session-brief.md", render_template(TEMPLATE_DIR / "session-brief.md", values), args.dry_run, args.allow_existing)
+    write(task_dir / "review-judge.md", render_template(TEMPLATE_DIR / "review-judge.md", values), args.dry_run, args.allow_existing)
     if is_skyline:
         write(
             task_dir / "skyline-example-feedback.md",
             render_template(TEMPLATE_DIR / "skyline-example-feedback.md", values),
-            args.dry_run,
+            args.dry_run, args.allow_existing,
         )
     write(
         task_dir / "prompts" / "prompt-v1-contour-first.md",
         (TEMPLATE_DIR / "prompts" / "prompt-v1-contour-first.md").read_text(encoding="utf-8"),
-        args.dry_run,
+        args.dry_run, args.allow_existing,
     )
 
     for keep in [
@@ -175,7 +186,7 @@ def main() -> int:
         task_dir / "outputs" / "final" / ".gitkeep",
         task_dir / "style-packet" / ".gitkeep",
     ]:
-        write(keep, "", args.dry_run)
+        write(keep, "", args.dry_run, args.allow_existing)
 
     if not args.dry_run:
         print(rel_or_abs(task_dir))

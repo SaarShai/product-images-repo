@@ -76,11 +76,11 @@ the SVG geometry is part of the product spec, not a later crop mask.
    - Read the task `session-brief.md`, latest review notes, and newest
      `outputs/final/` and `outputs/reviews/` artifacts.
 2. Set up the task packet if needed:
-   - Use `python3 scripts/scaffold_template_task.py <task> --svg <svg> --refs <refs...>`.
+   - Use `/usr/bin/python3 scripts/scaffold_template_task.py <task> --svg <svg> --refs <refs...>`.
    - Keep source SVGs in `tasks/<task>/source/` and references in
      `tasks/<task>/refs/`.
 3. Parse geometry:
-   - Run `python3 scripts/svg_geometry_report.py tasks/<task>/source/template.svg --out tasks/<task>/svg-geometry-report.md`
+   - Run `/usr/bin/python3 scripts/svg_geometry_report.py tasks/<task>/source/template.svg --out tasks/<task>/svg-geometry-report.md`
      or the task-specific SVG path.
    - Identify outer contours, holes, slots, dashed safe-area contours, and
      keep-clear zones. If the parser misses polygons, inspect the SVG directly.
@@ -96,7 +96,7 @@ the SVG geometry is part of the product spec, not a later crop mask.
    - Reference style-packet images control object vocabulary, palette, line
      weight, lighting, simplicity, and rendering language.
 6. Build or refresh the style packet when style matters:
-   - Run `python3 scripts/build_reference_style_packet.py tasks/<task>`.
+   - Run `/usr/bin/python3 scripts/build_reference_style_packet.py tasks/<task>`.
    - Inspect `style-packet/reference-contact-sheet.png` and
      `style-packet/style-exemplar-sheet.png`.
    - Use `.codex/skills/svg-template-style-agent/SKILL.md` for independent

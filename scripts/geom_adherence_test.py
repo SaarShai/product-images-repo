@@ -176,6 +176,9 @@ def main() -> int:
     ap.add_argument("--timeout", type=int, default=300)
     a = ap.parse_args()
 
+    if not a.refs:
+        raise SystemExit("style.ref_images must contain at least one path")
+
     exp = (a.outdir if a.outdir.is_absolute() else ROOT / a.outdir) / a.id
     exp.mkdir(parents=True, exist_ok=True)
     prompt = (a.prompt if a.prompt.is_absolute() else ROOT / a.prompt).read_text()
