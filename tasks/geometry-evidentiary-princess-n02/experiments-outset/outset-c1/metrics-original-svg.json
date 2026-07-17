@@ -1,0 +1,39 @@
+{
+  "candidate": "tasks/geometry-evidentiary-princess-n02/experiments-outset/outset-c1/raw.png",
+  "overall": "FAIL",
+  "outside_painted": 7160,
+  "outside_frac": 0.0091,
+  "mean_iou": 0.1203,
+  "holes": [
+    {
+      "i": 1,
+      "painted_frac": 0.0,
+      "iou": 0.196,
+      "verdict": "PASS"
+    },
+    {
+      "i": 2,
+      "painted_frac": 0.0,
+      "iou": 0.174,
+      "verdict": "PASS"
+    },
+    {
+      "i": 3,
+      "painted_frac": 0.715,
+      "iou": 0.212,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 4,
+      "painted_frac": 0.985,
+      "iou": 0.007,
+      "verdict": "FAIL"
+    },
+    {
+      "i": 5,
+      "painted_frac": 0.975,
+      "iou": 0.013,
+      "verdict": "FAIL"
+    }
+  ]
+}
