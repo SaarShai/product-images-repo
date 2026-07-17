@@ -12,6 +12,17 @@ This module is the single source of truth for the runner
 (`scripts/run_c_green_v2.py`). If you need to change a block, change it in
 BOTH this file and the round-7 source, or better: only touch this file and
 update PIPELINE.md/SKILL.md's citation.
+
+RICH_STYLE and the exclusion/anti-halo blocks (EXCLUSIONS, ANTI_AURA, KEY_BG,
+HARD_EDGE) are CORAL-TUNED: their vocabulary (glazes, polyp dots, barnacle
+rings, "seabed"/"sand" exclusions, etc.) was validated round-7 on a coral
+subject only, not re-validated against other product classes. New product
+classes MUST keep the mandatory geometry/safety blocks byte-identical
+(SIGNIFICANT_CONTOUR_BLOCK, NO_FILAMENT_BLOCK, NO_GREEN_ART_BLOCK — contour,
+no-filament, no-green-art are subject-independent structural requirements of
+the chroma-key pipeline), but should review whether the coral-specific style
+vocabulary in RICH_STYLE/the exclusion blocks still fits before trusting the
+prompt untouched for a non-coral subject.
 """
 from __future__ import annotations
 
@@ -167,6 +178,30 @@ MANDATORY_BLOCK_IDS = (
     HARD_EDGE_ID,
 )
 
+# ---------------------------------------------------------------------------
+# Frozen sha256 registry — tamper check.
+#
+# Each hash below was computed ONCE from the verbatim-validated block text
+# above and is now a frozen literal. assemble_prompt() recomputes the sha256
+# of each live block at call time and asserts it matches; a mismatch means a
+# block's text drifted from the validated round-3/4/6/7 recipe without this
+# registry being updated, and the run must hard-fail rather than silently
+# ship an unvalidated prompt. Do NOT "fix" a mismatch by editing the hash to
+# match new text — that defeats the check. If a block is deliberately
+# changed, re-validate it first, then update both the block text and its hash
+# together in the same edit.
+# ---------------------------------------------------------------------------
+BLOCK_SHA256 = {
+    RICH_STYLE_ID: "3b449cfcd9804c3a792799a49da190e5034dd10698e649bb52e51c120084fa88",
+    SIGNIFICANT_CONTOUR_ID: "0eeba90bac8d1574000185768abb457e9e83c08ce4a4dfb851c2d1a391a83a2f",
+    NO_FILAMENT_ID: "b1485cce88707d7923d8806abebaf85db6291c63b0148ee6f701d3960b3ad542",
+    NO_GREEN_ART_ID: "76807ca7d1297f52d1fedf145527b158ab6192f963cf8593f411d83d39738398",
+    EXCLUSIONS_ID: "6354902b8953d32ec323efc5710bac5e0e3699397b91711a3e7c5a504b37fd62",
+    KEY_BG_ID: "35d5a880554269d50c4434d113fce17bff339735fb6d1730f23094a8750ae980",
+    HARD_EDGE_ID: "f6729daaae1e67b9c1bccdbf7dc7f4da876c79260e59d5ab5c9305af9d45f95d",
+    ANTI_AURA_ID: "1ff113d5f1c4c470c894f211d3a46971ac9dc3064a09a66462891386574c1609",
+}
+
 
 def assemble_prompt(subject: str) -> tuple[str, str]:
     """Assemble the validated Route C-green v2 prompt for `subject`.
@@ -200,6 +235,20 @@ def assemble_prompt(subject: str) -> tuple[str, str]:
     present_ids = {block_id for block_id, _ in parts if block_id}
     missing = [bid for bid in MANDATORY_BLOCK_IDS if bid not in present_ids]
     assert not missing, f"assemble_prompt: missing mandatory block(s): {missing}"
+
+    # Tamper check: recompute each registered block's sha256 at call time and
+    # compare against the frozen BLOCK_SHA256 registry. A mismatch means the
+    # block text has drifted from the verbatim-validated recipe.
+    tampered = [
+        block_id
+        for block_id, text in parts
+        if block_id in BLOCK_SHA256
+        and hashlib.sha256(text.encode("utf-8")).hexdigest() != BLOCK_SHA256[block_id]
+    ]
+    assert not tampered, (
+        f"assemble_prompt: block text no longer matches frozen BLOCK_SHA256 "
+        f"registry, block(s): {tampered} — see BLOCK_SHA256 comment"
+    )
 
     prompt = "\n\n".join(text for _, text in parts)
     sha256 = hashlib.sha256(prompt.encode("utf-8")).hexdigest()

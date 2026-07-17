@@ -11,13 +11,18 @@ Usage:
     /usr/bin/python3 scripts/run_c_green_v2.py \\
       --subject "a single watercolor coral cluster ..." \\
       --out-root /path/to/out --eligibility-confirmed \\
-      [--n 2] [--size 1024x1536] [--skip-gen raw.png] [--ppi 300]
+      [--n 1] [--size 1024x1536] [--skip-gen raw.png] [--ppi 300]
 
 Stages: preflight -> prompt assemble+lint -> generate (Responses API async
 job, gpt-image-2, or --skip-gen to reuse a stored raw) -> chroma_key ->
 decontam_binarize -> green_purge --no-green-art --erode 2 --band 6 ->
 gate_battery --profile print [--ppi PPI] -> review_pack.
 
+--n defaults to 1, per SKILL.md's "One candidate -> user visual gate -> only
+then batch" process law (skills/transparent-product-image-gen/SKILL.md,
+"Process laws" section): never generate a batch before a single
+representative candidate has explicit user sign-off. Pass --n > 1 explicitly
+once a candidate is approved.
 --n must be >= 1 (n=0 is a hard-fail config error, not zero-work success).
 --skip-gen always reuses exactly one raw; a --n > 1 alongside it is clamped
 to 1 with a loud stderr WARNING (not silently accepted).
@@ -54,7 +59,9 @@ PY = "/usr/bin/python3"
 
 sys.path.insert(0, str(SCRIPTS))
 import prompt_blocks_c_green_v2 as blocks  # noqa: E402
-import review_pack  # noqa: E402
+# review_pack pulls in numpy/PIL/scipy at import time; deferred to a lazy
+# import inside run_one_candidate() so `--help` and preflight() can run (and
+# emit a friendly dependency error) on a bare python3 without those installed.
 
 ELIGIBILITY_CHECKLIST = """\
 Route C-green v2 eligibility checklist (answer honestly before spending a
@@ -299,6 +306,8 @@ def run_one_candidate(
     manifest_entry["gate_advisory_only"] = advisory_only
 
     # review pack — build regardless of verdict so REVIEW candidates get eyes
+    import review_pack  # lazy: pulls in numpy/PIL/scipy, see import-site note above
+
     pack_manifest = review_pack.build_review_pack(
         final_path=purged, raw_path=raw_path, out_dir=pack_dir, gate_dir=gates_dir,
     )
@@ -337,7 +346,11 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--subject", required=True)
     ap.add_argument("--out-root", required=True, type=Path)
-    ap.add_argument("--n", type=int, default=2)
+    ap.add_argument(
+        "--n", type=int, default=1,
+        help="candidate count; defaults to 1 per the one-candidate-first process "
+        "law (see module docstring) -- raise explicitly after user sign-off.",
+    )
     ap.add_argument("--size", default="1024x1536")
     ap.add_argument("--skip-gen", type=Path, default=None, help="reuse an existing raw instead of generating")
     ap.add_argument("--eligibility-confirmed", action="store_true")

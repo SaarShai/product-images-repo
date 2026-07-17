@@ -57,15 +57,15 @@ def new_repo(tmp: Path, name: str) -> Path:
     return repo
 
 
-def test_no_snapshot(tmp: Path):
-    repo = new_repo(tmp, "no-snapshot")
+def test_no_snapshot(tmp_path: Path):
+    repo = new_repo(tmp_path, "no-snapshot")
     r = run_guard(repo, "check")
     check("check exits 1 with 'no snapshot' when snapshot file is missing",
           r.returncode == 1 and "no snapshot" in r.stdout.lower())
 
 
-def test_positive_new_edit_passes(tmp: Path):
-    repo = new_repo(tmp, "positive")
+def test_positive_new_edit_passes(tmp_path: Path):
+    repo = new_repo(tmp_path, "positive")
     r_snap = run_guard(repo, "snapshot")
     check("snapshot exits 0", r_snap.returncode == 0)
 
@@ -82,8 +82,8 @@ def test_positive_new_edit_passes(tmp: Path):
                   for i in payload["info"]))
 
 
-def test_negative_stash_created(tmp: Path):
-    repo = new_repo(tmp, "neg-stash")
+def test_negative_stash_created(tmp_path: Path):
+    repo = new_repo(tmp_path, "neg-stash")
     (repo / "tracked.txt").write_text("uncommitted before snapshot\n")
     run_guard(repo, "snapshot")
 
@@ -99,8 +99,8 @@ def test_negative_stash_created(tmp: Path):
           and any("stash" in f for f in payload["failures"]))
 
 
-def test_negative_head_moved(tmp: Path):
-    repo = new_repo(tmp, "neg-head")
+def test_negative_head_moved(tmp_path: Path):
+    repo = new_repo(tmp_path, "neg-head")
     run_guard(repo, "snapshot")
 
     (repo / "tracked.txt").write_text("committed by a rogue lane\n")
@@ -115,8 +115,8 @@ def test_negative_head_moved(tmp: Path):
           and any("HEAD moved" in f for f in payload["failures"]))
 
 
-def test_negative_file_reverted(tmp: Path):
-    repo = new_repo(tmp, "neg-revert")
+def test_negative_file_reverted(tmp_path: Path):
+    repo = new_repo(tmp_path, "neg-revert")
     (repo / "tracked.txt").write_text("someone's uncommitted work\n")
     run_guard(repo, "snapshot")
 
