@@ -21,8 +21,13 @@ import json
 import os
 import sys
 
-import numpy as np
-from PIL import Image
+try:
+    import numpy as np
+    from PIL import Image
+except ImportError:
+    print("This script requires /usr/bin/python3 (PATH python3 lacks numpy/PIL). Re-run with /usr/bin/python3.", file=sys.stderr)
+    sys.exit(2)
+
 from scipy import ndimage as ndi
 from skimage.color import deltaE_ciede2000, rgb2lab
 

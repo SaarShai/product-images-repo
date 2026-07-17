@@ -1,0 +1,22 @@
+probes:
+  - date: 2026-07-16
+    model: kimi-k3
+    provider: moonshot.ai API
+    context: 1M
+    temperature: exactly 1
+    type: reasoning model
+  - date: 2026-07-16
+    model: gpt-5.6-sol
+    result: VALID on codex CLI
+  - date: 2026-07-16
+    model: gpt-5.6-luna
+    result: VALID on codex CLI
+  - date: 2026-07-16
+    models: gpt-5.6-sol-ultra and all -codex- variants
+    result: HTTP 400 on this account
+  - date: 2026-07-16
+    model: gpt-image-2
+    background_transparent: rejects (400)
+  - date: 2026-07-16
+    models: gpt-image-1, gpt-image-1.5, chatgpt-image-latest
+    background_transparent: accepts

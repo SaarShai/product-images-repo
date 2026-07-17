@@ -1,5 +1,31 @@
 # Wiki Log
 
+## [2026-07-16] bank | Audited lessons (certification integrity + gates + removal-steps + human verdict + prompt constraints + doc-fix + deferral + auditability + background jobs)
+
+Banked 9 audited lessons from 2026-07-16 dual-audit + Kimi K3 session-mining:
+
+1. **certification-integrity-verification-must-fail-independently** (new fact, L0-level rule): Nothing counts as verified unless the check is proven able to FAIL, run by someone who didn't build it, and evidenced in git. Evidence: R33 'done' reversed; runner --n 0 exit 0 vacuous pass.
+
+2. **every-gate-ships-with-negative-test** (new concept): Each gate must include a concrete negative test case demonstrating that it rejects bad input. Ties to certification-integrity.
+
+3. **removal-step-invariant-truth-backed-preservation-proof** (new fact, cross-route invariant): ANY removal step (chroma-key, ML-matting, erode, repaint) requires truth-backed proof that legitimate keeper content is NOT deleted. Evidence: ML-matting deleted 18.7% thin strokes; white_key erode ate rims; green_purge self-donation.
+
+4. **human-verdict-user-verdict-file-required-for-gate-acceptance** (new concept): Gate REVIEW cannot convert to PASS without explicit human verdict file (USER-VERDICT.md). Ledger prose is not an approval artifact.
+
+5. **models-ignore-numeric-prompt-constraints-noun-framing-binds** (new fact): Models systematically ignore numeric/percentage constraints; mandatory-NOUN framing binds. Evidence: outline phrasing 3/3 compliance with MANDATORY language vs. 0/3 with polite phrasing.
+
+6. **doc-fix-rule-repo-wide-grep-for-all-sides** (new concept): Fixing a claim that contradicts another part of the codebase requires repo-wide grep and fixing ALL contradicting statements. Observed 3 one-side-only fixes.
+
+7. **deferral-requires-user-or-adversarial-sign-off** (new concept): Deferral of correctness-affecting items cannot be unilateral; requires explicit user or adversarial-check sign-off. Observed 2 self-reversals.
+
+8. **fresh-clone-auditability-is-done-criterion** (new concept): A claim whose evidence exists only in working tree (not git-committed) is not done. Evidence disappears on `git clean`; observed 442MB + 7 unique files lost across 10 session snapshots.
+
+9. **background-jobs-heartbeat-monitoring-and-sandbox-write-constraints** (new fact): Background jobs require heartbeat monitoring (check log mtime + read partial output before assuming completion); codex crashes on Keychain (-50) in Agent sandbox (workaround: run from main shell); codex sandbox denies `.git` writes (file edits OK, commits must be from main shell).
+
+**Patched** `background-routes-must-write-resumable-checkpoints`: Updated from stub to substantial page with checkpoint discipline + link to background-jobs lesson.
+
+All pages include standard frontmatter + evidence + related lessons + open questions. Updated L1_index.md + log.md per wiki convention.
+
 ## [2026-07-13] create | Mandatory Ink Outline Edge Defense
 
 Created `concepts/mandatory-ink-outline-edge-defense.md` from verified transparent-bg-endgame rounds 6–7. Recorded durable lesson: diffusion always blends at edges (cannot be solved by prompt hardening alone); working defense is mandatory visible dark ink contour on every silhouette, so blend pixels land on dark ink where they are invisible. Evidence: round-6 (no outlines) = 604 band-green defects + user-circled artifacts; round-7 (mandatory contour) = 110/15 px, passed all hard gates. Phrasing rule: enforcement language required ("outline every contour"); permissive language silently dropped by gpt-image-2.

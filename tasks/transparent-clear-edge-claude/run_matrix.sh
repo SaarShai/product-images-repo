@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# > **STATUS: SUPERSEDED (2026-07-16)** — mined into and replaced by `tasks/transparent-bg-endgame/REPORT.md` (Routes P + C-green v2). Historical record only.
+
 # run_matrix.sh — 5-arm x 2-run prompt matrix via subgen.py (openai provider).
 # Own pgroup via setsid; skip-if-exists; parallelism 3.
 set -u

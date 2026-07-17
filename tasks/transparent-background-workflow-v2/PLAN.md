@@ -1,3 +1,5 @@
+> **STATUS: SUPERSEDED (2026-07-16)** — mined into and replaced by `tasks/transparent-bg-endgame/REPORT.md` (Routes P + C-green v2). Historical record only.
+
 # Clear-edge solid-background prompt experiment — task plan
 
 ## WHAT / WHY
