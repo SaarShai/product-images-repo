@@ -4,7 +4,8 @@ Lean skills for AI coding agents (Claude Code · Codex · Gemini) across four pi
 
 This replaces the old `start.md` boot doc. Each skill is a self-contained folder under `skills/<name>/`. Skill descriptions are the only thing always resident in the agent's context; full bodies load on trigger.
 
-For measured per-skill deltas and the live A/B table see [`eval/FINDINGS.md`](../eval/FINDINGS.md). Twenty-four skills ship an `EVAL.md`; `baton`, `fable-mode`, and `propagate` currently do not.
+The tracked clone contains 44 skills, 25 of which ship an `EVAL.md`; the table
+below highlights the 29 primary entries.
 
 ## Catalog
 
@@ -40,15 +41,15 @@ For measured per-skill deltas and the live A/B table see [`eval/FINDINGS.md`](..
 | [fable-mode](fable-mode/SKILL.md) | Fable 5's working discipline as a loadable method skill for cheaper seats (Opus/Sonnet): five gates in order — scope (define done + its check) → evidence (open the real thing, never design from memory) → adversarial reasoning (attack your own answer; 2 failed fixes = wrong diagnosis) → verify at the layer of the claim → report calibrated (verified vs assumed) — plus standing habits and gate-skip smells. Fires proactively on layered/stalling tasks or on "fable mode" / "slow down and do this right". Method-only: changes execution of the current task, produces no files. **Default** (prose-only, no hook). |
 | [standing-orders](standing-orders/SKILL.md) | Auto-arm standing directives on matching prompts — ORCH tier (goal, lanes, cheapest delegation, other-vendor advisor, end-to-end) on decomposable work; DEEP tier (blindspot pass, lesson capture) on high-level tasks. Fires on compliance-canary probes; pulse re-anchor resists drift. |
 
-29 skills total — all **listed and symlinked by the current installer**. Opt-in status controls whether a skill's installer auto-wires hooks or dependencies, not whether its text is available. `compliance-canary` runs four mechanisms in one hook; its published long-run uplift applies to the original probe/re-anchor pair, while the request and correction ledgers are mechanically tested. `loop-engineering` and `eval-gate` are default-installed for their load-bearing gates even though their N≥50 model validation remains pending. `think` stays manual-only (`/think`, `disable-model-invocation: true`) because its frontier A/B was posture-neutral; it may still auto-handoff to model-invokable Wayfinder when the route is too foggy for a complete plan. Promotion history and measured deltas live in [`eval/FINDINGS.md`](../eval/FINDINGS.md).
+The installer symlinks every tracked skill directory. Opt-in status controls whether a skill's installer auto-wires hooks or dependencies, not whether its text is available. `compliance-canary` runs four mechanisms in one hook; its published long-run uplift applies to the original probe/re-anchor pair, while the request and correction ledgers are mechanically tested. `loop-engineering` and `eval-gate` are default-installed for their load-bearing gates even though their N≥50 model validation remains pending. `think` stays manual-only (`/think`, `disable-model-invocation: true`) because its frontier A/B was posture-neutral; it may still auto-handoff to model-invokable Wayfinder when the route is too foggy for a complete plan.
 
-Removed after measurement: `personal-assistant` / `memory-api` / `skill-creator` (v1.1.0, redundancy), `delegate` (v1.2.0, zero measured gain — auto-routing via `prompt-triage` already covers the use case), `context-refresh` (v1.3.0, merged into `handoff` — its only unique piece was the auto-launcher which never worked reliably; the rest is now `/handoff --full` and `/handoff --ask`), `handoff-from` + `memory-decay` (v1.6.0, redundant / verified no-op), and `compress-context` + `session-recall` + `loop-breaker` (v1.6.0, the unproven-gain tail: each was both ❌/🟡 on measured benefit and redundant with a kept skill — `caveman`+`context-keeper`, `context-keeper`+`wiki`+`handoff`, and host loop-protection respectively; see `eval/FINDINGS.md` "Catalog cuts"), and `handoff` (v1.6.1 — operational-only, no measured gain; the host's `/compact` + `context-keeper` PreCompact extraction cover session continuity).
+Removed after measurement: `personal-assistant` / `memory-api` / `skill-creator` (v1.1.0, redundancy), `delegate` (v1.2.0, zero measured gain — auto-routing via `prompt-triage` already covers the use case), `context-refresh` (v1.3.0, merged into `handoff` — its only unique piece was the auto-launcher which never worked reliably; the rest is now `/handoff --full` and `/handoff --ask`), `handoff-from` + `memory-decay` (v1.6.0, redundant / verified no-op), and `compress-context` + `session-recall` + `loop-breaker` (v1.6.0, the unproven-gain tail: each was both ❌/🟡 on measured benefit and redundant with a kept skill — `caveman`+`context-keeper`, `context-keeper`+`wiki`+`handoff`, and host loop-protection respectively), and `handoff` (v1.6.1 — operational-only, no measured gain; the host's `/compact` + `context-keeper` PreCompact extraction cover session continuity).
 
 External integrations: [`index-first`](index-first/SKILL.md) and [`wiki-memory`](wiki-memory/SKILL.md) recognize [graphify](https://github.com/safishamsi/graphify) (`graphify-out/graph.json`) when present — graphify owns the auto-extracted *what/how/connected* layer; wiki-memory owns the curated *why/decision* layer. See each skill's body for the exact protocol.
 
 ## Most-recommended stack
 
-The eight slots below cover the measured-win axes (output × routing × memory × retrieval × re-read × terminal × done-claims). Each skill earns its slot with a measured number; numbers compose across axes, diminish within. Per-axis sources in [`eval/FINDINGS.md`](../eval/FINDINGS.md).
+The eight slots below cover the measured-win axes (output × routing × memory × retrieval × re-read × terminal × done-claims). Each skill earns its slot with a measured number; numbers compose across axes, diminish within.
 
 | Slot | Skill | Headline measurement |
 |---|---|---|
@@ -72,7 +73,7 @@ Bootstrap once per project: `python3 skills/wiki-memory/tools/wiki.py init && gr
 - **Retrieve before reasoning** about project/wiki facts — prefer `graphify explain` for code questions, `wiki-memory` for decision questions.
 - **Use cheapest capable worker**; keep main context clean. Dispatch speaks in capability **tiers**, resolved to the newest in-host (or clearly-better reachable) model at dispatch time — doctrine in [`_shared/ORCHESTRATION.md`](_shared/ORCHESTRATION.md).
 
-Stacking, anti-patterns, and workload guidance live in [`eval/FINDINGS.md`](../eval/FINDINGS.md) — not always-loaded; read once when installing or tuning the catalog.
+See the individual skill bodies for stacking, anti-patterns, and workload guidance.
 
 ## Install
 
@@ -83,4 +84,4 @@ Stacking, anti-patterns, and workload guidance live in [`eval/FINDINGS.md`](../e
 
 ## Status
 
-Twenty-four skills ship an `EVAL.md`; method/operational skills without one are named above. Skills claiming >20% savings get N≥50 Kaggle-T4 verification before being promoted to default. The opt-in mechanism remains supported: a skill carrying `auto-install: false` in its SKILL.md frontmatter is symlinked and listed by `install.sh` but its `tools/install.sh` is not run, so it never auto-wires a hook or pulls a heavy dependency (`baton`, `brainer-audit`, `impact-of-change`, and `security-oversight` remain opt-in; `index-first` and `learn-skill` are default-on). To **disable** a hook skill: per-skill installers append to `.claude/settings.json` and never delete, so remove the stale hook entry from `.claude/settings.json` by hand.
+Twenty-five tracked skills ship an `EVAL.md`. Skills claiming >20% savings get N≥50 Kaggle-T4 verification before being promoted to default. The opt-in mechanism remains supported: a skill carrying `auto-install: false` in its SKILL.md frontmatter is symlinked and listed by `install.sh` but its `tools/install.sh` is not run, so it never auto-wires a hook or pulls a heavy dependency (`baton`, `brainer-audit`, `impact-of-change`, and `security-oversight` remain opt-in; `index-first` and `learn-skill` are default-on). To **disable** a hook skill: per-skill installers append to `.claude/settings.json` and never delete, so remove the stale hook entry from `.claude/settings.json` by hand.

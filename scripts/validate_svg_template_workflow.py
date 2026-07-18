@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import subprocess
 import sys
 from pathlib import Path
@@ -11,19 +12,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 REQUIRED_FILES = [
-    ".codex/skills/reference-style-packet/SKILL.md",
-    ".codex/skills/skyline-template-illustration/SKILL.md",
-    ".codex/skills/svg-geometry-style-illustration/SKILL.md",
-    ".codex/skills/svg-geometry-style-illustration/drift_probes.json",
-    ".codex/skills/svg-template-style-agent/SKILL.md",
-    ".codex/skills/svg-template-style-agent/drift_probes.json",
-    ".codex/skills/svg-template-illustration/SKILL.md",
-    ".codex/skills/svg-template-review-judge/SKILL.md",
-    "assets/skyline/city-skyline template.svg",
-    "assets/skyline/example of DO - specific elements (fairies, birds) not cropped.png",
-    "assets/skyline/example of DON'T - specific elements (fairies, birds) cropped.png",
-    "assets/skyline/door panel example - bridge inside door flaps area.png",
-    "assets/skyline/example - bridge runs through panels + top contour tracing buildings shape.png",
+    "skills/reference-style-packet/SKILL.md",
+    "skills/skyline-template-illustration/SKILL.md",
+    "skills/svg-geometry-style-illustration/SKILL.md",
+    "skills/svg-geometry-style-illustration/drift_probes.json",
+    "skills/svg-template-style-agent/SKILL.md",
+    "skills/svg-template-style-agent/drift_probes.json",
+    "skills/svg-template-illustration/SKILL.md",
+    "skills/svg-template-review-judge/SKILL.md",
     "assets/skyline/README.md",
     "docs/svg-template-illustration-workflow.md",
     "docs/skyline-template-illustration-workflow.md",
@@ -38,7 +34,7 @@ REQUIRED_FILES = [
 ]
 
 REQUIRED_SNIPPETS = {
-    ".codex/skills/svg-template-illustration/SKILL.md": [
+    "skills/svg-template-illustration/SKILL.md": [
         "Do not make a generic rectangular illustration",
         "svg-geometry-style-illustration",
         "visual style packet",
@@ -47,8 +43,8 @@ REQUIRED_SNIPPETS = {
         "visual judge",
         "Done Means",
     ],
-    ".codex/skills/svg-geometry-style-illustration/SKILL.md": [
-        "SVG geometry -> safe composition map -> visual style packet",
+    "skills/svg-geometry-style-illustration/SKILL.md": [
+        "SVG geometry -> OUTSET cutouts -> outset contract base -> visual style packet",
         "ELEMENTS-FIRST",
         "WHOLE-PANEL-REDRAW",
         "Use the approved geometry image only as a composition/negative-space map",
@@ -56,18 +52,18 @@ REQUIRED_SNIPPETS = {
         "A mechanical pass is not approval",
         "visual judge",
     ],
-    ".codex/skills/svg-geometry-style-illustration/drift_probes.json": [
+    "skills/svg-geometry-style-illustration/drift_probes.json": [
         "svg-geometry-style-requires-visual-style-packet",
         "svg-geometry-style-no-prompt-only-substitute",
         "svg-geometry-style-pass-is-not-approval",
         "svg-geometry-style-geometry-approved-route",
     ],
-    ".codex/skills/reference-style-packet/SKILL.md": [
+    "skills/reference-style-packet/SKILL.md": [
         "build_reference_style_packet.py",
         "style-agent prompt",
         "Style agents must receive images",
     ],
-    ".codex/skills/svg-template-style-agent/SKILL.md": [
+    "skills/svg-template-style-agent/SKILL.md": [
         "## Job Boundary",
         "element sheets",
         "Style agents do not",
@@ -76,12 +72,12 @@ REQUIRED_SNIPPETS = {
         "approved geometry image only as a composition/negative-space map",
         "REFERENCE-MATCH",
     ],
-    ".codex/skills/svg-template-style-agent/drift_probes.json": [
+    "skills/svg-template-style-agent/drift_probes.json": [
         "geometry-approved-style-adaptation-requires-whole-panel-redraw",
         "locked[-_ ]geometry",
         "whole[-_ ]panel redraw",
     ],
-    ".codex/skills/skyline-template-illustration/SKILL.md": [
+    "skills/skyline-template-illustration/SKILL.md": [
         "assets/skyline/city-skyline template.svg",
         "one large central door panel",
         "orange dashed arch",
@@ -99,7 +95,7 @@ REQUIRED_SNIPPETS = {
         "visual-premise approval",
         "Ask Early",
     ],
-    ".codex/skills/svg-template-review-judge/SKILL.md": [
+    "skills/svg-template-review-judge/SKILL.md": [
         "Inspect the actual images",
         "ACCEPT | LOCAL PATCH | PROMPT RESTART | BLOCKED",
         "metadata",
@@ -186,6 +182,14 @@ REQUIRED_SNIPPETS = {
     ],
 }
 
+LEGACY_SKYLINE_ASSETS = [
+    "assets/skyline/city-skyline template.svg",
+    "assets/skyline/example of DO - specific elements (fairies, birds) not cropped.png",
+    "assets/skyline/example of DON'T - specific elements (fairies, birds) cropped.png",
+    "assets/skyline/door panel example - bridge inside door flaps area.png",
+    "assets/skyline/example - bridge runs through panels + top contour tracing buildings shape.png",
+]
+
 
 def check(condition: bool, label: str, failures: list[str]) -> None:
     mark = "OK" if condition else "FAIL"
@@ -222,22 +226,21 @@ from pathlib import Path
 sys.path.insert(0, 'tasks/space-svg-exports-batch/scripts')
 from create_checkpoint_candidates import classify_svg
 _, records, _, _ = classify_svg(Path('tasks/space-svg-exports-batch/source/np01-back-bottom.svg'))
-by_index = {record.index: record for record in records if record.source_type == 'path'}
-socket = by_index[0]
-right_panel = by_index[3]
-if socket.role != 'cutout':
-    raise SystemExit(f'right socket/notch path role is {socket.role}, expected cutout')
-if right_panel.role != 'paintable':
-    raise SystemExit(f'right panel path role is {right_panel.role}, expected paintable')
-if right_panel.area < 1_700_000:
-    raise SystemExit(f'right panel area {right_panel.area:.0f} too small; likely ignored polyline closure')
-if right_panel.bounds[3] < 2580:
-    raise SystemExit(f'right panel bottom {right_panel.bounds[3]:.1f} too high; likely diagonal auto-close')
+panels = [record for record in records if record.role == 'paintable']
+right_socket = next((record for record in records if record.role == 'cutout' and record.bounds[2] > 1600), None)
+if right_socket is None:
+    raise SystemExit('right socket/notch is not classified as a cutout')
+if len(panels) != 2:
+    raise SystemExit(f'expected two paintable panels, found {len(panels)}')
+if min(panel.area for panel in panels) < 1_700_000:
+    raise SystemExit('paintable panel too small; likely ignored polyline closure')
+if min(panel.bounds[3] for panel in panels) < 2580:
+    raise SystemExit('a paintable panel bottom is too high; likely diagonal auto-close')
 print('space socket/polyline geometry regression passed')
 """
     try:
         subprocess.run(
-            ["python3", "-c", script],
+            [sys.executable, "-c", script],
             cwd=ROOT,
             check=True,
             stdout=subprocess.PIPE,
@@ -253,6 +256,13 @@ print('space socket/polyline geometry regression passed')
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--legacy-skyline",
+        action="store_true",
+        help="validate optional historical skyline fixtures, which are not clone-visible",
+    )
+    args = parser.parse_args()
     failures: list[str] = []
 
     for rel in REQUIRED_FILES:
@@ -264,43 +274,50 @@ def main() -> int:
         for snippet in snippets:
             check(snippet in text, f"{rel} contains {snippet!r}", failures)
 
+    if args.legacy_skyline:
+        for rel in LEGACY_SKYLINE_ASSETS:
+            check((ROOT / rel).is_file(), f"legacy skyline asset exists: {rel}", failures)
+    else:
+        print("[SKIP] historical skyline fixtures are optional; run --legacy-skyline when provided")
+
     check(
         command_ok(
             [
-                "python3",
+                sys.executable,
                 "scripts/scaffold_template_task.py",
                 "validator-smoke",
                 "--svg",
                 "assets/templates/two-panel-template.svg",
                 "--refs",
-                "assets/reference-images/castle-style-reference.png",
+                "assets/templates/two-panel-template-raster.png",
                 "--dry-run",
             ]
         ),
         "task scaffold dry-run works",
         failures,
     )
+    if args.legacy_skyline:
+        check(
+            command_ok(
+                [
+                    sys.executable,
+                    "scripts/scaffold_template_task.py",
+                    "skyline-validator-smoke",
+                    "--svg",
+                    "assets/skyline/city-skyline template.svg",
+                    "--refs",
+                    "assets/skyline/example of DO - specific elements (fairies, birds) not cropped.png",
+                    "--dry-run",
+                ],
+                "would write tasks/skyline-validator-smoke/skyline-example-feedback.md",
+            ),
+            "skyline task scaffold dry-run works",
+            failures,
+        )
     check(
         command_ok(
             [
-                "python3",
-                "scripts/scaffold_template_task.py",
-                "skyline-validator-smoke",
-                "--svg",
-                "assets/skyline/city-skyline template.svg",
-                "--refs",
-                "assets/skyline/example of DO - specific elements (fairies, birds) not cropped.png",
-                "--dry-run",
-            ],
-            "would write tasks/skyline-validator-smoke/skyline-example-feedback.md",
-        ),
-        "skyline task scaffold dry-run works",
-        failures,
-    )
-    check(
-        command_ok(
-            [
-                "python3",
+                sys.executable,
                 "scripts/scaffold_template_task.py",
                 "city-scape-validator-smoke",
                 "--title",
@@ -308,7 +325,7 @@ def main() -> int:
                 "--svg",
                 "assets/templates/two-panel-template.svg",
                 "--refs",
-                "assets/reference-images/castle-style-reference.png",
+                "assets/templates/two-panel-template-raster.png",
                 "--dry-run",
             ],
             "would write tasks/city-scape-validator-smoke/skyline-example-feedback.md",

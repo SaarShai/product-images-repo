@@ -3,3 +3,6 @@
 Pillow
 numpy
 opencv-python
+Shapely
+pytest
+scipy

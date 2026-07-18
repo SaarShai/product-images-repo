@@ -3,53 +3,29 @@
 Workspace for image-generation prompt packs, reference assets, template checks,
 and result reviews.
 
-## Current Tasks
+## Setup
 
-The active/recent tasks are:
+Create one local environment and use it consistently; do not rely on whichever
+`python3` is first on `PATH`.
 
-- `tasks/baci-door`: repairing a Baci door template-fit image where the full
-  panel is close but the two SVG hex cutout areas need exact, clean handling.
-- `tasks/castle-panels`: refining a two-panel children's watercolor castle
-  illustration constrained by a die-line template.
-
-For Baci-door repair learning, start with:
-
-```text
-docs/baci-door-template-fit.md
-.codex/skills/baci-template-fit-repair/SKILL.md
+```bash
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+python scripts/verify_setup.py
+python scripts/validate_svg_template_workflow.py
 ```
 
-For a new SVG-template illustration task, start with:
+The default gate uses clone-visible two-panel assets. Use `--legacy-skyline`
+only when the optional historical fixtures are supplied.
 
-```text
-docs/svg-template-illustration-workflow.md
-.codex/skills/svg-geometry-style-illustration/SKILL.md
-docs/review-judge-checklist.md
-.codex/skills/reference-style-packet/SKILL.md
-.codex/skills/svg-template-style-agent/SKILL.md
-.codex/skills/svg-template-illustration/SKILL.md
-.codex/skills/svg-template-review-judge/SKILL.md
-.codex/skills/task-retrospective/SKILL.md
-```
+## Current Work
 
-The latest accepted Baci checkpoint is:
+- **CLOSED NEGATIVE:** `tasks/geometry-evidentiary-princess-n02/VERDICT.md` rejects the July prompt-plus-outset route on geometry.
+- **Experiment scope:** `tasks/geometry-adherence-solutions/experiment-1/CONCLUSIONS.md` validates the hard-mask/composite-back architecture on one held-out panel only.
 
-```text
-tasks/baci-door/outputs/final/20260616T071500Z-baci-door-hole-sections-bounded-exact-hex-v1-svg-fit-artwork-only.png
-tasks/baci-door/outputs/final/20260616T071500Z-baci-door-hole-sections-bounded-exact-hex-v1-svg-fit-clean-black-lines.png
-```
-
-Canonical task status lives at:
-
-```text
-tasks/castle-panels/CURRENT.md
-```
-
-The current best scored wall-center export is
-`20260615T-system-v9b-wall-sx070-sy104-y0`, produced from the revised V9B
-template-first artwork with `scale_x=0.70`, `scale_y=1.04`, and `offset_y=0`.
-It passes the mechanical template-fit scorer, but still requires semantic visual
-review before production handoff.
+`tasks/baci-door` and `tasks/castle-panels` are historical June examples. New SVG-template work starts with `docs/svg-template-illustration-workflow.md` and `docs/review-judge-checklist.md`.
 
 ## Layout
 
@@ -65,34 +41,14 @@ review before production handoff.
 ## Useful Commands
 
 ```bash
-python3 scripts/verify_setup.py
-python3 scripts/validate_svg_template_workflow.py
-python3 scripts/scaffold_template_task.py demo-task --svg assets/templates/two-panel-template.svg --refs assets/reference-images/castle-style-reference.png --dry-run
-python3 scripts/asset_report.py
-python3 scripts/build_reference_style_packet.py tasks/<task>
-python3 scripts/build_prompt_pack.py tasks/castle-panels
-python3 tasks/space-narrow-1-2/scripts/create_area01_reference_watercolor_v2.py
-python3 scripts/svg_geometry_report.py tasks/baci-door/source/baci-door-updated-20260616.svg --out tasks/baci-door/svg-geometry-report-updated-20260616.md
-python3 scripts/export_svg_template_fit.py tasks/baci-door/outputs/generated/20260616T071500Z-baci-door-hole-sections-bounded-exact-hex-v1.png --template-svg tasks/baci-door/source/baci-door-updated-20260616.svg --out-dir tasks/baci-door/outputs/final --prefix 20260616T071500Z-baci-door-hole-sections-bounded-exact-hex-v1-svg-fit --require-pass
-python3 scripts/score_template_fit.py --batch-generated --sweep --mode wall --md-out tasks/castle-panels/outputs/reviews/20260615T-system-wall-score-sweep.md --json-out tasks/castle-panels/outputs/reviews/20260615T-system-wall-score-sweep.json
-python3 scripts/export_composite.py tasks/castle-panels/outputs/generated/20260615T132212Z-prompt-v6-narrow-center-safe-gutters.png --prefix 20260615T132212Z-v6-scale090-y50 --art-scale 0.90 --art-offset-y 50
-```
-
-Current review packet:
-
-```text
-tasks/castle-panels/CURRENT.md
-tasks/castle-panels/outputs/reviews/20260615T-system-wall-score-sweep.md
-tasks/castle-panels/outputs/reviews/20260615T-system-wall-v9b-targeted-sweep.md
-tasks/castle-panels/outputs/reviews/2026-06-15-v6-v7-decision-packet.md
-tasks/castle-panels/prompts/prompt-v9a-empty-center-split-safe.md
-tasks/castle-panels/prompts/prompt-v9b-wall-background-split-safe.md
+python scripts/scaffold_template_task.py demo-task \
+  --svg assets/templates/two-panel-template.svg \
+  --refs assets/templates/two-panel-template-raster.png --dry-run
 ```
 
 ## Brainer Skills
 
-Selected skills from `/Users/za/Documents/Brainer` are linked for both Codex and
-Gemini/Antigravity workspace use. See `docs/brainer-skills.md`.
+Run `./install.sh`, then `python scripts/check_carrier_sync.py`; see `docs/brainer-skills.md`.
 
 ## SVG Status
 
@@ -105,6 +61,6 @@ assets/templates/two-panel-template.svg
 Run:
 
 ```bash
-python3 scripts/asset_report.py
-python3 scripts/svg_geometry_report.py
+python scripts/asset_report.py
+python scripts/svg_geometry_report.py
 ```
