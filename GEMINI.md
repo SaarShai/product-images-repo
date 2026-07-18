@@ -164,3 +164,5 @@ Stronger-model agents (Fable/Opus/Sol-class leads):
 - **S2** Never execute spec'd+gated work >~30 lines yourself — delegate to the cheapest capable tier.
 - **S3** Small judgment-dense fixes where the brief would exceed the diff: do directly, verify in the same turn.
 - **S4** Un-codified semantics stay at frontier tier until banked (wiki/product model); execution lanes must quote the codified model.
+
+- **B1 (borrow-checkpoint, all tiers)** Before building any NEW machinery (solver, cache, gate, build system, orchestration primitive, viewer subsystem), state in one line which existing framework/library/tool was checked and why it doesn't fit. A brief or plan that commissions new machinery without that line is malformed. The check may conclude "build" — demand the check, not the refusal (named failure class: Reinvented Wheel).
