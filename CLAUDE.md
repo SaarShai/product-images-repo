@@ -21,6 +21,7 @@ improvise a hand-rolled equivalent:
 
 - `/baton` — Drop/grab a verified session-handoff file — pass in-progress work to the next agent (future session, another window, codex) via .brainer/baton/
 - `/brainer-audit` — Use when the user explicitly activates Brainer audit mode, asks to audit this session, audit Brainer use, or track Brainer skill usage
+- `/brainer` — Use when the user explicitly says `/brainer` or asks to use any relevant Brainer skill: inspect the optional-method reference, select the smallest task-relevant set, and apply only exported methods or complete skill contracts as declared
 - `/caveman-ultra` — Experimental/manual terse-output style retained for paired evaluation
 - `/evidentiary-run` — Freeze-inputs evidentiary run to validate a released pipeline on a new subject class
 - `/fable-mode` — Experimental/manual five-gate work discipline retained for paired evaluation
